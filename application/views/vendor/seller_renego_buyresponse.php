@@ -22,30 +22,15 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary"> Negotiated</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    <h6 class="m-0 font-weight-bold text-primary"> Negotiate</h6>
+                                   
                                 </div>
                                 <!-- Card Body -->
 
          <div class="card-body">
-           <table style="align:center" class="table table-striped table-bordered " width="100%" cellspacing="0">
+           <table style="align:center" class="table table-striped table-bordered table-sm w-auto small" width="100%" cellspacing="0">
 		   
-    <thead class="bg-primary text-white">
-    	
-    </thead>
+    
 	<form action="<?php echo base_url();?>Vendor_add_seller_renego_buyresponse" method="POST" enctype="multipart/form-data">
        <tbody>
 	   
@@ -194,20 +179,7 @@
     <!-- Card Header - Dropdown -->
 		<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Product Name:<?php echo  $sqldata[0]->productname;?></h6>
-			<div class="dropdown no-arrow">
-            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-            <div class="dropdown-header">Dropdown Header:</div>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-            </div>
+			
         </div>
  <!-- Card Body -->
 <div class="card-body">
@@ -222,7 +194,7 @@
 		</div>
         <!--Grid column-->
 <div class="col-md-5">
-	<p><b>Supper Id :</b><?php echo  $sqldata1[0]->buyerid;?> </p> 
+	<p><b>Buyer Id :</b><?php echo  $sqldata1[0]->buyerid;?> </p> 
 	<p><b>Category :</b> <?php echo  $sqldata1[0]->category;?></p>
 	<p><b>Stock :</b> <?php echo  $sqldata1[0]->quantity. " / " .$sqldata1[0]->buyer_nego_units;?></p> 
 </div>
@@ -233,22 +205,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-             
-
-           
-
-        
-         
-
-          
-         
-		  
-		  
-		 
-		 
-		 
-    
+                  
+ 
 </div>
   <script>
   

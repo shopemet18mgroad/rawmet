@@ -1,3 +1,4 @@
+
  <head>
  <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 

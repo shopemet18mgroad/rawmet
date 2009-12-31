@@ -5,6 +5,9 @@
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
 }*/
+body {
+  table-layout: fixed;
+}
 
 table {
   border: 1px solid #ccc;

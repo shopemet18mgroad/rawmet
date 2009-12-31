@@ -21,21 +21,8 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary"> Negotiated</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    <h6 class="m-0 font-weight-bold text-primary"> Negotiate</h6>
+                                   
                                 </div>
                                 <!-- Card Body -->
 
@@ -231,10 +218,10 @@ Re-Negotiate Here
 								</div>	
 								
 									<a href="#" class="neg"> </a>
-								<button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2" name="btnsubmit_rengo" id= "btnsubmit_rengo" role="submit"  onclick= "return validate_selnego()">Re-Negotiated</a></button>								
+								<button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2" name="btnsubmit_rengo" id= "btnsubmit_rengo" role="submit"  onclick= "return validate_selnego()">Re-Negotiate</a></button>								
 							 
 								 
-								 <button type="button" class="btn btn-outline-warning btn-sm mt-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiation</button>
+								 <button type="button" class="btn btn-outline-warning btn-sm mt-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiate</button>
 								 
 								 
 				  <div class="modal fade" id="final_Negotiated" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -274,7 +261,7 @@ Re-Negotiate Here
 	
 		
 			
-		<td style="font-size:15px; width:150px;">Seller Re Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / " .$sqldata5[0]->bunits;?></b></small><br/>
+		<td style="font-size:15px; width:150px;">Seller's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / " .$sqldata5[0]->bunits;?></b></small><br/>
 		
 	<b><?php  if($final_quotebyr[0]->custapprove == 0) {echo 'Pending';}else if($final_quotebyr[0]->custapprove == 2) {echo 'Rejected';}else if($final_quotebyr[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation5/auc_no/'.$final_quotebyr[0]->id.'/'.$final_quotebyr[0]->sellerid.'/'.$final_quotebyr[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>/<a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#forth' target='_blank'><i class='fa fa-upload'></i></a>";}else if($final_quotebyr[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	<br/>
@@ -309,20 +296,7 @@ Re-Negotiate Here
     <!-- Card Header - Dropdown -->
 		<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Product Name:<?php echo  $sqldata2[0]->productname;?></h6>
-			<div class="dropdown no-arrow">
-            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-            <div class="dropdown-header">Dropdown Header:</div>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-            </div>
+			
         </div>
  <!-- Card Body -->
 <div class="card-body">

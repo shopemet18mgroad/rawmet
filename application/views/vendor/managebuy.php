@@ -123,12 +123,12 @@
 					</div>
 					</div>
 					
-					<div class="form-row">
+					<div hidden class="form-row">
 					<div class="form-group col-md-6">	
 						<label> Buyer Price:</label>
 						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata[0]->price;?> " readonly>
 					</div>
-					<div class="form-group col-md-6">		
+					<div hidden class="form-group col-md-6">		
 					<label>Units:</label>
 					
 						

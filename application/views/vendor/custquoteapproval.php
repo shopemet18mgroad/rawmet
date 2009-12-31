@@ -22,21 +22,8 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary"> Negotiated</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    <h6 class="m-0 font-weight-bold text-primary"> Negotiate</h6>
+                                  
                                 </div>
                                 <!-- Card Body -->
 
@@ -120,7 +107,7 @@ $strDisable = "";
               <center>
                 <input type="text" class="form-control col-sm-8 mt-4" name="selprice" placeholder="price" id="selprice" value='<?php echo $sellerprice;?>' <?php echo $strDisable; ?>/> 
 			</center>
-			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiated</a>
+			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiate</a>
 		
 
  
@@ -212,7 +199,7 @@ $strDisable2 = "";
 			<center>
                 <input type="text" class="form-control col-sm-8 mt-4" name="sellrenegoprice" placeholder="price" id="sellrenegoprice" value='<?php echo $sellerneprice;?>' <?php echo $strDisable2; ?>/> 
 			</center>
-			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiated</a>
+			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiate</a>
 		
 
  
@@ -220,7 +207,7 @@ $strDisable2 = "";
 </form>	
 
 </td>
-<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->bunits;?></b></small><br/>
+<td style="font-size:15px; width:150px;">Seller Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->bunits;?></b></small><br/>
 
 	<b><?php  if($final_quote[0]->custapprove == 0) {echo 'Pending';}else if($final_quote[0]->custapprove == 2) {echo 'Rejected';}else if($final_quote[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation5/auc_no/'.$final_quote[0]->id.'/'.$final_quote[0]->sellerid.'/'.$final_quote[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($final_quote[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	
@@ -233,56 +220,9 @@ $strDisable2 = "";
 			</tr>  
 		  
 	</form>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-			 
-	</tr>
-	
-	
-		  
-	   		
- 		
-		
-		
-		 <br/>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-	
-		
-
-	
-	</td>
+</tr>
+<br/>
+</td>
 			 
 	
  </tbody>
@@ -296,20 +236,7 @@ $strDisable2 = "";
     <!-- Card Header - Dropdown -->
 		<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Product Name:<?php echo  $sqldata[0]->productname;?></h6>
-			<div class="dropdown no-arrow">
-            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-            <div class="dropdown-header">Dropdown Header:</div>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-            </div>
+			
         </div>
  <!-- Card Body -->
 <div class="card-body">
@@ -344,15 +271,7 @@ $strDisable2 = "";
 								
 	 </div>							
 						
-								
-								
-								
-								
-								
-								
-								
-			
-			  <br />
+<br />
 
 			
 			<!--Grid column-->
@@ -408,10 +327,7 @@ $strDisable2 = "";
     
 </div>
    			
-							
-							
-							
-		</div>				
+				
 							
 							
 			<script>
