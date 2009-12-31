@@ -40,7 +40,7 @@ class Customer_buynego extends CI_Controller {
 		
 		
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/Buynego',$adac);
+		$this->load->view('customer/buynego',$adac);
 		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		

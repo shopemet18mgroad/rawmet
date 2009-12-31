@@ -785,7 +785,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			a.sellerprice,
 			a.bsupplyability');	
 			
-			 $this->db->from("buyer_req_response b");
+			$this->db->from("buyer_req_response b");
             $this->db->join('seller_mbuyreq a', 'a.id=b.seller_mbuyreq_id','left outer');	
 			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');		
 			$this->db->join('buyer_final_req d', 'c.seller_mbuyreq_id=d.seller_mbuyreq_id','left outer');
