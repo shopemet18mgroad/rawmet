@@ -1,4 +1,8 @@
-  <div class="container-fluid">
+  <head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
+
+ </head>
+ <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -22,7 +26,7 @@
 		<th>Image</th>
 		<th>Status</th>
 		<th>Update the Quantity and Price</th>
-		<th>options</th>
+		<th>Options</th>
 	</tr>
     </thead>
     <tbody>
@@ -37,38 +41,26 @@
 	 
 	 <?php $proid =urldecode( str_ireplace('/','-',$row->productid));
 				?>
-	<td><?php echo $count;?></td> 
-	  <td><?php echo $row->productid;?></td> 
-		<td><?php echo $row->productname;?></td> 
-		<td><?php  echo $row->category;?></td>
-        
-	
-	
-		
-
-		<td><?php $img = unserialize($row->uploadproductimage)?>
+		<td data-label="Sl.No."><?php echo $count;?></td> 
+		<td data-label="Product Id"><?php echo $row->productid;?></td> 
+		<td data-label="Product Name"><?php echo $row->productname;?></td> 
+		<td data-label="Category"><?php  echo $row->category;?></td>
+        <td data-label="Image"><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="55px"></td>
 	
+		<td style="color:green;" data-label="Status"><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
 
-		<td style="color:green;"><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
 
-
-<td> <a href="<?php echo base_url() .'Vendor_uploadedproduct/price_update/'.$proid."/". urldecode($row->sellerid) ; ?>" target="_blank" data-target="#new_userlogin-<?php echo $count; ?>"  data-toggle="modal" >update</a>
+		<td data-label="Update the Quantity and Price"> <a href="<?php echo base_url() .'Vendor_uploadedproduct/price_update/'.$proid."/". urldecode($row->sellerid) ; ?>" target="_blank" data-target="#new_userlogin-<?php echo $count; ?>"  data-toggle="modal" >update</a>
 														</td>
-
-
-
-		
-
-		<td style="display:inline-flex;">
-		
+		<td style="display:inline-flex;" data-label="Options">
 		
 		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
 		
 	
-			<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
+		<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
 
-			<div class="modal fade" id="new_userlogin-<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="new_userlogin-<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">

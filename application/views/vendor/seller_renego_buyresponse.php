@@ -1,4 +1,7 @@
+  <head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 
+ </head>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -38,7 +41,7 @@
                                 <!-- Card Body -->
 
          <div class="card-body">
-           <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
+           <table style="align:center" class="table table-striped table-bordered " width="100%" cellspacing="0">
 		   
     <thead class="bg-primary text-white">
     	

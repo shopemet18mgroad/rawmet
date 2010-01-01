@@ -1,4 +1,7 @@
+ <head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 
+ </head>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -20,21 +23,18 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>   <th>Sl.No.</th>
+      <tr>  
+			<th>Sl.No.</th>
 	        <th>Image</th>
 			<th>Buyer Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
-			
-			
 			<th>Category</th>
 			<th>Location</th>
-		
 			<th>Supplier base Price</th>
 			<th>Supply Ability</th>
 			<th style="color:orange;">Buyer Price</th>
 			<th style="color:orange;">Buyer Quantity</th>
-			
 			<th>Action</th>
       </tr>
     </thead>
@@ -44,23 +44,19 @@
       <tr>
 	  <?php $proid =str_ireplace('/','-',$row->productid);
 				?>
-				<td><?php echo $count;?></td>  
-		<td><?php $img = unserialize($row->uploadproductimage)?>
+			<td data-label="Sl.No."><?php echo $count;?></td>  
+			<td data-label="Image"><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
-			<td><?php echo $row->buyerid;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->category;?></td>
-				<td><?php echo $row->pcities;?></td>
-			
-			<td><?php echo $row->price."/"; echo $row->punits;?></td>
-			<td><?php echo $row->quantity." "; echo $row->units;?></td>
-		     <td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
-			
-						
-			
-		<td>	
+			<td data-label="Buyer Id"><?php echo $row->buyerid;?></td>
+			<td data-label="Product Name"><?php echo $row->productname;?></td>
+			<td data-label="Product Id"><?php echo $row->productid;?></td>
+			<td data-label="Category"><?php echo $row->category;?></td>
+			<td data-label="Location"><?php echo $row->pcities;?></td>
+			<td data-label="Supplier base Price"><?php echo $row->price."/"; echo $row->punits;?></td>
+			<td data-label="Supply Ability"><?php echo $row->quantity." "; echo $row->units;?></td>
+		    <td data-label="Buyer Price"><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
+			<td data-label="Buyer Quantity"><?php echo $row->bquantity.""; echo $row->bunits;?></td>
+			<td data-label="Action">	
 	
 		<!--<a href="<?php // echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selnego()">Approve </button></a>-->
 					

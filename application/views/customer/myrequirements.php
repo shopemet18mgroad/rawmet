@@ -1,3 +1,8 @@
+<head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
+ 
+ </head>
+
 
         <!-- End of Topbar -->
 
@@ -18,7 +23,7 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-striped table-bordered " id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
 			<th>Product Id</th>
@@ -38,14 +43,14 @@
            foreach($sqldata2 as $seller){                                             
            $strTable .= " 
            <tr>
-               <td>".$seller->productid."</td>
-               <td>".$seller->productname."</td>
-               <td>".$seller->description."</td>
-               <td>".$seller->seller_qua." ".$seller->units."</td>
-               <td>".$seller->requireddate."</td> 
-               <td>".$seller->lastdate."</td> 
-               <td>".$seller->lastdate."</td> 
-               <td> <a  href='javascript:showUserData(\"".$seller->productid."\")'>".$seller->cnt." Res</a></td>     
+               <td data-label='Product Id'>".$seller->productid."</td>
+               <td data-label='Product Name'>".$seller->productname."</td>
+               <td data-label='Description'>".$seller->description."</td>
+               <td data-label='Quantity'>".$seller->seller_qua." ".$seller->units."</td>
+               <td data-label='Required Date'>".$seller->requireddate."</td> 
+               <td data-label='Last Date'>".$seller->lastdate."</td> 
+               <td data-label='Email'>".$seller->lastdate."</td> 
+               <td data-label='Response'> <a  href='javascript:showUserData(\"".$seller->productid."\")'>".$seller->cnt." Res</a></td>     
            </tr>
 			";
             }
@@ -121,7 +126,7 @@ function showUserData(productid){
         success:function(msg){
             var tempmsg = JSON.parse(msg);
             $('#final_Negotiated1').modal('show');
-            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller name</td><td>Product Id</td><td>Product Name</td><td>Seller Price</td><td>Option</td></tr>";
+            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller ID</td><td>Product Id</td><td>Product Name</td><td>Seller Price</td><td>Option</td></tr>";
             for(var i=0; i<tempmsg.length; i++){
                 $sellerMBueryReqId = tempmsg[i]['id'];								
                 tbleData = tbleData+"<tr><td>"+tempmsg[i]['sellerid']+"</td><td>"+tempmsg[i]['productid']+"</td><td>"+tempmsg[i]['productname']+"</td><td>"+tempmsg[i]['sellerprice']+" / "+tempmsg[i]['bsupplyability']+"</td><td><a href='Customer_seller_response_renego/index/"+tempmsg[i]['id']+ "';>Negotiate</a></td></tr>";	

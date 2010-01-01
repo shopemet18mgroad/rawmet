@@ -82,18 +82,18 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 				$proid = str_ireplace('/','-',$dat['productid']);
 				
 				
-				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.$proid.'/'.($dat['vname']).
+				echo '<td data-label="Product ID"><a href="'.base_url().'customer_contactsupplier/index/'.$proid.'/'.($dat['vname']).
 				'">';
 				echo $dat['productid'];
 				
 				echo '</a>';
 				echo '</td>';
-				echo '<td>'.$dat['productname'].'</td>';
-				echo '<td>'.$dat['category'].'</td>';
-				echo '<td>'.$dat['price']."/".$dat['punits'].'</td>';
-				echo '<td>'.$dat['quantity']." ".$dat['units'].'</td>';
+				echo '<td data-label="Product Name">'.$dat['productname'].'</td>';
+				echo '<td data-label="Category">'.$dat['category'].'</td>';
+				echo '<td data-label="Price">'.$dat['price']."/".$dat['punits'].'</td>';
+				echo '<td data-label="Quantity">'.$dat['quantity']." ".$dat['units'].'</td>';
 				
-				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.$proid.'/'.($dat['vname']).'">';
+				echo '<td data-label="Action"><a href="'.base_url().'customer_contactsupplier/index/'.$proid.'/'.($dat['vname']).'">';
 				echo '<button class="btn btn-info">Negotiate</button>';
 				echo '</a>';
 			

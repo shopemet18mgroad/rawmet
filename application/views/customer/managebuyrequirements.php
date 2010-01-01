@@ -1,3 +1,7 @@
+ <head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
+
+ </head>
 
         <!-- End of Topbar -->
 
@@ -11,8 +15,8 @@
           </div>
 
           <!-- Content Row -->
-          <div class="row">
-
+          <div class="row justify-content-center">
+	
             <!-- Earnings (Monthly) Card Example -->
 			<div class="col-xl-12 col-lg-7">
           <div class="card shadow mb-4">
@@ -25,7 +29,7 @@
 	<th>Images</th>
 	<th>Product Id</th>
 	<th>Product Name</th>
-	<th>company Name</th>
+	<th>Company Name</th>
 	<th>Description</th>
 	<th>Action</th>
     </tr>
@@ -36,24 +40,19 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-					<td><?php echo $count;?></td> 
-	<td><?php $img = unserialize($row->uploadimage)?>
-		<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->bcompanyname;?></td>
-		<td><?php echo $row->description;?></td>
-			
-			
-				
-			<td>
+		<td data-label="Sl.No."><?php echo $count;?></td> 
+		<td data-label="Images"><?php $img = unserialize($row->uploadimage)?>
+			<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
+		<td data-label="Product Id"><?php echo $row->productid;?></td>
+		<td data-label="Product Name"><?php echo $row->productname;?></td>
+		<td data-label="Company Name"><?php echo $row->bcompanyname;?></td>
+		<td data-label="Description"><?php echo $row->description;?></td>
+		<td data-label="Action">
 			<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."customer_buyreqview/index/".$proid."/".urldecode($row->buyerid);?>"><i class="fa fa-eye"></i></a>
 			
 			<!--<button type="submit" name="submit" id="<?php // echo urldecode($row->bname).'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-success btn-sm">Approve</button>-->
 			
-			<a href="<?php echo base_url()."customer_buyreqview/product_reject/".$proid."/".$row->buyerid;?>"  class="btn btn-danger btn-sm text-white delete-confirm">Reject</a>
-			
-			</td>
+			<a href="<?php echo base_url()."customer_buyreqview/product_reject/".$proid."/".$row->buyerid;?>"  class="btn btn-danger btn-sm text-white delete-confirm">Reject</a></td>
 			<?php $count++;?>
 		
       </tr>      
@@ -64,19 +63,8 @@
 		</div>
 		</div>
 		</div>
-		</div>
-          <!-- Content Row -->
 
-          
-        <!-- /.container-fluid -->
-
-      
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-     
-      <!-- End of Footer -->
-
+</div>
     </div>
     <!-- End of Content Wrapper -->
 

@@ -137,7 +137,7 @@ function validate_password(){
  </script>
  
  
-  
+
  <script>
 		$('#gettable_quotenegotiation').on('keyup', function(){
 			var contents = $('#gettable_quotenegotiation').val(); 
@@ -205,7 +205,7 @@ function validate()
    }
 }
   </script>
-  
+ 
 
  
  </body>

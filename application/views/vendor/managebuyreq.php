@@ -1,4 +1,7 @@
+  <head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 
+ </head>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -37,35 +40,21 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);?>
 	 
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->buyerid;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->description;?></td>
-			<td><?php echo $row->quantity."";echo $row->units;?></td>
-				 
-			
-			<td><?php echo $row->requireddate;?></td>
-			<td><?php echo $row->lastdate;?></td>
-				<td><?php $img = unserialize($row->uploadimage)?>
+			<td data-label="Product Id"><?php echo $row->productid;?></td>
+			<td data-label="Buyer ID"><?php echo $row->buyerid;?></td>
+			<td data-label="Product Name"><?php echo $row->productname;?></td>
+			<td data-label="Description"><?php echo $row->description;?></td>
+			<td data-label="Quantity"><?php echo $row->quantity."";echo $row->units;?></td>
+			<td data-label="Required Date"><?php echo $row->requireddate;?></td>
+			<td data-label="Last Date"><?php echo $row->lastdate;?></td>
+			<td data-label="Images"><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
-					<td><!--<a href="<?php // echo base_url()."Vendor_managebuyreq/approve_requirement/".$proid."/".urldecode($row->bname);?>"><button type="button" class="btn btn-success">Approve</button></a>-->
+			<td data-label="Action"><!--<a href="<?php // echo base_url()."Vendor_managebuyreq/approve_requirement/".$proid."/".urldecode($row->bname);?>"><button type="button" class="btn btn-success">Approve</button></a>-->
 				
-			
-				
-		
+			<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->buyerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Send Offer</a>
 
-		<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->buyerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Send Offer</a>
-
-
-		
-		
-		<a href="<?php echo base_url()."vendor_managebuyreq/product_reject/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm">Reject</a></td>	
-			
-		
-				
-			
-		
-      </tr>      
+			<a href="<?php echo base_url()."vendor_managebuyreq/product_reject/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm">Reject</a></td>	
+		</tr>      
      <?php }?>	
     </tbody>
   </table>

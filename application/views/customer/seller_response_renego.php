@@ -1,4 +1,8 @@
-        <!-- Begin Page Content -->
+<head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
+
+ </head>
+ <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -37,7 +41,7 @@
                                 <!-- Card Body -->
 
          <div class="card-body">
-           <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
+           <table style="align:center" class="table table-striped table-bordered " width="100%" cellspacing="0">
 		   
     <thead class="bg-primary text-white">
     	<form action="<?php echo base_url();?>customer_add_sellerResponse_renego" method="POST" enctype="multipart/form-data">
@@ -125,7 +129,7 @@
 
 
   
-   <table style="align:center;" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
+   <table style="align:center;" class="table table-striped table-bordered" width="100%" cellspacing="0">
 		   
     <thead class="bg-primary text-white">
     	<form action="<?php echo base_url();?>Customer_add_finalReq_buyer_selResponse" method="POST" enctype="multipart/form-data">

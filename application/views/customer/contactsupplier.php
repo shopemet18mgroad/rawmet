@@ -44,7 +44,7 @@
 				<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img[0];?>">
 				
 					
-					</div>	
+				</div>	
 					
 				
 				</div>
