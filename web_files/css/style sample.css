@@ -1,0 +1,122 @@
+.loginpart{
+	display: inline-block;
+    
+	margin-left: 1000px;
+    margin-top: 70px;
+	
+}
+
+.centercontent{
+	display: Block;
+	height: 20%;
+	width: 20%;
+	margin-left: 100px;
+
+}
+
+img{
+	margin-top: 60px;	
+	display: block;
+	margin-left: 150%;
+	margin-right: auto;
+  
+}
+
+.finder{
+	
+	display: inline-flex;
+	position: absolute;
+	
+	margin-left: 20%;
+	margin-top: 2%;
+	
+	 border: 2px solid #28166F;
+}
+
+.searchbtn{
+	width: 50%;	
+}
+
+.option{
+	width: 25%;	
+}
+
+
+.dropbtn {
+  background-color: #FFB266;
+  color: black;
+  
+  padding: auto;
+  font-size: 15px;
+  
+  box-sizing: border-box;
+  cursor: pointer;
+  height: auto;
+  width: auto;
+  font-family: Futura md lt;
+  align-content: center;
+  
+
+  
+}
+
+.dropdown-content {
+  display:none;
+  position: absolute;
+  background-color: #FFB266;
+  min-width: 105px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  width: 90px;
+  font-size: 13px;
+  white-space: nowarp;
+  z-index: -1;
+  
+}
+
+
+
+
+button.tap{
+	background-color:#28166F;
+	display: block;
+	color: white;
+	font-family: Futura md lt;
+	width: 90px;
+    border: 1px solid  #28166F;
+    box-sizing: border-box;
+    margin-right: 6px;
+  
+}
+
+button.rap{
+	background-color: #FFB266;
+	display: block;
+	color: white;
+	font-family: Futura md lt;
+	width: 90px;
+    border: 1px solid #FFB266;
+    box-sizing: border-box;
+    
+}
+.searchbtn2{
+	background-color:#28166F;
+	color: white;
+	height: 100%;
+	width: 100%;
+}
+.links{
+	display: inline-block;
+	margin-top: 20%;	
+	align-content: center;
+	margin-left: 5%;
+	font-family: Futura md lt;
+	font-size: 17px;
+	justify-content: space-evenly;	
+
+}
+
+.bottom{
+	background-color: grey;
+	margin-top: 15%;
+}
