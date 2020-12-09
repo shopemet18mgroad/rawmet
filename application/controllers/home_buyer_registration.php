@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home_register extends CI_Controller {
+class Home_buyer_registration extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,7 +22,7 @@ class Home_register extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->view('header');
-		$this->load->view('register');
+		$this->load->view('buyer_registration');
 		
 		
 	}

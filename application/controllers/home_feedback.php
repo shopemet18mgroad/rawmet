@@ -23,7 +23,7 @@ class Home_feedback extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->view('header');
 		$this->load->view('feedback');
-		$this->load->view('footer');
+
 		
 	}
 	

@@ -39,56 +39,56 @@
 			  <h3 class="h5 text-gray-700 mb-2">Contact Info</h3> 	
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="vname" name="vname" placeholder="Name">
+                    <input type="text" class="form-control form-control-user" id="bname" name="vname" id="name" placeholder="Name">
                   </div>
                   
 				   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="vcompanyname" name="vcompanyname" placeholder="Company Name">
+                    <input type="text" class="form-control form-control-user" id="bcompanyname" name="vname" placeholder="Company Name">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="vcompanytype"  name="vcompanytype"  placeholder="Company Type">
+                    <input type="text" class="form-control form-control-user" id="bcompanytype" name="bcompanytype"  placeholder="Company Type">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="vcontactperson"  name="vcontactperson"  placeholder="Contact Person">
+                    <input type="text" class="form-control form-control-user" id="bcontactperson" name="bcontactperson" placeholder="Contact Person">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="vcontactnumber"  name="vcontactnumber"  placeholder="Contact Number">
+                    <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number">
                   </div>
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user"id="vemail"  name="vemail"   placeholder="Email">
+                    <input type="password" class="form-control form-control-user"id="bemail" name="bemail" placeholder="Email">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="vusername"  name="vusername"   placeholder="User Name">
+                    <input type="password" class="form-control form-control-user"id="busername" name="busername"  placeholder="User Name">
                   </div>
                 </div>
                 
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="vpassword"  name="vpassword"  placeholder="Password">
+                    <input type="password" class="form-control form-control-user"id="bpassword" name="bpassword"  placeholder="Password">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user"  id="vrepeatpassword"  name="vrepeatpassword"  placeholder="Repeat Password">
+                    <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"  placeholder="Repeat Password">
                   </div>
                 </div>
 				
 				<h3 class="h5 text-gray-700 mb-2">Location</h3>
                 <div class="form-group">
-					<input type="text" class="form-control form-control-user" id="vaddress"  name="vaddress"   placeholder="Address">
+					<input type="text" class="form-control form-control-user"id="baddress" name="baddress"  placeholder="Address">
 				</div>
 				
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
-					<input type="text" class="form-control form-control-user" id="vcity"  name="vcity"  placeholder="City">
+					<input type="text" class="form-control form-control-user"id="bcity" name="bcity"  placeholder="City">
                   </div>
                   <div class="col-sm-6 mb-3 mb-sm-2">
-					<input type="text" class="form-control form-control-user" id="vselectstate"  name="vselectstate"   placeholder="State">
+					<input type="text" class="form-control form-control-user"id="bselectstate" name="bselectstate" placeholder="State">
                   </div>
 				  
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="vpincode"  name="vpincode"   placeholder="Pincode">
+                    <input type="text" class="form-control form-control-user"id="bpincode" name="bpincode" placeholder="Pincode">
                   </div>
                 </div>
                 <a href="<?php echo base_url();?>home_login" class="btn btn-primary btn-user btn-block">

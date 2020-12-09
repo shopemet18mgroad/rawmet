@@ -23,7 +23,7 @@ class Home_login extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->view('header');
 		$this->load->view('login');
-		$this->load->view('footer');
+	
 		
 	}
 	
