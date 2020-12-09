@@ -35,10 +35,12 @@
                 <h1 class="h4 text-gray-900 mb-2">Create an Account!</h1>
 				
               </div>
-             <form action="./home_buyer_registration" method="POST" >
+             
 			  <h3 class="h5 text-gray-700 mb-2">Contact Info</h3> 	
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
+				<form action="<?php echo base_url();?>home_buyer_register" method="POST">
+				
                     <input type="text" class="form-control form-control-user" id="bname" name="bname" id="bname" placeholder="Name">
                   </div>
                   
@@ -91,9 +93,9 @@
                     <input type="text" class="form-control form-control-user"id="bpincode" name="bpincode" placeholder="Pincode">
                   </div>
                 </div>
-                <a href="<?php echo base_url();?>home_login" class="btn btn-primary btn-user btn-block">
-                  Register Account
-                </a>
+                <center>
+				<input type="submit" name="submit" value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
+				</center>
                 <!-- <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google
