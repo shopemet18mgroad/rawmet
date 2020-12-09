@@ -35,7 +35,7 @@
                 <h1 class="h4 text-gray-900 mb-2">Create an Account!</h1>
 				
               </div>
-              <form class="user">
+              <form class="" action="<?php echo base_url();?>home_seller_register" method="POST">
 			  <h3 class="h5 text-gray-700 mb-2">Contact Info</h3> 	
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
@@ -91,9 +91,8 @@
                     <input type="text" class="form-control form-control-user" id="vpincode"  name="vpincode"   placeholder="Pincode">
                   </div>
                 </div>
-                <a href="<?php echo base_url();?>home_login" class="btn btn-primary btn-user btn-block">
-                  Register Account
-                </a>
+               
+				 <input type="submit" name="submit2" id="btn1" onclick="return validate1()" value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
                 <!-- <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google

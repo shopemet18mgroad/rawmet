@@ -21,32 +21,35 @@ class Home_seller_register extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('seller_register');
+		
+	
+		$this->load->model('Admin_model');
+		$this->load->helper(array('url','form','file','html'));
 		$vname = $this->input->post('vname');
 		$vcompanyname = $this->input->post('vcompanyname');
 		$vcompanytype = $this->input->post('vcompanytype');
 		$vcontactperson  = $this->input->post('vcontactperson');
 		$vcontactnumber = $this->input->post('vcontactnumber');
 		$vemail = $this->input->post('vemail');
-		//$spassword = password_hash('default_auc123',PASSWORD_BCRYPT);
-		$spassword = base64_encode('default_auc123');
-		$scin  = $this->input->post('scin');
-		$sgst  = $this->input->post('sgst');
-		$span  = $this->input->post('span');
-		$spcb  = $this->input->post('spcb');
-		$semail  = $this->input->post('semail');
-		$sphone  = $this->input->post('sphone');
-		$saddress  = $this->input->post('saddress');
-		$saddress2 = serialize($saddress);
-		$saddresscount  = $this->input->post('saddresscount');
-		$saddresscount = serialize($saddresscount);
-		$spin  = $this->input->post('spin');
-		$scity = $this->input->post('scity');
-		$sstate  = $this->input->post('sstate');
-		$scountry  = $this->input->post('scountry');
-		$sbankername  = $this->input->post('sbankernam
+		$vusername = $this->input->post('vusername');
+		$vpassword = $this->input->post('vpassword');
+		$vrepeatpassword = $this->input->post('vrepeatpassword');
+		$vaddress  = $this->input->post('vaddress');
+		$vcity  = $this->input->post('vcity');
+		$vselectstate  = $this->input->post('vselectstate');
+		$vpincode  = $this->input->post('vpincode');
 		
+		$data = array('vname' => $vname,'vcompanyname' => $vcompanyname, 
+	'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
+	'vcontactperson'=>$vcontactperson ,
+	'vemail'=> $vemail ,'vusername' => $vusername,
+	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,
+	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
+	$datainserr = "Data Inserted Successfully";
+		$status = $this->Admin_model->insert('vendor_register',$data);
+		header('location:'.base_url().'home'.$datainserr);
 		
+		}
+		$this->load->view('header')
+		$this->load->view('seller_register');
 	}
-	
-}
