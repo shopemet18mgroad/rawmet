@@ -20,11 +20,42 @@ class Admin_approvevendor extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
-		$this->load->view('admin/header');
-		$this->load->view('admin/approvevendor');
-		$this->load->view('admin/footer');
+		$this->load->model('Admin_model');
+		$voptions = array('voptions'=>false);
 		
+		$query = $this->Admin_model->getdatafromtable('vendor_register',$voptions);
+		
+		$adac['data']= $query;
+		/* echo '<pre>';
+		print_r($adac['activestat']); die;
+			echo '</pre>'; */
+		
+		
+		$this->load->view('admin/header');
+		$this->load->view('admin/approvevendor',$adac);
+		$this->load->view('admin/footer');
+	
 	}
 	
+	public function approve_seller(){
+		
+		$vusername= $this->uri->segment(3);
+		
+		$vusernmame = urldecode($vusername);
+		//print_r($vusername);die;
+		$this->load->model('Admin_model');
+		$app= array('voptions'=>true);
+		$adaction2 = array('vusername'=>$vusername);
+		$query = $this->Admin_model->update_custom('vendor_register', $app, $adaction2, $adaction2);
+		if($vusername){
+			echo "HI";
+		}else{
+			echo "BYE";
+		}
+	
+	}
 }
+		
+
+
+	

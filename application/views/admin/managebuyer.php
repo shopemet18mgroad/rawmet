@@ -1,4 +1,23 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -29,107 +48,22 @@
       </tr>
     </thead>
     <tbody>
+	
+      
+      
+	   <?php foreach($data as $row){?>
       <tr>
-		<td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
+		<td><?php echo $row->bname;?></td> 
+		<td><?php  echo $row->bcompanytype;?></td>
+        <td><?php echo $row->baddress; ?></td>
+		<td><?php echo $row->bcity;?></td>
+		<td><?php echo $row->bstatus;?></td>
+		<td><?php echo $row->boptions;?></td>
         <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>      
-      <tr>
-		<td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td></td>
-      </tr>
+				<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanytype);?>">View</a></td>
+      </tr> 
+<?php }?>	  
+      
     </tbody>
   </table>
 
@@ -151,4 +85,4 @@
      
       <!-- End of Footer -->
 </div>
-</div> 
+</div>

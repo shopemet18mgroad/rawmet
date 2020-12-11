@@ -20,128 +20,37 @@
                 <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-        <th>Vendor Name</th>
+        <th>Buyer Name</th>
         <th>Company Type</th>
         <th>Contact Person</th>
+		<th>Username</th>
 		<th>Location</th>
 		<th>City</th>
-		<th>Status</th>
 		<th>Option</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-		<td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>      
-      <tr>
-		<td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-    </tbody>
+	<tbody>
+					
+				<?php foreach($data as $row){?>
+				<tr>												
+					<td><?php echo $row->bname;?></td>
+					<td><?php  echo $row->bcompanytype; ?></td>
+					<td><?php echo $row->bcontactperson; ?></td>
+					<td><?php echo $row->busername; ?></td>
+					<td><?php echo $row->baddress; ?></td>
+					<td><?php echo $row->bcity;?></td>
+					
+					<td><button type="submit" name="submit" id="<?php echo $row->busername;?>" onclick="admin_buyerapprove(this.id)" class="btn btn-info btn-sm">Approve</button></td>	
+				</tr>
+				<?php }?>
+	 
+  
+	
+				</tbody>
+          
+      	
+				
+    
   </table>
 				</div>
             </div>

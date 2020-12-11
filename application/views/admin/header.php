@@ -74,7 +74,7 @@
         Manage
       </div>
 
-	   <li class="nav-item">
+	  <!-- <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>admin_managesubscription">
           <i class="fas fa-rupee-sign"></i>
           <span>Subscription Management</span></a>
@@ -95,41 +95,41 @@
       </li>
 
 
-      <!-- Nav Item - Tables -->
+      <!-- Nav Item - Tables
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-money-bill-alt"></i>
           <span>Manage Payment</span></a>
 		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>admin_managevendorpay">Vendor Payment</a>
-            <a class="collapse-item" href="<?php echo base_url();?>admin_managebuyerpay">Buyer Payment</a>
+            <a class="collapse-item" href="<?php //echo base_url();?>admin_managevendorpay">Vendor Payment</a>
+            <a class="collapse-item" href="<?php// echo base_url();?>admin_managebuyerpay">Buyer Payment</a>
           </div>
         </div>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>admin_managep">
+        <a class="nav-link" href="<?php //echo base_url();?>admin_managep">
           <i class="fas fa-shopping-cart"></i>
           <span>Manage Product </span></a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>admin_managepcat">
+        <a class="nav-link" href="<?php// echo base_url();?>admin_managepcat">
           <i class="fas fa-fw fa-list"></i>
           <span>Manage Product category</span></a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>admin_location">
+        <a class="nav-link" href="<?php// echo base_url();?>admin_location">
           <i class="fas fa-globe-asia"></i>
           <span>Manage Location</span></a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>admin_managebuyreq">
+        <a class="nav-link" href="<?php //echo base_url();?>admin_managebuyreq">
           <i class="fas fa fa-users"></i>
           <span>Manage Buying Requirement</span></a>
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+     <!-- <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">

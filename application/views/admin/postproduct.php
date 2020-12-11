@@ -72,13 +72,13 @@
 				
 				 <div class="col-sm-4 mt-4">
 					<label class="checkbox-inline">
-					<input type="checkbox" value="">  Add into Featured</label>
+					<input type="checkbox" value="">Add into Featured</label>
 				</div>
 				
 				<div class="col-sm-4 mt-4">
 					<label for="isfobprice">Is Fob Price?</label>
 					<label class="radio-inline"><input type="radio" name="optradio" checked>  Yes</label>
-					<label class="radio-inline"><input type="radio" name="optradio">  No</label>
+					<label class="radio-inline"><input type="radio" name="optradio">No</label>
 				</div>
 				
 				

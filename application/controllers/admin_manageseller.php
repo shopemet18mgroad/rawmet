@@ -20,11 +20,23 @@ class Admin_manageseller extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
-		$this->load->view('admin/header');
-		$this->load->view('admin/manageseller');
-		$this->load->view('admin/footer');
 		
+		
+		$this->load->model('Admin_model');
+		$voptions = array('voptions'=>true);
+		
+		$query = $this->Admin_model->getdatafromtable('vendor_register',$voptions);
+		
+		$adac['data']= $query;
+		/* echo '<pre>';
+		print_r($adac['activestat']); die;
+			echo '</pre>'; */
+			$this->load->view('admin/header');
+		$this->load->view('admin/manageseller',$adac);
+		$this->load->view('admin/footer');
+	
 	}
 	
+	
 }
+	

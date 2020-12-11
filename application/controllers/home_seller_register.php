@@ -20,11 +20,11 @@ class Home_seller_register extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
+		 if($this->input->post('submit')){
+		   $this->load->helper('url');
 		
 	
-		$this->load->model('Admin_model');
-		$this->load->helper(array('url','form','file','html'));
+		
 		$vname = $this->input->post('vname');
 		$vcompanyname = $this->input->post('vcompanyname');
 		$vcompanytype = $this->input->post('vcompanytype');
@@ -38,6 +38,7 @@ class Home_seller_register extends CI_Controller {
 		$vcity  = $this->input->post('vcity');
 		$vselectstate  = $this->input->post('vselectstate');
 		$vpincode  = $this->input->post('vpincode');
+		$this->load->model('Admin_model');
 		
 		$data = array('vname' => $vname,'vcompanyname' => $vcompanyname, 
 	'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
@@ -47,9 +48,11 @@ class Home_seller_register extends CI_Controller {
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
 	$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('vendor_register',$data);
-		header('location:'.base_url().'home'.$datainserr);
+		header('location:'.base_url().'home/index/'.$datainserr);
 		
 		}
-		$this->load->view('header')
+		
+		$this->load->view('header');
 		$this->load->view('seller_register');
 	}
+}

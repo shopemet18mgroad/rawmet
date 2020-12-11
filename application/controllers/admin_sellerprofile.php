@@ -1,11 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_customerprofile extends CI_Controller {
-	function __construct() {
-        parent::__construct();
-        $this->output->delete_cache();
-    }
+class Admin_sellerprofile extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,23 +20,21 @@ class Customer_customerprofile extends CI_Controller {
 	 */
 	public function index()
 	{
-		
 		$this->load->helper('url');
-		$this->load->view('customer/header');
-		$this->load->view('customer/customerprofile');
-		$this->load->view('customer/footer');
+		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$vname = urldecode($this->uri->segment(3));
+		$vcompanytype = urldecode($this->uri->segment(4));
+		
+		$active = array('vname'=>$vname,'vcompanytype'=>$vcompanytype);
+	
+		$query = $this->Admin_model->getdatafromtable('vendor_register', $active);
+		$data['sqldata']= $query;
+			//print_r($query); die;
+		$this->load->view('admin/header');
+		$this->load->view('admin/sellerprofile',$data);
+		$this->load->view('admin/footer');
 		
 	}
 	
-	
-	
 }
-
-
-
-
-
-
-
-	
-	

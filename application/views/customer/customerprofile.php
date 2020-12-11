@@ -34,24 +34,24 @@
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
 							<tr>
 								
-								<td>First Name</td>
-								<td>John</td>
+								<td>Name</td>
+								<td><?php echo $sqldata[0]->bname; ?></td>
 							</tr> 
 							<tr>
-								<td>Last Name</td>
-								<td>Doe</td>
+								<td>Companyname</td>
+								<td><?php echo $sqldata[0]->bcompanyname;?></td>
 							</tr> 
 							<tr>
-								<td>Email</td>
-								<td>johndoe@gmail.com</td>
+								<td>Companytype</td>
+								<td><?php echo $sqldata[0]-bscompanytype;?></td>
 							</tr> 	
 							<tr>
-								<td>User Type</td>
-								<td>Seller</td>
+								<td>Contact Person</td>
+								<td><?php echo $sqldata[0]->bcontactperson;?></td>
 							</tr> 
 							<tr>
-								<td>Contact No</td>
-								<td>98522215230</td>
+								<td>Contact Number</td>
+								<td><?php echo $sqldata[0]->bcontactnumber;?></td>
 							</tr> 
 
 						
@@ -64,35 +64,43 @@
 					 </thead>
 						<tbody>
 							<tr>
-								<td>Company Name</td>
-								<td>NCT</td>
+								<td>Email</td>
+								<td><?php echo $sqldata[0]->bemail;?></td>
 							</tr> 
 							<tr>
-								<td>Registration Number</td>
-								<td>g44</td>
+								<td>Username</td>
+								<td><?php echo $sqldata[0]->busername;?></td>
 							</tr> 
 							<tr>
-								<td>Phone Number</td>
-								<td>1485245555</td>
+								<td>Password</td>
+								<td><?php echo $sqldata[0]->bpassword;?></td>
 							</tr> 	
 							<tr>
-								<td>Company Email-id</td>
-								<td>abc@abc.com</td>
+								<td>RepeatPassword</td>
+								<td><?php echo $sqldata[0]->brepeatpassword;?></td>
 							</tr> 
 							<tr>
-								<td>Business Type</td>
-								<td>Trading Company</td>
+								<td>Address</td>
+								<td><?php echo $sqldata[0]->baddress;?></td>
 							</tr> 
 							<tr>
-								<td>Business Description</td>
-								<td>Trading Company</td>
+								<td>City</td>
+								<td><?php echo $sqldata[0]->bcity;?></td>
 							</tr>	
 							<tr>
-								<td>Company Location</td>
-								<td>Rajkot, Gujarat, India</td>
+								<td>Selectstate</td>
+								<td><?php echo $sqldata[0]->bselectstate;?></td>
 							</tr>
 							<tr>
-								<td>Verification Status</td>
+								<td>pincode</td>
+								<td><?php echo $sqldata[0]->bpincode;?></td>
+							</tr>
+                              <tr>
+								<td>bussness type</td>
+								<td>Rajkot, </td>
+							</tr>
+                             <tr>
+								<td>bussness description</td>
 								<td>Verified</td>
 							</tr>							
 						</tbody>

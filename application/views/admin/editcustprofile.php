@@ -1,24 +1,4 @@
-
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">User Profile</h1>
-			<a href="<?php echo base_url();?>admin_vendorprofile"><u>Back</u></a>
-          </div>
-
-          <!-- Content Row -->
-
-
-          <!-- Content Row -->
-
-          <div class="row p-2 ml-5">
-
-            <!-- Area Chart -->
-            <div class="col-xl-10 col-lg-7 ml-5">
+ <div class="col-xl-10 col-lg-7 ml-5">
               <div class="card shadow mb-4 ml-5">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -28,32 +8,36 @@
                 <!-- Card Body -->
                 <div class="card-body">
 					 <table class="table table-sm table-borderless">
-					 <thead><th>Personal Info</th>
+					 <thead>
+					 <!--<a  href="<?php //echo base_url()."admin_editcustprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);//?>">edit personal</a></th>-->
 					 
 					
 					 </thead>
 						<tbody style="width:5px;">
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
+				  
+      
 							<tr>
-								
-								<td>First Name</td>
-								<td>John</td>
+							<td>   Name</td>
+								<td><input class="form-control w-50" type="text" id="bname" name="bname" value="<?php echo $sqldata[0]->bname; ?>"></td>
 							</tr> 
 							<tr>
-								<td>Last Name</td>
-								<td>Doe</td>
+								<td>Company Name</td>
+								<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" value="<?php echo$sqldata[0]->bcompanyname; ?>"></td>
 							</tr> 
 							<tr>
-								<td>Email</td>
-								<td>johndoe@gmail.com</td>
+								<td>Company Type</td>
+								<td><input class="form-control w-50" type="text" id="bcompanytype" name="bcompanytype" value="<?php echo$sqldata[0]->bcompanytype; ?>">
 							</tr> 	
 							<tr>
-								<td>User Type</td>
-								<td>Seller</td>
+								<td>Contact Person</td>
+								<td><input class="form-control w-50" type="text" id="vcontactperson" name="bcontactperson" value="<?php echo $sqldata[0]->bcontactperson; ?>"></td>Seller</td>
 							</tr> 
 							<tr>
-								<td>Contact No</td>
-								<td><input type="text" class="form-control col-sm-5" id="exampleContactNumber" placeholder="Contact Number"></td>
+								<td>contact number</td>
+								<td><input class="form-control w-50" type="text" id="vcontactnumber" name="bcontactnumber" value="<?php echo $sqldata[0]->bcontactnumber; ?>"></td>
+								<td>
+			
 							</tr> 
 
 						
@@ -65,39 +49,47 @@
 					
 					 </thead>
 						<tbody>
-							<tr>
-								<td>Company Name</td>
-								<td>NCT</td>
+						<td>Email</td>
+								<td> <input class="form-control w-50" type="text" id="bemail" name="bemail" value="<?php echo $sqldata[0]->bemail;?>"></td>
 							</tr> 
 							<tr>
-								<td>Registration Number</td>
-								<td>g44</td>
+								<td>Username</td>
+								<td> <input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername;?>"></td>
 							</tr> 
 							<tr>
-								<td>Phone Number</td>
-								<td><input type="text" class="form-control col-sm-5" id="examplePhoneNumber" placeholder="Phone Number"></td>
+								<td>Password</td>
+								<td> <input class="form-control w-50" type="text" id="bpassword" name="bpassword" value="<?php echo $sqldata[0]->bpassword;?>"></td>
 							</tr> 	
 							<tr>
-								<td>Company Email-id</td>
-								<td>abc@abc.com</td>
+								<td>RepeatPassword</td>
+								<td> <input class="form-control w-50" type="text" id="brepeatpassword" name="brepeatpassword" value="<?php echo $sqldata[0]->brepeatpassword;?>"></td>
 							</tr> 
 							<tr>
-								<td>Business Type</td>
-								<td>Trading Company</td>
+								<td>Address</td>
+								<td><input class="form-control w-50" type="text" id="baddress" name="baddress" value="<?php echo $sqldata[0]->baddress;?>"></td>
 							</tr> 
 							<tr>
-								<td>Business Description</td>
-								<td>Trading Company</td>
+								<td>City</td>
+								<td><input class="form-control w-50" type="text" id="bcity" name="bcity" value="<?php echo $sqldata[0]->bcity;?>"></td>
 							</tr>	
 							<tr>
-								<td>Company Location</td>
-								<td><input type="text" class="form-control col-sm-5" id="exampleLocation" placeholder="Location"></td>
+								<td>Selectstate</td>
+								<td><input class="form-control w-50" type="text" id="bselectstate" name="bselectstate" value="<?php echo $sqldata[0]->bselectstate;?>"></td>
 							</tr>
 							<tr>
-								<td>Verification Status</td>
+								<td>pincode</td>
+								<td><input class="form-control w-50" type="text" id="bpincode" name="bpincode" value="<?php echo $sqldata[0]->bpincode;?>"></td>
+							</tr>
+                              <tr>
+								
+								<td>Rajkot, </td>
+							</tr>
+                             <tr>
+								<td>bussness description</td>
 								<td>Verified</td>
-							</tr>							
-						</tbody>
+							</tr>
+							
+					   </tbody>
 					</table>							
                 	<a href="#" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" role="button"><b>Submit</b></a>
 

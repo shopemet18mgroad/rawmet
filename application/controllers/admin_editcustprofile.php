@@ -21,9 +21,26 @@ class Admin_editcustprofile extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
+		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$bname = urldecode($this->uri->segment(3));
+	
+		$bcompanyname = urldecode($this->uri->segment(4));
+	
+		
+		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
+		//print_r($active);die;
+	
+		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
+		//print_r($query);die;
+		$data['sqldata']= $query;
+			//print_r($query); die;
 		$this->load->view('admin/header');
-		$this->load->view('admin/editcustprofile');
+		$this->load->view('admin/editcustprofile',$data);
 		$this->load->view('admin/footer');
+		
+	
+		
 		
 	}
 	

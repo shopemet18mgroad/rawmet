@@ -1,4 +1,4 @@
-
+<?php ?>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -29,30 +29,37 @@
                 <div class="card-body">
 					 <table class="table table-sm table-borderless">
 					 <thead><th>Personal Info</th>
-					 <th style="text-align:right"> <a  href="<?php echo base_url()."admin_editcustprofile/index/".urlencode($sqldata[0]->bname).'/'.urlencode($sqldata[0]->bcompanyname);?>"><u>Edit Personal Info</u></a></th>
+					  <th style="text-align:right">
+					   <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);?>">edit personal</a></th>
+					
+
+					 	
+					 
+
+					 
 					 </thead>
 						<tbody>
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td>
 						</tr>
 						<tr>
 						<td>Name</td>
-								<td><?php echo $sqldata[0]->bname; ?></td>
+								<td><?php echo $sqldata[0]->vname; ?></td>
 							</tr> 
 							<tr>
 								<td>Companyname</td>
-								<td><?php echo $sqldata[0]->bcompanyname;?></td>
+								<td><?php echo $sqldata[0]->vcompanyname;?></td>
 							</tr> 
 							<tr>
 								<td>Companytype</td>
-								<td><?php echo $sqldata[0]->bcompanytype;?></td>
+								<td><?php echo $sqldata[0]->vcompanytype;?></td>
 							</tr> 	
 							<tr>
 								<td>Contact Person</td>
-								<td><?php echo $sqldata[0]->bcontactperson;?></td>
+								<td><?php echo $sqldata[0]->vcontactperson;?></td>
 							</tr> 
 							<tr>
 								<td>Contact Number</td>
-								<td><?php echo $sqldata[0]->bcontactnumber;?></td>
+								<td><?php echo $sqldata[0]->vcontactnumber;?></td>
 							</tr> 
 							
 
@@ -63,41 +70,40 @@
 				<table class="table table-sm table-borderless">
 					 <thead><th width="41%">Contact Info</th>
 					 <th style="text-align:right">
-					    <a  href="<?php echo base_url()."admin_editcustprofile/index/".urlencode($sqldata[0]->bname).'/'.urlencode($sqldata[0]->bcompanyname);?>">edit personal</a></th>
-					 
+					 <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);?>"><u>Edit Contact Info</u></a></th>
 					 </thead>
 						<tbody>
 						<tr>
 								<td>Email</td>
-								<td><?php echo $sqldata[0]->bemail;?></td>
+								<td><?php echo $sqldata[0]->vemail;?></td>
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td><?php echo $sqldata[0]->busername;?></td>
+								<td><?php echo $sqldata[0]->vusername;?></td>
 							</tr> 
 							<tr>
 								<td>Password</td>
-								<td><?php echo $sqldata[0]->bpassword;?></td>
+								<td><?php echo $sqldata[0]->vpassword;?></td>
 							</tr> 	
 							<tr>
 								<td>RepeatPassword</td>
-								<td><?php echo $sqldata[0]->brepeatpassword;?></td>
+								<td><?php echo $sqldata[0]->vrepeatpassword;?></td>
 							</tr> 
 							<tr>
 								<td>Address</td>
-								<td><?php echo $sqldata[0]->baddress;?></td>
+								<td><?php echo $sqldata[0]->vaddress;?></td>
 							</tr> 
 							<tr>
 								<td>City</td>
-								<td><?php echo $sqldata[0]->bcity;?></td>
+								<td><?php echo $sqldata[0]->vcity;?></td>
 							</tr>	
 							<tr>
 								<td>Selectstate</td>
-								<td><?php echo $sqldata[0]->bselectstate;?></td>
+								<td><?php echo $sqldata[0]->vselectstate;?></td>
 							</tr>
 							<tr>
 								<td>pincode</td>
-								<td><?php echo $sqldata[0]->bpincode;?></td>
+								<td><?php echo $sqldata[0]->vpincode;?></td>
 							</tr>
                               <tr>
 								<td>bussness type</td>
@@ -126,6 +132,3 @@
 
       </div>
       <!-- End of Main Content -->
-
-     
-
