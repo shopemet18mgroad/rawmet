@@ -91,6 +91,53 @@
 			
 		}
 </script>
+<script>
+ function validatearry2(){
+	   var company = document.getElementById('bcompanyname').value;
+	   var user = document.getElementById('busername').value;
+	   if(company == '' || user == ''){
+		   swal("Alert!", "Company Name or UserName Cannot Be Left Blank", "error");
+					return false;
+			}
+			
+	 
+		var signeddoc = document.getElementsByName('bsigneddocument[]');
+
+		
+		for(var ab = 0; ab<signeddoc.length; ab++){
+			if(signeddoc[ab].value == ""){
+				swal("Alert!", "Please Select File to Upload!", "error")
+				//alert("Please Select Files To Upload");
+				return false;
+			}
+		}
+ }
+ 
+ </script>
+  <script>
+ function validatearry(){
+	   var company = document.getElementById('vcompanyname').value;
+	   var user = document.getElementById('vusername').value;
+	   if(company == '' || user == ''){
+		   swal("Alert!", "Company Name or UserName Cannot Be Left Blank", "error");
+					return false;
+			}
+			
+	 
+		var signeddoc = document.getElementsByName('bsigneddocument[]');
+
+		
+		for(var ab = 0; ab<signeddoc.length; ab++){
+			if(signeddoc[ab].value == ""){
+				swal("Alert!", "Please Select File to Upload!", "error")
+				//alert("Please Select Files To Upload");
+				return false;
+			}
+		}
+ }
+ 
+ </script>
+
 
  
 

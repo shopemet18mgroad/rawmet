@@ -18,7 +18,8 @@
 				  
       
 							<tr>
-							<td>   Name</td>
+							<form action = "<?php echo base_url();?>admin_buyer_basicinfo_update" method="POST" enctype="multipart/form-data">
+							<td>Name</td>
 								<td><input class="form-control w-50" type="text" id="bname" name="bname" value="<?php echo $sqldata[0]->bname; ?>"></td>
 							</tr> 
 							<tr>
@@ -90,9 +91,10 @@
 							</tr>
 							
 					   </tbody>
-					</table>							
-                	<a href="#" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" role="button"><b>Submit</b></a>
-
+					</table>
+					<button type="submit" class="btn btn-info offset-sm-4 mt-2">Update</button>
+                	
+</form>
               </div>
             </div>
 

@@ -40,7 +40,7 @@ public function index()
 			
 			$user = $this->input->post('user');
 			$pass = $this->input->post('pass');
-			$pass = base64_encode($pass);
+			$pass = ($pass);
 			$check_db = array($colname => $busername, $colname2 => $bpassword,'boptons' => 
 			False);
 			$this->load->model('Admin_model');
