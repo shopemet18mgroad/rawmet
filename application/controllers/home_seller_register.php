@@ -42,7 +42,7 @@ class Home_seller_register extends CI_Controller {
 		
 		$data = array('vname' => $vname,'vcompanyname' => $vcompanyname, 
 	'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
-	'vcontactperson'=>$vcontactperson ,
+	'vcontactnumber'=>$vcontactnumber ,
 	'vemail'=> $vemail ,'vusername' => $vusername,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);

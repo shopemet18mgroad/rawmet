@@ -49,7 +49,7 @@ class Vendor_basicpassword_update extends CI_Controller {
 
 		$status = $this->Admin_model->update_custom('vendor_register',$data4,$hidden,$hidden);
 		
-		header('location: '.base_url().'customer_dashboard/index/'.$datainserr);
+		header('location: '.base_url().'vendor_editvendorprofile/index/'.$datainserr);
 		}
 	}
 }

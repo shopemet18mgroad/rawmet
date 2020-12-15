@@ -22,6 +22,7 @@ class Home_buyer_register extends CI_Controller {
         // If captcha form is submitted
         if($this->input->post('submit')){
 			$this->load->helper('url');
+			
 			$bname = $this->input->post('bname');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$bcompanytype = $this->input->post('bcompanytype');
@@ -45,7 +46,7 @@ class Home_buyer_register extends CI_Controller {
 		
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('buyer_register',$data2);
-		header('location: '.base_url().'home/'.$datainserr);
+		header('location: '.base_url().'home/index/'.$datainserr);
 		  
         }
         

@@ -99,7 +99,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="<?php echo base_url();?>#" data-toggle="collapse" data-target="#manage" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="<?php echo base_url();?>admin_manageseller" data-toggle="collapse" data-target="#manage" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-user"></i>
           <span>Manage user</span>
         </a>

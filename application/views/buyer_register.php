@@ -74,7 +74,7 @@
                   </div>
                 </div>
                 <center>
-				<a button ="submit" name="submit" href="<?php echo base_url();?>"  value="Register Account" class="btn btn-primary col-3 mt-2 w-100">Submit</a>
+				<input type="submit" name="submit" id="btn1" value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
 				</center>
                 <!-- <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">

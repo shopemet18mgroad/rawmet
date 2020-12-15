@@ -19,40 +19,38 @@ class Vendor_postproduct extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{ if($this->input->post('submit')){
-			$this->load->helper('url');
-			echo $productname = $this->input->post('productname');
-			$category = $this->input->post('category');
-			$materialname = $this->input->post('materialname');
-			$description = $this->input->post('description');
-			$price = $this->input->post('price');
+	{ 
+	
+			$productname = $this->input->post('productname');
+			   $category = $this->input->post('category');
+			 $materialname = $this->input->post('materialname');
+		 $description = $this->input->post('description');
+			 $price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
 			$aifeatured = $this->input->post('aifeatured');
 			$fobprice = $this->input->post('fobprice');
 			$uploadproductimage = $this->input->post('uploadproductimage');
-			
+				
 			
             
               $this->load->model('Admin_model');
 			  $data2 = array('productname' => $productname,'category'=> $category,'materialname' => $materialname,'description' => $description,'price'=>$price,'quantity'=> $quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,  'uploadproductimage'=>$uploadproductimage);
 		//$this->load->view('xya', $data);
-		print_r($data2);die;
+		//print_r($data2);die;
+		      
+		
 		
 		
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('sellerpostproduct',$data2);
-		header('location: '.base_url().'home/'.$datainserr);
-		  
-        }
-        
-       
+		//print_r($status);die;
+		//header('location: '.base_url().'Vendor_postproduct/'.$datainserr);
 		$this->load->view('vendor/header');
 		$this->load->view('vendor/postproduct');
 		$this->load->view('vendor/footer');
-		//$this->load->view('postproduct');
-	  
-    }
-	
+		  
+        }
 }
+       
 		
 		

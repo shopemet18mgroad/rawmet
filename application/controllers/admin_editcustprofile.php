@@ -31,13 +31,13 @@ class Admin_editcustprofile extends CI_Controller {
 		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
 		//print_r($active);die;
 	
-		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
+		$query = $this->Admin_model->getdatafromtable('buyer_register',$active);
 		//print_r($query);die;
 		$data['sqldata']= $query;
 			//print_r($query); die;
 		$this->load->view('admin/header');
 		$this->load->view('admin/editcustprofile',$data);
-		$this->load->view('admin/footer');
+		//$this->load->view('admin/footer');
 		
 	
 		
