@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -20,11 +21,61 @@ class Vendor_editvendorprofile extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
-		$this->load->view('vendor/header');
-		$this->load->view('vendor/editvendorprofile');
-		$this->load->view('vendor/footer');
+		$this->load->model('Admin_model');
+		$voptions = array('voptions'=>true);
 		
+		$query = $this->Admin_model->getdatafromtable('vendor_register',$voptions);
+		
+		$adac['sqldata']= $query;
+		/* echo '<pre>';
+		print_r($adac['activestat']); die;
+			echo '</pre>'; */
+		
+		
+		$this->load->view('vendor/header');
+		$this->load->view('vendor/editvendorprofile',$adac);
+		$this->load->view('vendor/footer');
+		$this->load->helper('url');
+/* 		$this->load->helper('url');
+		/* $this->load->helper('url');
+		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+		}else{
+		$this->load->model('Admin_model');
+		$bcompany = $this->uri->segment(3);	
+		
+			$sess = array('sessi'=>$this->session->userdata('username'));
+			$active = array('busername'=>$sess['sessi']); */
+			/*$this->load->model('Admin_model');
+			$bcompanyname = $this->uri->segment(3);	
+			$query = $this->Admin_model->getdatafromtable('buyer_register');
+			$data['sqldata']= $query;
+			$data['bcompanyname'] = $bcompanyname;
+			$this->load->view('customer/header',);
+			$this->load->view('customer/customerprofile',$data);
+			$this->load->view('customer/footer'); */
+			
+		}
+		public function index_error(){
+			$this->load->model('Admin_model');
+		$voptions = array('voptions'=>true);
+		
+		$query = $this->Admin_model->getdatafromtable('vendor_register',$voptions);
+		
+		$adac['sqldata']= $query;
+			$alertmsg = $this->uri->segment(3);
+			$alertmsg = urldecode($alertmsg);
+			echo '<script language="javascript">';
+			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
+			echo '</script>';
+			$this->load->view('vendor/header');
+		$this->load->view('vendor/editvendorprofile',$adac);
+		$this->load->view('vendor/footer');
+			
 	}
 	
-}
+		
+	}

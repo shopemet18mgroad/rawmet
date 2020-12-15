@@ -27,13 +27,15 @@
                 <!-- Card Body -->
                 <div class="card-body">
 					
-			<form class="user">
+			
+			<form action="<?php echo base_url();?>vendor_postproduct" method="POST">
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Product Name:</label>
-                    <input type="text" class="form-control" id="exampleFirstName" placeholder="Product Name">
-                  </div>
+					<input type="text" class="form-control" id="productname" name="productname"  placeholder="productname">
+                    
+                </div>
                <div class="col-sm-4">  
 			   	<label for="mtype">Category:</label>
 					<select class="form-control" id="type">
@@ -54,28 +56,28 @@
 				</div>
 				  
 				  <div class="col-sm-12">
-					<label for="desc">Description:</label>
-					<textarea class="form-control" rows="5" id="desc"></textarea>
+					<label for="description">Description:</label>
+					<textarea class="form-control" rows="5" name="description" id="description"></textarea>
 					</div>
 				
 				   <div class="col-sm-4">
 				   <label for="price">Price:</label>
-                    <input type="text" class="form-control" id="exampleContactNumber" placeholder="0">
+                    <input type="text" class="form-control" id="price" name="price" placeholder="0">
                   </div>
                 
 				
                 <div class="col-sm-4">
-					<label for="Qnty">Quantity:</label>
-                  <input type="email" class="form-control" id="exampleInputEmail" placeholder="">
+					<label for="quantity">Quantity:</label>
+                  <input type="email" class="form-control" id="quantity" name="quantity" placeholder="">
                 </div>
 				
 				 <div class="col-sm-4 mt-4">
 					<label class="checkbox-inline">
-					<input type="checkbox" value="">  Add into Featured</label>
+					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured" >  Add into Featured</label>
 				</div>
 				
 				<div class="col-sm-4 mt-4">
-					<label for="isfobprice">Is Fob Price?</label>
+					<label for="fobprice">Is Fob Price?</label>
 					<label class="radio-inline"><input type="radio" name="optradio" checked>  Yes</label>
 					<label class="radio-inline"><input type="radio" name="optradio">  No</label>
 				</div>
@@ -83,14 +85,14 @@
 				
 				<div class="col-sm-5 mt-4">
 					<p>Upload Product Image:</p>
-					<input type="file" id="myFile" name="filename2">
+					<input type="file" id="uploadproductimage" name="uploadproductimage">
 				</div>
 				
 				<img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/iron.jpg" alt="Chania" width="150" height="20">
 				
 					<div class="col-md-12 text-center mt-4">
 						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>
-						<a href="<?php echo base_url();?>vendor_uploadedproduct" class="btn btn-primary btn-sm" role="button">Submit</a>
+						<button class="btn btn-primary btn-sm" role="button">Submit</a>
 					</div>	
 					
 				</div>

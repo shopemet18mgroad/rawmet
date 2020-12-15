@@ -74,15 +74,15 @@
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td> <input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername;?>"></td>
+								<td> <input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>"></td>
 							</tr> 
 							<tr>
 								<td>Password</td>
-								<td> <input class="form-control w-50" type="text" id="vpassword" name="vpassword" value="<?php echo $sqldata[0]->vpassword;?>"></td>
+								<td>******</td>
 							</tr> 	
 							<tr>
 								<td>RepeatPassword</td>
-								<td> <input class="form-control w-50" type="text" id="vrepeatpassword" name="vrepeatpassword" value="<?php echo $sqldata[0]->vrepeatpassword;?>"></td>
+								<td>*******</td>
 							</tr> 
 							<tr>
 								<td>Address</td>

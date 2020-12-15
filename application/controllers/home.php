@@ -21,6 +21,13 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
+		if($this->uri->segment(3)){
+			$errormsg = urldecode($this->uri->segment(3));
+			echo '<script language="javascript">';
+			echo 'alert("'.$errormsg.'")';
+			echo '</script>';
+		}
+		
 		$this->load->view('header');
 		$this->load->view('index');
 		$this->load->view('footer');

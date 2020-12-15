@@ -36,25 +36,44 @@
 						<tbody>
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
 						<tr>
-							<td class="btxt">Buyer Name:</td>
+							<td class="btxt">Seller  Name:</td>
 							<td><input class="form-control w-50" type="text" id="bname" name="bname" required></td>
 	 							 </tr>
 						<tr>												
 							<td class="btxt">Company Name:</td>
-							<td><input class="form-control w-50" type="text" id="bcompany" name="bcompany" required></td>
+							<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" required></td>
 							</tr>
 						<tr>
 							<td class="btxt">Company Type:</td>
-							<td><input class="form-control w-50" type="text" id="bcomptype" name="bcomptype" required></td>
+							<td><input class="form-control w-50" type="text" id="bcompanytype" name="bcompanytype" required></td>
 						</tr>  
 						<tr>
 							<td class="btxt">Contact Person:</td>
 							<td><input class="form-control w-50" type="text" id="bcontactperson" name="bcontactperson" required></td>
 						</tr>
 						<tr>
+							<td class="btxt">Contact number:</td>
+							<td><input class="form-control w-50" type="text" id="bcontactnumber" name="bcontactnumber" required></td>
+						</tr>
+						<tr>
+							<td class="btxt">Email:</td>
+							<td><input class="form-control w-50" type="text" id="bemail" name="bemail" required></td>
+						</tr>
+						<tr>
 							<td class="btxt">UserName:</td>
 							<td><input class="form-control w-50" type="text" id="busername" name="busername" required></td>
 						</tr>
+						<tr>
+							<td class="btxt">Password</td>
+							<td><input class="form-control w-50" type="password" id="bpassword" name="bpassword" required></td>
+						</tr>
+						<tr>
+							<td class="btxt">RepeatPassword</td>
+							<td><input class="form-control w-50" type="password" id="brepeatpassword" name="brepeatpassword" required></td>
+						</tr>
+						 
+						
+						
 						 
 						
 					</tbody>
@@ -63,12 +82,8 @@
 				<table class="table table-sm table-borderless">
 					 <thead><th width="45%">Contact Info</th>
 					 </thead>
-						<tbody>
-						<tr>
-							<td class="btxt">Email:</td>
-							<td><input class="form-control w-50" type="email" id="bemail" name="bemail" required></td>
-						</tr>
-						<tr>
+					 <tbody>
+					 <tr>
 							<td class="btxt">Phone:</td>
 							<td><input class="form-control w-50" type="text" id="bphone" name="bphone" required></td>
 						</tr>
@@ -76,15 +91,21 @@
 							<td class="btxt">Postal Address:</td>
 							<td><textarea class="form-control w-50" type="text" id="baddress" 	name="baddress" required></textarea></td>
 						</tr> 
+						<tr>
+							<td class="btxt">city</td>
+							<td><input class="form-control w-50" type="text" id="bcity" name="bcity" required></td>
+						</tr>
+						<td class="btxt">State /Union Ter.:</td>
+							<td><input class="form-control w-50" type="text" id="bselectstate" name="bselectstate" required></td>
+						</tr> 
 						 
 						<tr>
 							<td class="btxt">Pincode:</td>
-							<td><input class="form-control w-50" type="text" id="bpin" name="bpin" required></td>
+							<td><input class="form-control w-50" type="text" id="bpincode" name="bpincode" required></td>
 						</tr> 
-						<tr>
-							<td class="btxt">State /Union Ter.:</td>
-							<td><input class="form-control w-50" type="text" id="bstate" name="bstate" required></td>
-						</tr> 
+						 
+						
+						
 						
 						</tbody>
 					</table>	

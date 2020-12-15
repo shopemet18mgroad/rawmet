@@ -38,15 +38,18 @@ class Admin_buyer_basicinfo_update extends CI_Controller {
 			$bpincode = $this->input->post('bpincode');
 	
 			$this->load->model('Admin_model');
-			  $data2= array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+			  $data2= array('bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
 			  
-			  $datainserr = "Data Inserted Successfully";
+			  
+			  $datainserr = "Data updated Successfully";
 			  $updatech = array('bname' => $bname,'bcompanyname' => $bcompanyname);
-			  
+			 
 			  $status = $this->Admin_model->update_custom('buyer_register',$data2,$updatech,$updatech);
+			  	 
+			  
 		//$status = $this->Admin_model->insert('buyer_register',$data);
-		//header('location: '.base_url().'admin_editcustprofile/index/'.$datainserr)
-		//header('location: '.base_url().'home/'.$datainserr);
+		//header('location: '.base_url().'admin_editcustprofile/index/'.$datainserr);
+		header('location: '.base_url().'home/'.$datainserr);
 	
 }
 }

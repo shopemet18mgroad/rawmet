@@ -1,7 +1,4 @@
 <footer>
-	<div class="row">
-        <div class="col-md-12 bg-secondary grey" style="overflow:hidden;color:black;text-align:center;">Bangalore - Karnataka - INDIA</div>
-   </div>
 	
 
 	</footer>

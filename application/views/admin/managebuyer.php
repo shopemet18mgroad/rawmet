@@ -60,7 +60,7 @@
 		<td><?php echo $row->bstatus;?></td>
 		<td><?php echo $row->boptions;?></td>
         <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-				<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanytype);?>">View</a></td>
+				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanytype);?>"> <i class="fa fa-edit">Eidt</a></td>
       </tr> 
 <?php }?>	  
       

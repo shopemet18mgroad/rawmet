@@ -20,6 +20,12 @@ class Admin_sellerreg extends CI_Controller {
 	 */
 	public function index()
 	{
+		if($this->uri->segment(3)){
+			$errormsg = urldecode($this->uri->segment(3));
+			echo '<script language="javascript">';
+			echo 'alert("'.$errormsg.'")';
+			echo '</script>';
+		}
 		/* $this->load->helper('url');
 	if($this->uri->segment(3)){
 			$errormsg = urldecode($this->uri->segment(3));

@@ -21,20 +21,21 @@ class Admin_seller_basicinfo_add extends CI_Controller {
 	public function index()
 	{
 		
-            $vname = $this->input->post('vname');
-			$vcompanyname = $this->input->post('vcompanyname');
-			$vcompanytype = $this->input->post('vcompanytype');
-			$vcontactperson = $this->input->post('vcontactperson');
-			$vcontactnumber = $this->input->post('vcontactnumber');
-			$vemail = $this->input->post('vemail');
-			$vusername = $this->input->post('vusername');
-			$vpassword = $this->input->post('vpassword');
-			$vrepeatpassword = $this->input->post('vrepeatpassword');
+           echo $vname = $this->input->post('vname');
+			echo $vcompanyname = $this->input->post('vcompanyname');
+			 echo $vcompanytype = $this->input->post('vcompanytype');
+			echo $vcontactperson = $this->input->post('vcontactperson');
+			echo $vcontactnumber = $this->input->post('vcontactnumber');
+			echo $vemail = $this->input->post('vemail');
+			echo $vusername = $this->input->post('vusername');
+			echo $vpassword = $this->input->post('vpassword');
+			echo $vrepeatpassword = $this->input->post('vrepeatpassword');
 			//echo $spcb = $this->input->post('spcb');
-			$vaddress = $this->input->post('vaddress');
-			$vcity = $this->input->post('vcity');
-			$vselectstate = $this->input->post('vselectstate');
-			$vpincode = $this->input->post('vpincode');
+			echo $vaddress = $this->input->post('vaddress');
+			echo $vcity = $this->input->post('vcity');
+			echo $vselectstate = $this->input->post('vselectstate');
+			echo $vpincode = $this->input->post('vpincode');
+			die;
 			
 		
 		/* $pic_array1 = self::upload_files('buploadimagepic');

@@ -37,17 +37,19 @@ class Admin_seller_basicinfo_update extends CI_Controller {
 		$vpincode  = $this->input->post('vpincode');
 	
 			$this->load->model('Admin_model');
-			 $data2 = array('vname' => $vname,'vcompanyname' => $vcompanyname, 
-	'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
+			 $data2 = array('vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
 	'vcontactperson'=>$vcontactperson ,
 	'vemail'=> $vemail ,'vusername' => $vusername,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
+
 			  
 			  $datainserr = "Data Inserted Successfully";
 			  $updatech = array('vname' => $vname,'vcompanyname' => $vcompanyname);
+			 
 			  $status = $this->Admin_model->update_custom('vendor_register',$data2,$updatech,$updatech);
-		//$status = $this->Admin_model->insert('vendor_register',$data);
-		//header('location: '.base_url().'admin_editsellerprofile/index/'.$datainserr)
+		//$status = $this->Admin_model->insert('vendor_register',$data2);
+		//header('location: '.base_url().'admin_editsellerprofile/index/'.$datainserr);
+		header('location: '.base_url().'home/'.$datainserr);
 	}
 }

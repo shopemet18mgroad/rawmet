@@ -21,7 +21,7 @@
 				<div class="col-sm-6 mb-3 mb-sm-0">
 				<form action="<?php echo base_url();?>home_buyer_register" method="POST">
 				
-                    <input type="text" class="form-control form-control-user" id="bname" name="bname" id="bname" placeholder="Name">
+                    <input type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="Name">
                   </div>
                   
 				   <div class="col-sm-6">

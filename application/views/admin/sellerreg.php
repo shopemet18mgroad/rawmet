@@ -41,19 +41,35 @@
 	 							 </tr>
 						<tr>												
 							<td class="btxt">Company Name:</td>
-							<td><input class="form-control w-50" type="text" id="vcompany" name="vcompany" required></td>
+							<td><input class="form-control w-50" type="text" id="vcompanyname" name="vcompanyname" required></td>
 							</tr>
 						<tr>
 							<td class="btxt">Company Type:</td>
-							<td><input class="form-control w-50" type="text" id="vcomptype" name="vcomptype" required></td>
+							<td><input class="form-control w-50" type="text" id="vcompanytype" name="vcompanytype" required></td>
 						</tr>  
 						<tr>
 							<td class="btxt">Contact Person:</td>
 							<td><input class="form-control w-50" type="text" id="vcontactperson" name="vcontactperson" required></td>
 						</tr>
 						<tr>
+							<td class="btxt">Contact number:</td>
+							<td><input class="form-control w-50" type="text" id="vcontactnumber" name="vcontactnumber" required></td>
+						</tr>
+						<tr>
+							<td class="btxt">Email:</td>
+							<td><input class="form-control w-50" type="text" id="vemail" name="vemail" required></td>
+						</tr>
+						<tr>
 							<td class="btxt">UserName:</td>
 							<td><input class="form-control w-50" type="text" id="vusername" name="vusername" required></td>
+						</tr>
+						<tr>
+							<td class="btxt">Password</td>
+							<td><input class="form-control w-50" type="password" id="vpassword" name="vpassword" required></td>
+						</tr>
+						<tr>
+							<td class="btxt">RepeatPassword</td>
+							<td><input class="form-control w-50" type="password" id="vrepeatpassword" name="vrepeatpassword" required></td>
 						</tr>
 						 
 						
@@ -64,10 +80,7 @@
 					 <thead><th width="45%">Contact Info</th>
 					 </thead>
 						<tbody>
-						<tr>
-							<td class="btxt">Email:</td>
-							<td><input class="form-control w-50" type="vemail" id="vemail" name="bemail" required></td>
-						</tr>
+						
 						<tr>
 							<td class="btxt">Phone:</td>
 							<td><input class="form-control w-50" type="text" id="vphone" name="vphone" required></td>
@@ -76,15 +89,19 @@
 							<td class="btxt">Postal Address:</td>
 							<td><textarea class="form-control w-50" type="text" id="vaddress" 	name="vaddress" required></textarea></td>
 						</tr> 
+						<tr>
+							<td class="btxt">city</td>
+							<td><input class="form-control w-50" type="text" id="vcity" name="vcity" required></td>
+						</tr>
+						<td class="btxt">State /Union Ter.:</td>
+							<td><input class="form-control w-50" type="text" id="vselectstate" name="vselectstate" required></td>
+						</tr> 
 						 
 						<tr>
 							<td class="btxt">Pincode:</td>
 							<td><input class="form-control w-50" type="text" id="vpincode" name="vpincode" required></td>
 						</tr> 
-						<tr>
-							<td class="btxt">State /Union Ter.:</td>
-							<td><input class="form-control w-50" type="text" id="vselectstate" name="vselectstate" required></td>
-						</tr> 
+						 
 						
 						</tbody>
 					</table>	
