@@ -21,6 +21,7 @@ class Admin_seller_basicinfo_add extends CI_Controller {
 	public function index()
 	{
 		
+
           $vname = $this->input->post('vname');
 			$vcompanyname = $this->input->post('vcompanyname');
 			$vcompanytype = $this->input->post('vcompanytype');
@@ -36,9 +37,10 @@ class Admin_seller_basicinfo_add extends CI_Controller {
 			$vselectstate = $this->input->post('vselectstate');
 			$vpincode = $this->input->post('vpincode');
 			
+
 		
 	 $this->load->model('Admin_model');
-			  $data2 = array('vname' => $vname, 'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype, 'vcontactperson' => $vcontactperson, 'vcontactnumber' => $vcontactnumber, 'vemail' => $vemail, 'vusername'=> $vusername, 'vpassword' => $vpassword, 'vrepeatpassword' => $vrepeatpassword, 'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
+			  $data2 = array('vname' => $vname, 'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype, 'vcontactperson' => $vcontactperson, 'vcontactnumber' => $vcontactnumber, 'vemail' => $vemail,'vusername'=> $vusername, 'vpassword' => $vpassword, 'vrepeatpassword' => $vrepeatpassword, 'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
 			 
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('vendor_register', $data2);

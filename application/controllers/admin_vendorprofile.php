@@ -27,6 +27,7 @@ class Admin_vendorprofile extends CI_Controller {
 		$bcompanytype = urldecode($this->uri->segment(4));
 		
 		$active = array('bname'=>$bname,'bcompanytype'=>$bcompanytype);
+		
 	
 		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
 		$data['sqldata']= $query;

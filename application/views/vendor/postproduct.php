@@ -37,8 +37,8 @@
                     
                 </div>
                <div class="col-sm-4">  
-			   	<label for="mtype">Category:</label>
-					<select class="form-control" id="type">
+			   	<label for="category">Category:</label>
+					<select class="form-control" id="category" name="category">
 						<option>Metal</option>
 						<option>Non-Metal</option>
 						<option>Raw Material</option>
@@ -46,8 +46,8 @@
 				    </select>
 				</div>
 				<div class="col-sm-4">
-				<label for="mname">Material Name :</label>				
-					<select class="form-control" id="material">
+				<label for="materialname">Material Name :</label>				
+					<select class="form-control" id="materialname" name="materialname">
 						<option>Aluminium</option>
 						<option>Silicon</option>
 						<option>Iron</option>
@@ -68,18 +68,18 @@
 				
                 <div class="col-sm-4">
 					<label for="quantity">Quantity:</label>
-                  <input type="email" class="form-control" id="quantity" name="quantity" placeholder="">
+                  <input type="text" class="form-control" id="quantity" name="quantity" placeholder="">
                 </div>
 				
 				 <div class="col-sm-4 mt-4">
 					<label class="checkbox-inline">
-					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured" >  Add into Featured</label>
+					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured">Add into Featured</label>
 				</div>
 				
 				<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>
-					<label class="radio-inline"><input type="radio" name="optradio" checked>  Yes</label>
-					<label class="radio-inline"><input type="radio" name="optradio">  No</label>
+					<label class="radio-inline"><input type="radio" name="fobprice" id="fobprice" checked> Yes</label>
+					<label class="radio-inline"><input type="radio" name="fobprice"  id="fobprice">No</label>
 				</div>
 				
 				
@@ -92,7 +92,8 @@
 				
 					<div class="col-md-12 text-center mt-4">
 						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>
-						<button class="btn btn-primary btn-sm" role="button">Submit</a>
+						
+						<button  href="<?php echo base_url();?>"class="btn btn-primary btn-sm" role="button">Submit</a>
 					</div>	
 					
 				</div>
