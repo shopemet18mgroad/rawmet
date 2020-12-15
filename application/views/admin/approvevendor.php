@@ -24,125 +24,35 @@
       <tr>
         <th>Vendor Name</th>
         <th>Company Type</th>
+		<th>Username</th>
         <th>Contact Person</th>
 		<th>Location</th>
+		
 		<th>City</th>
-		<th>Status</th>
 		<th>Option</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-		<td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>      
-      <tr>
-		<td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><button class="btn btn-primary btn-sm">Approve</button>
-			<button class="btn btn-danger btn-sm">Reject</button>
-			
-      </tr>
+       
+<?php foreach($data as $row){?>
+				<tr>
+                    <td><?php echo $row->vname; ?></td>
+					<td><?php echo $row->vcompanytype; ?></td>
+					<td><?php echo $row->vusername; ?></td>
+					<td><?php echo $row->vcontactperson; ?></td>
+					
+					<td><?php echo $row->vaddress;?></td>
+					<td><?php echo $row->vcity;?></td>
+					<td><button type="submit" name="submit" id="<?php echo $row->vusername;?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Approve</button>	
+				
+
+		
+           <button class="btn btn-danger btn-sm">Reject</button></td>	
+				</tr>
+				<?php }?>
+	
+				</tbody>	  
+    
     </tbody>
   </table>
 			</div>

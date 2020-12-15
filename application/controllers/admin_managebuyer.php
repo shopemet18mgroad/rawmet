@@ -19,12 +19,24 @@ class Admin_managebuyer extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
+	
 	{
-		$this->load->helper('url');
-		$this->load->view('admin/header');
-		$this->load->view('admin/managebuyer');
-		$this->load->view('admin/footer');
+		$this->load->model('Admin_model');
+		$boptions = array('boptions'=>true);
 		
+		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
+		
+		$adac['data']= $query;
+		/* echo '<pre>';
+		print_r($adac['activestat']); die;
+			echo '</pre>'; */
+		
+		
+		$this->load->view('admin/header');
+		$this->load->view('admin/managebuyer',$adac);
+		$this->load->view('admin/footer');
+		$this->load->helper('url');
+	
 	}
 	
 }

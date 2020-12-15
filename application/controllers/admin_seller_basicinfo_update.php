@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home_seller_register extends CI_Controller {
+class Admin_seller_basicinfo_update extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,13 +18,10 @@ class Home_seller_register extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	 
+	 	public function index()
 	{
-		 if($this->input->post('submit')){
-		   $this->load->helper('url');
-		
-	
-		
+		//$this->load->library('fileupload');
 		$vname = $this->input->post('vname');
 		$vcompanyname = $this->input->post('vcompanyname');
 		$vcompanytype = $this->input->post('vcompanytype');
@@ -38,21 +35,21 @@ class Home_seller_register extends CI_Controller {
 		$vcity  = $this->input->post('vcity');
 		$vselectstate  = $this->input->post('vselectstate');
 		$vpincode  = $this->input->post('vpincode');
-		$this->load->model('Admin_model');
-		
-		$data = array('vname' => $vname,'vcompanyname' => $vcompanyname, 
-	'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
+	
+			$this->load->model('Admin_model');
+			 $data2 = array('vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
 	'vcontactperson'=>$vcontactperson ,
 	'vemail'=> $vemail ,'vusername' => $vusername,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
-	$datainserr = "Data Inserted Successfully";
-		$status = $this->Admin_model->insert('vendor_register',$data);
-		header('location:'.base_url().'home/index/'.$datainserr);
-		
-		}
-		
-		$this->load->view('header');
-		$this->load->view('seller_register');
+
+			  
+			  $datainserr = "Data Inserted Successfully";
+			  $updatech = array('vname' => $vname,'vcompanyname' => $vcompanyname);
+			 
+			  $status = $this->Admin_model->update_custom('vendor_register',$data2,$updatech,$updatech);
+		//$status = $this->Admin_model->insert('vendor_register',$data2);
+		//header('location: '.base_url().'admin_editsellerprofile/index/'.$datainserr);
+		header('location: '.base_url().'home/'.$datainserr);
 	}
 }

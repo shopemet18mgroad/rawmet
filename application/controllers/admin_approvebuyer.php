@@ -20,12 +20,44 @@ class Admin_approvebuyer extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
-		$this->load->view('admin/header');
-		$this->load->view('admin/approvebuyer');
-		$this->load->view('admin/footer');
+		$this->load->model('Admin_model');
+		$boptions = array('boptions'=>false);
 		
+		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
+		
+		$adac['data']= $query;
+		/* echo '<pre>';
+		print_r($adac['activestat']); die;
+			echo '</pre>'; */
+		
+		
+		$this->load->view('admin/header');
+		$this->load->view('admin/approvebuyer',$adac);
+		$this->load->view('admin/footer');
+	
 	}
 	
+	public function approve_buyer(){
+		
+		$busername= $this->uri->segment(3);
+		
+		$busername = urldecode($busername);
+		//print_r($bcompanytype);die;
+		$this->load->model('Admin_model');
+		$app= array('boptions'=>true);
+		$adaction2 = array('busername'=>$busername);
+		$query = $this->Admin_model->update_custom('buyer_register', $app, $adaction2, $adaction2);
+		if($busername){
+			echo "HI";
+		}else{
+			echo "BYE";
+		}
+	
+	}
 }
+		
+		
+	
+	
+
 

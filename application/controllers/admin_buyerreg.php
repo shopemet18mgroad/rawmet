@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Admin_buyerreg extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,18 +20,25 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
-		if($this->uri->segment(3)){
+		/* $this->load->helper('url');
+	if($this->uri->segment(3)){
 			$errormsg = urldecode($this->uri->segment(3));
 			echo '<script language="javascript">';
 			echo 'alert("'.$errormsg.'")';
 			echo '</script>';
 		}
+		$this->load->library('session');
+		//echo $this->session->userdata('auth');
+		if(!$this->session->has_userdata('username') || $this->session->userdata('auth') != "ADMIN"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+		}else{ */
+		//$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('admin/header');
+		$this->load->view('admin/buyerreg');
+		$this->load->view('admin/footer');
 		
-		$this->load->view('header');
-		$this->load->view('index');
-		$this->load->view('footer');
-		
-	}
+	//}
 	
-}
+}}

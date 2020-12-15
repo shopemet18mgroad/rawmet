@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_vendorprofile extends CI_Controller {
+class Customer_editpassword extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,18 +23,21 @@ class Admin_vendorprofile extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		$bname = urldecode($this->uri->segment(3));
-		$bcompanytype = urldecode($this->uri->segment(4));
+		$bcompany = $this->uri->segment(3);	
 		
-		$active = array('bname'=>$bname,'bcompanytype'=>$bcompanytype);
-	
-		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
-		$data['sqldata']= $query;
-			//print_r($query); die;
-		$this->load->view('admin/header');
-		$this->load->view('admin/vendorprofile',$data);
-		$this->load->view('admin/footer');
+		if(!$this->session->has_userdata('username')){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+		}else{
+			$sess = array('sessi'=>$this->session->userdata('username'));
+			$active = array('busername'=>$sess['sessi']);
+			$data['sqldata']= $this->Admin_model->getdatafromtable('buyer_register', $active);
+			
+			$this->load->view('customer/header',$sess);
+		$this->load->view('customer/editpassword',$data);
+		$this->load->view('customer/footer');
 		
 	}
-	
+	}
 }

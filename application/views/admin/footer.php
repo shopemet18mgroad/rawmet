@@ -59,6 +59,87 @@
   <script src="<?php echo base_url()."web_files/";?>vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="<?php echo base_url()."web_files/";?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
  <script src="<?php echo base_url()."web_files/";?>js/demo/datatables-demo.js"></script>
+  <script>
+		function admin_buyerapprove(varab){
+			$.get('<?php echo base_url() .'Admin_approvebuyer/approve_buyer/'; ?>'+varab, function(data2){	
+					
+				 if($.trim(data2) == "HI"){
+					 window.location.href = '<?php echo base_url().'Admin_approvebuyer';?>'
+					return true;
+				}else{
+					swal("Alert!", "Company Name Already Exists", "error");
+					return false;
+				}
+			 });
+			
+		}
+
+
+ </script>
+  <script>
+		function admin_sellerapprove(varab){
+			$.get('<?php echo base_url() .'Admin_approvevendor/approve_seller/'; ?>'+varab, function(data2){	
+					
+				 if($.trim(data2) == "HI"){
+					 window.location.href = '<?php echo base_url().'Admin_approvevendor';?>'
+					return true;
+				}else{
+					swal("Alert!", "Company Name Already Exists", "error");
+					return false;
+				}
+			 });
+			
+		}
+</script>
+<script>
+ function validatearry2(){
+	   var company = document.getElementById('bcompanyname').value;
+	   var user = document.getElementById('busername').value;
+	   if(company == '' || user == ''){
+		   swal("Alert!", "Company Name or UserName Cannot Be Left Blank", "error");
+					return false;
+			}
+			
+	 
+		var signeddoc = document.getElementsByName('bsigneddocument[]');
+
+		
+		for(var ab = 0; ab<signeddoc.length; ab++){
+			if(signeddoc[ab].value == ""){
+				swal("Alert!", "Please Select File to Upload!", "error")
+				//alert("Please Select Files To Upload");
+				return false;
+			}
+		}
+ }
+ 
+ </script>
+  <script>
+ function validatearry(){
+	   var company = document.getElementById('vcompanyname').value;
+	   var user = document.getElementById('vusername').value;
+	   if(company == '' || user == ''){
+		   swal("Alert!", "Company Name or UserName Cannot Be Left Blank", "error");
+					return false;
+			}
+			
+	 
+		var signeddoc = document.getElementsByName('bsigneddocument[]');
+
+		
+		for(var ab = 0; ab<signeddoc.length; ab++){
+			if(signeddoc[ab].value == ""){
+				swal("Alert!", "Please Select File to Upload!", "error")
+				//alert("Please Select Files To Upload");
+				return false;
+			}
+		}
+ }
+ 
+ </script>
+
+
+ 
 
 </body>
 

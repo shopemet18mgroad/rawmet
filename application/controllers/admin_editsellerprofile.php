@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Admin_editsellerprofile extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,16 +21,26 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		if($this->uri->segment(3)){
-			$errormsg = urldecode($this->uri->segment(3));
-			echo '<script language="javascript">';
-			echo 'alert("'.$errormsg.'")';
-			echo '</script>';
-		}
+		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$vname = urldecode($this->uri->segment(3));
+	
+		$vcompanyname = urldecode($this->uri->segment(4));
+	
 		
-		$this->load->view('header');
-		$this->load->view('index');
-		$this->load->view('footer');
+		$active = array('vname'=>$vname,'vcompanyname'=>$vcompanyname);
+		//print_r($active);die;
+	
+		$query = $this->Admin_model->getdatafromtable('vendor_register', $active);
+		//print_r($query);die;
+		$data['sqldata']= $query;
+			//print_r($query); die;
+		$this->load->view('admin/header');
+		$this->load->view('admin/editsellerprofile',$data);
+		$this->load->view('admin/footer');
+		
+	
+		
 		
 	}
 	

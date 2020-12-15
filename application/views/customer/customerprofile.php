@@ -1,12 +1,16 @@
-
+<?php 
+	//include('./header.php');
+?>
+        <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">User Profile</h1>
-          </div>
+    <!--       <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Vendor Profile</h1>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div> -->
 
           <!-- Content Row -->
 
@@ -25,91 +29,147 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-					 <table class="table table-sm table-borderless">
-					 <thead><th>Personal Info</th>
-					 <th style="text-align:right"><a href="<?php echo base_url();?>customer_editcustprofile"><u>Edit Personal Info</u></a></th>
+					 <table class="table table-sm table-borderless" id="section1">
+					 <thead><th width="45%">Profile</th>
+					 <th style="text-align:right"><a href="<?php echo base_url();?>customer_editpersonal"><u>Edit Personal Info</u></a></th>
 					 
 					 </thead>
 						<tbody>
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
-							<tr>
+						
+						 <form action = "<?php echo base_url();?> " method="POST" enctype="multipart/form-data">
+						 <tr>
 								
-								<td>First Name</td>
-								<td>John</td>
+								<td>Name</td>
+								<td><?php echo $sqldata[0]->bname; ?></td>
 							</tr> 
 							<tr>
-								<td>Last Name</td>
-								<td>Doe</td>
+								<td>Companyname</td>
+								<td><?php echo $sqldata[0]->bcompanyname;?></td>
+							</tr> 
+							<tr>
+								<td>Companytype</td>
+								<td><?php echo $sqldata[0]->bcompanytype;?></td>
+							</tr> 	
+							<tr>
+								<td>Contact Person</td>
+								<td><?php echo $sqldata[0]->bcontactperson;?></td>
+							</tr> 
+							<tr>
+								<td>Contact Number</td>
+								<td><?php echo $sqldata[0]->bcontactnumber;?></td>
 							</tr> 
 							<tr>
 								<td>Email</td>
-								<td>johndoe@gmail.com</td>
-							</tr> 	
-							<tr>
-								<td>User Type</td>
-								<td>Seller</td>
+								<td><?php echo $sqldata[0]->bemail;?></td>
 							</tr> 
 							<tr>
-								<td>Contact No</td>
-								<td>98522215230</td>
+								<td>Username</td>
+								<td><?php echo $sqldata[0]->busername;?></td>
 							</tr> 
+							<tr>
+								<td>Address</td>
+								<td><?php echo $sqldata[0]->baddress;?></td>
+							</tr> 
+							<tr>
+								<td>City</td>
+								<td><?php echo $sqldata[0]->bcity;?></td>
+							</tr>	
+							<tr>
+								<td>Selectstate</td>
+								<td><?php echo $sqldata[0]->bselectstate;?></td>
+							</tr>
+							<tr>
+								<td>pincode</td>
+								<td><?php echo $sqldata[0]->bpincode;?></td>
+							</tr>
+                              <tr>
+								<td>bussness type</td>
+								<td>Rajkot, </td>
+							</tr>
+                             <tr>
+								<td>bussness description</td>
+								<td>Verified</td>
+							</tr>				
+							
 
-						
+						 
+							
+													
 						</tbody>
 					</table>			
 
-				<table class="table table-sm table-borderless">
-					 <thead><th width="40%">Contact Info</th>
-					 <th style="text-align:right"><a href="<?php echo base_url();?>customer_editcustprofile"><u>Edit Contact Info</u></a></th>
+					
+
+				<table class="table table-sm table-borderless" id="section3">
+					 <thead><th width="45%">Password</th>
+					 <th style="text-align:right"><a href="<?php echo base_url();?>customer_editpassword"><u>Edit Password</u></a></th>
 					 </thead>
 						<tbody>
 							<tr>
-								<td>Company Name</td>
-								<td>NCT</td>
+								<td>Old Password</td>
+								<td>******</td>
 							</tr> 
 							<tr>
-								<td>Registration Number</td>
-								<td>g44</td>
+								<td>New Password</td>
+								<td>******</td>
 							</tr> 
 							<tr>
-								<td>Phone Number</td>
-								<td>1485245555</td>
-							</tr> 	
-							<tr>
-								<td>Company Email-id</td>
-								<td>abc@abc.com</td>
-							</tr> 
-							<tr>
-								<td>Business Type</td>
-								<td>Trading Company</td>
-							</tr> 
-							<tr>
-								<td>Business Description</td>
-								<td>Trading Company</td>
-							</tr>	
-							<tr>
-								<td>Company Location</td>
-								<td>Rajkot, Gujarat, India</td>
+								<td>Confirm Password</td>
+								<td>******</td>
 							</tr>
-							<tr>
-								<td>Verification Status</td>
-								<td>Verified</td>
-							</tr>							
+							
+											
 						</tbody>
-					</table>							
-                
+					</table>
+
+				
+
+
+			
+					 </thead>
+					
+						
+
+													
+							</form>					
+					
+					</table>					
+              
               </div>
             </div>
 
             <!-- Pie Chart -->
 
           </div>
-
-          <!-- Content Row -->
-
-
-        </div>
         <!-- /.container-fluid -->
 
       </div>
+	  
+	  
       <!-- End of Main Content -->
+
+      <!-- Footer -->
+   <!--   <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy;rawmet 2020</span>
+          </div>
+        </div>
+      </footer>-->
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+ 
+</body>
+
+</html>
+
+
+
+
+
+

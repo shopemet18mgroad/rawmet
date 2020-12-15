@@ -29,8 +29,8 @@
   Sign up
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item"  href="<?php echo base_url();?>home_buyer_register">Buyer_Registration</a>
-    <a class="dropdown-item"  href="<?php echo base_url();?>home_seller_register">Seller Registration</a>
+    <a class="dropdown-item"  href="<?php echo base_url();?>home_buyer_register">Buyer</a>
+    <a class="dropdown-item"  href="<?php echo base_url();?>home_seller_register">Vendor</a>
     
 
 

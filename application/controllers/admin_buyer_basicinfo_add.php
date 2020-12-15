@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home_buyer_register extends CI_Controller {
+class Admin_buyer_basicinfo_add extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,11 +18,10 @@ class Home_buyer_register extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	    public function index(){
-        // If captcha form is submitted
-        if($this->input->post('submit')){
-			$this->load->helper('url');
-			$bname = $this->input->post('bname');
+	public function index()
+	{
+		
+            $bname = $this->input->post('bname');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$bcompanytype = $this->input->post('bcompanytype');
 			$bcontactperson = $this->input->post('bcontactperson');
@@ -37,26 +36,14 @@ class Home_buyer_register extends CI_Controller {
 			$bselectstate = $this->input->post('bselectstate');
 			$bpincode = $this->input->post('bpincode');
 			
-            
-              $this->load->model('Admin_model');
-			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword,  'brepeatpassword' => $brepeatpassword, 'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
-		//$this->load->view('xya', $data);
-		
-		
+			$this->load->model('Admin_model');
+			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
 		$datainserr = "Data Inserted Successfully";
-
 		$status = $this->Admin_model->insert('buyer_register', $data2);
-		header('location: '.base_url().'home/index/'.$datainserr);
-
-		$status = $this->Admin_model->insert('buyer_register',$data2);
-		header('location: '.base_url().'home/'.$datainserr);
-		  
-        }
-        
-       
-		$this->load->view('header');
-		$this->load->view('buyer_register');
-	  
-    }
+		header('location: '.base_url().'admin_buyerreg/index/'.$datainserr);
+		
 	
+		
+	}
+
 }

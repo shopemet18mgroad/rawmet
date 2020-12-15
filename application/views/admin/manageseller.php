@@ -20,7 +20,7 @@
               <div class="table-responsive">
                 <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>
+	      <tr>
         <th>Vendor Name</th>
         <th>Company Type</th>
         <th>Contact Person</th>
@@ -31,108 +31,26 @@
       </tr>
     </thead>
     <tbody>
+	
+      
+      
+	   <?php foreach($data as $row){?>
       <tr>
-		<td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>      
-      <tr>
-		<td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-			
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</button></td>
-      </tr>
-      <tr>
-        <td>ABC</td> 
-		<td>Ferrous Metals</td>
-        <td>S.R.Venkatesh</td>
-		<td>Bangalore</td>
-		<td>Nagarbhavi</td>
-		<td>Active</td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-			<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url();?>admin_vendorprofile"><i class="fa fa-eye"></i> View</a></td>
-      </tr>
+	                  <td><?php echo $row->vname;?></td>
+					<td><?php  echo $row->vcompanytype; ?></td>
+					<td><?php  echo $row->vcontactperson; ?></td>
+					<td><?php echo $row->vaddress; ?></td>
+					<td><?php echo $row->vcity;?></td>
+					<!--<td><?php //echo $row->vstatus;?></td>-->
+					<td><?php echo $row->voptions;?></td>
+		
+     <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
+				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanytype);?>"><i class="fa fa-edit">Edit</a></td>
+      </tr> 
+<?php }?>	  
+      
     </tbody>
+      
   </table>
 			</div>
             </div>

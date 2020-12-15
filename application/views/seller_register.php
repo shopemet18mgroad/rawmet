@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Register</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url()."web_files/";?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="<?php echo base_url()."web_files/";?>css/sb-admin-2.min.css" rel="stylesheet">
-
-</head>
 
 <body class="bg-gradient-primary">
 
@@ -35,7 +15,7 @@
                 <h1 class="h4 text-gray-900 mb-2">Create an Account!</h1>
 				
               </div>
-              <form class="user">
+              <form action="<?php echo base_url();?>home_seller_register" method="POST">
 			  <h3 class="h5 text-gray-700 mb-2">Contact Info</h3> 	
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
@@ -58,10 +38,10 @@
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user"id="vemail"  name="vemail"   placeholder="Email">
+                    <input type="email" class="form-control form-control-user"id="vemail"  name="vemail"   placeholder="Email">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="vusername"  name="vusername"   placeholder="User Name">
+                    <input type="text" class="form-control form-control-user" id="vusername"  name="vusername"   placeholder="User Name">
                   </div>
                 </div>
                 
@@ -91,9 +71,8 @@
                     <input type="text" class="form-control form-control-user" id="vpincode"  name="vpincode"   placeholder="Pincode">
                   </div>
                 </div>
-                <a href="<?php echo base_url();?>home_login" class="btn btn-primary btn-user btn-block">
-                  Register Account
-                </a>
+               <center>
+				 <input type="submit" name="submit" id="btn1" value="Register Account" class="btn btn-primary col-3 mt-2 w-100"></center>
                 <!-- <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google
@@ -117,16 +96,4 @@
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url()."web_files/";?>vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url()."web_files/";?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url()."web_files/";?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url()."web_files/";?>js/sb-admin-2.min.js"></script>
-
-</body>
-
-</html>
+  

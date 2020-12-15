@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Register</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="<?php echo base_url()."web_files/";?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="<?php echo base_url()."web_files/";?>css/sb-admin-2.min.css" rel="stylesheet">
-
-</head>
 
 <body class="bg-gradient-primary">
 
@@ -41,7 +21,7 @@
 				<div class="col-sm-6 mb-3 mb-sm-0">
 				<form action="<?php echo base_url();?>home_buyer_register" method="POST">
 				
-                    <input type="text" class="form-control form-control-user" id="bname" name="bname" id="bname" placeholder="Name">
+                    <input type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="Name">
                   </div>
                   
 				   <div class="col-sm-6">
@@ -94,7 +74,7 @@
                   </div>
                 </div>
                 <center>
-				<input type="submit" name="submit" value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
+				<a button ="submit" name="submit" href="<?php echo base_url();?>"  value="Register Account" class="btn btn-primary col-3 mt-2 w-100">Submit</a>
 				</center>
                 <!-- <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
@@ -119,16 +99,3 @@
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url()."web_files/";?>vendor/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url()."web_files/";?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url()."web_files/";?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url()."web_files/";?>js/sb-admin-2.min.js"></script>
-
-</body>
-
-</html>
