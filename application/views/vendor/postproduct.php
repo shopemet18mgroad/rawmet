@@ -31,6 +31,7 @@
 			<form action="<?php echo base_url();?>vendor_postproduct" method="POST">
 			 	
                 <div class="form-group row">
+				
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Product Name:</label>
 					<input type="text" class="form-control" id="productname" name="productname"  placeholder="productname">
@@ -71,24 +72,43 @@
                   <input type="text" class="form-control" id="quantity" name="quantity" placeholder="">
                 </div>
 				
-				 <div class="col-sm-4 mt-4">
-					<label class="checkbox-inline">
-					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured">Add into Featured</label>
-				</div>
 				
+				
+				
+				<!--<img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/iron.jpg" alt="Chania" width="150" height="20">-->
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">Minimum Order Quantity:</label>
+					<input type="text" class="form-control" id="minoderquant" name="minoderquant"  placeholder="">
+                    
+                </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">supply Ability:</label>
+					<input type="text" class="form-control" id="supplyability" name="supplyability"  placeholder="">
+                    
+                </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">Quantity Per Month:</label>
+					<input type="text" class="form-control" id="quantpermonth" name="quantpermonth"  placeholder="">
+                    
+                </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">Estimated Delivery Time:</label>
+					<input type="text" class="form-control" id="estdeltime" name="estdeltime"  placeholder="">
+                    
+                </div>
+				<div class="col-sm-5 mt-4">
+					<p>Upload Product Image:</p>
+					<input type="file" id="uploadproductimage" name="uploadproductimage">
+				</div>
 				<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>
 					<label class="radio-inline"><input type="radio" name="fobprice" id="fobprice" checked> Yes</label>
 					<label class="radio-inline"><input type="radio" name="fobprice"  id="fobprice">No</label>
 				</div>
-				
-				
-				<div class="col-sm-5 mt-4">
-					<p>Upload Product Image:</p>
-					<input type="file" id="uploadproductimage" name="uploadproductimage">
+				<div class="col-sm-4 mt-4">
+					<label class="checkbox-inline">
+					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured">Add into Featured</label>
 				</div>
-				
-				<img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/iron.jpg" alt="Chania" width="150" height="20">
 				
 					<div class="col-md-12 text-center mt-4">
 						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>

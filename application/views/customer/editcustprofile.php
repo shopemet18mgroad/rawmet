@@ -75,7 +75,7 @@
 							</tr> 
 							<tr>
 								<td>Password</td>
-								<td> <input class="form-control w-50" type="text" id="bpassword" name="bpassword" value="<?php echo $sqldata[0]->bpassword;?>"></td>
+								<td><input class="form-control w-50" type="text" id="bpassword" name="bpassword" value="<?php echo $sqldata[0]->bpassword;?>"></td>
 							</tr> 	
 							<tr>
 								<td>RepeatPassword</td>

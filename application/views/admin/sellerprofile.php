@@ -43,7 +43,7 @@
 						</tr>
 						<tr>
 						<td>Name</td>
-								<td><?php echo $sqldata[0]->vname; ?></td>
+								<td><?php echo $sqldata[0]->vname;?></td>
 							</tr> 
 							<tr>
 								<td>Companyname</td>

@@ -30,11 +30,16 @@ class Vendor_postproduct extends CI_Controller {
 			$aifeatured = $this->input->post('aifeatured');
 			$fobprice = $this->input->post('fobprice');
 			$uploadproductimage = $this->input->post('uploadproductimage');
+			$minoderquant = $this->input->post('minoderquant');
+			$supplyability = $this->input->post('supplyability');
+			$quantpermonth = $this->input->post('quantpermonth');
+			$estdeltime = $this->input->post('estdeltime');
+			
 				
 			
             
               $this->load->model('Admin_model');
-			  $data2 = array('productname' => $productname,'category'=> $category,'materialname' => $materialname,'description' => $description,'price'=>$price,'quantity'=> $quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,  'uploadproductimage'=>$uploadproductimage);
+			  $data2 = array('productname' => $productname,'category'=> $category,'materialname' => $materialname,'description' => $description,'price'=>$price,'quantity'=> $quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,  'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
 		//$this->load->view('xya', $data);
 		//print_r($data2);die;
 		      

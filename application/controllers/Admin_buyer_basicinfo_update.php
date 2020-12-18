@@ -23,34 +23,36 @@ class Admin_buyer_basicinfo_update extends CI_Controller {
 	{
 		//$this->load->library('fileupload');
 		$bname = $this->input->post('bname');
-	    $bcompanyname = $this->input->post('bcompanyname');
-	    $bcompanytype = $this->input->post('bcompanytype');
-	   $bcontactperson = $this->input->post('bcontactperson');
-	   $bcontactnumber = $this->input->post('bcontactnumber');
-			$bemail = $this->input->post('bemail');
-			$busername = $this->input->post('busername');
-			$bpassword = $this->input->post('bpassword');
-			$brepeatpassword = $this->input->post('brepeatpassword');
-			//echo $spcb = $this->input->post('spcb');
-			$baddress = $this->input->post('baddress');
-			$bcity = $this->input->post('bcity');
-			$bselectstate = $this->input->post('bselectstate');
-			$bpincode = $this->input->post('bpincode');
+		$bcompanyname = $this->input->post('bcompanyname');
+		$bcompanytype = $this->input->post('bcompanytype');
+		$bcontactperson  = $this->input->post('bcontactperson');
+		$bcontactnumber = $this->input->post('bcontactnumber');
+		$bemail = $this->input->post('bemail');
+		$busername = $this->input->post('busername');
+		$bpassword = $this->input->post('bpassword');
+		$brepeatpassword = $this->input->post('brepeatpassword');
+		$baddress  = $this->input->post('baddress');
+		$bcity  = $this->input->post('bcity');
+		$bselectstate  = $this->input->post('bselectstate');
+		$bpincode  = $this->input->post('bpincode');
 	
 			$this->load->model('Admin_model');
-			  $data2= array('bname' => $bname,'bcompanyname' => $bcompanyname,'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+			 $data2 = array('bcompanyname' => $bcompanyname,'bcompanytype' => $bcompanytype,'bcontactperson' => $bcontactperson, 
+	'bcontactperson'=>$bcontactperson ,
+	'bemail'=> $bemail ,'busername' => $busername,
+	'bpassword'=> $vpassword,'brepeatpassword' => $brepeatpassword,
+	'baddress' => $baddress, 'bcity'=>$bcity,'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+
 			  
-			  
-			  $datainserr = "Data updated Successfully";
-			  $updatech = array('bname' => $bname,'bcompanyname' => $bcompanyname);
-			  //print_r($updatech);die;
+			  $datainserr = "Data Inserted Successfully";
+			  $updatech = array('bname' => $bname);
 			 
 			  $status = $this->Admin_model->update_custom('buyer_register',$data2,$updatech,$updatech);
-			  	 
-			  
-		header('location: '.base_url().'admin_managebuyer/index/'.$datainserr);
-	die;
+		//$status = $this->Admin_model->insert('vendor_register',$data2);
+		//header('location: '.base_url().'admin_editsellerprofile/index/'.$datainserr);
+		header('location: '.base_url().'home/'.$datainserr);
+	}
 }
-}
+
 
 	
