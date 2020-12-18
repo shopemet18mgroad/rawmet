@@ -30,7 +30,7 @@ class Home_buyer_register extends CI_Controller {
 			$bcontactnumber = $this->input->post('bcontactnumber');
 			$bemail = $this->input->post('bemail');
 			$busername = $this->input->post('busername');
-			$bpassword = $this->input->post('bpassword');
+			$bpassword = base64_encode( $this->input->post('bpassword'));
 			$brepeatpassword = $this->input->post('brepeatpassword');
 			//echo $spcb = $this->input->post('spcb');
 			$baddress = $this->input->post('baddress');
@@ -49,8 +49,6 @@ class Home_buyer_register extends CI_Controller {
 		$status = $this->Admin_model->insert('buyer_register', $data2);
 		header('location: '.base_url().'home/index/'.$datainserr);
 
-		$status = $this->Admin_model->insert('buyer_register',$data2);
-		header('location: '.base_url().'home/index/'.$datainserr);
 		  
         }
         

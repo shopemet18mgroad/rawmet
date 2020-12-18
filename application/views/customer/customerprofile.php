@@ -83,15 +83,7 @@
 								<td>pincode</td>
 								<td><?php echo $sqldata[0]->bpincode;?></td>
 							</tr>
-                              <tr>
-								<td>bussness type</td>
-								<td>Rajkot, </td>
-							</tr>
-                             <tr>
-								<td>bussness description</td>
-								<td>Verified</td>
-							</tr>				
-							
+                            
 
 						 
 							

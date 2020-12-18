@@ -32,7 +32,7 @@ class Home_seller_register extends CI_Controller {
 		$vcontactnumber = $this->input->post('vcontactnumber');
 		$vemail = $this->input->post('vemail');
 		$vusername = $this->input->post('vusername');
-		$vpassword = $this->input->post('vpassword');
+		$vpassword =  base64_encode($this->input->post('vpassword'));
 		$vrepeatpassword = $this->input->post('vrepeatpassword');
 		$vaddress  = $this->input->post('vaddress');
 		$vcity  = $this->input->post('vcity');

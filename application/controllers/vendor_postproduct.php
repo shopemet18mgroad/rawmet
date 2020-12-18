@@ -40,9 +40,14 @@ class Vendor_postproduct extends CI_Controller {
             
               $this->load->model('Admin_model');
 			  $data2 = array('productname' => $productname,'category'=> $category,'materialname' => $materialname,'description' => $description,'price'=>$price,'quantity'=> $quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,  'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
-		//$this->load->view('xya', $data);
-		//print_r($data2);die;
-		      
+		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+			$sess = array('sessi'=>$this->session->userdata('username'));
+			$active = array('vusername'=>$sess['sessi']);      
 		
 		
 		
@@ -50,12 +55,12 @@ class Vendor_postproduct extends CI_Controller {
 		$status = $this->Admin_model->insert('sellerpostproduct',$data2);
 		//print_r($status);die;
 		//header('location: '.base_url().'Vendor_postproduct/'.$datainserr);
-		$this->load->view('vendor/header');
+		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/postproduct');
 		$this->load->view('vendor/footer');
 		  
         }
 }
-       
+}    
 		
 		

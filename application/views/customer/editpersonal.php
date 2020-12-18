@@ -65,7 +65,7 @@
 								<td><textarea class="form-control w-50" type="text" id="bemail" name="bemail" value="<?php echo $sqldata[0]->bemail; ?>"><?php echo $sqldata[0]->bemail; ?></textarea></td>
 							</tr> 
 							<tr>
-								<td>Pincode</td>
+								<td>Username</td>
 								<td><input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername; ?>" ></td>
 							</tr>
 						
@@ -80,7 +80,8 @@
 							</tr>
 							<tr>
 								<td>State /Union Ter.</td>
-								<td><?php echo $sqldata[0]->bselectstate; ?></td>
+								<td><input class="form-control w-50" type="text" id="bselectstate" name="bselectstate" value="<?php echo $sqldata[0]->bselectstate; ?>" ></td>
+								
 							</tr>
 
 							
