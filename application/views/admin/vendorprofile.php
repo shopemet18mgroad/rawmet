@@ -39,11 +39,11 @@
 								<td><?php echo $sqldata[0]->bname; ?></td>
 							</tr> 
 							<tr>
-								<td>Companyname</td>
+								<td>Company Name</td>
 								<td><?php echo $sqldata[0]->bcompanyname;?></td>
 							</tr> 
 							<tr>
-								<td>Companytype</td>
+								<td>Company Type</td>
 								<td><?php echo $sqldata[0]->bcompanytype;?></td>
 							</tr> 	
 							<tr>
@@ -61,9 +61,9 @@
 					</table>			
 
 				<table class="table table-sm table-borderless">
-					 <thead><th width="41%">Contact Info</th>
-					 <th style="text-align:right">
-					    <a  href="<?php echo base_url()."admin_editcustprofile/index/".urlencode($sqldata[0]->bname).'/'.urlencode($sqldata[0]->bcompanyname);?>">edit personal</a></th>
+					 <thead><th width="47%">Contact Info</th>
+					<!-- <th style="text-align:right">
+					    <a  href="<?php echo base_url()."admin_editcustprofile/index/".urlencode($sqldata[0]->bname).'/'.urlencode($sqldata[0]->bcompanyname);?>">Edit personal</a></th>-->
 					 
 					 </thead>
 						<tbody>
@@ -80,7 +80,7 @@
 								<td><?php echo $sqldata[0]->bpassword;?></td>
 							</tr> 	
 							<tr>
-								<td>RepeatPassword</td>
+								<td>Repeat Password</td>
 								<td><?php echo $sqldata[0]->brepeatpassword;?></td>
 							</tr> 
 							<tr>
@@ -92,7 +92,7 @@
 								<td><?php echo $sqldata[0]->bcity;?></td>
 							</tr>	
 							<tr>
-								<td>Selectstate</td>
+								<td>Select State</td>
 								<td><?php echo $sqldata[0]->bselectstate;?></td>
 							</tr>
 							<tr>
@@ -100,11 +100,11 @@
 								<td><?php echo $sqldata[0]->bpincode;?></td>
 							</tr>
                               <tr>
-								<td>bussness type</td>
-								<td>Rajkot, </td>
+								<td>Business type</td>
+								<td>Rajkot</td>
 							</tr>
                              <tr>
-								<td>bussness description</td>
+								<td>Business description</td>
 								<td>Verified</td>
 							</tr>
 														

@@ -51,7 +51,7 @@
 							<td class="btxt">Contact Person:</td>
 							<td><input class="form-control w-50" type="text" id="vcontactperson" name="vcontactperson" required></td>
 						</tr>
-						<tr>
+							<tr>
 							<td class="btxt">Contact number:</td>
 							<td><input class="form-control w-50" type="text" id="vcontactnumber" name="vcontactnumber" required></td>
 						</tr>
@@ -81,10 +81,7 @@
 					 </thead>
 						<tbody>
 						
-						<tr>
-							<td class="btxt">Phone:</td>
-							<td><input class="form-control w-50" type="text" id="vphone" name="vphone" required></td>
-						</tr>
+					
 						<tr>
 							<td class="btxt">Postal Address:</td>
 							<td><textarea class="form-control w-50" type="text" id="vaddress" 	name="vaddress" required></textarea></td>

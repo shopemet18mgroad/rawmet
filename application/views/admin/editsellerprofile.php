@@ -81,7 +81,7 @@
 								<td>******</td>
 							</tr> 	
 							<tr>
-								<td>RepeatPassword</td>
+								<td>Repeat Password</td>
 								<td>*******</td>
 							</tr> 
 							<tr>
@@ -93,25 +93,26 @@
 								<td><input class="form-control w-50" type="text" id="vcity" name="vcity" value="<?php echo $sqldata[0]->vcity;?>"></td>
 							</tr>	
 							<tr>
-								<td>Selectstate</td>
+								<td>Select State</td>
 								<td><input class="form-control w-50" type="text" id="vselectstate" name="vselectstate" value="<?php echo $sqldata[0]->vselectstate;?>"></td>
 							</tr>
 							<tr>
-								<td>pincode</td>
+								<td>Pincode</td>
 								<td><input class="form-control w-50" type="text" id="vpincode" name="vpincode" value="<?php echo $sqldata[0]->vpincode;?>"></td>
 							</tr>
                               <tr>
-								
-								<td>Rajkot, </td>
+								<td>Business Type</td>
+								<td>Rajkot</td>
 							</tr>
                              <tr>
-								<td>bussness description</td>
+								<td>Business description</td>
 								<td>Verified</td>
 							</tr>
 							
 					   </tbody>
 					</table>
-<button type="submit" class="btn btn-info offset-sm-4 mt-2">Update</button>					
+						<center>		
+                <input type="submit" id="submitBtn" class="btn btn-primary" name="submit" value="Update">	</center>			
            <!--<a href="#" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" role="button"><b>S</b></a>-->
 					</form>
 

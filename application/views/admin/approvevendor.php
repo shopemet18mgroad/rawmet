@@ -45,9 +45,7 @@
 					<td><?php echo $row->vcity;?></td>
 					<td><button type="submit" name="submit" id="<?php echo $row->vusername;?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Approve</button>	
 				
-
-		
-           <button class="btn btn-danger btn-sm">Reject</button></td>	
+	
 				</tr>
 				<?php }?>
 	

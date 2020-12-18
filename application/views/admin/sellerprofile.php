@@ -30,7 +30,7 @@
 					 <table class="table table-sm table-borderless">
 					 <thead><th>Personal Info</th>
 					  <th style="text-align:right">
-					   <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);?>">edit personal</a></th>
+					   <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);?>"><u>Edit personal</u></a></th>
 					
 
 					 	
@@ -46,11 +46,11 @@
 								<td><?php echo $sqldata[0]->vname;?></td>
 							</tr> 
 							<tr>
-								<td>Companyname</td>
+								<td>Company Name</td>
 								<td><?php echo $sqldata[0]->vcompanyname;?></td>
 							</tr> 
 							<tr>
-								<td>Companytype</td>
+								<td>Company Type</td>
 								<td><?php echo $sqldata[0]->vcompanytype;?></td>
 							</tr> 	
 							<tr>
@@ -68,7 +68,7 @@
 					</table>			
 
 				<table class="table table-sm table-borderless">
-					 <thead><th width="41%">Contact Info</th>
+					 <thead><th>Contact Info</th>
 					 <th style="text-align:right">
 					 <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);?>"><u>Edit Contact Info</u></a></th>
 					 </thead>
@@ -86,7 +86,7 @@
 								<td><?php echo $sqldata[0]->vpassword;?></td>
 							</tr> 	
 							<tr>
-								<td>RepeatPassword</td>
+								<td>Repeat Password</td>
 								<td><?php echo $sqldata[0]->vrepeatpassword;?></td>
 							</tr> 
 							<tr>
@@ -98,19 +98,19 @@
 								<td><?php echo $sqldata[0]->vcity;?></td>
 							</tr>	
 							<tr>
-								<td>Selectstate</td>
+								<td>Select State</td>
 								<td><?php echo $sqldata[0]->vselectstate;?></td>
 							</tr>
 							<tr>
-								<td>pincode</td>
+								<td>Pincode</td>
 								<td><?php echo $sqldata[0]->vpincode;?></td>
 							</tr>
                               <tr>
-								<td>bussness type</td>
-								<td>Rajkot, </td>
+								<td>Business type</td>
+								<td>Rajkot</td>
 							</tr>
                              <tr>
-								<td>bussness description</td>
+								<td>Business description</td>
 								<td>Verified</td>
 							</tr>
 														
