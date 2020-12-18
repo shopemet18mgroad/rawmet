@@ -26,7 +26,6 @@
         <th>Contact Person</th>
 		<th>Location</th>
 		<th>City</th>
-		<th>Status</th>
 		<th>Option</th>
       </tr>
     </thead>
@@ -41,8 +40,6 @@
 					<td><?php  echo $row->vcontactperson; ?></td>
 					<td><?php echo $row->vaddress; ?></td>
 					<td><?php echo $row->vcity;?></td>
-					<!--<td><?php //echo $row->vstatus;?></td>-->
-					<td><?php echo $row->voptions;?></td>
 		
      <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
 				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanytype);?>"><i class="fa fa-edit">Edit</a></td>

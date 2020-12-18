@@ -82,11 +82,11 @@
 								<td><input class="form-control w-50" type="text" id="bpincode" name="bpincode" value="<?php echo $sqldata[0]->bpincode;?>"></td>
 							</tr>
                               <tr>
-								
-								<td>Rajkot, </td>
+								<td>Business Type</td>
+								<td>Rajkot</td>
 							</tr>
                              <tr>
-								<td>bussness description</td>
+								<td>Business description</td>
 								<td>Verified</td>
 							</tr>
 							

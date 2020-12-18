@@ -50,6 +50,6 @@ class Admin_seller_basicinfo_update extends CI_Controller {
 			  $status = $this->Admin_model->update_custom('vendor_register',$data2,$updatech,$updatech);
 		//$status = $this->Admin_model->insert('vendor_register',$data2);
 		//header('location: '.base_url().'admin_editsellerprofile/index/'.$datainserr);
-		header('location: '.base_url().'home/'.$datainserr);
+		header('location: '.base_url().'admin_manageseller/index/'.$datainserr);
 	}
 }
