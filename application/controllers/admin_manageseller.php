@@ -38,5 +38,6 @@ class Admin_manageseller extends CI_Controller {
 	}
 	
 	
+	
 }
 	

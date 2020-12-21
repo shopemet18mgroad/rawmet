@@ -39,8 +39,11 @@
 		<td><?php  echo $row->bcontactperson;?></td>
         <td><?php echo $row->baddress; ?></td>
 		<td><?php echo $row->bcity;?></td>
-        <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i> Delete</a>
-				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanytype);?>"> <i class="fa fa-edit">Edit</a></td>
+        <td>
+				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanytype);?>"> <i class="fa fa-edit"></i>Edit</a>
+				
+				<a href="<?php echo base_url()."admin_vendorprofile/delete_vendor/".urldecode($row->bname).'/'.urldecode($row->bcompanytype);?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash"></i>Delete</a>
+				</td>
       </tr> 
 <?php }?>	  
       

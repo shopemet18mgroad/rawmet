@@ -46,7 +46,7 @@
 		<td><?php echo $row->price;?></td>
 		<td><?php echo $row->quantity;?></td>
 		<td><?php echo $row->aifeatured;?></td>
-		<td><?php echo $row->fobprice;?></td>
+		<td><?php if($row->fobprice == 0) {echo 'No';}else{echo 'Yes';}?></td>
 		<td><?php echo $row->uploadproductimage;?></td>
 		<td><?php echo $row->minoderquant;?></td>
 		<td><?php echo $row->supplyability;?></td>
@@ -56,7 +56,6 @@
 				<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-eye"></i>View</a>
 				<a style="margin:2px" class="btn btn-primary btn-sm text-white"><i class="fa fa-edit"></i>Edit</a></td>
         
-      
 <?php }?>	
 </tr>   
       
