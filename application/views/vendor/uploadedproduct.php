@@ -2,7 +2,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Manage Uploaded Product Image</h1>
+            <h1 class="h3 mb-0 text-gray-800">Manage Uploaded Product</h1>
            
           </div>
 
@@ -17,17 +17,14 @@
       <tr>
         <th>Product Name</th>
         <th>Category</th>
-        <th>Material Name</th>
+       
 		<th>Description</th>
 		<th>Price</th>
-		<th>Quantity</th>
-		<th>A i Featured</th>
-		<th>Fobprice</th>
-		<th>Uploadproductimage</th>
-		<th>Minimum Oder</th>
+		<th>stock</th>
+	    <th>Image</th>
 		<th>Supply Ability</th>
-		<th>quantity Per Month</th>
 		<th>Estimated Delivery Time</th>
+		<th>Status</th>
 		<th>options</th>
 		
 		
@@ -41,20 +38,21 @@
       <tr>
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
-        <td><?php echo $row->materialname ?></td>
-		<td><?php echo $row->description?></td>
+         <td><?php echo $row->description?></td>
 		<td><?php echo $row->price;?></td>
 		<td><?php echo $row->quantity;?></td>
-		<td><?php echo $row->aifeatured;?></td>
-		<td><?php if($row->fobprice == 0) {echo 'No';}else{echo 'Yes';}?></td>
+
 		<td><?php echo $row->uploadproductimage;?></td>
-		<td><?php echo $row->minoderquant;?></td>
 		<td><?php echo $row->supplyability;?></td>
-		<td><?php echo $row->quantpermonth;?></td>
 		<td><?php echo $row->estdeltime;?></td>
-		<td style="display:inline-flex;"><a style="margin:2px" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i>Delete</a>
-				<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-eye"></i>View</a>
-				<a style="margin:2px" class="btn btn-primary btn-sm text-white"><i class="fa fa-edit"></i>Edit</a></td>
+		<td><?php echo $row->poptions;?></td>
+		<td style="display:inline-flex;">
+		<a style="margin:2px" class="btn btn-success btn-sm text-white">Approve</a>
+		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-eye"></i></a>
+		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-edit"></i></a>
+				
+				
+		<a style="margin:2px" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i></a></td>
         
 <?php }?>	
 </tr>   

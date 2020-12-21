@@ -24,7 +24,10 @@ class Vendor_postproduct extends CI_Controller {
 			$productname = $this->input->post('productname');
 			 $category = $this->input->post('category');
 			 $materialname = $this->input->post('materialname');
-			$description = $this->input->post('description');
+			 $pstates= $this->input->post('pstates');
+		     $types= $this->input->post('types');
+			 $materialname = $this->input->post('materialname');
+		     $description = $this->input->post('description');
 			 $price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
 			$aifeatured = $this->input->post('aifeatured');
@@ -34,23 +37,35 @@ class Vendor_postproduct extends CI_Controller {
 			$supplyability = $this->input->post('supplyability');
 			$quantpermonth = $this->input->post('quantpermonth');
 			$estdeltime = $this->input->post('estdeltime');
+		
 			
 				
 			
             
               $this->load->model('Admin_model');
-			  $data2 = array('productname' => $productname,'category'=> $category,'materialname' => $materialname,'description' => $description,'price'=>$price,'quantity'=> $quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,  'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
+
+			  $data2 = array('productname' => $productname,'category'=> $category,'pstates'=>$pstates,'types'=>$types,'materialname'=>$materialname,'description' => $description,'price'=>$price,'quantity'=>$quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
+		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+			$sess = array('sessi'=>$this->session->userdata('username'));
+			$active = array('vusername'=>$sess['sessi']);      
+
 		
 		
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('sellerpostproduct',$data2);
-		
-		$this->load->view('vendor/header');
+
+		//print_r($status);die;
+		//header('location: '.base_url().'Vendor_postproduct/'.$datainserr);
+		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/postproduct');
 		$this->load->view('vendor/footer');
 		  
         }
 }
-       
-		
-		
+}    
+	

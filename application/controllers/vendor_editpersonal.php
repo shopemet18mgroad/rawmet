@@ -39,7 +39,7 @@ class Vendor_editpersonal extends CI_Controller {
 			$data['sqldata']= $query;
 			//print_r($query);die;
 			//$data['vcompanyname'] = $vcompanyname;
-			$this->load->view('vendor/header');
+			$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/editpersonal',$data);
 		$this->load->view('vendor/footer');
 		

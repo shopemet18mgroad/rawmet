@@ -23,26 +23,30 @@ class Vendor_uploadedproduct extends CI_Controller {
 		
 		
 		$this->load->model('Admin_model');
+		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+			
 		$poptions = array('poptions'=>false);
-		//print_r($poptions);die;
+		
 		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$poptions);
-		//print_r($poptions);die;
-		//print_r($query);die;
+		
 		
 		$adac['sqldata']= $query;
-		//print_r($query);die;
+		$sess = array('sessi'=>$this->session->userdata('username'));
+			$active = array('vusername'=>$sess['sessi']);
 		
 		
-		/* echo '<pre>';
-		print_r($adac['activestat']); die;
-			echo '</pre>'; */
-		
-		
-		$this->load->view('vendor/header');
+		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/uploadedproduct',$adac);
 		$this->load->view('vendor/footer');
 		$this->load->helper('url');
+
+		}
 
 			
 	}

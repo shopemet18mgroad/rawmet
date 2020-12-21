@@ -21,14 +21,20 @@ class Admin_approvebuyer extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Admin_model');
+		/* $this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{  */
 		$boptions = array('boptions'=>false);
 		
 		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
 		
 		$adac['data']= $query;
-		/* echo '<pre>';
-		print_r($adac['activestat']); die;
-			echo '</pre>'; */
+		//$sess = array('sessi'=>$this->session->userdata('username'));
+		//$active = array('ausername'=>$sess['sessi']);
+		
 		
 		
 		$this->load->view('admin/header');
@@ -36,6 +42,7 @@ class Admin_approvebuyer extends CI_Controller {
 		$this->load->view('admin/footer');
 	
 	}
+	
 	
 	public function approve_buyer(){
 		

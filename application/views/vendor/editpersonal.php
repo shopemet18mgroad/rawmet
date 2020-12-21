@@ -65,7 +65,7 @@
 								<td><textarea class="form-control w-50" type="text" id="vbemail" name="vemail" value="<?php echo $sqldata[0]->vemail; ?>"><?php echo $sqldata[0]->vemail; ?></textarea></td>
 							</tr> 
 							<tr>
-								<td>Pincode</td>
+								<td>Username</td>
 								<td><input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" ></td>
 							</tr>
 						

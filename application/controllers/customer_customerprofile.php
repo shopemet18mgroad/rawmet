@@ -20,50 +20,44 @@ class Customer_customerprofile extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$this->load->model('Admin_model');
-		$boptions = array('boptions'=>true);
-		
-		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
-		
-		$adac['sqldata']= $query;
-		/* echo '<pre>';
-		print_r($adac['activestat']); die;
-			echo '</pre>'; */
-		
-		
-		$this->load->view('customer/header');
-		$this->load->view('customer/customerprofile',$adac);
-		$this->load->view('customer/footer');
-		$this->load->helper('url');
-/* 		$this->load->helper('url');
-		/* $this->load->helper('url');
+	{	$this->load->model('Admin_model');
+		//$voptions = array('voptions'=>true);
 		$this->load->library('session');
-		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth')!= "BUYER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
-		}else{
-		$this->load->model('Admin_model');
-		$bcompany = $this->uri->segment(3);	
-		
+			}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
-			$active = array('busername'=>$sess['sessi']); */
-			/*$this->load->model('Admin_model');
-			$bcompanyname = $this->uri->segment(3);	
-			$query = $this->Admin_model->getdatafromtable('buyer_register');
-			$data['sqldata']= $query;
-			$data['bcompanyname'] = $bcompanyname;
-			$this->load->view('customer/header',);
-			$this->load->view('customer/customerprofile',$data);
-			$this->load->view('customer/footer'); */
-			
+			$active = array('busername'=>$sess['sessi']);
+		
+		$query = $this->Admin_model->getdatafromtable('buyer_register',$active);
+		
+		$adac['sqldata']= $query;
+		//print_r($adac['sqldata']);die;
+				
+		
+		$this->load->view('customer/header',$sess);
+		$this->load->view('customer/customerprofile',$adac);
+		$this->load->view('customer/footer');
+		$this->load->helper('url');
+		
+		
 		}
+	}
 		public function index_error(){
 					$this->load->model('Admin_model');
-		$boptions = array('boptions'=>true);
+					$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth')!= "BUYER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+			$sess = array('sessi'=>$this->session->userdata('username'));
+			$active = array('busername'=>$sess['sessi']);
+		//$boptions = array('boptions'=>true);
 		
-		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
+		$query = $this->Admin_model->getdatafromtable('buyer_register',$active);
 		
 		$adac['sqldata']= $query;
 			$alertmsg = $this->uri->segment(3);
@@ -71,11 +65,11 @@ class Customer_customerprofile extends CI_Controller {
 			echo '<script language="javascript">';
 			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
 			echo '</script>';
-			$this->load->view('customer/header');
+			$this->load->view('customer/header',$sess);
 		$this->load->view('customer/customerprofile',$adac);
 		$this->load->view('customer/footer');
 			
-			
+			}	
 	}
 		
 	}

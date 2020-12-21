@@ -70,6 +70,7 @@
                   <input type="email" class="form-control" id="exampleInputEmail" placeholder="">
                 </div>
 				
+				
 				 <div class="col-sm-4 mt-4">
 					<label class="checkbox-inline">
 					<input type="checkbox" value="">Add into Featured</label>

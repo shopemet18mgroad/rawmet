@@ -101,7 +101,7 @@ function autocomplete(inp, arr) {
   });
 }
 
-var countries = ["Karnataka","Andaman and Nicobar Islands",
+var countries = ["Karnataka","Andaman and Nicobar Islands","Bangalore",
 					"Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh"
 					 ,"Dadar and Nagar Haveli","Daman and Diu","Delhi","Lakshadweep","Puducherry","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand"
 					,"Andhra Pradesh","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland"," Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","West Bengal"];
