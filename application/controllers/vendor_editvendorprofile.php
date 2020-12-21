@@ -35,12 +35,7 @@ class Vendor_editvendorprofile extends CI_Controller {
 		$query = $this->Admin_model->getdatafromtable('vendor_register',$active);
 		
 		$adac['sqldata']= $query;
-		
-		/* echo '<pre>';
-		print_r($adac['activestat']); die;
-		
-			echo '</pre>'; */
-		
+
 		
 		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/editvendorprofile',$adac);

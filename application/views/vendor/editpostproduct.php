@@ -21,7 +21,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Add New Product</h6>
+                  <h6 class="m-0 font-weight-bold text-primary"> Edit Products</h6>
                
                 </div>
                 <!-- Card Body -->
@@ -167,9 +167,9 @@
 				</div>
 				
 					<div class="col-md-12 text-center mt-4">
-						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>
 						
-						<button  href="<?php echo base_url();?>"class="btn btn-primary btn-sm" role="button">Submit</a>
+						
+						<button  href="<?php echo base_url();?>"class="btn btn-primary btn-sm" role="button">Update</a>
 					</div>	
 					
 				</div>
@@ -190,6 +190,4 @@
         <!-- /.container-fluid -->
 
       </div>
-      <!-- End of Main Content -->
-
-
+      

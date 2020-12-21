@@ -21,10 +21,13 @@ class Vendor_postproduct extends CI_Controller {
 	public function index()
 	{ 
 	
-			$productname = $this->input->post('productname');
-			   $category = $this->input->post('category');
+	
+			 $productname = $this->input->post('productname');
+			 $category = $this->input->post('category');
+			 $pstates= $this->input->post('pstates');
+		     $types= $this->input->post('types');
 			 $materialname = $this->input->post('materialname');
-		 $description = $this->input->post('description');
+		     $description = $this->input->post('description');
 			 $price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
 			$aifeatured = $this->input->post('aifeatured');
@@ -34,12 +37,13 @@ class Vendor_postproduct extends CI_Controller {
 			$supplyability = $this->input->post('supplyability');
 			$quantpermonth = $this->input->post('quantpermonth');
 			$estdeltime = $this->input->post('estdeltime');
+		
 			
 				
 			
             
               $this->load->model('Admin_model');
-			  $data2 = array('productname' => $productname,'category'=> $category,'materialname' => $materialname,'description' => $description,'price'=>$price,'quantity'=> $quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,  'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
+			  $data2 = array('productname' => $productname,'category'=> $category,'pstates'=>$pstates,'types'=>$types,'materialname'=>$materialname,'description' => $description,'price'=>$price,'quantity'=>$quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
 		$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
 			$datainserr = "Invalid Login Session";
@@ -62,5 +66,4 @@ class Vendor_postproduct extends CI_Controller {
         }
 }
 }    
-		
-		
+	
