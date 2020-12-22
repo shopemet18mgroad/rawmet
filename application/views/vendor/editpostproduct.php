@@ -28,7 +28,7 @@
                 <div class="card-body">
 					
 			
-			<form action="<?php echo base_url();?>vendor_postproduct" method="POST">
+			<form action="<?php echo base_url();?>vendor_postproduct_update" method="POST">
 			 	
                 <div class="form-group row">
 				
@@ -40,69 +40,63 @@
                <div class="col-sm-4">  
 			   	<label for="category">Category:</label>
 					<select class="form-control" id="category" name="category">
-					    <option>Metal</option>
-						<option>Non-Metal</option>
-						<option>Raw Material</option>
-						<option>Scrap</option>
+					    <option value="Metal">Metal</option>
+						<option value="Non-Metal">Non-Metal</option>
+						<option value="Raw Material">Raw Material</option>
+						<option value="Scrap">Scrap</option>
 				    </select>
 				</div>
 				<div class="col-sm-4">  
 			   	<label for="category">States:</label>
 					<select class="form-control" id="pstates" name="pstates">
-					    <option>All India</option>
-						<option>Andhra Pradesh</option>
-						<option>Arunchal Pradesh</option>
-						<option>Assam</option>
-						<option>Chhattisgarh</option>
-						<option>Goa</option>
-						<option>Gujarat</option>
-						<option>Haryana</option>
-						<option>Himchala Pradesh</option>
-						<option>Jharkhand</option>
-						<option>Karnataka</option>
-						<option>Kerala</option>
-						<option>Madhya Pradesh</option>
-						<option>Manipur</option>
-						<option>Meghalaya</option>
-						<option>Mizoram</option>
-						<option>Nagaland</option>
-						<option>Odisha</option>
-						<option>Punjab</option>
-						<option>Rajasthan</option>
-						<option>Sikkim</option>
-						<option>Tamil Nadu</option>
-						<option>Telangana</option>
-						<option>Tripura</option>
-						<option>UttarKhand </option>
-						<option>Uttar Pradesh</option>
-						<option>West Bengal</option>
-						<option>Andaman and nicobar</option>
-						<option>Chandigarh</option>
-						<option>Dadra and Nagar Haveli and Daman & Diu</option>
-						<option>Jammu and kashmir</option>
-						<option>ladakh</option>
-						<option>Lakshadweep</option>
-						<option>puducherry</option>
+					    <option value="">All India</option>
+						<option value="Andhra Pradesh">Andhra Pradesh</option>
+						<option value="Arunchal Pradesh">Arunchal Pradesh</option>
+						<option value="Assam">Assam</option>
+						<option value="Chhattisgarh">Chhattisgarh</option>
+						<option value="Goa">Goa</option>
+						<option value="Gujarat">Gujarat</option> 
+						<option value="Haryana">Haryana</option>
+						<option value="Himchala Pradesh">Himchala Pradesh</option>
+						<option value="Jharkhand">Jharkhand</option>
+						<option value="Karnataka">Karnataka</option>
+						<option value="Kerala">Kerala</option>
+						<option value="Madhya Pradesh">Madhya Pradesh</option>
+						<option value="Manipur">Manipur</option>
+						<option value="Meghalaya">Meghalaya</option>
+						<option value="Mizoram">Mizoram</option>
+						<option value="Nagalan">Nagaland</option>
+						<option value="Odisha">Odisha</option>
+						<option value="Punjab">Punjab</option>
+						<option value="Rajasthan">Rajasthan</option>
+						<option value="Sikkim">Sikkim</option>
+						<option value="Tamil Nadu">Tamil Nadu</option>
+						<option value="Telangana">Telangana</option>
+						<option value="Tripura">Tripura</option>
+						<option value="UttarKhand ">UttarKhand </option>
+						<option value="Uttar Pradesh">Uttar Pradesh</option>
+						<option value="Uttar Pradesh">West Bengal</option>
+						<option value="Andaman and nicobar">Andaman and nicobar</option>
+						<option value="Chandigar">Chandigarh</option>
+						<option value="Dadra and Nagar Haveli and Daman & Diu">Dadra and Nagar Haveli and Daman & Diu</option>
+						<option value="Jammu and kashmir">Jammu and kashmir</option>
+						<option value="ladakh">ladakh</option>
+						<option value="puducherry">puducherry</option>
 						</select>
 				</div>
 				<div class="col-sm-4">  
 				
 			   	<label for="category">Types:</label>
 					<select class="form-control" id="types" name="types">
-					<option>Types</option>
-						<option>Primary</option>
-						<option>Secondary</option>
-				        <option>Scrap</option>
+					<option value="Types">Types</option>
+						<option value="Primary">Primary</option>
+						<option value="Secondary">Secondary</option>
+				        <option value="Scrap">Scrap</option>
 				    </select>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-4"> 
 				<label for="materialname">Material Name :</label>				
-					<select class="form-control" id="materialname" name="materialname">
-						<option>Aluminium</option>
-						<option>Silicon</option>
-						<option>Iron</option>
-						<option>Coal</option>
-				    </select>
+					<input type="text" class="form-control" id="materialname" name="materialname"  placeholder="">
 					
 				</div>
 				  
@@ -113,7 +107,7 @@
 				
 				   <div class="col-sm-4">
 				   <label for="price">Price:</label>
-                    <input type="text" class="form-control" id="price" name="price" placeholder="0">
+                    <input type="text" class="form-control" id="price" name="price" placeholder="" value=>
                   </div>
                 
 				

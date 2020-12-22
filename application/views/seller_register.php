@@ -23,16 +23,19 @@
                   </div>
                   
 				   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="vcompanyname" name="vcompanyname" placeholder="Company Name">
+                    <input type="text" class="form-control form-control-user" id="vcompanyname" name="vcompanyname" placeholder="Company Name" 
+required>
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="vcompanytype"  name="vcompanytype"  placeholder="Company Type">
+                    <input type="text" class="form-control form-control-user" id="vcompanytype"  name="vcompanytype"  placeholder="Company Type" 
+required>
                   </div>
 				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="vcontactperson"  name="vcontactperson"  placeholder="Contact Person">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="vcontactnumber"  name="vcontactnumber"  placeholder="Contact Number">
+                    <input type="text" class="form-control form-control-user" id="vcontactnumber"  name="vcontactnumber"  placeholder="Contact Number" 
+required>
                   </div>
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
@@ -52,7 +55,27 @@
                   <div class="col-sm-6">
                     <input type="password" class="form-control form-control-user"  id="vrepeatpassword"  name="vrepeatpassword"  placeholder="Repeat Password">
                   </div>
+				  
+               </div>
+			   <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user"id="vpan"  name="vpan"   placeholder="PAN" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="vgst"  name="vgst"   placeholder="GST"
+required>
+                  </div>
                 </div>
+				<div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="vpcb"  name="vpcb"  placeholder="PCB license"
+>
+                  </div>
+                  
+				  
+               </div>
+		 
+		     
 				
 				<h3 class="h5 text-gray-700 mb-2">Location</h3>
                 <div class="form-group">

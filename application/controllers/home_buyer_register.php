@@ -33,6 +33,8 @@ class Home_buyer_register extends CI_Controller {
 			$bpassword = base64_encode( $this->input->post('bpassword'));
 			$brepeatpassword = $this->input->post('brepeatpassword');
 			//echo $spcb = $this->input->post('spcb');
+			$bpan= $this->input->post('bpan');
+			$bgst = $this->input->post('bgst');
 			$baddress = $this->input->post('baddress');
 			$bcity = $this->input->post('bcity');
 			$bselectstate = $this->input->post('bselectstate');
@@ -40,7 +42,7 @@ class Home_buyer_register extends CI_Controller {
 			
             
               $this->load->model('Admin_model');
-			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword,  'brepeatpassword' => $brepeatpassword, 'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword,  'brepeatpassword' => $brepeatpassword,'bpan'=>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
 		//$this->load->view('xya', $data);
 		
 		

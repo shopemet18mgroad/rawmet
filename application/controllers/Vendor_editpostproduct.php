@@ -20,10 +20,28 @@ class Vendor_editpostproduct extends CI_Controller {
 	 */
 	public function index()
 	{
+		
 		$this->load->helper('url');
-		$this->load->view('vendor/header');
+		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$productname= $this->uri->segment(3);	
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+		}else{
+			$sess = array('sessi'=>$this->session->userdata('username'));
+
+			$active = array('vusername'=>$sess['sessi']);
+			//print_r($active);die;
+			
+			$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$active);
+			$data['sqldata']= $query;
+			print_r($query);die;
+		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/editpostproduct');
 		$this->load->view('vendor/footer');
+		}
 		
 	}
 	

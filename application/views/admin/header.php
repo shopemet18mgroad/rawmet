@@ -73,12 +73,12 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#approve" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Approve User</span>
+          <span>Vendor Approve</span>
         </a>
 		<div id="approve" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>admin_approvevendor">Vendor</a>
-            <a class="collapse-item" href="<?php echo base_url();?>admin_approvebuyer">Buyer</a>
+            <!--<a class="collapse-item" href="<?php// echo base_url();?>admin_approvebuyer">Buyer</a>-->
           </div>
         </div>
       </li>

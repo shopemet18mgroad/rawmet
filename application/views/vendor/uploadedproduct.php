@@ -17,8 +17,7 @@
       <tr>
         <th>Product Name</th>
         <th>Category</th>
-       
-		<th>Description</th>
+        <th>Description</th>
 		<th>Price</th>
 		<th>stock</th>
 	    <th>Image</th>

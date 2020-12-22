@@ -21,26 +21,26 @@
 				<div class="col-sm-6 mb-3 mb-sm-0">
 				<form action="<?php echo base_url();?>home_buyer_register" method="POST">
 				
-                    <input type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="Name">
+                    <input type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="Name" requried>
                   </div>
                   
 				   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="bcompanyname" name="bcompanyname" placeholder="Company Name">
+                    <input type="text" class="form-control form-control-user" id="bcompanyname" name="bcompanyname" placeholder="Company Name" requried>
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="bcompanytype" name="bcompanytype"  placeholder="Company Type">
+                    <input type="text" class="form-control form-control-user" id="bcompanytype" name="bcompanytype"  placeholder="Company Type" requried>
                   </div>
 				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="bcontactperson" name="bcontactperson" placeholder="Contact Person">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number">
+                    <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number" requried>
                   </div>
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="email" class="form-control form-control-user"id="bemail" name="bemail" placeholder="Email">
+                    <input type="email" class="form-control form-control-user" id="bemail" name="bemail" placeholder="Email" requried>
                   </div>
                   <div class="col-sm-6">
                     <input type="text" class="form-control form-control-user" id="busername" name="busername"  placeholder="User Name">
@@ -54,23 +54,34 @@
                   <div class="col-sm-6">
                     <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"  placeholder="Repeat Password">
                   </div>
+				  <h3 class="h5 text-gray-700 mb-2"></h3>
+                </div>
+				<div class="form-group row">
+				<div class="col-sm-6 mb-3 mb-sm-0">
+					<input type="text" class="form-control form-control-user" id="bpan" name="bpan"  placeholder="PAN"  required>
+                  </div>
+                  <div class="col-sm-6 mb-3 mb-sm-2">
+					<input type="text" class="form-control form-control-user" id="bgst" name="bgst" placeholder="GST"  required>
+                  </div>
+				  
                 </div>
 				
 				<h3 class="h5 text-gray-700 mb-2">Location</h3>
                 <div class="form-group">
-					<input type="text" class="form-control form-control-user"id="baddress" name="baddress"  placeholder="Address">
+					<input type="text" class="form-control form-control-user"id="baddress" name="baddress"  placeholder="Address"  required>
 				</div>
+				
 				
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
-					<input type="text" class="form-control form-control-user" id="bcity" name="bcity"  placeholder="City">
+					<input type="text" class="form-control form-control-user" id="bcity" name="bcity"  placeholder="City"  required>
                   </div>
                   <div class="col-sm-6 mb-3 mb-sm-2">
-					<input type="text" class="form-control form-control-user" id="bselectstate" name="bselectstate" placeholder="State">
+					<input type="text" class="form-control form-control-user" id="bselectstate" name="bselectstate" placeholder="State"  required>
                   </div>
 				  
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user"id="bpincode" name="bpincode" placeholder="Pincode">
+                    <input type="text" class="form-control form-control-user"id="bpincode" name="bpincode" placeholder="Pincode"  required>
                   </div>
                 </div>
                 <center>

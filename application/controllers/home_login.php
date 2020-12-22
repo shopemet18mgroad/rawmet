@@ -29,7 +29,7 @@ class Home_login extends CI_Controller {
 				$table = "buyer_register";
 				$colname = "busername";
 				$colname2 = "bpassword";
-				$status ="boptions"; 
+			     $status ="boptions";
 			}else if($this->input->post('optradio')=="Seller"){
 				$table = "vendor_register";
 				$colname = "vusername";
@@ -39,7 +39,7 @@ class Home_login extends CI_Controller {
 				$table = "adminprofile";
 				$colname = "ausername";
 				$colname2 = "apassword";
-			}
+			  }
 			$user = $this->input->post('user');
 			$pass = $this->input->post('pass');
 			$pass = base64_encode($pass);
