@@ -97,7 +97,7 @@
 				  </div>
 
 
-					<div class="col-sm-4 p-2">
+					<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
 							<h4 style="color:purple;"><b>Copper Pipes</b></h4>
@@ -110,19 +110,49 @@ and other copper related Raw Materials. We Supply across India.</p>
 				  </div>
 				  
 				  
-				  <div class="col-sm-3 p-2">
+				  <div class="col-sm-4 p-2">
 					<div class="row p-2">
 					<div class="col-sm-10">
 							<h6 class="text-center" style="color:orange;"><b>Live Stock : 5 Tons</b></h6>
-							<div class="form-check mt-5 text-left">
+							<div class="form-check mt-3 text-left">
 								<input type="checkbox" class="form-check-input" id="exampleCheck1">
 								<label class="form-check-label" for="exampleCheck1">Negotiate</label>
 							</div>
   
 					<form class="col-12">
 							<div class="form-row">
-								<label class="col-sm-8 col-form-label"  for="name">Your Price Per KG</label>
-								<input type="text" class="form-control col-sm-4" name="name" id="name" [(ngModel)]="person.name" />
+								<label class="col-sm-6 col-form-label"  for="name">Quantity</label>
+								<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="Quantity" id="name" [(ngModel)]="person.name" />
+								<div class="col-sm-3">  
+			   	<select class="form-control col-sm-0" id="type">
+						<option>KG</option>
+						<option>Metric Ton</option>
+						<option>Litre</option>
+						<option>lot</option>
+						<option>litre</option>
+						<option>Number</option>
+						<option>Meter</option>
+					
+				    </select>
+				</div>
+								
+							</div>
+							<div class="form-row mt-2">
+								<label class="col-sm-6 col-form-label"  for="name">Your Price Per KG</label>
+								<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="price" id="name" [(ngModel)]="person.name" />
+								<div class="col-sm-3">  
+			   	<select class="form-control col-sm-0" id="type">
+						<option>KG</option>
+						<option>Metric ton</option>
+						<option>Litre</option>
+						<option>lot</option>
+						<option>litre</option>
+						<option>Number</option>
+						<option>Meter</option>
+					
+				    </select>
+				</div>
+								<a href=""><button type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5">submit</button></a>
 							</div>
 					</form>
 							
@@ -156,7 +186,7 @@ and other copper related Raw Materials. We Supply across India.</p>
 				  </div>
 
 
-					<div class="col-sm-4 p-2">
+					<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
 							<h4 style="color:purple;"><b>Copper Pipes</b></h4>
@@ -168,20 +198,39 @@ and other copper related Raw Materials. We Supply across India.</p>
 					</div>
 				  </div>
 				  
-				  
-				  <div class="col-sm-3 p-2">
+							  <div class="col-sm-4 p-2">
 					<div class="row p-2">
 					<div class="col-sm-10">
 							<h6 class="text-center" style="color:orange;"><b>Live Stock : 5 Tons</b></h6>
-							<div class="form-check mt-5 text-left">
+							<div class="form-check mt-3 text-left">
 								<input type="checkbox" class="form-check-input" id="exampleCheck1">
 								<label class="form-check-label" for="exampleCheck1">Negotiate</label>
 							</div>
   
 					<form class="col-12">
 							<div class="form-row">
-								<label class="col-sm-8 col-form-label"  for="name">Your Price Per KG</label>
-								<input type="text" class="form-control col-sm-4" name="name" id="name" [(ngModel)]="person.name" disabled/>
+								<label class="col-sm-6 col-form-label"  for="name">Quantity</label>
+								<input type="text" class="form-control col-sm-2 mr-2" name="name" id="name" [(ngModel)]="person.name" />
+								<div class="col-sm-3">  
+			   	<select class="form-control col-sm-0" id="type">
+						<option>KG</option>
+						<option>Metric ton</option>
+					
+				    </select>
+				</div>
+								
+							</div>
+							<div class="form-row mt-2">
+								<label class="col-sm-6 col-form-label"  for="name">Your Price Per KG</label>
+								<input type="text" class="form-control col-sm-2 mr-2" name="name" id="name" [(ngModel)]="person.name" />
+								<div class="col-sm-3">  
+			   	<select class="form-control col-sm-0" id="type">
+						<option>KG</option>
+						<option>Metric ton</option>
+					
+				    </select>
+				</div>
+								<a href=""><button type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5">submit</button></a>
 							</div>
 					</form>
 							
@@ -241,6 +290,7 @@ and other copper related Raw Materials. We Supply across India.</p>
 							<div class="form-row">
 								<label class="col-sm-8 col-form-label"  for="name">Your Price Per KG</label>
 								<input type="text" class="form-control col-sm-4" name="name" id="name" [(ngModel)]="person.name" disabled/>
+								<button type="submit" form="form1" value="Submit">Submit</button>
 							</div>
 					</form>
 							
