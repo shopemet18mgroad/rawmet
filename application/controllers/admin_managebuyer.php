@@ -28,9 +28,9 @@ class Admin_managebuyer extends CI_Controller {
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{  */
-		$boptions = array('boptions'=>true);
+		$busername = array('busername'=>true);
 		
-		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
+		$query = $this->Admin_model->getdatafromtable('buyer_register',$busername);
 		
 		$adac['data']= $query;
 		//$sess = array('sessi'=>$this->session->userdata('username'));

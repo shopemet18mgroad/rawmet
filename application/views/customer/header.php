@@ -67,23 +67,23 @@
 	
 
 	  
-	   <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>customer_getquote">
+	  <!-- <li class="nav-item">
+        <a class="nav-link" href="<?php// echo base_url();?>customer_getquote">
           <i class="fas fa-fw fa-upload"></i>
           <span>Get Quote</span></a>
-      </li>
+      </li>-->
 	  	 
 		<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>customer_contactsupplier">
           <i class="fas fa-fw fa-upload"></i>
-          <span>Contact Supplier</span></a>
+          <span>Products</span></a>
       </li>
 	  
-	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>customer_inquirymsg">
+	<!--  <li class="nav-item">
+        <a class="nav-link" href="<?php //echo base_url();?>customer_inquirymsg">
           <i class="fas fa-fw fa-upload"></i>
           <span>Inquiry Message</span></a>
-      </li>
+      </li>-->
 	  
 	    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>customer_postbuyreq">

@@ -34,6 +34,9 @@ class Home_seller_register extends CI_Controller {
 		$vusername = $this->input->post('vusername');
 		$vpassword =  base64_encode($this->input->post('vpassword'));
 		$vrepeatpassword = $this->input->post('vrepeatpassword');
+		$vpan= $this->input->post('vpan');
+		$vgst = $this->input->post('vgst');
+		$vpcb= $this->input->post('vpcb');
 		$vaddress  = $this->input->post('vaddress');
 		$vcity  = $this->input->post('vcity');
 		$vselectstate  = $this->input->post('vselectstate');
@@ -44,7 +47,7 @@ class Home_seller_register extends CI_Controller {
 	'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
 	'vcontactnumber'=>$vcontactnumber ,
 	'vemail'=> $vemail ,'vusername' => $vusername,
-	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,
+	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
 	$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('vendor_register',$data);

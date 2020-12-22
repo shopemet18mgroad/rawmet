@@ -32,15 +32,21 @@
 			 	
                 <div class="form-group row">
 				
+				
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="Pname">Product Name:</label>
+					<label for="">Company Name</label>
+					<input type="text" class="form-control" id="productname" name="productname"  placeholder="productname">
+                    
+                </div>
+				
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Product Name:</label>
 					<input type="text" class="form-control" id="productname" name="productname"  placeholder="productname">
                     
                 </div>
                <div class="col-sm-4">  
-			   	<label for="category">Category:</label>
-					<select class="form-control" id="category" name="category">
-					    <option>Metal</option>
+			   	<select class="form-control" id="type">
+						<option>Metal</option>
 						<option>Non-Metal</option>
 						<option>Raw Material</option>
 						<option>Scrap</option>
@@ -96,7 +102,7 @@
 				    </select>
 				</div>
 				<div class="col-sm-4">
-				<label for="materialname">Material Name :</label>				
+				<label for="materialname"> :</label>				
 					<select class="form-control" id="materialname" name="materialname">
 						<option>Aluminium</option>
 						<option>Silicon</option>
