@@ -41,7 +41,6 @@
 													
 							<p><b>Supplier:</b> SM/RM/19/07/345</p>
 							<p><b>Supplier Price:</b> 80 / KG</p>
-							
 							<p class="mt-5">Stock Available at : Bangalore | Karnataka | INDIA </p>
 					</div>
 					</div>
@@ -74,6 +73,7 @@ and other copper related Raw Materials. We Supply across India.</p>
 							<div class="form-row">
 								<label class="col-sm-8 col-form-label"  for="name">Your Price Per KG</label>
 								<input type="text" class="form-control col-sm-4" name="name" id="name" [(ngModel)]="person.name" />
+								<button type="submit" form="form1" value="Submit">Submit</button>
 							</div>
 					</form>
 							
@@ -155,8 +155,8 @@ and other copper related Raw Materials. We Supply across India.</p>
 													
 							<p><b>Supplier:</b> SM/RM/19/07/345</p>
 							<p><b>Supplier Price:</b> 80 / KG</p>
-							
-							<p class="mt-5">Stock Available at : Bangalore | Karnataka | INDIA </p>
+						<p class="mt-5">Stock Available at : Bangalore | Karnataka | INDIA </p>
+	
 					</div>
 					</div>
 				  </div>
