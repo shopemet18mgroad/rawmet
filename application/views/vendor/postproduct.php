@@ -169,7 +169,8 @@
 					<div class="col-md-12 text-center mt-4">
 						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>
 						
-						<button  href="<?php echo base_url();?>"class="btn btn-primary btn-sm" role="button">Submit</a>
+						<input type="submit" class="btn btn-primary btn-sm" name="submit" value="submit">
+						
 					</div>	
 					
 				</div>
