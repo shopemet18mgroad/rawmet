@@ -90,6 +90,16 @@
           <i class="fas fa-fw fa-upload"></i>
           <span>Post Buying Requirement</span></a>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>customer_myrequirements">
+          <i class="fas fa-fw fa-upload"></i>
+          <span>My Requirements</span></a>
+      </li>
+	  	<li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>customer_myquotes">
+          <i class="fas fa-fw fa-upload"></i>
+          <span>My Quotes</span></a>
+      </li>
 	  
 	  	  <!-- Nav Item - Utilities Collapse Menu -->
  <!--    <li class="nav-item">

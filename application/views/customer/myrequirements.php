@@ -1,11 +1,12 @@
 
+        <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Manage Buying Requirements</h1>
+            <h1 class="h3 mb-0 text-gray-800">My Requirements</h1>
             
           </div>
 
@@ -17,17 +18,18 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Sub Category</th>
-		<th>Required Qty</th>
-		<th>Quote Expire Date</th>
-		 <th>Buyer</th>
-		 <th>Company</th>
-		 <th width="13%">Action</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+		<th>Required Date</th>
+		<th>Last Date</th>
+		 <th>Email</th>
+		 <th>Contact Number</th>
+		 <th>Images</th>
+		 <th>Download</th>
       </tr>
     </thead>
     <tbody>
@@ -39,9 +41,11 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Pending</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+		
       </tr>      
       <tr>
         <td>Non Ferrous Metals</td>
@@ -51,9 +55,11 @@
         <td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Approved</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+		
       </tr>
       <tr>
         <td>Minor Metals</td>
@@ -63,9 +69,11 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Pending</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+		
       <tr>
         <td>Paper Materials</td>
         <td>Iron</td>
@@ -74,9 +82,11 @@
         <td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Pending</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+		
       </tr>
       <tr>
         <td>Plastic Materials</td>
@@ -86,9 +96,11 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Approved</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+		
       </tr>
       <tr>
         <td>Construction Materials</td>
@@ -98,9 +110,11 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Approved</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+		
       </tr>
       <tr>
         <td>Active</td>
@@ -110,9 +124,11 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Approved</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+		
       </tr>
       <tr>
         <td>Secondary</td>
@@ -122,9 +138,11 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Approved</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+	
       </tr>
       <tr>
         <td>Light</td>
@@ -134,9 +152,11 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Approved</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+
       </tr>
       <tr>
 		<td>Light</td>
@@ -146,9 +166,11 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+		<td>Approved</td>
+		<td><button type="submit" class="btn btn-info btn-sm w-75">
+					<i class="fa fa-download" aria-hidden="true"></i>
+					</button></td>
+
       </tr>
     </tbody>
   </table>

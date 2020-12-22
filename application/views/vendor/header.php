@@ -77,8 +77,14 @@
 	    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>vendor_uploadedproduct">
           <i class="fas fa-fw fa-upload"></i>
-          <span>Manage Uploaded Product	</span></a>
+          <span>Manage My Product</span></a>
       </li>
+	  
+<!--	  <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>vendor_cust_quotes">
+          <i class="fas fa-fw fa-upload"></i>
+          <span>Quotes</span></a>
+      </li>-->
 
 	  <!-- Nav Item - Utilities Collapse Menu -->
  <!--    <li class="nav-item">
