@@ -110,6 +110,12 @@
           </div>
         </div>
       </li>
+	  
+	    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>vendor_managebuyreq">
+          <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Manage Buying Requirements</span></a>
+      </li>
 
 
       <!-- Nav Item - Tables -->
