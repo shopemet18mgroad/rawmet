@@ -40,8 +40,9 @@
          <td><?php echo $row->description?></td>
 		<td><?php echo $row->price;?></td>
 		<td><?php echo $row->quantity;?></td>
-        <td><?php echo $row->uploadproductimage;?></td>
-	    <td><?php echo $row->supplyability;?></td>
+
+		<td><?php echo $row->uploadproductimage;?></td>
+		<td><?php echo $row->supplyability;?></td>
 		<td><?php echo $row->estdeltime;?></td>
 		<td><?php echo $row->poptions;?></td>
 		<td style="display:inline-flex;">
@@ -52,7 +53,6 @@
 				
 		<a style="margin:2px" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i></a></td>
         
-      
 <?php }?>	
 </tr>   
       

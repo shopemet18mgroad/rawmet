@@ -37,4 +37,24 @@ class Admin_sellerprofile extends CI_Controller {
 		
 	}
 	
+	public function delete_seller(){
+	
+		
+		$vname = urldecode($this->uri->segment(3));
+		$vcompanytype = urldecode($this->uri->segment(4));
+		$active = array('vname'=>$vname,'vcompanytype'=>$vcompanytype);
+		
+		$this->load->model('Admin_model');
+		if($vname){
+			$this->Admin_model->delete_data('vendor_register', $active);
+	
+		}
+		$this->load->helper('url');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		header('location: '.base_url().'admin_manageseller/index/'.$vname);
+	
+}
+	
+	
 }

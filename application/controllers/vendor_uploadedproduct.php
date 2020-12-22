@@ -47,7 +47,7 @@ class Vendor_uploadedproduct extends CI_Controller {
 		$this->load->helper('url');
 
 		}
-		
+
 			
 	}
 	

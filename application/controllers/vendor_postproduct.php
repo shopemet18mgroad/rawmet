@@ -21,9 +21,9 @@ class Vendor_postproduct extends CI_Controller {
 	public function index()
 	{ 
 	
-	
-			 $productname = $this->input->post('productname');
+			$productname = $this->input->post('productname');
 			 $category = $this->input->post('category');
+			 $materialname = $this->input->post('materialname');
 			 $pstates= $this->input->post('pstates');
 		     $types= $this->input->post('types');
 			 $materialname = $this->input->post('materialname');
@@ -43,6 +43,7 @@ class Vendor_postproduct extends CI_Controller {
 			
             
               $this->load->model('Admin_model');
+
 			  $data2 = array('productname' => $productname,'category'=> $category,'pstates'=>$pstates,'types'=>$types,'materialname'=>$materialname,'description' => $description,'price'=>$price,'quantity'=>$quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
 		$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
@@ -52,11 +53,12 @@ class Vendor_postproduct extends CI_Controller {
 			}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
 			$active = array('vusername'=>$sess['sessi']);      
-		
+
 		
 		
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('sellerpostproduct',$data2);
+
 		//print_r($status);die;
 		//header('location: '.base_url().'Vendor_postproduct/'.$datainserr);
 		$this->load->view('vendor/header',$sess);

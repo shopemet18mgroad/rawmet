@@ -41,8 +41,15 @@
 					<td><?php echo $row->vaddress; ?></td>
 					<td><?php echo $row->vcity;?></td>
 		
+
      <td><a class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i>Delete</a>
 				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanytype);?>"><i class="fa fa-edit">Edit</a></td>
+
+     <td>
+				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanytype);?>"><i class="fa fa-edit"></i>Edit</a>
+				
+				<a href="<?php echo base_url()."admin_sellerprofile/delete_seller/".urldecode($row->vname).'/'.urldecode($row->vcompanytype);?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash"></i>Delete</a></td>
+
       </tr> 
 <?php }?>	  
       
