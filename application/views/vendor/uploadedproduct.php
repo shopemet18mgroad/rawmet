@@ -23,7 +23,7 @@
 	    <th>Image</th>
 		<th>Supply Ability</th>
 		<th>Estimated Delivery Time</th>
-		<th>Status</th>
+		
 		<th>options</th>
 		
 		
@@ -44,9 +44,9 @@
 		<td><?php echo $row->uploadproductimage;?></td>
 		<td><?php echo $row->supplyability;?></td>
 		<td><?php echo $row->estdeltime;?></td>
-		<td><?php echo $row->poptions;?></td>
+
 		<td style="display:inline-flex;">
-		<a style="margin:2px" class="btn btn-success btn-sm text-white">Approve</a>
+		
 		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-eye"></i></a>
 		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-edit"></i></a>
 				

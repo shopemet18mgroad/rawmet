@@ -31,32 +31,89 @@
 			<form action="<?php echo base_url();?>vendor_postproduct" method="POST">
 			 	
                 <div class="form-group row">
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Supplier Name </label>
+					<input type="text" class="form-control" id="suppliername" name="suppliername"  placeholder="Supplier Name">
+                    
+                </div>
 				
 				
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Product Name</label>
+					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name">
+                    
+                </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Company Name</label>
-					<input type="text" class="form-control" id="productname" name="productname"  placeholder="productname">
+					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name">
+                    
+                </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Product Id</label>
+					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id">
+                    
+                </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Catergory</label>
+					<input type="text" class="form-control" id="category" name="category"  placeholder="Catergory">
                     
                 </div>
 				
-				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Product Name:</label>
-					<input type="text" class="form-control" id="productname" name="productname"  placeholder="productname">
-                    
-                </div>
-               <div class="col-sm-4">  
-			   	<select class="form-control" id="type">
-						<option>Metal</option>
-						<option>Non-Metal</option>
-						<option>Raw Material</option>
-						<option>Scrap</option>
-				    </select>
-				</div>
+				
+              
 				<div class="col-sm-4">  
 			   	<label for="category">States:</label>
 					<select class="form-control" id="pstates" name="pstates">
-					    <option>All India</option>
-						<option>Andhra Pradesh</option>
+					    <option value="">All India</option>
+						<option value="Andhra Pradesh">Andhra Pradesh</option>
+						<option value="Arunchal Pradesh">Arunchal Pradesh</option>
+						<option value="Assam">Assam</option>
+						<option value="Chhattisgarh">Chhattisgarh</option>
+						<option value="Goa">Goa</option>
+						<option value="Gujarat">Gujarat</option> 
+						<option value="Haryana">Haryana</option>
+						<option value="Himchala Pradesh">Himchala Pradesh</option>
+						<option value="Jharkhand">Jharkhand</option>
+						<option value="Karnataka">Karnataka</option>
+						<option value="Kerala">Kerala</option>
+						<option value="Madhya Pradesh">Madhya Pradesh</option>
+						<option value="Manipur">Manipur</option>
+						<option value="Meghalaya">Meghalaya</option>
+						<option value="Mizoram">Mizoram</option>
+						<option value="Nagalan">Nagaland</option>
+						<option value="Odisha">Odisha</option>
+						<option value="Punjab">Punjab</option>
+						<option value="Rajasthan">Rajasthan</option>
+						<option value="Sikkim">Sikkim</option>
+						<option value="Tamil Nadu">Tamil Nadu</option>
+						<option value="Telangana">Telangana</option>
+						<option value="Tripura">Tripura</option>
+						<option value="UttarKhand ">UttarKhand </option>
+						<option value="Uttar Pradesh">Uttar Pradesh</option>
+						<option value="Uttar Pradesh">West Bengal</option>
+						<option value="Andaman and nicobar">Andaman and nicobar</option>
+						<option value="Chandigar">Chandigarh</option>
+						<option value="Dadra and Nagar Haveli and Daman & Diu">Dadra and Nagar Haveli and Daman & Diu</option>
+						<option value="Jammu and kashmir">Jammu and kashmir</option>
+						<option value="ladakh">ladakh</option>
+						<option value="puducherry">puducherry</option>
+						</select>
+				</div>
+				<div class="col-sm-4">  
+				
+			   	<label for="category">Types:</label>
+					<select class="form-control" id="types" name="types">
+					<option value="Types">Types</option>
+						<option value="Primary">Primary</option>
+						<option value="Secondary">Secondary</option>
+				        <option value="Scrap" >Scrap</option>
+				    </select>  
+				</div>
+				<div class="col-sm-4">  
+			   	<label for="category">City:</label>
+					<select class="form-control" id="pstates" name="pstates">
+					    <option>All city</option>
+						<option>Bangalore</option>
 						<option>Arunchal Pradesh</option>
 						<option>Assam</option>
 						<option>Chhattisgarh</option>
@@ -91,26 +148,7 @@
 						<option>puducherry</option>
 						</select>
 				</div>
-				<div class="col-sm-4">  
 				
-			   	<label for="category">Types:</label>
-					<select class="form-control" id="types" name="types">
-					<option>Types</option>
-						<option>Primary</option>
-						<option>Secondary</option>
-				        <option>Scrap</option>
-				    </select>
-				</div>
-				<div class="col-sm-4">
-				<label for="materialname"> :</label>				
-					<select class="form-control" id="materialname" name="materialname">
-						<option>Aluminium</option>
-						<option>Silicon</option>
-						<option>Iron</option>
-						<option>Coal</option>
-				    </select>
-					
-				</div>
 				  
 				  <div class="col-sm-12">
 					<label for="description">Description:</label>
@@ -175,8 +213,7 @@
 					<div class="col-md-12 text-center mt-4">
 						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>
 						
-						<input type="submit" class="btn btn-primary btn-sm" name="submit" value="submit">
-						
+						<button  href="<?php echo base_url();?>"class="btn btn-primary btn-sm" role="button">Submit</a>
 					</div>	
 					
 				</div>
