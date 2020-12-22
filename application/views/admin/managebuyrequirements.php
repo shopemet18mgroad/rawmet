@@ -1,4 +1,5 @@
 
+        <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -27,7 +28,6 @@
 		<th>Quote Expire Date</th>
 		 <th>Buyer</th>
 		 <th>Company</th>
-		 <th width="13%">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -39,9 +39,7 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+	
       </tr>      
       <tr>
         <td>Non Ferrous Metals</td>
@@ -51,9 +49,7 @@
         <td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+	
       </tr>
       <tr>
         <td>Minor Metals</td>
@@ -63,9 +59,7 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+	
       <tr>
         <td>Paper Materials</td>
         <td>Iron</td>
@@ -74,9 +68,7 @@
         <td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+
       </tr>
       <tr>
         <td>Plastic Materials</td>
@@ -86,9 +78,7 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+
       </tr>
       <tr>
         <td>Construction Materials</td>
@@ -98,9 +88,7 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+
       </tr>
       <tr>
         <td>Active</td>
@@ -110,9 +98,7 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+
       </tr>
       <tr>
         <td>Secondary</td>
@@ -122,9 +108,7 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+
       </tr>
       <tr>
         <td>Light</td>
@@ -134,9 +118,7 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+
       </tr>
       <tr>
 		<td>Light</td>
@@ -146,9 +128,7 @@
 		<td>2020-07-12</td>
 		<td>Robert</td>
 		<td>ABCD</td>
-		<td>
-			<button class="btn btn-danger btn-sm text-white">Delete</button>
-		</td>
+
       </tr>
     </tbody>
   </table>
