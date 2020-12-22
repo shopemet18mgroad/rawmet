@@ -32,33 +32,41 @@ class Vendor_postproduct extends CI_Controller {
     
 	public function index()
 	{ 
-	 if($this->input->post('submit')){
-			$date =  Date('Y-m-d'); 
+	 if($this->input->post('productname')){
+			  $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
-			$productname = $this->input->post('productname');
-			 $category = $this->input->post('category');
-			 $materialname = $this->input->post('materialname');
-			 $pstates= $this->input->post('pstates');
-		     $types= $this->input->post('types');
-			 $materialname = $this->input->post('materialname');
-		     $description = $this->input->post('description');
-			 $price = $this->input->post('price');
-			$quantity = $this->input->post('quantity');
-			$aifeatured = $this->input->post('aifeatured');
+			 $productname = $this->input->post('productname');
+			 $suppliername = $this->input->post('suppliername');
+			$category = $this->input->post('category');
+			$materialname = $this->input->post('materialname');
+			$description = $this->input->post('description');
+			
+			$price = $this->input->post('price');
+			 $quantity = $this->input->post('quantity');
+			 $aifeatured = $this->input->post('aifeatured');
 			$fobprice = $this->input->post('fobprice');
-			$uploadproductimage = $this->input->post('uploadproductimage');
+		$uploadproductimage = $this->input->post('uploadproductimage');
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
 			$quantpermonth = $this->input->post('quantpermonth');
 			$estdeltime = $this->input->post('estdeltime');
-			
+			$pstates= $this->input->post('pstates');
+		    $types= $this->input->post('types');
+			 
+		    $payable = $this->input->post('payable');
+		 $vusername = $this->input->post('vusername');
+		 $productid = $this->input->post('productid');
+			$companyname = $this->input->post('companyname');
+			 
+		
 			
 			
           
 
-			  $data2 = array('productname' => $productname,'category'=> $category,'pstates'=>$pstates,'types'=>$types,'materialname'=>$materialname,'description' => $description,'price'=>$price,'quantity'=>$quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
+			  $data2 = array('productname' => $productname,'suppliername'=>$suppliername,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'payable'=> $payable,'vusername'=>$vusername,'productid'=>$productid ,'companyname'=>$companyname );
+
 	
 		
 			

@@ -112,40 +112,108 @@
 				<div class="col-sm-4">  
 			   	<label for="category">City:</label>
 					<select class="form-control" id="pstates" name="pstates">
-					    <option>All city</option>
-						<option>Bangalore</option>
-						<option>Arunchal Pradesh</option>
-						<option>Assam</option>
-						<option>Chhattisgarh</option>
-						<option>Goa</option>
-						<option>Gujarat</option>
-						<option>Haryana</option>
-						<option>Himchala Pradesh</option>
-						<option>Jharkhand</option>
-						<option>Karnataka</option>
-						<option>Kerala</option>
-						<option>Madhya Pradesh</option>
-						<option>Manipur</option>
-						<option>Meghalaya</option>
-						<option>Mizoram</option>
-						<option>Nagaland</option>
-						<option>Odisha</option>
-						<option>Punjab</option>
-						<option>Rajasthan</option>
-						<option>Sikkim</option>
-						<option>Tamil Nadu</option>
-						<option>Telangana</option>
-						<option>Tripura</option>
-						<option>UttarKhand </option>
-						<option>Uttar Pradesh</option>
-						<option>West Bengal</option>
-						<option>Andaman and nicobar</option>
-						<option>Chandigarh</option>
-						<option>Dadra and Nagar Haveli and Daman & Diu</option>
-						<option>Jammu and kashmir</option>
-						<option>ladakh</option>
-						<option>Lakshadweep</option>
-						<option>puducherry</option>
+					    <option value="">All city</option>
+						<option value="Mumbai">Mumbai</option>
+						<option value="Dehli">Delhi</option>
+						<option value="Bangalore">Bangalore</option>
+						<option value="hyderabad">hyderabad</option>
+						<option value="Ahmedabad">Ahmedabad</option>
+						<option value="Chennai">Chennai </option>
+						<option value="Kolkata">Kolkata</option>
+						<option value="Surat">Surat</option>
+						<option value="Pune">Pune</option>
+						<option value="Jaipur">Jaipur</option>
+						<option value="Lucknow">Lucknow</option>
+						<option value="Kanpur">Kanpur</option>
+						<option value="Nagpur">Nagpur</option>
+						<option value="Indore">Meghalaya</option>
+						<option value="Thane">Thane</option>
+						<option value="Bhopal">Bhopal</option>
+						<option value="Visakhapatnam">Visakhapatnam</option>
+						<option value="Patna">Patna</option>
+						<option value="Vadodara">Vadodara</option>
+						<option value="Ghaziabad">Ghaziabad</option>
+						<option value="Ludhiana">Ludhiana</option>
+						<option value="Agra">Agra</option>
+						<option value="Nashik">Nashik</option>
+						<option value="Faridabad">Faridabad</option>
+						<option value="Meerut">Meerut</option>
+						<option value="Rajkot">Rajkot</option>
+						<option value="Kalyan">Kalyan</option>
+						<option value="Vasai Virar">Vasai Virar</option>
+						<option value="Varanasi">Varanasi</option>
+						<option value="Srinagar">Srinagar</option>
+						<option value="Aurangabad">Aurangabad</option>
+						<option value="Dhanbad	Jharkhand">Dhanbad	Jharkhand</option>
+						<option value="Amritsar">Amritsar</option>
+						<option value="Navi Mumbai">Navi Mumbai</option>
+						<option value="Allahabad">Allahabad</option>
+						<option value="Ranchi">Ranchi</option>
+						<option value="Haora">Haora</option>
+						<option value="Coimbatore">Coimbatore</option>
+						<option value="Jabalpur">Jabalpur</option>
+						<option value="Gwalior">Gwalior</option>
+						<option value="Vijayawada">Vijayawada</option>
+						<option value="Jodhpur">JodhpurPune</option>
+						<option value="Madurai">Madurai</option>
+						<option value="Raipur">Raipur</option>
+						<option value="Kota">Kota</option>
+						<option value="Guwahati">Guwahati</option>
+						<option value="Chandigarh">Chandigarh</option>
+						<option value="Solapur">Solapur</option>
+						<option value="Hubli">Hubli</option>
+						<option value="Dharwad">Dharwad</option>
+						<option value="Bareilly">Bareilly</option>
+						<option value="Moradabad">Moradabad</option>
+						<option value="Mysore">Mysore</option>
+						<option value="Gurgaon">Gurgaon</option>
+						<option value="Aligarh">Aligarh</option>
+						<option value="Jalandhar">Jalandhar</option>
+						<option value="Tiruchirappalli">Tiruchirappalli</option>
+						<option value="Bhubaneswar">Meerut</option>
+						<option value="Salem">Salem</option>
+						<option value="Mira">Mira</option>
+						<option value="Thiruvananthapuram">Thiruvananthapuram</option>
+						<option value="Bhiwandi">Bhiwandi</option>
+						<option value="Saharanpur">Saharanpur</option>
+						<option value="Gorakhpur">Gorakhpur</option>
+						<option value="Guntur">Guntur</option>
+						<option value="Amritsar">Amritsar</option>
+					 <option value="Bikaner">Bikaner</option>
+						<option value="Amravati">Amravati</option>
+						<option value="Noida">Noida</option>
+						<option value="Jamshedpur">Jamshedpur</option>
+						<option value="Bhilai Nagar">Bhilai Nagar</option>
+						<option value="Warangal">Warangal</option>
+						<option value="Cuttack	Orissa">Cuttack	Orissa</option>
+						<option value="Firozabad">Firozabad</option>
+						<option value="Kochi">Kochi</option>
+						<option value="Bhavnagar">Bhavnagar</option>
+						<option value="Dehradun">Dehradun</option>
+						<option value="Durgapur">Durgapur</option>
+						<option value="Asansol">Asansol</option>
+						<option value="Nanded Waghala">Nanded Waghala</option>
+						<option value="Kolapur">Kolapur</option>
+						<option value="Ajmer">Ajmer</option>
+						<option value="Gulbarga">Gulbarga</option>
+						<option value="Jamnagar">Jamnagar/option>
+						<option value="Ujjain">Ujjain</option>
+						<option value="Loni">Loni</option>
+						<option value="Siliguri">Siliguri</option>
+						<option value="Jhansi">Jhansi</option>
+						<option value="Ulhasnagar">Ulhasnagar</option>
+						<option value="Nellore">Nellore</option>
+						<option value="Jammu">Jammu</option>
+						<option value="Sangli Miraj Kupwad">Sangli Miraj Kupwad</option>
+						<option value="Belgaum">Belgaum</option>
+						<option value="Mangalore">Mangalore</option>
+						<option value="Ambattur">Ambattur</option>
+						<option value="Tirunelveli">TirunelveliTirunelveli</option>
+						<option value="Malegoan">Malegoan</option>
+						<option value="Gaya">Gaya</option>
+						<option value="Udaipur">Udaipur</option>
+						<option value="Maheshtala">Maheshtala</option>
+						<option value="Jalgaon">Jalgaon</option>
 						</select>
 				</div>
 				
@@ -161,10 +229,23 @@
                   </div>
                 
 				
-                <div class="col-sm-4">
+                <div class="col-sm-2">
 					<label for="quantity">Stock:</label>
-                  <input type="text" class="form-control" id="quantity" name="quantity" placeholder="">
-                </div>
+                  <input type="text" class="form-control" id="quantity" name="quantity" placeholder>
+				  </div>
+				  <div class="col-sm-2 mb-3 mb-sm-0">	
+				<label for="quantity">Units:</label>
+			   	<select class="form-control col-sm-0" id="type">
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+					
+				    </select> value
+			</div>
 				
 				
 				
@@ -175,11 +256,24 @@
 					<input type="text" class="form-control" id="minoderquant" name="minoderquant"  placeholder="">
                     
                 </div>
-				<div class="col-sm-4 mb-3 mb-sm-0">
+				<div class="col-sm-2 mb-3 mb-sm-0">
 					<label for="Pname">supply Ability:</label>
 					<input type="text" class="form-control" id="supplyability" name="supplyability"  placeholder="">
                     
                 </div>
+				<div class="col-sm-2 mb-3 mb-sm-0">	
+				<label for="quantity">Units:</label>
+			   	<select class="form-control col-sm-0" id="type">
+						<option>KG</option>
+						<option>Metric ton</option>
+						<option>Litre</option>
+						<option>lot</option>
+						<option>litre</option>
+						<option>Number</option>
+						<option>Meter</option>
+					
+				    </select>
+			</div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Payable To Rawmet:(%)</label>
 					<input type="text" class="form-control" id="payable" name="payable"  placeholder="" required>
@@ -213,7 +307,7 @@
 					<div class="col-md-12 text-center mt-4">
 						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>
 						
-						<button  href="<?php echo base_url();?>"class="btn btn-primary btn-sm" role="button">Submit</a>
+						<button type="submit" href="<?php echo base_url();?>"class="btn btn-primary btn-sm" name="submit" role="button">Submit</a>
 					</div>	
 					
 				</div>

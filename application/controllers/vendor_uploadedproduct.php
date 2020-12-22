@@ -29,16 +29,17 @@ class Vendor_uploadedproduct extends CI_Controller {
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
-			
-		$poptions = array('poptions'=>false);
+$sess = array('sessi'=>$this->session->userdata('username'));			
+		$poptions = array('poptions'=>false ,'vusername'=>$sess['sessi']);
 		
 		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$poptions);
 		
 		
 		$adac['sqldata']= $query;
-		$sess = array('sessi'=>$this->session->userdata('username'));
-			$active = array('vusername'=>$sess['sessi']);
+		
+			//$active = array('vusername'=>$sess['sessi']);
+		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
 		
 		
 		$this->load->view('vendor/header',$sess);
