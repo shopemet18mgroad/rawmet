@@ -33,145 +33,22 @@
       </tr>
     </thead>
     <tbody>
+	 <?php foreach($adac as $row){?>
       <tr>
-        <td>Ferrous Metals  </td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
+        <td><?php echo $row->productname;?></td>
+        <td><?php echo $row->description;?></td>
+        <td><?php echo $row->quantity;?></td>
+		<td><?php echo $row->requireddate;?></td>
+		<td><?php echo $row->lastdate;?></td>
+		<td><?php echo $row->uploadimage;?></td>
+		<td><?php echo $row->email;?></td>
 		<td>Pending</td>
 		<td><button type="submit" class="btn btn-info btn-sm w-75">
 					<i class="fa fa-download" aria-hidden="true"></i>
 					</button></td>
 		
       </tr>      
-      <tr>
-        <td>Non Ferrous Metals</td>
-        <td>Iron</td>
-		<td>D</td>
-		<td>15</td>
-        <td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-		
-      </tr>
-      <tr>
-        <td>Minor Metals</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Pending</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-		
-      <tr>
-        <td>Paper Materials</td>
-        <td>Iron</td>
-		<td>D</td>
-		<td>15</td>
-        <td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Pending</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-		
-      </tr>
-      <tr>
-        <td>Plastic Materials</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-		
-      </tr>
-      <tr>
-        <td>Construction Materials</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-		
-      </tr>
-      <tr>
-        <td>Active</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-		
-      </tr>
-      <tr>
-        <td>Secondary</td>
-       <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-	
-      </tr>
-      <tr>
-        <td>Light</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-
-      </tr>
-      <tr>
-		<td>Light</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-
-      </tr>
+     <?php }?>	
     </tbody>
   </table>
 		</div>
