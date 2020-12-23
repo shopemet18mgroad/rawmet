@@ -48,6 +48,7 @@
 		<td style="display:inline-flex;">
 		
 		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-eye"></i></a>
+		
 		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-edit"></i></a>
 				
 				

@@ -29,8 +29,13 @@ class Vendor_uploadedproduct extends CI_Controller {
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
-$sess = array('sessi'=>$this->session->userdata('username'));			
-		$poptions = array('poptions'=>false ,'vusername'=>$sess['sessi']);
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active1 = array('vusername'=>$sess['sessi']);
+		
+		$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
+		
+		$vendorname = $query2[0]->vname;
+		$poptions = array('poptions'=>false ,$vendorname);
 		
 		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$poptions);

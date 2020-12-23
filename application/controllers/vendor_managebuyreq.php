@@ -21,7 +21,10 @@ class Vendor_managebuyreq extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('vendor/header');
+		$this->load->model('Admin_model');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/managebuyreq');
 		$this->load->view('vendor/footer');
 		

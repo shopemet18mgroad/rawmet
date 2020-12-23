@@ -41,7 +41,7 @@ required>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="email" class="form-control form-control-user"id="vemail"  name="vemail"   placeholder="Email">
+                    <input type="email" class="form-control form-control-user" id="vemail"  name="vemail" placeholder="Email">
                   </div>
                   <div class="col-sm-6">
                     <input type="text" class="form-control form-control-user" id="vusername"  name="vusername"   placeholder="User Name">

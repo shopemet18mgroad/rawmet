@@ -32,8 +32,8 @@
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Supplier Name </label>
-					<input type="text" class="form-control" id="suppliername" name="suppliername"  placeholder="Supplier Name">
+					<label for="">Supplier Name</label>
+					<input type="text" class="form-control" id="vname" name="vname"  value="<?php echo  $scomp[0]->vname;?>" readonly>
                     
                 </div>
 				
@@ -111,7 +111,7 @@
 				</div>
 				<div class="col-sm-4">  
 			   	<label for="category">City:</label>
-					<select class="form-control" id="pstates" name="pstates">
+					<select class="form-control" id="city" name="city">
 					    <option value="">All city</option>
 						<option value="Mumbai">Mumbai</option>
 						<option value="Dehli">Delhi</option>
@@ -235,7 +235,7 @@
 				  </div>
 				  <div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="type">
+			   	<select class="form-control col-sm-0" id="units" name="units">
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
 						<option value="Litre">Litre</option>
@@ -263,7 +263,7 @@
                 </div>
 				<div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="type">
+			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits">
 						<option>KG</option>
 						<option>Metric ton</option>
 						<option>Litre</option>
