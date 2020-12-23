@@ -15,6 +15,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	  <th>Product Id</th>
         <th>Product Name</th>
         <th>Category</th>
         <th>Description</th>
@@ -22,7 +23,7 @@
 		<th>stock</th>
 	    <th>Image</th>
 		<th>Supply Ability</th>
-		<th>Estimated Delivery Time</th>
+		
 		
 		<th>options</th>
 		
@@ -35,6 +36,9 @@
       
 	   <?php foreach($sqldata as $row){?>
       <tr>
+	 <?php $proid = str_ireplace('/','-',$row->productid);
+				?>
+	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
          <td><?php echo $row->description?></td>
@@ -43,16 +47,16 @@
 
 		<td><?php echo $row->uploadproductimage;?></td>
 		<td><?php echo $row->supplyability;?></td>
-		<td><?php echo $row->estdeltime;?></td>
+		
 
 		<td style="display:inline-flex;">
 		
 		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-eye"></i></a>
 		
-		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-edit"></i></a>
+		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid;?>"><i class="fa fa-edit"></i></a>
+			
 				
-				
-		<a style="margin:2px" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i></a></td>
+		<a style="margin:2px" class="btn btn-danger btn-sm text-white"  href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-trash"></i></a></td>
         
 <?php }?>	
 </tr>   

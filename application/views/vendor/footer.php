@@ -60,5 +60,24 @@
   <script src="<?php echo base_url()."web_files/";?>vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="<?php echo base_url()."web_files/";?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
  <script src="<?php echo base_url()."web_files/";?>js/demo/datatables-demo.js"></script>
+ 
+ 
+ <script>
+ function product_id(){
+	 var cat = document.getElementById('category').value;
+	  var cat2 = document.getElementById('productname').value;
+	   var d = new Date();
+	   var m = d.getHours();
+	   var n = d.getMinutes();
+	   var s = d.getSeconds();
+	 if(cat == 'Select'){
+		 swal("Alert!", "Please Select Categoery First", "error");
+		 return false;
+	 }
+	 if(cat2.length<6){
+		  document.getElementById('productid').value = "RAW/"+cat2+"/"+cat+"/"+m+"/"+n+"/"+s;
+	 }
+ }
+ </script>
  </body>
  </html>

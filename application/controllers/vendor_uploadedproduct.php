@@ -35,7 +35,7 @@ class Vendor_uploadedproduct extends CI_Controller {
 		$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
 		
 		$vendorname = $query2[0]->vname;
-		$poptions = array('poptions'=>false ,$vendorname);
+		$poptions = array('vname'=>$vendorname);
 		
 		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$poptions);
@@ -56,6 +56,24 @@ class Vendor_uploadedproduct extends CI_Controller {
 
 			
 	}
+	public function delete_seller(){
+	
+		
+		$productname = urlencode($this->uri->segment(3));
+		//$productid = str_ireplace('-','/',$productid);
+		
+		$active = array('productname'=>$productname);
+		
+		$this->load->model('Admin_model');
+		$this->Admin_model->delete_data('sellerpostproduct', $active);
+		
+		$this->load->helper('url');
+		$this->load->library('session');
+		
+		header('location: '.base_url().'vendor_uploadedproduct/index/');
+	
+}
+	
 	
 		
 	}

@@ -47,20 +47,21 @@ class Vendor_postproduct extends CI_Controller {
 			$units = $this->input->post('units');
 			$aifeatured = $this->input->post('aifeatured');
 			$fobprice = $this->input->post('fobprice');
-			$uploadproductimage = $this->input->post('uploadproductimage');
+			
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');
 			$quantpermonth = $this->input->post('quantpermonth');
 			$estdeltime = $this->input->post('estdeltime');
 			$pstates= $this->input->post('pstates');
-			$city = $this->input->post('$city');
+			$pcities = $this->input->post('pcities');
 		    $types= $this->input->post('types');			 
 		    $payable = $this->input->post('payable');
 			$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
-			 
-			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'city'=> $city,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname );
+			$uploadproductimage = self::upload_files('uploadproductimage');
+			 //print_r($uploadproductimage);die;
+			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname );
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('sellerpostproduct',$data2);
@@ -87,5 +88,41 @@ class Vendor_postproduct extends CI_Controller {
 			}  
 	 
 }
+private function upload_files($nameid)
+    {	
+	echo $countfiles = count($_FILES[$nameid]['name']);die;
+      // Looping all files
+      for($i=0;$i<$countfiles;$i++){
+        if(!empty($_FILES[$nameid]['name'][$i])){
+ 
+          // Define new $_FILES array - $_FILES['file']
+          $_FILES['file']['name'] = $_FILES[$nameid]['name'][$i];
+          $_FILES['file']['type'] = $_FILES[$nameid]['type'][$i];
+          $_FILES['file']['tmp_name'] = $_FILES[$nameid]['tmp_name'][$i];
+          $_FILES['file']['error'] = $_FILES[$nameid]['error'][$i];
+          $_FILES['file']['size'] = $_FILES[$nameid]['size'][$i];
+
+          // Set preference
+           $config['upload_path'] = 'web_files/uploads/';
+			$config['allowed_types'] = 'doc|docx|pdf|xlsx|jpg|png|gif';
+          $config['max_size'] = '50000000'; // max_size in kb
+          $config['file_name'] = $_FILES[$nameid]['name'][$i];
+ 
+          //Load upload library
+          $this->load->library('upload',$config); 
+		$this->upload->initialize($config);
+          // File upload
+          if($this->upload->do_upload('file')){
+            // Get data about the file
+            $uploadData = $this->upload->data();
+            $filename = $uploadData['file_name'];
+            // Initialize array
+            $datar[] = $filename;
+          }
+        }
+ 
+      }
+	  return $datar;
+    }
 }    
 	
