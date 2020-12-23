@@ -25,7 +25,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">		
-				<form class="user">
+				<form action="<?php echo base_url();?>customer_postbuyreq" method="POST">
 				
 				<div class="row ml-4">
 				<div class="col-sm-5 bg-warning">
@@ -41,8 +41,22 @@
 				</div>	
 				</div>
 
-			
+			<form action="<?php echo base_url();?>customer_postbuyreq" method="POST">
 				<div class="caption col-6 p-2 ml-5 mt-3 bg-light">
+				<div class="form-group">
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Customer Name</label>
+					<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->bname;?>" readonly>
+                    
+                </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Company Name</label>
+					<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
+                    
+                </div>
+								
+							</div>
+							
 				<div class="form-group">
 								<label>Product Name:</label>
 								<input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name you want to buy..">
@@ -102,8 +116,8 @@
 							</div>
 						</div>
 				
-					<button type="submit" href="<?php echo base_url();?>" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" name="submit" role="button"><b>Post Buying Requirement</b></a>
-					
+					<button type="submit" href="<?php echo base_url();?>" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" name="submit" role="submit"><b>Post Buying Requirement</b></a>
+					</form>
 					</div>
 			
 				  </div>

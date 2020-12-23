@@ -33,6 +33,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
+			public function getbuyerdatafromtable($table, $data) { 
+			 $this->db->select('bcompanyname');
+			  $this->db->select('bname');
+			 $query = $this->db->get_where($table, $data); 
+			 return $query->result();
+		}
 		
 		
 		public function datebetween($table, $date){
