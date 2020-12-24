@@ -26,6 +26,7 @@ class Admin_sellerreg extends CI_Controller {
 			echo 'alert("'.$errormsg.'")';
 			echo '</script>';
 		}
+		$this->load->library('session');
 		/* $this->load->helper('url');
 	if($this->uri->segment(3)){
 			$errormsg = urldecode($this->uri->segment(3));
@@ -41,7 +42,8 @@ class Admin_sellerreg extends CI_Controller {
 			die;
 		}else{
 		$sess = array('sessi'=>$this->session->userdata('username')); */
-		$this->load->view('admin/header');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/sellerreg');
 		$this->load->view('admin/footer');
 		

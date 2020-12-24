@@ -31,7 +31,8 @@ class Admin_sellerprofile extends CI_Controller {
 		$query = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$data['sqldata']= $query;
 			//print_r($query); die;
-		$this->load->view('admin/header');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/sellerprofile',$data);
 		$this->load->view('admin/footer');
 		

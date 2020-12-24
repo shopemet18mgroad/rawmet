@@ -35,7 +35,8 @@ class Admin_editcustprofile extends CI_Controller {
 		//print_r($query);die;
 		$data['sqldata']= $query;
 			//print_r($query); die;
-		$this->load->view('admin/header');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/editcustprofile',$data);
 		//$this->load->view('admin/footer');
 		

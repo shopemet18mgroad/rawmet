@@ -22,7 +22,8 @@ class Admin_managebuyer extends CI_Controller {
 	
 	{
 		$this->load->model('Admin_model');
-		/* $this->load->library('session');
+		 $this->load->library('session');
+		 /*
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
@@ -36,8 +37,8 @@ class Admin_managebuyer extends CI_Controller {
 		//$sess = array('sessi'=>$this->session->userdata('username'));
 		//$active = array('ausername'=>$sess['sessi']);
 		
-		
-		$this->load->view('admin/header');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/managebuyer',$adac);
 		$this->load->view('admin/footer');
 		$this->load->helper('url');

@@ -19,7 +19,7 @@ class Admin_buyerreg extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
+	{$this->load->library('session');
 		/* $this->load->helper('url');
 	if($this->uri->segment(3)){
 			$errormsg = urldecode($this->uri->segment(3));
@@ -34,8 +34,8 @@ class Admin_buyerreg extends CI_Controller {
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 		}else{ */
-		//$sess = array('sessi'=>$this->session->userdata('username'));
-		$this->load->view('admin/header');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/buyerreg');
 		$this->load->view('admin/footer');
 		

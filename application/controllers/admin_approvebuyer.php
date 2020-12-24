@@ -36,8 +36,8 @@ class Admin_approvebuyer extends CI_Controller {
 		//$active = array('ausername'=>$sess['sessi']);
 		
 		
-		
-		$this->load->view('admin/header');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/approvebuyer',$adac);
 		$this->load->view('admin/footer');
 	
