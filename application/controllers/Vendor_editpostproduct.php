@@ -25,6 +25,7 @@ class Vendor_editpostproduct extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		$productname= $this->uri->segment(3);	
+		$productid= $this->uri->segment(4);	
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
@@ -34,15 +35,34 @@ class Vendor_editpostproduct extends CI_Controller {
 
 			$active = array('vusername'=>$sess['sessi']);
 			//print_r($active);die;
+			$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active);
+		
+		$vendorname = $query2[0]->vname;
+		
+			$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$vendorname);
+			//print_r($data['sqldata']); die;
+		
 			
-			$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$active);
-			$data['sqldata']= $query;
-			print_r($query);die;
 		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/editpostproduct');
 		$this->load->view('vendor/footer');
 		}
 		
+	}
+	public function editproduct(){
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+
+		$retriveval = array('productid'=>$retrivevaltmp);
+		
+		$this->load->model('Admin_model');
+		$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$retriveval);
+			//print_r($data['sqldata']); die;
+		$this->load->helper('url');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('vendor/header',$sess);
+		$this->load->view('vendor/editpostproduct', $data);
+		$this->load->view('vendor/footer');
 	}
 	
 }

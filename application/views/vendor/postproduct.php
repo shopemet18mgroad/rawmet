@@ -37,34 +37,53 @@
                     
                 </div>
 				
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Category</label>
+					<select class="form-control" id="category" name="category">
+					       <option value="Category">--Category--</option>
+						<option value="Non Metal">Non Metal</option>
+						<option value="Ferrous">Ferrous</option>
+						<option value=" Non-Ferrous">Non-Ferrous</option>
+				        <option value="Scrap" >Scrap</option>
+						<option value="Metal" >Metal</option>
+				    </select> 
+                    
+                </div>
 				
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Product Name</label>
-					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name">
+					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name" onkeyup="product_id()">
                     
                 </div>
-				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Company Name</label>
-					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name">
-                    
-                </div>
-				<div class="col-sm-4 mb-3 mb-sm-0">
+					<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Product Id</label>
 					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id">
                     
                 </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Catergory</label>
-					<input type="text" class="form-control" id="category" name="category"  placeholder="Catergory">
+					<label for="">Company Name</label>
+					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" >
                     
                 </div>
+				
+			
+				<div class="col-sm-4">  
+				
+			   	<label for="category">Types:</label>
+					<select class="form-control" id="types" name="types">
+					<option value="Types">Types</option>
+						<option value="Primary">Primary</option>
+						<option value="Secondary">Secondary</option>
+				        <option value="Scrap" >Scrap</option>
+				    </select>  
+				</div>
 				
 				
               
 				<div class="col-sm-4">  
 			   	<label for="category">States:</label>
 					<select class="form-control" id="pstates" name="pstates">
-					    <option value="">All India</option>
+					    <option value="All India">--All India--</option>
 						<option value="Andhra Pradesh">Andhra Pradesh</option>
 						<option value="Arunchal Pradesh">Arunchal Pradesh</option>
 						<option value="Assam">Assam</option>
@@ -99,19 +118,11 @@
 						<option value="puducherry">puducherry</option>
 						</select>
 				</div>
-				<div class="col-sm-4">  
 				
-			   	<label for="category">Types:</label>
-					<select class="form-control" id="types" name="types">
-					<option value="Types">Types</option>
-						<option value="Primary">Primary</option>
-						<option value="Secondary">Secondary</option>
-				        <option value="Scrap" >Scrap</option>
-				    </select>  
-				</div>
+				
 				<div class="col-sm-4">  
 			   	<label for="category">City:</label>
-					<select class="form-control" id="city" name="city">
+					<select class="form-control" id="pcities" name="pcities">
 					    <option value="">All city</option>
 						<option value="Mumbai">Mumbai</option>
 						<option value="Dehli">Delhi</option>
@@ -179,7 +190,7 @@
 						<option value="Gorakhpur">Gorakhpur</option>
 						<option value="Guntur">Guntur</option>
 						<option value="Amritsar">Amritsar</option>
-					 <option value="Bikaner">Bikaner</option>
+					    <option value="Bikaner">Bikaner</option>
 						<option value="Amravati">Amravati</option>
 						<option value="Noida">Noida</option>
 						<option value="Jamshedpur">Jamshedpur</option>
@@ -264,14 +275,13 @@
 				<div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
 			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits">
-						<option>KG</option>
-						<option>Metric ton</option>
-						<option>Litre</option>
-						<option>lot</option>
-						<option>litre</option>
-						<option>Number</option>
-						<option>Meter</option>
-					
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
 				    </select>
 			</div>
 				<div class="col-sm-4 mb-3 mb-sm-0">

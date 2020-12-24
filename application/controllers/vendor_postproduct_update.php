@@ -20,37 +20,68 @@ class vendor_postproduct_update extends CI_Controller {
 	 */
 	 
 	 	public function index()
-	{
-		//$this->load->library('fileupload');
-		
-			 $productname = $this->input->post('productname');
-			 $category = $this->input->post('category');
-			 $pstates= $this->input->post('pstates');
-		     $types= $this->input->post('types');
-			 $materialname = $this->input->post('materialname');
-		     $description = $this->input->post('description');
-			 $price = $this->input->post('price');
+		{
+		if($this->input->post('submit'))
+		{
+		$this->load->helper(array('url','html'));
+		$this->load->library('session');
+		//$this->load->model('Admin_model');
+		//$busername = $this->uri->segment(3);	
+	
+		$vname = $this->input->post('vname');
+			$category = $this->input->post('category');
+			$materialname = $this->input->post('materialname');
+			$description = $this->input->post('description');
+			$price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
+			$units = $this->input->post('units');
 			$aifeatured = $this->input->post('aifeatured');
 			$fobprice = $this->input->post('fobprice');
 			$uploadproductimage = $this->input->post('uploadproductimage');
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
+			$supplyunits = $this->input->post('supplyunits');
 			$quantpermonth = $this->input->post('quantpermonth');
 			$estdeltime = $this->input->post('estdeltime');
+			$pstates= $this->input->post('pstates');
+			$pcities = $this->input->post('pcities');
+		    $types= $this->input->post('types');			 
+		    $payable = $this->input->post('payable');
+			$productid = $this->input->post('productid');
+			$companyname = $this->input->post('companyname');
+		
+		
+	//=================================================================================================
+		//==================================================================
+		$this->load->model('Admin_model');
+		$data2 = array('vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname );
+		
+		//$this->load->view('xya', $data);
+		//print_r($data2);die;
+		$datainserr = "Data Updated Successfully";
+		
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		//print_r($sess);die;
+		
+		 $hidden = array('productid'=>$productid );
+		//print_r($hidden);die;
+		
+		//$updatech = array('baddress' => $baddress);
+		$status = $this->Admin_model->update_custom('sellerpostproduct',$data2,$hidden,$hidden);
+		//print_r($status);die;
+		
+		
+		
 	
-			$this->load->model('Admin_model');
-			 $data2 = array('category'=> $category,'pstates'=>$pstates,'types'=>$types,'materialname'=>$materialname,'description' => $description,'price'=>$price,'quantity'=>$quantity,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime);
-			  
-			  $datainserr = "Data Inserted Successfully";
-			  $updatech = array('productname' => $productname);
-			 
-			  $status = $this->Admin_model->update_custom('sellerpostproduct',$data2,$updatech,$updatech);
-		//$status = $this->Admin_model->insert('vendor_register',$data2);
-		//header('location: '.base_url().'admin_editsellerprofile/index/'.$datainserr);
-		header('location: '.base_url().'vendor_editpostproduct/index/'.$datainserr);
+		
+		header('location: '.base_url().'vendor_editpostproduct/index_error/'.$datainserr);
+		}
 	}
+
+
+	
 }
+
 
 
 	
