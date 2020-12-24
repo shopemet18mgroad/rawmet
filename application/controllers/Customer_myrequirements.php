@@ -45,4 +45,21 @@ class Customer_myrequirements extends CI_Controller {
 			}
 	}
 	
+		public function delete_buyingrequ_cust(){
+		
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$retriveval = array('productid'=>$retrivevaltmp);
+	
+		$this->load->model('Admin_model');
+		
+		if($retrivevaltmp){
+			$this->Admin_model->delete_data('buyerrequriement', $retriveval);
+	
+		}
+		$this->load->helper('url');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		header('location: '.base_url().'Customer_myrequirements/index/'.$retrivevaltmp);
+		
+	}
 }

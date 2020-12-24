@@ -39,7 +39,7 @@
 			   	<label for="mtype">Category:</label>
 					<select class="form-control" id="type">
 						<option>Metal</option>
-						<option>Non-Metal</option>
+						<option>Non Metal</option>
 						<option>Raw Material</option>
 						<option>Scrap</option>
 				    </select>

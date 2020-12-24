@@ -21,7 +21,9 @@ class Customer_contactsupplier extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('customer/header');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/contactsupplier');
 		$this->load->view('customer/footer');
 		

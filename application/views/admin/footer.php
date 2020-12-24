@@ -138,7 +138,18 @@
  
  </script>
 
-
+  <script>
+		function admin_buyingreq(varab){
+			$.get('<?php echo base_url() .'Admin_managebuyrequirements/approve_buyingrequ/'; ?>'+varab, function(data2){	
+					
+				 if($.trim(data2) == "HI"){
+					 window.location.href = '<?php echo base_url().'Admin_managebuyrequirements';?>'
+					return true;
+				}
+			 });
+			
+		}
+</script>
 
 </body>
 

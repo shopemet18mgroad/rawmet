@@ -22,11 +22,33 @@ class Admin_managebuyrequirements extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$reqapproval = array('adapproval'=>false);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
+		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/managebuyrequirements');
+		$this->load->view('admin/managebuyrequirements',$query);
 		$this->load->view('admin/footer');
 		
+	}
+	
+	public function approve_buyingrequ(){
+		
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+
+		$retriveval = array('productid'=>$retrivevaltmp);
+		
+		
+		$this->load->model('Admin_model');
+		$app= array('adapproval'=>true);
+		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
+		if($retriveval){
+			echo "HI";
+		}else{
+			echo "BYE";
+		}
+	
 	}
 	
 }

@@ -43,7 +43,7 @@
 					       <option value="Category">--Category--</option>
 						<option value="Non Metal">Non Metal</option>
 						<option value="Ferrous">Ferrous</option>
-						<option value=" Non-Ferrous">Non-Ferrous</option>
+						<option value=" Non-Ferrous">Non Ferrous</option>
 				        <option value="Scrap" >Scrap</option>
 						<option value="Metal" >Metal</option>
 				    </select> 
@@ -255,7 +255,7 @@
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
 					
-				    </select> value
+				    </select>
 			</div>
 				
 				

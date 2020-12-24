@@ -21,7 +21,7 @@ class Admin_approvebuyer extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Admin_model');
-		/* $this->load->library('session');
+		$this->load->library('session');/* 
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);

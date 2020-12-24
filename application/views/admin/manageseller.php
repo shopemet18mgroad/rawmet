@@ -44,6 +44,7 @@
 
      <td>
 	 <a href="<?php echo base_url()."admin_sellerprofile/delete_seller/".urldecode($row->vname).'/'.urldecode($row->vcompanytype);?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash"></i>Delete</a>
+
 				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanytype);?>"><i class="fa fa-edit">Edit</a></td>
 				
 

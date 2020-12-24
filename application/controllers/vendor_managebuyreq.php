@@ -21,12 +21,34 @@ class Vendor_managebuyreq extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->model('Admin_model');
 		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$reqapproval = array('adapproval'=>false);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
+		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/managebuyreq');
+		$this->load->view('vendor/managebuyreq',$query);
 		$this->load->view('vendor/footer');
+		
+	}
+	
+	
+	public function delete_buyingrequ(){
+		
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$retriveval = array('productid'=>$retrivevaltmp);
+	
+		$this->load->model('Admin_model');
+		
+		if($retrivevaltmp){
+			$this->Admin_model->delete_data('buyerrequriement', $retriveval);
+	
+		}
+		$this->load->helper('url');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		header('location: '.base_url().'vendor_managebuyreq/index/'.$retrivevaltmp);
 		
 	}
 	

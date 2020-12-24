@@ -18,118 +18,39 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-striped table-bordered table-sm w-auto small" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Sub Category</th>
-		<th>Required Qty</th>
-		<th>Quote Expire Date</th>
-		 <th>Buyer</th>
-		 <th>Company</th>
+			<th>Product Id</th>
+			<th>Product Name</th>
+			<th>Description</th>
+			<th>Quantity</th>
+			<th>Units</th>
+			<th>Required Date</th>
+			<th>Last Date</th>
+			<th>Email</th>
+			<th>Images</th>
+			<th>Action</th>
       </tr>
     </thead>
     <tbody>
+	 <?php foreach($sqldata as $row){?>
       <tr>
-        <td>Ferrous Metals  </td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-	
+	  <?php $proid = str_ireplace('/','-',$row->productid);
+				?>
+			<td><?php echo $row->productid;?></td>
+			<td><?php echo $row->productname;?></td>
+			<td><?php echo $row->description;?></td>
+			<td><?php echo $row->quantity;?></td>
+			<td><?php echo $row->units;?></td>
+			<td><?php echo $row->requireddate;?></td>
+			<td><?php echo $row->lastdate;?></td>
+			<td><?php echo $row->email;?></td>
+			<td><?php echo $row->uploadimage;?></td>
+			<td><button type="submit" name="submit" id="<?php echo $proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-info btn-sm">Approve</button></td>
+		
       </tr>      
-      <tr>
-        <td>Non Ferrous Metals</td>
-        <td>Iron</td>
-		<td>D</td>
-		<td>15</td>
-        <td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-	
-      </tr>
-      <tr>
-        <td>Minor Metals</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-	
-      <tr>
-        <td>Paper Materials</td>
-        <td>Iron</td>
-		<td>D</td>
-		<td>15</td>
-        <td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-
-      </tr>
-      <tr>
-        <td>Plastic Materials</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-
-      </tr>
-      <tr>
-        <td>Construction Materials</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-
-      </tr>
-      <tr>
-        <td>Active</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-
-      </tr>
-      <tr>
-        <td>Secondary</td>
-       <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-
-      </tr>
-      <tr>
-        <td>Light</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-
-      </tr>
-      <tr>
-		<td>Light</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-
-      </tr>
+     <?php }?>	
     </tbody>
   </table>
 		</div>
