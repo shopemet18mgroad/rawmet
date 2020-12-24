@@ -32,7 +32,7 @@
 
 
       <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+      <!--<hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
@@ -42,7 +42,7 @@
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider">
+      <!--<hr class="sidebar-divider">
 
       <!-- Heading -->
  
@@ -50,14 +50,14 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
          <i class="fa fa-plus" aria-hidden="true"></i>
           <span>User Add </span></a>
-		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+		 <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>admin_sellerreg">Vendor User</a>
             <a class="collapse-item" href="<?php echo base_url();?>admin_buyerreg">Buyer User</a>
           </div>
         </div>
       </li>
-	   <hr class="sidebar-divider">
+	   <!--<hr class="sidebar-divider">
 	
 	  
 
@@ -70,11 +70,11 @@
 	   <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>admin_approvevendor">
           <i class="fas fa-fw fa-shopping-cart"></i>
-          <span>Vendor</span></a>
+          <span>Vendor approve</span></a>
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider">
+      <!--<hr class="sidebar-divider">
 
    
 
@@ -97,16 +97,32 @@
           </div>
         </div>
       </li>
-	  <hr class="sidebar-divider">
+	  
+	    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>Admin_adminvendorproducts">
+          <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Avaliable Stocks</span></a>
+      </li>
+	  
 	    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>Admin_managebuyrequirements">
           <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Manage Buying Requirements</span></a>
       </li>
+	  <li class="nav-item">
+        
+		<div id="manage" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <!--<div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php// echo base_url();?>admin_manageseller">Vendor</a>
+            <a class="collapse-item" href="<?php //echo base_url();?>admin_managebuyer">Buyer</a>
+          </div>-->
+        </div>
+      </li>
+	  
 
 
       <!-- Nav Item - Tables -->
-     <!-- <li class="nav-item">
+     <!--<li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-money-bill-alt"></i>
           <span>Manage Payment</span></a>
