@@ -45,9 +45,7 @@
       <hr class="sidebar-divider">
 
       <!-- Heading -->
-      <div class="sidebar-heading">
-        Admin
-      </div>
+ 
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
          <i class="fa fa-plus" aria-hidden="true"></i>
@@ -60,36 +58,25 @@
         </div>
       </li>
 	   <hr class="sidebar-divider">
-	  
-	  <div class="sidebar-heading">
-       User
-      </div>
+	
 	  
 
       <!-- Nav Item - Pages Collapse Menu -->
 
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#approve" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Vendor Approve</span>
-        </a>
-		<div id="approve" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>admin_approvevendor">Vendor</a>
-            <!--<a class="collapse-item" href="<?php// echo base_url();?>admin_approvebuyer">Buyer</a>-->
-          </div>
-        </div>
+  
+	  
+	   <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>admin_approvevendor">
+          <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Vendor</span></a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Manage
-      </div>
+   
 
 	  <!--<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>admin_managesubscription">
@@ -110,7 +97,7 @@
           </div>
         </div>
       </li>
-	  
+	  <hr class="sidebar-divider">
 	    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>Admin_managebuyrequirements">
           <i class="fas fa-fw fa-shopping-cart"></i>

@@ -34,8 +34,9 @@ class Customer_postbuyreq  extends CI_Controller {
 			 $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
-			
+			$this->load->model('Admin_model');
 			$this->load->library('session');
+			
 			$bname = $this->input->post('bname');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
@@ -48,12 +49,28 @@ class Customer_postbuyreq  extends CI_Controller {
 			$lastdate = $this->input->post('lastdate');
 			$email = $this->input->post('email');
 			$contactnumber = $this->input->post('contactnumber');
-			$uploadimage = $this->input->post('uploadimage');
-			$uploadpdf = $this->input->post('uploadpdf');
 			$iagreee = $this->input->post('iagreee');
+			$pic_array = self::upload_files('uploadimage');
+			$doc_array = self::upload_files('uploadpdf');
+			
+			
+			if(!count($pic_array)){
+			echo '<script language="javascript">';
+			echo 'alert("Documents Upload Failed")';  //not showing an alert box.
+			echo '</script>';
+		}else{
+			$pic_array = serialize($pic_array);
+		}
+		if(!count($doc_array)){
+			echo '<script language="javascript">';
+			echo 'alert("Documents Upload Failed")';  //not showing an alert box.
+			echo '</script>';
+		}else{
+			$doc_array = serialize($doc_array);
+		}
 		
 			 $this->load->model('Admin_model');
-			$data2 = array('bname'=>$bname,'bcompanyname'=>$bcompanyname,'category'=>$category,'productname'=> $productname,'productid'=>$productid,'description'=>$description,'quantity'=> $quantity,'units'=>$units,'requireddate' => $requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=>$contactnumber,'uploadimage'=>$uploadimage,'uploadpdf'=>$uploadpdf,'iagreee'=>$iagreee);
+			$data2 = array('bname'=>$bname,'bcompanyname'=>$bcompanyname,'category'=>$category,'productname'=> $productname,'productid'=>$productid,'description'=>$description,'quantity'=> $quantity,'units'=>$units,'requireddate' => $requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=>$contactnumber,'uploadimage'=>$pic_array,'uploadpdf'=>$doc_array,'iagreee'=>$iagreee);
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('buyerrequriement',$data2);
@@ -83,5 +100,42 @@ class Customer_postbuyreq  extends CI_Controller {
 		$this->load->view('customer/footer');
 		
 	}
-	}	
+	}
+
+	private function upload_files($nameid)
+    {	
+	$countfiles = count($_FILES[$nameid]['name']);
+      // Looping all files
+      for($i=0;$i<$countfiles;$i++){
+        if(!empty($_FILES[$nameid]['name'][$i])){
+ 
+          // Define new $_FILES array - $_FILES['file']
+          $_FILES['file']['name'] = $_FILES[$nameid]['name'][$i];
+          $_FILES['file']['type'] = $_FILES[$nameid]['type'][$i];
+          $_FILES['file']['tmp_name'] = $_FILES[$nameid]['tmp_name'][$i];
+          $_FILES['file']['error'] = $_FILES[$nameid]['error'][$i];
+          $_FILES['file']['size'] = $_FILES[$nameid]['size'][$i];
+
+          // Set preference
+           $config['upload_path'] = 'web_files/uploads/';
+			$config['allowed_types'] = 'doc|docx|pdf|xlsx|jpg|png|gif';
+          $config['max_size'] = '50000000'; // max_size in kb
+          $config['file_name'] = $_FILES[$nameid]['name'][$i];
+ 
+          //Load upload library
+          $this->load->library('upload',$config); 
+		$this->upload->initialize($config);
+          // File upload
+          if($this->upload->do_upload('file')){
+            // Get data about the file
+            $uploadData = $this->upload->data();
+            $filename = $uploadData['file_name'];
+            // Initialize array
+            $datar[] = $filename;
+          }
+        }
+ 
+      }
+	  return $datar;
+    }	
 }
