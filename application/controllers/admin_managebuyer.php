@@ -29,7 +29,7 @@ class Admin_managebuyer extends CI_Controller {
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{  */
-		$busername = array('busername'=>true);
+		$busername = array('busername'=>false);
 		
 		$query = $this->Admin_model->getdatafromtable('buyer_register',$busername);
 		

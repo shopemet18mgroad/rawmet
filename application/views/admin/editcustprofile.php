@@ -20,7 +20,7 @@
 							<tr>
 							<form action = "<?php echo base_url();?>admin_buyer_basicinfo_update" method="POST" enctype="multipart/form-data">
 							<td>Name</td>
-								<td><input class="form-control w-50" type="text" id="bname" name="bname" value="<?php echo $sqldata[0]->bname; ?> "></td>
+								<td><input class="form-control w-50" type="text" id="bname" name="bname" readonly value="<?php echo $sqldata[0]->bname; ?> "></td>
 							</tr> 
 							<tr>
 								<td>Company Name</td>

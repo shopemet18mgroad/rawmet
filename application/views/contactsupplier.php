@@ -72,6 +72,13 @@
                 </div> -->
                 <!-- Card Body -->
                 <div class="card-body">
+				<center>
+				<div class="form-check m-4 ">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1">
+								
+								<button type="button" class="btn btn-primary">Negotiate All</button></a>
+							</div>
+							</center>
 	<!--Form1-->			
 				<form class="user">
 				<div class="row  bg-light">

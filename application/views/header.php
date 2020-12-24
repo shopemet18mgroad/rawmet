@@ -20,8 +20,9 @@
 <body>
 
 <nav class="navbar-header">
-	    <a href="<?php echo base_url();?>home_login">
-        <button type="button" class="btn btn-primary">Login</button></a>
+
+	     <a href="<?php echo base_url();?>home_login">
+         <button type="button" class="btn btn-primary">Login</button></a>
 		
 		
 <div class="">
@@ -32,11 +33,5 @@
     <a class="dropdown-item"  href="<?php echo base_url();?>home_buyer_register">Buyer</a>
     <a class="dropdown-item"  href="<?php echo base_url();?>home_seller_register">Vendor</a>
     
-
-
-		 
-				
-	
-   		
-    </nav>
+</nav>
    

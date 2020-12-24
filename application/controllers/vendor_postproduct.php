@@ -59,9 +59,23 @@ class Vendor_postproduct extends CI_Controller {
 		    $payable = $this->input->post('payable');
 			$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
-			$uploadproductimage = self::upload_files('uploadproductimage');
+			//$uploadproductimage = self::upload_files('uploadproductimage');
+			$$pic_array1  = self::upload_files('uploadproductimage');
+		
+		       if(!count($pic_array1)){
+			       echo '<script language="javascript">';
+			             echo 'alert("Documents Upload Failed")';  //not showing an alert box.
+			            echo '</script>';
+		}else{
+			$pic_array1 = serialize($pic_array1);
+		}
+		
+			
+			
+			
 			 //print_r($uploadproductimage);die;
-			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$uploadproductimage,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname );
+			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$pic_array1,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname );
+			//print_r($data2);die;
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('sellerpostproduct',$data2);
@@ -88,9 +102,11 @@ class Vendor_postproduct extends CI_Controller {
 			}  
 	 
 }
-private function upload_files($nameid)
-    {	
-	echo $countfiles = count($_FILES[$nameid]['name']);die;
+
+private function upload_files($nameid){
+    	
+    $countfiles = count($_FILES[$nameid]['name']);
+	
       // Looping all files
       for($i=0;$i<$countfiles;$i++){
         if(!empty($_FILES[$nameid]['name'][$i])){

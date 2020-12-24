@@ -101,10 +101,10 @@ function autocomplete(inp, arr) {
   });
 }
 
-var countries = ["Karnataka","Andaman and Nicobar Islands","Bangalore",
+var countries =["Karnataka","Andaman and Nicobar Islands",
 					"Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh"
 					 ,"Dadar and Nagar Haveli","Daman and Diu","Delhi","Lakshadweep","Puducherry","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand"
-					,"Andhra Pradesh","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland"," Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","West Bengal"];
+					,"Andhra Pradesh","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland"," Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","West Bengal","Mumbai","Dehli","Bangalore","Hyderabad","Chennai","Kolkata","Surat","Pune","Jaipur","Lucknow","Kanpur","Nagpur","Indore","Thane","Bhopal","Visakhapatnam","Patna","Vadodara","Ghaziabad","Ludhiana","Agra","Nashik","Faridabad","Meerut","Kalyan","Vasai Virar","Varanasi","Srinagar","Aurangabad","Dhanbad","Amritsar","Navi Mumbai","Allahabad","Ranchi","Haora","Coimbatore","Jabalpur","Gwalior","Vijayawada","Jodhpur","Madurai","Raipur","Kota","Guwahati","Chandigarh","Solapur","Hubli","Dharward","Bareilly","Moradabad","Mysore","Gurgaon","Aligarh","Jalandhar","Tiruchirappalli","Bhubaneswar","Salem","Mira","Thiruvananthapuram","Bhiwandi","Saharanpur","Gorakhpur","Guntur","Amritsar","Bikaner","Noida","Amravati","Jamshedpur","Bhilai Nagar","Warangal","Cuttack","Orissa","Kochi","Bhavnagar","Dehradun","Durgapur","Asansol","Nanded","Waghala","Kolapur","Ajmer","Gulbarga","Jamnagar","Ujjain","Loni","Siligri","Jhansi","Ulhasnagar","Nellore","Jammu","Sangli Miraj","Kupwad","Belgaum","Mangalore","Ambattur","Tirunelveli","Malegoan","Gaya","Udaipur","Maheshtala","Jalgaon"];
 	
 
 /*An array containing all the country names in the world:*/

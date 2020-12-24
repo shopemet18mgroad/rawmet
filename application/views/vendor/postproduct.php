@@ -43,7 +43,7 @@
 					       <option value="Category">--Category--</option>
 						<option value="Non Metal">Non Metal</option>
 						<option value="Ferrous">Ferrous</option>
-						<option value=" Non-Ferrous">Non Ferrous</option>
+						<option value="Non Ferrous">Non Ferrous</option>
 				        <option value="Scrap" >Scrap</option>
 						<option value="Metal" >Metal</option>
 				    </select> 
@@ -302,7 +302,8 @@
                 </div>
 				<div class="col-sm-5 mt-4">
 					<p>Upload Product Image:</p>
-					<input type="file" id="uploadproductimage" name="uploadproductimage">
+					
+					<input type="file" id="uploadproductimage[]" name="uploadproductimage[]">
 				</div>
 				<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>
