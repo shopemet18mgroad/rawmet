@@ -25,7 +25,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">		
-				<form action="<?php echo base_url();?>customer_postbuyreq" method="POST">
+				<form action="<?php echo base_url();?>customer_postbuyreq" method="POST" enctype="multipart/form-data">
 				
 				<div class="row ml-4">
 				<div class="col-sm-4 bg-warning">
@@ -41,7 +41,7 @@
 				</div>	
 				</div>
 
-			<form action="<?php echo base_url();?>customer_postbuyreq" method="POST">
+			<form action="<?php echo base_url();?>customer_postbuyreq" method="POST" enctype="multipart/form-data">
 				<div class="caption col-7 p-2 ml-5 bg-light">
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
@@ -134,12 +134,12 @@
 						<div class="col-sm-12 col-md-6 mt-2">
 							<div class="form-group">
 								<label for="exampleInputFile">Upload Image</label>
-								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage[]" aria-describedby="fileHelp">
+								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage" aria-describedby="fileHelp">
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
 							</div>
 							<div class="form-group">
 								<label for="exampleInputFile">Upload PDF Files</label>
-								<input type="file" class="form-control-file" id="uploadpdf"  name="uploadpdf[]" aria-describedby="fileHelp" multiple="multiple">
+								<input type="file" class="form-control-file" id="uploadpdf"  name="uploadpdf" aria-describedby="fileHelp" multiple="multiple">
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
 							</div>
 						</div>

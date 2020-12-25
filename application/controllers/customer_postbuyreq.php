@@ -24,7 +24,11 @@ class Customer_postbuyreq  extends CI_Controller {
 			$this->load->library('session');
 			// Load the captcha helper
 			$this->load->helper('captcha');
+			$this->load->library('fileupload');
 			$this->load->helper('url');
+			$this->load->helper('form');
+			$this->load->helper('file');
+			$this->load->helper('html');
 			$this->load->helper('date');
 			date_default_timezone_set("Asia/Kolkata");
     }
@@ -32,8 +36,7 @@ class Customer_postbuyreq  extends CI_Controller {
 	{
 		 if($this->input->post('quantity')){
 			 $date =  Date('Y-m-d'); 
-			$this->load->library('fileupload');
-			$this->load->helper(array('url','form','file','html'));
+			
 			$this->load->model('Admin_model');
 			$this->load->library('session');
 			

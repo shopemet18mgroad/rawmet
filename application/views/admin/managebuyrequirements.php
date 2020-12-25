@@ -23,6 +23,8 @@
       <tr>
 			<th>Product Id</th>
 			<th>Product Name</th>
+			<th>Buyer Name</th>
+			<th>company Name</th>
 			<th>Description</th>
 			<th>Quantity</th>
 			<th>Units</th>
@@ -40,6 +42,8 @@
 				?>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->productname;?></td>
+			<td><?php echo $row->bname;?></td>
+			<td><?php echo $row->bcompanyname;?></td>
 			<td><?php echo $row->description;?></td>
 			<td><?php echo $row->quantity;?></td>
 			<td><?php echo $row->units;?></td>

@@ -22,11 +22,30 @@ class Customer_contactsupplier extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->library('session');
-		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->model('Admin_model');
+		$productname= $this->uri->segment(3);	
+		$productid= $this->uri->segment(4);	
+		$category= urldecode($this->uri->segment(5));
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+		}else{
+			$sess = array('sessi'=>$this->session->userdata('username'));
+
+			//$active = array('vusername'=>$sess['sessi']);
+			//print_r($active);die;
+			//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active);
+		
+			//$vendorname = $query2[0]->vname;
+		$category='iron';
+		$active = array('category'=>$category);
+			$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$active);
+			
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/contactsupplier');
+		$this->load->view('customer/contactsupplier',$data);
 		$this->load->view('customer/footer');
 		
 	}
-	
+	}
 }
