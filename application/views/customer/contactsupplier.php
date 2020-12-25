@@ -48,11 +48,13 @@
 				<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
-													
-							<p><b>Supplier:</b> SM/RM/19/07/345</p>
-							<p><b>Supplier Price:</b> 80 / KG</p>
+							<?php foreach($sqldata as $row){?>						
+							<p><b>Supplier Name:</b><?php echo $row->productid;?></p>
+							<p><b>Category:</b><?php echo $row->category;?></p>
+							<p><b>Product Id:</b><?php echo $row->productid;?></p>
+							<p><b>Supplier Price:</b><?php echo $row->price."/"; echo $row->units;?></p>
 							
-							<p class="mt-5">Stock Available at : Bangalore | Karnataka | INDIA </p>
+							<p class="mt-3">Stock Available at : <?php echo $row->pstates;?></p>
 					</div>
 					</div>
 				  </div>
@@ -61,15 +63,14 @@
 					<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
-							<h4 style="color:purple;"><b>Copper Pipes</b></h4>
+							<h4 style="color:purple;"><b><?php echo $row->productname;?></b></h4>
 						
-							<p class="w-auto small">The Supplier details with Primary Copper Pipes, Copper Sheets, Copper Blocks
-and other copper related Raw Materials. We Supply across India.</p>
+							<p class="w-auto small"><?php echo $row->description;?></p>
 							
 					</div>
 					</div>
 				  </div>
-				  
+				  <?php }?>
 				  
 				  <div class="col-sm-4 p-2">
 					<div class="row p-2">

@@ -37,7 +37,7 @@ class Vendor_editpostproduct extends CI_Controller {
 			//print_r($active);die;
 			$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active);
 		
-		$vendorname = $query2[0]->vname;
+			$vendorname = $query2[0]->vname;
 		
 			$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$vendorname);
 			//print_r($data['sqldata']); die;
