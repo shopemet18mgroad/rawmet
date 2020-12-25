@@ -150,6 +150,20 @@
 			
 		}
 </script>
+<script>
+		function admin_productapprove(varab){
+			$.get('<?php echo base_url() .'Admin_adminvendorproducts/approve_product/'; ?>'+varab, function(data2){	
+					
+				 if($.trim(data2) == "HI"){
+					 window.location.href = '<?php echo base_url().'Admin_adminvendorproducts';?>'
+					return true;
+				}
+			 });
+			
+		}
+
+
+ </script>
 
 </body>
 

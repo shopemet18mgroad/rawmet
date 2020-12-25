@@ -95,8 +95,19 @@
           <i class="fas fa-fw fa-upload"></i>
           <span>My Requirements</span></a>
       </li>
-	  	<li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>customer_myquotes">
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-money-bill-alt"></i>
+          <span>Quotes</span></a>
+		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>customer_approvedquotes"> My Approved Quotes</a>
+            <a class="collapse-item" href="<?php echo base_url();?>customer_myquotes">My Pending Quotes</a>
+          </div>
+        </div>
+      </li>
+	  	<!--<li class="nav-item">
+        <a class="nav-link" href="<?php //echo base_url();?>customer_myquotes">
           <i class="fas fa-fw fa-upload"></i>
           <span>My Quotes</span></a>
       </li>
