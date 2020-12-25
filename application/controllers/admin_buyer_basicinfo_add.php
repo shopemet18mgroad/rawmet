@@ -30,14 +30,15 @@ class Admin_buyer_basicinfo_add extends CI_Controller {
 			$busername = $this->input->post('busername');
 			$bpassword = $this->input->post('bpassword');
 			$brepeatpassword = $this->input->post('brepeatpassword');
-			//echo $spcb = $this->input->post('spcb');
+			$bpan = $this->input->post('bpan');
+			$bgst = $this->input->post('bgst');
 			$baddress = $this->input->post('baddress');
 			$bcity = $this->input->post('bcity');
 			$bselectstate = $this->input->post('bselectstate');
 			$bpincode = $this->input->post('bpincode');
 			
 			$this->load->model('Admin_model');
-			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'bpan' =>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('buyer_register', $data2);
 		header('location: '.base_url().'admin_buyerreg/index/'.$datainserr);

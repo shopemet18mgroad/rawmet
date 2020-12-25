@@ -64,7 +64,7 @@ class Admin_adminvendorproducts extends CI_Controller {
 		
 		
 		$this->load->model('Admin_model');
-		$app= array('poptions'=>false);
+		$app= array('poptions'=>true);
 		$query = $this->Admin_model->update_custom('sellerpostproduct', $app, $retriveval, $retriveval);
 		if($retriveval){
 			echo "HI";

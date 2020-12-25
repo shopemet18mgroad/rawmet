@@ -27,6 +27,9 @@ class Admin_seller_basicinfo_update extends CI_Controller {
 		$vcompanytype = $this->input->post('vcompanytype');
 		$vcontactperson  = $this->input->post('vcontactperson');
 		$vcontactnumber = $this->input->post('vcontactnumber');
+		$vpan = $this->input->post('vpan');
+		$vgst = $this->input->post('vgst');
+		$vpcb = $this->input->post('vpcb');
 		$vemail = $this->input->post('vemail');
 		$vusername = $this->input->post('vusername');
 		$vpassword = $this->input->post('vpassword');
@@ -38,7 +41,7 @@ class Admin_seller_basicinfo_update extends CI_Controller {
 	
 			$this->load->model('Admin_model');
 			 $data2 = array('vcompanyname' => $vcompanyname,'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
-	'vcontactperson'=>$vcontactperson ,
+	'vcontactnumber'=>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,
 	'vemail'=> $vemail ,'vusername' => $vusername,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);

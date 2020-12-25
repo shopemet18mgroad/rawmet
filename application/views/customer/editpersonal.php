@@ -61,25 +61,40 @@
 			
 							</tr> 
 							<tr>
-								<td>Email</td>
-								<td><textarea class="form-control w-50" type="text" id="bemail" name="bemail" value="<?php echo $sqldata[0]->bemail; ?>"><?php echo $sqldata[0]->bemail; ?></textarea></td>
-							</tr> 
+							<td>Email</td>
+							<td><input class="form-control w-50" type="text" id="bemail" name="bemail" value="<?php echo $sqldata[0]->bemail; ?>"></td>
+								<td>
+								
+							</tr>
+							<tr>
+								<td>Pan</td>
+								<td><input class="form-control w-50" type="text" id="bpan" name="bpan" value="<?php echo $sqldata[0]->bpan; ?>" ></td>
+							</tr>
+							<tr>
+								<td>GST</td>
+								<td><input class="form-control w-50" type="text" id="bgst" name="bgst" value="<?php echo $sqldata[0]->bgst; ?>" ></td>
+							</tr>
 							<tr>
 								<td>Username</td>
-								<td><input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername; ?>" ></td>
+								<td><input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername; ?>" readonly ></td>
 							</tr>
 						
 							 	
 							<tr>
-								<td>Postal Address</td>
+								<td>Address</td>
 								<td><textarea class="form-control w-50" type="text" id="baddress" name="baddress" value="<?php echo $sqldata[0]->baddress; ?>"><?php echo $sqldata[0]->baddress; ?></textarea></td>
-							</tr> 
+							</tr>
+							<tr>
+								<td>City</td>
+								<td><input class="form-control w-50" type="text" id="bcity" name="bcity" value="<?php echo $sqldata[0]->bcity; ?>" ></td>
+							</tr>
+							
 							<tr>
 								<td>Pincode</td>
 								<td><input class="form-control w-50" type="text" id="bpincode" name="bpincode" value="<?php echo $sqldata[0]->bpincode; ?>" ></td>
 							</tr>
 							<tr>
-								<td>State /Union Ter.</td>
+								<td>State</td>
 								<td><input class="form-control w-50" type="text" id="bselectstate" name="bselectstate" value="<?php echo $sqldata[0]->bselectstate; ?>" ></td>
 								
 							</tr>

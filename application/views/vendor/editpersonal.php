@@ -59,14 +59,29 @@
 								<td><input class="form-control w-50" type="text" id="vcontactnumber" name="vcontactnumber" value="<?php echo $sqldata[0]->vcontactnumber; ?>"></td>
 								<td>
 			
+							</tr>
+                          <tr>
+								<td>Pan</td>
+								<td><input class="form-control w-50" type="text" id="vpan" name="vpan" value="<?php echo $sqldata[0]->vpan; ?>"></td>
+								<td>
+			
 							</tr> 
 							<tr>
+								<td>GST</td>
+								<td><input class="form-control w-50" type="text" id="vgst" name="vgst" value="<?php echo $sqldata[0]->vgst; ?>" ></td>
+							</tr> 
+							<tr>
+								<td>Pcb</td>
+								<td><input class="form-control w-50" type="text" id="vpcb" name="vpcb" value="<?php echo $sqldata[0]->vpcb; ?>" ></td>
+							</tr>							
+							<tr>
 								<td>Email</td>
-								<td><textarea class="form-control w-50" type="text" id="vbemail" name="vemail" value="<?php echo $sqldata[0]->vemail; ?>"><?php echo $sqldata[0]->vemail; ?></textarea></td>
+								<td><input class="form-control w-50" type="text" id="vemail" name="vemail" value="<?php echo $sqldata[0]->vemail; ?>" ></td>
+								
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td><input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" ></td>
+								<td><input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" readonly ></td>
 							</tr>
 						
 							 	
@@ -75,12 +90,17 @@
 								<td><textarea class="form-control w-50" type="text" id="vaddress" name="vaddress" value="<?php echo $sqldata[0]->vaddress; ?>"><?php echo $sqldata[0]->vaddress; ?></textarea></td>
 							</tr> 
 							<tr>
-								<td>Pincode</td>
-								<td><input class="form-control w-50" type="text" id="vpincode" name="vpincode" value="<?php echo $sqldata[0]->vpincode; ?>" ></td>
+								<td>City</td>
+								<td><input class="form-control w-50" type="text" id="vcity" name="vcity" value="<?php echo $sqldata[0]->vcity; ?>"></td>
 							</tr>
 							<tr>
-								<td>State /Union Ter.</td>
-								<td><?php echo $sqldata[0]->vselectstate; ?></td>
+							<td>State</td>
+								<td><input class="form-control w-50" type="text" id="vselectstate" name="vselectstate" value="<?php echo $sqldata[0]->vselectstate; ?>" ></td>
+								
+							</tr>
+							<tr>
+								<td>Pincode</td>
+								<td><input class="form-control w-50" type="text" id="vpincode" name="vpincode" value="<?php echo $sqldata[0]->vpincode; ?>" ></td>
 							</tr>
 
 							

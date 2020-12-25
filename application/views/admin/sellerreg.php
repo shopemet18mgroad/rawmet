@@ -71,6 +71,18 @@
 							<td class="btxt">RepeatPassword</td>
 							<td><input class="form-control w-50" type="password" id="vrepeatpassword" name="vrepeatpassword" required></td>
 						</tr>
+						<tr>
+							<td class="btxt">Pan</td>
+							<td><input class="form-control w-50" type="text" id="vpan" name="vpan" required></td>
+						</tr>
+						<tr>
+							<td class="btxt">GST</td>
+							<td><input class="form-control w-50" type="text" id="vgst" name="vgst" required></td>
+						</tr>
+						<tr>
+							<td class="btxt">PCB</td>
+							<td><input class="form-control w-50" type="text" id="vpcb" name="vpcb" required></td>
+						</tr>
 						 
 						
 					</tbody>

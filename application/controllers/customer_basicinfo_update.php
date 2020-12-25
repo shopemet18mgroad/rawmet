@@ -37,6 +37,9 @@ class Customer_basicinfo_update extends CI_Controller {
 		$bcontactperson=$this->input->post('bcontactperson');
 		$bcontactnumber=$this->input->post('bcontactnumber');
 		$bemail=$this->input->post('bemail');
+		$bpan=$this->input->post('bpan');
+		$bgst=$this->input->post('bgst');
+		$busername =$this->input->post('busername');
 		$baddress=$this->input->post('baddress');
 		$bcity=$this->input->post('bcity');
 		$bselectstate=$this->input->post('bselectstate');
@@ -46,7 +49,7 @@ class Customer_basicinfo_update extends CI_Controller {
 	//=================================================================================================
 		//==================================================================
 		$this->load->model('Admin_model');
-		$data2 = array('bname' => $bname,'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber,'bemail' => $bemail, 'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+		$data2 = array('bname' => $bname,'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber,'bemail' => $bemail,'bpan'=>$bpan,'bgst'=>$bgst,'busername'=>$busername ,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
 		//$this->load->view('xya', $data);
 		
 		$datainserr = "Data Inserted Successfully";

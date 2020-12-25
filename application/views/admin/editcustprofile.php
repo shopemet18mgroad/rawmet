@@ -32,11 +32,21 @@
 							</tr> 	
 							<tr>
 								<td>Contact Person</td>
-								<td><input class="form-control w-50" type="text" id="vcontactperson" name="bcontactperson" value="<?php echo $sqldata[0]->bcontactperson; ?>"></td>Seller</td>
+								<td><input class="form-control w-50" type="text" id="bcontactperson" name="bcontactperson" value="<?php echo $sqldata[0]->bcontactperson; ?>"></td>
 							</tr> 
 							<tr>
 								<td>contact number</td>
-								<td><input class="form-control w-50" type="text" id="vcontactnumber" name="bcontactnumber" value="<?php echo $sqldata[0]->bcontactnumber; ?>"></td>
+								<td><input class="form-control w-50" type="text" id="bcontactnumber" name="bcontactnumber" value="<?php echo $sqldata[0]->bcontactnumber; ?>"></td>
+								<td>
+			
+							</tr> 
+							<tr>
+								<td>Pan</td>
+								<td><input class="form-control w-50" type="text" id="bpan" name="bpan" value="<?php echo $sqldata[0]->bpan; ?>"></td>
+							</tr> 
+							<tr>
+								<td>GST</td>
+								<td><input class="form-control w-50" type="text" id="bgst" name="bgst" value="<?php echo $sqldata[0]->bgst; ?>"></td>
 								<td>
 			
 							</tr> 
