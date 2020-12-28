@@ -109,6 +109,14 @@
           <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Manage Buying Requirements</span></a>
       </li>
+	  
+	   <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>Admin_customerquotes">
+          <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Customer Quotes</span></a>
+      </li>
+	  
+	  
 	  <li class="nav-item">
         
 		<div id="manage" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">

@@ -79,5 +79,21 @@
 	 }
  }
  </script>
+ 
+ <script>
+		function vendor_quotesapproval(varab){
+			$.get('<?php echo base_url() .'Vendor_custquoteapproval/approve_quotes/'; ?>'+varab, function(data2){	
+					
+				 if($.trim(data2) == "HI"){
+					 window.location.href = '<?php echo base_url().'Vendor_custquoteapproval';?>'
+					return true;
+				}
+			 });
+			
+		}
+
+
+ </script>
+
  </body>
  </html>
