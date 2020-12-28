@@ -27,6 +27,8 @@ class Admin_buyer_basicinfo_update extends CI_Controller {
 		$bcompanytype = $this->input->post('bcompanytype');
 		$bcontactperson  = $this->input->post('bcontactperson');
 		$bcontactnumber = $this->input->post('bcontactnumber');
+		$bpan = $this->input->post('bpan');
+		$bgst = $this->input->post('bgst');
 		$bemail = $this->input->post('bemail');
 		$busername = $this->input->post('busername');
 		$bpassword = $this->input->post('bpassword');
@@ -37,8 +39,8 @@ class Admin_buyer_basicinfo_update extends CI_Controller {
 		$bpincode  = $this->input->post('bpincode');
 	
 			$this->load->model('Admin_model');
-			 $data2 = array('bcompanyname' => $bcompanyname,'bcompanytype' => $bcompanytype,'bcontactperson' => $bcontactperson, 
-	'bcontactperson'=>$bcontactperson ,
+			 $data2 = array('bcompanyname' => $bcompanyname,'bcompanytype' => $bcompanytype,'bcontactperson' => $bcontactperson,'bpan'=>$bpan,'bgst'=>$bgst,
+	'bcontactnumber'=>$bcontactnumber ,
 	'bemail'=> $bemail ,'busername' => $busername,
 	'bpassword'=> $vpassword,'brepeatpassword' => $brepeatpassword,
 	'baddress' => $baddress, 'bcity'=>$bcity,'bselectstate' => $bselectstate, 'bpincode' => $bpincode);

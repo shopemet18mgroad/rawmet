@@ -71,7 +71,14 @@
 							<td class="btxt">RepeatPassword</td>
 							<td><input class="form-control w-50" type="password" id="brepeatpassword" name="brepeatpassword" required></td>
 						</tr>
-						 
+						 <tr>
+							<td class="btxt">Pan</td>
+							<td><input class="form-control w-50" type="text" id="bpan" name="bpan" required></td>
+						</tr>
+						<tr>
+							<td class="btxt">GST</td>
+							<td><input class="form-control w-50" type="text" id="bgst" name="bgst" required></td>
+						</tr>
 						
 						
 						 

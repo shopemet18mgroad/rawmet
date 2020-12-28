@@ -20,7 +20,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-        <th>Vendor Name</th>
+        <th> Buyer Name</th>
         <th>Company Type</th>
         <th>Contact Person</th>
 		<th>Location</th>

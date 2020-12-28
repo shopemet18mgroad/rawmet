@@ -70,11 +70,7 @@ class vendor_postproduct_update extends CI_Controller {
 		$status = $this->Admin_model->update_custom('sellerpostproduct',$data2,$hidden,$hidden);
 		//print_r($status);die;
 		
-		
-		
-	
-		
-		header('location: '.base_url().'vendor_editpostproduct/index_error/'.$datainserr);
+		header('location: '.base_url().'vendor_uploadedproduct/index/'.$datainserr);
 		}
 	}
 

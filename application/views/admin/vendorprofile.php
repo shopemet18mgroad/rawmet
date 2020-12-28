@@ -54,6 +54,14 @@
 								<td>Contact Number</td>
 								<td><?php echo $sqldata[0]->bcontactnumber;?></td>
 							</tr> 
+							<tr>
+								<td>Pan</td>
+								<td><?php echo $sqldata[0]->bpan;?></td>
+							</tr> 
+							<tr>
+								<td>GST</td>
+								<td><?php echo $sqldata[0]->bgst;?></td>
+							</tr> 
 							
 
 						

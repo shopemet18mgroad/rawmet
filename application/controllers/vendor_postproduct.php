@@ -30,13 +30,23 @@ class Vendor_postproduct extends CI_Controller {
     }
     
 	public function index()
-	{ 
+	{$this->load->model('Admin_model');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+	
+				$active1 = array('vusername'=>$sess['sessi']);
+				//print_r($active1); die;
+				$data2 = $this->Admin_model->getusernamedatafromtable('vendor_register', $active1);
+				//print_r($data2); die;
+				$vusername= $data2[0]->vusername;
+				//	print_r($vusername); die;
 	 if($this->input->post('productname')){
 			 $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
-			
+			$this->load->library('session');
+
 			$productname = $this->input->post('productname');
 			$vname = $this->input->post('vname');
 			$category = $this->input->post('category');
@@ -47,7 +57,7 @@ class Vendor_postproduct extends CI_Controller {
 			$units = $this->input->post('units');
 			$aifeatured = $this->input->post('aifeatured');
 			$fobprice = $this->input->post('fobprice');
-			
+			$vusername = $this->input->post('vusername');
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');
@@ -60,7 +70,8 @@ class Vendor_postproduct extends CI_Controller {
 			$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
 			//$uploadproductimage = self::upload_files('uploadproductimage');
-			$$pic_array1  = self::upload_files('uploadproductimage');
+			//echo $_FILES['uploadproductimage']['name'];die;
+			echo $pic_array1  = self::upload_files('uploadproductimage'); die;
 		
 		       if(!count($pic_array1)){
 			       echo '<script language="javascript">';
@@ -72,15 +83,25 @@ class Vendor_postproduct extends CI_Controller {
 		
 			
 			
-			
+			$data1 = array('productid'=>$productid );
 			 //print_r($uploadproductimage);die;
-			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$pic_array1,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname );
+			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$pic_array1,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname,'vusername'=>$vusername );
 			//print_r($data2);die;
 
+
+		$this->load->model('Admin_model');
+			  if($this->Admin_model->check('sellerpostproduct', $data1)){
+				 $datainserr = "ProductId already exist";
+				header('location: '.base_url().'Vendor_postproduct/index_error/'.$datainserr);
+				die;
+			  }else{
+				  //echo "HI";
+			  
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('sellerpostproduct',$data2);
 			header('location: ./Vendor_postproduct/');
 			}
+	 }
 			
 			if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
 				$datainserr = "Invalid Login Session";
@@ -95,18 +116,29 @@ class Vendor_postproduct extends CI_Controller {
 				$active1 = array('vusername'=>$sess['sessi']);
 				//print_r($active1); die;
 				$data['scomp'] = $this->Admin_model->get1datafromtable('vendor_register', $active1);
-				
+				$data['sessi'] = $this->session->userdata('username');
 				$this->load->view('vendor/header',$sess);
 				$this->load->view('vendor/postproduct',$data);
 				$this->load->view('vendor/footer');
 			}  
 	 
 }
+public function index_error(){
+			$alertmsg = $this->uri->segment(3);
+			$alertmsg = urldecode($alertmsg);
+			echo '<script language="javascript">';
+			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
+			echo '</script>';
+			$this->load->view('vendor/header');
+			$this->load->view('vendor/postproduct');
+			$this->load->view('vendor/footer');
+			
+	}
 
 private function upload_files($nameid){
     	
-    $countfiles = count($_FILES[$nameid]['name']);
-	
+    //$countfiles = count($_FILES[$nameid]['name']);
+	$countfiles=1;
       // Looping all files
       for($i=0;$i<$countfiles;$i++){
         if(!empty($_FILES[$nameid]['name'][$i])){

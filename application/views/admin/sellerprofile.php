@@ -61,7 +61,18 @@
 								<td>Contact Number</td>
 								<td><?php echo $sqldata[0]->vcontactnumber;?></td>
 							</tr> 
-							
+							<tr>
+								<td>Pan</td>
+								<td><?php echo $sqldata[0]->vpan;?></td>
+							</tr> 	
+							<tr>
+								<td>GST</td>
+								<td><?php echo $sqldata[0]->vgst;?></td>
+							</tr> 
+							<tr>
+								<td>PCB</td>
+								<td><?php echo $sqldata[0]->vpcb;?></td>
+							</tr> 
 
 						
 						</tbody>

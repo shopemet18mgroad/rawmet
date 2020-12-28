@@ -65,4 +65,16 @@ class Vendor_editpostproduct extends CI_Controller {
 		$this->load->view('vendor/footer');
 	}
 	
+	public function index_error(){
+			$alertmsg = $this->uri->segment(3);
+			$alertmsg = urldecode($alertmsg);
+			echo '<script language="javascript">';
+			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
+			echo '</script>';
+			$this->load->view('vendor/header');
+			$this->load->view('vendor/editpostproduct');
+			$this->load->view('vendor/footer');
+			
+	}
+	
 }

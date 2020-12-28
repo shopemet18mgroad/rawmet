@@ -59,6 +59,20 @@
 								<td>
 			
 							</tr> 
+							<tr>
+								<td>Pan</td>
+								<td><input class="form-control w-50" type="text" id="vpan" name="vpan" value="<?php echo$sqldata[0]->vpan; ?>">
+							</tr> 	
+							<tr>
+								<td>GST</td>
+								<td><input class="form-control w-50" type="text" id="vgst" name="vgst" value="<?php echo $sqldata[0]->vgst; ?>"></td>
+							</tr> 
+							<tr>
+								<td>PCB</td>
+								<td><input class="form-control w-50" type="text" id="vpcb" name="vpcb" value="<?php echo $sqldata[0]->vpcb; ?>"></td>
+								<td>
+			
+							</tr> 
 
 						
 						</tbody>

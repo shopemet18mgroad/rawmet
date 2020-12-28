@@ -30,7 +30,7 @@
                 <!-- Card Body -->
                 <div class="card-body">
 					 <table class="table table-sm table-borderless" id="section1">
-					 <thead><th width="45%">Profile</th>
+					 <thead><th width="45%"><b>Profile</b></th>
 					 <th style="text-align:right"><a href="<?php echo base_url();?>vendor_editpersonal"><u>Edit Personal Info</u></a></th>
 					 
 					 </thead>
@@ -60,6 +60,18 @@
 								<td><?php echo $sqldata[0]->vcontactnumber;?></td>
 							</tr> 
 							<tr>
+								<td>Pan</td>
+								<td><?php echo $sqldata[0]->vpan;?></td>
+							</tr> 
+							<tr>
+								<td>GST</td>
+								<td><?php echo $sqldata[0]->vgst;?></td>
+							</tr> 
+							<tr>
+								<td>Pcb</td>
+								<td><?php echo $sqldata[0]->vpcb;?></td>
+							</tr>
+							<tr>
 								<td>Email</td>
 								<td><?php echo $sqldata[0]->vemail;?></td>
 							</tr> 
@@ -67,6 +79,7 @@
 								<td>Username</td>
 								<td><?php echo $sqldata[0]->vusername;?></td>
 							</tr> 
+							<thead><th width="45%"><b>Location</b></th>
 							<tr>
 								<td>Address</td>
 								<td><?php echo $sqldata[0]->vaddress;?></td>
@@ -83,14 +96,7 @@
 								<td>pincode</td>
 								<td><?php echo $sqldata[0]->vpincode;?></td>
 							</tr>
-                              <tr>
-								<td>bussness type</td>
-								<td>Rajkot, </td>
-							</tr>
-                             <tr>
-								<td>bussness description</td>
-								<td>Verified</td>
-							</tr>				
+                             			
 							
 
 						 
@@ -102,7 +108,7 @@
 					
 
 				<table class="table table-sm table-borderless" id="section3">
-					 <thead><th width="45%">Password</th>
+					 <thead><th width="45%"><b>Password</b></th>
 					 <th style="text-align:right"><a href="<?php echo base_url();?>vendor_editpassword"><u>Edit Password</u></a></th>
 					 </thead>
 						<tbody>

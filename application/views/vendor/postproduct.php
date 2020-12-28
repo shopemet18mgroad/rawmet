@@ -34,6 +34,12 @@
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Supplier Name</label>
 					<input type="text" class="form-control" id="vname" name="vname"  value="<?php echo  $scomp[0]->vname;?>" readonly>
+					<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">
+                    
+                </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Company Name</label>
+					<input type="text" class="form-control" id="companyname" name="companyname"  value="<?php echo  $scomp[0]->vcompanyname;?>"  readonly>
                     
                 </div>
 				
@@ -57,14 +63,10 @@
                 </div>
 					<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Product Id</label>
-					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id">
+					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id" readonly>
                     
                 </div>
-				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Company Name</label>
-					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" >
-                    
-                </div>
+				
 				
 			
 				<div class="col-sm-4">  
@@ -303,7 +305,7 @@
 				<div class="col-sm-5 mt-4">
 					<p>Upload Product Image:</p>
 					
-					<input type="file" id="uploadproductimage[]" name="uploadproductimage[]">
+					<input type="file" id="uploadproductimage" name="uploadproductimage">
 				</div>
 				<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>
