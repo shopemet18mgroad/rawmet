@@ -21,8 +21,15 @@ class Customer_approvedquotes extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('customer/header');
-		$this->load->view('customer/approvedquotes');
+		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$reqapproval = array('sellapproval'=>true);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$reqapproval);
+		
+		$sess = array('sessi'=>$this->session->userdata('username'));
+	
+		$this->load->view('customer/header',$sess);
+		$this->load->view('customer/approvedquotes',$query);
 		$this->load->view('customer/footer');
 		
 	}

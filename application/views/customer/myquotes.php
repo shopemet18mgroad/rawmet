@@ -6,7 +6,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">My Quotes</h1>
+            <h1 class="h3 mb-0 text-gray-800">Pending Quotes</h1>
             
           </div>
 
@@ -21,169 +21,44 @@
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	 
-        <th>Supplier Name</th>
-        <th>Supplier Price</th>
-        <th>Location</th>
-		<th>Product Name</th>
-		<th>Description</th>
-		 <th>My Price</th>
-		 <th>Quantity</th>
-		 <th>Status</th>
-		 <th>View</th>
-		 <th>Upload Purchase Order</th>
+			<th>Supplier Name</th>
+			<th>Product Name</th>
+			<th>Product Id</th>
+			<th>Category</th>
+			<th>Company Name</th>
+			<th>Supplier Price</th>
+			<th>Available Stocks</th>
+			<th>Location</th>
+			<th>Buyer Quantity</th>
+			<th>Buyer Price</th>
+			<th>View</th>
+			<th>Upload Purchase Order</th>
       </tr>
     </thead>
     <tbody>
+       	 <?php foreach($sqldata as $row){?>
       <tr>
-        <td>Ferrous Metals  </td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Pending</td>
+	  <?php $proid = str_ireplace('/','-',$row->productid);
+				?>
+			<td><?php echo $row->vname;?></td>
+			<td><?php echo $row->productname;?></td>
+			<td><?php echo $row->productid;?></td>
+			<td><?php echo $row->category;?></td>
+			<td><?php echo $row->companyname;?></td>
+			<td><?php echo $row->price;?></td>
+			<td><?php echo $row->supplyability;?></td>
+			<td><?php echo $row->pcities;?></td>
+			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
+			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 		<td><button type="submit" class="btn btn-info btn-sm w-75">
 					<i class="fa fa-eye" aria-hidden="true"></i>
 					</button></td>
 		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
 		</td>
       </tr>      
-      <tr>
-        <td>Non Ferrous Metals</td>
-        <td>Iron</td>
-		<td>D</td>
-		<td>15</td>
-        <td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      </tr>
-      <tr>
-        <td>Minor Metals</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Pending</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      <tr>
-        <td>Paper Materials</td>
-        <td>Iron</td>
-		<td>D</td>
-		<td>15</td>
-        <td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Pending</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      </tr>
-      <tr>
-        <td>Plastic Materials</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      </tr>
-      <tr>
-        <td>Construction Materials</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      </tr>
-      <tr>
-        <td>Active</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      </tr>
-      <tr>
-        <td>Secondary</td>
-       <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      </tr>
-      <tr>
-        <td>Light</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      </tr>
-      <tr>
-		<td>Light</td>
-        <td>Iron</td>
-        <td>D</td>
-		<td>15</td>
-		<td>2020-07-12</td>
-		<td>Robert</td>
-		<td>ABCD</td>
-		<td>Approved</td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
-      </tr>
+     <?php }?>	    
+         
+
     </tbody>
   </table>
 		</div>

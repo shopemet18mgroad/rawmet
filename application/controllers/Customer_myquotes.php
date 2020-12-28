@@ -22,9 +22,14 @@ class Customer_myquotes extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$reqapproval = array('sellapproval'=>false);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$reqapproval);
+		
 		$sess = array('sessi'=>$this->session->userdata('username'));
+	
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/myquotes');
+		$this->load->view('customer/myquotes',$query);
 		$this->load->view('customer/footer');
 		
 	}
