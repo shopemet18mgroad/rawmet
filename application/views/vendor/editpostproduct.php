@@ -36,28 +36,41 @@
 					<input type="text" class="form-control" id="vname" name="vname"  value="<?php echo  $sqldata[0]->vname;?>" readonly>
                     
                 </div>
-				
-				
-				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Product Name</label>
-					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name" value="<?php echo  $sqldata[0]->productname;?>">
-                    
-                </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Company Name</label>
 					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" value="<?php echo  $sqldata[0]->companyname;?>">
                     
                 </div>
+				
+				<div class="col-sm-4 mb-3 mb-sm-0">
+				
+					<label for="">Category</label>
+					
+					<select class="form-control" id="category" name="category">
+					       <option value="<?php echo  $sqldata[0]->category;?>"><?php echo  $sqldata[0]->category;?></option>
+						<option value="Non Metal">Non Metal</option>
+						<option value="Ferrous">Ferrous</option>
+						<option value="Non Ferrous">Non Ferrous</option>
+				        <option value="Scrap" >Scrap</option>
+						<option value="Metal" >Metal</option>
+				    </select> 
+                    
+                </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="">Product Name</label>
+					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name" value="<?php echo  $sqldata[0]->productname;?>" onkeyup="product_id()" >
+                    
+                </div>
+
+				
+				
+				
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Product Id</label>
 					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id" value="<?php echo  $sqldata[0]->productid;?>" readonly>
                     
                 </div>
-				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Catergory</label>
-					<input type="text" class="form-control" id="category" name="category"  placeholder="Catergory" value="<?php echo  $sqldata[0]->category;?>">
-                    
-                </div>
+				
 				
 				
               

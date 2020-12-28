@@ -28,11 +28,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		} 
 		
 		public function get1datafromtable($table, $data) { 
-			 //$this->db->select('scomapnyname');
+			 $this->db->select('vcompanyname');
 			  $this->db->select('vname');
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
+		
+		public function getusernamedatafromtable($table, $data) { 
+			 //$this->db->select('scomapnyname');
+			  $this->db->select('vusername');
+			 $query = $this->db->get_where($table, $data); 
+			 return $query->result();
+		}
+		
 			public function getbuyerdatafromtable($table, $data) { 
 			 $this->db->select('bcompanyname');
 			  $this->db->select('bname');
