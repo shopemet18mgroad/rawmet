@@ -1,8 +1,11 @@
-<footer>
-	
-
-	</footer>
-	
+<script src="<?php echo base_url()."web_files/";?>js/jquery.min.js"></script> 
+<script src="<?php echo base_url()."web_files/";?>js/popper.min.js"></script>
+ <script src="<?php echo base_url()."web_files/";?>js/jquery.easy-ticker.js"></script> 
+ <script src="<?php echo base_url()."web_files/";?>vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url()."web_files/";?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+ <script src="<?php echo base_url()."web_files/";?>js/demo/datatables-demo.js"></script>
+ 
+ 
 <script>
 function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
@@ -112,6 +115,8 @@ var countries =["Karnataka","Andaman and Nicobar Islands",
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), countries);
 </script>
+
+
 
 
 </body>

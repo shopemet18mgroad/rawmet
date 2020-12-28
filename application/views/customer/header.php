@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>  customer Dashboard</title>
+  <title>Customer Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url()."web_files/";?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -75,7 +75,7 @@
 	  	 
 		<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>customer_contactsupplier">
-          <i class="fas fa-fw fa-upload"></i>
+          <i class="fas fa-fw fa-inbox"></i>
           <span>Products</span></a>
       </li>
 	  
