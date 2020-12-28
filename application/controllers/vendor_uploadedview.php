@@ -28,12 +28,10 @@ class Vendor_uploadedview extends CI_Controller {
 			die;
 			}else{
 		$this->load->model('Admin_model');
-		$productname= urldecode($this->uri->segment(3));
-	
-		$category = urldecode($this->uri->segment(4));
-	
 		
-		$active = array('productname'=>$productname,'category'=>$category);
+	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		
+		$active = array('productid'=>$productid);
 		
 	
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);

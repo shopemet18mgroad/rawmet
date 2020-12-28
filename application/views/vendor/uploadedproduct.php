@@ -36,6 +36,7 @@
       
 	   <?php foreach($sqldata as $row){?>
       <tr>
+	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 	  <td><?php echo $row->productid;?></td> 
@@ -45,13 +46,15 @@
 		<td><?php echo $row->price;?></td>
 		<td><?php echo $row->quantity;?></td>
 
-		<td><?php echo $row->uploadproductimage;?></td>
+		<td><?php $img = unserialize($row->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="55px"></td>
 		<td><?php echo $row->supplyability;?></td>
 		
 
 		<td style="display:inline-flex;">
 		
-		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-eye"></i></a>
+		
+		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
 		
 		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid;?>"><i class="fa fa-edit"></i></a>
 			

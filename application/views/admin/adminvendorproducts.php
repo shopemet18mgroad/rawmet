@@ -38,6 +38,7 @@
       
 	   <?php foreach($sqldata as $row){?>
       <tr>
+	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 	  <td><?php echo $row->productid;?></td> 
@@ -46,9 +47,11 @@
 		<td><?php  echo $row->category;?></td>
          <td><?php echo $row->description?></td>
 		<td><?php echo $row->price;?></td>
-		<td><?php echo $row->quantity;?></td>
+		<td>
+		<?php echo $row->quantity;?></td>
+		<td><?php $img = unserialize($row->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="30%" height="55px"></td>
 
-		<td><?php echo $row->uploadproductimage;?></td>
 		<td><?php echo $row->supplyability;?></td>
 		
 
