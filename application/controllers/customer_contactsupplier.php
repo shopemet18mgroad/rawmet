@@ -38,7 +38,7 @@ class Customer_contactsupplier extends CI_Controller {
 			//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active);
 		
 			//$vendorname = $query2[0]->vname;
-		$category='iron';
+		$category='ferros';
 		$active = array('category'=>$category);
 			$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$active);
 			

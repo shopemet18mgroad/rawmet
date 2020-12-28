@@ -34,8 +34,10 @@
 							</div>
 							</center>
 	<!--Form1-->			
-				<form class="user">
-				<div class="row  bg-light">
+				<form class="user" action="<?php echo base_url();?>customer_add_contactsupplier" method="POST" enctype="multipart/form-data">
+				<div class="row bg-light mt-2">
+				<?php foreach($sqldata as $row){?>
+				
 				<div class="col-sm-2">
 				<div class="col-sm-4">
 				<div class="thumbnail mt-5">
@@ -48,13 +50,27 @@
 				<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
-							<?php foreach($sqldata as $row){?>						
-							<p><b>Supplier Name:</b><?php echo $row->productid;?></p>
-							<p><b>Category:</b><?php echo $row->category;?></p>
-							<p><b>Product Id:</b><?php echo $row->productid;?></p>
-							<p><b>Supplier Price:</b><?php echo $row->price."/"; echo $row->units;?></p>
+									
 							
-							<p class="mt-3">Stock Available at : <?php echo $row->pstates;?></p>
+							<p><b>Supplier Name:</b><?php echo $row->vname;?></p>
+							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $row->vname;?>">
+							
+							<p><b>Category:</b><?php echo $row->category;?></p>
+							<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo $row->category;?>">
+							
+							<p><b>Product Id:</b><?php echo $row->productid;?></p>
+							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo $row->productid;?>">
+							
+							<p><b>Company Name:</b><?php echo $row->companyname;?></p>
+							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $row->companyname;?>">
+							
+							<p><b>Supplier Price:</b><?php echo $row->price."/"; echo $row->units;?></p>
+							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $row->price;?>">
+							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo $row->units;?>">
+							
+							<p class="mt-3">Stock Available at : <?php echo $row->pcities."|"; echo $row->pstates;?></p>
+							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $row->pcities;?>">
+							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $row->pstates;?>">
 					</div>
 					</div>
 				  </div>
@@ -64,68 +80,78 @@
 					<div class="row p-2">
 					<div class="col-sm-12">
 							<h4 style="color:purple;"><b><?php echo $row->productname;?></b></h4>
+						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $row->productname;?>">
 						
 							<p class="w-auto small"><?php echo $row->description;?></p>
+							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo $row->description;?>">
 							
 					</div>
 					</div>
 				  </div>
-				  <?php }?>
+				  
 				  
 				  <div class="col-sm-4 p-2">
 					<div class="row p-2">
 					<div class="col-sm-10">
-							<h6 class="text-center" style="color:orange;"><b>Live Stock : 5 Tons</b></h6>
+							<h6 class="text-center" style="color:orange;"><b>Live Stock : <?php echo $row->supplyability."/"; echo $row->supplyunits;?></b></h6>
+							<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo $row->supplyability;?>">
+							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $row->supplyunits;?>">
+							
 							<div class="form-check mt-3 text-left">
-								<input type="checkbox" class="form-check-input" id="exampleCheck1">
-								<label class="form-check-label" for="exampleCheck1">Negotiate</label>
+								
+							<label class="form-check-label">
+								<input type="checkbox" value="negotiate" id="negotiate" name="negotiate">Negotiate</label>
 							</div>
   
-					<form class="col-12">
+					
 							<div class="form-row">
 								<label class="col-sm-6 col-form-label"  for="name">Quantity</label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="Quantity" id="name" [(ngModel)]="person.name" />
-								<div class="col-sm-3">  
-			   	<select class="form-control col-sm-0" id="type">
-						<option>KG</option>
-						<option>Metric Ton</option>
-						<option>Litre</option>
-						<option>lot</option>
-						<option>litre</option>
-						<option>Number</option>
-						<option>Meter</option>
-					
-				    </select>
+								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" />
+							<div class="col-sm-3">  
+						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
+								<option value="KG">KG</option>
+								<option value="Metric Ton">Metric Ton</option>
+								<option value="Litre">Litre</option>
+								<option value="lot">lot</option>
+								<option value="Number">Number</option>
+								<option value="Meter">Meter</option>
+					    </select>
 				</div>
 								
 							</div>
 							<div class="form-row mt-2">
 								<label class="col-sm-6 col-form-label"  for="name">Your Price Per KG</label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="price" id="name" [(ngModel)]="person.name" />
+								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name"/>
 								<div class="col-sm-3">  
-			   	<select class="form-control col-sm-0" id="type">
-						<option>KG</option>
-						<option>Metric ton</option>
-						<option>Litre</option>
-						<option>lot</option>
-						<option>litre</option>
-						<option>Number</option>
-						<option>Meter</option>
+						<select class="form-control col-sm-0" id="bunits" name="bunits">
+						<option value="KG">KG</option>
+								<option value="Metric Ton">Metric Ton</option>
+								<option value="Litre">Litre</option>
+								<option value="lot">lot</option>
+								<option value="Number">Number</option>
+								<option value="Meter">Meter</option>
 					
 				    </select>
-				</div>
-								<a href=""><button type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5">submit</button></a>
+					
+					</div>
+								<button type="submit" href="<?php echo base_url();?>"class="btn btn-primary btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit">Submit</a>
+								
 							</div>
-					</form>
+					
 							
 					</div>
+					
 					</div>
+					
 				  </div>
-				  
+				  <?php }?>	
                 </div>
+				
+						
                 </form>	
+				
 	<!--Form2-->
-							<form class="user mt-2">
+				<form class="user mt-2">
 				<div class="row  bg-light">
 				<div class="col-sm-2 ">
 				<div class="col-sm-4 ">
