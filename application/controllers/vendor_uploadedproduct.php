@@ -32,13 +32,13 @@ class Vendor_uploadedproduct extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('vusername'=>$sess['sessi']);
 		
-		$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
+		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
 		
-		$vendorname = $query2[0]->vname;
-		$poptions = array('vname'=>$vendorname);
+		//$vendorname = $query2[0]->vname;
+		//$poptions = array('vname'=>$vendorname);
 		
 		
-		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$poptions);
+		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$active1);
 		
 		
 		$adac['sqldata']= $query;

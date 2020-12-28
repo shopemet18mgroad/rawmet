@@ -28,7 +28,7 @@
 				<!--<form class="user" method="POST">-->
 			 	<div class="form-group row">
 				<img class="img" src="<?php echo base_url()."web_files/";?>img/iron.jpg" alt="Chania" width="25%" height="1%">
-				<div class="col-sm-4 mb-3 mb-sm-0">
+				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
 					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
 					<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php echo $sqldata[0]->materialname;?><br>
@@ -36,10 +36,7 @@
 					<p><?php echo $sqldata[0]->price;?><br><?php echo $sqldata[0]->quantity;?> Is it a FOB? Yes<br> 2020-Aug-07
 					</p>
 				  </div>
-               <div class="col-sm-4 text-right">  
-			   	<button class="btn btn-primary btn-sm"><i class="fa fa-edit"> Edit</i></button>
-				<button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</button>
-				</div>
+
 				<table class="table bg-white table-sm table-borderless">
 					<thead class="bg-primary text-white">
 						<tr>

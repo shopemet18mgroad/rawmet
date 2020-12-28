@@ -305,7 +305,7 @@
 				<div class="col-sm-5 mt-4">
 					<p>Upload Product Image:</p>
 					
-					<input type="file" id="uploadproductimage" name="uploadproductimage">
+					<input type="file" id="uploadproductimage" name="uploadproductimage[]">
 				</div>
 				<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>

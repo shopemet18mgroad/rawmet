@@ -30,7 +30,8 @@ class Vendor_postproduct extends CI_Controller {
     }
     
 	public function index()
-	{$this->load->model('Admin_model');
+	{
+		$this->load->model('Admin_model');
 		$this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
@@ -70,8 +71,8 @@ class Vendor_postproduct extends CI_Controller {
 			$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
 			//$uploadproductimage = self::upload_files('uploadproductimage');
-			//echo $_FILES['uploadproductimage']['name'];die;
-			echo $pic_array1  = self::upload_files('uploadproductimage'); die;
+			$_FILES['uploadproductimage']['name'];
+			$pic_array1  = self::upload_files('uploadproductimage'); 
 		
 		       if(!count($pic_array1)){
 			       echo '<script language="javascript">';
@@ -80,7 +81,7 @@ class Vendor_postproduct extends CI_Controller {
 		}else{
 			$pic_array1 = serialize($pic_array1);
 		}
-		
+		//print_r($pic_array1);die;
 			
 			
 			$data1 = array('productid'=>$productid );
@@ -117,6 +118,7 @@ class Vendor_postproduct extends CI_Controller {
 				//print_r($active1); die;
 				$data['scomp'] = $this->Admin_model->get1datafromtable('vendor_register', $active1);
 				$data['sessi'] = $this->session->userdata('username');
+				//print_r($data['sessi']); die;
 				$this->load->view('vendor/header',$sess);
 				$this->load->view('vendor/postproduct',$data);
 				$this->load->view('vendor/footer');
@@ -136,7 +138,7 @@ public function index_error(){
 	}
 
 private function upload_files($nameid){
-    	
+    	//print_r($nameid);
     //$countfiles = count($_FILES[$nameid]['name']);
 	$countfiles=1;
       // Looping all files
@@ -170,7 +172,6 @@ private function upload_files($nameid){
         }
  
       }
-	  return $datar;
+	 return $datar;
     }
-}    
-	
+} 
