@@ -35,7 +35,7 @@
 							</center>
 	<!--Form1-->			
 				<form class="user" action="<?php echo base_url();?>customer_add_contactsupplier" method="POST" enctype="multipart/form-data">
-				<div class="row bg-light mt-2">
+				<div class="row bg-light mt-5">
 				<?php foreach($sqldata as $row){?>
 				
 				<div class="col-sm-2">

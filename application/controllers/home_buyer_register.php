@@ -31,7 +31,7 @@ class Home_buyer_register extends CI_Controller {
 			$bemail = $this->input->post('bemail');
 			$busername = $this->input->post('busername');
 			$bpassword = base64_encode( $this->input->post('bpassword'));
-			$brepeatpassword = $this->input->post('brepeatpassword');
+			$brepeatpassword = base64_encode( $this->input->post('brepeatpassword'));
 			//echo $spcb = $this->input->post('spcb');
 			$bpan= $this->input->post('bpan');
 			$bgst = $this->input->post('bgst');
@@ -61,4 +61,15 @@ class Home_buyer_register extends CI_Controller {
 	  
     }
 	
+	 public function validate_username(){
+		$dat = urldecode($this->uri->segment(3));
+		$check_db = array('busername' => $dat);
+		$this->load->model('Admin_model');
+			  if($this->Admin_model->check('buyer_register', $check_db)){
+				  echo "BYE";
+			  }else{
+				  echo "HI";
+			  }
+		
+	}
 }
