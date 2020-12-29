@@ -56,8 +56,10 @@
 		
 
 		<td style="display:inline-flex;">
+		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
 		
-		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_uploadedview/index/".urldecode($row->productname).'/'.urldecode($row->category);?>">view</a>
+		
+		
 		
 		<button type="submit" name="submit" id="<?php echo $proid;?>" onclick="admin_productapprove(this.id)" class="btn btn-info btn-sm">Approve</button>
 		</td>

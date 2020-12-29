@@ -27,16 +27,18 @@
 					
 				<!--<form class="user" method="POST">-->
 			 	<div class="form-group row">
-				<img class="img" src="<?php echo base_url()."web_files/";?>img/iron.jpg" alt="Chania" width="25%" height="1%">
-				<div class="col-sm-4 mb-3 mb-sm-0">
+				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="200px">
+				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
 					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
-					
+					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
+					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
-					<p><?php echo $sqldata[0]->price;?><br><?php echo $sqldata[0]->quantity;?> Is it a FOB? Yes<br> 2020-Aug-07
+					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price;?>&nbsp;INR<br><b>Stock:&nbsp;</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?><br><b>Posted On:</b><?php echo $sqldata[0]->datetime;?>
 					</p>
 				  </div>
-               
+
 				<table class="table bg-white table-sm table-borderless">
 					<thead class="bg-primary text-white">
 						<tr>
@@ -48,7 +50,7 @@
 								<td><b>Minimum Order Quantity:&nbsp;</b><?php echo $sqldata[0]->minoderquant;?></td>
 							</tr>
 							<tr>
-								<td><b>Supply Ability:</b><?php echo $sqldata[0]->supplyability;?></td>
+								<td><b>Supply Ability:</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?></td>
 							</tr>
 							<tr>
 								<td><b>quantity Per Month:&nbsp;&nbsp;</b><?php echo $sqldata[0]->quantpermonth;?></td>

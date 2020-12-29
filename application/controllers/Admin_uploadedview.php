@@ -22,25 +22,23 @@ class Admin_uploadedview extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->library('session');
-		/* if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
-			}else{ */
+			}else{
 		$this->load->model('Admin_model');
-		$productname= urldecode($this->uri->segment(3));
-	
-		$category = urldecode($this->uri->segment(4));
-	
 		
-		$active = array('productname'=>$productname,'category'=>$category);
+	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		
+		$active = array('productid'=>$productid);
 		
 	
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		
 		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		//$active = array('vusername'=>$sess['sessi']);
+		$active = array('vusername'=>$sess['sessi']);
 			
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/uploadedview',$data);
@@ -48,7 +46,7 @@ class Admin_uploadedview extends CI_Controller {
 		
 		
 		
-			
+			}
 			
 	}
 	
