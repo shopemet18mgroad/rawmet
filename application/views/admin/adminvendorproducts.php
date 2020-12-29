@@ -40,7 +40,9 @@
       <tr>
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
+	 
 				?>
+				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 	  <td><?php echo $row->productid;?></td> 
 	   <td><?php echo $row->vname;?></td>
 		<td><?php echo $row->productname;?></td> 
@@ -62,7 +64,11 @@
 		
 		
 		<button type="submit" name="submit" id="<?php echo $proid;?>" onclick="admin_productapprove(this.id)" class="btn btn-info btn-sm">Approve</button>
-		</td>
+		
+		
+		
+		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid;?>"><button type="button" class="btn btn-success">Reject</button></a></td>
+
         
 <?php }?>	
 </tr>   

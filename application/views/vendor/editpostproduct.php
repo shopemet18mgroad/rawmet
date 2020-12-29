@@ -310,7 +310,7 @@
                 </div>
 				<div class="col-sm-5 mt-4">
 					<p>Upload Product Image:</p>
-					<input type="file" id="uploadproductimage" name="uploadproductimage">
+					<input type="file" id="uploadproductimage" name="uploadproductimage[]">
 				</div>
 				<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>
@@ -321,6 +321,20 @@
 					<label class="checkbox-inline">
 					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured">Add into Featured</label>
 				</div>
+					<div class="col-sm-4 mt-4">
+								<img src="<?php if(unserialize($sqldata[0]->uploadproductimage) != NULL){
+									$img = unserialize($sqldata[0]->uploadproductimage);
+									echo base_url()."/web_files/uploads/".$img[0];}else{echo base_url()."#";} ?>" width="100%" height="100px">
+									<?php 
+									if(unserialize($sqldata[0]->uploadproductimage) != NULL){?>
+									<div class="col-sm-5 mt-4">
+					<p>Upload Product Image:</p>
+					<input type="file" id="uploadproductimage" name="uploadproductimage[]"
+				 value="<?php echo $img[0];?>"></div>
+								<?php
+									}
+								?>
+								</div>
 				
 					<div class="col-md-12 text-center mt-4">
 						

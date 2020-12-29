@@ -23,8 +23,7 @@
 		<th>stock</th>
 	    <th>Image</th>
 		<th>Supply Ability</th>
-		
-		
+		<th>Status</th>
 		<th>options</th>
 		
 		
@@ -45,10 +44,12 @@
          <td><?php echo $row->description?></td>
 		<td><?php echo $row->price;?></td>
 		<td><?php echo $row->quantity;?></td>
+		
 
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 		<td><?php echo $row->supplyability;?></td>
+		<td><?php  if($row->poptions == 0) {echo 'Pending to Approve';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></td>
 		
 
 		<td style="display:inline-flex;">

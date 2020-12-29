@@ -37,7 +37,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>index">
+        <a class="nav-link" href="<?php echo base_url();?>vendor_editvendorprofile">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Seller Dashboard</span></a>
       </li>
