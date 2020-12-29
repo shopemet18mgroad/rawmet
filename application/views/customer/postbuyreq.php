@@ -134,12 +134,12 @@
 						<div class="col-sm-12 col-md-6 mt-2">
 							<div class="form-group">
 								<label for="exampleInputFile">Upload Image</label>
-								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage" aria-describedby="fileHelp">
+								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage[]">
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
 							</div>
 							<div class="form-group">
 								<label for="exampleInputFile">Upload PDF Files</label>
-								<input type="file" class="form-control-file" id="uploadpdf"  name="uploadpdf" aria-describedby="fileHelp" multiple="multiple">
+								<input type="file" class="form-control-file" id="uploadpdf"  name="uploadpdf[]">
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
 							</div>
 						</div>

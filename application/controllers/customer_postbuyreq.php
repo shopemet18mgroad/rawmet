@@ -53,7 +53,9 @@ class Customer_postbuyreq  extends CI_Controller {
 			$email = $this->input->post('email');
 			$contactnumber = $this->input->post('contactnumber');
 			$iagreee = $this->input->post('iagreee');
+			$_FILES['uploadimage']['name'];
 			$pic_array = self::upload_files('uploadimage');
+			$_FILES['uploadpdf']['name'];
 			$doc_array = self::upload_files('uploadpdf');
 			
 			
@@ -105,9 +107,11 @@ class Customer_postbuyreq  extends CI_Controller {
 	}
 	}
 
-	private function upload_files($nameid)
-    {	
-	$countfiles = count($_FILES[$nameid]['name']);
+
+private function upload_files($nameid){
+    	//print_r($nameid);
+    //$countfiles = count($_FILES[$nameid]['name']);
+	$countfiles=1;
       // Looping all files
       for($i=0;$i<$countfiles;$i++){
         if(!empty($_FILES[$nameid]['name'][$i])){
@@ -139,6 +143,6 @@ class Customer_postbuyreq  extends CI_Controller {
         }
  
       }
-	  return $datar;
+	 return $datar;
     }	
 }
