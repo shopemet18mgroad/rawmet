@@ -33,14 +33,18 @@
 			<th>Location</th>
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
-			<th>View</th>
+			<th>View Quotation</th>
 			<th>Upload Purchase Order</th>
+			<th>View Purchase Order</th>
       </tr>
     </thead>
     <tbody>
+	<form action="<?php echo base_url();?>customer_approvedquotes_upload_porder" method="POST" id="upload-form" enctype="multipart/form-data">
+	<?php $k=0;?>
      	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
+	  	$aucfl = unserialize($row->uploadporder);
 				?>
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->productname;?></td>
@@ -52,16 +56,31 @@
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-		<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>
+		<td>
+			
+				<i class="fa fa-download" aria-hidden="true"></i>
+			
+					
+					</td>
+					
+			<td>
+				<input class="form-group w-auto"  multiple="multiple"  type="file" name="uploadporder[]">
+				<input type="hidden" name="porder[]" value="<?php echo $row->vname.'|'.$proid .'|'.$row->category;?>"> 
+				<input type="submit" id="" class="btn btn-primary " name="submit" value="Upload">
+			</td>
+		
+		<td>
+				<a href="<?php echo base_url().'web_files/uploads/'.$aucfl[0]?>" target="_blank">
+				<i class="fa fa-download" aria-hidden="true"></i></a>
+			
+					
+					</td>
       </tr>      
-     <?php }?>	    
+     <?php $k++;}?> 	    
      
     </tbody>
   </table>
+   </form>
 		</div>
 		</div>
 		</div>

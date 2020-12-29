@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	 <link href="<?php echo base_url()."web_files/";?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="<?php echo base_url()."web_files/";?>css/style.css" rel="stylesheet" type="text/css">
-  <link href="<?php echo base_url()."web_files/";?>css/bootstrap.min" rel="stylesheet">
+  
   <script src="<?php echo base_url()."web_files/";?>js/js.js"></script>
   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -30,7 +29,8 @@
       
 	<title>Rawmet</title>
     
-	 
+	<link href="<?php echo base_url()."web_files/";?>css/style.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url()."web_files/";?>css/bootstrap.min" rel="stylesheet"> 
 	
 </head>
 <body>
