@@ -85,7 +85,24 @@
                       <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."></textarea>
 					</div>
 					
-					
+						<div class="form-inline">
+					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+						<label>Price:</label>
+						<input type="text" class="form-control" id="price" name="price">
+					</div>
+					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">			
+						<label for="price">Units:</label>
+						<select class="form-control col-sm-0" id="priceperkg" name="priceperkg">
+							<option  value="KG">KG</option>
+							<option value="Metric ton">Metric ton</option>
+							<option value="Litre">Litre</option>
+							<option value="lot">lot</option>
+							<option value="litre">litre</option>
+							<option value="Number">Number</option>
+							<option value="Meter">Meter</option>
+						</select>
+					</div>
+					</div>
 					 
 					<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
