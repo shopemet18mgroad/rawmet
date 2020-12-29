@@ -50,7 +50,8 @@
 			<td><?php echo $row->requireddate;?></td>
 			<td><?php echo $row->lastdate;?></td>
 			<td><?php echo $row->email;?></td>
-			<td><?php echo $row->uploadimage;?></td>
+			<td><?php $img = unserialize($row->uploadimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 			<td><button type="submit" name="submit" id="<?php echo $proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-info btn-sm">Approve</button></td>
 		
       </tr>      

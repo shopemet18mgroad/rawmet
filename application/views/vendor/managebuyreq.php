@@ -46,7 +46,8 @@
 			<td><?php echo $row->requireddate;?></td>
 			<td><?php echo $row->lastdate;?></td>
 			<td><?php echo $row->email;?></td>
-			<td><?php echo $row->uploadimage;?></td>
+				<td><?php $img = unserialize($row->uploadimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
 			<td>		
 			<a href="<?php echo base_url()."vendor_managebuyreq/delete_buyingrequ/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a></td>
 		

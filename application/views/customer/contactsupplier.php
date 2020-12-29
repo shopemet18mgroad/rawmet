@@ -41,7 +41,8 @@
 				<div class="col-sm-2">
 				<div class="col-sm-4">
 				<div class="thumbnail mt-5">
-					<img class="img" src="<?php echo base_url()."web_files/";?>img/pigiron.jpg" alt="Chania" width="120" height="120">
+					<td><?php $img = unserialize($row->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
 				</div>	
 				</div>
 				</div>
