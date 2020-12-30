@@ -6,7 +6,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Manage Buying Requirements</h1>
+            <h1 class="h3 mb-0 text-gray-800">Manage Buyer Requirements</h1>
             
           </div>
 
@@ -31,6 +31,7 @@
 			<th>Last Date</th>
 			<th>Email</th>
 			<th>Images</th>
+			
 			<th>Action</th>
       </tr>
     </thead>
@@ -50,6 +51,7 @@
 			<td><?php echo $row->email;?></td>
 				<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
+				
 			<td>		
 			<a href="<?php echo base_url()."vendor_managebuyreq/delete_buyingrequ/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a>
 			<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urlencode($row->bname);?>"  class="btn btn-info btn-sm text-white delete-confirm"><i class="fa fa-edit fa-sm"></i></a></td>

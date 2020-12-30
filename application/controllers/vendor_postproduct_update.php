@@ -87,14 +87,14 @@ class vendor_postproduct_update extends CI_Controller {
 				$doc_array = serialize($doc_array);
 			}
 			
-		}
+		
 		
 		//=================================================================================================
 		
-		
+		}
 		
 		//==================================================================
-		$data= array('vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'companyname'=>$companyname,'uploadproductimage' => $pic_array)
+		$data = array('vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'companyname'=>$companyname,'uploadproductimage' => $pic_array);
 		//$this->load->view('xya', $data);
 		$datainserr = "Data Inserted Successfully";
 		$updatech = array('productid' => $productid);
@@ -104,8 +104,8 @@ class vendor_postproduct_update extends CI_Controller {
 		//$this->load->view('admin/header');
 		//$this->load->view('admin/salesreport');
 		//$this->load->view('admin/footer');
-		
-	}
+	
+	
 	
 /*private function upload_file($filenameee,$nameid)
     {
