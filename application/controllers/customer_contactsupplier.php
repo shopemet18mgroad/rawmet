@@ -48,4 +48,37 @@ class Customer_contactsupplier extends CI_Controller {
 		
 	}
 	}
+	
+	public function Addtosubmit(){
+		$dat = urldecode($this->uri->segment(3));
+		$this->load->library('session');
+		
+		$vname = $this->session->userdata('username');
+		$datexp = explode('|',$dat);
+		$productid = str_ireplace('-','/',$datexp[0]);
+		$category = $datexp[1];
+
+		$data = array('productid'=>$productid);
+		
+		$dat3 = $this->Admin_model->getdatafromtable('quotes',$data);
+		$price = $dat3[0]->price;
+		$quantity = $dat3[0]->quantity;
+		$units = $dat4[0]->units;
+		$supplyability = $dat4[0]->supplyability;
+		$bcheck = array('vname'=>$vname,'productid'=>$productid,'category'=>$category);
+		$cartdata = array(
+		'vname'  => $vname,'productid'=>$productid,'category' => $category,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability);
+		if($this->Admin_model->check('quotes',$bcheck)){
+			echo "EX";
+		}else{
+			$status = $this->Admin_model->insert('quotes', $cartdata);
+			echo "IN";
+		}
+		die;
+		
+		
+	
+	}			
+
+	
 }
