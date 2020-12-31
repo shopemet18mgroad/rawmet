@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendor_sellerquotenego extends CI_Controller {
+class Customer_managebuy extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,14 +24,14 @@ class Vendor_sellerquotenego extends CI_Controller {
 		$this->load->model('Admin_model');
 		$productid = str_ireplace('-','/', $this->uri->segment(3));
 	
-		$vname = ($this->uri->segment(4));
+		$bname = ($this->uri->segment(4));
 	
 		
-		$active = array('productid '=>$productid ,'vname'=>$vname);
+		$active = array('productid '=>$productid ,'bname'=>$bname);
+		//print_r($active);die;
 	
-	
-		$query = $this->Admin_model->getdatafromtable('quotes', $active);
-	
+		$query = $this->Admin_model->getdatafromtable('buyerrequriement', $active);
+		//print_r($query);die;
 		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
 			//print_r($query); die;
@@ -45,9 +45,9 @@ class Vendor_sellerquotenego extends CI_Controller {
 			$active = array('busername'=>$sess['sessi']) */;
 		
 			
-		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/sellerquotenego',$data);
-		$this->load->view('vendor/footer');
+		$this->load->view('customer/header',$sess);
+		$this->load->view('customer/managebuy',$data);
+		$this->load->view('customer/footer');
 	
 		
 	}
@@ -59,11 +59,10 @@ class Vendor_sellerquotenego extends CI_Controller {
 			echo '</script>';
 			$this->load->helper('url');
 		$this->load->view('vendor/header');
-		$this->load->view('vendor/sellerquotenego');
+		$this->load->view('vendor/managebuy');
 		$this->load->view('vendor/footer');
 			
 	}
 	
 }
-
 	

@@ -26,15 +26,9 @@
                 </div> -->
                 <!-- Card Body -->
                 <div class="card-body">
-				<center>
-				<div class="form-check m-4 ">
-							
-								
-								<button type="button" class="btn btn-primary">Negotiate All</button></a>
-							</div>
-							</center>
+				
 	<!--Form1-->			
-				<form class="user" action="<?php echo base_url();?>vendor_sellerquotenego" method="POST" enctype="multipart/form-data">
+				<form class="user" action="<?php echo base_url();?>vendor_add_negotiate" method="POST" enctype="multipart/form-data">
 				<div class="row bg-light mt-5">
 				
 				
@@ -54,21 +48,30 @@
 									
 							
 							<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
+							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
 							<p><b>Buyer Name:</b><?php echo $sqldata[0]->busername;?></p>
+							<input type="hidden" class="form-control" id="busername" name="busername"  value="<?php echo $sqldata[0]->busername;?>">
 							
 							<p><b>Category:</b><?php echo $sqldata[0]->category;?></p>
+							<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo $sqldata[0]->category;?>">
 							
 							
 							<p><b>Product Id:</b><?php echo $sqldata[0]->productid;?></p>
+							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo $sqldata[0]->productid;?>">
 						
 							
 							<p><b>Company Name:</b><?php echo $sqldata[0]->companyname;?></p>
+							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $sqldata[0]->companyname;?>">
 						
 							
 							<p><b>Supplier Price:</b><?php echo $sqldata[0]->price."/"; echo $sqldata[0]->units;?></p>
+							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
 							
 							
 							<p class="mt-3">Stock Available at : <?php echo $sqldata[0]->pcities."|"; echo $sqldata[0]->pstates;?></p>
+							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
+							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $sqldata[0]->pstates;?>">
+							
 							
 					</div>
 					</div>
@@ -79,9 +82,11 @@
 					<div class="row p-2">
 					<div class="col-sm-12">
 							<h4 style="color:purple;"><b><?php echo $sqldata[0]->productname;?></b></h4>
+							<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
 						
 						
 							<p class="w-auto small"><?php echo $sqldata[0]->description;?></p>
+							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo $sqldata[0]->description;?>">
 							
 							
 					</div>
@@ -93,11 +98,16 @@
 					<div class="row p-2">
 					<div class="col-sm-10">
 							<h6 class="text-center" style="color:orange;"><b>Live Stock : <?php echo $sqldata[0]->supplyability."/"; echo $sqldata[0]->supplyunits;?></b></h6>
+							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $sqldata[0]->supplyunits;?>">
 						
 							<p><b>Quantity:</b><?php echo $sqldata[0]->bquantity."/"; echo $sqldata[0]->bsupplyability;?></p>
+							<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo $sqldata[0]->bquantity;?>">
+							<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo $sqldata[0]->bsupplyability;?>">
 							
 							
 							<p><b>Price:</b><?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></p>
+							<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata[0]->bprice;?>">
+							<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata[0]->bunits;?>">
 							
 							<hr class="sidebar-divider">
 							<center><b>Seller Negotiate</b></center>
@@ -106,14 +116,15 @@
 								
 							<label class="form-check-label">
 								<input type="checkbox" value="negotiate" id="negotiate" name="negotiate">Negotiate</label>
+								
 							</div>
   
 					
 							<div class="form-row">
 								<label class="col-sm-6 col-form-label"  for="name">Quantity</label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" />
+								<input type="text" class="form-control col-sm-2 mr-2" name="selprice" placeholder="Quantity" id="selprice" [(ngModel)]="person.name" />
 							<div class="col-sm-3">  
-						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
+						<select class="form-control col-sm-0" id="sunits" name="sunits">
 								<option value="KG">KG</option>
 								<option value="Metric Ton">Metric Ton</option>
 								<option value="Litre">Litre</option>
@@ -126,9 +137,9 @@
 							</div>
 							<div class="form-row mt-2">
 								<label class="col-sm-6 col-form-label"  for="name">Your Price Per KG</label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name"/>
+								<input type="text" class="form-control col-sm-2 mr-2" name="selqan" placeholder="price" id="selqan" [(ngModel)]="person.name"/>
 								<div class="col-sm-3">  
-						<select class="form-control col-sm-0" id="bunits" name="bunits">
+						<select class="form-control col-sm-0" id="selunits" name="selunits">
 						<option value="KG">KG</option>
 								<option value="Metric Ton">Metric Ton</option>
 								<option value="Litre">Litre</option>

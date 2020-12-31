@@ -106,6 +106,29 @@
           </div>
         </div>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment2" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Manage Buying Requirements</span></a>
+		 <div id="payment2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <!--<a class="collapse-item" href="<?php //echo base_url();?>customer_managebuyreq">buyer Negotiated</a>-->
+            <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Seller Negotiated</a>
+          </div>
+        </div>
+      </li>
+	 
+	  <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-money-bill-alt"></i>
+          <span>My Requriments</span></a>
+		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php //echo base_url();?>customer_managebuy"> My Approved Quotes</a>
+            <a class="collapse-item" href="<?php// echo base_url();?>customer_negotiated">My Pending Quotes</a>
+          </div>
+        </div>
+      </li>-->
 	  	<!--<li class="nav-item">
         <a class="nav-link" href="<?php //echo base_url();?>customer_myquotes">
           <i class="fas fa-fw fa-upload"></i>
