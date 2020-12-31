@@ -37,7 +37,7 @@ class vendor_postproduct_update extends CI_Controller {
 			$units = $this->input->post('units');
 			$aifeatured = $this->input->post('aifeatured');
 			$fobprice = $this->input->post('fobprice');
-			$uploadproductimage = $this->input->post('uploadproductimage');
+			//$uploadproductimage = $this->input->post('uploadproductimage');
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');
@@ -47,15 +47,16 @@ class vendor_postproduct_update extends CI_Controller {
 			$pcities = $this->input->post('pcities');
 		    $types= $this->input->post('types');			 
 		    $payable = $this->input->post('payable');
-			$productid = $this->input->post('productid');
+			//$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
-			$_FILES['uploadproductimage']['name'];
-		$profileimage[] = $this->input->post('profileimage');
-		$profileimage2 = serialize($profileimage);
+				//print_r($data);die;
+			//$_FILES['uploadproductimage']['name'];
+		     $profileimage[] = $this->input->post('profileimage');
+		      $profileimage2 = serialize($profileimage);
+			  
 		$dataact = array();
 		$datacomp = array();
-		
-		if($dataact && $datacomp){
+			if($dataact && $datacomp){
 			$result = array_diff($dataact,$datacomp);
 			$result2 = array_intersect($dataact,$datacomp);
 			if(count($result)){
@@ -63,15 +64,17 @@ class vendor_postproduct_update extends CI_Controller {
 			unlink(base_url()."web_files/uploads/".$res);
 			}
 			}
-		
+			
 		}
-		
-	    if($_FILES['uploadproductimage']['tmp_name'][0]){
+	
+			
+			if($_FILES['uploadproductimage']['tmp_name'][0]){
 			unlink("../web_files/uploads/".$profileimage[0]);
 			$pic_array = self::upload_files('uploadproductimage');
+			print_r( $uploadproductimage);die;
 		}
 		
-		
+	
 		if(!count($pic_array)){
 			echo '<script language="javascript">';
 			echo 'alert("No Image Upload Failed")';  //not showing an alert box.
@@ -80,55 +83,28 @@ class vendor_postproduct_update extends CI_Controller {
 		}else{
 			$pic_array = serialize($pic_array);
 		}
-			if($result2){
-				$doc_array = array_merge($doc_array,$result2);
-				$doc_array = serialize($doc_array);
-			}else{
-				$doc_array = serialize($doc_array);
-			}
-			
 		
 		
 		//=================================================================================================
 		
-		}
+		
 		
 		//==================================================================
-		$data = array('vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'companyname'=>$companyname,'uploadproductimage' => $pic_array);
-		//$this->load->view('xya', $data);
+		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'companyname'=>$companyname,'uploadproductimage' => $pic_array);
+		
+		//print_r($data);die;
 		$datainserr = "Data Inserted Successfully";
-		$updatech = array('productid' => $productid);
+		$updatech = array('vname' => $vname);
+		
 		$status = $this->Admin_model->update_custom('sellerpostproduct',$data,$updatech,$updatech);
-		// $status = $this->Admin_model->insert('sellerprofile', $data2);
+		
+	
 		header('location: '.base_url().'vendor_uploadedproduct/index/'.$datainserr);
-		//$this->load->view('admin/header');
-		//$this->load->view('admin/salesreport');
-		//$this->load->view('admin/footer');
 	
 	
-	
-/*private function upload_file($filenameee,$nameid)
-    {
-        if(!empty($filenameee)){
-                $config['upload_path'] = 'web_files/uploads/';
-                $config['allowed_types'] = 'jpg|png';
-                $config['file_name'] = $filenameee;
-                
-                //Load upload library and initialize configuration
-                $this->load->library('upload',$config);
-                $this->upload->initialize($config);
-                if($this->upload->do_upload($nameid)){
-                    $uploadData = $this->upload->data();
-                    $flname = $uploadData['file_name'];
-                }else{
-                    $flname = 'Unable';
-                }
-            }else{`
-                $flname = 'aa';
-            }
-			return $flname;
-    }*/
-	private function upload_files($nameid)
+	}
+
+	private function upload_files($uploadproductimage)
     {	
 	$countfiles = count($_FILES[$nameid]['name']);
       // Looping all files
@@ -169,4 +145,4 @@ class vendor_postproduct_update extends CI_Controller {
 
 
 
-	
+
