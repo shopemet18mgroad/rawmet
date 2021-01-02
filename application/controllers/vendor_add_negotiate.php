@@ -106,7 +106,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			  
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('selquotenegotate',$data2);
-			header('location: '.base_url().'vendor_custquoteapproval/index/'.$datainserr);
+			header('location: '.base_url().'vendor_sellernegotiatedquote/index/'.$datainserr);
 			//header('location: ./vendor_custquoteapproval/index/');
 			
 	 }

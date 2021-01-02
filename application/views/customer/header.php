@@ -113,7 +113,8 @@
 		 <div id="payment2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!--<a class="collapse-item" href="<?php //echo base_url();?>customer_managebuyreq">buyer Negotiated</a>-->
-            <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Seller Negotiated</a>
+            <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Seller Requirement <br>Negotiated</a>
+			<a class="collapse-item" href="<?php echo base_url();?>customer_sellernegotiatedquote">Seller Quote Negotiated</a>
           </div>
         </div>
       </li>

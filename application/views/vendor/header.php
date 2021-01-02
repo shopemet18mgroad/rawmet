@@ -64,7 +64,7 @@
           <span>Manage Buying Requirements</span></a>
 		 <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">buyer Negotiated</a>
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Buyer Negotiated</a>
             <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">Seller Negotiated</a>
           </div>
         </div>
@@ -87,10 +87,17 @@
           <span>Manage My Product</span></a>
       </li>
 	  
-	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>vendor_custquoteapproval">
-          <i class="fas fa-fw fa-upload"></i>
+	
+	   <li class="nav-item">
+        <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Quotes Approval</span></a>
+		 <div id="collapseProduct" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_custquoteapproval">Buyer Quotes Negotiation</a>
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_sellernegotiatedquote">Seller Quotes Negotiation</a>
+          </div>
+        </div>
       </li>
 
 	  <!-- Nav Item - Utilities Collapse Menu -->
