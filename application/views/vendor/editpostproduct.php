@@ -28,7 +28,7 @@
                 <div class="card-body">
 					
 			
-			<form action="<?php echo base_url();?>vendor_postproduct_update" method="POST">
+			<form action="<?php echo base_url();?>vendor_postproduct_update" method="POST" enctype="multipart/form-data">
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
@@ -336,7 +336,7 @@
 							
 								<div class="input_fields_wrap">
 								
-								<input  type="file" id="uploadproductimage" name="uploadproductimage[]">
+								<input  type="file" id="uploadproductimage" name="uploadproductimage">
 								</div>
 							
 --

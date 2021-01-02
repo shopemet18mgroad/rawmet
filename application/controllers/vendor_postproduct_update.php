@@ -37,7 +37,7 @@ class vendor_postproduct_update extends CI_Controller {
 			$units = $this->input->post('units');
 			$aifeatured = $this->input->post('aifeatured');
 			$fobprice = $this->input->post('fobprice');
-			//$uploadproductimage = $this->input->post('uploadproductimage');
+			//$pic_array = $this->input->post('uploadproductimage');
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');
@@ -49,8 +49,11 @@ class vendor_postproduct_update extends CI_Controller {
 		    $payable = $this->input->post('payable');
 			//$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
-				//print_r($data);die;
-			//$_FILES['uploadproductimage']['name'];
+				$_FILES['uploadproductimage']['name'];
+			//$pic_array1  = self::upload_files('uploadproductimage'); die;
+			 $pic_array1  = self::upload_files('uploadproductimage'); 
+		
+		     
 		     $profileimage[] = $this->input->post('profileimage');
 		      $profileimage2 = serialize($profileimage);
 			  
@@ -69,9 +72,9 @@ class vendor_postproduct_update extends CI_Controller {
 	
 			
 			if($_FILES['uploadproductimage']['tmp_name'][0]){
-			unlink("../web_files/uploads/".$profileimage[0]);
+		("../web_files/uploads/".$profileimage[0]);
 			$pic_array = self::upload_files('uploadproductimage');
-			print_r( $uploadproductimage);die;
+			
 		}
 		
 	
@@ -104,19 +107,20 @@ class vendor_postproduct_update extends CI_Controller {
 	
 	}
 
-	private function upload_files($uploadproductimage)
-    {	
-	$countfiles = count($_FILES[$nameid]['name']);
+	private function upload_files($nameid){
+    	//print_r($nameid);
+    //$countfiles = count($_FILES[$nameid]['name']);
+	$countfiles=1;
       // Looping all files
       for($i=0;$i<$countfiles;$i++){
         if(!empty($_FILES[$nameid]['name'][$i])){
  
           // Define new $_FILES array - $_FILES['file']
-          $_FILES['file']['name'] = $_FILES[$nameid]['name'][$i];
-          $_FILES['file']['type'] = $_FILES[$nameid]['type'][$i];
-          $_FILES['file']['tmp_name'] = $_FILES[$nameid]['tmp_name'][$i];
-          $_FILES['file']['error'] = $_FILES[$nameid]['error'][$i];
-          $_FILES['file']['size'] = $_FILES[$nameid]['size'][$i];
+          $_FILES['file']['name'] = $_FILES[$nameid]['name'];
+          $_FILES['file']['type'] = $_FILES[$nameid]['type'];
+          $_FILES['file']['tmp_name'] = $_FILES[$nameid]['tmp_name'];
+          $_FILES['file']['error'] = $_FILES[$nameid]['error'];
+          $_FILES['file']['size'] = $_FILES[$nameid]['size'];
 
           // Set preference
            $config['upload_path'] = 'web_files/uploads/';
@@ -138,9 +142,8 @@ class vendor_postproduct_update extends CI_Controller {
         }
  
       }
-	  return $datar;
+	 return $datar;
     }
-	
 }
 
 
