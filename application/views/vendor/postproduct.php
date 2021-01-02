@@ -288,7 +288,7 @@
 			</div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Payable To Rawmet:(%)</label>
-					<input type="text" class="form-control" id="payable" name="payable"  placeholder="" required>
+					<input type="text" class="form-control" id="payable" name="payable"  placeholder="" >
 					
                     
                 </div>
@@ -319,8 +319,11 @@
 				
 					<div class="col-md-12 text-center mt-4">
 						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>
+						  
+						  
+						  <input type="submit" name="submit" id="btn1"  onclick="return postproduct()" value="Submit" class="btn btn-primary btn-sm">
 						
-						<button type="submit" href="<?php echo base_url();?>"class="btn btn-primary btn-sm" name="submit" role="button">Submit</a>
+						<!--<button type="submit" href="<?php// echo base_url();?>"class="btn btn-primary btn-sm" name="submit" role="button">Submit</a>-->
 					</div>	
 					
 				</div>
@@ -342,5 +345,38 @@
 
       </div>
       <!-- End of Main Content -->
+	  <script>
+  
+function postproduct(){
+
+	var vname = document.getElementById("vname").value;
+	var productname = document.getElementById("productname").value;
+	var productid = document.getElementById("productid").value;
+	var companyname = document.getElementById("companyname").value;
+	var category = document.getElementById("category").value;
+	var description = document.getElementById("description").value;
+	var price = document.getElementById("price").value;
+	var quantity = document.getElementById("quantity").value;
+	var units = document.getElementById("units").value;
+	var aifeatured = document.getElementById("aifeatured").value;
+	var fobprice = document.getElementById("fobprice").value;
+	var uploadproductimage = document.getElementById("uploadproductimage").value;
+	var minoderquat = document.getElementById("minoderquat").value;
+	var supplyability = document.getElementById("supplyability").value;
+	var supplyunits = document.getElementById("supplyunits").value;
+	var quantpermonth = document.getElementById("quantpermonth").value;
+	var estdeltime = document.getElementById("estdeltime").value;
+	var pstates = document.getElementById("pstates").value;
+	var pcities = document.getElementById("pcities").value;
+	var types = document.getElementById("types").value;
+	var payable = document.getElementById("payable").value;
+	var datetime = document.getElementById("datetime").value;
+	
+	
+
+if(vname == '' || productname == '' || productid == '' || companyname == '' || category == '' || description == '' || price == '' || quantity == '' || units == '' || aifeatured == '' || fobprice == '' || uploadproductimage == '' || minoderquat == '' || supplyability == '' || supplyunits == ''|| quantpermonth == ''|| estdeltime == ''|| pstates == ''|| pcities == ''|| types == ''|| payable == ''){
+		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
+		return false;
+</script>
 
 

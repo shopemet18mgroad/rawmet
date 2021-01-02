@@ -33,7 +33,7 @@ class Home_seller_register extends CI_Controller {
 		$vemail = $this->input->post('vemail');
 		$vusername = $this->input->post('vusername');
 		$vpassword =  base64_encode($this->input->post('vpassword'));
-		$vrepeatpassword = $this->input->post('vrepeatpassword');
+		$vrepeatpassword = base64_encode($this->input->post('vrepeatpassword'));
 		$vpan= $this->input->post('vpan');
 		$vgst = $this->input->post('vgst');
 		$vpcb= $this->input->post('vpcb');
@@ -53,9 +53,27 @@ class Home_seller_register extends CI_Controller {
 		$status = $this->Admin_model->insert('vendor_register',$data);
 		header('location:'.base_url().'home/index/'.$datainserr);
 		
-		}
 		
-		$this->load->view('header');
+		 }
+        $this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+       
+		
+	  
+    
+		
+		$this->load->view('header',$sess);
 		$this->load->view('seller_register');
+	}
+	 public function validate_username(){
+		$dat = urldecode($this->uri->segment(3));
+		$check_db = array('vusername' => $dat);
+		$this->load->model('Admin_model');
+			  if($this->Admin_model->check('vendor_register', $check_db)){
+				  echo "BYE";
+			  }else{
+				  echo "HI";
+			  }
+		
 	}
 }

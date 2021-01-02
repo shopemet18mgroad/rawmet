@@ -29,8 +29,8 @@ class Admin_seller_basicinfo_add extends CI_Controller {
 			$vcontactnumber = $this->input->post('vcontactnumber');
 			$vemail = $this->input->post('vemail');
 			$vusername = $this->input->post('vusername');
-			$vpassword = $this->input->post('vpassword');
-			$vrepeatpassword = $this->input->post('vrepeatpassword');
+			$vpassword =  base64_encode($this->input->post('vpassword'));
+		     $vrepeatpassword = base64_encode($this->input->post('vrepeatpassword'));
 			$vpan = $this->input->post('vpan');
 			$vgst = $this->input->post('vgst');
 			$vpcb = $this->input->post('vpcb');

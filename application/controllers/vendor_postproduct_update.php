@@ -28,7 +28,7 @@ class vendor_postproduct_update extends CI_Controller {
 		$this->load->library('fileupload');
 		$this->load->helper(array('url','form','file','html'));
 		$this->load->model('Admin_model');
-		$vname = $this->input->post('vname');
+		    $vname = $this->input->post('vname');
 			$category = $this->input->post('category');
 			$materialname = $this->input->post('materialname');
 			$description = $this->input->post('description');
@@ -47,8 +47,8 @@ class vendor_postproduct_update extends CI_Controller {
 			$pcities = $this->input->post('pcities');
 		    $types= $this->input->post('types');			 
 		    $payable = $this->input->post('payable');
-			//$productid = $this->input->post('productid');
-			$companyname = $this->input->post('companyname');
+			$productid = $this->input->post('productid');
+		$companyname = $this->input->post('companyname');
 				$_FILES['uploadproductimage']['name'];
 			//$pic_array1  = self::upload_files('uploadproductimage'); die;
 			 $pic_array1  = self::upload_files('uploadproductimage'); 
@@ -93,11 +93,11 @@ class vendor_postproduct_update extends CI_Controller {
 		
 		
 		//==================================================================
-		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'companyname'=>$companyname,'uploadproductimage' => $pic_array);
+		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array);
 		
 		//print_r($data);die;
 		$datainserr = "Data Inserted Successfully";
-		$updatech = array('vname' => $vname);
+		$updatech = array('vname'=> $vname,'companyname'=>$companyname,'productid'=>$productid);
 		
 		$status = $this->Admin_model->update_custom('sellerpostproduct',$data,$updatech,$updatech);
 		

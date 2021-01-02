@@ -15,7 +15,8 @@
                 <h1 class="h4 text-gray-900 mb-2">Create an Account!</h1>
 				
               </div>
-              <form action="<?php echo base_url();?>home_seller_register" method="POST">
+			  <form action="<?php echo base_url();?>home_seller_register" onsubmit ="return validateForm()" method="POST">
+              
 			  <h3 class="h5 text-gray-700 mb-2">Contact Info</h3> 	
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
@@ -24,18 +25,18 @@
                   
 				   <div class="col-sm-6">
                     <input type="text" class="form-control form-control-user" id="vcompanyname" name="vcompanyname" placeholder="Company Name" 
-required>
+>
                   </div>
 				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="vcompanytype"  name="vcompanytype"  placeholder="Company Type" 
-required>
+>
                   </div>
 				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="vcontactperson"  name="vcontactperson"  placeholder="Contact Person">
                   </div>
 				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="vcontactnumber"  name="vcontactnumber"  placeholder="Contact Number" 
-required>
+>
                   </div>
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
@@ -49,21 +50,23 @@ required>
                 </div>
                 
                 <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="vpassword"  name="vpassword"  placeholder="Password">
+				<div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password" onkeyup="validate_username()"><span id = "message1" style="color:red"> </span>
                   </div>
-                  <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user"  id="vrepeatpassword"  name="vrepeatpassword"  placeholder="Repeat Password">
+				  <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Repeat Password"><span id = "message2" style="color:red"> </span>
                   </div>
+                  
+                  
 				  
                </div>
 			   <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user"id="vpan"  name="vpan"   placeholder="PAN" required>
+                    <input type="text" class="form-control form-control-user pan"id="vpan"  name="vpan"   placeholder="PAN" >
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="vgst"  name="vgst"   placeholder="GST"
-required>
+                    <input type="text" class="form-control form-control-user gst" id="vgst"  name="vgst"   placeholder="GST"
+>
                   </div>
                 </div>
 				<div class="form-group row">
@@ -94,8 +97,13 @@ required>
                     <input type="text" class="form-control form-control-user" id="vpincode"  name="vpincode"   placeholder="Pincode">
                   </div>
                 </div>
-               <center>
-				 <input type="submit" name="submit" id="btn1" value="Register Account" class="btn btn-primary col-3 mt-2 w-100"></center>
+				  <center>
+				<input type="submit" name="submit" id="btn1"  onclick="return validatebuyer()" value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
+				</center>
+				 
+				
+               <!--<center>
+				 <input type="submit" name="submit" id="btn1" value="Register Account"  class="btn btn-primary col-3 mt-2 w-100"></center>-->
                 <!-- <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google
@@ -118,5 +126,126 @@ required>
     </div>
 
   </div>
+  <script>
+  
+function validatebuyer(){
+
+	var bname = document.getElementById("vname").value;
+	var bcompanyname = document.getElementById("vcompanyname").value;
+	var bcompanytype = document.getElementById("vcompanytype").value;
+	var bcontactperson = document.getElementById("vcontactperson").value;
+	var bcontactnumber = document.getElementById("vcontactnumber").value;
+	var bemail = document.getElementById("vemail").value;
+	var busername = document.getElementById("vusername").value;
+	var bpassword = document.getElementById("vpassword").value;
+	var brepeatpassword = document.getElementById("vrepeatpassword").value;
+	var bpan = document.getElementById("vpan").value;
+	var bgst = document.getElementById("vgst").value;
+	var baddress = document.getElementById("vaddress").value;
+	var bcity = document.getElementById("vcity").value;
+	var bselectstate = document.getElementById("vselectstate").value;
+	var bpincode = document.getElementById("vpincode").value;
+	
+
+if(vname == '' || vcompanyname == '' || vcompanytype == '' || vcontactperson == '' || vcontactnumber == '' || vemail == '' || vusername == '' || vpassword == '' || vrepeatpassword == '' || vpan == '' || vgst == '' || vaddress == '' || vcity == '' || vselectstate == '' || vpincode == ''){
+		swal("Alert!",  "Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST,Pcb, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
+		return false;
+	}
+	if (vcontactnumber.value.length < 10 || vcontactnumber.value.length > 10) {
+    swal("Alert!", "Mobile No. is not valid, Please Enter 10 Digit Mobile No.", "error");
+    return false;
+  }
+  else if (vcontactnumber.value == "") {
+    swal("Alert!","Please enter your Mobile No.","error");
+    return false;
+  }
+	
+	
+	
+}
+  </script>
+  
+  
+  <script>
+function validateForm() {
+    //collect form data in JavaScript variables
+    var pw1 = document.getElementById("vpassword").value;
+    var pw2 = document.getElementById("vrepeatpassword").value;
+   
+  
+    //check empty password field
+
+    //minimum password length validation
+    if(pw1.length < 8) {
+      document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";
+      return false;
+    }
+
+    //maximum length of password validation
+    if(pw1.length > 15) {
+      document.getElementById("message1").innerHTML = "**Password length must not exceed 15 characters";
+      return false;
+    }
+  
+    if(pw1 != pw2) {
+      document.getElementById("message2").innerHTML = "**Passwords are not same";
+      return false;
+    } 
+ }
+</script> 
+
+  <script>
+  function validate_username(){
+	  var val = document.getElementById("vusername").value;
+		if(val != ''){
+			 $.get('<?php echo base_url() .'home_seller_register/validate_username/'; ?>'+val, function(data2){				 
+				 if($.trim(data2) == "BYE"){
+					swal("Alert!",  "Username Already Exists", "error");
+					document.getElementById("vusername").value = "";
+					return false;
+				}else{
+					return true;
+				}
+			 });
+			
+		}else{
+			swal("Alert!",  "Please Enter User Name!", "error");
+			return false;
+		}
+  }
+  </script>
+
+<script type="text/javascript">    
+$(document).ready(function(){     
+        
+$(".pan").change(function () {      
+var inputvalues = $(this).val();      
+  var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;    
+  if(!regex.test(inputvalues)){      
+  $(".vpan").val("");    
+  swal("Alert!","Invalid PAN no", "error");    
+  return regex.test(inputvalues);    
+  }    
+});      
+    
+});    
+</script> 
+
+
+<script type="text/javascript">    
+$(document).ready(function(){     
+        
+$(".gst").change(function () {      
+var inputvalues = $(this).val();      
+  var regex = /^([0-9]){2}([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}([0-9]){1}([a-zA-Z]){1}([0-9A-Z]){1}?$/;    
+  if(!regex.test(inputvalues)){      
+  $(".gst").val("");    
+  swal("Alert!","Invalid gst no", "error");    
+  return regex.test(inputvalues);    
+  }    
+});      
+    
+});    
+</script>
 
   

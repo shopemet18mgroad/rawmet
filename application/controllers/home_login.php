@@ -56,10 +56,10 @@ class Home_login extends CI_Controller {
 						$this->session->set_userdata($newdata);
 					  header('location: '.base_url().'vendor_editvendorprofile');
 					  die;
-				  }else{
+				  }else if($table == "adminprofile"){
 					  $newdata = array('username'=>$user,'auth'=>'ADMIN','logged_in' => TRUE);
 						$this->session->set_userdata($newdata);
-					 header('location: '.base_url().'');
+					 header('location: '.base_url().'admin_indexm');
 					 die; 
 				  }
 			  }else{

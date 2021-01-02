@@ -28,8 +28,8 @@ class Admin_buyer_basicinfo_add extends CI_Controller {
 			$bcontactnumber = $this->input->post('bcontactnumber');
 			$bemail = $this->input->post('bemail');
 			$busername = $this->input->post('busername');
-			$bpassword = $this->input->post('bpassword');
-			$brepeatpassword = $this->input->post('brepeatpassword');
+			$bpassword =  base64_encode($this->input->post('bpassword'));
+		$brepeatpassword = base64_encode($this->input->post('brepeatpassword'));
 			$bpan = $this->input->post('bpan');
 			$bgst = $this->input->post('bgst');
 			$baddress = $this->input->post('baddress');
