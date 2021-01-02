@@ -27,11 +27,15 @@ class Customer_add_contactsupplier extends CI_Controller {
 				$active1 = array('busername'=>$sess['sessi']);
 				$data2 = $this->Admin_model->getbusernamedatafromtable('buyer_register', $active1);
 				$busername= $data2[0]->busername;
+				
+		
 	 if($this->input->post('bunits')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
+			
+		
 			
 			$productid = $this->input->post('productid');
 			$productname = $this->input->post('productname');
@@ -54,6 +58,8 @@ class Customer_add_contactsupplier extends CI_Controller {
 			$bunits = $this->input->post('bunits');
 			//$_FILES['uploadproductimage']['name'];
 			$uploadproductimage  = serialize($this->input->post('uploadproductimage')); 
+	
+	
 	
 			$data = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage );
 			//print_r($data2);die;

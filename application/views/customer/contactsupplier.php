@@ -135,11 +135,11 @@
 					
 					</div>
 					
-								<!--<button type="submit" href="<?php// echo base_url()."customer_contactsupplier/Addtosubmit/".$proid."/".urlencode($row->vname);?>" class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id="submit" role="submit">Submit</button>-->
+								<!--<button type="submit" href="<?php//echo base_url()."customer_contactsupplier/Addtosubmit/".$proid."/".urlencode($row->vname);?>" class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id="submit" role="submit">Submit</button>-->
 								
 
-			<input type="hidden" name="submit" value="<?php echo base_url()."customer_contactsupplier/Addtosubmit/". $proid.'|'.urlencode($row->vname)?>"> 
-					<input type="submit" id="" class="btn btn-primary " name="submit" value="submit">
+			<a type="submit" name="submit" href="<?php echo base_url(). $proid.'|'.urlencode($row->vname)?>" onclick="return validate_prodid()"> Submit</a>
+					<!--<input type="submit" id="" class="btn btn-primary " name="submit" value="submit">-->
 		 								
 							</div>
 					
