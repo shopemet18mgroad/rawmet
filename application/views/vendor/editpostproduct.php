@@ -333,15 +333,12 @@
 							
 						
 								
-							
+							<label for="">Update Image</label>
 								<div class="input_fields_wrap">
 								
 								<input  type="file" id="uploadproductimage" name="uploadproductimage">
 								</div>
-							
---
-							
-								</div>
+							</div>
 				
 					<div class="col-md-12 text-center mt-4">
 						

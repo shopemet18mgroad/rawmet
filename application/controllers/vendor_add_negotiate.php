@@ -77,7 +77,7 @@ class Vendor_add_negotiate extends CI_Controller {
 		    $selunits = $this->input->post('selunits');
 			
 			//$uploadproductimage = self::upload_files('uploadproductimage');
-			$_FILES['uploadproductimage']['name'];
+			/* $_FILES['uploadproductimage']['name'];
 			$pic_array1  = self::upload_files('uploadproductimage'); 
 		
 		       if(!count($pic_array1)){
@@ -86,7 +86,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			            echo '</script>';
 		}else{
 			$pic_array1 = serialize($pic_array1);
-		}
+		 */
 		//print_r($pic_array1);die;
 			
 			
@@ -96,18 +96,19 @@ class Vendor_add_negotiate extends CI_Controller {
 			//print_r($data2);die;
 
 
-		$this->load->model('Admin_model');
+		/* $this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){
 				 $datainserr = "ProductId already exist";
 				header('location: '.base_url().'vendor_sellerquotenego/index_error/'.$datainserr);
 				die;
-			  }else{
+			  }else{ */
 				  //echo "HI";
 			  
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('selquotenegotate',$data2);
-			header('location: ./vendor_sellerquotenego/');
-			}
+			header('location: '.base_url().'vendor_custquoteapproval/index/'.$datainserr);
+			//header('location: ./vendor_custquoteapproval/index/');
+			
 	 }
 			
 			if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
@@ -143,7 +144,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			
 	} */
 
-private function upload_files($nameid){
+/* private function upload_files($nameid){
     	//print_r($nameid);
     //$countfiles = count($_FILES[$nameid]['name']);
 	$countfiles=1;
@@ -179,5 +180,5 @@ private function upload_files($nameid){
  
       }
 	 return $datar;
-    }
+    } */
 } 
