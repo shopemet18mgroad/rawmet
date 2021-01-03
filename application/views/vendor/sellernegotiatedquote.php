@@ -6,7 +6,8 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Customer Quotes</h1>
+            <h1 class="h3 mb-0 text-gray-800">Seller Quote Negotiation
+			</h1>
             
           </div>
 
@@ -22,7 +23,6 @@
     <thead class="bg-primary text-white">
       <tr>
 			<th>Supplier Name</th>
-			<th>Buyer Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
@@ -32,7 +32,9 @@
 			<th>Location</th>
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
-			<th>Action</th>
+			<th>Seller price</th>
+			<th>Seller Units</th>
+			
       </tr>
     </thead>
     <tbody>
@@ -41,20 +43,17 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 			<td><?php echo $row->vname;?></td>
-			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
 			<td><?php echo $row->companyname;?></td>
 			<td><?php echo $row->price;?></td>
-			<td><?php echo $row->supplyability;?></td>
+			<td><?php echo $row->bquantity;?></td>
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			
-			<td><button type="submit" name="submit" id="<?php echo $proid;?>" onclick="vendor_quotesapproval(this.id)" class="btn btn-info btn-sm">Approve</button>
-			
-		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".$proid."/".urlencode($row->vname);?>"  class="btn btn-warning btn-sm text-white delete-confirm"><i class="fa fa-edit fa-sm"></i></a></center></td>
+			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
+			<td><?php echo $row->selqan."/"; echo $row->selunits;?></td>
       </tr>      
      <?php }?>	
     </tbody>

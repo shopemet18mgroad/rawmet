@@ -109,5 +109,31 @@ function validate_password(){
 	 }
  }
  </script>
+ 
+  <script>
+ function validate_prodid(){
+	 var vname = document.getElementById('vname').value;
+	 var productid = document.getElementById('productid').value;
+	 var productname = document.getElementById('productname').value;
+	 var bquantity = document.getElementById('bquantity').value;
+	 var bprice = document.getElementById('bprice').value;
+	  var bunits = document.getElementById('bunits').value;
+	   var bsupplyability = document.getElementById('bsupplyability').value;
+	 if(vname == ""||productid=="" || productname=="" ||bquantity =="" || bprice=="" ||bunits=="" ||bsupplyability==""){
+		 swal("Alert!", "Company Name Cannot Be Left Blank","error");
+		 return false;
+		 
+		 
+	 }
+	  $.get('<?php echo base_url() .'customer_add_contactsupplier/index/'; ?>'+productname+'/'+vname'/'+productid'/'+bquantity'/'+bprice'/'+bunits'/'+bsupplyability, function(data2){						
+				 if($.trim(data2) == "HI"){
+					return true;
+				}else{
+					swal("Alert!", "Company Name Already Exists", "error");
+					return false;
+				}
+			 });
+ }
+ </script>
  </body>
  </html>

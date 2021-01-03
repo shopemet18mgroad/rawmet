@@ -48,4 +48,58 @@ class Customer_contactsupplier extends CI_Controller {
 		
 	}
 	}
+	
+	public function Addtosubmit(){
+		$dat = urldecode($this->uri->segment(3));
+		$this->load->library('session');
+		$this->load->model('Admin_model');
+		$busername = $this->session->userdata('username');
+		$datexp = explode('|',$dat);
+		$productid = str_ireplace('-','/',$datexp[0]);
+		$category = $datexp[1];
+
+		$data = array('productid'=>$productid);
+		
+		$dat3 = $this->Admin_model->getdatafromtable('sellerpostproduct',$data);
+		$vname = $dat3[0]->vname;
+		$productname = $dat3[0]->productname;
+		$category = $dat3[0]->category;
+		$description = $dat3[0]->description;
+		$price = $dat3[0]->price;
+		$quantity = $dat3[0]->quantity;
+		$units = $dat3[0]->units;
+		$supplyability = $dat3[0]->supplyability;
+		$supplyunits =$dat3[0]->supplyunits;
+		$pstates = $dat3[0]->pstates;
+		$pcities = $dat3[0]->pcities;
+		$companyname = $dat3[0]->companyname;
+
+			$negotiate = $this->input->post('negotiate');
+			$bquantity = $this->input->post('bquantity');
+			$bprice = $this->input->post('bprice');
+			$bsupplyability = $this->input->post('bsupplyability');
+			$bunits = $this->input->post('bunits');
+		//$bcheck = array('vname'=>$vname,'productid'=>$productid,'category'=>$category);
+		
+		$cartdata = array(
+		'vname'  => $vname,'productname'=>$productname,'busername' => $busername,'productid'=>$productid,'category' => $category,'description'=>$description,'companyname'=>$companyname,'pstates'=>$pstates,'pcities'=>$pcities,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=>$supplyunits,'negotiate'=>$negotiate,'bquantity'=>$bquantity,'bprice'=>$bprice,'bsupplyability'=>$bsupplyability,'bunits'=>$bunits);
+		
+		$status = $this->Admin_model->insert('quotes', $cartdata);
+		$datainserr = "Data inserted successfully";
+		header('location: '.base_url().'customer_contactsupplier/index/'.$datainserr);
+		
+		die;
+		if($this->Admin_model->check('quotes',$bcheck)){
+			echo "EX";
+		}else{
+			$status = $this->Admin_model->insert('quotes', $cartdata);
+			echo "IN";
+		}
+		die;
+		
+		
+	
+	}			
+
+	
 }
