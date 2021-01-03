@@ -1,9 +1,4 @@
-<?php 
-	//include('./header.php');
-?>
-        <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -31,7 +26,7 @@
                 <div class="card-body">
 					 <table class="table table-sm table-borderless">
 					 <thead><th width="45%">Personal Info</th>
-					  <form action="<?php echo base_url();?>Admin_buyer_basicinfo_add" onsubmit ="return validateForm()" method="POST" enctype="multipart/form-data">
+					  <form action="<?php echo base_url();?>Admin_buyer_basicinfo_add"  method="POST" onsubmit = "return validateForm()"  enctype="multipart/form-data">
 					 </thead>
 						<tbody>
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
@@ -75,12 +70,13 @@
 						</tr>
 						 <tr>
 							<td class="btxt">Pan</td>
-							<td><input class="form-control form-control-user pan w-50" type="text" id="bpan" name="bpan" ></td>
+							<td><input class=" w-50 form-control form-control-user pan"  type="text" id="bpan" name="bpan" ></td>
 						</tr>
 						<tr>
 							<td class="btxt">GST</td>
-							<td><input class="form-control form-control-user gst w-50" type="text" id="bgst" name></td>
+							<td><input class="w-50 form-control form-control-user gst"  type="text" id="bgst"  name="bgst"></td>
 						</tr>
+
 						
 						
 						 
@@ -117,8 +113,12 @@
 					</table>	
 
 								
-				<a href="#"><button type="submit" name="sb3" onclick="return validatearry()" 
-				onclick="return validatebuyer()" class="btn btn-info offset-sm-3 mt-2">Submit</button></a>
+<!--<a href="#"><button type="submit" name="sb3"  class="btn btn-info offset-sm-3 mt-2">Submit</button></a>-->
+  <center>
+				<input type="submit" name="submit" id="btn1"   onclick= " return validatebuyer()"  value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
+				</center>
+
+ 
 												
 				<a href="#"><button type="submit" name="sb4" class="btn btn-info offset-sm-1 mt-2">Cancel</button></a>
 				</form>								
@@ -150,163 +150,6 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  <!--<script>
- $(document).ready(function() {
- var max_fields  = 20;
- var wrapper     = $(".input_fields_wrap");
- var add_button  = $(".add_field_button");
 
- 
- var x=1;
- $(add_button).click(function(e) {
-   e.preventDefault();
-   if(x < max_fields){
-			x++;
-			$(wrapper).append('<div><input class="mt-2" type="file" id="bsigneddocument" name="bsigneddocument"><a href="#" class="remove_field"><button type="button" class="btn btn-sm btn-primary ml-1">  <i class="fa fa-minus text-white"></i></button></a></div>');
-   
-   }	
-			});
-			
-			
-			$(wrapper).on("click",".remove_field", function(e){
-			
-			e.preventDefault();
-			$(this).parent('div').remove();
-			x--;
-			
-			})
-			
-			});
- 
- </script>-->
- <?php 
-	//include('./footerdata.php');
-?>
-</body>
-
-</html>
-<script>
   
-function validatebuyer(){
-
-	var bname = document.getElementById("bname").value;
-	var bcompanyname = document.getElementById("bcompanyname").value;
-	var bcompanytype = document.getElementById("bcompanytype").value;
-	var bcontactperson = document.getElementById("bcontactperson").value;
-	var bcontactnumber = document.getElementById("bcontactnumber").value;
-	var bemail = document.getElementById("bemail").value;
-	var busername = document.getElementById("busername").value;
-	var bpassword = document.getElementById("bpassword").value;
-	var brepeatpassword = document.getElementById("brepeatpassword").value;
-	var bpan = document.getElementById("bpan").value;
-	var bgst = document.getElementById("bgst").value;
-	var baddress = document.getElementById("baddress").value;
-	var bcity = document.getElementById("bcity").value;
-	var bselectstate = document.getElementById("bselectstate").value;
-	var bpincode = document.getElementById("bpincode").value;
-	
-
-if(bname == '' || bcompanyname == '' || bcompanytype == '' || bcontactperson == '' || bcontactnumber == '' || bemail == '' || busername == '' || bpassword == '' || brepeatpassword == '' || bpan == '' || bgst == '' || baddress == '' || bcity == '' || bselectstate == '' || bpincode == ''){
-		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
-		return false;
-	}
-	if (bcontactnumber.value.length < 10 || bcontactnumber.value.length > 10) {
-    swal("Alert!", "Mobile No. is not valid, Please Enter 10 Digit Mobile No.", "error");
-    return false;
-  }
-  else if (bcontactnumber.value == "") {
-    swal("Alert!","Please enter your Mobile No.","error");
-    return false;
-  }
-	
-	if(bpassword != brepeatpassword){
-		swal("Alert!",  "Password and Confirm Password Should Match!", "error");
-		return false;
-	}
-	
-}
-  </script>
-  
-  
-  <script>
-function validateForm() {
-    //collect form data in JavaScript variables
-    var pw1 = document.getElementById("bpassword").value;
-    var pw2 = document.getElementById("brepeatpassword").value;
-   
-  
-    //check empty password field
-
-    //minimum password length validation
-    if(pw1.length < 8) {
-      document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";
-      return false;
-    }
-
-    //maximum length of password validation
-    if(pw1.length > 15) {
-      document.getElementById("message1").innerHTML = "**Password length must not exceed 15 characters";
-      return false;
-    }
-  
-    if(pw1 != pw2) {
-      document.getElementById("message2").innerHTML = "**Passwords are not same";
-      return false;
-    } 
- }
-</script> 
-
-  <script>
-  function validate_username(){
-	  var val = document.getElementById("busername").value;
-		if(val != ''){
-			 $.get('<?php echo base_url() .'home_buyer_register/validate_username/'; ?>'+val, function(data2){				 
-				 if($.trim(data2) == "BYE"){
-					swal("Alert!",  "Username Already Exists", "error");
-					document.getElementById("busername").value = "";
-					return false;
-				}else{
-					return true;
-				}
-			 });
-			
-		}else{
-			swal("Alert!",  "Please Enter User Name!", "error");
-			return false;
-		}
-  }
-  </script>
-
-<script type="text/javascript">    
-$(document).ready(function(){     
-        
-$(".pan").change(function () {      
-var inputvalues = $(this).val();      
-  var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;    
-  if(!regex.test(inputvalues)){      
-  $(".pan").val("");    
-  swal("Alert!","Invalid PAN no", "error");    
-  return regex.test(inputvalues);    
-  }    
-});      
-    
-});    
-</script> 
-
-
-<script type="text/javascript">    
-$(document).ready(function(){     
-        
-$(".gst").change(function () {      
-var inputvalues = $(this).val();      
-  var regex = /^([0-9]){2}([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}([0-9]){1}([a-zA-Z]){1}([0-9A-Z]){1}?$/;    
-  if(!regex.test(inputvalues)){      
-  $(".gst").val("");    
-  swal("Alert!","Invalid gst no", "error");    
-  return regex.test(inputvalues);    
-  }    
-});      
-    
-});    
-</script>
 

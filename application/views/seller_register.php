@@ -98,7 +98,7 @@
                   </div>
                 </div>
 				  <center>
-				<input type="submit" name="submit" id="btn1"  onclick="return validatebuyer()" value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
+				<input type="submit" name="submit" id="btn1"  onclick="return validateseller()" value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
 				</center>
 				 
 				
@@ -128,7 +128,7 @@
   </div>
   <script>
   
-function validatebuyer(){
+function validateseller(){
 
 	var bname = document.getElementById("vname").value;
 	var bcompanyname = document.getElementById("vcompanyname").value;
@@ -148,7 +148,7 @@ function validatebuyer(){
 	
 
 if(vname == '' || vcompanyname == '' || vcompanytype == '' || vcontactperson == '' || vcontactnumber == '' || vemail == '' || vusername == '' || vpassword == '' || vrepeatpassword == '' || vpan == '' || vgst == '' || vaddress == '' || vcity == '' || vselectstate == '' || vpincode == ''){
-		swal("Alert!",  "Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST,Pcb, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
+swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST,Pcb, Address, Street, City, State, Pin  cannot leave any field blank!","error");
 		return false;
 	}
 	if (vcontactnumber.value.length < 10 || vcontactnumber.value.length > 10) {

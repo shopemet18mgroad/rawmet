@@ -39,6 +39,7 @@ class Home_login extends CI_Controller {
 				$table = "adminprofile";
 				$colname = "ausername";
 				$colname2 = "apassword";
+				$status="aoptions";
 			  }
 			$user = $this->input->post('user');
 			$pass = $this->input->post('pass');
