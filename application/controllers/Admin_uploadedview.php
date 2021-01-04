@@ -22,7 +22,7 @@ class Admin_uploadedview extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->library('session');
-		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
@@ -38,15 +38,15 @@ class Admin_uploadedview extends CI_Controller {
 		
 		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('vusername'=>$sess['sessi']);
-			
+		$active = array('ausername'=>$sess['sessi']);
+			}
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/uploadedview',$data);
 		$this->load->view('admin/footer');
 		
 		
 		
-			}
+			
 			
 	}
 	

@@ -22,20 +22,28 @@ class Admin_editcustprofile extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
 		$this->load->model('Admin_model');
+		
 		$bname = urldecode($this->uri->segment(3));
 	
 		$bcompanyname = urldecode($this->uri->segment(4));
 	
 		
 		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
-		//print_r($active);die;
+
 	
 		$query = $this->Admin_model->getdatafromtable('buyer_register',$active);
-		//print_r($query);die;
+		
 		$data['sqldata']= $query;
-			//print_r($query); die;
+		
 		$sess = array('sessi'=>$this->session->userdata('username'));
+	   $active = array('ausername'=>$sess['sessi']);
+			}
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/editcustprofile',$data);
 		//$this->load->view('admin/footer');
@@ -45,4 +53,5 @@ class Admin_editcustprofile extends CI_Controller {
 		
 	}
 	
+
 }

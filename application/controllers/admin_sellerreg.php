@@ -27,26 +27,19 @@ class Admin_sellerreg extends CI_Controller {
 			echo '</script>';
 		}
 		$this->load->library('session');
-		/* $this->load->helper('url');
-	if($this->uri->segment(3)){
-			$errormsg = urldecode($this->uri->segment(3));
-			echo '<script language="javascript">';
-			echo 'alert("'.$errormsg.'")';
-			echo '</script>';
-		}
-		$this->load->library('session');
-		//echo $this->session->userdata('auth');
+
 		if(!$this->session->has_userdata('username') || $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 		}else{
-		$sess = array('sessi'=>$this->session->userdata('username')); */
-		$sess = array('sessi'=>$this->session->userdata('username'));
+		$sess = array('sessi'=>$this->session->userdata('username')); 
+		$active = array('ausername'=>$sess['sessi']);
+		}
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/sellerreg');
 		$this->load->view('admin/footer');
 		
-	//}
+	
 	
 }}

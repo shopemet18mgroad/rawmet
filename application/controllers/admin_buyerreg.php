@@ -19,26 +19,22 @@ class Admin_buyerreg extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{$this->load->library('session');
-		/* $this->load->helper('url');
-	if($this->uri->segment(3)){
-			$errormsg = urldecode($this->uri->segment(3));
-			echo '<script language="javascript">';
-			echo 'alert("'.$errormsg.'")';
-			echo '</script>';
-		}
+	{
 		$this->load->library('session');
-		//echo $this->session->userdata('auth');
+	
 		if(!$this->session->has_userdata('username') || $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
-		}else{ */
+		}else{ 
 		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active = array('ausername'=>$sess['sessi']);
+		}
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/buyerreg');
 		$this->load->view('admin/footer');
 		
-	//}
 	
-}}
+	
+}
+}

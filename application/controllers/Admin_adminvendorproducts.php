@@ -22,20 +22,16 @@ class Admin_adminvendorproducts extends CI_Controller {
 	 
 	public function index()
 	{
+			
 		$this->load->model('Admin_model');
 		$this->load->library('session');
-	/* 	if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
-		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vusername'=>$sess['sessi']);
-		
-		$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
-		
-		$vendorname = $query2[0]->vname;
-		$poptions = array('vname'=>$vendorname); */
+		$this->load->model('Admin_model');
 		
 		
 	
@@ -48,6 +44,7 @@ class Admin_adminvendorproducts extends CI_Controller {
 			//$active = array('vusername'=>$sess['sessi']);
 		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
 		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active = array('ausername'=>$sess['sessi']);
 		
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/adminvendorproducts',$adac);
@@ -55,6 +52,7 @@ class Admin_adminvendorproducts extends CI_Controller {
 		$this->load->helper('url');
 
 		}
+	}
 		
 		public function approve_product(){
 		
