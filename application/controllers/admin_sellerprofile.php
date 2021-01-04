@@ -22,6 +22,12 @@ class Admin_sellerprofile extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->library('session');
+		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
+			 $datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
 		$this->load->model('Admin_model');
 		$vname = urldecode($this->uri->segment(3));
 		
@@ -31,8 +37,10 @@ class Admin_sellerprofile extends CI_Controller {
 	
 		$query = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$data['sqldata']= $query;
-			//print_r($query); die;
+			
 		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active = array('ausername'=>$sess['sessi']);
+			}
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/sellerprofile',$data);
 		$this->load->view('admin/footer');

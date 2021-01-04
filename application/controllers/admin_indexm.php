@@ -19,10 +19,20 @@ class Admin_indexm extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$this->load->helper('url');
-		 $this->load->library('session');
+	{	   
+	
+	     $this->load->helper('url');
+		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+		$this->load->model('Admin_model');
 		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active = array('ausername'=>$sess['sessi']);
+			}
+	
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/indexm');
 		$this->load->view('admin/footer');

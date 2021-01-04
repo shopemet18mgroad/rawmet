@@ -24,19 +24,19 @@ class Admin_manageseller extends CI_Controller {
 		
 		$this->load->model('Admin_model');
 		$this->load->library('session');
-		// if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
-			// $datainserr = "Invalid Login Session";
-			// header('location: '.base_url().'login/index_error/'.$datainserr);
-			// die;
-			// }else{ 
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
+			 $datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{ 
 		$voptions = array('voptions'=>true);
 		
 		$query = $this->Admin_model->getdatafromtable('vendor_register',$voptions);
 		
 		$adac['data']= $query;
-		//$sess = array('sessi'=>$this->session->userdata('username'));
-		//$active = array('ausername'=>$sess['sessi']);
 		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active = array('ausername'=>$sess['sessi']);
+			}
 			$this->load->view('admin/header',$sess);
 		$this->load->view('admin/manageseller',$adac);
 		$this->load->view('admin/footer');
