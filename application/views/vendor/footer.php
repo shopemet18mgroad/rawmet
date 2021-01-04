@@ -138,7 +138,7 @@ function validatebuyer(){
 
 	
 
-if(payable == '' || productname == '')  {
+if(payable == '')  {
 		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
 		return false;
 	}
