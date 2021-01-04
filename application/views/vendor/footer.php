@@ -94,63 +94,40 @@
 
 
  </script>
-  <script>
-  
-function validateb{
 
-	var description = document.getElementById("description").value;
-
-	
-
-	var price = document.getElementById("price").value;
-	var quantity = document.getElementById("quantity").value;
-	var units = document.getElementById("units").value;
-	var aifeatured = document.getElementById("aifeatured").value;
-	var fobprice = document.getElementById("fobprice").value;
-	var uploadproductimage = document.getElementById("uploadproductimage").value;
-	var minoderquat = document.getElementById("minoderquat").value;
-	var supplyability = document.getElementById("supplyability").value;
-	var supplyunits = document.getElementById("supplyunits").value;
-	var quantpermonth = document.getElementById("quantpermonth").value;
-	var estdeltime = document.getElementById("estdeltime").value;
-	var pstates = document.getElementById("pstates").value;
-	var pcities = document.getElementById("pcities").value;
-	var types = document.getElementById("types").value;
-	var payable = document.getElementById("payable").value;
-	
-	 
-	
-
-if(description == ''|| productname == '' || productid == '' || companyname == '' || category == '' || description == '' || price == '' || quantity == '' || units == '' || aifeatured == '' || fobprice == '' || uploadproductimage == '' || minoderquat == '' || supplyability == '' || supplyunits == ''|| quantpermonth == ''|| estdeltime == ''|| pstates == ''|| pcities == ''|| types == ''|| payable == ''){
-		swal("Alert!", Desc, City, State, Pin  cannot leave any field blank!", "error"); 
-		
-
-		return false;
-}
-}
-</script>
  <script>
   
 function validatebuyer(){
 
-	var payable = document.getElementById("payable").value;
+	var description = document.getElementById("description").value;
 	var productname = document.getElementById("productname").value;
+	var quantity = document.getElementById("quantity").value;
+	var minoderquant = document.getElementById("minoderquant").value;
+	var supplyability = document.getElementById("supplyability").value;
+	var quantpermonth = document.getElementById("quantpermonth").value;
+	var units = document.getElementById("units").value;
+	var aifeatured = document.getElementById("aifeatured").value;
+	var fobprice = document.getElementById("fobprice").value;
 
 	
 
-if(payable == '')  {
-		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
+if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|| supplyability == ''|| quantpermonth == '' || units == '' || aifeatured == '' || fobprice == '')  {
+		swal("Alert!",  "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
 		return false;
 	}
-	if (description.value.length < 10 || description.value.length > 10) {
-    swal("Alert!", "Mobile No. is not valid, Please Enter 10 Digit Mobile No.", "error");
+
+  if (payable.value == "") {
+    swal("Alert!","Please enter your Payable to Rawmet.","error");
     return false;
   }
-  else if (description.value == "") {
-    swal("Alert!","Please enter your Mobile No.","error");
+	else if (estdeltime.value == "") {
+    swal("Alert!","Please enter your Estimated Delivary Time.","error");
     return false;
   }
-	
+  else if (uploadproductimage.value == "") {
+    swal("Alert!","Upload Image.","error");
+    return false;
+  }
 	
 	
 }
