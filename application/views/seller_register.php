@@ -130,21 +130,21 @@
   
 function validateseller(){
 
-	var bname = document.getElementById("vname").value;
-	var bcompanyname = document.getElementById("vcompanyname").value;
-	var bcompanytype = document.getElementById("vcompanytype").value;
-	var bcontactperson = document.getElementById("vcontactperson").value;
-	var bcontactnumber = document.getElementById("vcontactnumber").value;
-	var bemail = document.getElementById("vemail").value;
-	var busername = document.getElementById("vusername").value;
-	var bpassword = document.getElementById("vpassword").value;
-	var brepeatpassword = document.getElementById("vrepeatpassword").value;
-	var bpan = document.getElementById("vpan").value;
-	var bgst = document.getElementById("vgst").value;
-	var baddress = document.getElementById("vaddress").value;
-	var bcity = document.getElementById("vcity").value;
-	var bselectstate = document.getElementById("vselectstate").value;
-	var bpincode = document.getElementById("vpincode").value;
+	var vname = document.getElementById("vname").value;
+	var vcompanyname = document.getElementById("vcompanyname").value;
+	var vcompanytype = document.getElementById("vcompanytype").value;
+	var vcontactperson = document.getElementById("vcontactperson").value;
+	var vcontactnumber = document.getElementById("vcontactnumber").value;
+	var vemail = document.getElementById("vemail").value;
+	var vusername = document.getElementById("vusername").value;
+	var vpassword = document.getElementById("vpassword").value;
+	var vrepeatpassword = document.getElementById("vrepeatpassword").value;
+	var vpan = document.getElementById("vpan").value;
+	var vgst = document.getElementById("vgst").value;
+	var vaddress = document.getElementById("vaddress").value;
+	var vcity = document.getElementById("vcity").value;
+	var vselectstate = document.getElementById("vselectstate").value;
+	var vpincode = document.getElementById("vpincode").value;
 	
 
 if(vname == '' || vcompanyname == '' || vcompanytype == '' || vcontactperson == '' || vcontactnumber == '' || vemail == '' || vusername == '' || vpassword == '' || vrepeatpassword == '' || vpan == '' || vgst == '' || vaddress == '' || vcity == '' || vselectstate == '' || vpincode == ''){
@@ -222,7 +222,7 @@ $(".pan").change(function () {
 var inputvalues = $(this).val();      
   var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;    
   if(!regex.test(inputvalues)){      
-  $(".vpan").val("");    
+  $(".pan").val("");    
   swal("Alert!","Invalid PAN no", "error");    
   return regex.test(inputvalues);    
   }    

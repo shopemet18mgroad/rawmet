@@ -168,8 +168,10 @@
 								I agree to the <a href="">Terms & Conditions</a></label>
 							</div>
 						</div>
-				
-					<button type="submit" href="<?php echo base_url();?>" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" name="submit" role="submit"><b>Post Buying Requirement</b></a>
+				 <center>
+				<input type="submit" name="submit"  role="submit" onclick="return validatepostreq()" value="Post Buying Requirement" class="btn btn-info mt-4" style="font-size:13px">
+				</center>
+					
 					</form>
 					</div>
 			
@@ -193,5 +195,29 @@
 
       </div>
       <!-- End of Main Content -->
+ <script>
+  
+function validatepostreq(){
 
+	var category = document.getElementById("category").value;
+	var productname = document.getElementById("productname").value;
+	var description = document.getElementById("description").value;
+	var price = document.getElementById("price").value;
+	var priceperkg = document.getElementById("priceperkg").value;
+	var quantity = document.getElementById("quantity").value;
+	var units = document.getElementById("units").value;
+	var requireddate = document.getElementById("requireddate").value;
+	var lastdate = document.getElementById("lastdate").value;
+	var email = document.getElementById("email").value;
+	var contactnumber = document.getElementById("contactnumber").value;
+
+	
+
+if(category == '' || productname == '' || description == '' || price == '' || quantity == '' || priceperkg == '' || units == '' || requireddate == '' || lastdate == '' || email == '' || contactnumber == ''){
+swal("Alert!","Category, Product Name, Description, Price, Quantity, Price/KG, Units, Dates , Email, Contact Number cannot leave any field blank!","error");
+		return false;
+	}
+
+}
+  </script>
       
