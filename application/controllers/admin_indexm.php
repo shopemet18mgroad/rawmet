@@ -32,6 +32,7 @@ class Admin_indexm extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active = array('ausername'=>$sess['sessi']);
 			}
+	
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/indexm');
 		$this->load->view('admin/footer');

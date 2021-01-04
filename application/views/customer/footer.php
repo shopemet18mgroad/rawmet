@@ -129,7 +129,7 @@ function validate_password(){
 				 if($.trim(data2) == "HI"){
 					return true;
 				}else{
-					swal("Alert!", "Company Name Already Exists", "error");
+					swal("Alert!", "Product Name Already Exists", "error");
 					return false;
 				}
 			 });
