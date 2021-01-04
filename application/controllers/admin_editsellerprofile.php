@@ -25,9 +25,9 @@ class Admin_editsellerprofile extends CI_Controller {
 		$this->load->model('Admin_model');
 		$vname = urldecode($this->uri->segment(3));
 	
+		
 		$vcompanyname = urldecode($this->uri->segment(4));
 	
-		
 		$active = array('vname'=>$vname,'vcompanyname'=>$vcompanyname);
 		//print_r($active);die;
 	

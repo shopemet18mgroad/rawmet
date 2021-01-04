@@ -30,7 +30,7 @@
 					 <table class="table table-sm table-borderless">
 					 <thead><th>Personal Info</th>
 					  <th style="text-align:right">
-					   <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);?>"><u>Edit personal</u></a></th>
+					   <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urldecode($sqldata[0]->vname).'/'.urldecode($sqldata[0]->vcompanyname);?>"><u>Edit personal</u></a></th>
 					
 
 					 	
@@ -81,7 +81,7 @@
 				<table class="table table-sm table-borderless">
 					 <thead><th>Contact Info</th>
 					 <th style="text-align:right">
-					 <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);?>"><u>Edit Contact Info</u></a></th>
+					 <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urldecode($sqldata[0]->vname).'/'.urldecode($sqldata[0]->vcompanyname);?>"><u>Edit Contact Info</u></a></th>
 					 </thead>
 						<tbody>
 						<tr>
