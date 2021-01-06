@@ -56,13 +56,12 @@ class Vendor_uploadedproduct extends CI_Controller {
 
 			
 	}
+
 	public function delete_seller(){
 	
+	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		
-		$productname = urlencode($this->uri->segment(3));
-		//$productid = str_ireplace('-','/',$productid);
-		
-		$active = array('productname'=>$productname);
+		$active = array('productid'=>$productid);
 		
 		$this->load->model('Admin_model');
 		$this->Admin_model->delete_data('sellerpostproduct', $active);

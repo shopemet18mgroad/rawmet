@@ -59,9 +59,8 @@
 		
 		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($row->category);?>"><i class="fa fa-edit"></i></a>
 	
-			
-				
-		<a style="margin:2px" class="btn btn-danger btn-sm text-white"  href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".urldecode($row->productname).'/'.urldecode($row->category);?>"><i class="fa fa-trash"></i></a></td>
+			<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
+
         
 <?php }?>	
 </tr>   

@@ -27,6 +27,8 @@
 			<th>Description</th>
 			<th>Quantity</th>
 			<th>Units</th>
+			<th>Price/</th>
+			<th>Units</th>
 			<th>Required Date</th>
 			<th>Last Date</th>
 			<th>Email</th>
@@ -46,6 +48,8 @@
 			<td><?php echo $row->description;?></td>
 			<td><?php echo $row->quantity;?></td>
 			<td><?php echo $row->units;?></td>
+			<td><?php echo $row->price;?></td>
+			<td><?php echo $row->priceperkg;?></td>
 			<td><?php echo $row->requireddate;?></td>
 			<td><?php echo $row->lastdate;?></td>
 			<td><?php echo $row->email;?></td>

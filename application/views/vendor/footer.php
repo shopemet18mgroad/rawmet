@@ -97,7 +97,7 @@
 
  <script>
   
-function validatebuyer(){
+function validate_postproduct(){
 
 	var description = document.getElementById("description").value;
 	var productname = document.getElementById("productname").value;

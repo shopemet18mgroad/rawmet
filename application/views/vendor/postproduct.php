@@ -323,7 +323,7 @@
 						  
 						  <!--<input type="submit" name="submit" id="btn1"  value="Submit" class="btn btn-primary btn-sm">-->
 						
-						<button type="submit" href="<?php echo base_url();?>"class="btn btn-primary btn-sm" name="submit"  onclick="return  validatebuyer()" role="button">Submit</a>
+						<button type="submit" href="<?php echo base_url();?>"class="btn btn-primary btn-sm" name="submit"  onclick="return  validate_postproduct()" role="button">Submit</a>
 					</div>	
 					
 				</div>
