@@ -28,7 +28,7 @@
                 <div class="card-body">
 				
 	<!--Form1-->			
-				<form class="user" action="<?php echo base_url();?>customer_add_contactsupplier" method="POST" enctype="multipart/form-data">
+				<form class="user" action="<?php echo base_url();?>Customer_add_contactsupplier" method="POST" enctype="multipart/form-data">
 				
 				<div class="row bg-light mt-5">
 				<?php foreach($sqldata as $row){?>
@@ -135,12 +135,16 @@
 					
 					</div>
 					
-								<!--<button type="submit" href="<?php//echo base_url()."customer_contactsupplier/Addtosubmit/".$proid."/".urlencode($row->vname);?>" class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id="submit" role="submit">Submit</button>-->
+							<input type="hidden" name="auc[]" value="<?php echo $proid.'|'.urlencode($row->vname);?>">
+							
+							<a type="submit" href="<?php echo base_url()."Customer_add_contactsupplier/".$proid."/".urlencode($row->vname);?>"  role="submit"><input type="submit" id="" class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" value="submit"></a>
+							 <!--<a type="submit" href="<?php// echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($row->vname);?>"  role="submit"><button name="submit"  class="btn btn-info btn-sm mt-2 offset-sm-5">Submit</button></a>-->
 								
 
-			<button><a type="submit" name="submit" href="<?php echo base_url(). $proid.'|'.urlencode($row->vname)?>" onclick="return validate_prodid()"> Submit</a></button>
+			<!--<button><a type="submit" name="submit" href="<?php// echo base_url(). $proid.'|'.urlencode($row->vname)?>" onclick="return validate_prodid()"> Submit</a></button>-->
 					<!--<input type="submit" id="" class="btn btn-primary " name="submit" value="submit">-->
-		 								
+					
+							
 							</div>
 					
 							

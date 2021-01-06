@@ -32,9 +32,9 @@ class Admin_vendorprofile extends CI_Controller {
 		
 		$this->load->model('Admin_model');
 		$bname = urldecode($this->uri->segment(3));
-		$bcompanytype = urldecode($this->uri->segment(4));
+		$bcompanyname = urldecode($this->uri->segment(4));
 		
-		$active = array('bname'=>$bname,'bcompanytype'=>$bcompanytype);
+		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
 		
 	
 		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
@@ -52,8 +52,8 @@ class Admin_vendorprofile extends CI_Controller {
 	
 		
 		$bname = urldecode($this->uri->segment(3));
-		$bcompanytype = urldecode($this->uri->segment(4));
-		$active = array('bname'=>$bname,'bcompanytype'=>$bcompanytype);
+		$bcompanyname = urldecode($this->uri->segment(4));
+		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
 		
 		$this->load->model('Admin_model');
 		if($bname){

@@ -51,6 +51,7 @@ class Customer_contactsupplier extends CI_Controller {
 	
 	public function Addtosubmit(){
 		$dat = urldecode($this->uri->segment(3));
+		print_r($dat);die;
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		$busername = $this->session->userdata('username');
@@ -61,7 +62,9 @@ class Customer_contactsupplier extends CI_Controller {
 		$data = array('productid'=>$productid);
 		
 		$dat3 = $this->Admin_model->getdatafromtable('sellerpostproduct',$data);
+		
 		$vname = $dat3[0]->vname;
+		
 		$productname = $dat3[0]->productname;
 		$category = $dat3[0]->category;
 		$description = $dat3[0]->description;
@@ -73,21 +76,29 @@ class Customer_contactsupplier extends CI_Controller {
 		$pstates = $dat3[0]->pstates;
 		$pcities = $dat3[0]->pcities;
 		$companyname = $dat3[0]->companyname;
-
+		if($this->input->post('submit')){
+			$date =  Date('Y-m-d'); 
+			$this->load->library('fileupload');
+			$this->load->helper(array('url','form','file','html'));
+			$this->load->model('Admin_model');
 			$negotiate = $this->input->post('negotiate');
 			$bquantity = $this->input->post('bquantity');
 			$bprice = $this->input->post('bprice');
 			$bsupplyability = $this->input->post('bsupplyability');
 			$bunits = $this->input->post('bunits');
+		
+			
+			
 		//$bcheck = array('vname'=>$vname,'productid'=>$productid,'category'=>$category);
 		
 		$cartdata = array(
 		'vname'  => $vname,'productname'=>$productname,'busername' => $busername,'productid'=>$productid,'category' => $category,'description'=>$description,'companyname'=>$companyname,'pstates'=>$pstates,'pcities'=>$pcities,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=>$supplyunits,'negotiate'=>$negotiate,'bquantity'=>$bquantity,'bprice'=>$bprice,'bsupplyability'=>$bsupplyability,'bunits'=>$bunits);
 		
 		$status = $this->Admin_model->insert('quotes', $cartdata);
+ 
 		$datainserr = "Data inserted successfully";
 		header('location: '.base_url().'customer_contactsupplier/index/'.$datainserr);
-		
+	}	
 		die;
 		if($this->Admin_model->check('quotes',$bcheck)){
 			echo "EX";
