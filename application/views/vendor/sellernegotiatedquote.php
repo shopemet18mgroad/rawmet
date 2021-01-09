@@ -23,6 +23,7 @@
     <thead class="bg-primary text-white">
       <tr>
 			<th>Supplier Name</th>
+			<th>Buyer Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
@@ -32,8 +33,10 @@
 			<th>Location</th>
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
+			<th>Seller Quantity</th>
 			<th>Seller price</th>
-			<th>Seller Units</th>
+			<th>  Action  </th>
+		
 			
       </tr>
     </thead>
@@ -43,6 +46,7 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 			<td><?php echo $row->vname;?></td>
+			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
@@ -54,6 +58,13 @@
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			<td><?php echo $row->selqan."/"; echo $row->selunits;?></td>
+			<td style="color:orange;" ><b><?php  if($row->buyerapprove == 0) {echo 'Pending';}else if($row->buyerapprove == 2) {echo 'Rejected';}else if($row->buyerapprove == 1) {echo 'Approved!';}?></b></td>
+			
+					
+		
+		
+		
+
       </tr>      
      <?php }?>	
     </tbody>

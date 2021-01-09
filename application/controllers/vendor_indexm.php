@@ -1,8 +1,7 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendor_sellernegotiatedquote extends CI_Controller {
+class Vendor_indexm extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,44 +19,34 @@ class Vendor_sellernegotiatedquote extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$this->load->model('Admin_model');
+	{	   
+	
+	     $this->load->helper('url');
 		$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
+		$this->load->model('Admin_model');
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vname'=>$sess['sessi']);
-		$reqapproval = array('sellapproval'=>false);
+		$active = array('vname'=>$sess['sessi']);
+			
+		$query['data'] = $this->Admin_model->getdatafromtable('selquotenegotate',$active);
+		
+		$adac['sql']= count($query['data']);
 		
 		
-		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
+			
+			//$query = $this->db->query('SELECT * FROM selquotenegotate');
+		//$val['count']=$query->num_rows();
+	
 		
-		
-		$adac['sqldata']= $query;
-		
-			//$active = array('vusername'=>$sess['sessi']);
-		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
-		
-		
+			}
 		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/sellernegotiatedquote',$adac);
-		$this->load->view('vendor/footer');
-		$this->load->helper('url');
-		
-			
-			
-		
-		}
-
-			
-	}
-	
-	
-	
+		$this->load->view('Vendor/indexm',$adac);
+		$this->load->view('Vendor/footer');
 		
 	}
-
-		
+	
+}

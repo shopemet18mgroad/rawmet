@@ -23,7 +23,7 @@ class Vendor_managebuyreq extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		$reqapproval = array('adapproval'=>false);
+		$reqapproval = array('adapproval'=>true,'selapprove'=>false);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
@@ -50,6 +50,23 @@ class Vendor_managebuyreq extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		header('location: '.base_url().'vendor_managebuyreq/index/'.$retrivevaltmp);
 		
+	}
+		public function approve_requirement(){
+		
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+
+		$retriveval = array('productid'=>$retrivevaltmp);
+		
+		
+		$this->load->model('Admin_model');
+		$app= array('selapprove'=>true);
+		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
+		if($retriveval){
+			echo "HI";
+		}else{
+			echo "BYE";
+		}
+	
 	}
 	
 }

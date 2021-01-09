@@ -58,9 +58,9 @@
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 		<td>
 			
-				<i class="fa fa-download" aria-hidden="true"></i>
+				
+				<a href="<?php echo base_url().'Customer_quotation/auc_no/'.$proid.'/'.urldecode($row->busername);?>" target="_blank"><i class="fa fa-download"></i></a>
 			
-					
 					</td>
 					
 			<td>
@@ -70,7 +70,7 @@
 			</td>
 		
 		<td>
-				<a href="<?php echo base_url().'web_files/uploads/'.$aucfl[0]?>" target="_blank">
+				<a href="<?php echo base_url().'web_files/uploads/'.$proid[0]?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a>
 			
 					

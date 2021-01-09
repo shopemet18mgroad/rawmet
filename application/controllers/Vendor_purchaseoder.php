@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendor_uploadedproduct extends CI_Controller {
+class Vendor_purchaseoder extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,8 +20,7 @@ class Vendor_uploadedproduct extends CI_Controller {
 	 */
 	public function index()
 	{
-		
-		
+		$this->load->helper('url');
 		$this->load->model('Admin_model');
 		$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
@@ -31,49 +30,16 @@ class Vendor_uploadedproduct extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('vusername'=>$sess['sessi']);
-		
-		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
-		
-		//$vendorname = $query2[0]->vname;
-		//$poptions = array('vname'=>$vendorname);
-		
-		
+				
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$active1);
 		
 		
 		$adac['sqldata']= $query;
-		
-			//$active = array('vusername'=>$sess['sessi']);
-		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
-		
-		
+			}
 		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/uploadedproduct',$adac);
+		$this->load->view('vendor/purchaseoder',$adac);
 		$this->load->view('vendor/footer');
-		$this->load->helper('url');
-
-		}
-
-			
+		
 	}
-
-	public function delete_seller(){
-	
-	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-		
-		$active = array('productid'=>$productid);
-		
-		$this->load->model('Admin_model');
-		$this->Admin_model->delete_data('sellerpostproduct', $active);
-		
-		$this->load->helper('url');
-		$this->load->library('session');
-		
-		header('location: '.base_url().'vendor_uploadedproduct/index/');
 	
 }
-	
-	
-		
-	}
-		

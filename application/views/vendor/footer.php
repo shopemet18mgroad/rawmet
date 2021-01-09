@@ -97,7 +97,7 @@
 
  <script>
   
-function validatebuyer(){
+function validate_postproduct(){
 
 	var description = document.getElementById("description").value;
 	var productname = document.getElementById("productname").value;
@@ -132,6 +132,21 @@ if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|
 	
 }
   </script>
+   
+ <script>
+		function approve_req(varab){
+			$.get('<?php echo base_url() .'Vendor_managebuyreq/approve_requirement/'; ?>'+varab, function(data2){	
+					
+				 if($.trim(data2) == "HI"){
+					 window.location.href = '<?php echo base_url().'Vendor_managebuyreq';?>'
+					return true;
+				}
+			 });
+			
+		}
+
+
+ </script>
 
 	  
 

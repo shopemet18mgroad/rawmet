@@ -33,7 +33,7 @@ class Admin_approvebuyer extends CI_Controller {
 		
 		$adac['data']= $query;
 		
-		
+			
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active = array('ausername'=>$sess['sessi']);
@@ -41,8 +41,9 @@ class Admin_approvebuyer extends CI_Controller {
 		$this->load->view('admin/approvebuyer',$adac);
 		$this->load->view('admin/footer');
 	
-	}
 	
+			}
+	}
 	
 	public function approve_buyer(){
 		

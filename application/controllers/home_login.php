@@ -55,7 +55,7 @@ class Home_login extends CI_Controller {
 				  }else if($table == "vendor_register"){
 					  $newdata = array('username'=>$user,'auth'=>'SELLER','logged_in' => TRUE);
 						$this->session->set_userdata($newdata);
-					  header('location: '.base_url().'vendor_editvendorprofile');
+					  header('location: '.base_url().'vendor_indexm');
 					  die;
 				  }else if($table == "adminprofile"){
 					  $newdata = array('username'=>$user,'auth'=>'ADMIN','logged_in' => TRUE);

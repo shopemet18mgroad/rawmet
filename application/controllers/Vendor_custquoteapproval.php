@@ -23,16 +23,26 @@ class Vendor_custquoteapproval extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		$reqapproval = array('sellapproval'=>false);
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$reqapproval);
+		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active1 = array('vname'=>$sess['sessi'],'sellapproval'=>false);
+		
+		//$reqapproval = array('sellapproval'=>false);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/custquoteapproval',$query);
 		$this->load->view('vendor/footer');
+			}
 		
 	}
-	public function approve_quotes(){
+		public function approve_quotes(){
 		
 		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 
@@ -48,6 +58,21 @@ class Vendor_custquoteapproval extends CI_Controller {
 			echo "BYE";
 		}
 	
+	}
+
+	public function reject(){
+		$this->load->helper('url');
+		$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
+		
+		$data2 = array('sellapproval'=>2);
+		$updatech = array('productid'=>$retrivevaltmp);
+		$this->load->model('Admin_model');
+		
+		$status = $this->Admin_model->update_custom('quotes',$data2,$updatech,$updatech);
+
+		header('location: '.base_url().'Vendor_custquoteapproval/index/'.urlencode($retrivevaltmp3));
+		
+		die;
 	}
 	
 

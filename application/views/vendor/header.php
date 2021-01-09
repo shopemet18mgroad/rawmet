@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>vendor_editvendorprofile">
+        <a class="nav-link" href="<?php echo base_url();?>vendor_indexm">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Seller Dashboard</span></a>
       </li>
@@ -55,21 +55,62 @@
       </div>-->
 
       <!-- Nav Item - Pages Collapse Menu -->
- 	
-
-	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>vendor_editvendorprofile">
-          <i class="fas fa-fw fa-user"></i>
-          <span>User Profile</span></a>
-      </li>
-	  <li class="nav-item">
+	   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-shopping-cart"></i>
-          <span>Manage Buying Requirements</span></a>
+        <i class="fas fa-fw fa-upload"></i>
+          <span>My Products</span></a>
 		 <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Buyer Negotiated</a>
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">Seller Negotiated</a>
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_postproduct">New  Product</a>
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_uploadedproduct">Product List</a>
+          </div>
+        </div>
+		   <li class="nav-item">
+        <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Quotes Negotiation</span></a>
+		 <div id="collapseProduct" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_custquoteapproval">Ongoing Negotiation</a>
+           
+			<a class="collapse-item" href="<?php echo base_url();?>vendor_sellernegotiatedquote">Final Negotiation</a>
+          </div>
+        </div>
+      </li>
+      
+ 	
+
+	
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment3" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Requirements</span></a>
+		 <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Ongoing Requirement</a>
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">My Requriement</a>
+          </div>
+        </div>
+      </li>
+	  	   <li class="nav-item">
+        <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct4" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Purchase Order</span></a>
+		 <div id="collapseProduct4" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>">Accepted PO</a>
+            <a class="collapse-item" href="<?php echo base_url();?>">closed PO</a>
+          </div>
+        </div>
+      </li>
+	  	   <li class="nav-item">
+        <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct3" aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Finance</span></a>
+		 <div id="collapseProduct3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>">Total Bussiness</a>
+            <a class="collapse-item" href="<?php echo base_url();?>Vendor_purchaseoder">Commission To Rawmet</a>
           </div>
         </div>
       </li>
@@ -77,8 +118,8 @@
 	 
 	  
 	  
-	   <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>vendor_postproduct">
+	   <!--<li class="nav-item">
+        <a class="nav-link" href="<?php// echo base_url();?>vendor_postproduct">
           <i class="fas fa-fw fa-upload"></i>
           <span>Post Product</span></a>
       </li>
@@ -86,23 +127,13 @@
 	   
 	  
 	    <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>vendor_uploadedproduct">
-          <i class="fas fa-fw fa-upload"></i>
+        <a class="nav-link" href="<?php// echo base_url();?>vendor_uploadedproduct">
+          
           <span>Manage My Product</span></a>
-      </li>
+      </li>-->
 	  
 	
-	   <li class="nav-item">
-        <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-shopping-cart"></i>
-          <span>Quotes Approval</span></a>
-		 <div id="collapseProduct" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_custquoteapproval">Buyer Quotes Negotiation</a>
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_sellernegotiatedquote">Seller Quotes Negotiation</a>
-          </div>
-        </div>
-      </li>
+	
 
 	  <!-- Nav Item - Utilities Collapse Menu -->
  <!--    <li class="nav-item">
@@ -264,7 +295,13 @@
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 
                 
-                <a class="dropdown-item" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#logoutModal">
+             
+        <a class="dropdown-item" href="<?php echo base_url();?>vendor_editvendorprofile">
+		
+           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+          profile Settings </a>
+      
+				 <a class="dropdown-item" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>

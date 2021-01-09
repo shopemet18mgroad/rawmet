@@ -47,7 +47,7 @@ class Vendor_add_buyerreq extends CI_Controller {
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('seller_mbuyreq',$data);
-			header('location: ./vendor_managebuyreq/index/'.$datainserr);
+			header('location: ./vendor_negotiated/index/'.$datainserr);
 			}
 			
 		/* 	if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){

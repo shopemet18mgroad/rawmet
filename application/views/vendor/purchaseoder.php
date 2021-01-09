@@ -18,13 +18,14 @@
 	  <th>Product Id</th>
         <th>Product Name</th>
         <th>Category</th>
-        <th>Description</th>
-		<th>Price</th>
-		<th>stock</th>
-	    <th>Image</th>
-		<th>Supply Ability</th>
+        <th>Commission to Rawmet</th>
+		
+	    
+		<th>Supplier Name</th>
+		<th>User Name</th>
+		<th>Image</th>
 		<th>Status</th>
-		<th>options</th>
+
 		
 		
       </tr>
@@ -41,25 +42,17 @@
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
-         <td><?php echo $row->description?></td>
-		<td><?php echo $row->price;?></td>
-		<td><?php echo $row->quantity;?></td>
+         <td><?php echo $row->payable?></td>
+		<td><?php echo $row->vname;?></td>
+		<td><?php echo $row->vusername;?></td>
 		
 
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
-		<td><?php echo $row->supplyability;?></td>
-		<td><?php  if($row->poptions == 0) {echo 'Pending to Approve';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></td>
+	
+		<td><?php  if($row->pooptions == 0) {echo 'Paid';}else if($row->pooptions == 2) {echo 'unpaid';}else if($row->pooptions == 1) {echo 'Approved';}?></td>
 		
 
-		<td style="display:inline-flex;">
-		
-		
-		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
-		
-		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($row->category);?>"><i class="fa fa-edit"></i></a>
-	
-			<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
 
         
 <?php }?>	
