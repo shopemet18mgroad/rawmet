@@ -31,80 +31,77 @@
 				<form class="user" action="<?php echo base_url();?>Customer_add_contactsupplier" method="POST" enctype="multipart/form-data">
 				
 				<div class="row bg-light mt-5">
-				<?php foreach($sqldata as $row){?>
-				<?php $proid =str_ireplace('/','-',$row->productid);
+				
+				<?php $proid =str_ireplace('/','-', $sqldata[0]->productid);
 				
 				?>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 				<div class="col-sm-4">
 				<div class="thumbnail mt-5">
-					<td><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
+					<td><?php $img = unserialize( $sqldata[0]->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="100%"></td>
 				<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img[0];?>">
 				</div>	
+					<h4 style="color:purple;"><b><?php echo  $sqldata[0]->productname;?></b></h4>
+						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
+						
+						
 				</div>
 				</div>
 			
 
-				<div class="col-sm-3 p-2">
+				<div class="col-sm-4 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
 									
 							
-							<p><b>Supplier Name:</b><?php echo $row->vname;?></p>
-							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $row->vname;?>">
+							<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
+							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
 							<input type="hidden" class="form-control" id="busername" name="busername"  value="<?php echo $sessi;?>">
 							
-							<p><b>Category:</b><?php echo $row->category;?></p>
-							<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo $row->category;?>">
+							<p><b>Category:</b><?php echo  $sqldata[0]->category;?></p>
+							<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo  $sqldata[0]->category;?>">
 							
-							<p><b>Product Id:</b><?php echo $row->productid;?></p>
-							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo $row->productid;?>">
+							<p><b>Product Id:</b><?php echo  $sqldata[0]->productid;?></p>
+							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
 							
-							<p><b>Company Name:</b><?php echo $row->companyname;?></p>
-							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $row->companyname;?>">
-							
-							<p><b>Supplier Price:</b><?php echo $row->price."/"; echo $row->units;?></p>
-							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $row->price;?>">
-							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo $row->units;?>">
-							
-							<p class="mt-3">Stock Available at : <?php echo $row->pcities."|"; echo $row->pstates;?></p>
-							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $row->pcities;?>">
-							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $row->pstates;?>">
-					</div>
-					</div>
-				  </div>
-
-
-					<div class="col-sm-3 p-2">
-					<div class="row p-2">
-					<div class="col-sm-12">
-							<h4 style="color:purple;"><b><?php echo $row->productname;?></b></h4>
-						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $row->productname;?>">
 						
-							<p class="w-auto small"><?php echo $row->description;?></p>
-							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo $row->description;?>">
 							
+							<p><b>Company Name:</b><?php echo  $sqldata[0]->companyname;?></p>
+							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo  $sqldata[0]->companyname;?>">
+							
+							<p><b>Supplier Price:</b><?php echo  $sqldata[0]->price."/"; echo $sqldata[0]->units;?></p>
+							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo  $sqldata[0]->price;?>">
+							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
+							
+							<p class="mt-3">Stock Available at : <?php echo $sqldata[0]->pcities."|"; echo  $sqldata[0]->pstates;?></p>
+							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
+							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
+							
+							<h6 style="color:orange;"><b>Live Stock : <?php echo  $sqldata[0]->supplyability."/"; echo  $sqldata[0]->supplyunits;?></b></h6>
+							<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo  $sqldata[0]->supplyability;?>">
 					</div>
 					</div>
 				  </div>
+
+
+					
 				  
 				  
-				  <div class="col-sm-4 p-2">
+				  <div class="col-sm-5 p-2">
 					<div class="row p-2">
 					<div class="col-sm-10">
-							<h6 class="text-center" style="color:orange;"><b>Live Stock : <?php echo $row->supplyability."/"; echo $row->supplyunits;?></b></h6>
-							<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo $row->supplyability;?>">
-							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $row->supplyunits;?>">
+							
+							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo  $sqldata[0]->supplyunits;?>">
 							
 							<div class="form-check mt-3 text-left">
 								
-							<label class="form-check-label">
-								<input type="checkbox" value="negotiate" id="negotiate" name="negotiate">Negotiate</label>
+							<center><h3 style="color:blue;"><b>
+								Negotiate Here</b></h3></center>
 							</div>
   
 					
-							<div class="form-row">
+							<div class="form-row mt-5">
 								<label class="col-sm-6 col-form-label"  for="name">Quantity</label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" />
 							<div class="col-sm-3">  
@@ -135,9 +132,16 @@
 					
 					</div>
 					
-							<input type="hidden" name="auc[]" value="<?php echo $proid.'|'.urlencode($row->vname);?>">
+						
+							<center>
 							
-							<a type="submit" href="<?php echo base_url()."Customer_add_contactsupplier/".$proid."/".urlencode($row->vname);?>"  role="submit"><input type="submit" id="" class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" value="submit"></a>
+							<input type="submit" name="submit"  role="submit" value="Submit" class="btn btn-info btn-sm mt-2" style="font-size:13px">
+							
+							
+							
+							<a type="submit" href="<?php echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($sqldata[0]->vname);?>"  role="submit"><button name="submit"  class="btn btn-info btn-sm mt-2 offset-sm-5">Cancel</button></a>
+							</center>	
+								
 							 <!--<a type="submit" href="<?php// echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($row->vname);?>"  role="submit"><button name="submit"  class="btn btn-info btn-sm mt-2 offset-sm-5">Submit</button></a>-->
 								
 
@@ -154,8 +158,9 @@
 					  
 				  </div>
 				  
-				  <?php }?>	
-				
+				  <label><b>Description:</b></label>
+				<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
+							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">
                 </div>
 						
                 </form>	

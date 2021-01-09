@@ -19,45 +19,24 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
-    <thead class="bg-primary text-white">
-      <tr>
-			<th>Supplier Name</th>
-			<th>Product Name</th>
-			<th>Product Id</th>
-			<th>Category</th>
-			<th>Company Name</th>
-			<th>Supplier Price</th>
-			<th>Available Stocks</th>
-			<th>Location</th>
-			<th>Buyer Quantity</th>
-			<th>Buyer Price</th>
-			<th>Seller price</th>
-			<th>Seller Units</th>
+   <form class="form-inline">
+					<div class="form-group mr-4 offset-sm-4">
+						<td colspan="5">
+						<!-- <form action="/action_page.php"> -->
+								<label for="gettable"></label>
+								<input type="text" class="form-control gettable" id="gettable_quotenegotiation" placeholder="Enter Product Name To Fetch Result"  size="70" name="search">
+								
+								<!--<button class="form-control" type="submit"><i class="fa fa-search"></i></button>-->
+					
+						<!-- </form> -->
+					</td>
+				</div>
+			</form>
+		<div class="ajaxrslt" id="ajaxrslt_quotenegotiation">
+			<!----Insert Ajax Table Here------>
 			
-      </tr>
-    </thead>
-    <tbody>
-	 <?php foreach($sqldata as $row){?>
-      <tr>
-	  <?php $proid = str_ireplace('/','-',$row->productid);
-				?>
-			<td><?php echo $row->vname;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->companyname;?></td>
-			<td><?php echo $row->price;?></td>
-			<td><?php echo $row->bquantity;?></td>
-			<td><?php echo $row->pcities;?></td>
-			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
-			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
-			<td><?php echo $row->selqan."/"; echo $row->selunits;?></td>
-      </tr>      
-     <?php }?>	
-    </tbody>
-  </table>
+			<!---- ------>
+		</div>
 		</div>
 		</div>
 		</div>

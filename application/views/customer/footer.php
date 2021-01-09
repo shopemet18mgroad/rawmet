@@ -135,5 +135,48 @@ function validate_password(){
 			 });
  }
  </script>
+ 
+ 
+  
+ <script>
+		$('#gettable_quotenegotiation').on('keyup', function(){
+			var contents = $('#gettable_quotenegotiation').val(); 
+			$.get('<?php echo base_url() .'customer_sellernegotiatedquote/get_table/'; ?>'+contents, function(data){
+				$('#ajaxrslt_quotenegotiation').html(data);
+			});
+		});
+	
+ </script>
+ 
+ <script>
+		function cust_quoteapprove(varab){
+			$.get('<?php echo base_url() .'Customer_renegotiation/approve_quote/'; ?>'+varab, function(data2){	
+					
+				 if($.trim(data2) == "HI"){
+					 window.location.href = '<?php echo base_url().'Customer_renegotiation';?>'
+					return true;
+				}
+			 });
+			
+		}
+
+
+ </script>
+ 
+ <script>
+		function cust_reqapprove(varab){
+			$.get('<?php echo base_url() .'Customer_negotiated/approve_requ/'; ?>'+varab, function(data2){	
+					
+				 if($.trim(data2) == "HI"){
+					 window.location.href = '<?php echo base_url().'Customer_negotiated';?>'
+					return true;
+				}
+			 });
+			
+		}
+
+
+ </script>
+ 
  </body>
  </html>

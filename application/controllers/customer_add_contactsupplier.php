@@ -28,7 +28,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 				$busername= $data2[0]->busername;
 				
 		
-	if($this->input->post('submit')){
+	if($this->input->post('bquantity')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
@@ -64,7 +64,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('quotes',$data);
-			header('location: ./Customer_contactsupplier/index/'); 
+			header('location: ./customer_sellernegotiatedquote/index/'.$datainserr); 
 		}
 			
 		/* 	if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
@@ -92,7 +92,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 	}
 	
 	
-	public function Addtosubmit(){
+	/* public function Addtosubmit(){
 		$dat = $this->uri->segment(3);
 		print_r($dat);die;
 		$this->load->library('session');
@@ -146,7 +146,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 		
 		
 	
-	}
+	} */
 	
 	
 private function upload_files($nameid){

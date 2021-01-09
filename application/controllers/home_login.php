@@ -50,7 +50,7 @@ class Home_login extends CI_Controller {
 				  if($table == "buyer_register"){
 					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE);
 						$this->session->set_userdata($newdata);
-					  header('location: '.base_url().'customer_customerprofile');
+					  header('location: '.base_url().'customer_index');
 					  die;
 				  }else if($table == "vendor_register"){
 					  $newdata = array('username'=>$user,'auth'=>'SELLER','logged_in' => TRUE);

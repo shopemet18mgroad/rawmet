@@ -65,9 +65,9 @@ class Customer_customerprofile extends CI_Controller {
 			echo '<script language="javascript">';
 			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
 			echo '</script>';
-			$this->load->view('customer/header',$sess);
+			
 		$this->load->view('customer/customerprofile',$adac);
-		$this->load->view('customer/footer');
+		
 			
 			}	
 	}

@@ -30,6 +30,7 @@
 			<th>Last Date</th>
 			<th>Email</th>
 			<th>Images</th>
+			<th>Status</th>
 			<th>Download</th>
 			<th>Action</th>
       </tr>
@@ -49,7 +50,7 @@
 			
 			<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
-			
+			<td style="color:orange;"><b><?php if($row->adapproval == 1){echo 'Approved';} elseif($row->adapproval==0){echo 'Rejected';}?></b></td>
 			<td><button type="submit" class="btn btn-info btn-sm w-75">
 					<i class="fa fa-download" aria-hidden="true"></i>
 					</button></td>

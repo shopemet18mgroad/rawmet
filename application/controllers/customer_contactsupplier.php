@@ -38,9 +38,15 @@ class Customer_contactsupplier extends CI_Controller {
 			//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active);
 		
 			//$vendorname = $query2[0]->vname;
-		$category='scrap';
-		$active2 = array('category'=>$category);
-			$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$active2);
+		//$category='scrap';
+		//$active2 = array('category'=>$category);
+		//	$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$active2);
+		
+		$this->load->model('Admin_model');
+		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$active = array('productid'=>$productid);
+		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
+		$data['sqldata']= $query;
 			
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/contactsupplier',$data);
@@ -49,7 +55,7 @@ class Customer_contactsupplier extends CI_Controller {
 	}
 	}
 	
-	public function Addtosubmit(){
+	/* public function Addtosubmit(){
 		$dat = urldecode($this->uri->segment(3));
 		print_r($dat);die;
 		$this->load->library('session');
@@ -110,7 +116,7 @@ class Customer_contactsupplier extends CI_Controller {
 		
 		
 	
-	}			
+	}			 */
 
 	
 }

@@ -2,7 +2,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_negotiated extends CI_Controller {
+class Customer_renegotiation extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -29,53 +29,30 @@ class Customer_negotiated extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('bname'=>$sess['sessi'],'bapprove'=>true);
-		
-		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
-		
-		//$vendorname = $query2[0]->vname;
-		//$poptions = array('vname'=>$vendorname);
+		$active1 = array('busername'=>$sess['sessi'],'buyerapprove'=>false);
+		//$reqapproval = array('sellapproval'=>false);
 		
 		
-		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);
+		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
 		
 		
 		$adac['sqldata']= $query;
 		
-			//$active = array('vusername'=>$sess['sessi']);
-		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
-		
 		
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/negotiated',$adac);
+		$this->load->view('customer/renegotiation',$adac);
 		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		
-		
+			
+			
 		
 		}
 
 			
 	}
-	public function delete_seller(){
 	
-		
-		$productname = urlencode($this->uri->segment(3));
-		//$productid = str_ireplace('-','/',$productid);
-		
-		$active = array('productname'=>$productname);
-		
-		$this->load->model('Admin_model');
-		$this->Admin_model->delete_data('seller_mbuyreq', $active);
-		
-		$this->load->helper('url');
-		$this->load->library('session');
-		
-		header('location: '.base_url().'vendor_uploadedproduct/index/');
-	
-}
-
-public function approve_requ(){
+	public function approve_quote(){
 		
 		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 
@@ -83,8 +60,8 @@ public function approve_requ(){
 		
 		
 		$this->load->model('Admin_model');
-		$app= array('bapprove'=>true);
-		$query = $this->Admin_model->update_custom('seller_mbuyreq', $app, $retriveval, $retriveval);
+		$app= array('buyerapprove'=>true);
+		$query = $this->Admin_model->update_custom('selquotenegotate', $app, $retriveval, $retriveval);
 		if($retriveval){
 			echo "HI";
 		}else{
@@ -94,6 +71,20 @@ public function approve_requ(){
 	}
 	
 	
+	public function reject(){
+		$this->load->helper('url');
+		$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
+		
+		$data2 = array('buyerapprove'=>2);
+		$updatech = array('productid'=>$retrivevaltmp);
+		$this->load->model('Admin_model');
+		
+		$status = $this->Admin_model->update_custom('selquotenegotate',$data2,$updatech,$updatech);
+		
+		header('location: '.base_url().'customer_renegotiation/index/'.urlencode($retrivevaltmp3));
+		
+		die;
+	}
 		
 	}
 

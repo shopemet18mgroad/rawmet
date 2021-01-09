@@ -15,7 +15,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>buyer name</th>
+	  <th>Supplier name</th>
 	  
         <th>companyname</th>
 	   <th>Category</th>
@@ -26,10 +26,8 @@
 		<th>Stock</th>
 	    <th>Units</th>
 		<th>Price</th>
-		<th>Units</th>
 		<th>Seller Price</th>
-		<th>Status</th>
-		<th>Units</th>
+		<th>Action</th>
 		
                     
              
@@ -45,7 +43,7 @@
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-	  <td><?php echo $row->bname;?></td> 
+	  <td><?php echo $row->vusername;?></td> 
 		<td><?php echo $row->bcompanyname;?></td> 
 		<td><?php  echo $row->category;?></td>
 		 <td><?php echo $row->productname?></td>
@@ -54,10 +52,15 @@
 		
 		<td><?php echo $row->quantity;?></td>
 		<td><?php echo $row->units;?></td>
-				<td><?php echo $row->price;?></td>
-						<td><?php echo $row->priceperkg;?></td>
-								<td><?php echo $row->sellerprice;?></td>
-										<td><?php echo $row->bsupplyability;?></td>
+				<td><?php echo $row->price."/";echo $row->priceperkg;?></td>
+					
+								<td><?php echo $row->sellerprice."/";echo $row->bsupplyability;?></td>
+										<td>
+		
+		<button type="submit" name="submit" id="<?php echo $proid;?>" onclick="cust_reqapprove(this.id)" class="btn btn-success btn-sm">Approve</button>
+		
+		
+		<a href="<?php  echo base_url()."customer_negotiated/reject/".$proid;?>"><button type="button" class="btn btn-warning">Reject</button></a></td>
 		
 
 		

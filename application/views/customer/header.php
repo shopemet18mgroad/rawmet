@@ -18,13 +18,7 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url()."web_files/";?>css/sb-admin-2.min.css" rel="stylesheet">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-   
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   <script src=" https://github.com/superRaytin/paginationjs"></script>
-   <script src=" http://pagination.js.org"></script>
+ 
 <style>
 .carousel{
     margin-top: 20px;
@@ -52,9 +46,9 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url();?>/index.php">
+        <a class="nav-link" href="<?php echo base_url();?>Customer_index">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span> customer Dashboard</span></a>
+          <span> Customer Dashboard</span></a>
       </li>
 
       <!-- Divider -->
@@ -67,11 +61,11 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
 
-	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>customer_customerprofile">
+	 <!-- <li class="nav-item">
+        <a class="nav-link" href="<?php// echo base_url();?>customer_customerprofile">
           <i class="fas fa-fw fa-user"></i>
           <span>User Profile</span></a>
-      </li>
+      </li>-->
 	
 
 	  
@@ -80,12 +74,80 @@
           <i class="fas fa-fw fa-upload"></i>
           <span>Get Quote</span></a>
       </li>-->
-	  	 
-		<li class="nav-item">
+	    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>customer_postbuyreq">
+          <i class="fas fa-fw fa-upload"></i>
+          <span>Post Buying Requirement</span></a>
+      </li>
+	  
+	  
+	   <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment6" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-money-bill-alt"></i>
+          <span>My Requirements List</span></a>
+		  <div id="payment6" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>customer_myrequirements">My Requirements</a>
+            <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Seller's Negotiated <br>Requirement</a>
+			<a class="collapse-item" href="<?php echo base_url();?>">Approved Requirement</a>
+          </div>
+        </div>
+      </li>
+	  
+	  
+	   <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>#">
+          <i class="fas fa-fw fa-upload"></i>
+          <span>Online Tenders</span></a>
+      </li>
+	  
+	  
+	  
+	  
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment3" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-money-bill-alt"></i>
+          <span>Ongoing Negotiation</span></a>
+		  <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>customer_sellernegotiatedquote">Ongoing Negotiation</a>
+            <a class="collapse-item" href="<?php echo base_url();?>Customer_renegotiation">Re-Negotate</a>
+			 
+          </div>
+        </div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-money-bill-alt"></i>
+          <span>Finalized Negotiation</span></a>
+		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>customer_buynego">My Negotiation</a>
+            
+			 <a class="collapse-item" href="<?php echo base_url();?>Customer_sellnego">Seller Negotiation</a>
+          </div>
+        </div>
+  
+	  
+	   <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment5" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-money-bill-alt"></i>
+          <span>Purchase Order</span></a>
+		  <div id="payment5" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>customer_approvedquotes">Ongoing Purchase Order</a>
+            <a class="collapse-item" href="<?php echo base_url();?>customer_myquotes">Closed Purchase Order</a>
+			
+          </div>
+        </div>
+      </li>
+	  
+	  
+		<!--<li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>customer_contactsupplier">
           <i class="fas fa-fw fa-inbox"></i>
           <span>Products</span></a>
-      </li>
+      </li>-->
 	  
 	<!--  <li class="nav-item">
         <a class="nav-link" href="<?php //echo base_url();?>customer_inquirymsg">
@@ -93,17 +155,9 @@
           <span>Inquiry Message</span></a>
       </li>-->
 	  
-	    <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>customer_postbuyreq">
-          <i class="fas fa-fw fa-upload"></i>
-          <span>Post Buying Requirement</span></a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>customer_myrequirements">
-          <i class="fas fa-fw fa-upload"></i>
-          <span>My Requirements</span></a>
-      </li>
-	  <li class="nav-item">
+	  
+	  
+	<!--  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-money-bill-alt"></i>
           <span>Quotes</span></a>
@@ -113,19 +167,7 @@
             <a class="collapse-item" href="<?php echo base_url();?>customer_myquotes">My Pending Quotes</a>
           </div>
         </div>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment2" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-shopping-cart"></i>
-          <span>Manage Buying Requirements</span></a>
-		 <div id="payment2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <!--<a class="collapse-item" href="<?php //echo base_url();?>customer_managebuyreq">buyer Negotiated</a>-->
-            <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Seller Requirement <br>Negotiated</a>
-			<a class="collapse-item" href="<?php echo base_url();?>customer_sellernegotiatedquote">Seller Quote Negotiated</a>
-          </div>
-        </div>
-      </li>
+      </li>-->
 	 
 	  <!--<li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
@@ -210,7 +252,7 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+       <!--   <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -219,7 +261,7 @@
                 </button>
               </div>
             </div>
-          </form>
+          </form>-->
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -305,8 +347,12 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                
-                
+              
+				 <a class="dropdown-item" href="<?php echo base_url();?>customer_customerprofile">
+          <i class="fas fa-fw fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+         Profile Setting</a>
+				
+			
                 <a class="dropdown-item" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout

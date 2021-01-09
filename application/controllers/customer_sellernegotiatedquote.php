@@ -30,20 +30,20 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('vusername'=>$sess['sessi']);
-		$reqapproval = array('sellapproval'=>false);
+		//$reqapproval = array('sellapproval'=>false);
 		
 		
-		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$reqapproval);
+		//$query = $this->Admin_model->getdatafromtable('selquotenegotate',$reqapproval);
 		
 		
-		$adac['sqldata']= $query;
+		//$adac['sqldata']= $query;
 		
 			//$active = array('vusername'=>$sess['sessi']);
 		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
 		
 		
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/sellernegotiatedquote',$adac);
+		$this->load->view('customer/sellernegotiatedquote');
 		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		
@@ -52,6 +52,78 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 		}
 
 			
+	}
+	
+		
+	public function get_table(){
+		$datatoquerydb = $this->uri->segment(3);
+		$this->load->helper(array('url','html','date'));
+		//date_default_timezone_set('Asia/Kolkata');
+		//$time =  Date('Y-m-d H:i:s');
+		$this->load->model('Admin_model');
+		$data = $this->Admin_model->get_lookalike('sellerpostproduct','vname',$datatoquerydb);
+		if(count($data)){
+			echo '<table class="table table-striped table-bordered table-sm text-center mt-5" width="100%" cellspacing="0">';
+			echo '<thead class="bg-primary text-white">';
+			echo '<tr>';
+			echo '<th>Product Id</th>';
+			echo '<th>Product Name</th>';
+			echo '<th>Supplier Name</th>';
+			echo '<th>Category</th>';
+			echo '<th>Price</th>';
+			echo '<th>Quantity</th>';
+			//echo '<th>Action</th>';
+			echo '</tr>';
+			echo '</thead>';
+			echo '<tbody>';
+			foreach($data as $dat){
+				echo '<tr>';
+				$proid = str_ireplace('/','-',$dat['productid']);
+				
+				
+				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.$proid.'/'.($dat['vname']).
+				'">';
+				echo $dat['productid'];
+				
+				echo '</a>';
+				echo '</td>';
+				echo '<td>'.$dat['productname'].'</td>';
+				echo '<td>'.$dat['vname'].'</td>';
+				echo '<td>'.$dat['category'].'</td>';
+				echo '<td>'.$dat['price'].'</td>';
+				echo '<td>'.$dat['quantity']."/".$dat['units'].'</td>';
+				
+				echo '</tr>';
+			}
+			echo '</tbody>';
+			echo '</table>';
+		}else{
+			echo '<table class="table table-striped table-bordered table-sm text-center mt-5" width="100%" cellspacing="0">';
+			echo '<thead class="bg-primary text-white">';
+			echo '<tr>';
+		echo '<th>Product Id</th>';
+			echo '<th>Product Name</th>';
+			echo '<th>Supplier Name</th>';
+			echo '<th>Category</th>';
+			//echo '<th>Action</th>';
+			echo '</tr>';
+			echo '</thead>';
+			echo '<tbody>';
+			echo '<tr>';
+				echo '<td>No Records Found</td>';
+				echo '<td>No Records Found</td>';
+				echo '<td>No Records Found</td>';
+				echo '<td>No Records Found</td>';
+			//	echo '<td>No Records Found</td>';
+				echo '</a>';
+				echo '</td>';
+				echo '</tr>';
+				echo '</tbody>';
+				echo '</table>';
+		}
+
+
+
 	}
 	
 	
