@@ -6,7 +6,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">My Requirements</h1>
+            <h1 class="h3 mb-0 text-gray-800">Manage Buyer Requirements</h1>
             
           </div>
 
@@ -22,40 +22,42 @@
     <thead class="bg-primary text-white">
       <tr>
 			<th>Product Id</th>
+			<th>Buyer Name</th>
 			<th>Product Name</th>
 			<th>Description</th>
 			<th>Quantity</th>
+			<th>Units</th>
+			<th>Price/</th>
 			<th>Units</th>
 			<th>Required Date</th>
 			<th>Last Date</th>
 			<th>Email</th>
 			<th>Images</th>
-			<th>Status</th>
-			<th>Download</th>
-			<th>Action</th>
+			
       </tr>
     </thead>
     <tbody>
 	 <?php foreach($sqldata as $row){?>
-      <tr> <?php $proid = str_ireplace('/','-',$row->productid);
+      <tr>
+	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 			<td><?php echo $row->productid;?></td>
+			<td><?php echo $row->bname;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->description;?></td>
 			<td><?php echo $row->quantity;?></td>
 			<td><?php echo $row->units;?></td>
+			<td><?php echo $row->price;?></td>
+			<td><?php echo $row->priceperkg;?></td>
 			<td><?php echo $row->requireddate;?></td>
 			<td><?php echo $row->lastdate;?></td>
 			<td><?php echo $row->email;?></td>
+				<td><?php $img = unserialize($row->uploadimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
+				
+		
+				
 			
-			<td><?php $img = unserialize($row->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
-			<td style="color:orange;"><b><?php if($row->adapproval == 1){echo 'Approved';} elseif($row->adapproval==0){echo 'Pending';}?></b></td>
-			<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
-								
-			<td><a href="<?php echo base_url()."Customer_myrequirements/delete_buyingrequ_cust/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a></td>
 		
       </tr>      
      <?php }?>	

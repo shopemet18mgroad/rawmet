@@ -45,6 +45,7 @@
                       <i class="fas fa-envelope fa-2x text-success"></i>
                     </div>
                   </div>
+				  <div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php echo $sql2;?></center></div>
                 </div>
               </div>
             </div>

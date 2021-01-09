@@ -2,7 +2,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_negotiated extends CI_Controller {
+class Customer_custapprovedreq extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -47,7 +47,7 @@ class Customer_negotiated extends CI_Controller {
 		
 		
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/negotiated',$adac);
+		$this->load->view('customer/custapprovedreq',$adac);
 		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		
@@ -57,57 +57,7 @@ class Customer_negotiated extends CI_Controller {
 
 			
 	}
-	public function delete_seller(){
-	
-		
-		$productname = urlencode($this->uri->segment(3));
-		//$productid = str_ireplace('-','/',$productid);
-		
-		$active = array('productname'=>$productname);
-		
-		$this->load->model('Admin_model');
-		$this->Admin_model->delete_data('seller_mbuyreq', $active);
-		
-		$this->load->helper('url');
-		$this->load->library('session');
-		
-		header('location: '.base_url().'vendor_uploadedproduct/index/');
-	
-}
 
-public function approve_requ(){
-		
-		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-
-		$retriveval = array('productid'=>$retrivevaltmp);
-		
-		
-		$this->load->model('Admin_model');
-		$app= array('bapprove'=>true);
-		$query = $this->Admin_model->update_custom('seller_mbuyreq', $app, $retriveval, $retriveval);
-		if($retriveval){
-			echo "HI";
-		}else{
-			echo "BYE";
-		}
-	
-	}
-	
-	
-	public function reject(){
-		$this->load->helper('url');
-		$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
-		
-		$data2 = array('bapprove'=>2);
-		$updatech = array('productid'=>$retrivevaltmp);
-		$this->load->model('Admin_model');
-		
-		$status = $this->Admin_model->update_custom('seller_mbuyreq',$data2,$updatech,$updatech);
-		
-		header('location: '.base_url().'Customer_negotiated/index/'.urlencode($retrivevaltmp3));
-		
-		die;
-	}
 	
 	}
 

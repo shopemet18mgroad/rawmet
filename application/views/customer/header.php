@@ -74,22 +74,33 @@
           <i class="fas fa-fw fa-upload"></i>
           <span>Get Quote</span></a>
       </li>-->
-	    <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>customer_postbuyreq">
-          <i class="fas fa-fw fa-upload"></i>
-          <span>Post Buying Requirement</span></a>
-      </li>
-	  
+	 
 	  
 	   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment6" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-money-bill-alt"></i>
-          <span>My Requirements List</span></a>
+          <i class="fas fa-upload"></i>
+          <span>Post Buying <br>Requirement</span></a>
 		  <div id="payment6" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>customer_myrequirements">My Requirements</a>
+            <a class="collapse-item" href="<?php echo base_url();?>customer_postbuyreq">Add Your Requirement</a>
+			<a class="collapse-item" href="<?php echo base_url();?>customer_myrequirements">My Requirements</a>
             <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Seller's Negotiated <br>Requirement</a>
-			<a class="collapse-item" href="<?php echo base_url();?>">Approved Requirement</a>
+			
+          </div>
+        </div>
+      </li>
+	  
+	  
+	  
+	   <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment8" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-money-bill-alt"></i>
+          <span>Approved Requirements</span></a>
+		  <div id="payment8" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>Customer_custapprovedreq">My Approved <br>Requirements</a>
+            
+			<a class="collapse-item" href="<?php echo base_url();?>Customer_sellerapprovedreq">Seller's Approved <br>Requirement</a>
           </div>
         </div>
       </li>
