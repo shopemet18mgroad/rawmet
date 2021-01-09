@@ -31,10 +31,7 @@ class Vendor_negotiated extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('vusername'=>$sess['sessi']);
 		
-		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
 		
-		//$vendorname = $query2[0]->vname;
-		//$poptions = array('vname'=>$vendorname);
 		
 		
 		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);
@@ -42,9 +39,7 @@ class Vendor_negotiated extends CI_Controller {
 		
 		$adac['sqldata']= $query;
 		
-			//$active = array('vusername'=>$sess['sessi']);
-		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
-		
+			
 		
 		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/negotiated',$adac);
@@ -61,7 +56,7 @@ class Vendor_negotiated extends CI_Controller {
 	
 		
 		$productname = urlencode($this->uri->segment(3));
-		//$productid = str_ireplace('-','/',$productid);
+		
 		
 		$active = array('productname'=>$productname);
 		

@@ -51,10 +51,14 @@
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
+						
 			
-			<td><button type="submit" name="submit" id="<?php echo $proid;?>" onclick="vendor_quotesapproval(this.id)" class="btn btn-info btn-sm">Approve</button>
+		<td>	<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid;?>"><button type="button" class="btn btn-danger">Reject</button></a>
+				
 			
-		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".$proid."/".urlencode($row->vname);?>"  class="btn btn-warning btn-sm text-white delete-confirm"><i class="fa fa-edit fa-sm"></i></a></center></td>
+			<button type="submit" name="submit" id="<?php echo $proid;?>" onclick="vendor_quotesapproval(this.id)" class="btn btn-info btn-sm">Approve</button>
+			
+		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".$proid."/".urlencode($row->vname);?>"  class="btn btn-success btn-sm text-white delete-confirm">Renegotation</a></center></td>
       </tr>      
      <?php }?>	
     </tbody>

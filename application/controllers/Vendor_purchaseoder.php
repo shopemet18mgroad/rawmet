@@ -1,8 +1,7 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendor_sellernegotiatedquote extends CI_Controller {
+class Vendor_purchaseoder extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,6 +20,7 @@ class Vendor_sellernegotiatedquote extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->helper('url');
 		$this->load->model('Admin_model');
 		$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
@@ -29,35 +29,17 @@ class Vendor_sellernegotiatedquote extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vname'=>$sess['sessi']);
-		$reqapproval = array('sellapproval'=>false);
-		
-		
-		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
+		$active1 = array('vusername'=>$sess['sessi']);
+				
+		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$active1);
 		
 		
 		$adac['sqldata']= $query;
-		
-			//$active = array('vusername'=>$sess['sessi']);
-		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
-		
-		
+			}
 		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/sellernegotiatedquote',$adac);
+		$this->load->view('vendor/purchaseoder',$adac);
 		$this->load->view('vendor/footer');
-		$this->load->helper('url');
-		
-			
-			
-		
-		}
-
-			
-	}
-	
-	
-	
 		
 	}
-
-		
+	
+}

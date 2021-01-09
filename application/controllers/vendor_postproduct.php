@@ -56,8 +56,7 @@ class Vendor_postproduct extends CI_Controller {
 			$price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
-			$aifeatured = $this->input->post('aifeatured');
-			$fobprice = $this->input->post('fobprice');
+			
 			$vusername = $this->input->post('vusername');
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
@@ -86,7 +85,7 @@ class Vendor_postproduct extends CI_Controller {
 			
 			$data1 = array('productid'=>$productid );
 			 //print_r($uploadproductimage);die;
-			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'aifeatured'=>$aifeatured,'fobprice'=>$fobprice,'uploadproductimage'=>$pic_array1,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname,'vusername'=>$vusername );
+			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'uploadproductimage'=>$pic_array1,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname,'vusername'=>$vusername );
 			//print_r($data2);die;
 
 

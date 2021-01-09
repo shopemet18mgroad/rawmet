@@ -112,12 +112,7 @@
 							<hr class="sidebar-divider">
 							<center><b>Seller Negotiate</b></center>
 							
-							<div class="form-check mt-3 text-left">
-								
-							<label class="form-check-label">
-								<input type="checkbox" value="negotiate" id="negotiate" name="negotiate">Negotiate</label>
-								
-							</div>
+							
   
 					
 							<div class="form-row">

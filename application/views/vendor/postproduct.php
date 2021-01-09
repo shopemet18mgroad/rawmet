@@ -307,7 +307,7 @@
 					
 					<input type="file" id="uploadproductimage" name="uploadproductimage[]">
 				</div>
-				<div class="col-sm-4 mt-4">
+				<!--<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>
 					<label class="radio-inline"><input type="radio" name="fobprice" id="fobprice" checked> Yes</label>
 					<label class="radio-inline"><input type="radio" name="fobprice"  id="fobprice">No</label>
@@ -315,7 +315,7 @@
 				<div class="col-sm-4 mt-4">
 					<label class="checkbox-inline">
 					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured">Add into Featured</label>
-				</div>
+				</div>-->
 				
 					<div class="col-md-12 text-center mt-4">
 						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>

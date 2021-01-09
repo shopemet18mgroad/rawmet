@@ -56,9 +56,17 @@
 				<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
 				
-			<td>		
-			<a href="<?php echo base_url()."vendor_managebuyreq/delete_buyingrequ/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a>
-			<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urlencode($row->bname);?>"  class="btn btn-info btn-sm text-white delete-confirm"><i class="fa fa-edit fa-sm"></i></a></td>
+			<td>
+		<button type="submit" name="submit" id="<?php echo $proid;?>" onclick="approve_req(this.id)" class="btn btn-success btn-sm">Approve</button>			
+		
+		
+		<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urlencode($row->bname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotation</a>
+		
+		
+		<a href="<?php echo base_url()."vendor_managebuyreq/delete_buyingrequ/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a></td>	
+			
+		
+				
 			
 		
       </tr>      

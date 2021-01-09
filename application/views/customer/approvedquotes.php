@@ -59,7 +59,7 @@
 		<td>
 			
 				
-				<a href="<?php echo base_url().'home_quotation/auc_no/'.$proid;?>" target="_blank"><i class="fa fa-download"></i></a>
+				<a href="<?php echo base_url().'Customer_quotation/auc_no/'.$proid.'/'.urldecode($row->busername);?>" target="_blank"><i class="fa fa-download"></i></a>
 			
 					</td>
 					
