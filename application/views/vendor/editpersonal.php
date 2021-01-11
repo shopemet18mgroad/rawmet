@@ -40,7 +40,7 @@
 							
 							<form action = "<?php echo base_url();?>vendor_basicinfo_update" method="POST" enctype="multipart/form-data">
 							<td>Name</td>
-								<td><input class="form-control w-50" type="text" id="vname" name="vname" value="<?php echo $sqldata[0]->vname; ?>"></td>
+								<td><input class="form-control w-50" type="text" id="vname" name="vname" value="<?php echo $sqldata[0]->vname; ?>" readonly></td>
 							</tr> 
 							<tr>
 								<td>Company Name</td>
