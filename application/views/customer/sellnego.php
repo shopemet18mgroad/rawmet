@@ -32,7 +32,7 @@
 			<th>Location</th>
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
-			<th>Status</th>
+			<th>View Quotation</th>
 			<th>Send Purchase Order</th>
       </tr>
     </thead>
@@ -52,8 +52,13 @@
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			<td></td>
-			<td style="color:green"><?php if($row->sellapproval==1){echo 'Send Purchase Order';}?></td>
+			<td><a href="<?php echo base_url().'web_files/uploads/'.$proid[0]?>" target="_blank">
+				<i class="fa fa-download" aria-hidden="true"></i></a></td>
+			<td>
+				<input class="form-group w-auto"  multiple="multiple"  type="file" name="uploadporder">
+				<input type="submit" id="" class="btn btn-primary " name="submit" value="Upload">
+		 </td>
+					
       </tr>      
      <?php }?>	
     </tbody>
