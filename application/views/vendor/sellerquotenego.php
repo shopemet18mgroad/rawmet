@@ -38,6 +38,7 @@
 				
 						<td><?php $img = unserialize($sqldata[0]->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="150px" height="100%"></td>
+					<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img;?>">
 				
 				</div>	
 				</div>
