@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_index extends CI_Controller {
+class Customer_sellerapprovedreq extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,34 +19,27 @@ class Customer_index extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{	   
-	
-	     $this->load->helper('url');
+	{
+		$this->load->helper('url');
 		$this->load->library('session');
+		$this->load->model('Admin_model');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
-		$this->load->model('Admin_model');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$reqapproval = array('bname'=>$sess['sessi'],'selapprove'=>true);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('busername'=>$sess['sessi'],'buyerapprove'=>false);
-		
-		$query['data'] = $this->Admin_model->getdatafromtable('selquotenegotate',$active);
-		
-		$active2 = array('busername'=>$sess['sessi'],'buyerapprove'=>true);
-		$query['data2'] = $this->Admin_model->getdatafromtable('selquotenegotate',$active2);
-		
-		$val['sql']=count($query['data']);
-		//print_r($a); die;
-	$val['sql2']=count($query['data2']);
-			}
-	
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/index',$val);
+		$this->load->view('customer/sellerapprovedreq',$query);
 		$this->load->view('customer/footer');
-		
+			}
 	}
+	
+	
+	
 	
 }
