@@ -36,7 +36,9 @@
 				<div class="col-sm-4">
 				<div class="thumbnail mt-5">
 				
-				<!--<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage">-->
+						<td><?php $img = unserialize($sqldata[0]->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="150px" height="100%"></td>
+				
 				</div>	
 				</div>
 				</div>
@@ -45,12 +47,12 @@
 				<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
+			
+				
 									
 							
-							<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
-							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
-							<p><b>Buyer Name:</b><?php echo $sqldata[0]->busername;?></p>
-							<input type="hidden" class="form-control" id="busername" name="busername"  value="<?php echo $sqldata[0]->busername;?>">
+						
+							
 							
 							<p><b>Category:</b><?php echo $sqldata[0]->category;?></p>
 							<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo $sqldata[0]->category;?>">
@@ -68,7 +70,7 @@
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
 							
 							
-							<p class="mt-3">Stock Available at : <?php echo $sqldata[0]->pcities."|"; echo $sqldata[0]->pstates;?></p>
+							<p class="mt-3"><b>Stock Available at : </b><?php echo $sqldata[0]->pcities."|"; echo $sqldata[0]->pstates;?></p>
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $sqldata[0]->pstates;?>">
 							
@@ -81,12 +83,23 @@
 					<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
-							<h4 style="color:purple;"><b><?php echo $sqldata[0]->productname;?></b></h4>
-							<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
+					<center><b>Buyer Negotiated</b></center>
+					<hr class="sidebar-divider">
+					<p><b>Buyer Name:</b><?php echo $sqldata[0]->busername;?></p>
+							<input type="hidden" class="form-control" id="busername" name="busername"  value="<?php echo $sqldata[0]->busername;?>">
+					
+							
+								<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $sqldata[0]->supplyunits;?>">
 						
-						
-							<p class="w-auto small"><?php echo $sqldata[0]->description;?></p>
-							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo $sqldata[0]->description;?>">
+							<p><b>Quantity:</b><?php echo $sqldata[0]->bquantity; echo $sqldata[0]->bsupplyability;?></p>
+							<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo $sqldata[0]->bquantity;?>">
+							<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo $sqldata[0]->bsupplyability;?>">
+							
+							
+							<p><b>Price:</b><?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></p>
+							<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata[0]->bprice;?>">
+							<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata[0]->bunits;?>">
+							<h6 class="text-center" style="color:orange;"><b>Live Stock : <?php echo $sqldata[0]->supplyability."/"; echo $sqldata[0]->supplyunits;?></b></h6>
 							
 							
 					</div>
@@ -97,26 +110,19 @@
 				  <div class="col-sm-4 p-2">
 					<div class="row p-2">
 					<div class="col-sm-10">
-							<h6 class="text-center" style="color:orange;"><b>Live Stock : <?php echo $sqldata[0]->supplyability."/"; echo $sqldata[0]->supplyunits;?></b></h6>
-							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $sqldata[0]->supplyunits;?>">
+							
 						
-							<p><b>Quantity:</b><?php echo $sqldata[0]->bquantity."/"; echo $sqldata[0]->bsupplyability;?></p>
-							<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo $sqldata[0]->bquantity;?>">
-							<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo $sqldata[0]->bsupplyability;?>">
 							
 							
-							<p><b>Price:</b><?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></p>
-							<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata[0]->bprice;?>">
-							<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata[0]->bunits;?>">
-							
-							<hr class="sidebar-divider">
 							<center><b>Seller Negotiate</b></center>
-							
+							<hr class="sidebar-divider">
+								<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
+							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
 							
   
 					
 							<div class="form-row">
-								<label class="col-sm-6 col-form-label"  for="name">Quantity</label>
+								<label class="col-sm-6 col-form-label"  for="name"><b>Quantity</b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="selprice" placeholder="Quantity" id="selprice" [(ngModel)]="person.name" />
 							<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="sunits" name="sunits">
@@ -131,7 +137,7 @@
 								
 							</div>
 							<div class="form-row mt-2">
-								<label class="col-sm-6 col-form-label"  for="name">Your Price Per KG</label>
+								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price Per KG</b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="selqan" placeholder="price" id="selqan" [(ngModel)]="person.name"/>
 								<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="selunits" name="selunits">
@@ -144,18 +150,33 @@
 					
 				    </select>
 					
-					</div>
-								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit">Submit</a>
-								 
-							</div>
-					
-							
-					</div>
+						
 					
 					</div>
+						</div>
+						</div>
 					 
 				  </div>
+								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit">Submit</a>
+								 <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit">Cancel</a>
+							</div>
+							<p><b>Productname:</b><?php echo $sqldata[0]->productname;?></p>
+							<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
+
+							
+							      <center><b>Description</b></center>
+								  							
+								<p class="w-auto small"><?php echo $sqldata[0]->description;?>
+							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo $sqldata[0]->description;?>">
+					
+							
 				
+					
+					
+				  	
+						
+						
+							  
                 </div>
 						
                 </form>	

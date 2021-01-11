@@ -41,7 +41,7 @@ class Vendor_add_negotiate extends CI_Controller {
 				//print_r($data2); die;
 				$vusername= $data2[0]->vusername;
 				//	print_r($vusername); die;
-	 if($this->input->post('productname')){
+	 if($this->input->post('busername')){
 			 $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
@@ -57,12 +57,8 @@ class Vendor_add_negotiate extends CI_Controller {
 			$category = $this->input->post('category');
 			$description = $this->input->post('description');
 			$price = $this->input->post('price');
-			//$quantity = $this->input->post('quantity');
-			//$units = $this->input->post('units');
-			//$supplyability = $this->input->post('supplyability');
-			$supplyunits = $this->input->post('supplyunits');
-			$uploadproductimage = $this->input->post('uploadproductimage');
-			$pstates = $this->input->post('pstates');
+	        $supplyunits = $this->input->post('supplyunits');
+		    $pstates = $this->input->post('pstates');
 			$pcities = $this->input->post('pcities');
 			$negotiate= $this->input->post('negotiate');
 			$bquantity = $this->input->post('bquantity');
@@ -75,40 +71,22 @@ class Vendor_add_negotiate extends CI_Controller {
 			$sunits = $this->input->post('sunits');
 		    $selqan= $this->input->post('selqan');			 
 		    $selunits = $this->input->post('selunits');
+			$uploadproductimage  = serialize($this->input->post('uploadproductimage')); 
 			
-			//$uploadproductimage = self::upload_files('uploadproductimage');
-			/* $_FILES['uploadproductimage']['name'];
-			$pic_array1  = self::upload_files('uploadproductimage'); 
-		
-		       if(!count($pic_array1)){
-			       echo '<script language="javascript">';
-			             echo 'alert("Documents Upload Failed")';  //not showing an alert box.
-			            echo '</script>';
-		}else{
-			$pic_array1 = serialize($pic_array1);
-		 */
-		//print_r($pic_array1);die;
 			
 			
 			$data1 = array('productid'=>$productid);
-			 //print_r($uploadproductimage);die;
-			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'uploadporder' =>$uploadporder,'selprice'=>$selprice,'sunits' =>$sunits,'selqan'=>$selqan,'selunits'=>$selunits);
-			//print_r($data2);die;
+			
+			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'uploadporder' =>$uploadporder,'selprice'=>$selprice,'sunits' =>$sunits,'selqan'=>$selqan,'selunits'=>$selunits,);
+		
 
 
-		/* $this->load->model('Admin_model');
-			  if($this->Admin_model->check('selquotenegotate', $data1)){
-				 $datainserr = "ProductId already exist";
-				header('location: '.base_url().'vendor_sellerquotenego/index_error/'.$datainserr);
-				die;
-			  }else{ */
-				  //echo "HI";
+		
 			  
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('selquotenegotate',$data2);
 			header('location: '.base_url().'vendor_sellernegotiatedquote/index/'.$datainserr);
-			//header('location: ./vendor_custquoteapproval/index/');
-			
+	
 	 }
 			
 			if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
@@ -116,37 +94,10 @@ class Vendor_add_negotiate extends CI_Controller {
 				header('location: '.base_url().'login/index_error/'.$datainserr);
 				die;
 			}
-			/* else
-			{
-				$this->load->model('Admin_model');
-				$sess = array('sessi'=>$this->session->userdata('username'));
-	
-				$active1 = array('vusername'=>$sess['sessi']);
-				//print_r($active1); die;
-				$data['scomp'] = $this->Admin_model->get1datafromtable('vendor_register', $active1);
-				$data['sessi'] = $this->session->userdata('username');
-				//print_r($data['sessi']); die;
-				$this->load->view('vendor/header',$sess);
-				$this->load->view('vendor/postproduct',$data);
-				$this->load->view('vendor/footer');
-			}   */
-	 
-}
-/* public function index_error(){
-			$alertmsg = $this->uri->segment(3);
-			$alertmsg = urldecode($alertmsg);
-			echo '<script language="javascript">';
-			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
-			echo '</script>';
-			$this->load->view('vendor/header');
-			$this->load->view('vendor/postproduct');
-			$this->load->view('vendor/footer');
-			
-	} */
-
-/* private function upload_files($nameid){
-    	//print_r($nameid);
-    //$countfiles = count($_FILES[$nameid]['name']);
+	}
+				
+private function upload_files($nameid){
+    	
 	$countfiles=1;
       // Looping all files
       for($i=0;$i<$countfiles;$i++){
@@ -180,5 +131,8 @@ class Vendor_add_negotiate extends CI_Controller {
  
       }
 	 return $datar;
-    } */
+    }
+		
+
+
 } 

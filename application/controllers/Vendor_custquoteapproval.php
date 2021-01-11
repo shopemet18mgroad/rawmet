@@ -35,6 +35,7 @@ class Vendor_custquoteapproval extends CI_Controller {
 		//$reqapproval = array('sellapproval'=>false);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
 		
+		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/custquoteapproval',$query);

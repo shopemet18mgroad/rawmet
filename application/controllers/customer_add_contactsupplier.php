@@ -150,8 +150,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 	
 	
 private function upload_files($nameid){
-    	//print_r($nameid);
-    //$countfiles = count($_FILES[$nameid]['name']);
+    	
 	$countfiles=1;
       // Looping all files
       for($i=0;$i<$countfiles;$i++){
