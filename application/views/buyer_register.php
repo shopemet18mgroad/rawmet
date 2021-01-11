@@ -12,7 +12,7 @@
           <div class="col-lg-12">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-2">Create an Account!</h1>
+                <h1 class="h4 text-gray-900 mb-2"> Buyer Registration Account!</h1>
 				
               </div>
              
@@ -20,30 +20,30 @@
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
 				<form action="<?php echo base_url();?>home_buyer_register" onsubmit ="return validateForm()" method="POST">
-				
-                    <input type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="Name">
+				<input type="text" class="form-control form-control-user" id="bcompanyname" name="bcompanyname" placeholder="Company Name">
                   </div>
                   
 				   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="bcompanyname" name="bcompanyname" placeholder="Company Name">
-                  </div>
-				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="bcompanytype" name="bcompanytype"  placeholder="Company Type" >
                   </div>
 				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="bcontactperson" name="bcontactperson" placeholder="Contact Person">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number" >
+                   <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number" >
+                  </div>
+				   <div class="col-sm-6 mt-2">
+                    
                   </div>
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="email" class="form-control form-control-user" id="bemail" name="bemail" placeholder="Email">
+				  <input type="text" class="form-control form-control-user" id="busername" name="busername"  placeholder="User Name">
+                    
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="busername" name="busername"  placeholder="User Name">
+                    <input type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="" readonly>
                   </div>
                 </div>
                 
@@ -58,10 +58,14 @@
                 </div>
 				<div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
-					<input type="text" class="form-control form-control-user pan" id="bpan" name="bpan"  placeholder="PAN" >
+				<input type="email" class="form-control form-control-user" id="bemail" name="bemail" placeholder="Email">
+			
                   </div>
                   <div class="col-sm-6 mb-3 mb-sm-2">
 					<input type="text" class="form-control form-control-user gst" id="bgst" name="bgst" placeholder="GST">
+                  </div>
+				   <div class="col-sm-6 mb-3 mb-sm-2">
+						<input type="text" class="form-control form-control-user pan" id="bpan" name="bpan"  placeholder="PAN">
                   </div>
 				  
                 </div>

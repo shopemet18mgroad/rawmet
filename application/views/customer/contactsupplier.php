@@ -37,14 +37,15 @@
 				?>
 				<div class="col-sm-3">
 				<div class="col-sm-4">
-				<div class="thumbnail mt-5">
+				<p style="color:purple;"><b><?php echo  $sqldata[0]->productname;?></b></p>
+						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
+				<div class="thumbnail">
 					<td><?php $img = unserialize( $sqldata[0]->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="100%"></td>
 				<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img[0];?>">
-				</div>	
-					<h4 style="color:purple;"><b><?php echo  $sqldata[0]->productname;?></b></h4>
-						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
-						
+				
+					
+					</div>		
 						
 				</div>
 				</div>
@@ -74,7 +75,7 @@
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo  $sqldata[0]->price;?>">
 							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
 							
-							<p class="mt-3">Stock Available at : <?php echo $sqldata[0]->pcities."|"; echo  $sqldata[0]->pstates;?></p>
+							<p class="mt-3"><b>Stock Available at :</b> <?php echo $sqldata[0]->pcities."|"; echo  $sqldata[0]->pstates;?></p>
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
 							
@@ -102,7 +103,7 @@
   
 					
 							<div class="form-row mt-5">
-								<label class="col-sm-6 col-form-label"  for="name">Quantity</label>
+								<label class="col-sm-6 col-form-label"  for="name"><b>Quantity</b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" />
 							<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
@@ -117,7 +118,7 @@
 								
 							</div>
 							<div class="form-row mt-2">
-								<label class="col-sm-6 col-form-label"  for="name">Your Price Per KG</label>
+								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price Per KG</b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name"/>
 								<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="bunits" name="bunits">

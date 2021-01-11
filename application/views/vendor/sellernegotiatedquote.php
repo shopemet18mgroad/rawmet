@@ -6,7 +6,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Seller Quote Negotiation
+            <h1 class="h3 mb-0 text-gray-800">Final Negotiation
 			</h1>
             
           </div>
@@ -30,12 +30,11 @@
 			<th>Category</th>
 			<th>Company Name</th>
 			<th>Supplier Price</th>
-			<th>Available Stocks</th>
 			<th>Location</th>
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
-			<th>Seller Quantity</th>
-			<th>Seller price</th>
+			<th style="color:orange;">Seller Quantity</th>
+			<th style="color:orange;">Seller price</th>
 			<th>  Action  </th>
 		
 			
@@ -47,19 +46,18 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<td><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
 			<td><?php echo $row->companyname;?></td>
-			<td><?php echo $row->price;?></td>
-			<td><?php echo $row->bquantity;?></td>
+			<td><?php echo $row->price."/"; echo $row->supplyunits;?></td>
 			<td><?php echo $row->pcities;?></td>
-			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
+			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
+			<td><?php echo $row->selprice.""; echo $row->sunits;?></td>
 			<td><?php echo $row->selqan."/"; echo $row->selunits;?></td>
 			<td style="color:orange;" ><b><?php  if($row->buyerapprove == 0) {echo 'Pending';}else if($row->buyerapprove == 2) {echo 'Rejected';}else if($row->buyerapprove == 1) {echo 'Approved!';}?></b></td>
 			

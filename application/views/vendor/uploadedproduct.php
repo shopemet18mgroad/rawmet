@@ -2,7 +2,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Manage Uploaded Product</h1>
+            <h1 class="h3 mb-0 text-gray-800">My Product List</h1>
            
           </div>
 
@@ -25,9 +25,7 @@
 		<th>Supply Ability</th>
 		<th>Status</th>
 		<th>options</th>
-		
-		
-      </tr>
+	</tr>
     </thead>
     <tbody>
 	
@@ -49,7 +47,10 @@
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 		<td><?php echo $row->supplyability;?></td>
-		<td><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
+
+		<td style="color:green;"><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
+
+
 		
 
 		<td style="display:inline-flex;">

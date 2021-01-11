@@ -2,7 +2,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Buyer Requirements Negotiated</h1>
+            <h1 class="h3 mb-0 text-gray-800">Seller Requirements Negotiated</h1>
            
           </div>
 
@@ -24,7 +24,7 @@
         <th>Quantity</th>
 		<th>Units</th>
 		<th> Buyer Price</th>
-		<th>Seller Price</th>
+		<th style="color:orange">Seller Price</th>
 		<th>Status</th>
 		
 		
