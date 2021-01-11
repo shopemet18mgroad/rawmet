@@ -12,7 +12,7 @@
           <div class="col-lg-12">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-2">Create an Account!</h1>
+                <h1 class="h4 text-gray-900 mb-2">Vendor's Registration Account!</h1>
 				
               </div>
 			  <form action="<?php echo base_url();?>home_seller_register" onsubmit ="return validateForm()" method="POST">
@@ -20,32 +20,29 @@
 			  <h3 class="h5 text-gray-700 mb-2">Contact Info</h3> 	
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="vname" name="vname" placeholder="Name">
+              
+					 <input type="text" class="form-control form-control-user" id="vcompanyname" name="vcompanyname" placeholder="Company Name">
                   </div>
                   
 				   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="vcompanyname" name="vcompanyname" placeholder="Company Name" 
->
+                  <input type="text" class="form-control form-control-user" id="vcompanytype"  name="vcompanytype"  placeholder="Company Type">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="vcompanytype"  name="vcompanytype"  placeholder="Company Type" 
->
+				<input type="text" class="form-control form-control-user" id="vcontactperson"  name="vcontactperson"  placeholder="Contact Person">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="vcontactperson"  name="vcontactperson"  placeholder="Contact Person">
+                    <input type="text" class="form-control form-control-user" id="vcontactnumber"  name="vcontactnumber"  placeholder="Contact Number">
                   </div>
-				   <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="vcontactnumber"  name="vcontactnumber"  placeholder="Contact Number" 
->
-                  </div>
+				  
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="email" class="form-control form-control-user" id="vemail"  name="vemail" placeholder="Email">
+				   <input type="text" class="form-control form-control-user" id="vusername"  name="vusername"   placeholder="User Name" onkeyup="validate_name()">
+                    
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="vusername"  name="vusername"   placeholder="User Name">
+                   <input type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
                   </div>
                 </div>
                 
@@ -62,20 +59,20 @@
                </div>
 			   <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user pan"id="vpan"  name="vpan"   placeholder="PAN" >
+				   <input type="email" class="form-control form-control-user" id="vemail"  name="vemail" placeholder="Email">
+                    
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user gst" id="vgst"  name="vgst"   placeholder="GST"
->
+				  <input type="text" class="form-control form-control-user pan"id="vpan"  name="vpan"   placeholder="PAN">
                   </div>
                 </div>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="vpcb"  name="vpcb"  placeholder="PCB license"
->
+				  <input type="text" class="form-control form-control-user gst" id="vgst"  name="vgst"   placeholder="GST">
                   </div>
-                  
-				  
+                    <div class="col-sm-6">
+				  <input type="text" class="form-control form-control-user" id="vpcb"  name="vpcb"  placeholder="PCB license">
+				   </div>
                </div>
 		 
 		     
@@ -248,4 +245,11 @@ var inputvalues = $(this).val();
 });    
 </script>
 
-  
+<script>
+ function validate_name(){
+	  var cat2 = document.getElementById('vusername').value;
+	 if(cat2){
+		  document.getElementById('vname').value = cat2 ;
+	 }
+ }
+</script>
