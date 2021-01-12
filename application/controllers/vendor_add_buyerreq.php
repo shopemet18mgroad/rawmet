@@ -29,7 +29,7 @@ class Vendor_add_buyerreq extends CI_Controller {
     }
 	 
 	public function index()
-		{ 
+	{
 	 if($this->input->post('bname')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
@@ -57,8 +57,8 @@ class Vendor_add_buyerreq extends CI_Controller {
 			 	
 				
 			$this->load->model('Admin_model');
-			$data1 = array('bname'=>$bname);
-			print_r($data1);die;
+		/* 	$data1 = array('bname'=>$bname);
+			//print_r($data1);die;
 		
 		$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){
@@ -66,12 +66,12 @@ class Vendor_add_buyerreq extends CI_Controller {
 				header('location: '.base_url().'vendor_negotiated/index_error/'.$datainserr);
 				die;
 			  }else{
-				
+				 */
          $datainserr = "Data Inserted Successfully";
-			$status = $this->Admin_model->insert('selquotenegotate',$data2);
+			$status = $this->Admin_model->insert('seller_mbuyreq',$data2);
 			header('location: ./vendor_negotiated/index/'.$datainserr);
 			
-			}
+			//}
 			
 		
 				$this->load->model('Admin_model');
@@ -90,4 +90,6 @@ class Vendor_add_buyerreq extends CI_Controller {
 		
 		
 	}
-	}
+	
+		}
+}
