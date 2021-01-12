@@ -39,7 +39,7 @@
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-				  <input type="text" class="form-control form-control-user" id="busername" name="busername"  placeholder="User Name">
+				  <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_bname()"  placeholder="User Name">
                     
                   </div>
                   <div class="col-sm-6">
@@ -237,4 +237,12 @@ var inputvalues = $(this).val();
 });      
     
 });    
+</script>
+<script>
+ function validate_bname(){
+	  var cat2 = document.getElementById('busername').value;
+	 if(cat2){
+		  document.getElementById('bname').value = cat2 ;
+	 }
+ }
 </script>
