@@ -147,6 +147,23 @@ if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|
 
 
  </script>
+ <script>
+  
+function validate_selnego(){
+
+	var selprice = document.getElementById("selprice").value;
+	var sunits = document.getElementById("sunits").value;
+	
+	
+
+if(selprice == '' || sunits == '' ||){
+		swal("Alert!",  "seller Price, Seller Quantity,  ", "error");
+		return false;
+	}
+	
+	
+}
+  </script>
 
 	  
 

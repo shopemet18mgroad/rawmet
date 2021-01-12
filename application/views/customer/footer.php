@@ -177,6 +177,24 @@ function validate_password(){
 
 
  </script>
+ <script>
+  
+function validate_neg(){
+
+	var bprice = document.getElementById("bprice").value;
+	var bunits = document.getElementById("bunits").value;
+
+
+if(bprice == '' || bunits == ''){
+		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
+		return false;
+	}
+
+	
+}
+  </script>
+  
+
  
  </body>
  </html>

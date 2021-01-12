@@ -95,7 +95,7 @@ class Vendor_postproduct extends CI_Controller {
 				header('location: '.base_url().'Vendor_postproduct/index_error/'.$datainserr);
 				die;
 			  }else{
-				  //echo "HI";
+				 
 			  
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('sellerpostproduct',$data2);

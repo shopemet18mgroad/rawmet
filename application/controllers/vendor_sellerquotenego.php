@@ -34,15 +34,8 @@ class Vendor_sellerquotenego extends CI_Controller {
 	
 		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
-			//print_r($query); die;
-			/* if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
-			$datainserr = "Invalid Login Session";
-			header('location: '.base_url().'login/index_error/'.$datainserr);
-			die;
-		}else{
-			$sess = array('sessi'=>$this->session->userdata('username'));
-
-			$active = array('busername'=>$sess['sessi']) */;
+		
+	  
 		
 			
 		$this->load->view('vendor/header',$sess);

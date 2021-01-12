@@ -75,17 +75,28 @@ class Vendor_add_negotiate extends CI_Controller {
 			
 			
 			
-			$data1 = array('productid'=>$productid);
+			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'uploadporder' =>$uploadporder,'selprice'=>$selprice,'sunits' =>$sunits,'selqan'=>$selqan,'selunits'=>$selunits,);
+			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'uploadporder' =>$uploadporder,'selprice'=>$selprice,'sunits' =>$sunits,'selqan'=>$selqan,'selunits'=>$selunits);
+			
+			/* 	$this->load->model('Admin_model');
+			  if($this->Admin_model->check('selquotenegotate', $data1)){
+				 $datainserr = "ProductId already exist";
+				header('location: '.base_url().'vendor_custquoteapproval/index_error/'.$datainserr);
+				die;
+			  }else{ */
+				 
+			  
+		$datainserr = "Data Inserted Successfully";
+			$status = $this->Admin_model->insert('selquotenegotate',$data2);
+			header('location: '.base_url().'vendor_sellernegotiatedquote/index/'.$datainserr);
+			//}
 		
 
 
 		
 			  
-			$datainserr = "Data Inserted Successfully";
-			$status = $this->Admin_model->insert('selquotenegotate',$data2);
-			header('location: '.base_url().'vendor_sellernegotiatedquote/index/'.$datainserr);
+			
 	
 	 }
 			
@@ -94,6 +105,17 @@ class Vendor_add_negotiate extends CI_Controller {
 				header('location: '.base_url().'login/index_error/'.$datainserr);
 				die;
 			}
+	}
+	public function index_error(){
+			$alertmsg = $this->uri->segment(3);
+			$alertmsg = urldecode($alertmsg);
+			echo '<script language="javascript">';
+			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
+			echo '</script>';
+			$this->load->view('vendor/header');
+			$this->load->view('vendor/sellernegotiatedquote');
+			$this->load->view('vendor/footer');
+			
 	}
 				
 private function upload_files($nameid){

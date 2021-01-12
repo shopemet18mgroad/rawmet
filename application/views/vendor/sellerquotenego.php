@@ -138,8 +138,8 @@
 								
 							</div>
 							<div class="form-row mt-2">
-								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price Per KG</b></label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="selqan" placeholder="price" id="selqan" [(ngModel)]="person.name"/>
+								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price </b></label>
+								<input type="text" class="form-control col-sm-2 mr-2" name="selqan" placeholder="price" id="selqan" [(ngModel)]="person.name"/>/
 								<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="selunits" name="selunits">
 						<option value="KG">KG</option>
@@ -158,7 +158,7 @@
 						</div>
 					 
 				  </div>
-								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit">Submit</a>
+								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Submit</a>
 								 <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit">Cancel</a>
 							</div>
 							<p><b>Productname:</b><?php echo $sqldata[0]->productname;?></p>
@@ -204,7 +204,6 @@
 
       </div>
 	  
-	  
-      <!-- End of Main Content -->
+	 
 
    

@@ -118,8 +118,8 @@
 								
 							</div>
 							<div class="form-row mt-2">
-								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price Per KG</b></label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name"/>
+								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price </b></label>
+								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name"/>/
 								<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="bunits" name="bunits">
 						<option value="KG">KG</option>
@@ -140,7 +140,11 @@
 							
 							
 							
-							<a type="submit" href="<?php echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($sqldata[0]->vname);?>"  role="submit"><button name="submit"  class="btn btn-info btn-sm mt-2 offset-sm-5">Cancel</button></a>
+							<a type="submit" href="<?php echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($sqldata[0]->vname);?>" onsubmit="return validate_neg()  role="submit">
+							
+
+							
+							
 							</center>	
 								
 							 <!--<a type="submit" href="<?php// echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($row->vname);?>"  role="submit"><button name="submit"  class="btn btn-info btn-sm mt-2 offset-sm-5">Submit</button></a>-->

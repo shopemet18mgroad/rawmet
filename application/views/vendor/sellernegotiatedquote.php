@@ -35,7 +35,7 @@
 			<th>Buyer Price</th>
 			<th style="color:orange;">Seller Quantity</th>
 			<th style="color:orange;">Seller price</th>
-			<th>  Action  </th>
+			<th> Buyer's Action  </th>
 		
 			
       </tr>

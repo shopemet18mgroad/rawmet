@@ -58,13 +58,23 @@ class Customer_add_contactsupplier extends CI_Controller {
 			$uploadproductimage  = serialize($this->input->post('uploadproductimage')); 
 	
 	
-	
-			$data = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage );
+	      // $data1 = array('vname'=>$vname );
+			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage );
 			//print_r($data2);die;
+		/* 	$this->load->model('Admin_model');
+			  if($this->Admin_model->check('quotes', $data1)){
+				 $datainserr = "ProductId already exist";
+				header('location: '.base_url().'customer_sellernegotiatedquote/index_error/'.$datainserr);
+				die;
+			  }else{ */
+				 
+			  
+				$datainserr = "Data Inserted Successfully";
+			$status = $this->Admin_model->insert('quotes',$data2);
+			header('location: ./customer_sellernegotiatedquote/index/'.$datainserr);
+			//}
 
-			$datainserr = "Data Inserted Successfully";
-			$status = $this->Admin_model->insert('quotes',$data);
-			header('location: ./customer_sellernegotiatedquote/index/'.$datainserr); 
+			
 		}
 			
 		/* 	if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
