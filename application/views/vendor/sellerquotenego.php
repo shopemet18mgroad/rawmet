@@ -51,7 +51,8 @@
 			
 				
 									
-							
+								<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
+							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
 						
 							
 							
@@ -117,8 +118,7 @@
 							
 							<center><b>Seller Negotiate</b></center>
 							<hr class="sidebar-divider">
-								<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
-							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
+							
 							
   
 					

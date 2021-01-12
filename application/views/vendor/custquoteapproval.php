@@ -22,7 +22,6 @@
     <thead class="bg-primary text-white">
       <tr>   
 	        <th>Image</th>
-			<th>Supplier Name</th>
 			<th>Buyer Name</th>
 			<th>Product Name</th>
 			
@@ -32,8 +31,8 @@
 			<th>Supplier Price</th>
 			<th>Available Stocks</th>
 			<th>Location</th>
-			<th>Buyer Quantity</th>
-			<th>Buyer Price</th>
+			<th style="color:orange;">Buyer Quantity</th>
+			<th style="color:orange;">Buyer Price</th>
 			<th>Action</th>
       </tr>
     </thead>
@@ -44,7 +43,6 @@
 				?>
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
-			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
@@ -53,7 +51,7 @@
 			<td><?php echo $row->price;?></td>
 			<td><?php echo $row->supplyability;?></td>
 			<td><?php echo $row->pcities;?></td>
-			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
+			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 						
 			
