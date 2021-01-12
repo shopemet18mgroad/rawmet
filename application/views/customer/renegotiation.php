@@ -6,7 +6,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Seller Quote Negotiated Value
+            <h1 class="h3 mb-0 text-gray-800">Seller's Quote Negotiated Value
 			</h1>
             
           </div>
@@ -51,7 +51,7 @@
 			<td><?php echo $row->companyname;?></td>
 			<td><?php echo $row->price;?></td>
 			<td><?php echo $row->pcities;?></td>
-			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
+			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			<td>

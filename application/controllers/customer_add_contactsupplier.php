@@ -91,7 +91,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 				
 				
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/contactsupplier');
+		$this->load->view('customer/sellernegotiatedquote');
 		$this->load->view('customer/footer');
 			 
 	 
