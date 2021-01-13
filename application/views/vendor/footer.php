@@ -60,9 +60,48 @@
   <script src="<?php echo base_url()."web_files/";?>vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="<?php echo base_url()."web_files/";?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
  <script src="<?php echo base_url()."web_files/";?>js/demo/datatables-demo.js"></script>
- 
- 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  <script>
+  
+function validate_Postproduct(){
+
+	var description = document.getElementById("description").value;
+	var productname = document.getElementById("productname").value;
+	var quantity = document.getElementById("quantity").value;
+	var minoderquant = document.getElementById("minoderquant").value;
+	var supplyability = document.getElementById("supplyability").value;
+	var quantpermonth = document.getElementById("quantpermonth").value;
+	var units = document.getElementById("units").value;
+	var aifeatured = document.getElementById("aifeatured").value;
+	var payable = document.getElementById("payable").value;
+	var estdeltime = document.getElementById("estdeltime").value;
+	var uploadproductimage = document.getElementById("uploadproductimage").value;
+
+	
+
+if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|| supplyability == ''|| quantpermonth == '' || units == '' || aifeatured == '' || fobprice == '')  {
+		swal("Alert!",  "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
+		return false;
+	}
+
+  if (payable.value == "") {
+    swal("Alert!","Please enter your Payable to Rawmet.","error");
+    return false;
+  }
+	else if (estdeltime.value == "") {
+    swal("Alert!","Please enter your Estimated Delivary Time.","error");
+    return false;
+  }
+  else if (uploadproductimage.value == "") {
+    swal("Alert!","Upload Image.","error");
+    return false;
+  }
+	
+	
+}
+  </script>
+ <script>
+ 
  function product_id(){
 	 var cat = document.getElementById('category').value;
 	  var cat2 = document.getElementById('productname').value;
@@ -95,43 +134,7 @@
 
  </script>
 
- <script>
-  
-function validate_postproduct(){
 
-	var description = document.getElementById("description").value;
-	var productname = document.getElementById("productname").value;
-	var quantity = document.getElementById("quantity").value;
-	var minoderquant = document.getElementById("minoderquant").value;
-	var supplyability = document.getElementById("supplyability").value;
-	var quantpermonth = document.getElementById("quantpermonth").value;
-	var units = document.getElementById("units").value;
-	var aifeatured = document.getElementById("aifeatured").value;
-	var fobprice = document.getElementById("fobprice").value;
-
-	
-
-if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|| supplyability == ''|| quantpermonth == '' || units == '' || aifeatured == '' || fobprice == '')  {
-		swal("Alert!",  "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
-		return false;
-	}
-
-  if (payable.value == "") {
-    swal("Alert!","Please enter your Payable to Rawmet.","error");
-    return false;
-  }
-	else if (estdeltime.value == "") {
-    swal("Alert!","Please enter your Estimated Delivary Time.","error");
-    return false;
-  }
-  else if (uploadproductimage.value == "") {
-    swal("Alert!","Upload Image.","error");
-    return false;
-  }
-	
-	
-}
-  </script>
    
  <script>
 		function approve_req(varab){

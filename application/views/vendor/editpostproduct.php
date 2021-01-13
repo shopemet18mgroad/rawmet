@@ -309,15 +309,7 @@
                     
                 </div>
 				 
-				<div class="col-sm-4 mt-4">
-					<label for="fobprice">Is Fob Price?</label>
-					<label class="radio-inline"><input type="radio" name="fobprice" id="fobprice" checked> Yes</label>
-					<label class="radio-inline"><input type="radio" name="fobprice"  id="fobprice">No</label>
-				</div>
-				<div class="col-sm-4 mt-4">
-					<label class="checkbox-inline">
-					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured">Add into Featured</label>
-				</div>
+		
 					<div class="col-sm-4 mt-4">
 					
 								<img src="<?php if(unserialize($sqldata[0]->uploadproductimage) != NULL){
@@ -341,10 +333,12 @@
 							</div>
 				
 					<div class="col-md-12 text-center mt-4">
+						<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
+				?>
 						
-						
-						<center>		
-                <input type="submit" id="submitBtn" class="btn btn-primary" name="submit" value="Update">	</center>	
+						<center>	
+							
+                <input type="submit" id="submitBtn" a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_postproduct_update/approve_product/".$proid;?>" class="btn btn-primary" name="submit" value="Update">	</center>	
 					</div>	
 					
 				</div>

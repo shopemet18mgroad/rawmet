@@ -323,7 +323,44 @@
 						  
 						  <!--<input type="submit" name="submit" id="btn1"  value="Submit" class="btn btn-primary btn-sm">-->
 						
-						<button type="submit" href="<?php echo base_url();?>"class="btn btn-primary btn-sm" name="submit"  onclick="return  validate_postproduct()" role="button">Submit</a>
+						<button type="submit" href="<?php echo base_url();?>"class="btn btn-primary btn-sm" name="submit"  onclick="return  validate_Postproduct()" role="button">Submit</a>
+						 <script>
+  
+function validate_Postproduct(){
+
+	var description = document.getElementById("description").value;
+	var productname = document.getElementById("productname").value;
+	var quantity = document.getElementById("quantity").value;
+	var minoderquant = document.getElementById("minoderquant").value;
+	var supplyability = document.getElementById("supplyability").value;
+	var quantpermonth = document.getElementById("quantpermonth").value;
+	var units = document.getElementById("units").value;
+	var aifeatured = document.getElementById("aifeatured").value;
+	var fobprice = document.getElementById("fobprice").value;
+
+	
+
+if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|| supplyability == ''|| quantpermonth == '' || units == '' || aifeatured == '' || fobprice == '')  {
+		swal("Alert!",  "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
+		return false;
+	}
+
+  if (payable.value == "") {
+    swal("Alert!","Please enter your Payable to Rawmet.","error");
+    return false;
+  }
+	else if (estdeltime.value == "") {
+    swal("Alert!","Please enter your Estimated Delivary Time.","error");
+    return false;
+  }
+  else if (uploadproductimage.value == "") {
+    swal("Alert!","Upload Image.","error");
+    return false;
+  }
+	
+	
+}
+  </script>
 					</div>	
 					
 				</div>

@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard</title>
+  <title> Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url()."web_files/";?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,14 @@
 
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url()."web_files/";?>css/sb-admin-2.min.css" rel="stylesheet">
-  	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+ 
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <script src=" https://github.com/superRaytin/paginationjs"></script>
+   <script src=" http://pagination.js.org"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
   
  
 
@@ -67,7 +74,7 @@
         </div>
 		   <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-shopping-cart"></i>
+    <i class='fas fa-envelope-open-text'></i>
           <span>Quotes Negotiation</span></a>
 		 <div id="collapseProduct" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -83,7 +90,9 @@
 	
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment3" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-shopping-cart"></i>
+      
+	         <i class="fas fa-fw fa-shopping-cart"></i>
+	    
           <span>Requirements</span></a>
 		 <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -94,7 +103,7 @@
       </li>
 	  	   <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct4" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-shopping-cart"></i>
+       <i class="fa fa-list" aria-hidden="true"></i>
           <span>Purchase Order</span></a>
 		 <div id="collapseProduct4" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -105,7 +114,7 @@
       </li>
 	  	   <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct3" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-shopping-cart"></i>
+   <i class='fas fa-dollar-sign'></i>
           <span>Finance</span></a>
 		 <div id="collapseProduct3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
