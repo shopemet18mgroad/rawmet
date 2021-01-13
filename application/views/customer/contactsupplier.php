@@ -136,7 +136,7 @@
 						
 							<center>
 							
-							<input type="submit" name="submit"  role="submit" value="Submit" class="btn btn-info btn-sm mt-2" style="font-size:13px">
+							<input type="submit" name="submit" onclick="return validatepostreq()" role="submit" value="Submit" class="btn btn-info btn-sm mt-2" style="font-size:13px" >
 							
 							
 							
@@ -195,4 +195,22 @@
 	  
       <!-- End of Main Content -->
 
-   
+    <script>
+  
+function validatepostreq(){
+
+	var bquantity = document.getElementById("bquantity").value;
+	var bsupplyability = document.getElementById("bsupplyability").value;
+	var bprice = document.getElementById("bprice").value;
+	var bunits = document.getElementById("bunits").value;
+
+
+	
+
+if(bquantity == '' || bsupplyability == '' || bprice == '' || bunits == '' ){
+swal("Alert!","You can negotiate ony once and cannot leave any field blank!","error");
+		return false;
+	}
+
+}
+  </script>
