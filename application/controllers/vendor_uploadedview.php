@@ -30,6 +30,7 @@ class Vendor_uploadedview extends CI_Controller {
 		$this->load->model('Admin_model');
 		
 	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+
 		
 		$active = array('productid'=>$productid);
 		

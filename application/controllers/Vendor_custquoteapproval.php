@@ -31,8 +31,7 @@ class Vendor_custquoteapproval extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('vname'=>$sess['sessi'],'sellapproval'=>false);
-		
-		//$reqapproval = array('sellapproval'=>false);
+	
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
 		
 		
@@ -43,35 +42,45 @@ class Vendor_custquoteapproval extends CI_Controller {
 			}
 		
 	}
-		public function approve_quotes(){
 		
-		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		
+		public function approve_quotes(){
+			
+		$this->load->model('Admin_model');
+		
+		
+		$productid = str_ireplace('-','/', $this->uri->segment(3));
+	
+		$busername = ($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$retrivevaltmp);
+		$retriveval = array('busername'=>$busername,'productid'=>$productid);
+
 		
 		
 		$this->load->model('Admin_model');
 		$app= array('sellapproval'=>true);
 		$query = $this->Admin_model->update_custom('quotes', $app, $retriveval, $retriveval);
-		if($retriveval){
-			echo "HI";
-		}else{
-			echo "BYE";
-		}
+		header('location: '.base_url().'Vendor_custquoteapproval/index/'.urldecode($productid)."/".urldecode($busername));
+		
+		die;
 	
 	}
 
 	public function reject(){
 		$this->load->helper('url');
-		$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
-		
-		$data2 = array('sellapproval'=>2);
-		$updatech = array('productid'=>$retrivevaltmp);
-		$this->load->model('Admin_model');
-		
-		$status = $this->Admin_model->update_custom('quotes',$data2,$updatech,$updatech);
+	
+		$productid = str_ireplace('-','/', $this->uri->segment(3));
+	
+		$busername = ($this->uri->segment(4));
 
-		header('location: '.base_url().'Vendor_custquoteapproval/index/'.urlencode($retrivevaltmp3));
+		$retriveval = array('busername'=>$busername,'productid'=>$productid);
+
+		
+		
+		$this->load->model('Admin_model');
+		$app= array('sellapproval'=>2);
+		$query = $this->Admin_model->update_custom('quotes', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Vendor_custquoteapproval/index/'.urldecode($productid)."/".urldecode($busername));
 		
 		die;
 	}
