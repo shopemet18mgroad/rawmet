@@ -88,7 +88,7 @@
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td> <input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>"></td>
+								<td> <input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" readonly></td>
 							</tr> 
 							<tr>
 								<td>Password</td>
@@ -114,14 +114,7 @@
 								<td>Pincode</td>
 								<td><input class="form-control w-50" type="text" id="vpincode" name="vpincode" value="<?php echo $sqldata[0]->vpincode;?>"></td>
 							</tr>
-                              <tr>
-								<td>Business Type</td>
-								<td>Rajkot</td>
-							</tr>
-                             <tr>
-								<td>Business description</td>
-								<td>Verified</td>
-							</tr>
+                            
 							
 					   </tbody>
 					</table>

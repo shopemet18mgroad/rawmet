@@ -39,7 +39,7 @@
     <tbody>
 	 <?php foreach($sqldata as $row){?>
       <tr>
-	  <?php $proid = str_ireplace('/','-',$row->productid);
+	  <?php $proid =str_ireplace('/','-',$row->productid);
 				?>
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
@@ -55,10 +55,11 @@
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 						
 			
-		<td>	<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid;?>"><button type="button" class="btn btn-danger">Reject</button></a>
-				
-			
-			<button type="submit" name="submit" id="<?php echo $proid;?>" onclick="vendor_quotesapproval(this.id)" class="btn btn-info btn-sm">Approve</button>
+		<td>	<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger">Reject</button></a>
+		
+					<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-primary">Approve</button></a>
+					
+
 			
 		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".$proid."/".urlencode($row->vname);?>"  class="btn btn-success btn-sm text-white delete-confirm">Renegotation</a></center></td>
       </tr>      
