@@ -53,10 +53,21 @@ class Customer_renegotiation extends CI_Controller {
 	}
 	
 	public function approve_quote(){
+			
+		$compnameurl = $this->uri->segment(3);
+		$compnameurl = urldecode($compnameurl);
+		$compnameurl2 = explode('|',$compnameurl);
+		//$compnameurl3 = explode('|',$compnameurl);
+		$compname = $compnameurl2[0];
+	
+		$comp = str_ireplace('-','/',$compnameurl2[1]);
+		//$com = urldecode($compnameurl3[2]);
+		$this->load->model('Admin_model');
 		
-		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		
+		//$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 
-		$retriveval = array('productid'=>$retrivevaltmp);
+		$retriveval = array('productid'=>$comp,'vname'=>$compname);
 		
 		
 		$this->load->model('Admin_model');
@@ -73,10 +84,19 @@ class Customer_renegotiation extends CI_Controller {
 	
 	public function reject(){
 		$this->load->helper('url');
-		$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
+		$compnameurl = $this->uri->segment(3);
+		$compnameurl = urldecode($compnameurl);
+		$compnameurl2 = explode('|',$compnameurl);
+		//$compnameurl3 = explode('|',$compnameurl);
+		$compname = $compnameurl2[0];
+	
+		$comp = str_ireplace('-','/',$compnameurl2[1]);
+		//$com = urldecode($compnameurl3[2]);
+		$this->load->model('Admin_model');
+		//$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
 		
 		$data2 = array('buyerapprove'=>2);
-		$updatech = array('productid'=>$retrivevaltmp);
+		$updatech = array('productid'=>$comp,'vname'=>$compname);
 		$this->load->model('Admin_model');
 		
 		$status = $this->Admin_model->update_custom('selquotenegotate',$data2,$updatech,$updatech);
