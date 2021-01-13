@@ -140,7 +140,7 @@
 							
 							
 							
-							<a type="submit" href="<?php echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($sqldata[0]->vname);?>" onsubmit="return validate_neg()  role="submit">
+							<!--<a type="submit" href="<?php //echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($sqldata[0]->vname);?>" onsubmit="return validate_neg()  role="submit">-->
 							
 
 							
