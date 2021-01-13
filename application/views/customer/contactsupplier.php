@@ -136,7 +136,7 @@
 						
 							<center>
 							
-							<input type="submit" name="submit" onclick="return validatepostreq()" role="submit" value="Submit" class="btn btn-info btn-sm mt-2" style="font-size:13px" >
+							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="Submit" class="btn btn-info btn-sm mt-2" style="font-size:13px" >
 							
 							
 							
@@ -197,7 +197,7 @@
 
     <script>
   
-function validatepostreq(){
+function validatepost(){
 
 	var bquantity = document.getElementById("bquantity").value;
 	var bsupplyability = document.getElementById("bsupplyability").value;
