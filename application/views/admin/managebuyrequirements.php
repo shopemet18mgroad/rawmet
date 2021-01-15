@@ -26,8 +26,8 @@
 			<th>Buyer Name</th>
 			<th>company Name</th>
 			<th>Description</th>
+			<th>Price</th>
 			<th>Quantity</th>
-			<th>Units</th>
 			<th>Required Date</th>
 			<th>Last Date</th>
 			<th>Email</th>
@@ -44,15 +44,16 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->bname;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
+		
 			<td><?php echo $row->description;?></td>
-			<td><?php echo $row->quantity;?></td>
-			<td><?php echo $row->units;?></td>
+				<td><?php echo $row->price."/";echo $row->priceperkg;?></td>
+			<td><?php echo $row->quantity."  ";echo $row->units;?></td>
 			<td><?php echo $row->requireddate;?></td>
 			<td><?php echo $row->lastdate;?></td>
 			<td><?php echo $row->email;?></td>
 			<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
-			<td><button type="submit" name="submit" id="<?php echo $proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-info btn-sm">Approve</button></td>
+			<td><button type="submit" name="submit" id="<?php  echo $row->bname.'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-info btn-sm">Approve</button></td>
 		
       </tr>      
      <?php }?>	
