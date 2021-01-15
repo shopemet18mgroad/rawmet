@@ -16,13 +16,15 @@ class Customer_quotation extends CI_Controller {
 	  
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
-		$aucf = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-			print_r($bnam );die;
-		$bnam = urldecode($this->uri->segment(4));
+		
+		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+			
+		$bquantity = urldecode($this->uri->segment(4));
+		$bprice = urldecode($this->uri->segment(4));
 		
 		
 		
-			$active = array('productid'=>$aucf);
+	
 		
 				
 				
@@ -30,9 +32,9 @@ class Customer_quotation extends CI_Controller {
 			
 			
 			
-			//$active3 = array('bname'=>$bnam);
+			$active3 = array('productid'=>$productid,'bquantity'=>bquantity,'bprice'=>bprice);
 			
-			$query = $this->Admin_model->getdatafromtable('selquotenegotate', $active);
+			$query = $this->Admin_model->getdatafromtable('selquotenegotate', $active3);
 			//print_r($query); die;
 			
 			//$query2 = $this->Admin_model->getdatafromtable('vendor_register', $active);
