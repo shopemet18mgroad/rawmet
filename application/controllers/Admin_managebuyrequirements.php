@@ -35,11 +35,18 @@ class Admin_managebuyrequirements extends CI_Controller {
 	
 	public function approve_buyingrequ(){
 		
-		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		//$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 
-		$retriveval = array('productid'=>$retrivevaltmp);
-		
-		
+		//$retriveval = array('productid'=>$retrivevaltmp);
+		$compnameurl = $this->uri->segment(3);
+		$compnameurl = urldecode($compnameurl);
+		$compnameurl2 = explode('|',$compnameurl);
+		$compname = $compnameurl2[0];
+	
+		$comp = str_ireplace('-','/',$compnameurl2[1]);
+		$this->load->model('Admin_model');
+
+		$retriveval = array('productid'=>$comp,'bname'=>$compname);
 		$this->load->model('Admin_model');
 		$app= array('adapproval'=>true);
 		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
