@@ -15,14 +15,14 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	  <th>Supplier Name</th>
 	  <th>Product Id</th>
         <th>Product Name</th>
         <th>Category</th>
         <th>Commission to Rawmet</th>
 		
 	    
-		<th>Supplier Name</th>
-		<th>User Name</th>
+
 		<th>Image</th>
 		<th>Status</th>
 
@@ -39,18 +39,19 @@
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+					<td><?php echo $row->vname;?></td>
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
          <td><?php echo $row->payable?></td>
-		<td><?php echo $row->vname;?></td>
-		<td><?php echo $row->vusername;?></td>
+
+		
 		
 
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	
-		<td><?php  if($row->pooptions == 0) {echo 'Paid';}else if($row->pooptions == 2) {echo 'unpaid';}else if($row->pooptions == 1) {echo 'Approved';}?></td>
+		<td style="color:orange";><?php  if($row->pooptions == 0) {echo 'UnPaid';}else if($row->pooptions == 2) {echo '';}else if($row->pooptions == 1) {echo 'Paid';}?></td>
 		
 
 

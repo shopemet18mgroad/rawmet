@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_adminvendorproducts extends CI_Controller {
+class Admin_purchaseoder extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,44 +17,36 @@ class Admin_adminvendorproducts extends CI_Controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 
 	 */
-	 
 	public function index()
 	{
-			
+		$this->load->helper('url');
 		$this->load->model('Admin_model');
 		$this->load->library('session');
-$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
-		$this->load->model('Admin_model');
 		
+			$pooptions = array('pooptions'=>false);
+			//print_r($pooptions);die;
+		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$pooptions);
 		
-	
-		$poptions = array('poptions'=>false);
-		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$poptions);
 		
 		$adac['sqldata']= $query;
-		//print_r($adac['sqldata']);die;
-		
-			//$active = array('vusername'=>$sess['sessi']);
-		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
+			}	
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('ausername'=>$sess['sessi']);
+
+		
 		
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/adminvendorproducts',$adac);
+		$this->load->view('admin/purchaseoder',$adac);
 		$this->load->view('admin/footer');
-		$this->load->helper('url');
-
-		}
-	}
 		
-		public function approve_product(){
+	}
+	
+	public function approve_paid(){
 		
 		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
          $vname = urldecode($this->uri->segment(4));
@@ -64,32 +56,13 @@ $this->load->library('session');
 		
 		
 		$this->load->model('Admin_model');
-		$app= array('poptions'=>true);
+		$app= array('pooptions'=>true);
 		$query = $this->Admin_model->update_custom('sellerpostproduct', $app, $retriveval, $retriveval);
 		if($retriveval){
-			header('location: '.base_url().'Admin_adminvendorproducts/index/'.urlencode($retriveval));
+			header('location: '.base_url().'admin_purchaseoder/index/'.urlencode($retriveval));
 		}else{
 			echo "BYE";
 		}
 	
 	}
-		public function reject(){
-		$this->load->helper('url');
-		$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
-		//$retrivevaltmp2 = urldecode($this->uri->segment(4));
-		//$retrivevaltmp3 = urldecode($this->uri->segment(5));
-		$data2 = array('poptions'=>2);
-		$updatech = array('productid'=>$retrivevaltmp);
-		$this->load->model('Admin_model');
-		//$data['sqldata'] = $this->Admin_model->getdatafromtable('auction',$retriveval);
-		$status = $this->Admin_model->update_custom('sellerpostproduct',$data2,$updatech,$updatech);
-		// $status = $this->Admin_model->insert('sellerprofile', $data2);
-		header('location: '.base_url().'Admin_adminvendorproducts/index/'.urlencode($retrivevaltmp3));
-		
-		die;
-	}
-
-			
-	
-	
 }

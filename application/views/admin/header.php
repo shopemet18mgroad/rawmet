@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>Admin Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url()."web_files/";?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -102,7 +102,7 @@
 	  
 	    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>Admin_adminvendorproducts">
-          <i class="fas fa-fw fa-shopping-cart"></i>
+           <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Avaliable Stocks</span></a>
       </li>
 	  
@@ -114,20 +114,16 @@
 	  
 	   <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>Admin_customerquotes">
-          <i class="fas fa-fw fa-shopping-cart"></i>
+          <i class='fas fa-envelope-open-text'></i>
           <span>Customer Quotes</span></a>
       </li>
-	  
-	  
 	  <li class="nav-item">
-        
-		<div id="manage" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <!--<div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php// echo base_url();?>admin_manageseller">Vendor</a>
-            <a class="collapse-item" href="<?php //echo base_url();?>admin_managebuyer">Buyer</a>
-          </div>-->
-        </div>
+        <a class="nav-link" href="<?php echo base_url();?>Admin_purchaseoder">
+       <i class='fas fa-dollar-sign'></i>
+          <span>Payable money</span></a>
       </li>
+	  
+	
 	  
 
 

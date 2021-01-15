@@ -94,7 +94,7 @@
 	  
 	   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment8" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-money-bill-alt"></i>
+         <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Approved Requirements</span></a>
 		  <div id="payment8" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -117,7 +117,7 @@
 	  
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment3" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-money-bill-alt"></i>
+          <i class='fas fa-envelope-open-text'></i>
           <span>Ongoing Negotiation</span></a>
 		  <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -129,7 +129,7 @@
       </li>
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-money-bill-alt"></i>
+         <i class='fas fa-envelope-open-text'></i>
           <span>Finalized Negotiation</span></a>
 		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -142,7 +142,7 @@
 	  
 	   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment5" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-money-bill-alt"></i>
+     <i class="fa fa-list" aria-hidden="true"></i>
           <span>Purchase Order</span></a>
 		  <div id="payment5" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
