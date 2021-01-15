@@ -77,9 +77,23 @@ class Customer_negotiated extends CI_Controller {
 
 public function approve_requ(){
 		
-		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		
+		$compnameurl = $this->uri->segment(3);
+		
+		
+		$compnameurl = urldecode($compnameurl);
+		$compnameurl2 = explode('|',$compnameurl);
+		//$compnameurl3 = explode('|',$compnameurl);
+		$compname = $compnameurl2[0];
+	
+		$comp = str_ireplace('-','/',$compnameurl2[1]);
+		//$com = urldecode($compnameurl3[2]);
+		$this->load->model('Admin_model');
+		
+		
+		//$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 
-		$retriveval = array('productid'=>$retrivevaltmp);
+		$retriveval = array('productid'=>$comp,'vusername'=>$compname);
 		
 		
 		$this->load->model('Admin_model');
@@ -96,10 +110,21 @@ public function approve_requ(){
 	
 	public function reject(){
 		$this->load->helper('url');
+		
+		$compnameurl = $this->uri->segment(3);
+		
+		
+		$compnameurl = urldecode($compnameurl);
+		$compnameurl2 = explode('|',$compnameurl);
+		$compname = $compnameurl2[0];
+	
+		$comp = str_ireplace('-','/',$compnameurl2[1]);
+		
+		
 		$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
 		
 		$data2 = array('bapprove'=>2);
-		$updatech = array('productid'=>$retrivevaltmp);
+		$updatech = array('productid'=>$comp,'vusername'=>$compname);
 		$this->load->model('Admin_model');
 		
 		$status = $this->Admin_model->update_custom('seller_mbuyreq',$data2,$updatech,$updatech);
