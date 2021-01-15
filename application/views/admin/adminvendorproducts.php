@@ -67,7 +67,7 @@
 		
 		
 		
-		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid;?>"><button type="button" class="btn btn-success">Reject</button></a></td>
+		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Reject</button></a></td>
 
         
 <?php }?>	

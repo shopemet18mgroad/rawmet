@@ -75,16 +75,18 @@ $this->load->library('session');
 	}
 		public function reject(){
 		$this->load->helper('url');
-		$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
-		//$retrivevaltmp2 = urldecode($this->uri->segment(4));
-		//$retrivevaltmp3 = urldecode($this->uri->segment(5));
+		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+         $vname = urldecode($this->uri->segment(4));
+
+		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		
 		$data2 = array('poptions'=>2);
-		$updatech = array('productid'=>$retrivevaltmp);
+	
 		$this->load->model('Admin_model');
-		//$data['sqldata'] = $this->Admin_model->getdatafromtable('auction',$retriveval);
-		$status = $this->Admin_model->update_custom('sellerpostproduct',$data2,$updatech,$updatech);
-		// $status = $this->Admin_model->insert('sellerprofile', $data2);
-		header('location: '.base_url().'Admin_adminvendorproducts/index/'.urlencode($retrivevaltmp3));
+		
+		$status = $this->Admin_model->update_custom('sellerpostproduct',$data2,$retriveval,$retriveval);
+		
+		header('location: '.base_url().'Admin_adminvendorproducts/index/'.urlencode($retriveval));
 		
 		die;
 	}
