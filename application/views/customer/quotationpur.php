@@ -77,7 +77,7 @@ table-border
 </style>
 </head>
 <body>
-<?php echo $data;die;?>
+
 <p><center><img src="<?php echo base_url()."web_files/";?>img/Rawmet.png"  class="img-fluid" alt="" width="20%;"></center></p>
 <table style="float:left; padding:2px">
   <tr>
@@ -94,8 +94,8 @@ table-border
   
 </table> </div>
 
-<p><b> ADDRESS:</b><br><?php echo $sqldata[0]->vname;?></p>
-<p><b> TO:</b><?php echo $sqldata[0]->vaddress;?><br>Plot No 333, 2nd Floor, C D Street,<br> Opp N T Pet, Vasudev Road Cross,<br> Bengaluru, Karnataka 560002</p><br>
+<p><b> ADDRESS:</b><br></p>
+<p><b> TO:</b><br>Plot No 333, 2nd Floor, C D Street,<br> Opp N T Pet, Vasudev Road Cross,<br> Bengaluru, Karnataka 560002</p><br>
 <p><b>Quotation Prepared By:</b>Shopemet Network Private Limited</p>
 
 
@@ -111,8 +111,8 @@ table-border
   </tr>
  
   <tr>
-    <td><?php echo  $sql[0]->productname;?></td>
-    <td><?php echo  $sql[0]->description;?>twoPig Iron Division (PID) started operating in 1992. It was the first to introduce low phosphorous foundry-grade pig iron in India. The PID has two blast furnaces with a</td>
+    <td></td>
+    <td>twoPig Iron Division (PID) started operating in 1992. It was the first to introduce low phosphorous foundry-grade pig iron in India. The PID has two blast furnaces with a</td>
     <td>3</td>
 	<td>1,000</td>
     <td>3000</td>
