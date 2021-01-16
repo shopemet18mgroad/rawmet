@@ -116,6 +116,15 @@ var countries =["Karnataka","Andaman and Nicobar Islands",
 autocomplete(document.getElementById("myInput"), countries);
 </script>
 
+  <script>
+		$('#gettable_search').on('keyup', function(){
+			var contents = $('#gettable_search').val(); 
+			$.get('<?php echo base_url() .'home_contactsupplier/get_table/'; ?>'+contents, function(data){
+				$('#ajaxrslt_search').html(data);
+			});
+		});
+	
+ </script>
 
 
 
