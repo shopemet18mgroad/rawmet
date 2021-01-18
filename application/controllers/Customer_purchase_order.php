@@ -35,7 +35,7 @@ class Customer_purchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('submit')){
+	if($this->input->post('busername')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
@@ -76,16 +76,13 @@ class Customer_purchase_order extends CI_Controller {
 			//$this->load->model('Admin_model');
 			$data = array('vname' => $vname, 'busername' => $busername,
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
-			'companyname' => $companyname, 'price' => $price,
-			'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
-			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice ,
-			'sunits' => $sunits,'uploadporder'=>$pic_array1);
+			'companyname' => $companyname, 'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'uploadporder'=>$pic_array1);
 			
-			$status = $this->Admin_model->insert('purchaseoder', $data);
+			$status = $this->Admin_model->insert('purchaseoder',$data);
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_buynego/');
+				  header('location: ./Customer_buynego');
 				  }
 			
 	}

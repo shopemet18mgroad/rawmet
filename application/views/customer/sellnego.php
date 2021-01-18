@@ -54,7 +54,7 @@
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><a href="<?php echo base_url().'web_files/uploads/'.$proid[0]?>" target="_blank">
 				
-			<a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);?>" target="_blank">
+			<a href="<?php echo base_url().'Customer_sellnegoquotation/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 			
 				<td><input class="form-group w-auto"  multiple="multiple"  type="file" name="uploadporder">

@@ -38,7 +38,7 @@ class Customer_approvedquotes extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		$reqapproval = array('sellapproval'=>true);
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$reqapproval);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	

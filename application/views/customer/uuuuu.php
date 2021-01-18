@@ -90,4 +90,23 @@
 
   </div>
   <!-- End of Page Wrapper -->
+  	<td>
+			
+				
+				<a href="<?php echo base_url().'Customer_quotation/auc_no/'.$proid.'/'.urldecode($row->busername);?>" target="_blank"><i class="fa fa-download"></i></a>
+			
+					</td>
+					
+			<td>
+				<input class="form-group w-auto"  multiple="multiple"  type="file" name="uploadporder[]">
+				<input type="hidden" name="porder[]" value="<?php echo $row->vname.'|'.$proid .'|'.$row->category;?>"> 
+				<input type="submit" id="" class="btn btn-primary " name="submit" value="Upload">
+			</td>
+		
+		<td>
+				<a href="<?php echo base_url().'web_files/uploads/'.$proid[0]?>" target="_blank">
+				<i class="fa fa-download" aria-hidden="true"></i></a>
+			
+					
+					</td>
 
