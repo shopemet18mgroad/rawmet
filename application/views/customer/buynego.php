@@ -31,10 +31,13 @@
 			<th>Supplier Price</th>
 			<th>Location</th>
 			<th>Buyer Quantity</th>
-			<th>Buyer Price</th>
+		   <th>buyer price</th>
 			<th>Seller price</th>
+			
+			
+			
 			<th>View Quotation</th>
-			<th>Send Purchase Order</th>
+	
 			
       </tr>
     </thead>
@@ -46,8 +49,8 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
+ 
 		
-			
 			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
 							<?php echo $row->vname;?></td>
 			<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
@@ -64,35 +67,51 @@
 							<?php echo $row->price;?></td>
 			<td><input type="hidden" name="pcities" value="<?php echo $row->pcities;?>">
 							<?php echo $row->pcities;?></td>
+							
+							
+							
+							
 			<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
-				
-		      <input type="hidden" name="bunits" value="<?php echo $row->bunits;?>">
-						<?php echo $row->bquantity."/"; echo $row->bunits;?></td>
-			<td><input type="hidden" name="bprice" value="<?php echo $row->bprice;?>">
-				<input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
+		     <?php echo $row->bquantity."/" ;echo $row->bunits;?>
+			 <input type="hidden" name="bunits" value="<?php echo $row->bunits;?>">
+		</td>
+		<td><input type="hidden" name="bprice" value="<?php echo $row->bprice;?>">
+		     <?php echo $row->bprice."/" ;echo $row->bsupplyability;?>
+			 <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
+		</td>
+		
+		<td><input type="hidden" name="selprice" value="<?php echo $row->selprice;?>">
+		     <?php echo $row->selprice."/" ;echo $row->sunits;?>
+			 <input type="hidden" name="sunits" value="<?php echo $row->sunits;?>">
+		</td>
+		
 
-			   <?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			   
-			  <td><input type="hidden" name="selprice" value="<?php echo $row->selprice;?>">
-				   <input type="hidden" name="sunits"    value="<?php echo $row->sunits;?>">
-			              <?php echo $row->selprice."/"; echo $row->sunits;?></td>
-			
-			
-			<td>
-			<a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);?>" target="_blank">
-				<i class="fa fa-download" aria-hidden="true"></i></a></td>
-			
+
 				
-				<td><input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
+
+							
+
+			
+		
+		 
+		<td> <a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);?>">
+				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			
-					<input type="submit" id="" class="btn btn-primary " name="submit" value="Upload">
+			<td>
+				
+				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
+					
+			
+					<input type="submit" id="" class="btn btn-info " name="submit" value="Upload purchase order">
 					
 			
 				
 		 </td>
+				
+		 </tr> 
 		<?php $k++;}?>
-      </tr>      
+            
       
     </tbody>
   </table>

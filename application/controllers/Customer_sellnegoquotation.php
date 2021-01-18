@@ -3,7 +3,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_quotationpur extends CI_Controller {
+class Customer_sellnegoquotation extends CI_Controller {
 
   public function __construct()
   {
@@ -27,7 +27,7 @@ class Customer_quotationpur extends CI_Controller {
 		  $active1 = array('busername'=>$busername);
 	
 		
-      $query = $this->Admin_model->getdatafromtable('selquotenegotate', $active);
+      $query = $this->Admin_model->getdatafromtable('quotes', $active);
 	 // print_r( $query);die;
         $query1 = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$query2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);
@@ -51,7 +51,7 @@ class Customer_quotationpur extends CI_Controller {
 	 $ci = &get_instance();
     $data['data'] = $data2;
 	 $data['data'] = $data3;
-    $ci->load->view("quotation",$data);	 
+    $ci->load->view("quotat",$data);	 
     // Get output html 
     $html = $ci->output->get_output();
 // add external css library

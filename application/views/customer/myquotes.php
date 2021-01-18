@@ -53,8 +53,7 @@
 		<td><button type="submit" class="btn btn-info btn-sm w-75">
 					<i class="fa fa-eye" aria-hidden="true"></i>
 					</button></td>
-					<td><a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);?>" target="_blank">
-				<i class="fa fa-download" aria-hidden="true"></i></a></td>
+			
 			
 		<!--<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
 		</td>-->

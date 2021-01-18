@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_purchase_order extends CI_Controller {
+class Customer_spurchase_order extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -52,8 +52,7 @@ class Customer_purchase_order extends CI_Controller {
 			$bunits = $this->input->post('bunits');
 			$bprice = $this->input->post('bprice');
 			$bsupplyability = $this->input->post('bsupplyability');
-			$selprice = $this->input->post('selprice');
-			$sunits = $this->input->post('sunits');
+
 			
 			//$sterms_condiaccept  = $this->input->post('sterms_condiaccept');
 			$pic_array1 = self::upload_files('upload_dd');
@@ -76,13 +75,15 @@ class Customer_purchase_order extends CI_Controller {
 			//$this->load->model('Admin_model');
 			$data = array('vname' => $vname, 'busername' => $busername,
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
-			'companyname' => $companyname, 'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'uploadporder'=>$pic_array1);
+			'companyname' => $companyname, 'price' => $price,
+			'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
+			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1);
 			
-			$status = $this->Admin_model->insert('purchaseoder',$data);
+			$status = $this->Admin_model->insert('purchaseoder', $data);
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_buynego');
+				  header('location: ./Customer_sellnego');
 				  }
 			
 	}
