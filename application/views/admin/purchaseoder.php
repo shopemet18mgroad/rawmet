@@ -20,12 +20,7 @@
         <th>Product Name</th>
         <th>Category</th>
         <th>Commission to Rawmet</th>
-		
-	    
-	
-		
 		<th>Image</th>
-	
 		<th>Action</th>
 
 		
@@ -51,10 +46,14 @@
 		
 
 		<td><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px">
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	
 
-		<td><a href="<?php  echo base_url()."admin_purchaseoder/approve_paid/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-primary">Paid</button></a></td>
+		<td><a href="<?php  echo base_url()."admin_purchaseoder/approve_paid/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-warning btn-sm">Paid</button></a>
+		
+		<a href="<?php  echo base_url()."admin_purchaseoder/reject_unpaid/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger btn-sm mt-1">Unpaid</button></a>
+		
+		</td>
 
 
         

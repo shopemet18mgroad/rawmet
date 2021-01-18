@@ -46,11 +46,19 @@ class Home_login extends CI_Controller {
 			$pass = base64_encode($pass);
 			$check_db = array($colname => $user, $colname2 => $pass, $status=>true);
 			$this->load->model('Admin_model');
+			$productid= $this->uri->segment(3);
 			  if($this->Admin_model->check($table, $check_db)){
 				  if($table == "buyer_register"){
 					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE);
 						$this->session->set_userdata($newdata);
 					  header('location: '.base_url().'customer_index');
+					  die;
+				  }else if($table == "buyer_register"){
+					  $this->load->model('Admin_model');
+		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE,'productid'=>$productid);
+						$this->session->set_userdata($newdata);
+					  header('location: '.base_url().'home_contactsupplier/index/');
 					  die;
 				  }else if($table == "vendor_register"){
 					  $newdata = array('username'=>$user,'auth'=>'SELLER','logged_in' => TRUE);
