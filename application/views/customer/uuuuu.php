@@ -6,7 +6,8 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Pending Quotes</h1>
+            <h1 class="h3 mb-0 text-gray-800">My Approved Negotiation
+			</h1>
             
           </div>
 
@@ -22,46 +23,49 @@
     <thead class="bg-primary text-white">
       <tr>
 			<th>Supplier Name</th>
+			<th>Buyer Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
 			<th>Company Name</th>
 			<th>Supplier Price</th>
-			<th>Available Stocks</th>
 			<th>Location</th>
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
-			<th>View</th>
-			<th>Upload Purchase Order</th>
+			<th>Seller price</th>
+			<th>View Quotation</th>
+			<th>Send Purchase Order</th>
+			
       </tr>
     </thead>
     <tbody>
-       	 <?php foreach($sqldata as $row){?>
+	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 			<td><?php echo $row->vname;?></td>
+			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
 			<td><?php echo $row->companyname;?></td>
 			<td><?php echo $row->price;?></td>
-			<td><?php echo $row->bsupplyability;?></td>
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-		<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button></td>
-					<td><a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);?>" target="_blank">
-				<i class="fa fa-download" aria-hidden="true"></i></a></td>
+			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			
-		<!--<td><input class="form-group w-auto small"  multiple="multiple"  type="file" name="upload_dd[]"><input type="submit" id="" class="btn btn-primary btn-sm" name="submit" value="Upload">
-		</td>-->
+		
+			
+			
+			
+				<input class="form-group w-auto"  multiple="multiple"  type="file" name="uploadporder">
+				<input type="submit" id="" class="btn btn-primary " name="submit" value="Upload">
+		 </td>
+		
       </tr>      
-     <?php }?>	    
-         
-
+     <?php }?>	
     </tbody>
   </table>
 		</div>

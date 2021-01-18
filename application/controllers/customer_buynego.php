@@ -34,7 +34,7 @@ class Customer_buynego extends CI_Controller {
 		
 		
 		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
-		
+		//print_r($query); die;
 		
 		$adac['sqldata']= $query;
 		
@@ -56,7 +56,7 @@ class Customer_buynego extends CI_Controller {
 	
 	
 	
-		
+
 	}
 
 		

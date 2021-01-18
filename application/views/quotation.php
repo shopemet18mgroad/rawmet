@@ -59,7 +59,7 @@ th, td {
   padding: 5px;
 }
 th {
-  text-align: left;
+  text-align: right;
 }
 table, th, td {
   border: 1px solid black;
@@ -69,7 +69,7 @@ th, td {
   padding: 5px;
 }
 th {
-  text-align: left;
+  text-align: right;
 }
 table-border
 
@@ -93,9 +93,10 @@ table-border
   
   
 </table> </div>
+<p><b>ADDRESS:<br/><?php echo $sqldata3[0]->bname.""."<br>". $sqldata3[0]->baddress.""."<br>".$sqldata3[0]->bcity.""."<br>".  $sqldata3[0]->bselectstate.""."<br>". $sqldata3[0]->bpincode;?></b><br></p>
 
-<p><b> ADDRESS:</b><br><?php echo $sqldata[0]->vname;?></p>
-<p><b> TO:</b><?php echo $sqldata[0]->vaddress;?><br>Plot No 333, 2nd Floor, C D Street,<br> Opp N T Pet, Vasudev Road Cross,<br> Bengaluru, Karnataka 560002</p><br>
+<p><b> TO:<br/><?php echo $sqldata2[0]->vname.""."<br>".  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity.""."<br>".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>
+
 <p><b>Quotation Prepared By:</b>Shopemet Network Private Limited</p>
 
 
@@ -111,10 +112,11 @@ table-border
   </tr>
  
   <tr>
-    <td><?php echo  $sql[0]->productname;?></td>
-    <td><?php echo  $sql[0]->description;?>twoPig Iron Division (PID) started operating in 1992. It was the first to introduce low phosphorous foundry-grade pig iron in India. The PID has two blast furnaces with a</td>
-    <td>3</td>
-	<td>1,000</td>
+    <td><?php echo  $sqldata1[0]->productname;?></td>
+    <td><?php echo  $sqldata1[0]->description;?></td>
+    
+	<td><?php echo $sqldata1[0]->selprice.""; echo $sqldata1[0]->sunits;?></td>
+	<td><?php echo$sqldata1[0]->selqan."/"; echo $sqldata1[0]->selunits;?></td>
     <td>3000</td>
   </tr>
   
