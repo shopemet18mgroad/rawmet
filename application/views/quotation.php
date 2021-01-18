@@ -93,9 +93,9 @@ table-border
   
   
 </table> </div>
-<p><b> TO:<br/><?php echo  $sqldata3[0]->baddress.""."<br>".$sqldata3[0]->bcity.""."<br>".  $sqldata3[0]->bselectstate.""."<br>". $sqldata3[0]->bpincode;?></b><br></p>
+<p><b>ADDRESS:<br/><?php echo $sqldata3[0]->bname.""."<br>". $sqldata3[0]->baddress.""."<br>".$sqldata3[0]->bcity.""."<br>".  $sqldata3[0]->bselectstate.""."<br>". $sqldata3[0]->bpincode;?></b><br></p>
 
-<p><b> TO:<br/><?php echo  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity.""."<br>".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>
+<p><b> TO:<br/><?php echo $sqldata2[0]->vname.""."<br>".  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity.""."<br>".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>
 
 <p><b>Quotation Prepared By:</b>Shopemet Network Private Limited</p>
 

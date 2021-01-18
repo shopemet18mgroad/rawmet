@@ -27,7 +27,7 @@ class Customer_quotationpur extends CI_Controller {
 		  $active1 = array('busername'=>$busername);
 	
 		
-      $query = $this->Admin_model->getdatafromtable('selquotenegotate', $active);
+      $query = $this->Admin_model->getdatafromtable('quotes', $active);
 	 // print_r( $query);die;
         $query1 = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$query2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);

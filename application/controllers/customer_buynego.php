@@ -30,10 +30,11 @@ class Customer_buynego extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('busername'=>$sess['sessi'],'buyerapprove'=>true);
+		//$reqapproval = array('sellapproval'=>false);
 		
 		
 		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
-		
+		//print_r($query); die;
 		
 		$adac['sqldata']= $query;
 		
@@ -55,7 +56,7 @@ class Customer_buynego extends CI_Controller {
 	
 	
 	
-		
+
 	}
 
 		
