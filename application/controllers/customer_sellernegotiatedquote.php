@@ -72,7 +72,7 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 			echo '<th>Category</th>';
 			echo '<th>Price</th>';
 			echo '<th>Quantity</th>';
-			//echo '<th>Action</th>';
+			echo '<th>Action</th>';
 			echo '</tr>';
 			echo '</thead>';
 			echo '<tbody>';
@@ -92,6 +92,13 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 				echo '<td>'.$dat['category'].'</td>';
 				echo '<td>'.$dat['price'].'</td>';
 				echo '<td>'.$dat['supplyability']."".$dat['supplyunits'].'</td>';
+				
+				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.$proid.'/'.($dat['vname']).'">';
+				echo '<button class="btn btn-info">Negotiate</button>';
+				echo '</a>';
+			
+				echo '</a>';
+				echo '</td>';
 				
 				echo '</tr>';
 			}
