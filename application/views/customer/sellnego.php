@@ -56,8 +56,8 @@
 				
 			<a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
-			<td>
-				<input class="form-group w-auto"  multiple="multiple"  type="file" name="uploadporder">
+			
+				<td><input class="form-group w-auto"  multiple="multiple"  type="file" name="uploadporder">
 				<input type="submit" id="" class="btn btn-primary " name="submit" value="Upload">
 		 </td>
 					
