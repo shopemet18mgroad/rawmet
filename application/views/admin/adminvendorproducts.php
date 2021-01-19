@@ -61,13 +61,13 @@
 		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
 		
 		
-			<a href="<?php  echo base_url()."admin_adminvendorproducts/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-primary">Approve</button></a>
+			<a href="<?php  echo base_url()."admin_adminvendorproducts/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
 		
 		
 		
 		
 		
-		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Reject</button></a></td>
+		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a></td>
 
         
 <?php }?>	

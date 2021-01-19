@@ -65,4 +65,22 @@ class Admin_purchaseoder extends CI_Controller {
 		}
 	
 	}
+	
+		public function reject_unpaid(){
+		$this->load->helper('url');
+		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+         $vname = urldecode($this->uri->segment(4));
+
+		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		
+		$data2 = array('pooptions'=>2);
+	
+		$this->load->model('Admin_model');
+		
+		$status = $this->Admin_model->update_custom('sellerpostproduct',$data2,$retriveval,$retriveval);
+		
+		header('location: '.base_url().'admin_purchaseoder/index/'.urlencode($retriveval));
+		
+		die;
+	}
 }
