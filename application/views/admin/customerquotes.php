@@ -31,12 +31,13 @@
 			<th>Location</th>
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
+			<th>Action</th>
       </tr>
     </thead>
     <tbody>
 	 <?php foreach($sqldata as $row){?>
       <tr>
-	  <?php $proid = str_ireplace('/','-',$row->productid);
+	  <?php $proid = str_ireplace('-','/',$row->productid);
 				?>
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->productname;?></td>
@@ -44,13 +45,14 @@
 			<td><?php echo $row->category;?></td>
 			<td><?php echo $row->companyname;?></td>
 			<td><?php echo $row->price;?></td>
-			<td><?php echo $row->supplyability;?></td>
+			<td><?php echo $row->bsupplyability;?></td>
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity."/"; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-		
-			<!--<td><button type="submit" name="submit" id="<?php// echo $proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-info btn-sm">Approve</button></td>-->
-		
+			<td>
+			
+		<a href="<?php  echo base_url()."admin_customerquotes/approve_purchaseorder/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-primary">Approve</button></a></td>
+			
       </tr>      
      <?php }?>	
     </tbody>

@@ -30,15 +30,36 @@ class Admin_customerquotes extends CI_Controller {
 			}else{
 		
 		$this->load->model('Admin_model');
-		$query['sqldata'] = $this->Admin_model->gettable('quotes');
+		$query['sqldata'] = $this->Admin_model->gettable('purchaseoder');
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
-			$active = array('ausername'=>$sess['sessi']);
+			$active = array('ausername'=>$sess['sessi'],'sellapproval'=>true);
 			}
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/customerquotes',$query);
 		$this->load->view('admin/footer');
 		
+	}
+		public function approve_purchaseorder(){
+		
+		 $productid = urldecode(str_ireplace('/','-',$this->uri->segment(3)));
+           $vname = urldecode($this->uri->segment(4));
+
+		  $retriveval = array('productid'=>$productid,'vname'=>$vname);
+		
+		
+		
+		$this->load->model('Admin_model');
+		$app= array('sellapproval'=>true);
+		
+		$query = $this->Admin_model->update_custom('purchaseoder',$app, $retriveval, $retriveval);
+	
+		if($retriveval){
+			header('location: '.base_url().'Admin_customerquotes/index/'.urlencode($retriveval));
+		}else{
+			echo "BYE";
+		}
+	
 	}
 
 

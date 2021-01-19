@@ -30,6 +30,7 @@
 				<div class="row ml-4">
 				<?php $img = unserialize($sqldata[0]->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="30%" height="100%">
+				<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $img[0];?>">
 				
 
 			<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">

@@ -51,9 +51,10 @@
 			<td><?php echo $row->email;?></td>
 				<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
+					<td><a href="<?php  echo base_url()."Vendor_managebuyreq/approve_requirement/".$proid."/".urldecode($row->bname);?>"><button type="button" class="btn btn-primary">Approve</button></a>
 				
-			<td>
-		<button type="submit" name="submit" id="<?php echo $proid;?>" onclick="approve_req(this.id)" class="btn btn-success btn-sm">Approve</button>			
+			
+				
 		
 		
 		<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urlencode($row->bname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotation</a>

@@ -45,13 +45,17 @@
 		 <td><?php echo $row->productname?></td>
 		  <td><?php echo $row->productid?></td>
          <td><?php echo $row->description?></td>
-		
 		<td><?php echo $row->quantity;?></td>
 		<td><?php echo $row->units;?></td>
-				<td><?php echo $row->price."/";echo $row->priceperkg;?></td>
+	<td><?php echo $row->price."/";echo $row->priceperkg;?></td>
+	<td><?php echo $row->sellerprice."/";echo $row->bsupplyability;?></td>
+<div class="thumbnail">
+					<td><?php $img = unserialize( $sqldata[0]->uploadimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="100%"></td>
+				<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $img[0];?>">
+				
 					
-								<td><?php echo $row->sellerprice."/";echo $row->bsupplyability;?></td>
-
+					</div>	
 		
 
 		
