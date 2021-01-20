@@ -148,6 +148,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>customer_approvedquotes">Ongoing Purchase Order</a>
             <a class="collapse-item" href="<?php echo base_url();?>customer_myquotes">Closed Purchase Order</a>
+			  <a class="collapse-item" href="<?php echo base_url();?>customer_reqpurchaseorder">Closed Purchase Order</a>
 			
           </div>
         </div>

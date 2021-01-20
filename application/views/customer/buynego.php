@@ -106,37 +106,7 @@
 			
 				
 		 </td>
-		 <td><a href="" data-toggle="modal" data-target="#myModal<?php echo"$k";?>">
-					<button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button>
-					</a>
-				
-				<div class="modal" id="myModal<?php echo"$k";?>">
-					<div class="modal-dialog modal-lg">
-					  <div class="modal-content">
-					  
-						<!-- Modal Header -->
-						
-						
-						<!-- Modal body -->
-						<div class="modal-body">
-
-						<img src="<?php $im = unserialize($row->uploadporder); 
-						if($im){
-						echo base_url().'web_files/uploads/'.$im[0];?>" class="img-fluid" alt="<?php echo $im[0];}?>">
-
-						</div>
-						
-						<!-- Modal footer -->
-						<div class="modal-footer">
-						  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						</div>
-						
-					  </div>
-					</div>
-				  </div>
-					</td>
+		 
 				
 		 </tr> 
 		<?php $k++;}?>
