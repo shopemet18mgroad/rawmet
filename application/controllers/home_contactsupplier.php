@@ -32,7 +32,7 @@ class Home_contactsupplier extends CI_Controller {
 		date_default_timezone_set('Asia/Kolkata');
 		$time =  Date('Y-m-d H:i:s');
 		$this->load->model('Admin_model');
-		$data = $this->Admin_model->get_lookalike('sellerpostproduct','productid',$datatoquerydb);
+		$data = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$datatoquerydb);
 		if(count($data)){
 
 			foreach($data as $dat){
@@ -132,7 +132,7 @@ class Home_contactsupplier extends CI_Controller {
 			echo '';
 			echo '</div>';
 			echo '</form>';
-
+echo '<hr />';
 						}
 			
 		}else{

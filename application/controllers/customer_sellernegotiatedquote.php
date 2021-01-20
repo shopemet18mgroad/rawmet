@@ -61,7 +61,7 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 		//date_default_timezone_set('Asia/Kolkata');
 		//$time =  Date('Y-m-d H:i:s');
 		$this->load->model('Admin_model');
-		$data = $this->Admin_model->get_lookalike('sellerpostproduct','vname',$datatoquerydb);
+		$data = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$datatoquerydb);
 		if(count($data)){
 			echo '<table class="table table-striped table-bordered table-sm text-center mt-5" width="100%" cellspacing="0">';
 			echo '<thead class="bg-primary text-white">';
