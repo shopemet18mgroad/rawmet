@@ -51,7 +51,7 @@
 			<td><?php echo $row->email;?></td>
 				<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
-					<td><a href="<?php  echo base_url()."Vendor_managebuyreq/approve_requirement/".$proid."/".urldecode($row->bname);?>"><button type="button" class="btn btn-primary">Approve</button></a>
+					<td><a href="<?php  echo base_url()."Vendor_managebuyreq/approve_requirement/".$proid."/".urldecode($row->bname);?>"><button type="button" class="btn btn-success">Approve</button></a>
 				
 			
 				

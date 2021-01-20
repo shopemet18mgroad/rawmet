@@ -55,13 +55,12 @@
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 						
 			
-		<td>	<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger">Reject</button></a>
-		
-					<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-primary">Approve</button></a>
+		<td>	
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success">Approve</button></a>
 					
-
-			
-		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".$proid."/".urlencode($row->vname);?>"  class="btn btn-success btn-sm text-white delete-confirm">Renegotation</a></center></td>
+		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".$proid."/".urlencode($row->vname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotation</a></center>
+		
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger">Reject</button></a></td>
       </tr>      
      <?php }?>	
     </tbody>
