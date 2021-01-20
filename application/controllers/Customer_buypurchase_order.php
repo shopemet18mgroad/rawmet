@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendor_add_buyerreq extends CI_Controller {
+class Customer_buypurchase_order extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,29 +18,41 @@ class Vendor_add_buyerreq extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	 function __construct() {
+        parent::__construct();
+        
+        // Load session library
+        $this->load->library('session');
+        // Load the captcha helper
+		//$this->load->helper('captcha');
+		$this->load->helper('url');
+		$this->load->helper('date');
+	
+		date_default_timezone_set("Asia/Kolkata");
+    }
+	 
+	 
+	 
 	public function index()
-		{ 
-	 if($this->input->post('bname')){
+	{
+	if($this->input->post('vusername')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
-			
-			$bname = $this->input->post('bname');
+			$vusername = $this->input->post('vusername');
 			$bcompanyname = $this->input->post('bcompanyname');
-			
-			$busername = $this->input->post('busername');
 			$category = $this->input->post('category');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
-			$description = $this->input->post('description');
-			$quantity = $this->input->post('quantity');
+			//$description = $this->input->post('description');
+			$quantity  = $this->input->post('quantity');
 			$units = $this->input->post('units');
 			$price = $this->input->post('price');
 			$priceperkg = $this->input->post('priceperkg');
-			$sellerprice= $this->input->post('sellerprice');
+			$sellerprice = $this->input->post('sellerprice');
 			$bsupplyability = $this->input->post('bsupplyability');
-			$pic_array1 = self::upload_files('uploadimage');
+	        $pic_array1 = self::upload_files('upload_dd');
 			
 			if(!count($pic_array1)){
 			echo '<script language="javascript">';
@@ -49,38 +61,33 @@ class Vendor_add_buyerreq extends CI_Controller {
 			}else{
 			$pic_array1 = serialize($pic_array1);
 		   }
+		   
+		   
+		   /* $s= $vname = $this->input->post('vname');
+		   print_r($s); die;
+		   $f =array('vname'=>$s);
+		   $query = $this->Admin_model->getdatafromtable('sellerpostproduct',$f); */
+		   
+		   
+			//$this->load->model('Admin_model');
+			$data = array('vusername' => $vusername,
+			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
+			'productid' => $productid, 'description' => $description,
+			'quantity' => $quantity,'units' => $units, 'price'=> $price,
+			'priceperkg' => $priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1);
+			//print_r($data);die;
+			$status = $this->Admin_model->insert('reqpurchaseorder',$data);
 			
+			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
+			   if($status){
+				  header('location: ./Customer_Custapprovedreq');
+				  }
 			
-			 //print_r($uploadproductimage);die;
-			$data = array('bname' => $bname,'bcompanyname'=>$bcompanyname,'busername'=>$busername,'category'=> $category,'productname'=>$productname,'productid'=>$productid,'description' => $description,'quantity'=>$quantity,'units'=>$units,'price'=>$price,'priceperkg'=>$priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'uploadimage'=>$pic_array1);
-			//print_r($data2);die;
+	}
+	}
 
-			$datainserr = "Data Inserted Successfully";
-			$status = $this->Admin_model->insert('seller_mbuyreq',$data);
-			header('location: ./vendor_managebuyreq/index/'.$datainserr);
-			}
-			
-		/* 	if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
-				$datainserr = "Invalid Login Session";
-				header('location: '.base_url().'login/index_error/'.$datainserr);
-				die;
-			}
-			else
-			{ */
-				$this->load->model('Admin_model');
-				$this->load->library('session');
-				$sess = array('sessi'=>$this->session->userdata('username'));
-	
-				
-				
-		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/managebuy',$data);
-		$this->load->view('vendor/footer');
-			 
-	 
-//}
-			
-		private function upload_files($nameid)
+
+private function upload_files($nameid)
     {	
 	$countfiles = count($_FILES[$nameid]['name']);
       // Looping all files
@@ -116,6 +123,10 @@ class Vendor_add_buyerreq extends CI_Controller {
       }
 	  return $datar;
     }
+
+}
+	
 		
-	}
-	}
+		
+		
+		

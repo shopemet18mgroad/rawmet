@@ -75,9 +75,9 @@ class Vendor_managebuyreq extends CI_Controller {
 		
 		$this->load->model('Admin_model');
 		$sess = array('sessi'=>$this->session->userdata('username'));
-	
-		$app= array('selapprove'=>true);
-		
+		//print_r($sess);die;
+		$app= array('selapprove'=>true,'vname' => $sess );
+		print_r($sess);die;
 	
 		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
 		header('location: '.base_url().'vendor_managebuyreq/index/'.urldecode($productid)."/".urldecode($bname));
