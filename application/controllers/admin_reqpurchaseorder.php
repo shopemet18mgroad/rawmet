@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_reqpurchaseorder extends CI_Controller {
+class Admin_reqpurchaseorder extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -32,8 +32,27 @@ class Customer_reqpurchaseorder extends CI_Controller {
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/reqpurchaseorder',$query);
 		$this->load->view('admin/footer');
-		
 	}
-
 	
+		public function approve_product(){
+		
+		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+         $vusername = urldecode($this->uri->segment(4));
+
+		$retriveval = array('productid'=>$productid,'vusername'=>$vusername);
+		
+		
+		
+		$this->load->model('Admin_model');
+		$app= array('sellprove'=>true);
+		
+		$query = $this->Admin_model->update_custom('reqpurchaseorder', $app, $retriveval, $retriveval);
+	
+		if($retriveval){
+			header('location: '.base_url().'Admin_reqpurchaseorder/index/'.urlencode($retriveval));
+		}else{
+			echo "BYE";
+		}
+	
+	}
 }

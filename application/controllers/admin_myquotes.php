@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_reqpurchaseorder extends CI_Controller {
+class Admin_myquotes extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,16 +24,15 @@ class Customer_reqpurchaseorder extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		
-		$reqapproval = array('sellprove'=>false);
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);
+		$reqapproval = array('sellapproval'=>false);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/reqpurchaseorder',$query);
+		$this->load->view('admin/myquotes',$query);
 		$this->load->view('admin/footer');
 		
 	}
-
 	
 }

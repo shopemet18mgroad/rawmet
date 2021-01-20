@@ -113,10 +113,24 @@
       </li>
 	  
 	   <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url();?>Admin_customerquotes">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment5" aria-expanded="true" aria-controls="collapseUtilities">
+     <i class="fa fa-list" aria-hidden="true"></i>
+          <span>Purchase Order</span></a>
+		  <div id="payment5" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+           <!-- <a class="collapse-item" href="<?php// echo base_url();?>admin_approvedquotes">Ongoing Purchase Order</a>-->
+            <a class="collapse-item" href="<?php echo base_url();?>admin_myquotes">Closed Purchase Order</a>
+			  <a class="collapse-item" href="<?php echo base_url();?>admin_reqpurchaseorder">Closed Purchase Order</a>
+			
+          </div>
+        </div>
+      </li>
+	  
+	   <!--<li class="nav-item">
+        <a class="nav-link" href="<?php// echo base_url();?>Admin_customerquotes">
           <i class='fas fa-envelope-open-text'></i>
           <span>Customer Quotes</span></a>
-      </li>
+      </li>-->
 	  <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>Admin_purchaseoder">
        <i class='fas fa-dollar-sign'></i>
