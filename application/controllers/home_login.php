@@ -55,7 +55,7 @@ class Home_login extends CI_Controller {
 					  die;
 				  }else if($table == "buyer_register"){
 					  $this->load->model('Admin_model');
-		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+					$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE,'productid'=>$productid);
 						$this->session->set_userdata($newdata);
 					  header('location: '.base_url().'home_contactsupplier/index/');
