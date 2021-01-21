@@ -132,7 +132,7 @@ class Home_contactsupplier extends CI_Controller {
 			echo '';
 			echo '</div>';
 			echo '</form>';
-echo '<hr />';
+			echo '<hr />';
 						}
 			
 		}else{
