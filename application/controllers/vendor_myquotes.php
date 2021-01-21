@@ -23,8 +23,16 @@ class Vendor_myquotes extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
+			if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$reqapproval = array('sellapproval'=>true);
+		$reqapproval = array('vusername'=>$sess['sessi'],'sellapproval'=>true);
+		
+		
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
