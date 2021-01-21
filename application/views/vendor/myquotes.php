@@ -33,7 +33,6 @@
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
 			<th>View Quotation</th>
-			<th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -87,7 +86,6 @@
 					</div>
 				  </div>
 					</td>
-					<td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
       </tr>      
      <?php }?>	    
          

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_myquotes extends CI_Controller {
+class Vendor_sellnego extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,15 +24,24 @@ class Customer_myquotes extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		
-		$reqapproval = array('sellapproval'=>true);
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active1 = array('vname'=>$sess['sessi'],'sellapproval'=>true);
+		
+	
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
+	
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
-	
-		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/myquotes',$query);
-		$this->load->view('customer/footer');
-		
+		$this->load->view('vendor/header',$sess);
+		$this->load->view('vendor/sellnego',$query);
+		$this->load->view('vendor/footer');
+			}	
 	}
 	
+
 }

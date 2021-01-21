@@ -63,10 +63,10 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
 	   <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment8" aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fas fa-fw fa-upload"></i>
           <span>My Products</span></a>
-		 <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+		 <div id="payment8" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>vendor_postproduct">New  Product</a>
             <a class="collapse-item" href="<?php echo base_url();?>vendor_uploadedproduct">Product List</a>
@@ -101,17 +101,43 @@
           </div>
         </div>
       </li>
-	  	   <li class="nav-item">
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
+         <i class='fas fa-envelope-open-text'></i>
+          <span>Finalized Negotiation</span></a>
+		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_buynego">My Approved<br> Negotiation</a>
+            
+			 <a class="collapse-item" href="<?php echo base_url();?>vendor_sellnego">Seller's Approved<br> Negotiation</a>
+          </div>
+        </div>
+  
+	  
+	   <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment5" aria-expanded="true" aria-controls="collapseUtilities">
+     <i class="fa fa-list" aria-hidden="true"></i>
+          <span>Purchase Order</span></a>
+		  <div id="payment5" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+           <!-- <a class="collapse-item" href="<?php //echo base_url();?>customer_approvedquotes">Ongoing Purchase Order</a>-->
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_myquotes">Negotiation</a>
+			  <a class="collapse-item" href="<?php echo base_url();?>vendor_reqpurchaseorder">Buyer Requirements</a>
+			
+          </div>
+        </div>
+      </li>
+	  	  <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct4" aria-expanded="true" aria-controls="collapseUtilities">
        <i class="fa fa-list" aria-hidden="true"></i>
           <span>Purchase Order</span></a>
 		 <div id="collapseProduct4" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>">Accepted PO</a>
-            <a class="collapse-item" href="<?php echo base_url();?>">closed PO</a>
+            <a class="collapse-item" href="<?php //echo base_url();?>">Accepted PO</a>
+            <a class="collapse-item" href="<?php //echo base_url();?>">closed PO</a>
           </div>
         </div>
-      </li>
+      </li>-->
 	  	   <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct3" aria-expanded="true" aria-controls="collapseUtilities">
    <i class='fas fa-dollar-sign'></i>

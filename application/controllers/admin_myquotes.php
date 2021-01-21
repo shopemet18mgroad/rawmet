@@ -35,4 +35,26 @@ class Admin_myquotes extends CI_Controller {
 		
 	}
 	
+		public function approve_product(){
+		
+		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+         $vname = urldecode($this->uri->segment(4));
+
+		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		
+		
+		
+		$this->load->model('Admin_model');
+		$app= array('sellapproval'=>true);
+		
+		$query = $this->Admin_model->update_custom('purchaseoder', $app, $retriveval, $retriveval);
+	
+		if($retriveval){
+			header('location: '.base_url().'Admin_myquotes/index/'.urlencode($retriveval));
+		}else{
+			echo "BYE";
+		}
+	
+	}
+	
 }
