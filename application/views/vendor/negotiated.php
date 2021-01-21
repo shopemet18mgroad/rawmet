@@ -56,7 +56,7 @@
 								<td><?php echo $row->sellerprice."/";echo $row->bsupplyability;?></td>
 		
 	
-	<td style="color:orange"><?php  if($row->bapprove == 0) {echo 'Pending to Approve';}else if($row->bapprove == 2) {echo 'Rejected';}else if($row->bapprove == 1) {echo 'Approved';}?></td>
+	<td style="color:orange"><b><?php  if($row->bapprove == 0) {echo 'Pending to Approve';}else if($row->bapprove == 2) {echo 'Rejected';}else if($row->bapprove == 1) {echo 'Approved';}?></b></td>
 		
         
 <?php }?>	

@@ -31,7 +31,6 @@
 			<th>Email</th>
 			<th>Images</th>
 			<th>Status</th>
-			<th>Download</th>
 			<th>Action</th>
       </tr>
     </thead>
@@ -51,9 +50,7 @@
 			<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 			<td style="color:orange;"><b><?php if($row->adapproval == 1){echo 'Approved';} elseif($row->adapproval==0){echo 'Pending';}?></b></td>
-			<td><button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-download" aria-hidden="true"></i>
-					</button></td>
+			
 								
 			<td><a href="<?php echo base_url()."Customer_myrequirements/delete_buyingrequ_cust/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a></td>
 		

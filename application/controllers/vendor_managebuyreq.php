@@ -56,34 +56,28 @@ class Vendor_managebuyreq extends CI_Controller {
 			
 		$this->load->model('Admin_model');
 		$this->load->library('session');
-		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
-			$datainserr = "Invalid Login Session";
-			header('location: '.base_url().'login/index_error/'.$datainserr);
-			die;
-			}else{
-				$this->load->model('Admin_model');
+		
 	
 		
 		
 		$productid = str_ireplace('-','/', $this->uri->segment(3));
 	
 		$bname = ($this->uri->segment(4));
-
+		
+		//print_r($sess); die;
 		$retriveval = array('bname'=>$bname,'productid'=>$productid);
 
 		
 		
 		$this->load->model('Admin_model');
-		$sess = array('sessi'=>$this->session->userdata('username'));
-	
-		$app= array('selapprove'=>true);
+	$sess = array('sessi'=>$this->session->userdata('username'));
+		$app= array('selapprove'=>true,'vname'=>$sess['sessi']);
 		
 	
 		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
 		header('location: '.base_url().'vendor_managebuyreq/index/'.urldecode($productid)."/".urldecode($bname));
 		
 		die;
-			}
 	
 	}
 	

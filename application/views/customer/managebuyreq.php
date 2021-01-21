@@ -54,7 +54,7 @@
 				
 			<td>		
 			<a href="<?php echo base_url()."vendor_managebuyreq/delete_buyingrequ/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a>
-			<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urlencode($row->bname);?>"  class="btn btn-info btn-sm text-white delete-confirm"><i class="fa fa-edit fa-sm"></i></a></td>
+			<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urlencode($row->bname).urlencode($row->vname);?>"  class="btn btn-info btn-sm text-white delete-confirm"><i class="fa fa-edit fa-sm"></i></a></td>
 			
 		
       </tr>      
