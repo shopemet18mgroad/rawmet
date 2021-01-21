@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_myquotes extends CI_Controller {
+class Vendor_myquotes extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -29,9 +29,9 @@ class Customer_myquotes extends CI_Controller {
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
-		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/myquotes',$query);
-		$this->load->view('customer/footer');
+		$this->load->view('vendor/header',$sess);
+		$this->load->view('vendor/myquotes',$query);
+		$this->load->view('vendor/footer');
 		
 	}
 	

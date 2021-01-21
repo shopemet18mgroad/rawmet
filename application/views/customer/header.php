@@ -146,9 +146,9 @@
           <span>Purchase Order</span></a>
 		  <div id="payment5" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>customer_approvedquotes">Ongoing Purchase Order</a>
-            <a class="collapse-item" href="<?php echo base_url();?>customer_myquotes">Closed Purchase Order</a>
-			  <a class="collapse-item" href="<?php echo base_url();?>customer_reqpurchaseorder">Closed Purchase Order</a>
+           <!-- <a class="collapse-item" href="<?php //echo base_url();?>customer_approvedquotes">Ongoing Purchase Order</a>-->
+            <a class="collapse-item" href="<?php echo base_url();?>customer_myquotes">Negotiation</a>
+			  <a class="collapse-item" href="<?php echo base_url();?>customer_reqpurchaseorder">Buyer Requirements</a>
 			
           </div>
         </div>

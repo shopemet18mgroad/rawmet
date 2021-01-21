@@ -24,14 +24,14 @@ class Customer_reqpurchaseorder extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		
-		$reqapproval = array('sellprove'=>false);
+		$reqapproval = array('sellprove'=>true);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
-		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/reqpurchaseorder',$query);
-		$this->load->view('admin/footer');
+		$this->load->view('customer/header',$sess);
+		$this->load->view('customer/reqpurchaseorder',$query);
+		$this->load->view('customer/footer');
 		
 	}
 

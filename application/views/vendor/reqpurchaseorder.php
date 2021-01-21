@@ -22,18 +22,16 @@
     <thead class="bg-primary text-white">
       <tr>
 			<th>Supplier Name</th>
+			<th>Company Name</th>
+			<th>Category</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
-			<th>Category</th>
-			<th>Company Name</th>
-			<th>Location</th>
-			<th>Supplier Quantity</th>
-
-		
+			
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
-			<th>View Quotation</th>
-			<th>Action</th>
+			<th>Suplier Price</th>
+			
+			<th> View Quotation</th>
       </tr>
     </thead>
     <tbody>
@@ -41,20 +39,19 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-			<td><?php echo $row->vname;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->productid;?></td>
+			<td><?php echo $row->vusername;?></td>
+			<td><?php echo $row->bcompanyname;?></td>
 			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->companyname;?></td>
+			<td><?php echo $row->productname;?></td>
 			
+			<td><?php echo $row->productid;?></td>
+		
+			<td><?php echo $row->quantity.""; echo $row->units;?></td>
+			<td><?php echo $row->price."/"; echo $row->priceperkg;?></td>
+			<td><?php echo$row->sellerprice."/"; echo $row->bsupplyability;?></td>
 			
-			
-			<td><?php echo $row->pcities;?></td>
-			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
-			<td><?php echo $row->price."/"; echo $row->bsupplyability;?></td>
-			
-			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 	
+			
 			
 		<td><a href="" data-toggle="modal" data-target="#myModal">
 					<button type="submit" class="btn btn-info btn-sm w-75">
@@ -87,7 +84,6 @@
 					</div>
 				  </div>
 					</td>
-					<td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
       </tr>      
      <?php }?>	    
          
