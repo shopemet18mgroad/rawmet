@@ -23,8 +23,13 @@ class Customer_reqpurchaseorder extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		
-		$reqapproval = array('sellprove'=>true);
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$reqapproval = array('bname'=>$sess['sessi'],'sellprove'=>true);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
@@ -32,7 +37,7 @@ class Customer_reqpurchaseorder extends CI_Controller {
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/reqpurchaseorder',$query);
 		$this->load->view('customer/footer');
-		
+			}
 	}
 
 	

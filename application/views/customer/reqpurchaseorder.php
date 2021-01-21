@@ -31,7 +31,7 @@
 			<th>Buyer Price</th>
 			<th>Suplier Price</th>
 			
-			<th> View Quotation</th>
+			<th> View Purchase Order</th>
       </tr>
     </thead>
     <tbody>
@@ -52,38 +52,18 @@
 			
 	
 			
-			
-		<td><a href="" data-toggle="modal" data-target="#myModal">
-					<button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button>
-					</a>
-				
-				<div class="modal" id="myModal">
-					<div class="modal-dialog modal-lg">
-					  <div class="modal-content">
-					  
-						<!-- Modal Header -->
-						
-						
-						<!-- Modal body -->
-						<div class="modal-body">
+		
+<td>
+ <?php $aucfl = unserialize($row->uploadporder);?>
+ <?php if(isset($aucfl[0])){	?>
+<a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
+<?php echo '<i class="fa fa-download"></i>' ; ?>
 
-						<img src="<?php $im = unserialize($row->uploadporder); 
-						if($im){
-						echo base_url().'web_files/uploads/'.$im[0];?>" class="img-fluid" alt="<?php echo $im[0];}?>">
+ 
+</a></td>
+<?php }?>	
 
-						</div>
-						
-						<!-- Modal footer -->
-						<div class="modal-footer">
-						  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						</div>
-						
-					  </div>
-					</div>
-				  </div>
-					</td>
+
       </tr>      
      <?php }?>	    
          
