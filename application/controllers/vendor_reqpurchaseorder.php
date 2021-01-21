@@ -31,7 +31,7 @@ class Vendor_reqpurchaseorder extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$reqapproval = array('vusername'=>$sess['sessi'],'sellprove'=>true);
+		$reqapproval = array('vname'=>$sess['sessi'],'sellprove'=>true);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);
 		//print_r($query['sqldata']);die;
 		
