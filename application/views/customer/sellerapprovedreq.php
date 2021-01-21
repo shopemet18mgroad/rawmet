@@ -22,7 +22,7 @@
     <thead class="bg-primary text-white">
       <tr>
 			<th>Product Id</th>
-			<th>Buyer Name</th>
+			<th>Seller Name</th>
 			<th>Product Name</th>
 			<th>Description</th>
 			<th>Quantity</th>
@@ -31,7 +31,7 @@
 			<th>Units</th>
 			<th>Required Date</th>
 			<th>Last Date</th>
-			<th>Email</th>
+			<th>Status</th>
 			<th>Images</th>
 			
       </tr>
@@ -42,7 +42,7 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->bname;?></td>
+			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->description;?></td>
 			<td><?php echo $row->quantity;?></td>
@@ -51,7 +51,7 @@
 			<td><?php echo $row->priceperkg;?></td>
 			<td><?php echo $row->requireddate;?></td>
 			<td><?php echo $row->lastdate;?></td>
-			<td><?php echo $row->email;?></td>
+				<td style="color:orange;"><b><?php if($row->selapprove == 1){echo 'Approved';} elseif($row->selapprove==0){echo 'Pending';}?></b></td>
 				<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
 				

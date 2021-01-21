@@ -82,7 +82,7 @@
 				</div>
 					<h6 class="mt-2"><b>&nbsp;&nbsp;Describe your Buying requirement</b></h6>
 					<div class="col-sm-5 col-md-12">
-                      <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."value="<?php echo  $sqldata[0]->description;?>"readonly></textarea>
+                      <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."value="<?php echo  $sqldata[0]->description;?>"readonly><?php echo  $sqldata[0]->description;?></textarea>
 					</div>
 					
 					

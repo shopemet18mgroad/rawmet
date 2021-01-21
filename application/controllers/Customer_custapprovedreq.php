@@ -29,7 +29,7 @@ class Customer_custapprovedreq extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('bname'=>$sess['sessi'],'bapprove'=>false);
+		$active1 = array('bname'=>$sess['sessi'],'bapprove'=>true);
 		
 		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
 		
