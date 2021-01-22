@@ -60,9 +60,9 @@ class Vendor_managebuyreq extends CI_Controller {
 	
 		
 		
-		$productid = str_ireplace('-','/', $this->uri->segment(3));
+		$productid = urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$bname = ($this->uri->segment(4));
+		$bname = urldecode(($this->uri->segment(4)));
 		
 		//print_r($sess); die;
 		$retriveval = array('bname'=>$bname,'productid'=>$productid);

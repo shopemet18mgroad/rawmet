@@ -22,9 +22,9 @@ class Vendor_managebuy extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		$productid = str_ireplace('-','/', $this->uri->segment(3));
+		$productid = urldecode( str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$bname = ($this->uri->segment(4));
+		$bname = urldecode(($this->uri->segment(4)));
 	
 		
 		$active = array('productid '=>$productid ,'bname'=>$bname);
