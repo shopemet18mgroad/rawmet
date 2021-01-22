@@ -63,6 +63,7 @@
                       <i class="fas fa-shopping-cart fa-2x text-danger"></i>
                     </div>
                   </div>
+				  <div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php echo $sql3;?></center></div>
                 </div>
               </div>
 			  </div>

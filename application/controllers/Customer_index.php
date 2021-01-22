@@ -38,9 +38,12 @@ class Customer_index extends CI_Controller {
 		$active2 = array('busername'=>$sess['sessi'],'buyerapprove'=>true);
 		$query['data2'] = $this->Admin_model->getdatafromtable('selquotenegotate',$active2);
 		
+		$active3 = array('busername'=>$sess['sessi'],'sellapproval'=>true);
+		$query['data3'] = $this->Admin_model->getdatafromtable('purchaseoder',$active3);
+		
 		$val['sql']=count($query['data']);
-		//print_r($a); die;
-	$val['sql2']=count($query['data2']);
+		$val['sql2']=count($query['data2']);
+		$val['sql3']=count($query['data3']);
 			}
 	
 		$this->load->view('customer/header',$sess);
