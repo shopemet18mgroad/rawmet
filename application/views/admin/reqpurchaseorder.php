@@ -54,37 +54,17 @@
 	
 			
 			
-		<td><a href="" data-toggle="modal" data-target="#myModal">
-					<button type="submit" class="btn btn-info btn-sm w-75">
-					<i class="fa fa-eye" aria-hidden="true"></i>
-					</button>
-					</a>
-				
-				<div class="modal" id="myModal">
-					<div class="modal-dialog modal-lg">
-					  <div class="modal-content">
-					  
-						<!-- Modal Header -->
-						
-						
-						<!-- Modal body -->
-						<div class="modal-body">
+		<td>
+ <?php $aucfl = unserialize($row->uploadporder);?>
+ <?php if(isset($aucfl[0])){	?>
+<a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
+<?php echo '<i class="fa fa-download"></i>' ; ?>
 
-						<img src="<?php $im = unserialize($row->uploadporder); 
-						if($im){
-						echo base_url().'web_files/uploads/'.$im[0];?>" class="img-fluid" alt="<?php echo $im[0];}?>">
+ 
+</a></td>
+<?php }?>	
 
-						</div>
-						
-						<!-- Modal footer -->
-						<div class="modal-footer">
-						  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						</div>
-						
-					  </div>
-					</div>
-				  </div>
-					</td>
+    
 					
 		<td><a href="<?php  echo base_url()."admin_reqpurchaseorder/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
       </tr>      

@@ -92,7 +92,7 @@
 			
 		
 		 
-		<td> <a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);?>">
+		<td> <a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->vname)."/".urldecode($row->busername);  ?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			

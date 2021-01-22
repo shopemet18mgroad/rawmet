@@ -22,9 +22,9 @@ class Vendor_sellerquotenego extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		$productid = str_ireplace('-','/', $this->uri->segment(3));
+		$productid = urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$vname = ($this->uri->segment(4));
+		$vname =  urldecode($this->uri->segment(4));
 	
 		
 		$active = array('productid '=>$productid ,'vname'=>$vname);

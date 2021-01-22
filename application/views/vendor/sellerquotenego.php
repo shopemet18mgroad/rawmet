@@ -53,7 +53,9 @@
 									
 								<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
 							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
-						
+							
+							<p><b>Productname:</b><?php echo $sqldata[0]->productname;?></p>
+							<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
 							
 							
 							<p><b>Category:</b><?php echo $sqldata[0]->category;?></p>
@@ -161,8 +163,7 @@
 								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Submit</a>
 								 <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit">Cancel</a>
 							</div>
-							<p><b>Productname:</b><?php echo $sqldata[0]->productname;?></p>
-							<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
+						
 
 							
 							      <center><b>Description</b></center>

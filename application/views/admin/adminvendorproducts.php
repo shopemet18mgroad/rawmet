@@ -15,7 +15,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	
+	  <th>Image</th>
 	  <th>Product Id</th>
 	  <th>Vendor Name</th>
         <th>Product Name</th>
@@ -23,8 +23,8 @@
         <th>Description</th>
 		<th>Price</th>
 		<th>stock</th>
-	    <th>Image</th>
-		<th>Supply Ability</th>
+	   
+		<th>Estimated Delivery</th>
 		
 		
 		<th>options</th>
@@ -43,18 +43,20 @@
 	 
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
+					<td><?php $img = unserialize($row->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	  <td><?php echo $row->productid;?></td> 
 	   <td><?php echo $row->vname;?></td>
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
          <td><?php echo $row->description?></td>
-		<td><?php echo $row->price;?></td>
+		<td><?php echo $row->price."/";echo $row->units;?></td>
 		<td>
-		<?php echo $row->quantity;?></td>
-		<td><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
+		<?php echo $row->quantity."";echo $row->units;?></td>
 
-		<td><?php echo $row->supplyability;?></td>
+
+
+		<td><?php echo $row->estdeltime;?></td>
 		
 
 		<td style="display:inline-flex;">

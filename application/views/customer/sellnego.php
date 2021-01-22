@@ -29,8 +29,8 @@
 			<th>Company Name</th>
 			<th>Supplier Price</th>
 		     <th>Location</th>
-			<th>Buyer Quantity</th>
-			<th>Buyer Price</th>
+			<th style="color:orange";>Buyer Quantity</th>
+			<th style="color:orange";>Buyer Price</th>
 			<th>View Quotation</th>
 			
       </tr>

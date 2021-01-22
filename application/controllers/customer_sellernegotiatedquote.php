@@ -90,8 +90,8 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 				echo '<td>'.$dat['productname'].'</td>';
 				echo '<td>'.$dat['vname'].'</td>';
 				echo '<td>'.$dat['category'].'</td>';
-				echo '<td>'.$dat['price'].'</td>';
-				echo '<td>'.$dat['supplyability']."".$dat['supplyunits'].'</td>';
+				echo '<td>'.$dat['price']."/".$dat['units'].'</td>';
+				echo '<td>'.$dat['quantity']."".$dat['units'].'</td>';
 				
 				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.$proid.'/'.($dat['vname']).'">';
 				echo '<button class="btn btn-info">Negotiate</button>';

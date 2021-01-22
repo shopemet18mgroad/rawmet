@@ -82,6 +82,10 @@
 		     <?php echo $row->selprice."/" ;echo $row->sunits;?>
 			 <input type="hidden" name="sunits" value="<?php echo $row->sunits;?>">
 		</td>
+			<td><input type="hidden" name="selprice" value="<?php echo $row->selprice;?>">
+		     <?php echo $row->selqan."/" ;echo $row->selunits;?>
+			 <input type="hidden" name="sunits" value="<?php echo $row->sunits;?>">
+		</td>
 		
 
 
