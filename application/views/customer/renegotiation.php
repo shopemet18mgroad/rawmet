@@ -56,10 +56,10 @@
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			<td>
 		
-		<button type="submit" name="submit" id="<?php echo $row->vname.'|'.urlencode( $proid);?>" onclick="cust_quoteapprove(this.id)" class="btn btn-success btn-sm">Approve</button>
+		<button type="submit" name="submit" id="<?php echo $row->vname.'|'.$proid;?>" onclick="cust_quoteapprove(this.id)" class="btn btn-success btn-sm">Approve</button>
 		
 		
-		<a href="<?php  echo base_url()."customer_renegotiation/reject/".$row->vname.'|'.urlencode($prodid);?>"><button type="button" class="btn btn-warning">Reject</button></a></td>
+		<a href="<?php  echo base_url()."customer_renegotiation/reject/".$row->vname.'|'.$prodid;?>"><button type="button" class="btn btn-warning">Reject</button></a></td>
       </tr>      
      <?php }?>	
     </tbody>

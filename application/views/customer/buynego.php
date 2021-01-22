@@ -91,8 +91,11 @@
 
 			
 		
-		 
+
 		<td> <a href="<?php echo base_url().'Customer_quotationpur/auc_no/'.urldecode($row->busername)."/".urldecode($row->vname)."/".urldecode($proid);?>" target="_blank">
+
+		
+
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			

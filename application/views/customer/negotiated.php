@@ -57,10 +57,10 @@
 								<td><?php echo $row->sellerprice."/";echo $row->bsupplyability;?></td>
 										<td>
 		
-		<button type="submit" name="submit" id="<?php echo  $row->vusername.'|'.urlencode($proid);?>" onclick="cust_reqapprove(this.id)" class="btn btn-success btn-sm">Approve</button>
+		<button type="submit" name="submit" id="<?php echo  $row->vusername.'|'.urldecode($proid);?>" onclick="cust_reqapprove(this.id)" class="btn btn-success btn-sm">Approve</button>
 		
 		
-		<a href="<?php  echo base_url()."customer_negotiated/reject/". $row->vusername.'|'.urlencode($proid);?>"><button type="button" class="btn btn-warning">Reject</button></a></td>
+		<a href="<?php  echo base_url()."customer_negotiated/reject/". $row->vusername.'|'.urldecode($proid);?>"><button type="button" class="btn btn-warning">Reject</button></a></td>
 		
 
 		

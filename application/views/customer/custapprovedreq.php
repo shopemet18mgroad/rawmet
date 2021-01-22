@@ -42,8 +42,8 @@
 				?>
 
 	
-			<td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>">
-							<?php echo $row->vusername;?></td>
+			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
+							<?php echo $row->vname;?></td>
 							<td><input type="hidden" name="bname" value="<?php echo $row->bname;?>">
 							<?php echo $row->bname;?></td>
 			<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>">

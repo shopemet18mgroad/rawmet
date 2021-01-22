@@ -49,13 +49,13 @@ class Vendor_custquoteapproval extends CI_Controller {
 		$this->load->model('Admin_model');
 		
 		
-		$productid = str_ireplace('-','/', $this->uri->segment(3));
+		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$busername = ($this->uri->segment(4));
+		$busername = urldecode(($this->uri->segment(4)));
 
 		$retriveval = array('busername'=>$busername,'productid'=>$productid);
 
-		
+		//print_r($retriveval );die;
 		
 		$this->load->model('Admin_model');
 		$app= array('sellapproval'=>true);
@@ -68,10 +68,9 @@ class Vendor_custquoteapproval extends CI_Controller {
 
 	public function reject(){
 		$this->load->helper('url');
+		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$productid = str_ireplace('-','/', $this->uri->segment(3));
-	
-		$busername = ($this->uri->segment(4));
+		$busername = urldecode(($this->uri->segment(4)));
 
 		$retriveval = array('busername'=>$busername,'productid'=>$productid);
 

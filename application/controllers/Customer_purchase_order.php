@@ -54,6 +54,8 @@ class Customer_purchase_order extends CI_Controller {
 			$bsupplyability = $this->input->post('bsupplyability');
 			$selprice = $this->input->post('selprice');
 			$sunits = $this->input->post('sunits');
+			$selprice = $this->input->post('selqan');
+			$sunits = $this->input->post('selunits');
 			
 			//$sterms_condiaccept  = $this->input->post('sterms_condiaccept');
 			$pic_array1 = self::upload_files('upload_dd');
@@ -76,7 +78,7 @@ class Customer_purchase_order extends CI_Controller {
 			//$this->load->model('Admin_model');
 			$data = array('vname' => $vname, 'busername' => $busername,
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
-			'companyname' => $companyname, 'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'uploadporder'=>$pic_array1);
+			'companyname' => $companyname, 'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'selqan' => $selprice,'selunits' => $sunits,'uploadporder'=>$pic_array1);
 			
 			$status = $this->Admin_model->insert('purchaseoder',$data);
 			
