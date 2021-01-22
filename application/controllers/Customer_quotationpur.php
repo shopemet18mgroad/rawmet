@@ -19,15 +19,19 @@ class Customer_quotationpur extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
 	
-	   $vname = urldecode($this->uri->segment(3));
-	   $busername = urldecode($this->uri->segment(4));
+	  
+	   
+	    $vname = urldecode($this->uri->segment(4));
 		
+		$busername = urldecode($this->uri->segment(3));
 		
-	      $active = array('vname'=>$vname);
+	     
 		  $active1 = array('busername'=>$busername);
+		 
+		   $active = array('vname'=>$vname);
 	
 		
-      $query = $this->Admin_model->getdatafromtable('selquotenegotate', $active);
+      $query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
 	 // print_r( $query);die;
         $query1 = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$query2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);

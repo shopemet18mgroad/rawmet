@@ -19,12 +19,12 @@ class Customer_quotation2 extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
 	
-	   $vusername = urldecode($this->uri->segment(3));
-	   $busername = urldecode($this->uri->segment(4));
+	   $vusername = urldecode($this->uri->segment(4));
+	   $bname = urldecode($this->uri->segment(3));
 		
 		
 	      $active = array('vusername'=>$vusername);
-		  $active1 = array('busername'=>$busername);
+		  $active1 = array('bname'=>$bname);
 	
 		
       $query = $this->Admin_model->getdatafromtable('seller_mbuyreq', $active);
@@ -42,10 +42,10 @@ class Customer_quotation2 extends CI_Controller {
 
 		
       $data2 = array(
-        'title' => $vusername,
+        'title' => $bname,
         'data' => 'List Of Lots');
 		$data3 = array(
-        'title' => $busername,
+        'title' => $vusername,
         'data' => 'List Of Lots');
 		//print_r( $data2);die;
 	 $ci = &get_instance();
@@ -64,7 +64,7 @@ class Customer_quotation2 extends CI_Controller {
     // Render the HTML as PDF
     $ci->dompdf->render();
     // Output  PDF (1 = download and 0 = preview)
-    $ci->dompdf->stream($vusername.".pdf", array("Attachment" => 0));
+    $ci->dompdf->stream($bname.".pdf", array("Attachment" => 0));
 		
   }
  }

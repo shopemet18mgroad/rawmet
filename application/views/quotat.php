@@ -75,12 +75,15 @@ table-border
 </style>
 </head>
 <body>
+<!--
+<center><img class="img-fluid" src="<?php //echo base_url()."web_files/img/";?>img/Rawmet.png"   alt="" width="20%;"></center>-->
 
-<p><center><img src="<?php echo base_url()."web_files/";?>img/Rawmet.png"  class="img-fluid" alt="" width="20%;"></center></p>
-<table style="padding:2px ">
+<center><h2 style="color:orange;">RAWMET24</h2></center>
+
+<table style="padding-left:70% ">
   <tr>
     <th>DATE</th>
-    <td>Lastname</td> 
+    <td><?php echo date('Y-m-d H:i:s'); ?></td> 
     
   </tr>
   <tr>
@@ -92,9 +95,9 @@ table-border
 </table>
 
 <p><b>ADDRESS:<br/>
-<p><b>  From:<br/><?php echo $sqldata3[0]->bname.""."<br>". $sqldata3[0]->baddress.""."<br>".$sqldata3[0]->bcity.""."<br>".  $sqldata3[0]->bselectstate.""."<br>". $sqldata3[0]->bpincode;?></b><br></p>
+<p><b>  From:<br/><?php echo $sqldata3[0]->bname.""."<br>". $sqldata3[0]->baddress.""."<br>".$sqldata3[0]->bcity." ".  $sqldata3[0]->bselectstate.""."<br>". $sqldata3[0]->bpincode;?></b><br></p>
 
-<p><b>To:<br/><?php echo $sqldata2[0]->vname.""."<br>".  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity.""."<br>".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>
+<p><b>To:<br/><?php echo $sqldata2[0]->vname.""."<br>".  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity." ".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>
 
 <p><b>Quotation Prepared By:</b>Shopemet Network Private Limited</p>
 
@@ -116,12 +119,11 @@ table-border
     
 		<td><?php echo $sqldata1[0]->bquantity.""; echo $sqldata1[0]->bunits;?></td>
 	<td><?php echo$sqldata1[0]->bprice."/"; echo $sqldata1[0]->bsupplyability;?></td>
-    <td>3000</td>
+    <td><?php echo $a = $sqldata1[0]->bquantity*$sqldata1[0]->bprice;?></td>
   </tr>
   
 </table>
-<br>
-<br>
+
 <div style="position: relative;">
         <div style="width: 50%;">
             <p> <b> TERMS AND CONDITIONS</b></p>
@@ -133,28 +135,24 @@ table-border
             <table id="custom" style="width: 100%">
                 <tr>
                     <th>SUB TOTAL</th>
-                    <td>3000</td>
+                    <td><?php echo $a = $sqldata1[0]->bquantity*$sqldata1[0]->bprice;?></td>
 
                 </tr>
                 <tr>
 
-                    <th>INTERNET HANDLING CHARGES(%)</th>
-                    <td>21234</td>
+                    <th>INTERNET HANDLING CHARGES</th>
+                    <td><?php echo $b = 6.47;?></td>
                 </tr>
-                <tr>
+              <tr>
 
-                    <th>CGST 9% </th>
-                    <td>1234567</td>
+                    <th>GST 18% </th>
+                    <td><?php echo $tot_price =  ($a * 0.18);?></td>
                 </tr>
-                <tr>
-
-                    <th>SGST 9%</th>
-                    <td>1234</td>
-                </tr>
+				<?php $total = $a +$b + $tot_price;?>
                 <tr>
 
                     <th>GRAND TOTAL</th>
-                    <td>9412455</td>
+                    <td><?php echo $total ?></td>
                 </tr>
 
             </table>
@@ -165,7 +163,7 @@ table-border
 	<div>
 		<center>
 			<p> If you have any questions about this quotation please contact</p>
-			<p>jhon doe,phn :123456789</p>
+			<p>jhon doe,phone No. :123456789</p>
 			<p><b> THANK YOU FOR YOUR BUSINESS!</b></p>
 		</center>
 	</div>

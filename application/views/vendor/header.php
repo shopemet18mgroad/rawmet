@@ -72,6 +72,22 @@
             <a class="collapse-item" href="<?php echo base_url();?>vendor_uploadedproduct">Product List</a>
           </div>
         </div>
+	</li>
+	
+	  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment3" aria-expanded="true" aria-controls="collapseUtilities">
+      
+	         <i class="fas fa-fw fa-shopping-cart"></i>
+	    
+          <span>Requirements</span></a>
+		 <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Ongoing Requirement</a>
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">My Requriement</a>
+          </div>
+        </div>
+      </li>
+	  
 		   <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseUtilities">
     <i class='fas fa-envelope-open-text'></i>
@@ -88,19 +104,7 @@
  	
 
 	
-	  <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment3" aria-expanded="true" aria-controls="collapseUtilities">
-      
-	         <i class="fas fa-fw fa-shopping-cart"></i>
-	    
-          <span>Requirements</span></a>
-		 <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Ongoing Requirement</a>
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">My Requriement</a>
-          </div>
-        </div>
-      </li>
+	
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
          <i class='fas fa-envelope-open-text'></i>
@@ -112,7 +116,7 @@
 			 <a class="collapse-item" href="<?php echo base_url();?>vendor_sellnego">Seller's Approved<br> Negotiation</a>
           </div>
         </div>
-  
+  </li>
 	  
 	   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment5" aria-expanded="true" aria-controls="collapseUtilities">

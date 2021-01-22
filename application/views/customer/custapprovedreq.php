@@ -25,8 +25,8 @@
         <th>buyer Quantity</th>
 	    <th> Buyer Price</th>
 		<th>Seller Price</th>
-		<th>Image</th>
-		<th>Purchase Order</th>
+		<!--<th>Image</th>-->
+		<th>View Quotation</th>
 	
       </tr>
     </thead>
@@ -70,16 +70,16 @@
 			 <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
 		</td>
 		
-		
+	<!--	
 <div class="thumbnail">
-					<td><?php $img = unserialize( $row->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="200px" height="100%"></td>
-				<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $img;?>">
+					<td><?php //$img = unserialize( $row->uploadimage)?>
+				<img class="img" src="<?php //echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="200px" height="100%"></td>
+				<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php //echo $img;?>">
 				
 					
-					</div>	
+					</div>	-->
 			 
-		<td> <a href="<?php echo base_url().'customer_quotation2/auc_no/'.urldecode($row->vusername)."/".urldecode($row->bname);?>">
+		<td> <a href="<?php echo base_url().'customer_quotation2/auc_no/'.urldecode($row->bname)."/".urldecode($row->vusername)."/".urldecode($proid);?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			
