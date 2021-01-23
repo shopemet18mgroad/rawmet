@@ -80,7 +80,7 @@ table-border
 
 <center><h2 style="color:orange;">RAWMET24</h2></center>
 
-<table style="padding:2px ">
+<table style="padding-left:70%">
   <tr>
     <th>DATE</th>
     <td><?php echo date('Y-m-d H:i:s'); ?></td> 

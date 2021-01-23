@@ -23,7 +23,7 @@ class Vendor_managebuyreq extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		$reqapproval = array('adapproval'=>true,'selapprove'=>false);
+		$reqapproval = array('selapprove'=>false,'adapproval'=>true);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));

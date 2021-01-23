@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_buypurchase_order extends CI_Controller {
+class Customer_selpurchase_order extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -35,24 +35,22 @@ class Customer_buypurchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('vusername')){
+	if($this->input->post('productname')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
-			$vusername = $this->input->post('vusername');
-			$bname = $this->input->post('bname');
-			$bcompanyname = $this->input->post('bcompanyname');
-			$category = $this->input->post('category');
+			$vname = $this->input->post('vname');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$description = $this->input->post('description');
+				$bcompanyname = $this->input->post('bcompanyname');
+			$category = $this->input->post('category');
 			$quantity  = $this->input->post('quantity');
 			$units = $this->input->post('units');
 			$price = $this->input->post('price');
 			$priceperkg = $this->input->post('priceperkg');
-			$sellerprice = $this->input->post('sellerprice');
-			$bsupplyability = $this->input->post('bsupplyability');
+		
 	        $pic_array1 = self::upload_files('upload_dd');
 			
 			if(!count($pic_array1)){
@@ -71,17 +69,16 @@ class Customer_buypurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vusername' => $vusername,'bname'=>$bname,
-			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
+			$data = array('vusername' => $vname,'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
-			'quantity' => $quantity,'units' => $units, 'price'=> $price,
-			'priceperkg' => $priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1);
+			'quantity' => $quantity,'units' => $units, 'bcompanyname'=> $bcompanyname,'category' => $category, 'price'=> $price,
+			'priceperkg' => $priceperkg,'uploadporder'=>$pic_array1);
 			//print_r($data);die;
 			$status = $this->Admin_model->insert('reqpurchaseorder',$data);
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_Custapprovedreq');
+				  header('location: ./Customer_sellerapprovedreq');
 				  }
 			
 	}

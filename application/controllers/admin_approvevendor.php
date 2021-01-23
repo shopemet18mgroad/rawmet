@@ -49,8 +49,8 @@ class Admin_approvevendor extends CI_Controller {
 	}
 	
 	public function approve_seller(){
-		$vusername= $this->uri->segment(3);
-		$vusernmame = urldecode($vusername);
+		$vusername= urldecode($this->uri->segment(3));
+	
 		$this->load->model('Admin_model');
 		$app= array('voptions'=>true);
 		$adaction2 = array('vusername'=>$vusername);
