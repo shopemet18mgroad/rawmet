@@ -27,13 +27,11 @@
 			<th>Category</th>
 			<th>Company Name</th>
 			<th>Location</th>
-			<th>Supplier Quantity</th>
-
-		
-			<th>Buyer Quantity</th>
-			<th>Buyer Price</th>
-			<th>Purchase Order</th>
-			<th>Action</th>
+		    <th style ="color:pink";>Buyer Quantity</th>
+			<th style ="color:pink";>Buyer Price</th>
+			<th style ="color:orange"; >Supplier Quantity</th>
+			<th style ="color:orange";>Supplier Price</th>
+			<th>View Purchase Order</th>
       </tr>
     </thead>
     <tbody>
@@ -41,6 +39,7 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+				 
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
@@ -50,15 +49,17 @@
 			
 			
 			<td><?php echo $row->pcities;?></td>
-			
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
-			
-			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
+			<td><?php echo $row->bprice."/"; echo $row->bunits;?></td>
 			
 			<td><?php echo $row->selqan.""; echo $row->sunits;?></td>
-	
+			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			
-	<td>
+			
+	
+
+				
+<td>
  <?php $aucfl = unserialize($row->uploadporder);?>
  <?php if(isset($aucfl[0])){	?>
 <a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
@@ -66,13 +67,12 @@
 
  
 </a></td>
+<td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
 <?php }?>	
 
-					<td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
       </tr>      
      <?php }?>	    
-         
-
+ 
     </tbody>
   </table>
 		</div>

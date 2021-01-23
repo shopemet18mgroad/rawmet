@@ -27,11 +27,12 @@
 			<th>Product Name</th>
 			<th>Product Id</th>
 			
-			<th>Buyer Quantity</th>
-			<th>Buyer Price</th>
-			<th>Suplier Price</th>
+			<th style="color:pink;">Buyer Quantity</th>
+			<th style="color:pink;">Buyer Price</th>
+			<th style="color:orange;">Suplier Price</th>
 			
 			<th> View Purchase Order</th>
+	
       </tr>
     </thead>
     <tbody>
@@ -48,12 +49,18 @@
 		
 			<td><?php echo $row->quantity.""; echo $row->units;?></td>
 			<td><?php echo $row->price."/"; echo $row->priceperkg;?></td>
-			<td><?php echo$row->sellerprice."/"; echo $row->bsupplyability;?></td>
+		
+			<td><?php if($row->sellerprice == null){ echo '-';}
+			else{
+				
+			echo $row->sellerprice."/"; echo $row->bsupplyability;}
+			?>
+			</td>
 			
 	
 			
-		
-<td>
+			
+		<td>
  <?php $aucfl = unserialize($row->uploadporder);?>
  <?php if(isset($aucfl[0])){	?>
 <a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
@@ -63,6 +70,7 @@
 </a></td>
 <?php }?>	
 
+    
 
       </tr>      
      <?php }?>	    
