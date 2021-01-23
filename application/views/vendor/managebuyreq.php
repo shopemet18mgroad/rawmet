@@ -56,8 +56,9 @@
 			
 				
 		
-		
+
 		<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->bname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotation</a>
+
 		
 		
 		<a href="<?php echo base_url()."vendor_managebuyreq/delete_buyingrequ/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a></td>	
