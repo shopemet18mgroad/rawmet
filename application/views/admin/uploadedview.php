@@ -35,7 +35,7 @@
 					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
-					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price;?>&nbsp;INR<br><b>Stock:&nbsp;</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?><br><b>Posted On:</b><?php echo $sqldata[0]->datetime;?>
+					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price;?>&nbsp;INR<br><b>Stock:&nbsp;</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?>
 					</p>
 				  </div>
 
