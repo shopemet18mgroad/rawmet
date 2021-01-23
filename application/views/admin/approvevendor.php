@@ -43,7 +43,7 @@
 					
 					<td><?php echo $row->vaddress;?></td>
 					<td><?php echo $row->vcity;?></td>
-					<td><button type="submit" name="submit" id="<?php echo $row->vusername;?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Approve</button>	
+					<td><button type="submit" name="submit" id="<?php echo urldecode($row->vusername);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Approve</button>	
 				
 	
 				</tr>

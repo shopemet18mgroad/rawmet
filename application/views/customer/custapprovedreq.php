@@ -22,6 +22,7 @@
 	   <th>Category</th>
 		<th>productname</th>
 		<th>product Id</th>
+		<th>Description</th>
         <th>buyer Quantity</th>
 	    <th> Buyer Price</th>
 		<th>Seller Price</th>
@@ -42,8 +43,8 @@
 				?>
 
 	
-			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
-							<?php echo $row->vname;?></td>
+			<td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>">
+							<?php echo $row->vusername;?></td>
 							<td><input type="hidden" name="bname" value="<?php echo $row->bname;?>">
 							<?php echo $row->bname;?></td>
 			<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>">
@@ -54,6 +55,8 @@
 								<?php echo $row->productname;?></td>
 			<td><input type="hidden" name="productid" value="<?php echo $row->productid;?>">
 								<?php echo $row->productid;?></td>
+			<td><input type="hidden" name="description" value="<?php echo $row->description;?>">
+								<?php echo $row->description;?></td>
 		
 			<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
 							<?php echo $row->quantity.""; echo $row->units;?>

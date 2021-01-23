@@ -66,7 +66,7 @@
 
     
 					
-		<td><a href="<?php  echo base_url()."admin_reqpurchaseorder/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
+		<td><a href="<?php  echo base_url()."admin_reqpurchaseorder/approve_product/".$proid."/".urldecode($row->vusername);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
       </tr>      
      <?php }?>	    
          

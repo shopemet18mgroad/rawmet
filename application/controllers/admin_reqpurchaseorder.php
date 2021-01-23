@@ -37,9 +37,9 @@ class Admin_reqpurchaseorder extends CI_Controller {
 		public function approve_product(){
 		
 		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-         $vname = urldecode($this->uri->segment(4));
+         $vusername = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		$retriveval = array('productid'=>$productid,'vusername'=>$vusername);
 		
 		
 		

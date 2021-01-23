@@ -40,13 +40,13 @@ class Customer_buypurchase_order extends CI_Controller {
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
-			$vname = $this->input->post('vname');
+			$vusername = $this->input->post('vusername');
 			$bname = $this->input->post('bname');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
-			//$description = $this->input->post('description');
+			$description = $this->input->post('description');
 			$quantity  = $this->input->post('quantity');
 			$units = $this->input->post('units');
 			$price = $this->input->post('price');
@@ -71,7 +71,7 @@ class Customer_buypurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vname' => $vname,'bname'=>$bname,
+			$data = array('vusername' => $vusername,'bname'=>$bname,
 			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
 			'quantity' => $quantity,'units' => $units, 'price'=> $price,
