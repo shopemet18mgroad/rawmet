@@ -22,15 +22,14 @@
     <thead class="bg-primary text-white">
       <tr>
 			<th>Product Id</th>
-			<th>Seller Name</th>
 			<th>Product Name</th>
+			<th>Category</th>
+			<th>Seller Name</th>
+			<th>Company Name</th>
 			<th>Description</th>
 			<th>Quantity</th>
 			<th>Price</th>
-		
-		
 			<th>Status</th>
-			
 			<th>Images</th>
 			<th>View Quotation</th>
 		
@@ -50,16 +49,17 @@
 		
 			<td><input type="hidden"  name="productid" value="<?php echo $row->productid;?>">
 							<?php echo $row->productid;?></td>
-			
+			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
+							<?php echo $row->productname;?></td>
+			<td><input type="hidden"  name="category" value="<?php echo $row->category;?>">
+							<?php echo $row->category;?></td>
 			<td><input type="hidden" id="vname" name="vname" value="<?php echo $row->vname;?>">
 							<?php echo $row->vname;?></td>
 			<td><input type="hidden"  name="bcompanyname" value="<?php echo $row->bcompanyname;?>">
 							<?php echo $row->bcompanyname;?></td>
-			<td><input type="hidden"  name="category" value="<?php echo $row->category;?>">
-							<?php echo $row->category;?></td>
 			
-			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
-							<?php echo $row->productname;?></td>
+			
+			
 			
 			<td><input type="hidden" name="description" value="<?php echo $row->description;?>">
 							<?php echo $row->description;?></td>
@@ -78,7 +78,9 @@
 				<td style="color:orange;"><b><?php if($row->selapprove == 1){echo 'Approved';} elseif($row->selapprove==0){echo 'Pending';}?></b></td>
 				<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
-						<td> <a href="<?php echo base_url().'customer_quotation2/auc_no/'.urldecode($row->bname)."/".urldecode($row->vname)."/".urldecode($proid);?>" target="_blank">
+		
+
+		<td> <a href="<?php echo base_url().'customer_quotation3/auc_no/'.urldecode($row->bname)."/".urldecode($row->vname)."/".urldecode($proid);?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			
