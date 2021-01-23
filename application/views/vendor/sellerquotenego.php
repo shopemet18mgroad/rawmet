@@ -68,7 +68,7 @@
 							
 							<p><b>Company Name:</b><?php echo $sqldata[0]->companyname;?></p>
 							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $sqldata[0]->companyname;?>">
-						
+						<!--	<h6 class="text-center" style="color:orange;"><b>Quantity : <?php// echo $sqldata[0]->supplyability."/"; echo $sqldata[0]->supplyunits;?></b></h6>-->
 							
 							<p><b>Supplier Price:</b><?php echo $sqldata[0]->price."/"; echo $sqldata[0]->units;?></p>
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
@@ -103,7 +103,7 @@
 							<p><b>Price:</b><?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></p>
 							<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata[0]->bprice;?>">
 							<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata[0]->bunits;?>">
-							<h6 class="text-center" style="color:orange;"><b>Live Stock : <?php echo $sqldata[0]->supplyability."/"; echo $sqldata[0]->supplyunits;?></b></h6>
+						
 							
 							
 					</div>

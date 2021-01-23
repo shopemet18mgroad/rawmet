@@ -79,7 +79,7 @@
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
 							
-							<h6 style="color:orange;"><b>Live Stock : <?php echo  $sqldata[0]->supplyability."/"; echo  $sqldata[0]->supplyunits;?></b></h6>
+							<h6 style="color:orange;"><b>Quantity : <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
 							<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo  $sqldata[0]->supplyability;?>">
 					</div>
 					</div>
