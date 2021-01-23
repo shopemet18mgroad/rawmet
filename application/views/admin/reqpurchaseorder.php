@@ -27,11 +27,11 @@
 			<th>Product Name</th>
 			<th>Product Id</th>
 			
-			<th>Buyer Quantity</th>
-			<th>Buyer Price</th>
-			<th>Suplier Price</th>
+			<th style="color:pink;">Buyer Quantity</th>
+			<th style="color:pink;">Buyer Price</th>
+			<th style="color:orange;">Suplier Price</th>
 			
-			<th> View Quotation</th>
+			<th> View Purchase Order</th>
 			<th> Action</th>
       </tr>
     </thead>
@@ -49,7 +49,13 @@
 		
 			<td><?php echo $row->quantity.""; echo $row->units;?></td>
 			<td><?php echo $row->price."/"; echo $row->priceperkg;?></td>
-			<td><?php echo$row->sellerprice."/"; echo $row->bsupplyability;?></td>
+		
+			<td><?php if($row->sellerprice == null){ echo '-';}
+			else{
+				
+			echo $row->sellerprice."/"; echo $row->bsupplyability;}
+			?>
+			</td>
 			
 	
 			
