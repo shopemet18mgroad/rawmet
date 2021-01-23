@@ -235,17 +235,18 @@
 					<label for="description">Description:</label>
 					<textarea class="form-control" rows="5" name="description" id="description"></textarea>
 					</div>
-				
-				   <div class="col-sm-4">
-				   <label for="price">Price:</label>
-                    <input type="text" class="form-control" id="price" name="price" placeholder="0">
-                  </div>
-                
-				
-                <div class="col-sm-2">
-					<label for="quantity">Stock:</label>
+					 <div class="col-sm-2">
+					<label for="quantity">Supply Ability:</label>
                   <input type="text" class="form-control" id="quantity" name="quantity" placeholder>
 				  </div>
+				
+				   <div class="col-sm-2">
+				   <label for="price">Price:</label>
+                    <input type="text" class="form-control" id="price" name="price" placeholder="0">
+                  </div>/
+                
+				
+               
 				  <div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
 			   	<select class="form-control col-sm-0" id="units" name="units">
@@ -270,7 +271,7 @@
                     
                 </div>
 				<div class="col-sm-2 mb-3 mb-sm-0">
-					<label for="Pname">supply Ability:</label>
+					<label for="Pname">Stock:</label>
 					<input type="text" class="form-control" id="supplyability" name="supplyability"  placeholder="">
                     
                 </div>

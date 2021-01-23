@@ -27,11 +27,13 @@
 			<th>Category</th>
 			<th>Company Name</th>
 			<th>Location</th>
-		    <th style ="color:pink";>Buyer Quantity</th>
-			<th style ="color:pink";>Buyer Price</th>
-			<th style ="color:orange"; >Supplier Quantity</th>
-			<th style ="color:orange";>Supplier Price</th>
+		    <th style ="color:pink">Buyer Quantity</th>
+			<th style ="color:pink">Buyer Price</th>
+			<th style ="color:orange" >Supplier Quantity</th>
+			<th style ="color:orange">Supplier Price</th>
 			<th>View Purchase Order</th>
+			<th>Action</th>
+			
       </tr>
     </thead>
     <tbody>
@@ -66,8 +68,10 @@
 <?php echo '<i class="fa fa-download"></i>' ; ?>
 
  
-</a></td>
-<td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
+</a>
+</td>
+<td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
+</td>
 <?php }?>	
 
       </tr>      
