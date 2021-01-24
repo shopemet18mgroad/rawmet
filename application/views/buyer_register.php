@@ -19,12 +19,20 @@
 			  <h3 class="h5 text-gray-700 mb-2">Contact Info</h3> 	
                 <div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
-				<form action="<?php echo base_url();?>home_buyer_register" onsubmit ="return validateForm()" method="POST">
+				<form action="<?php echo base_url();?>home_buyer_register"  method="POST">
 				<input type="text" class="form-control form-control-user" id="bcompanyname" name="bcompanyname" placeholder="Company Name">
                   </div>
                   
 				   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="bcompanytype" name="bcompanytype"  placeholder="Company Type" >
+                   <select class="form-control" id="bcompanytype" name="bcompanytype">
+					       <option value="PVT Ltd.">PVT Ltd.</option>
+						<option value="OPC PVT Ltd.">OPC PVT Ltd.</option>
+						<option value="Ltd">Ltd</option>
+						<option value="LLP">LLP</option>
+				        <option value="Partnership">Partnership</option>
+						<option value="proprietorship">proprietorship</option>
+						<option value="Others">Others</option>
+				    </select> 
                   </div>
 				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="bcontactperson" name="bcontactperson" placeholder="Contact Person">
@@ -49,16 +57,16 @@
                 
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user"id="bpassword" name="bpassword"  placeholder="Password" onkeyup="validate_username()"><span id = "message1" style="color:red"> </span>
+                    <input type="password" class="form-control form-control-user"id="bpassword" name="bpassword" placeholder="Password" onkeyup="validate_username()"><span id = "message1" style="color:red"> </span>
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"  placeholder="Repeat Password"><span id = "message2" style="color:red"> </span>
+                    <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"   placeholder="Repeat Password"><span id = "message2" style="color:red"> </span>
                   </div>
 				  <h3 class="h5 text-gray-700 mb-2"></h3>
                 </div>
 				<div class="form-group row">
 				<div class="col-sm-6 mb-3 mb-sm-0">
-				<input type="email" class="form-control form-control-user" id="bemail" name="bemail" placeholder="Email">
+				<input type="email" class="form-control form-control-user" onkeyup ="return validateForm()" id="bemail" name="bemail" placeholder="Email">
 			
                   </div>
                   <div class="col-sm-6 mb-3 mb-sm-2">

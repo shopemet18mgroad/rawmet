@@ -51,7 +51,7 @@ class Home_seller_register extends CI_Controller {
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
 	$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('vendor_register',$data);
-		header('location:'.base_url().'home/index/'.$datainserr);
+		header('location:'.base_url().'home/index/');
 		
 		
 		 }

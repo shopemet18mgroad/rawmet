@@ -55,11 +55,19 @@ class Home_contactsupplier extends CI_Controller {
 			echo '<div class="row p-2">';
 			echo '<div class="col-sm-12">';
 			echo '';
-			echo '<p><b>Supplier Name:</b> <div>'.$dat['vname'].'</div></p>';
+			
 			echo '<p><b>Product Id:</b><div>'.$dat['productid'].'</div></p>';
-			echo '<p><b>Company Name:</b> <div>'.$dat['companyname'].'</div></p>';
-			echo '';
-			echo '<p class="mt-5"><b>Stock Available at :</b><div>'.$dat['pcities'].' | '.$dat['pstates'].'</div></p>';
+			echo '<p><b>Category:</b> <div>'.$dat['category'].'</div></p>';
+			
+			
+			echo '<p><b>Supplier Price:</b> <div>'.$dat['price'].'  '.$dat['units'].'</div></p>';
+	
+			echo '<h6><b>Stock Available:</b>
+<div>'.$dat['quantity'].'  '.$dat['supplyunits'].'</div></h6>';
+echo '';
+echo '';
+
+
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';
@@ -73,6 +81,7 @@ class Home_contactsupplier extends CI_Controller {
 			echo '<p class="w-auto small">';
 			echo '<div>'.$dat['description'].'</div></p>';
 			echo '';
+			echo '<p><b>Place of Stock:</b><div>'.$dat['pcities'].' | '.$dat['pstates'].'</div></p>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';
@@ -81,7 +90,7 @@ class Home_contactsupplier extends CI_Controller {
 			echo '<div class="col-sm-4 p-2">';
 			echo '<div class="row p-2">';
 			echo '<div class="col-sm-10">';
-			echo '<h6 class="text-center" style="color:orange;"><b>Live Stock : 5 Tons</b></h6>';
+			echo '<h6 style="color:orange;"><b>Quantity:</b><div>'.$dat['supplyability'].' / '.$dat['supplyunits'].'</div></h6>';
 			echo '<div class="form-check mt-3 text-left">';
 			echo '<input type="checkbox" class="form-check-input" id="exampleCheck1">';
 			echo '<label class="form-check-label" for="exampleCheck1">Negotiate</label>';
