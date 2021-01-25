@@ -47,12 +47,15 @@
 				<a href="<?php echo base_url();?>#Upcoming Disposals">Upcoming Disposals</a>
 				<a href="<?php echo base_url();?>home_feedback">feedback</a>
         </div>
+
+	<div class="ajaxrslt mt-5" style="width:100%; height:300px;overflow-y:scroll;" id="ajaxrslt_search">
 	
-       <div class="ajaxrslt mt-5" style="width:100%; height:300px;overflow-y:scroll;" id="ajaxrslt_search">
+    
 			<!----Insert Ajax Table Here------>
 			
 			<!---- ------>
 		</div>
+
     </main>
 		
             
