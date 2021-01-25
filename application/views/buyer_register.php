@@ -147,6 +147,19 @@ if(bname == '' || bcompanyname == '' || bcompanytype == '' || bcontactperson == 
 		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
 		return false;
 	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {bname:bname,bcompanyname:bcompanyname,bcompanytype:bcompanytype,bcontactperson:bcontactperson,bcontactnumber:bcontactnumber,bemail:bemail,busername:busername,bpassword:bpassword,brepeatpassword:brepeatpassword,bpan:bpan,bgst:bgst,baddress:baddress,bcity:bcity,bselectstate:bselectstate,bpincode:bpincode},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
+	
 	if (bcontactnumber.value.length < 10 || bcontactnumber.value.length > 10) {
     swal("Alert!", "Mobile No. is not valid, Please Enter 10 Digit Mobile No.", "error");
     return false;
@@ -163,8 +176,7 @@ if(bname == '' || bcompanyname == '' || bcompanytype == '' || bcontactperson == 
 	
 }
   </script>
-  
-  
+ 
   <script>
 function validateForm() {
     //collect form data in JavaScript variables

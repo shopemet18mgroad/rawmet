@@ -44,11 +44,16 @@ class Home_contactsupplier extends CI_Controller {
 			echo '<div class="thumbnail mt-5">';
 
 			$img = unserialize($dat['uploadproductimage']);
+
 			echo '<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="500px" height="200px">';
+		
 
 			echo '</div>';
+		
 			echo '</div>';
+				
 			echo '</div>';
+			
 			echo '';
 			echo '';
 			echo '<div class="col-sm-3 p-2">';
@@ -60,7 +65,7 @@ class Home_contactsupplier extends CI_Controller {
 			echo '<p><b>Category:</b> <div>'.$dat['category'].'</div></p>';
 			
 			
-			echo '<p><b>Supplier Price:</b> <div>'.$dat['price'].'  '.$dat['units'].'</div></p>';
+			 //'<p><b>Supplier Price:</b> <div>'.$dat['price'].'  '.$dat['units'].'</div></p>';
 	
 			echo '<h6><b>Stock Available:</b>
 <div>'.$dat['quantity'].'  '.$dat['supplyunits'].'</div></h6>';
@@ -79,7 +84,7 @@ echo '';
 			echo '<h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4>';
 			echo '';
 			echo '<p class="w-auto small">';
-			echo '<div>'.$dat['description'].'</div></p>';
+		
 			echo '';
 			echo '<p><b>Place of Stock:</b><div>'.$dat['pcities'].' | '.$dat['pstates'].'</div></p>';
 			echo '</div>';
@@ -90,12 +95,13 @@ echo '';
 			echo '<div class="col-sm-4 p-2">';
 			echo '<div class="row p-2">';
 			echo '<div class="col-sm-10">';
-			echo '<h6 style="color:orange;"><b>Quantity:</b><div>'.$dat['supplyability'].' / '.$dat['supplyunits'].'</div></h6>';
-			echo '<div class="form-check mt-3 text-left">';
-			echo '<input type="checkbox" class="form-check-input" id="exampleCheck1">';
-			echo '<label class="form-check-label" for="exampleCheck1">Negotiate</label>';
-			echo '</div>';
-			echo '';
+			echo '<h6 style="color:orange;"><b>Quantity:</b><div>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</div></h6>';
+				echo '<h6 style="color:orange;"><b>Supplier price:</b><div>'.$dat['price'].'/  '.$dat['units'].'</div></h6>';
+			 //'<div class="form-check mt-3 text-left">';
+			 //'<input type="checkbox" class="form-check-input" id="exampleCheck1">';
+			//'<label class="form-check-label" for="exampleCheck1">Negotiate</label>';
+		 //'</div>';
+			//'';
 			echo '<form class="col-12">';
 			echo '<div class="form-row">';
 			echo '<label class="col-sm-6 col-form-label"  for="name">Quantity</label>';
@@ -115,8 +121,8 @@ echo '';
 			echo '';
 			echo '</div>';
 			echo '<div class="form-row mt-2">';
-			echo '<label class="col-sm-6 col-form-label"  for="name">Your Price Per KG</label>';
-			echo '<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="price" id="name" [(ngModel)]="person.name" />';
+			echo '<label class="col-sm-6 col-form-label"  for="name">Your Price</label>';
+			echo '<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="price" id="name" [(ngModel)]="person.name" />'.'/';
 			echo '<div class="col-sm-3">';
 			echo '<select class="form-control col-sm-0" id="type">';
 			echo '<option>KG</option>';
@@ -139,7 +145,9 @@ echo '';
 			echo '</div>';
 			echo '</div>';
 			echo '';
+			echo '<b>Description:</b><div>'.$dat['description'].'</div></p>';
 			echo '</div>';
+			
 			echo '</form>';
 			echo '<hr />';
 						}

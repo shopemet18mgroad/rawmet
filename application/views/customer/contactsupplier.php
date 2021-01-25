@@ -213,6 +213,18 @@ if(bquantity == '' || bsupplyability == '' || bprice == '' || bunits == '' ){
 swal("Alert!","You can negotiate ony once and cannot leave any field blank!","error");
 		return false;
 	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {bquantity:bquantity,bsupplyability:bsupplyability,bprice:bprice,bunits:bunits},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
 
 }
   </script>
