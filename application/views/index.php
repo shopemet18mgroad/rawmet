@@ -5,7 +5,7 @@
 		
 		
             <div class="form-group input1">
-                <input type="text" class="form-control" id="usr" placeholder="Enter your raw material">
+                <input type="text" class="form-control" id="gettable_search" placeholder="Enter your raw material">
             </div>
 			
 			
@@ -48,7 +48,11 @@
 				<a href="<?php echo base_url();?>home_feedback">feedback</a>
         </div>
 	
-       
+       <div class="ajaxrslt mt-5" style="width:100%; height:300px;overflow-y:scroll;" id="ajaxrslt_search">
+			<!----Insert Ajax Table Here------>
+			
+			<!---- ------>
+		</div>
     </main>
 		
             
