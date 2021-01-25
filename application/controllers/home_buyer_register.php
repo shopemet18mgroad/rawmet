@@ -49,7 +49,7 @@ class Home_buyer_register extends CI_Controller {
 		$datainserr = "Data Inserted Successfully";
 
 		$status = $this->Admin_model->insert('buyer_register', $data2);
-		header('location: '.base_url().'home/index/'.$datainserr);
+		header('location: '.base_url().'home/index/');
 
 		  
         }

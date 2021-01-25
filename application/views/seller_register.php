@@ -15,7 +15,7 @@
                 <h1 class="h4 text-gray-900 mb-2">Vendor's Registration Account!</h1>
 				
               </div>
-			  <form action="<?php echo base_url();?>home_seller_register" onsubmit ="return validateForm()" method="POST">
+			  <form action="<?php echo base_url();?>home_seller_register"  method="POST">
               
 			  <h3 class="h5 text-gray-700 mb-2">Contact Info</h3> 	
                 <div class="form-group row">
@@ -25,7 +25,16 @@
                   </div>
                   
 				   <div class="col-sm-6">
-                  <input type="text" class="form-control form-control-user" id="vcompanytype"  name="vcompanytype"  placeholder="Company Type">
+                  
+				  <select class="form-control" id="vcompanytype" name="vcompanytype">
+					       <option value="PVT Ltd.">PVT Ltd.</option>
+						<option value="OPC PVT Ltd.">OPC PVT Ltd.</option>
+						<option value="Ltd">Ltd</option>
+						<option value="LLP">LLP</option>
+				        <option value="Partnership">Partnership</option>
+						<option value="proprietorship">proprietorship</option>
+						<option value="Others">Others</option>
+				    </select> 
                   </div>
 				   <div class="col-sm-6 mt-2">
 				<input type="text" class="form-control form-control-user" id="vcontactperson"  name="vcontactperson"  placeholder="Contact Person">
@@ -59,7 +68,7 @@
                </div>
 			   <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-				   <input type="email" class="form-control form-control-user" id="vemail"  name="vemail" placeholder="Email">
+				   <input type="email" class="form-control form-control-user" onkeyup="return validateForm()" id="vemail"  name="vemail" placeholder="Email">
                     
                   </div>
                   <div class="col-sm-6">

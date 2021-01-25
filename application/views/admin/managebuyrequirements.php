@@ -53,7 +53,11 @@
 			<td><?php echo $row->email;?></td>
 			<td><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
-			<td><button type="submit" name="submit" id="<?php  echo $row->bname.'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-info btn-sm">Approve</button></td>
+				
+			<td>
+			<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyreqview/index/".$proid."/".urldecode($row->bname);?>"><i class="fa fa-eye"></i></a>
+			
+			<button type="submit" name="submit" id="<?php  echo urldecode($row->bname).'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-success btn-sm">Approve</button></td>
 		
       </tr>      
      <?php }?>	

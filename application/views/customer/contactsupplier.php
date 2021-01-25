@@ -37,16 +37,17 @@
 				?>
 				<div class="col-sm-3">
 				<div class="col-sm-4">
-				<p style="color:purple;"><b><?php echo  $sqldata[0]->productname;?></b></p>
-						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
-				<div class="thumbnail">
+				
+				<div class="thumbnail mt-5">
 					<td><?php $img = unserialize( $sqldata[0]->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="100%"></td>
 				<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img[0];?>">
 				
 					
 					</div>		
-						
+					 <label><b>Description:</b></label>
+				<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
+							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">	
 				</div>
 				</div>
 			
@@ -54,33 +55,36 @@
 				<div class="col-sm-4 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
-									
+							<p style="color:purple; font-size:18px;"><b><?php echo  $sqldata[0]->productname;?></b></p>
+						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">		
 							
-							<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
+							<p><b>Product Id:</b><?php echo  $sqldata[0]->productid;?></p>
+							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
+							
 							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
 							<input type="hidden" class="form-control" id="busername" name="busername"  value="<?php echo $sessi;?>">
 							
 							<p><b>Category:</b><?php echo  $sqldata[0]->category;?></p>
 							<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo  $sqldata[0]->category;?>">
 							
-							<p><b>Product Id:</b><?php echo  $sqldata[0]->productid;?></p>
-							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
 							
-						
-							
-							<p><b>Company Name:</b><?php echo  $sqldata[0]->companyname;?></p>
 							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo  $sqldata[0]->companyname;?>">
 							
 							<p><b>Supplier Price:</b><?php echo  $sqldata[0]->price."/"; echo $sqldata[0]->units;?></p>
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo  $sqldata[0]->price;?>">
 							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
 							
-							<p class="mt-3"><b>Stock Available at :</b> <?php echo $sqldata[0]->pcities."|"; echo  $sqldata[0]->pstates;?></p>
-							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
-							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
+							
+							<h6><b>Stock Available: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->supplyunits;?></b></h6>
+							
 							
 							<h6 style="color:orange;"><b>Quantity : <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
 							<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo  $sqldata[0]->supplyability;?>">
+							
+							
+							<p class="mt-3"><b>Place of Stock:</b> <?php echo $sqldata[0]->pcities."|"; echo  $sqldata[0]->pstates;?></p>
+							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
+							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
 					</div>
 					</div>
 				  </div>
@@ -163,9 +167,7 @@
 					  
 				  </div>
 				  
-				  <label><b>Description:</b></label>
-				<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
-							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">
+				 
                 </div>
 						
                 </form>	
