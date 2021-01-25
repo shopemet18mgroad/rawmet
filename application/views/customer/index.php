@@ -97,7 +97,7 @@
                       <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-list-alt fa-2x text-danger"></i>
+                      <i class="fas fa-rupee-sign fa-2x text-danger"></i>
                     </div>
                   </div>
                 </div>

@@ -71,7 +71,7 @@
 	  
 	   <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>admin_approvevendor">
-          <i class="fas fa-fw fa-shopping-cart"></i>
+          <i class="fas fa-check"></i>
           <span>Vendor approve</span></a>
       </li>
 
@@ -108,13 +108,13 @@
 	  
 	    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>Admin_managebuyrequirements">
-          <i class="fas fa-fw fa-shopping-cart"></i>
+          <i class="fas fa-list"></i>
           <span>Manage Buying Requirements</span></a>
       </li>
 	  
 	   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment5" aria-expanded="true" aria-controls="collapseUtilities">
-     <i class="fa fa-list" aria-hidden="true"></i>
+     <i class="fas fa-receipt" aria-hidden="true"></i>
           <span>Purchase Order</span></a>
 		  <div id="payment5" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -133,7 +133,7 @@
       </li>-->
 	  <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>Admin_purchaseoder">
-       <i class='fas fa-dollar-sign'></i>
+       <i class='fas fa-rupee-sign'></i>
           <span>Payable money</span></a>
       </li>
 	  

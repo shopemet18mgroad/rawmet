@@ -29,12 +29,31 @@ class Admin_indexm extends CI_Controller {
 			die;
 			}else{
 		$this->load->model('Admin_model');
+		 $uploadporder = unserialize($this->uri->segment(3));
+		 
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('ausername'=>$sess['sessi']);
+		
+		$active = array('buyerapprove'=>false);
+		$query['data1'] = $this->Admin_model->getdatafromtable('selquotenegotate',$active);
+		
+		
+		$active2 = array('sellapproval'=>true);
+		$query['data2'] = $this->Admin_model->getdatafromtable('purchaseoder',$active2);
+		
+		$active3 = array('uploadporder'=>$uploadporder);
+		$query['data3'] = $this->Admin_model->getdatafromtable('purchaseoder',$active3);
+		
+		$active4 = array('pooptions'=>true);
+		$query['data4'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$active4);
+		
+		$val['sql']=count($query['data1']);
+		$val['sql2']=count($query['data2']);
+		$val['sql3']=count($query['data3']);
+		$val['sql4']=count($query['data4']);
 			}
 	
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/indexm');
+		$this->load->view('admin/indexm',$val);
 		$this->load->view('admin/footer');
 		
 	}
