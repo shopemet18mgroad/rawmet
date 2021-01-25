@@ -156,7 +156,18 @@ function validateseller(){
 if(vname == '' || vcompanyname == '' || vcompanytype == '' || vcontactperson == '' || vcontactnumber == '' || vemail == '' || vusername == '' || vpassword == '' || vrepeatpassword == '' || vpan == '' || vgst == '' || vaddress == '' || vcity == '' || vselectstate == '' || vpincode == ''){
 swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST,Pcb, Address, Street, City, State, Pin  cannot leave any field blank!","error");
 		return false;
-	}
+	}else{
+        $.ajax({
+            type:'submit',
+            data: {vname:vname,vcompanyname:vcompanyname,vcompanytype:vcompanytype,vcontactperson:vcontactperson,vcontactnumber:vcontactnumber,vemail:vemail,vusername:vusername,vpassword:vpassword,vrepeatpassword:vrepeatpassword,vpan:vpan,vgst:vgst,vaddress:vaddress,vcity:vcity,vselectstate:vselectstate,vpincode:vpincode},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
 	if (vcontactnumber.value.length < 10 || vcontactnumber.value.length > 10) {
     swal("Alert!", "Mobile No. is not valid, Please Enter 10 Digit Mobile No.", "error");
     return false;
