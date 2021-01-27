@@ -44,8 +44,9 @@ class Home_contactsupplier extends CI_Controller {
 			echo '<div class="thumbnail mt-5">';
 
 			$img = unserialize($dat['uploadproductimage']);
+
 			echo '<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="500px" height="200px">';
-			
+		
 
 			echo '</div>';
 		

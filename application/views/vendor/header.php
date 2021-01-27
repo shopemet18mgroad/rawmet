@@ -112,7 +112,7 @@
 	
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
-         <i class='fas fa-envelope-open-text'></i>
+         <i class='fas fa-check'></i>
           <span>Finalized Negotiation</span></a>
 		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -149,7 +149,7 @@
       </li>-->
 	  	   <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct3" aria-expanded="true" aria-controls="collapseUtilities">
-   <i class='fas fa-dollar-sign'></i>
+   <i class='fas fa-rupee-sign'></i>
           <span>Finance</span></a>
 		 <div id="collapseProduct3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">

@@ -49,7 +49,16 @@
 							<tr>
 								<td><b>Stock:</b><?php echo  $sqldata[0]->quantity."/".$sqldata[0]->units;?></td>
 							</tr>
+	<tr>			
+<td><b>Customer Uploaded PDF:</b>
+ <?php $aucfl = unserialize($sqldata[0]->uploadpdf);?>
+ <?php if(isset($aucfl[0])){?>
+<a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
+<?php echo '<i class="fa fa-download"></i>' ; ?>
 
+</a></td>
+<?php }?>
+</td>
 						</tbody>	
 					</table>
 				</div>

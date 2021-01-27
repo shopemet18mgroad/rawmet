@@ -27,7 +27,7 @@
                     </div>
 					
                   </div>
-				  <div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php //echo $sql;?></center></div>
+				<div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php echo $sql;?></center></div>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@
                       <i class="fas fa-envelope fa-2x text-success"></i>
                     </div>
                   </div>
-				  <div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php// echo $sql2;?></center></div>
+				  <div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php echo $sql2;?></center></div>
                 </div>
               </div>
             </div>
@@ -63,6 +63,7 @@
                       <i class="fas fa-shopping-cart fa-2x text-danger"></i>
                     </div>
                   </div>
+				   <div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php echo $sql3;?></center></div>
                 </div>
               </div>
 			  </div>
@@ -96,7 +97,7 @@
                       <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                     </div>
                     <div class="col-auto">
-                   <i class='fas fa-dollar-sign fa-2x text-danger'></i>
+                   <i class='fas fa-rupee-sign fa-2x text-danger'></i>
                     </div>
                   </div>
                 </div>
@@ -121,6 +122,7 @@
                       <i class="fas fa-file fa-2x text-primary"></i>
                     </div>
                   </div>
+				  <div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php echo $sql2;?></center></div>
                 </div>
               </div>
             </div>
@@ -153,7 +155,7 @@
                       </div>
                     <div class="col-auto">
                      
-					     <i class='fas fa-dollar-sign fa-2x text-info'></i>
+					     <i class='fas fa-rupee-sign fa-2x text-info'></i>
                     </div>
                   </div>
                 </div>
@@ -173,10 +175,11 @@
                     <div class="col-auto">
                       <i class="fas fa-list-alt fa-2x text-primary"></i>
                     </div>
-                  </div>
+				 </div>
+				 <div class="text-xl font-weight-bold text-black text-uppercase mb-1"><center><?php echo $sql4;?></center></div>
                 </div>
               </div>
-           
+           </div>
          
         
 		  
@@ -198,7 +201,7 @@
     <!-- End of Content Wrapper -->
 </div>
   </div>
-  </div>
+
   <!-- End of Page Wrapper -->
   
 

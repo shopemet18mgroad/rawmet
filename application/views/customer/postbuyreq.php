@@ -217,6 +217,18 @@ if(category == '' || productname == '' || description == '' || price == '' || qu
 swal("Alert!","Category, Product Name, Description, Price, Quantity, Price/KG, Units, Dates , Email, Contact Number cannot leave any field blank!","error");
 		return false;
 	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {category:category,productname:productname,description:description,price:price,quantity:quantity,priceperkg:priceperkg,units:units,requireddate:requireddate,lastdate:lastdate,email:email,contactnumber:contactnumber},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
 
 }
   </script>
