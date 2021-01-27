@@ -40,6 +40,10 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-md font-weight-bold text-success text-uppercase mb-1">Purchase Order</div>
+					  					   <div class="inner">
+         <?php echo $sql3;?>
+   
+</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                     </div>
                     <div class="col-auto">
