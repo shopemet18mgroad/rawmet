@@ -60,11 +60,14 @@
 							</tr> 
 						</tbody>	
 					</table>
+					
 				</div>
+		
                 </form>	
 					
 			
               </div>
+			  	
             </div>
 
             <!-- Pie Chart -->
