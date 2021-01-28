@@ -159,7 +159,7 @@ function validate_selnego(){
 	
 	
 
-if(selprice == '' || sunits == '' ||){
+if(selprice == '' || sunits == '' ){
 		swal("Alert!",  "seller Price, Seller Quantity,  ", "error");
 		return false;
 	}
