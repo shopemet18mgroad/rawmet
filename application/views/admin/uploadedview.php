@@ -33,10 +33,10 @@
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
 					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
 					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
+			<p><b>Supplier Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></p>
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
-					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price;?>&nbsp;INR<br><b>Stock:&nbsp;</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?>
-					</p>
+							<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->units;?><br><b>Stock:&nbsp;</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?><br><b>Posted On:</b><?php echo $sqldata[0]->datetime;?>
 				  </div>
 				   <?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
 	 

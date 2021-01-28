@@ -37,8 +37,8 @@
                     
                 </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Company Name</label>
-					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" value="<?php echo  $sqldata[0]->companyname;?>">
+					<label for="">Supplier Id</label>
+					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" value="<?php echo  $sqldata[0]->companyname;?>" readonly>
                     
                 </div>
 				
