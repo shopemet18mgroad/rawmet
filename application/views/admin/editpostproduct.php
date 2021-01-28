@@ -33,12 +33,12 @@
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Supplier Name</label>
-					<input type="text" class="form-control" id="vname" name="vname"  value="<?php echo  $sqldata->vname;?>" readonly>
+					<input type="text" class="form-control" id="vname" name="vname"  value="<?php echo  $sqldata[0]->vname;?>" readonly>
                     
                 </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Company Name</label>
-					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" value="<?php echo  $sqldata[0]->companyname;?>">
+					<label for="">Supplier Id</label>
+					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" value="<?php echo  $sqldata[0]->companyname;?>" readonly>
                     
                 </div>
 				

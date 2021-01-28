@@ -72,7 +72,7 @@ class Vendor_postproduct extends CI_Controller {
 		    $types= $this->input->post('types');			 
 		    $payable = $this->input->post('payable');
 			$productid = $this->input->post('productid');
-			$companyname = $this->input->post('companyname');
+			$companyname = base64_encode ($this->input->post('companyname'));
 			//$uploadproductimage = self::upload_files('uploadproductimage');
 			$_FILES['uploadproductimage']['name'];
 			$pic_array1  = self::upload_files('uploadproductimage'); 
