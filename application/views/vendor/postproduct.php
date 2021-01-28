@@ -297,16 +297,35 @@
 					<label for="Pname">Stock Per Month:</label>
 					<input type="text" class="form-control" id="quantpermonth" name="quantpermonth"  placeholder="">
                     
-                </div>
+				</div>
+				
+				
+				
 				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">Validity From Date:</label>
+					<input type="datetime-local" class="form-control" id="productvalidityfrom" name="productvalidityfrom"  placeholder="">               
+				</div>
+				
+				
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">Validity To Date:</label>
+					<input type="datetime-local" class="form-control" id="productvalidityto" name="productvalidityto"  placeholder="">
+				</div>	
+                    
+				
+				
+	
+	
+	
+	<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Estimated Delivery Time:</label>
 					<input type="text" class="form-control" id="estdeltime" name="estdeltime"  placeholder="">
                     
                 </div>
 				<div class="col-sm-5 mt-4">
-					<p>Upload Product Image:</p>
+					<p>Upload Product Images:</p>
 					
-					<input type="file" id="uploadproductimage" name="uploadproductimage[]">
+					<input type="file" id="uploadproductimage" name="uploadproductimage[]" multiple="multiple">
 				</div>
 				<!--<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>

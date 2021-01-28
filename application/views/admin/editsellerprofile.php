@@ -119,7 +119,7 @@
 					   </tbody>
 					</table>
 						<center>		
-                <input type="submit" id="submitBtn" class="btn btn-primary" name="submit" value="Update">	</center>			
+                <input type="submit" id="submitBtn" class="btn btn-primary" name="submit" value="Update"></center>			
            <!--<a href="#" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" role="button"><b>S</b></a>-->
 					</form>
 

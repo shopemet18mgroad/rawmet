@@ -62,13 +62,17 @@ class Vendor_postproduct extends CI_Controller {
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');
 			$quantpermonth = $this->input->post('quantpermonth');
+			
+			$productvalidityfrom = $this->input->post('productvalidityfrom');
+			$productvalidityto = $this->input->post('productvalidityto');
+			
 			$estdeltime = $this->input->post('estdeltime');
 			$pstates= $this->input->post('pstates');
 			$pcities = $this->input->post('pcities');
 		    $types= $this->input->post('types');			 
 		    $payable = $this->input->post('payable');
 			$productid = $this->input->post('productid');
-			$companyname = $this->input->post('companyname');
+			$companyname = base64_encode ($this->input->post('companyname'));
 			//$uploadproductimage = self::upload_files('uploadproductimage');
 			$_FILES['uploadproductimage']['name'];
 			$pic_array1  = self::upload_files('uploadproductimage'); 
@@ -85,7 +89,7 @@ class Vendor_postproduct extends CI_Controller {
 			
 			$data1 = array('productid'=>$productid );
 			 //print_r($uploadproductimage);die;
-			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'uploadproductimage'=>$pic_array1,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname,'vusername'=>$vusername );
+			$data2 = array('productname' => $productname,'vname'=>$vname,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'materialname'=>$materialname,'uploadproductimage'=>$pic_array1,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'productvalidityfrom'=>$productvalidityfrom,'productvalidityto'=>$productvalidityto, 'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable,'productid'=>$productid ,'companyname'=>$companyname,'vusername'=>$vusername );
 			//print_r($data2);die;
 
 
@@ -136,10 +140,19 @@ public function index_error(){
 			
 	}
 
-private function upload_files($nameid){
+
+
+
+
+
+
+
+
+
+	private function upload_files($nameid){
     	//print_r($nameid);
     //$countfiles = count($_FILES[$nameid]['name']);
-	$countfiles=1;
+	$countfiles=5;
       // Looping all files
       for($i=0;$i<$countfiles;$i++){
         if(!empty($_FILES[$nameid]['name'][$i])){

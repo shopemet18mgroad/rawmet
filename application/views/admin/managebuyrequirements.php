@@ -20,18 +20,15 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm w-auto small" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>
+      <tr> <th>Images</th>
 			<th>Product Id</th>
 			<th>Product Name</th>
 			<th>Buyer Name</th>
 			<th>company Name</th>
 			<th>Description</th>
-			<th>Price</th>
-			<th>Quantity</th>
-			<th>Required Date</th>
-			<th>Last Date</th>
-			<th>Email</th>
-			<th>Images</th>
+		
+	
+			
 			<th>Action</th>
       </tr>
     </thead>
@@ -40,19 +37,16 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+	<td><?php $img = unserialize($row->uploadimage)?>
+		<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->bname;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
 		
 			<td><?php echo $row->description;?></td>
-				<td><?php echo $row->price."/";echo $row->priceperkg;?></td>
-			<td><?php echo $row->quantity."  ";echo $row->units;?></td>
-			<td><?php echo $row->requireddate;?></td>
-			<td><?php echo $row->lastdate;?></td>
-			<td><?php echo $row->email;?></td>
-			<td><?php $img = unserialize($row->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
+			
+			
 				
 			<td>
 			<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyreqview/index/".$proid."/".urldecode($row->bname);?>"><i class="fa fa-eye"></i></a>

@@ -36,7 +36,7 @@
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 					<td><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="55px"></td>
 	  <td><?php echo $row->productid;?></td> 
 	   <td><?php echo $row->vname;?></td>
 		<td><?php echo $row->productname;?></td> 
@@ -47,7 +47,7 @@
 		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_uploadedview/index/".$proid;?>"><i class="fa fa-eye">veiw</i></a>
 		
 		
-			<a href="<?php  echo base_url()."admin_adminvendorproducts/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
+			
 		
 		
 		
@@ -56,7 +56,7 @@
 		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
 		
 		
-		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_editpostproduct/editproduct/".$proid .'/'.urldecode($row->category);?>"><i class="fa fa-edit">update</i></a>
+		
 	
 </td>
         

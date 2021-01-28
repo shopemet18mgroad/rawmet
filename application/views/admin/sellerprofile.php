@@ -116,14 +116,7 @@
 								<td>Pincode</td>
 								<td><?php echo $sqldata[0]->vpincode;?></td>
 							</tr>
-                              <tr>
-								<td>Business type</td>
-								<td>Rajkot</td>
-							</tr>
-                             <tr>
-								<td>Business description</td>
-								<td>Verified</td>
-							</tr>
+                             
 														
 						</tbody>
 					</table>							

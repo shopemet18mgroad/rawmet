@@ -1,19 +1,23 @@
-reject button in admin approve.
-category
- admin product edit.
- limited nthgs in 
- edit button in view product in admin.
- first negotiation in search engine.
- seller comanpany should be encoded.in seller .
- quantity must be auto fetching.
- it should go below that price he quoted sell 
-buyer also renegotiate again.
-validte of time in all negotiation.
-alert in email to admin after final negotiation.
-last reject( should be seen to both admin and seller) or aprovd (only for buyer)
-input should have certifte of iso certifications admin should have 
-view product admin should have payable comission should be fixied. 
-multipe product image 
-error seller fetchin price..
-online payment should be after po in seller.
-suspend the seller payment.
+1. reject button in admin approve. (done)
+2. category should added admin. (not required now)
+3. Admin can edit the product added by seller. 
+4. limited things should come in table.
+5. first negotiation in search engine.
+6. seller comanpany should be encoded in seller while registration and displaying the company name as supplier id.
+7. quantity must be auto fetching in renegotiate page.
+8. it should go below that price he quoted sell (give validation)
+9. buyer also renegotiate again.
+	1st Step- Buyer will negotiate.
+	2nd step- Seller will renegotiate.
+	3rd step- buyer will again renegotiate or he will ask for final offer.
+	4th step- seller gives counter offer.
+	5th step- buyer accept/reject/help(alert in email to admin after final negotiation and reject)
+10.Add required date and last date in seller post product as validity of product. In negotiation we need to show validity time.
+
+11.Admin and seller both can see the reject part.
+12.In seller post product give upload iso certifications and display it to admin.
+13.view product admin should have payable comission should be fixed(do in edit part). 
+14.multipe product image 
+15.error seller fetching price in buyer dashboard
+16. online payment should be after po in seller.
+17. suspend the seller payment.(seema)

@@ -42,7 +42,7 @@
         <td>
 				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"> <i class="fa fa-edit"></i>Edit</a>
 				
-				<a href="<?php echo base_url()."admin_vendorprofile/delete_vendor/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash"></i>Delete</a>
+				<a href="<?php echo base_url()."admin_vendorprofile/delete_vendor/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash"></i>Suspend</a>
 				</td>
       </tr> 
 <?php }?>	  
