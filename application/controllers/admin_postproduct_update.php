@@ -104,7 +104,7 @@ class Admin_postproduct_update extends CI_Controller {
 		$status = $this->Admin_model->update_custom('sellerpostproduct',$data,$updatech,$updatech);
 		
 	
-		header('location: '.base_url().'vendor_uploadedproduct/index/'.$datainserr);
+		header('location: '.base_url().'Admin_adminvendorproducts/index/'.$datainserr);
 	
 	
 	}
