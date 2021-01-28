@@ -56,7 +56,7 @@
 		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
 		
 		
-		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_editpostproduct/editproduct/".$proid .'/'.urldecode($row->category);?>"><i class="fa fa-edit">update</i></a>
+		
 	
 </td>
         

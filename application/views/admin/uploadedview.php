@@ -38,7 +38,7 @@
 					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price;?>&nbsp;INR<br><b>Stock:&nbsp;</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?>
 					</p>
 				  </div>
-
+<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_editpostproduct/editproduct/".urldecode($sqldata[0]->productid)."/".urldecode($sqldata[0]->productname);?>"><i class="fa fa-edit">update</i></a>
 				<table class="table bg-white table-sm table-borderless">
 					<thead class="bg-primary text-white">
 						<tr>
