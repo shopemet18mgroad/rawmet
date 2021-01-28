@@ -123,7 +123,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>customer_sellernegotiatedquote">Ongoing Negotiation</a>
             <a class="collapse-item" href="<?php echo base_url();?>Customer_renegotiation">Re-Negotate</a>
-			 
+			 <a class="collapse-item" href="<?php echo base_url();?>Customer_custrenegovalue">My Re-Negotated Value</a> 
           </div>
         </div>
       </li>

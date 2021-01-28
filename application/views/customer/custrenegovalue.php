@@ -6,7 +6,8 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Ongoing Negotiation</h1>
+            <h1 class="h3 mb-0 text-gray-800">Seller's Quote Negotiated Value
+			</h1>
             
           </div>
 
@@ -20,48 +21,38 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>   
-	        <th>Image</th>
+      <tr>
 			<th>Buyer Name</th>
 			<th>Product Name</th>
-			
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Company Name</th>
-			<th>Supplier Price</th>
-			<th>Available Stocks</th>
-			<th>Location</th>
-			<th style="color:orange;">Buyer Quantity</th>
-			<th style="color:orange;">Buyer Price</th>
-			<th>Action</th>
-      </tr>
+			<th>Supplier Original Price</th>
+			<th style="color:pink;">Your Negotiated Quantity</th>
+			<th style="color:pink;">Your Negotiated Price</th>
+			<th style="color:yellow;">Seller Re-Negotiated price</th>
+			<th style="color:orange;">Your Re-Negotiated price</th>
+			<th style="color:orange;">Your Re-Negotiated Quantity</th>
+			
+			
+     
     </thead>
     <tbody>
 	 <?php foreach($sqldata as $row){?>
       <tr>
-	  <?php $proid =str_ireplace('/','-',$row->productid);
+	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-		<td><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
+				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->companyname;?></td>
 			<td><?php echo $row->price;?></td>
-			<td><?php echo $row->supplyability;?></td>
-			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-						
+			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
+			<td><?php echo $row->brenegoprice."/"; echo $row->brenegounit;?></td>
+			<td><?php echo $row->brenegoquantity."/"; echo $row->brenegoquantityunit;?></td>
 			
-		<td>	
-	
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selneg()">Approve </button></a>
-					
-		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".urldecode($proid)."/".urldecode($row->busername)."/".urldecode($row->vname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotiate</a></center>
-		
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
       </tr>      
      <?php }?>	
     </tbody>

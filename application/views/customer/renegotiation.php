@@ -58,6 +58,7 @@
 		
 		<button type="submit" name="submit" id="<?php echo $row->vname.'|'.$proid;?>" onclick="cust_quoteapprove(this.id)" class="btn btn-success btn-sm">Approve</button>
 		
+		<center><a href="<?php echo base_url()."Customer_buyerrengo/index/".urldecode($proid)."/".urldecode($row->busername)."/".urldecode($row->vname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotation</a></center>
 		
 		<a href="<?php  echo base_url()."customer_renegotiation/reject/".$row->vname.'|'.$prodid;?>"><button type="button" class="btn btn-warning">Reject</button></a></td>
       </tr>      

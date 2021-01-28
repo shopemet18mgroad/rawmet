@@ -23,11 +23,11 @@ class Vendor_sellerquotenego extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		$productid = urldecode(str_ireplace('-','/', $this->uri->segment(3)));
-	
-		$vname =  urldecode($this->uri->segment(4));
+	$busername =  urldecode($this->uri->segment(4));
+		$vname =  urldecode($this->uri->segment(5));
 	
 		
-		$active = array('productid '=>$productid ,'vname'=>$vname);
+		$active = array('productid '=>$productid ,'busername'=>$busername,'vname'=>$vname);
 	
 	
 		$query = $this->Admin_model->getdatafromtable('quotes', $active);
