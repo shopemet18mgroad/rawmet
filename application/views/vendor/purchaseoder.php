@@ -40,7 +40,7 @@
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
-         <td><?php echo $row->payable."%"?></td>
+         <td><?php echo $row->payable;?></td>
 
 		
 		

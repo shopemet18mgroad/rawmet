@@ -68,7 +68,6 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 			echo '<tr>';
 			echo '<th>Product Id</th>';
 			echo '<th>Product Name</th>';
-			echo '<th>Supplier Name</th>';
 			echo '<th>Category</th>';
 			echo '<th>Price</th>';
 			echo '<th>Quantity</th>';
@@ -88,7 +87,6 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 				echo '</a>';
 				echo '</td>';
 				echo '<td>'.$dat['productname'].'</td>';
-				echo '<td>'.$dat['vname'].'</td>';
 				echo '<td>'.$dat['category'].'</td>';
 				echo '<td>'.$dat['price']."/".$dat['units'].'</td>';
 				echo '<td>'.$dat['supplyability']."".$dat['units'].'</td>';
