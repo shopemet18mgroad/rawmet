@@ -18,16 +18,8 @@
 	  <th>Image</th>
 	  <th>Product Id</th>
 	  <th>Vendor Name</th>
-        <th>Product Name</th>
-        <th>Category</th>
-        <th>Description</th>
-		<th>Price</th>
-		<th>stock</th>
-	   
-		<th>Estimated Delivery</th>
-		
-		
-		<th>options</th>
+       <th>Product Name</th>
+       <th>options</th>
 		
 		
       </tr>
@@ -48,19 +40,11 @@
 	  <td><?php echo $row->productid;?></td> 
 	   <td><?php echo $row->vname;?></td>
 		<td><?php echo $row->productname;?></td> 
-		<td><?php  echo $row->category;?></td>
-         <td><?php echo $row->description?></td>
-		<td><?php echo $row->price."/";echo $row->units;?></td>
-		<td>
-		<?php echo $row->quantity."";echo $row->units;?></td>
-
-
-
-		<td><?php echo $row->estdeltime;?></td>
+	
 		
 
 		<td style="display:inline-flex;">
-		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
+		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_uploadedview/index/".$proid;?>"><i class="fa fa-eye">veiw</i></a>
 		
 		
 			<a href="<?php  echo base_url()."admin_adminvendorproducts/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
@@ -69,8 +53,12 @@
 		
 		
 		
-		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a></td>
-
+		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
+		
+		
+		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_editpostproduct/editproduct/".$proid .'/'.urldecode($row->category);?>"><i class="fa fa-edit">update</i></a>
+	
+</td>
         
 <?php }?>	
 </tr>   

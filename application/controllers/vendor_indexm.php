@@ -36,6 +36,13 @@ class Vendor_indexm extends CI_Controller {
 		
 		$adac['sql']= count($query['data']);
 		
+		$active3 = array('vname'=>$sess['sessi'],'sellapproval'=>true);
+		$query['data'] = $this->Admin_model->getdatafromtable('purchaseoder',$active3);
+		
+
+		$adac['sql3']=count($query['data']);
+	
+		
 		
 			
 			//$query = $this->db->query('SELECT * FROM selquotenegotate');

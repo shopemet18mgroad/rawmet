@@ -1,0 +1,19 @@
+reject button in admin approve.
+category
+ admin product edit.
+ limited nthgs in 
+ edit button in view product in admin.
+ first negotiation in search engine.
+ seller comanpany should be encoded.in seller .
+ quantity must be auto fetching.
+ it should go below that price he quoted sell 
+buyer also renegotiate again.
+validte of time in all negotiation.
+alert in email to admin after final negotiation.
+last reject( should be seen to both admin and seller) or aprovd (only for buyer)
+input should have certifte of iso certifications admin should have 
+view product admin should have payable comission should be fixied. 
+multipe product image 
+error seller fetchin price.
+online payment should be after po in seller.
+suspend the seller payment.

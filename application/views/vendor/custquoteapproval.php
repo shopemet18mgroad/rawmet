@@ -56,7 +56,8 @@
 						
 			
 		<td>	
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success">Approve</button></a>
+	
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success" onclick="validate_selneg()">Final Negotation </button></a>
 					
 		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".$proid."/".urlencode($row->vname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotation</a></center>
 		
