@@ -57,7 +57,7 @@
 	
 		<a href="<?php  echo base_url()."Vendor_custrenegovalue/approve_requote/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success btn-sm">Approve</button></a>
 					
-		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".urldecode($proid)."/".urldecode($row->busername)."/".urldecode($row->vname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotation</a></center>
+		<center><a href="<?php echo base_url()."Vendor_sellrenegotiate/index/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</a></center>
 		
 		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
       </tr>      

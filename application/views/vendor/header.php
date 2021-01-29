@@ -113,8 +113,8 @@
 		 <div id="collapseProduct2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>Vendor_custrenegovalue">Ongoing Re-Negotiation</a>
-           
-			<a class="collapse-item" href="<?php echo base_url();?>vendor_sellernegotiatedquote">Final Re-Negotiation</a>
+           <a class="collapse-item" href="<?php echo base_url();?>vendor_sellrenegovalue">My Re-Negotiation</a>
+			
           </div>
         </div>
       </li>
