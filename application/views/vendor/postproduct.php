@@ -327,6 +327,12 @@
 					
 					<input type="file" id="uploadproductimage" name="uploadproductimage[]" multiple="multiple">
 				</div>
+				<div class="col-sm-5 mt-4">
+					<p>Upload ISO Certificate:</p>
+					
+					<input type="file" id="uploadcertificate" name="uploadcertificate[]" multiple="multiple">
+				</div>
+				
 				<!--<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>
 					<label class="radio-inline"><input type="radio" name="fobprice" id="fobprice" checked> Yes</label>
@@ -378,7 +384,10 @@ if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|
     return false;
   }
 	
-	
+  else if (uploadcertificate.value == "") {
+    swal("Alert!","Upload Image.","error");
+    return false;
+  }
 }
   </script>
 					</div>	
