@@ -2,7 +2,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendor_custrenegovalue extends CI_Controller {
+class vendor_sellrenegovalue extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -29,18 +29,20 @@ class Vendor_custrenegovalue extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vname'=>$sess['sessi'],'selapprove'=>false);
-		//$reqapproval = array('sellapproval'=>false);
+		
+		$active1 = array('vname'=>$sess['sessi']);
 		
 		
-		$query = $this->Admin_model->getdatafromtable('cust_renego',$active1);
+		
+		
+		$query = $this->Admin_model->getdatafromtable('vend_renego',$active1);
 		
 		
 		$adac['sqldata']= $query;
 		
 		
 		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/custrenegovalue',$adac);
+		$this->load->view('vendor/sellrenegovalue',$adac);
 		$this->load->view('vendor/footer');
 		$this->load->helper('url');
 		
@@ -52,25 +54,32 @@ class Vendor_custrenegovalue extends CI_Controller {
 			
 	}
 	
-		
-		public function approve_requote(){
+	public function approve_quote(){
 			
+		$compnameurl = $this->uri->segment(3);
+		$compnameurl = urldecode($compnameurl);
+		$compnameurl2 = explode('|',$compnameurl);
+		//$compnameurl3 = explode('|',$compnameurl);
+		$compname = $compnameurl2[0];
+	
+		$comp = str_ireplace('-','/',$compnameurl2[1]);
+		//$com = urldecode($compnameurl3[2]);
 		$this->load->model('Admin_model');
-		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
-		$vname = urldecode(($this->uri->segment(4)));
-		$busername = urldecode(($this->uri->segment(5)));
 		
 		
-		$retriveval = array('busername'=>$busername,'productid'=>$productid,'vname'=>$vname);
+		//$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 
-		//print_r($retriveval );die;
+		$retriveval = array('productid'=>$comp,'vname'=>$compname);
+		
 		
 		$this->load->model('Admin_model');
-		$app= array('selapprove'=>true);
-		$query = $this->Admin_model->update_custom('cust_renego', $app, $retriveval, $retriveval);
-		header('location: '.base_url().'Vendor_custrenegovalue/index/'.urldecode($productid)."/".urldecode($busername)."/".urldecode($vname));
-		
-		die;
+		$app= array('buyerapprove'=>true);
+		$query = $this->Admin_model->update_custom('selquotenegotate', $app, $retriveval, $retriveval);
+		if($retriveval){
+			echo "HI";
+		}else{
+			echo "BYE";
+		}
 	
 	}
 	

@@ -122,8 +122,9 @@
 		  <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>customer_sellernegotiatedquote">Ongoing Negotiation</a>
-            <a class="collapse-item" href="<?php echo base_url();?>Customer_renegotiation">Re-Negotate</a>
-			 <a class="collapse-item" href="<?php echo base_url();?>Customer_custrenegovalue">My Re-Negotated Value</a> 
+            <a class="collapse-item" href="<?php echo base_url();?>Customer_renegotiation">Re-Negotiate</a>
+			 <a class="collapse-item" href="<?php echo base_url();?>Customer_custrenegovalue">My Re-Negotiated Value</a> 
+			 <a class="collapse-item" href="<?php echo base_url();?>Customer_sellerrenegotiatedvalue">Seller's Re-Negotated <br>Value</a> 
           </div>
         </div>
       </li>

@@ -30,7 +30,7 @@ class Customer_custrenegovalue extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('busername'=>$sess['sessi']);
-		//$reqapproval = array('sellapproval'=>false);
+		
 		
 		
 		$query = $this->Admin_model->getdatafromtable('cust_renego',$active1);

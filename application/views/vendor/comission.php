@@ -15,16 +15,13 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Product Id</th>
-        <th>Product Name</th>
-        <th>Category</th>
-      
+	      <th>Product Id</th>
+          <th>Product Name</th>
+          <th style="color:orange">Commission to Rawmet</th>
+          <th>Image</th>
 		
-		
-	    <th>Image</th>
-
-		<th>Status</th>
-		<th>options</th>
+		  <th> Payable Status</th>
+		  <th>options</th>
 	</tr>
     </thead>
     <tbody>
@@ -36,31 +33,36 @@
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+				 <?php $prodid= str_ireplace('/','-',$row->productid);
+				?>
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
-		<td><?php  echo $row->category;?></td>
-        
-	
-	
+		<td><?php  echo $row->payable."%" ;?></td>
+  
 		
 
 		<td><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="55px"></td>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	
+		
 
-		<td style="color:green;"><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
+		<td style="color:green;"><b><?php  if($row->comapprove == 0) {echo 'Pending';}else if($row->comapprove == 2) {echo 'Rejected';}else if($row->comapprove == 1) {echo 'Approved';}?></b></td>
+		
+		
 
 
 		
 
 		<td style="display:inline-flex;">
+		 <a href="<?php  echo base_url()."vendor_comission/approve_product/".$proid."/".urldecode($sqldata[0]->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
+		
+		<a href="<?php  echo base_url()."vendor_comission/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-info">Reject</button></a>
 		
 		
-		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
+		 
+		  <a href="<?php  echo base_url()."vendor_comission/delete_seller/".$proid."/".urldecode($sqldata[0]->vname);?>"><button type="button" class="btn btn-danger">Delete</button></a>
+		</td>
 		
-		<a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($row->category);?>"><i class="fa fa-edit"></i></a>
-	
-			<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
 
         
 <?php }?>	
