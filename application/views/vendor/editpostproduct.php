@@ -303,6 +303,16 @@
 					<input type="text" class="form-control" id="quantpermonth" name="quantpermonth" value="<?php echo  $sqldata[0]->quantpermonth;?>"placeholder="">
                     
                 </div>
+					<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">Validity From Date:</label>
+					<input type="datetime-local" class="form-control" id="productvalidityfrom" name="productvalidityfrom"  placeholder="" value="<?php echo  $sqldata[0]->productvalidityfrom;?>">               
+				</div>
+				
+				
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">Validity To Date:</label>
+					<input type="datetime-local" class="form-control" id="productvalidityto" name="productvalidityto"  placeholder="" value="<?php echo  $sqldata[0]->productvalidityto;?>">
+				</div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Estimated Delivery Time:</label>
 					<input type="text" class="form-control" id="estdeltime" name="estdeltime"  placeholder="" value="<?php echo  $sqldata[0]->estdeltime;?>">
