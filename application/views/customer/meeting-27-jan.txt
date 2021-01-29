@@ -1,7 +1,7 @@
 1. reject button in admin approve. (done)
 2. category should added admin. (not required now)
-3. Admin can edit the product added by seller. 
-4. limited things should come in table.
+3. Admin can edit the product added by seller. (done).
+4. limited things should come in table.(done)
 5. first negotiation in search engine.
 6. seller comanpany should be encoded in seller while registration and displaying the company name as supplier id.
 7. quantity must be auto fetching in renegotiate page.
@@ -12,12 +12,13 @@
 	3rd step- buyer will again renegotiate or he will ask for final offer.
 	4th step- seller gives counter offer.
 	5th step- buyer accept/reject/help(alert in email to admin after final negotiation and reject)
-10.Add required date and last date in seller post product as validity of product. In negotiation we need to show validity time.
+10.Add required date and last date in seller post product as validity of product. In negotiation we need to show validity time.(done)
 
 11.Admin and seller both can see the reject part.
 12.In seller post product give upload iso certifications and display it to admin.
-13.view product admin should have payable comission should be fixed(do in edit part). 
-14.multipe product image 
-15.error seller fetching price in buyer dashboard
-16. online payment should be after po in seller.
-17. suspend the seller payment.(seema)
+13.view product admin should have payable comission should be fixed(do in edit part).(done) 
+14 .multipe product image 
+15 .error seller fetching price in buyer dashboard
+16 .online payment should be after po in seller.
+17 .suspend the seller payment.(seema)
+18 .one side bar amount commission approval .

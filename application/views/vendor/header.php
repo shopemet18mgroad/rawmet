@@ -75,6 +75,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>vendor_postproduct">New  Product</a>
             <a class="collapse-item" href="<?php echo base_url();?>vendor_uploadedproduct">Product List</a>
+			<a class="collapse-item" href="<?php echo base_url();?>vendor_comission">Commission Approval </a>
           </div>
         </div>
 	</li>
