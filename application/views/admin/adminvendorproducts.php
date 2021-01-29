@@ -19,6 +19,8 @@
 	  <th>Product Id</th>
 	  <th>Vendor Name</th>
        <th>Product Name</th>
+	   <th>Payable to Rawmet<br>Status</th>
+	   
        <th>options</th>
 		
 		
@@ -40,6 +42,7 @@
 	  <td><?php echo $row->productid;?></td> 
 	   <td><?php echo $row->vname;?></td>
 		<td><?php echo $row->productname;?></td> 
+		<td style="color:green;"><b><?php  if($row->comapprove == 0) {echo 'Pending';}else if($row->comapprove == 2) {echo 'Rejected';}else if($row->comapprove == 1) {echo 'Approved';}?></b></td>
 	
 		
 

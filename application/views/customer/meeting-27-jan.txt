@@ -17,8 +17,8 @@
 11.Admin and seller both can see the reject part.
 12.In seller post product give upload iso certifications and display it to admin.
 13.view product admin should have payable comission should be fixed(do in edit part).(done) 
-14.multipe product image 
-15.error seller fetching price in buyer dashboard
-16. online payment should be after po in seller.
-17. suspend the seller payment.(seema)
-18.one side bar amount commission approval .
+14 .multipe product image 
+15 .error seller fetching price in buyer dashboard
+16 .online payment should be after po in seller.
+17 .suspend the seller payment.(seema)
+18 .one side bar amount commission approval .

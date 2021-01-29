@@ -49,6 +49,7 @@ class vendor_postproduct_update extends CI_Controller {
 			$productid = $this->input->post('productid');
 		    $companyname = $this->input->post('companyname');
 		     $poptions = $this->input->post('poptions');
+			 $comapprove = $this->input->post('comapprove');
 		     $productvalidityto = $this->input->post('productvalidityto');
 		     $productvalidityfrom = $this->input->post('productvalidityfrom');
 		
@@ -96,7 +97,7 @@ class vendor_postproduct_update extends CI_Controller {
 		
 		
 		//==================================================================
-		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array,'poptions'=>false,'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom);
+		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array,'poptions'=>false,'comapprove'=>false,'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom);
 		
 		//print_r($data);die;
 		$datainserr = "Data Inserted Successfully";
