@@ -44,11 +44,13 @@
 				<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img[0];?>">
 				
 					
-					</div>		
+					</div>	
+					
+				
+				</div>
 					 <label><b>Description:</b></label>
 				<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
 							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">	
-				</div>
 				</div>
 			
 
