@@ -66,7 +66,7 @@
 							
 							
 							
-			<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
+		<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
 		     <?php echo $row->bquantity."/" ;echo $row->bunits;?>
 			 <input type="hidden" name="bunits" value="<?php echo $row->bunits;?>">
 		</td>
