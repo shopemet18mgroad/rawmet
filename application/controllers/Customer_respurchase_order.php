@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_purchase_order extends CI_Controller {
+class Customer_respurchase_order extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -56,7 +56,10 @@ class Customer_purchase_order extends CI_Controller {
 			$sunits = $this->input->post('sunits');
 			$selqan = $this->input->post('selqan');
 			$selunits = $this->input->post('selunits');
-			
+			$brenegoprice = $this->input->post('brenegoprice');
+			$brenegounit = $this->input->post('brenegounit');
+			$brenegoquantity = $this->input->post('brenegoquantity');
+			$brenegoquantityunit = $this->input->post('brenegoquantityunit');
 			
 			//$sterms_condiaccept  = $this->input->post('sterms_condiaccept');
 			$pic_array1 = self::upload_files('upload_dd');
@@ -77,15 +80,13 @@ class Customer_purchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vname' => $vname, 'busername' => $busername,
-			'productname' => $productname,'productid' => $productid, 'category' => $category,
-			'companyname' => $companyname, 'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'selqan' => $selqan,'selunits' => $selunits,'uploadporder'=>$pic_array1);
+			$data = array('vname' => $vname, 'busername' => $busername,'productname' => $productname,'productid'=> $productid,'category' => $category,'companyname' => $companyname, 'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'selqan' => $selqan,'selunits' => $selunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'uploadporder'=>$pic_array1);
 			
 			$status = $this->Admin_model->insert('purchaseoder',$data);
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_buynego');
+				  header('location: ./Customer_renegovalue');
 				  }
 			
 	}

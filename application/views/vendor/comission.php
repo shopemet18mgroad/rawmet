@@ -33,7 +33,7 @@
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				 <?php $prodid= str_ireplace('/','-',$row->productid);
+   <?php $prodid= str_ireplace('/','-',$row->productid);
 				?>
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 

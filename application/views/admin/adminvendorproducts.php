@@ -47,7 +47,7 @@
 		
 
 		<td style="display:inline-flex;">
-		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_uploadedview/index/".$proid;?>"><i class="fa fa-eye">veiw</i></a>
+		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_uploadedview/index/".$proid;?>"><i class="fa fa-eye">View</i></a>
 		
 		
 			
