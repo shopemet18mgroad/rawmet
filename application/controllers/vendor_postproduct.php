@@ -105,7 +105,30 @@ class Vendor_postproduct extends CI_Controller
 
 			$data1 = array('productid' => $productid);
 			//print_r($uploadproductimage);die;
-			$data2 = array('productname' => $productname, 'vname' => $vname, 'category' => $category, 'description' => $description, 'price' => $price, 'quantity' => $quantity, 'units' => $units, 'materialname' => $materialname, 'uploadproductimage' => $pic_array1,'uploadproductimage' => $doc_array1, 'minoderquant' => $minoderquant, 'supplyability' => $supplyability, 'supplyunits' => $supplyunits, 'quantpermonth' => $quantpermonth, 'productvalidityfrom' => $productvalidityfrom, 'productvalidityto' => $productvalidityto, 'estdeltime' => $estdeltime, 'pstates' => $pstates, 'types' => $types, 'pcities' => $pcities, 'payable' => $payable, 'productid' => $productid, 'companyname' => $companyname, 'vusername' => $vusername);
+			$data2 = array('productname' => $productname, 
+			'vname' => $vname, 
+			'category' => $category, 
+			'description' => $description, 
+			'price' => $price, 
+			'quantity' => $quantity, 
+			'units' => $units, 
+			'materialname' => $materialname, 
+			'uploadproductimage' => $pic_array1,
+			'uploadproductimage' => $doc_array1, 
+			'minoderquant' => $minoderquant, 
+			'supplyability' => $supplyability, 
+			'supplyunits' => $supplyunits, 
+			'quantpermonth' => $quantpermonth, 
+			'productvalidityfrom' => $productvalidityfrom, 
+			'productvalidityto' => $productvalidityto, 
+			'estdeltime' => $estdeltime, 
+			'pstates' => $pstates, 
+			'types' => $types, 
+			'pcities' => $pcities, 
+			'payable' => $payable, 
+			'productid' => $productid, 
+			'companyname' => $companyname, 
+			'vusername' => $vusername);
 			//print_r($data2);die;
 
 

@@ -344,34 +344,51 @@
 				</div>-->
 				
 					<div class="col-md-12 text-center mt-4">
-						<a href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" role="button">Add More Files</a>
+					<div class="col-md-12 text-center mt-4">
+						<button type="reset" href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" value="Clear" name="Clear" role="button">Clear </a>
 						  
-						  
+						</div>
 						  <!--<input type="submit" name="submit" id="btn1"  value="Submit" class="btn btn-primary btn-sm">-->
-						
-						<button type="submit" href="<?php echo base_url();?>"class="btn btn-primary btn-sm" name="submit"  onclick="return  validate_Postproduct()" role="button">Submit</a>
-						 <script>
-  
+						  <div class="col-md-12 text-center mt-4 ">	
+						<button type="submit" href="<?php echo base_url();?>" class="btn btn-primary btn-sm" name="submit"  onclick="return  validate_Postproduct()" role="button">Submit</a>
+						 
+						 </div>
+					</div>
+					<script>
 function validate_Postproduct(){
 
+	var category = document.getElementById("category").value;
 	var description = document.getElementById("description").value;
 	var productname = document.getElementById("productname").value;
+	var price  = document.getElementById("price").value;
 	var quantity = document.getElementById("quantity").value;
+	var units  = document.getElementById("units").value;
+	var materialname  = document.getElementById("materialname").value;
+	var pic_array1  = document.getElementById("pic_array1").value;
+	var doc_array1  = document.getElementById("doc_array1").value;
 	var minoderquant = document.getElementById("minoderquant").value;
 	var supplyability = document.getElementById("supplyability").value;
+	var minoderquant  = document.getElementById("minoderquant").value;
+	var supplyunits  = document.getElementById("supplyunits").value;
 	var quantpermonth = document.getElementById("quantpermonth").value;
-	var units = document.getElementById("units").value;
-	var aifeatured = document.getElementById("aifeatured").value;
-	var fobprice = document.getElementById("fobprice").value;
+	var productvalidityfrom  = document.getElementById("productvalidityfrom").value;
+	var productvalidityto  = document.getElementById("productvalidityto").value;
+	var estdeltime  = document.getElementById("estdeltime").value;
+	var pstates  = document.getElementById("pstates").value;
+	var types  = document.getElementById("types").value;
+	var pcities  = document.getElementById("pcities").value;
+	var payable  = document.getElementById("payable").value;
+	var productid  = document.getElementById("productid").value;
+	var companyname  = document.getElementById("companyname").value;
+	var vusername  = document.getElementById("vusername").value;
 
-	
-
-if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|| supplyability == ''|| quantpermonth == '' || units == '' || aifeatured == '' || fobprice == '')  {
+		var category = document.getElementById("category").value;
+	if (category == '' || description == '' ||productname == '' ||price == '' ||quantity == '' ||units == '' ||materialname == '' ||pic_array1 == '' ||doc_array1 == '' ||minoderquant == '' ||supplyability == '' ||minoderquant == '' ||supplyunits == '' ||quantpermonth == '' ||productvalidityfrom == '' ||productvalidityto == '' ||estdeltime == '' ||pstates == '' ||types == '' ||pcities == '' ||payable == '' ||productid == '' ||companyname == '' ||vusername == '')  {
 		swal("Alert!",  "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
 		return false;
 	}
 
-  if (payable.value == "") {
+  /* if (payable.value == "") {
     swal("Alert!","Please enter your Payable to Rawmet.","error");
     return false;
   }
@@ -387,10 +404,10 @@ if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|
   else if (uploadcertificate.value == "") {
     swal("Alert!","Upload Image.","error");
     return false;
-  }
+  } */
 }
   </script>
-					</div>	
+						
 					
 				</div>
                 </form>	
