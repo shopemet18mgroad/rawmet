@@ -128,9 +128,11 @@
           <span>Finalized Negotiation</span></a>
 		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_buynego">My Approved<br> Negotiation</a>
-            
-			 <a class="collapse-item" href="<?php echo base_url();?>vendor_sellnego">Seller's Approved<br> Negotiation</a>
+        
+             <a class="collapse-item" href="<?php echo base_url();?>vendor_sellnego">Seller's Approved<br> Negotiation</a>
+			<a class="collapse-item" href="<?php echo base_url();?>vendor_buynego">My Approved<br> Negotiation</a>
+			 <a class="collapse-item" href="<?php echo base_url();?>vendor_renegovalue">Seller's Approved<br> Negotiation</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Vendor_finalrenegotiatedvalue">My Approved<br> Negotiation</a>
           </div>
         </div>
   </li>

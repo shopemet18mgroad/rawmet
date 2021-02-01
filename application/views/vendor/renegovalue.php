@@ -19,22 +19,21 @@
 			<div class="card shadow mb-4">
 				<div class="card-body">
 					<div class="table-responsive">
-						<form action="<?php echo base_url(); ?>Customer_respurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
+						<form action="<?php echo base_url(); ?>Customer_repurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
 							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 								<thead class="bg-primary text-white">
 									<tr>
-			<th>Buyer Name</th>
+								<th>Buyer Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Seller's Base Price</th>
-			<th style="color:pink;">Your 1st Negotiated Quantity</th>
-			<th style="color:pink;">Your 1st Negotiated Price</th>
-			<th style="color:yellow;">Seller 1st Negotiated price</th>
-			<th style="color:orange;">Your 2nd Re-Negotiated price</th>
-			<th style="color:orange;">Your 2nd Re-Negotiated Quantity</th>
-			<th style="color:yellow;">Seller final Re-Negotiated price</th>
-			<th>Status</th>
+			<th>Supplier Original Price</th>
+			<th style="color:pink;">Your Negotiated Quantity</th>
+			<th style="color:pink;">Your Negotiated Price</th>
+			<th style="color:yellow;">Seller Re-Negotiated price</th>
+			<th style="color:orange;">Your Re-Negotiated price</th>
+			<th style="color:orange;">Your Re-Negotiated Quantity</th>
+			<th>status</th>
 
 
 									</tr>
@@ -84,20 +83,21 @@
 													<?php echo $row->brenegoquantity . "/";
 													echo $row->brenegoquantityunit; ?>
 													<input type="hidden" name="brenegoquantityunit" value="<?php echo $row->brenegoquantityunit; ?>">
-		<td><input type="hidden" name="sellrenegoprice" value="<?php echo $row->sellrenegoprice; ?>">
-													<?php echo $row->sellrenegoprice . "/";
-													echo $row->sellrenegounits; ?>
-													<input type="hidden" name="sellrenegounits" value="<?php echo $row->sellrenegounits; ?>">
-													
 									</td>
-			
-									<td> <a href="<?php echo base_url() . 'Customer_quotation5/auc_no/' . urldecode($row->busername) . "/" . urldecode($row->vname) . "/" . urldecode($proid); ?>" target="_blank">
-
-
-
-														<i class="fa fa-download" aria-hidden="true"></i></a></td>
+										<td> <a href="<?php echo base_url().'Customer_renegovaluequotation/auc_no/'.urldecode($row->busername)."/".urldecode($row->vname)."/".urldecode($proid);?>" target="_blank">
+				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 
      
+												<td>
+
+													<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]">
+
+
+													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload purchase order">
+
+
+
+												</td>
 
 
 											</tr>
@@ -131,5 +131,4 @@
 </div>
 <!-- End of Page Wrapper -->
 
-
-
+      
