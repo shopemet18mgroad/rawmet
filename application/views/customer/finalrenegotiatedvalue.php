@@ -91,7 +91,7 @@
 													
 									</td>
 			
-									<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' . urldecode($row->busername) . "/" . urldecode($row->vname) . "/" . urldecode($proid); ?>" target="_blank">
+									<td> <a href="<?php echo base_url() . 'Customer_quotation5/auc_no/' . urldecode($row->busername) . "/" . urldecode($row->vname) . "/" . urldecode($proid); ?>" target="_blank">
 
 
 
