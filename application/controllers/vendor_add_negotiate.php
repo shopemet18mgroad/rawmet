@@ -69,15 +69,18 @@ class Vendor_add_negotiate extends CI_Controller {
 			$uploadporder = $this->input->post('uploadporder');
 			$selprice= $this->input->post('selprice');
 			$sunits = $this->input->post('sunits');
-		    $selqan= $this->input->post('selqan');			 
-		    $selunits = $this->input->post('selunits');
+
+		   
+			$productvalidityto = $this->input->post('productvalidityto');
+		    $datetime= $this->input->post('datetime');			 
+		    $estdeltime = $this->input->post('estdeltime');
 			$uploadproductimage  = serialize($this->input->post('uploadproductimage')); 
 			
 			
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'uploadporder' =>$uploadporder,'selprice'=>$selprice,'sunits' =>$sunits,'selqan'=>$selqan,'selunits'=>$selunits);
+			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'uploadporder' =>$uploadporder,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto);
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){

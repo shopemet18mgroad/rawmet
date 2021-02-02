@@ -295,6 +295,11 @@ document.getElementById("pcities").selectedIndex = 0;
 					<input type="file" id="uploadcertificate" name="uploadcertificate[]" multiple="multiple">
 				</div>
 				
+					
+					
+		
+				
+				
 				<!--<div class="col-sm-4 mt-4">
 					<label for="fobprice">Is Fob Price?</label>
 					<label class="radio-inline"><input type="radio" name="fobprice" id="fobprice" checked> Yes</label>
@@ -305,16 +310,18 @@ document.getElementById("pcities").selectedIndex = 0;
 					<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured">Add into Featured</label>
 				</div>-->
 				
-					<div class="col-md-12 text-center mt-4">
-					<div class="col-md-12 text-center mt-4">
-						<button type="reset" href="<?php echo base_url();?>vendor_postproduct" class="btn btn-primary btn-sm" value="Clear" name="Clear" role="button">Clear </a>
-						  
-						</div>
+					
+				
 						  <!--<input type="submit" name="submit" id="btn1"  value="Submit" class="btn btn-primary btn-sm">-->
-						  <div class="col-md-12 text-center mt-4 ">	
+						  <div class="col-md-12 text-center mt-4"   >	
 						<button type="submit" href="<?php echo base_url();?>" class="btn btn-primary btn-sm" name="submit"  onclick="return  validate_Postproduct()" role="button">Submit</a>
 						 
-						 </div>
+					
+					
+						<button class="btn btn-primary btn-sm offset-sm-2 " type="reset" href="<?php echo base_url();?>vendor_postproduct"  value="Clear" name="Clear" role="button">Clear</a>
+						  
+					
+					
 					</div>
 					<script>
 function validate_Postproduct(){

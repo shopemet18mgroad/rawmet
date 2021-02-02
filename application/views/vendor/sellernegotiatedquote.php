@@ -28,12 +28,12 @@
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Company Name</th>
+			
 			<th>Supplier Price</th>
 			<th>Location</th>
 			<th>Buyer Quantity</th>
 			<th>Buyer Price</th>
-			<th style="color:orange;">Seller Quantity</th>
+			
 			<th style="color:orange;">Seller price</th>
 			<th> Buyer's Action  </th>
 		
@@ -52,13 +52,13 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->companyname;?></td>
+		
 			<td><?php echo $row->price."/"; echo $row->supplyunits;?></td>
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			<td><?php echo $row->selprice.""; echo $row->sunits;?></td>
-			<td><?php echo $row->selqan."/"; echo $row->selunits;?></td>
+			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
+			
 			<td style="color:orange;" ><b><?php  if($row->buyerapprove == 0) {echo 'Pending';}else if($row->buyerapprove == 2) {echo 'Rejected';}else if($row->buyerapprove == 1) {echo 'Approved!';}?></b></td>
 			
 					
