@@ -26,7 +26,12 @@
 				<form action = "<?php echo base_url();?>" method="POST" enctype="multipart/form-data">
 					
 				<!--<form class="user" method="POST">-->
+				<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
+				?>
+		
+		
 			 	<div class="form-group row">
+				
 				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="200px">
 				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
@@ -36,10 +41,12 @@
 					<p><b>Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></p>
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
-					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->units;?><br><b>Stock:&nbsp;</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?><br><b>Posted On:</b><?php echo $sqldata[0]->productvalidityfrom;?><br><b>Validity Till:</b><?php echo $sqldata[0]->productvalidityto;?>
+					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->units;?><br>
+					<b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?><br>
+					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->units;?><br><b>Posted On:</b><?php echo $sqldata[0]->productvalidityfrom;?><br><b>Validity Till:</b><?php echo $sqldata[0]->productvalidityto;?>
 					</p>
 				  </div>
-
+<a style="margin:15%" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
 				<table class="table bg-white table-sm table-borderless">
 					<thead class="bg-primary text-white">
 						<tr>
@@ -50,11 +57,9 @@
 							<tr>
 								<td><b>Minimum Order Quantity:&nbsp;</b><?php echo $sqldata[0]->minoderquant;?></td>
 							</tr>
+							
 							<tr>
-								<td><b>Supply Ability:</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?></td>
-							</tr>
-							<tr>
-								<td><b>quantity Per Month:&nbsp;&nbsp;</b><?php echo $sqldata[0]->quantpermonth;?></td>
+								<td><b>Quantity Per Month:&nbsp;&nbsp;</b><?php echo $sqldata[0]->quantpermonth;?></td>
 							</tr>
 							<tr>
 								<td><b>Estimated Delivery Time:</b>&nbsp;&nbsp;<?php echo $sqldata[0]->estdeltime;?></td>

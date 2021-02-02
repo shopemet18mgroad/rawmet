@@ -53,7 +53,6 @@ class Vendor_postproduct extends CI_Controller
 			$productname = $this->input->post('productname');
 			$vname = $this->input->post('vname');
 			$category = $this->input->post('category');
-			$materialname = $this->input->post('materialname');
 			$description = $this->input->post('description');
 			$price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
@@ -113,9 +112,8 @@ class Vendor_postproduct extends CI_Controller
 			'price' => $price, 
 			'quantity' => $quantity, 
 			'units' => $units, 
-			'materialname' => $materialname, 
 			'uploadproductimage' => $pic_array1,
-			'uploadproductimage' => $doc_array1, 
+			'uploadcertificate' => $doc_array1, 
 			'minoderquant' => $minoderquant, 
 			'supplyability' => $supplyability, 
 			'supplyunits' => $supplyunits, 
