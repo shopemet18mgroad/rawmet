@@ -18,6 +18,7 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
+			  <form action="<?php echo base_url();?>Customer_spurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
@@ -32,11 +33,11 @@
 			<th style="color:orange";>Buyer Quantity</th>
 			<th style="color:orange";>Buyer Price</th>
 			<th>View Quotation</th>
-			
+			<th>View Purchase Order</th>
       </tr>
     </thead>
     <tbody>
-	<form action="<?php echo base_url();?>Customer_spurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
+	
 	<?php $k=0;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>

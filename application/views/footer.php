@@ -126,7 +126,22 @@ autocomplete(document.getElementById("myInput"), countries);
 	
  </script>
 
+ <script>
+ function search_product(){
+	 $("#dp").hide();
+ if(document.getElementById("gettable_search").value.length > 1){
+	 $("#dp").show();
+			var contents = $('#gettable_search').val(); 
+			$.get('<?php echo base_url() .'home_contactsupplier/get_product_table/'; ?>'+contents, function(data){
+				$('#dp').html(data);
+			});
 
+					
+ }else{
+	 return;
+ }
+}
+</script>
 
 </body>
 </html>

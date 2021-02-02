@@ -5,7 +5,7 @@
 		
 		
             <div class="form-group input1">
-                <input type="text" class="form-control" id="gettable_search" placeholder="Enter your raw material">
+                <input type="text" class="form-control" id="gettable_search" onkeyup="search_product()" placeholder="Enter your raw material" >
             </div>
 			
 			

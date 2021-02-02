@@ -161,7 +161,21 @@ class Home_contactsupplier extends CI_Controller {
 			
 			
 		}
-
+public function get_product_table(){
+	$dataw = urldecode($this->uri->segment(3));
+	$this->load->model('Admin_model');
+	$search = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$dataw);	
+	
+	if($search){
+		foreach($search as $sear){
+			echo "<li onclick=\"getPaging(this.id)\" id=\"".$sear['gettable_search']."\" class=\"option\">".$sear['gettable_search']."</li>\n";
+			
+		}
+	}else{
+		echo "<li onclick=\"\" value=\"1\" class=\"option\">No Results</li>";
+	}
+	
+}
 
 
 	}
