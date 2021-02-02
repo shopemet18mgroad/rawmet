@@ -36,9 +36,11 @@
 				
 				?>
 				<div class="col-sm-3">
+				<p style="color:purple; font-size:18px;"><b><?php echo  $sqldata[0]->productname;?></b></p>
+						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">	
 				<div class="col-sm-4">
 				
-				<div class="thumbnail mt-5">
+				<div class="thumbnail mt-1">
 					<td><?php $img = unserialize( $sqldata[0]->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="100%"></td>
 				<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img[0];?>">
@@ -57,8 +59,7 @@
 				<div class="col-sm-4 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
-							<p style="color:purple; font-size:18px;"><b><?php echo  $sqldata[0]->productname;?></b></p>
-						<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">		
+								
 							
 							<p><b>Product Id:</b><?php echo  $sqldata[0]->productid;?></p>
 							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
@@ -77,16 +78,25 @@
 							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
 							
 							
-							<h6><b>Stock Available: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->supplyunits;?></b></h6>
+							<h6 style="color:green;"><b>Supply Ability: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->supplyunits;?></b></h6>
 							
 							
-							<h6 style="color:orange;"><b>Quantity : <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
+							<h6 style="color:orange;"><b>Live Stock: <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
 							<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo  $sqldata[0]->supplyability;?>">
 							
 							
 							<p class="mt-3"><b>Place of Stock:</b> <?php echo $sqldata[0]->pcities."|"; echo  $sqldata[0]->pstates;?></p>
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
+							
+							
+								<h6><b>Posted Date: <?php echo  $sqldata[0]->datetime;?></b></h6>
+							<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
+							
+								<h6><b>Estimated Delivery: <?php echo  $sqldata[0]->estdeltime;?></b></h6>
+							<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
+							
+							
 					</div>
 					</div>
 				  </div>
@@ -98,17 +108,19 @@
 				  <div class="col-sm-5 p-2">
 					<div class="row p-2">
 					<div class="col-sm-10">
-							
+							<h6 style="color:purple;"><b>Validity Till: <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
+							<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
+								
 							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo  $sqldata[0]->supplyunits;?>">
 							
 							<div class="form-check mt-3 text-left">
 								
-							<center><h3 style="color:blue;"><b>
-								Negotiate Here</b></h3></center>
+							<center><h4 style="color:blue;"><b>
+								Negotiate Here</b></h4></center>
 							</div>
   
 					
-							<div class="form-row mt-5">
+							<div class="form-row mt-2">
 								<label class="col-sm-6 col-form-label"  for="name"><b>Quantity</b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" />
 							<div class="col-sm-3">  
@@ -140,18 +152,15 @@
 					</div>
 					
 						
-							<center>
 							
-							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="Submit" class="btn btn-info btn-sm mt-2" style="font-size:13px" >
+							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" >
 							
 							
 							
 							<!--<a type="submit" href="<?php //echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($sqldata[0]->vname);?>" onsubmit="return validate_neg()  role="submit">-->
 							
 
-							
-							
-							</center>	
+						
 								
 							 <!--<a type="submit" href="<?php// echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($row->vname);?>"  role="submit"><button name="submit"  class="btn btn-info btn-sm mt-2 offset-sm-5">Submit</button></a>-->
 								

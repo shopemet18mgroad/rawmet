@@ -54,12 +54,15 @@ class Customer_add_contactsupplier extends CI_Controller {
 			$bprice = $this->input->post('bprice');
 			$bsupplyability = $this->input->post('bsupplyability');
 			$bunits = $this->input->post('bunits');
+			$datetime = $this->input->post('datetime');
+			$estdeltime = $this->input->post('estdeltime');
+			$productvalidityto = $this->input->post('productvalidityto');
 			//$_FILES['uploadproductimage']['name'];
 			$uploadproductimage  = serialize($this->input->post('uploadproductimage')); 
 	
 	
 	      // $data1 = array('vname'=>$vname );
-			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage );
+			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage );
 			//print_r($data2);die;
 		/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('quotes', $data1)){
