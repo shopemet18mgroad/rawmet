@@ -187,11 +187,5 @@ if(selprice == '' || sunits == '' ){
   
 </script>
 
-	  
-
-
-
-
-
  </body>
  </html>

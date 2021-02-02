@@ -144,8 +144,8 @@
 		  <div id="payment5" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
            <!-- <a class="collapse-item" href="<?php //echo base_url();?>customer_approvedquotes">Ongoing Purchase Order</a>-->
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_myquotes">Ongoing Negotiation <br/>PO</a>
-			  <a class="collapse-item" href="<?php echo base_url();?>vendor_reqpurchaseorder">Ongoing Requirements<br/> PO</a>
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_myquotes">Ongoing Purchase Order</a>
+			  <a class="collapse-item" href="<?php echo base_url();?>vendor_reqpurchaseorder">Ongoing Requirements<br/>Purchase Order</a>
 			
           </div>
         </div>

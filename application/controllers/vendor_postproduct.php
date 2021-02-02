@@ -74,12 +74,13 @@ class Vendor_postproduct extends CI_Controller
 			$types = $this->input->post('types');
 			$payable = $this->input->post('payable');
 			$productid = $this->input->post('productid');
-			$companyname = base64_encode($this->input->post('companyname'));
+			$companyname = $this->input->post('companyname');
 			//$uploadproductimage = self::upload_files('uploadproductimage');
-			$_FILES['uploadproductimage']['name'];
-			$_FILES['uploadcertificate']['name'];
+		
 			$pic_array1  = self::upload_files('uploadproductimage');
+			$_FILES['uploadproductimage']['name'];
 			$doc_array1 = self::upload_files('uploadcertificate');
+			$_FILES['uploadcertificate']['name'];
 
 			if (!count($pic_array1)) {
 				echo '<script language="javascript">';
@@ -88,7 +89,7 @@ class Vendor_postproduct extends CI_Controller
 			} else {
 				$pic_array1 = serialize($pic_array1);
 			}
-			//print_r($pic_array1);die;
+		
 
 			if(!count($doc_array1)){
 				echo '<script language="javascript">';
@@ -105,7 +106,30 @@ class Vendor_postproduct extends CI_Controller
 
 			$data1 = array('productid' => $productid);
 			//print_r($uploadproductimage);die;
-			$data2 = array('productname' => $productname, 'vname' => $vname, 'category' => $category, 'description' => $description, 'price' => $price, 'quantity' => $quantity, 'units' => $units, 'materialname' => $materialname, 'uploadproductimage' => $pic_array1,'uploadproductimage' => $doc_array1, 'minoderquant' => $minoderquant, 'supplyability' => $supplyability, 'supplyunits' => $supplyunits, 'quantpermonth' => $quantpermonth, 'productvalidityfrom' => $productvalidityfrom, 'productvalidityto' => $productvalidityto, 'estdeltime' => $estdeltime, 'pstates' => $pstates, 'types' => $types, 'pcities' => $pcities, 'payable' => $payable, 'productid' => $productid, 'companyname' => $companyname, 'vusername' => $vusername);
+			$data2 = array('productname' => $productname, 
+			'vname' => $vname, 
+			'category' => $category, 
+			'description' => $description, 
+			'price' => $price, 
+			'quantity' => $quantity, 
+			'units' => $units, 
+			'materialname' => $materialname, 
+			'uploadproductimage' => $pic_array1,
+			'uploadproductimage' => $doc_array1, 
+			'minoderquant' => $minoderquant, 
+			'supplyability' => $supplyability, 
+			'supplyunits' => $supplyunits, 
+			'quantpermonth' => $quantpermonth, 
+			'productvalidityfrom' => $productvalidityfrom, 
+			'productvalidityto' => $productvalidityto, 
+			'estdeltime' => $estdeltime, 
+			'pstates' => $pstates, 
+			'types' => $types, 
+			'pcities' => $pcities, 
+			'payable' => $payable, 
+			'productid' => $productid, 
+			'companyname' => $companyname, 
+			'vusername' => $vusername);
 			//print_r($data2);die;
 
 
