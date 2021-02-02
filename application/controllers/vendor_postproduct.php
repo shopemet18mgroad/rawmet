@@ -74,12 +74,13 @@ class Vendor_postproduct extends CI_Controller
 			$types = $this->input->post('types');
 			$payable = $this->input->post('payable');
 			$productid = $this->input->post('productid');
-			$companyname = base64_encode($this->input->post('companyname'));
+			$companyname = $this->input->post('companyname');
 			//$uploadproductimage = self::upload_files('uploadproductimage');
-			$_FILES['uploadproductimage']['name'];
-			$_FILES['uploadcertificate']['name'];
+		
 			$pic_array1  = self::upload_files('uploadproductimage');
+			$_FILES['uploadproductimage']['name'];
 			$doc_array1 = self::upload_files('uploadcertificate');
+			$_FILES['uploadcertificate']['name'];
 
 			if (!count($pic_array1)) {
 				echo '<script language="javascript">';
@@ -88,7 +89,7 @@ class Vendor_postproduct extends CI_Controller
 			} else {
 				$pic_array1 = serialize($pic_array1);
 			}
-			//print_r($pic_array1);die;
+		
 
 			if(!count($doc_array1)){
 				echo '<script language="javascript">';

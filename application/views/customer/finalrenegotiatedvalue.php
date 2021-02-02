@@ -97,7 +97,17 @@
 
 														<i class="fa fa-download" aria-hidden="true"></i></a></td>
 
-     
+     	<td>
+
+													<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]">
+
+
+													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload purchase order">
+
+
+
+												</td>
+
 
 
 											</tr>

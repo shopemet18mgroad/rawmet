@@ -25,12 +25,14 @@
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Company Name</th>
-			<th>Location</th>
 		    <th style ="color:pink";>Buyer Quantity</th>
 			<th style ="color:pink";>Buyer Price</th>
 			<th style ="color:orange"; >Supplier Quantity</th>
 			<th style ="color:orange";>Supplier Price</th>
+			
+			<th style ="color:pink";>Buyer Re-negotiated Quantity</th>
+			<th style ="color:pink";>Buyer Re-negotiated Price</th>
+			<th style ="color:orange";>Supplier Re-negotiated Price</th>
 			<th>View Purchase Order</th>
       </tr>
     </thead>
@@ -44,16 +46,18 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->companyname;?></td>
 			
 			
-			
-			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bunits;?></td>
 			
 			<td><?php echo $row->selqan.""; echo $row->sunits;?></td>
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
+			
+			<td><?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>
+			<td><?php echo $row->brenegoprice."/"; echo $row->brenegounit;?></td>
+			
+			<td><?php echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;?></td>
 			
 			
 	
