@@ -33,8 +33,10 @@
 				
 				
 				<div class="col-sm-2">
+				<h4 style="color:purple;"><b><?php echo $sqldata[0]->productname;?></b></h4>
+							<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
 				<div class="col-sm-4">
-				<div class="thumbnail mt-5">
+				<div class="thumbnail mt-2">
 				
 						<td><?php $img = unserialize($sqldata[0]->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="150px" height="100%"></td>
@@ -42,6 +44,10 @@
 				
 				</div>	
 				</div>
+				<b>Description</b>
+								  							
+								<p class="w-auto small"><?php echo $sqldata[0]->description;?>
+							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo $sqldata[0]->description;?>">
 				</div>
 			
 
@@ -54,8 +60,7 @@
 								<p><b>Supplier Name:</b><?php echo $sqldata[0]->vname;?></p>
 							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
 							
-							<p><b>Productname:</b><?php echo $sqldata[0]->productname;?></p>
-							<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
+							
 							
 							
 							<p><b>Category:</b><?php echo $sqldata[0]->category;?></p>
@@ -65,8 +70,7 @@
 							<p><b>Product Id:</b><?php echo $sqldata[0]->productid;?></p>
 							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo $sqldata[0]->productid;?>">
 						
-							
-							<p><b>Company Name:</b><?php echo $sqldata[0]->companyname;?></p>
+						
 							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $sqldata[0]->companyname;?>">
 						<!--	<h6 class="text-center" style="color:orange;"><b>Quantity : <?php// echo $sqldata[0]->supplyability."/"; echo $sqldata[0]->supplyunits;?></b></h6>-->
 							
@@ -78,6 +82,13 @@
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $sqldata[0]->pstates;?>">
 							
+							<h6 style="color:purple;"><b>Validity Till: <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
+							<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
+							<h6><b>Posted Date: <?php echo  $sqldata[0]->datetime;?></b></h6>
+							<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
+							
+							<h6><b>Estimated Delivery: <?php echo  $sqldata[0]->estdeltime;?></b></h6>
+							<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
 							
 					</div>
 					</div>
@@ -124,7 +135,7 @@
 							
   
 					
-							<div class="form-row">
+							<!--<div class="form-row">
 								<label class="col-sm-6 col-form-label"  for="name"><b>Quantity</b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="selprice" placeholder="Quantity" id="selprice" [(ngModel)]="person.name" />
 							<div class="col-sm-3">  
@@ -136,14 +147,14 @@
 								<option value="Number">Number</option>
 								<option value="Meter">Meter</option>
 					    </select>
-				</div>
+				</div>-->
 								
 							</div>
 							<div class="form-row mt-2">
 								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price </b></label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="selqan" placeholder="price" id="selqan" [(ngModel)]="person.name"/>/
+								<input type="text" class="form-control col-sm-2 mr-2" name="selprice" placeholder="price" id="selprice" [(ngModel)]="person.name"/>/
 								<div class="col-sm-3">  
-						<select class="form-control col-sm-0" id="selunits" name="selunits">
+						<select class="form-control col-sm-0" id="sunits" name="sunits">
 						<option value="KG">KG</option>
 								<option value="Metric Ton">Metric Ton</option>
 								<option value="Litre">Litre</option>
@@ -158,18 +169,17 @@
 					</div>
 						</div>
 						</div>
-					 
+					 <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Submit</a>
+					
+					<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="submit" id= "submit" role="submit">Cancel</a>
 				  </div>
-								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Submit</a>
-								 <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-5" name="submit" id= "submit" role="submit">Cancel</a>
+				
+								
 							</div>
 						
 
 							
-							      <center><b>Description</b></center>
-								  							
-								<p class="w-auto small"><?php echo $sqldata[0]->description;?>
-							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo $sqldata[0]->description;?>">
+							     
 					
 							
 				
@@ -206,5 +216,33 @@
       </div>
 	  
 	 
+ <script>
+  
+function validate_selnego(){
 
+	var selprice = document.getElementById("selprice").value;
+	var sunits = document.getElementById("sunits").value;
+	
+	
+
+if(selprice == '' || sunits == '' ){
+		swal("Alert!",  "Seller Price, Seller Quantity should not be empty ", "error");
+		return false;
+	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {selprice:selprice,sunits:sunits},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
+	
+	
+}
+  </script>
    

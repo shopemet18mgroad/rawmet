@@ -27,10 +27,11 @@
 			
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Company Name</th>
-			<th>Supplier Price</th>
-			<th>Available Stocks</th>
 			<th>Location</th>
+		
+			<th>Supplier Price</th>
+			<th>Supply Ability</th>
+			
 			<th style="color:orange;">Buyer Quantity</th>
 			<th style="color:orange;">Buyer Price</th>
 			<th>Action</th>
@@ -47,17 +48,18 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->companyname;?></td>
+				<td><?php echo $row->pcities;?></td>
+			
 			<td><?php echo $row->price;?></td>
 			<td><?php echo $row->supplyability;?></td>
-			<td><?php echo $row->pcities;?></td>
+		
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 						
 			
 		<td>	
 	
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selneg()">Approve </button></a>
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selnego()">Approve </button></a>
 					
 		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".urldecode($proid)."/".urldecode($row->busername)."/".urldecode($row->vname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Renegotiate</a></center>
 		
