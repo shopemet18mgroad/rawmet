@@ -102,23 +102,15 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>vendor_custquoteapproval">Ongoing Negotiation</a>
            
-			<a class="collapse-item" href="<?php echo base_url();?>vendor_sellernegotiatedquote">Final Negotiation</a>
+			<a class="collapse-item" href="<?php echo base_url();?>vendor_sellernegotiatedquote">My Negotiated <br>Value</a>
+			
+			 <a class="collapse-item" href="<?php echo base_url();?>Vendor_custrenegovalue">Ongoing Re-Negotiation</a>
+           <a class="collapse-item" href="<?php echo base_url();?>vendor_sellrenegovalue">My Re-Negotiated <br>Value</a>
           </div>
         </div>
       </li>
       
- 	 <li class="nav-item">
-        <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct2" aria-expanded="true" aria-controls="collapseUtilities">
-    <i class='fas fa-envelope-open-text'></i>
-          <span>Quotes Re-Negotiation</span></a>
-		 <div id="collapseProduct2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>Vendor_custrenegovalue">Ongoing Re-Negotiation</a>
-           <a class="collapse-item" href="<?php echo base_url();?>vendor_sellrenegovalue">My Re-Negotiation</a>
-			
-          </div>
-        </div>
-      </li>
+
 
 	
 	
@@ -129,10 +121,12 @@
 		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
         
-             <a class="collapse-item" href="<?php echo base_url();?>vendor_sellnego">Seller's Approved<br> Negotiation</a>
+             <a class="collapse-item" href="<?php echo base_url();?>vendor_sellnego">Buyer 1st Approved<br> Negotiation</a>
 			<a class="collapse-item" href="<?php echo base_url();?>vendor_buynego">My Approved<br> Negotiation</a>
-			 <a class="collapse-item" href="<?php echo base_url();?>vendor_renegovalue">Seller's Approved<br> Negotiation</a>
-			<a class="collapse-item" href="<?php echo base_url();?>Vendor_finalrenegotiatedvalue">My Approved<br> Negotiation</a>
+			 <a class="collapse-item" href="<?php echo base_url();?>vendor_renegovalue">
+			 My Approved<br> Negotiation</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Vendor_finalrenegotiatedvalue">
+			Buyer 2nd Approved<br> Negotiation</a>
           </div>
         </div>
   </li>

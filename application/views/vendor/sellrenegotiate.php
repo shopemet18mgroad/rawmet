@@ -43,6 +43,11 @@
 				</div>	
 				</div>
 				</div>
+					 <label><b>Description:</b></label>
+				<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
+							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">	
+				</div>
+				</div>
 			
 
 				<div class="col-sm-3 p-2">
@@ -78,6 +83,11 @@
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $sqldata[0]->pstates;?>">
 							
+							<h6><b>Posted Date: <?php echo  $sqldata[0]->datetime;?></b></h6>
+							<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
+							
+								<h6><b>Estimated Delivery: <?php echo  $sqldata[0]->estdeltime;?></b></h6>
+							<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
 							
 					</div>
 					</div>
@@ -127,6 +137,8 @@
 				  <div class="col-sm-4 p-2">
 					<div class="row p-2">
 					<div class="col-sm-10">
+					<h6 style="color:purple;"><b>Validity Till: <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
+							<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
 							
 						
 							
