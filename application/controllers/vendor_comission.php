@@ -58,18 +58,19 @@ class Vendor_comission extends CI_Controller {
 	}
 	public function approve_product(){
 		
-		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		 $productid = urldecode(str_ireplace('/','-',$this->uri->segment(3)));
          $vname = urldecode($this->uri->segment(4));
 
 		$retriveval = array('productid'=>$productid,'vname'=>$vname);
 		
+		//print_r($retriveval);die;
 		
 		
 		$this->load->model('Admin_model');
 		$app= array('comapprove'=>true);
 		$query = $this->Admin_model->update_custom('sellerpostproduct', $app, $retriveval, $retriveval);
 		if($retriveval){
-			header('location: '.base_url().'vendor_comission/index/'.urlencode($retriveval));
+			header('location:'.base_url().'vendor_comission/index/'.urlencode($retriveval));
 		}else{
 			echo "BYE";
 		}
