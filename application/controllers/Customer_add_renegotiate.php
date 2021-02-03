@@ -66,12 +66,16 @@ class Customer_add_renegotiate extends CI_Controller {
 			$brenegoquantity = $this->input->post('brenegoquantity');
 			$brenegoquantityunit = $this->input->post('brenegoquantityunit');
 			
+			$estdeltime = $this->input->post('estdeltime');
+			$datetime = $this->input->post('datetime');
+			$productvalidityto = $this->input->post('productvalidityto');
+			
 			//$_FILES['uploadproductimage']['name'];
 			$uploadproductimage  = serialize($this->input->post('uploadproductimage')); 
 	
 	
 	      // $data1 = array('vname'=>$vname );
-			$data2 = array('productid'=>$productid ,'productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'selqan'=>$selqan,'selunits'=>$selunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'uploadproductimage'=>$uploadproductimage );
+			$data2 = array('productid'=>$productid ,'productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'selqan'=>$selqan,'selunits'=>$selunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'estdeltime'=>$estdeltime,'datetime'=>$datetime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage );
 			//print_r($data2);die;
 		/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('quotes', $data1)){
