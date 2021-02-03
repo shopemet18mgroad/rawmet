@@ -53,7 +53,7 @@
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			<td><?php echo $row->selqan."/"; echo $row->sunits;?></td>
+			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			<td>
 		
 		<button type="submit" name="submit" id="<?php echo $row->vname.'|'.$proid;?>" onclick="cust_quoteapprove(this.id)" class="btn btn-success btn-sm">Approve</button>
