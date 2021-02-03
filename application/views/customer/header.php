@@ -138,8 +138,8 @@
 			<a class="collapse-item" href="<?php echo base_url();?>customer_buynego">My Approved<br> Negotiation</a>
             
 			
-			 <a class="collapse-item" href="<?php echo base_url();?>Customer_renegovalue">Seller's Approved<br> Negotiation</a>
-			 		 <a class="collapse-item" href="<?php echo base_url();?>Customer_finalrenegotiatedvalue">Seller's Approved<br> Negotiation</a>
+			 <a class="collapse-item" href="<?php echo base_url();?>Customer_renegovalue">Seller's 2nd Approved<br> Re-Negotiation</a>
+			 		 <a class="collapse-item" href="<?php echo base_url();?>Customer_finalrenegotiatedvalue">My Final Approved<br> Re-Negotiation</a>
           </div>
         </div>
   
