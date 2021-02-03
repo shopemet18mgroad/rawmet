@@ -35,7 +35,7 @@
 			<th style="color:orange;">Your 2nd Re-Negotiated Quantity</th>
 			<th style="color:yellow;">Seller final Re-Negotiated price</th>
 			<th>Status</th>
-
+			<th>Upload Purchase Order</th>
 
 									</tr>
 								</thead>
