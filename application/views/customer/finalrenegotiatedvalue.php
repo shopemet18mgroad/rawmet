@@ -57,8 +57,12 @@
 							<?php echo $row->productid;?></td>
 							<td><input type="hidden" name="category" value="<?php echo $row->category;?>">
 							<?php echo $row->category;?></td>
-							<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
-							<?php echo $row->price;?></td>
+							
+				<td><input type="hidden" name="price" value="<?php echo $row->price; ?>">
+													<?php echo $row->price . "/";
+													echo $row->supplyunits; ?>
+		          <input type="hidden" name="supplyunits" value="<?php echo $row->supplyunits; ?>">
+												</td>
 			<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity; ?>">
 													<?php echo $row->bquantity . "/";
 													echo $row->bunits; ?>
