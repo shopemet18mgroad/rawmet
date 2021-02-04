@@ -56,9 +56,22 @@
 		<td>	
 	
 		<a href="<?php  echo base_url()."Vendor_custrenegovalue/approve_requote/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success btn-sm">Approve</button></a>
+		<br><br>			
+		<center><?php
+		/* <a href="<?php echo base_url()."Vendor_sellrenegotiate/index/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</a> */
 					
-		<center><a href="<?php echo base_url()."Vendor_sellrenegotiate/index/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</a></center>
+				$st = 	$row->status;
+		if($st == true){
+				echo '<a href="'.base_url().'Vendor_sellrenegotiate/index/'.$proid."/".urldecode($row->vname)."/".urldecode($row->busername).'">';
+				echo '<button class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</button>';
+		echo '</a>';}
+		else{
+			echo '<b>Finalized by Buyer</b>.';
+		}
 		
+			?>
+		</center>
+		<br>
 		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
       </tr>      
      <?php }?>	

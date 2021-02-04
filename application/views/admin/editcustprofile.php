@@ -65,16 +65,9 @@
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td> <input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername;?>"></td>
+								<td> <input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername;?>" readonly ></td>
 							</tr> 
-							<tr>
-								<td>Password</td>
-								<td> <input class="form-control w-50" type="text" id="bpassword" name="bpassword" value="<?php echo $sqldata[0]->bpassword;?>"></td>
-							</tr> 	
-							<tr>
-								<td>RepeatPassword</td>
-								<td> <input class="form-control w-50" type="text" id="brepeatpassword" name="brepeatpassword" value="<?php echo $sqldata[0]->brepeatpassword;?>"></td>
-							</tr> 
+						 
 							<tr>
 								<td>Address</td>
 								<td><input class="form-control w-50" type="text" id="baddress" name="baddress" value="<?php echo $sqldata[0]->baddress;?>"></td>
@@ -91,14 +84,7 @@
 								<td>pincode</td>
 								<td><input class="form-control w-50" type="text" id="bpincode" name="bpincode" value="<?php echo $sqldata[0]->bpincode;?>"></td>
 							</tr>
-                              <tr>
-								<td>Business Type</td>
-								<td>Rajkot</td>
-							</tr>
-                             <tr>
-								<td>Business description</td>
-								<td>Verified</td>
-							</tr>
+                              
 							
 					   </tbody>
 					</table>

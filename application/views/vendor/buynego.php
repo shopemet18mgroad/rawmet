@@ -51,42 +51,48 @@
 		
 			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
 							<?php echo $row->vname;?></td>
-			<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
+								<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
 							<?php echo $row->busername;?></td>
+		
 			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
 								<?php echo $row->productname;?></td>
 			<td><input type="hidden" name="productid" value="<?php echo $row->productid;?>">
 								<?php echo $row->productid;?></td>
 			<td><input type="hidden" name="category" value="<?php echo $row->category;?>">
 								<?php echo $row->category;?></td>
-			<td><input type="hidden" name="companyname" value="<?php echo $row->companyname;?>">
-							<?php echo $row->companyname;?></td>
-			<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
-							<?php echo $row->price;?></td>
 			<td><input type="hidden" name="pcities" value="<?php echo $row->pcities;?>">
-							<?php echo $row->pcities;?></td>
+								<?php echo $row->pcities;?></td>
+		
+		
+		<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
+		     <?php echo $row->price."/" ;echo $row->units;?>
+			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
+		</td>
+		
+		
+												
+		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
+		     <?php echo $row->quantity."/" ;echo $row->supplyunits;?>
+			 <input type="hidden" name="supplyunits" value="<?php echo $row->supplyunits;?>">
+		</td>
+		
+			
 							
-							
-							
-							
-			<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
+		<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
 		     <?php echo $row->bquantity."/" ;echo $row->bunits;?>
 			 <input type="hidden" name="bunits" value="<?php echo $row->bunits;?>">
-		</td>
+		
+	</td>
+	
 		<td><input type="hidden" name="bprice" value="<?php echo $row->bprice;?>">
 		     <?php echo $row->bprice."/" ;echo $row->bsupplyability;?>
 			 <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
 		</td>
-		
-		<td><input type="hidden" name="selprice" value="<?php echo $row->selprice;?>">
-		     <?php echo $row->selprice."/" ;echo $row->sunits;?>
-			 <input type="hidden" name="sunits" value="<?php echo $row->sunits;?>">
-		</td>
-			<td><input type="hidden" name="selprice" value="<?php echo $row->selprice;?>">
-		     <?php echo $row->selqan."/" ;echo $row->selunits;?>
-			 <input type="hidden" name="sunits" value="<?php echo $row->sunits;?>">
-		</td>
-		
+			<td><input type="hidden" name="selprice" value="<?php echo $row->selprice; ?>">
+													<?php echo $row->selprice . "/";
+													echo $row->sunits; ?>
+		<input type="hidden" name="sunits" value="<?php echo $row->sunits; ?>">
+								</td>
 
 
 				

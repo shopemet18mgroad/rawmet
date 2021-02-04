@@ -23,18 +23,20 @@
 							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 								<thead class="bg-primary text-white">
 									<tr>
-								<th>Buyer Name</th>
+													<th>Buyer Name</th>
+								<th>Supplier Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
 			<th>Supplier Original Price</th>
+			<th>Supplier Original Quantity</th>
 			<th style="color:pink;">Your Negotiated Quantity</th>
 			<th style="color:pink;">Your Negotiated Price</th>
 			<th style="color:yellow;">Seller Re-Negotiated price</th>
 			<th style="color:orange;">Your Re-Negotiated price</th>
 			<th style="color:orange;">Your Re-Negotiated Quantity</th>
 			<th>status</th>
-
+			
 
 									</tr>
 								</thead>
@@ -48,6 +50,9 @@
 
 												<?php $prodid = str_ireplace('/', '-', $row->productid); ?>
 
+	 <td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
+							<?php echo $row->vname;?></td>
+
 	<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
 							<?php echo $row->busername;?></td>
 							<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
@@ -56,8 +61,18 @@
 							<?php echo $row->productid;?></td>
 							<td><input type="hidden" name="category" value="<?php echo $row->category;?>">
 							<?php echo $row->category;?></td>
-							<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
-							<?php echo $row->price;?></td>
+	<td><input type="hidden" name="price" value="<?php echo $row->price; ?>">
+													<?php echo $row->price . "/";
+													echo $row->supplyunits; ?>
+		          <input type="hidden" name="supplyunits" value="<?php echo $row->supplyunits; ?>">
+												</td>
+													<td><input type="hidden" name="quantity" value="<?php echo $row->quantity; ?>">
+													<?php echo $row->quantity . "/";
+													echo $row->units; ?>
+		          <input type="hidden" name="units" value="<?php echo $row->units; ?>">
+												</td>
+							
+						
 			<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity; ?>">
 													<?php echo $row->bquantity . "/";
 													echo $row->bunits; ?>
