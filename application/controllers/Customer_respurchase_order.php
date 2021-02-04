@@ -45,8 +45,8 @@ class Customer_respurchase_order extends CI_Controller {
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
-			$companyname = $this->input->post('companyname');
-			$price  = $this->input->post('price');
+		     $price = $this->input->post('price');
+		     $supplyunits = $this->input->post('supplyunits');
 			$pcities = $this->input->post('pcities');
 			$bquantity = $this->input->post('bquantity');
 			$bunits = $this->input->post('bunits');
@@ -60,6 +60,8 @@ class Customer_respurchase_order extends CI_Controller {
 			$brenegounit = $this->input->post('brenegounit');
 			$brenegoquantity = $this->input->post('brenegoquantity');
 			$brenegoquantityunit = $this->input->post('brenegoquantityunit');
+			$sellrenegoprice = $this->input->post('sellrenegoprice');
+			$sellrenegounits = $this->input->post('sellrenegounits');
 			
 			//$sterms_condiaccept  = $this->input->post('sterms_condiaccept');
 			$pic_array1 = self::upload_files('upload_dd');
@@ -80,7 +82,7 @@ class Customer_respurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vname' => $vname, 'busername' => $busername,'productname' => $productname,'productid'=> $productid,'category' => $category,'companyname' => $companyname, 'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'selqan' => $selqan,'selunits' => $selunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'uploadporder'=>$pic_array1);
+			$data = array('vname' => $vname, 'busername' => $busername,'productname' => $productname,'productid'=> $productid,'category' => $category,'quantity' => $quantity,'units' => $units,'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'uploadporder'=>$pic_array1,'price' =>$price,'supplyunits'=>$supplyunits,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits);
 			
 			$status = $this->Admin_model->insert('purchaseoder',$data);
 			

@@ -35,18 +35,26 @@ class Customer_spurchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('busername')){
+
+				
+		 
+	if($this->input->post('productname')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			$vname = $this->input->post('vname');
-			$busername = $this->input->post('busername');
+		
+			//$busername = $this->input->post('busername');
+			
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
-			$companyname = $this->input->post('companyname');
+			
 			$price  = $this->input->post('price');
+			$units  = $this->input->post('units');
+			$quantity  = $this->input->post('quantity');
+			$supplyunits  = $this->input->post('supplyunits');
 			$pcities = $this->input->post('pcities');
 			$bquantity = $this->input->post('bquantity');
 			$bunits = $this->input->post('bunits');
@@ -73,11 +81,11 @@ class Customer_spurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vname' => $vname, 'busername' => $busername,
+			$data = array('vname' => $vname, 
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
-			'companyname' => $companyname, 'price' => $price,
+			
 			'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
-			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1);
+			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1,'price'=>$price,'units'=>$units,'quantity'=>$quantity,'supplyunits'=>$supplyunits);
 			
 			$status = $this->Admin_model->insert('purchaseoder', $data);
 			

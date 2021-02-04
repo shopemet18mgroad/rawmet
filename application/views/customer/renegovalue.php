@@ -24,10 +24,12 @@
 								<thead class="bg-primary text-white">
 									<tr>
 								<th>Buyer Name</th>
+								<th>Supplier Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
 			<th>Supplier Original Price</th>
+			<th>Supplier Original Quantity</th>
 			<th style="color:pink;">Your Negotiated Quantity</th>
 			<th style="color:pink;">Your Negotiated Price</th>
 			<th style="color:yellow;">Seller Re-Negotiated price</th>
@@ -47,7 +49,11 @@
 											<tr>
 												<?php $proid = str_ireplace('/', '-', $row->productid); ?>
 
-												<?php $prodid = str_ireplace('/', '-', $row->productid); ?>
+											<?php $prodid = str_ireplace('/', '-', $row->productid); ?>
+												
+	 
+	 <td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
+							<?php echo $row->vname;?></td>
 
 	<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
 							<?php echo $row->busername;?></td>
@@ -57,8 +63,18 @@
 							<?php echo $row->productid;?></td>
 							<td><input type="hidden" name="category" value="<?php echo $row->category;?>">
 							<?php echo $row->category;?></td>
-							<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
-							<?php echo $row->price;?></td>
+	<td><input type="hidden" name="price" value="<?php echo $row->price; ?>">
+													<?php echo $row->price . "/";
+													echo $row->supplyunits; ?>
+		          <input type="hidden" name="supplyunits" value="<?php echo $row->supplyunits; ?>">
+												</td>
+													<td><input type="hidden" name="quantity" value="<?php echo $row->quantity; ?>">
+													<?php echo $row->quantity . "/";
+													echo $row->units; ?>
+		          <input type="hidden" name="units" value="<?php echo $row->units; ?>">
+												</td>
+							
+						
 			<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity; ?>">
 													<?php echo $row->bquantity . "/";
 													echo $row->bunits; ?>
@@ -86,7 +102,7 @@
 													<input type="hidden" name="brenegoquantityunit" value="<?php echo $row->brenegoquantityunit; ?>">
 									</td>
 										<td> <a href="<?php echo base_url().'Customer_renegovaluequotation/auc_no/'.urldecode($row->busername)."/".urldecode($row->vname)."/".urldecode($proid);?>" target="_blank">
-				<i class="fa fa-download" aria-hidden="true"></i></a></td>
+				<i class="fa fa-download" aria-hidden="true" ></i></a></td>
 					<td>
 
 													<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]">

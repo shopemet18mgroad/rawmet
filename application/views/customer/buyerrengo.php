@@ -43,11 +43,11 @@
 					<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img;?>">
 				
 				</div>	
+					 <label><b>Description:</b></label>
+				<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
+							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">	
 				</div>
-				  <p><b>Description</b></p>
-								  							
-								<p class="w-auto small"><?php echo $sqldata[0]->description;?>
-							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo $sqldata[0]->description;?>">
+				
 				</div>
 			
 
@@ -69,11 +69,11 @@
 							
 							<p><b>Product Id:</b><?php echo $sqldata[0]->productid;?></p>
 							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo $sqldata[0]->productid;?>">
-						
+								
 							
 							
 							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $sqldata[0]->companyname;?>">
-							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
+							
 							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $sqldata[0]->supplyunits;?>">
 						<!--	<h6 class="text-center" style="color:orange;"><b>Quantity : <?php// echo $sqldata[0]->supplyability."/"; echo $sqldata[0]->supplyunits;?></b></h6>-->
 							
@@ -86,6 +86,8 @@
 							<p class="mt-3"><b>Stock Available at : </b><?php echo $sqldata[0]->pcities."|"; echo $sqldata[0]->pstates;?></p>
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $sqldata[0]->pstates;?>">
+							<h6 style="color:purple;"><b>Validity Till: <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
+							<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
 							
 					</div>
 					</div>
@@ -95,15 +97,25 @@
 					<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
-					<h6 style="color:purple;"><b>Validity Till: <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
-							<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
-							    
-						<p style="color:orange;"><b>Supplier Re-Negotiated Price:<?php echo $sqldata[0]->selprice."/"; echo $sqldata[0]->sunits;?></b></p>
-							<input type="hidden" class="form-control" id="selprice" name="selprice"  value="<?php echo $sqldata[0]->selprice;?>">
-							<input type="hidden" class="form-control" id="sunits" name="sunits"  value="<?php echo $sqldata[0]->sunits;?>">
+					<center><b>Seller 1st Value</b></center>
+							<hr class="sidebar-divider">
+					<p style="color:orange;"><b>Seller Price:<?php echo $sqldata[0]->quantity.""; echo $sqldata[0]->units;?></b></p>
+								<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo $sqldata[0]->quantity;?>">
+								<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo $sqldata[0]->units;?>">
+							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
+					<center><b>Buyer 1st Negotiate</b></center>
+							<hr class="sidebar-divider">
+					<p style="color:green;"><b>Buyer Price:<?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></b></p>
+								<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata[0]->bprice;?>">
+								<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata[0]->bunits;?>">
 							
-							<input type="hidden" class="form-control" id="selqan" name="selqan"  value="<?php echo $sqldata[0]->selqan;?>">
-							<input type="hidden" class="form-control" id="selunits" name="selunits"  value="<?php echo $sqldata[0]->selunits;?>">
+						<p style="color:green;"><b>Quantity:<?php echo $sqldata[0]->bquantity; echo $sqldata[0]->bsupplyability;?></b></p>
+							<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo $sqldata[0]->bquantity;?>">
+							<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo $sqldata[0]->bsupplyability;?>">
+					
+							
+						<!--	<input type="hidden" class="form-control" id="selqan" name="selqan"  value="<?php //echo $sqldata[0]->selqan;?>">
+							<input type="hidden" class="form-control" id="selunits" name="selunits"  value="<?php //echo $sqldata[0]->selunits;?>">-->
 				
 							
 					</div>
@@ -118,23 +130,24 @@
 						
 							
 							
-							<center><b>Buyer Re-Negotiate</b></center>
+							<center><b>Supplier Re-Negotiate</b></center>
 							<hr class="sidebar-divider">
 							
 								<div class="form-row">
-								<p style="color:green;"><b>Your Previous Price:<?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></b></p>
-								<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata[0]->bprice;?>">
-								<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata[0]->bunits;?>">
-							
-						<p style="color:green;"><b>Quantity:<?php echo $sqldata[0]->bquantity; echo $sqldata[0]->bsupplyability;?></b></p>
-							<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo $sqldata[0]->bquantity;?>">
-							<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo $sqldata[0]->bsupplyability;?>">
+					
+							    
+						<p style="color:orange;"><b> Price:<?php echo $sqldata[0]->selprice."/"; echo $sqldata[0]->sunits;?></b></p>
+							<input type="hidden" class="form-control" id="selprice" name="selprice"  value="<?php echo $sqldata[0]->selprice;?>">
+							<input type="hidden" class="form-control" id="sunits" name="sunits"  value="<?php echo $sqldata[0]->sunits;?>">
+								
 						
 								
 							</div>
   
-					
+						<center><b>Buyer Re-Negotiate</b></center>
+							<hr class="sidebar-divider">
 							<div class="form-row">
+							
 								<label class="col-sm-6 col-form-label"  for="name"><b>Quantity</b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="brenegoquantity" placeholder="Quantity" id="brenegoquantity" [(ngModel)]="person.name" />
 							<div class="col-sm-3">  
@@ -170,8 +183,31 @@
 						</div>
 					 
 				  </div>
-								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Submit</a></button>
-								 <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="submit" id= "submit" role="submit">Cancel</a></button>
+								<a href="#" class="neg"> </a>
+								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="btnsubmit_rengo" id= "btnsubmit_rengo" role="submit"  onclick= "return validate_selnego()">Re-Negotiated</a></button>
+								 <button type="button" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="btncancel" id= "btncancel" role="Cancel">Cancel</a></button>
+								 <button style="background-color:orange" type="button" class="btn btn-info btn-sm mt-2 offset-sm-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiated</button>
+								 
+							
+							
+							<!-- Logout Modal-->
+  <div class="modal fade" id="final_Negotiated" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">finel?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Final</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+		  <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2"  name="btnsubmit_final" id= "btnsubmit_final" role="submit"  onclick= "return validate_selnego()">Final-Negotiated</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
 							</div>
 						
 

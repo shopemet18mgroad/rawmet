@@ -26,7 +26,9 @@
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
+			
 			<th>Supplier Original Price</th>
+			<th>Supplier Original Quantity</th>
 			<th style="color:pink;">Your Negotiated Quantity</th>
 			<th style="color:pink;">Your Negotiated Price</th>
 			<th style="color:yellow;">Seller Re-Negotiated price</th>
@@ -46,7 +48,8 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->price.""; echo $row->supplyunits;?></td>
+			<td><?php echo $row->quantity."/"; echo $row->units;?></td>
+			<td><?php echo $row->price."/"; echo $row->supplyunits;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>

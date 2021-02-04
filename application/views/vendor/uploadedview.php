@@ -43,10 +43,12 @@
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
 					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->units;?><br>
 					<b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?><br>
-					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->units;?><br><b>Posted On:</b><?php echo $sqldata[0]->productvalidityfrom;?><br><b>Validity Till:</b><?php echo $sqldata[0]->productvalidityto;?>
+					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->units;?><br>
 					</p>
-				  </div>
-<a style="margin:15%" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
+					</div>
+					 <a style="margin:15%" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
+				  
+          
 				<table class="table bg-white table-sm table-borderless">
 					<thead class="bg-primary text-white">
 						<tr>
@@ -63,6 +65,18 @@
 							</tr>
 							<tr>
 								<td><b>Estimated Delivery Time:</b>&nbsp;&nbsp;<?php echo $sqldata[0]->estdeltime;?></td>
+							</tr> 
+							<tr>
+								<td><b>Posted On:&nbsp;&nbsp;</b><?php echo $sqldata[0]->productvalidityfrom;?></td>
+							</tr>
+							<tr>
+								<td><b>Validity Till:</b>&nbsp;&nbsp;<?php echo $sqldata[0]->productvalidityto;?></td>
+							</tr>
+							<tr>
+								<td><b>City:&nbsp;&nbsp;</b><?php echo $sqldata[0]->pcities;?></td>
+							</tr>
+							<tr>
+								<td><b>State:</b>&nbsp;&nbsp;<?php echo $sqldata[0]->pstates;?></td>
 							</tr> 
 						</tbody>	
 					</table>

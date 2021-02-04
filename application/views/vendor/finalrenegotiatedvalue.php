@@ -28,6 +28,7 @@
 			<th>Product Id</th>
 			<th>Category</th>
 			<th>Seller's Base Price</th>
+			<th>Seller's Base Quantity</th>
 			<th style="color:pink;">Your 1st Negotiated Quantity</th>
 			<th style="color:pink;">Your 1st Negotiated Price</th>
 			<th style="color:yellow;">Seller 1st Negotiated price</th>
@@ -57,8 +58,17 @@
 							<?php echo $row->productid;?></td>
 							<td><input type="hidden" name="category" value="<?php echo $row->category;?>">
 							<?php echo $row->category;?></td>
-							<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
-							<?php echo $row->price;?></td>
+						
+					<td><input type="hidden" name="price" value="<?php echo $row->price; ?>">
+													<?php echo $row->price . "/";
+													echo $row->units; ?>
+		          <input type="hidden" name="units" value="<?php echo $row->units; ?>">
+												</td>
+							<td><input type="hidden" name="quantity" value="<?php echo $row->quantity; ?>">
+													<?php echo $row->quantity . "/";
+													echo $row->units; ?>
+		          <input type="hidden" name="units" value="<?php echo $row->units; ?>">
+												</td>
 			<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity; ?>">
 													<?php echo $row->bquantity . "/";
 													echo $row->bunits; ?>
