@@ -35,18 +35,22 @@ class Customer_repurchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('busername')){
+	if($this->input->post('vname')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
+			
 			$vname = $this->input->post('vname');
-			$busername = $this->input->post('busername');
+			
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
-			$companyname = $this->input->post('companyname');
+		    $busername = $this->input->post('busername');
 			$price  = $this->input->post('price');
+			$units  = $this->input->post('units');
+			$quantity  = $this->input->post('quantity');
+			$supplyunits  = $this->input->post('supplyunits');
 			$pcities = $this->input->post('pcities');
 			$bquantity = $this->input->post('bquantity');
 			$bunits = $this->input->post('bunits');
@@ -54,8 +58,6 @@ class Customer_repurchase_order extends CI_Controller {
 			$bsupplyability = $this->input->post('bsupplyability');
 			$selprice = $this->input->post('selprice');
 			$sunits = $this->input->post('sunits');
-			$selprice = $this->input->post('selqan');
-			$sunits = $this->input->post('selunits');
 			$brenegoprice = $this->input->post('brenegoprice');
 			$brenegounit = $this->input->post('brenegounit');
 			$brenegoquantity = $this->input->post('brenegoquantity');
@@ -80,25 +82,12 @@ class Customer_repurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vname' => $vname, 'busername' => $busername,
-			'productname' => $productname,
-			'productid' => $productid, 
-			'category' => $category,
-			'companyname' => $companyname,
-			'price' => $price,
-			'pcities' => $pcities,
-			'bquantity' => $bquantity,
-			'bunits'=>$bunits,
-			'bprice' => $bprice,
-			'bsupplyability'=>$bsupplyability,
-			'selprice' => $selprice,
-			'sunits' => $sunits,
-			'selqan' =>$selqan,
-			'selprice' => $selprice,
-			'selunits' => $selunits,
-			'sunits' => $sunits,
-			'uploadporder'=>$pic_array1,
-			'brenegoprice'=>$brenegoprice,
+			
+			
+				$data = array('vname' => $vname,'busername'=> $busername,'selprice'=>$selprice ,'sunits'=>$sunits,
+			'productname' => $productname,'productid' => $productid, 'category' => $category,'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
+			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1,'price'=>$price
+	,'units' =>	$units ,'quantity'  =>$quantity,'supplyunits'=>$supplyunits,'quantity'=>$quantity,'supplyunits'=>$supplyunits,'brenegoprice'=>$brenegoprice,
 			'brenegounit'=>$brenegounit,
 			'brenegoquantity'=>$brenegoquantity,
 			'brenegoquantityunit'=>$brenegoquantityunit);

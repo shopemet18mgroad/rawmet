@@ -41,7 +41,7 @@ class Vendor_add_negotiate extends CI_Controller {
 				//print_r($data2); die;
 				$vusername= $data2[0]->vusername;
 				//	print_r($vusername); die;
-	 if($this->input->post('busername')){
+	         if($this->input->post('busername')){
 			 $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
@@ -55,9 +55,11 @@ class Vendor_add_negotiate extends CI_Controller {
 			$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
 			$category = $this->input->post('category');
-			$description = $this->input->post('description');
+		
 			$price = $this->input->post('price');
 	        $supplyunits = $this->input->post('supplyunits');
+			$quantity = $this->input->post('quantity');
+	        $units = $this->input->post('units');
 		    $pstates = $this->input->post('pstates');
 			$pcities = $this->input->post('pcities');
 			$negotiate= $this->input->post('negotiate');
@@ -66,7 +68,7 @@ class Vendor_add_negotiate extends CI_Controller {
 		    $bunits = $this->input->post('bunits');
 			$bsupplyability = $this->input->post('bsupplyability');
 			$sellapproval = $this->input->post('sellapproval');
-			$uploadporder = $this->input->post('uploadporder');
+			
 			$selprice= $this->input->post('selprice');
 			$sunits = $this->input->post('sunits');
 
@@ -80,7 +82,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'uploadporder' =>$uploadporder,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto);
+			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'units' =>$units,);
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){

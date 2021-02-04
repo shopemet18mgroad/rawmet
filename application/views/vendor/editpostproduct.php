@@ -74,45 +74,7 @@
 				
 				
               
-				<div class="col-sm-4">  
-			   	<label for="category">States:</label>
-					<select class="form-control" id="pstates" name="pstates" value="">
-					<option value="<?php echo  $sqldata[0]->pstates;?>"><?php echo  $sqldata[0]->pstates;?></option>
-					    <option value="">All India</option>
-						<option value="Andhra Pradesh">Andhra Pradesh</option>
-						<option value="Arunchal Pradesh">Arunchal Pradesh</option>
-						<option value="Assam">Assam</option>
-						<option value="Chhattisgarh">Chhattisgarh</option>
-						<option value="Goa">Goa</option>
-						<option value="Gujarat">Gujarat</option> 
-						<option value="Haryana">Haryana</option>
-						<option value="Himchala Pradesh">Himchala Pradesh</option>
-						<option value="Jharkhand">Jharkhand</option>
-						<option value="Karnataka">Karnataka</option>
-						<option value="Kerala">Kerala</option>
-						<option value="Madhya Pradesh">Madhya Pradesh</option>
-						<option value="Manipur">Manipur</option>
-						<option value="Meghalaya">Meghalaya</option>
-						<option value="Mizoram">Mizoram</option>
-						<option value="Nagalan">Nagaland</option>
-						<option value="Odisha">Odisha</option>
-						<option value="Punjab">Punjab</option>
-						<option value="Rajasthan">Rajasthan</option>
-						<option value="Sikkim">Sikkim</option>
-						<option value="Tamil Nadu">Tamil Nadu</option>
-						<option value="Telangana">Telangana</option>
-						<option value="Tripura">Tripura</option>
-						<option value="UttarKhand ">UttarKhand </option>
-						<option value="Uttar Pradesh">Uttar Pradesh</option>
-						<option value="Uttar Pradesh">West Bengal</option>
-						<option value="Andaman and nicobar">Andaman and nicobar</option>
-						<option value="Chandigar">Chandigarh</option>
-						<option value="Dadra and Nagar Haveli and Daman & Diu">Dadra and Nagar Haveli and Daman & Diu</option>
-						<option value="Jammu and kashmir">Jammu and kashmir</option>
-						<option value="ladakh">ladakh</option>
-						<option value="puducherry">puducherry</option>
-						</select>
-				</div>
+			
 				<div class="col-sm-4">  
 				
 			   	<label for="category">Types:</label>
@@ -124,116 +86,117 @@
 				        <option value="Scrap" >Scrap</option>
 				    </select>  
 				</div>
-				<div class="col-sm-4">  
-			   	<label for="category">City:</label>
-					<select class="form-control" id="pcities" name="pcities" value="">
-						<option value="<?php echo  $sqldata[0]->pcities;?>"><?php echo  $sqldata[0]->pcities;?></option>
-					    <option value="All city">All city</option>
-						<option value="Mumbai">Mumbai</option>
-						<option value="Dehli">Delhi</option>
-						<option value="Bangalore">Bangalore</option>
-						<option value="hyderabad">hyderabad</option>
-						<option value="Ahmedabad">Ahmedabad</option>
-						<option value="Chennai">Chennai </option>
-						<option value="Kolkata">Kolkata</option>
-						<option value="Surat">Surat</option>
-						<option value="Pune">Pune</option>
-						<option value="Jaipur">Jaipur</option>
-						<option value="Lucknow">Lucknow</option>
-						<option value="Kanpur">Kanpur</option>
-						<option value="Nagpur">Nagpur</option>
-						<option value="Indore">Meghalaya</option>
-						<option value="Thane">Thane</option>
-						<option value="Bhopal">Bhopal</option>
-						<option value="Visakhapatnam">Visakhapatnam</option>
-						<option value="Patna">Patna</option>
-						<option value="Vadodara">Vadodara</option>
-						<option value="Ghaziabad">Ghaziabad</option>
-						<option value="Ludhiana">Ludhiana</option>
-						<option value="Agra">Agra</option>
-						<option value="Nashik">Nashik</option>
-						<option value="Faridabad">Faridabad</option>
-						<option value="Meerut">Meerut</option>
-						<option value="Rajkot">Rajkot</option>
-						<option value="Kalyan">Kalyan</option>
-						<option value="Vasai Virar">Vasai Virar</option>
-						<option value="Varanasi">Varanasi</option>
-						<option value="Srinagar">Srinagar</option>
-						<option value="Aurangabad">Aurangabad</option>
-						<option value="Dhanbad	Jharkhand">Dhanbad	Jharkhand</option>
-						<option value="Amritsar">Amritsar</option>
-						<option value="Navi Mumbai">Navi Mumbai</option>
-						<option value="Allahabad">Allahabad</option>
-						<option value="Ranchi">Ranchi</option>
-						<option value="Haora">Haora</option>
-						<option value="Coimbatore">Coimbatore</option>
-						<option value="Jabalpur">Jabalpur</option>
-						<option value="Gwalior">Gwalior</option>
-						<option value="Vijayawada">Vijayawada</option>
-						<option value="Jodhpur">JodhpurPune</option>
-						<option value="Madurai">Madurai</option>
-						<option value="Raipur">Raipur</option>
-						<option value="Kota">Kota</option>
-						<option value="Guwahati">Guwahati</option>
-						<option value="Chandigarh">Chandigarh</option>
-						<option value="Solapur">Solapur</option>
-						<option value="Hubli">Hubli</option>
-						<option value="Dharwad">Dharwad</option>
-						<option value="Bareilly">Bareilly</option>
-						<option value="Moradabad">Moradabad</option>
-						<option value="Mysore">Mysore</option>
-						<option value="Gurgaon">Gurgaon</option>
-						<option value="Aligarh">Aligarh</option>
-						<option value="Jalandhar">Jalandhar</option>
-						<option value="Tiruchirappalli">Tiruchirappalli</option>
-						<option value="Bhubaneswar">Meerut</option>
-						<option value="Salem">Salem</option>
-						<option value="Mira">Mira</option>
-						<option value="Thiruvananthapuram">Thiruvananthapuram</option>
-						<option value="Bhiwandi">Bhiwandi</option>
-						<option value="Saharanpur">Saharanpur</option>
-						<option value="Gorakhpur">Gorakhpur</option>
-						<option value="Guntur">Guntur</option>
-						<option value="Amritsar">Amritsar</option>
-					 <option value="Bikaner">Bikaner</option>
-						<option value="Amravati">Amravati</option>
-						<option value="Noida">Noida</option>
-						<option value="Jamshedpur">Jamshedpur</option>
-						<option value="Bhilai Nagar">Bhilai Nagar</option>
-						<option value="Warangal">Warangal</option>
-						<option value="Cuttack	Orissa">Cuttack	Orissa</option>
-						<option value="Firozabad">Firozabad</option>
-						<option value="Kochi">Kochi</option>
-						<option value="Bhavnagar">Bhavnagar</option>
-						<option value="Dehradun">Dehradun</option>
-						<option value="Durgapur">Durgapur</option>
-						<option value="Asansol">Asansol</option>
-						<option value="Nanded Waghala">Nanded Waghala</option>
-						<option value="Kolapur">Kolapur</option>
-						<option value="Ajmer">Ajmer</option>
-						<option value="Gulbarga">Gulbarga</option>
-						<option value="Jamnagar">Jamnagar/option>
-						<option value="Ujjain">Ujjain</option>
-						<option value="Loni">Loni</option>
-						<option value="Siliguri">Siliguri</option>
-						<option value="Jhansi">Jhansi</option>
-						<option value="Ulhasnagar">Ulhasnagar</option>
-						<option value="Nellore">Nellore</option>
-						<option value="Jammu">Jammu</option>
-						<option value="Sangli Miraj Kupwad">Sangli Miraj Kupwad</option>
-						<option value="Belgaum">Belgaum</option>
-						<option value="Mangalore">Mangalore</option>
-						<option value="Ambattur">Ambattur</option>
-						<option value="Tirunelveli">TirunelveliTirunelveli</option>
-						<option value="Malegoan">Malegoan</option>
-						<option value="Gaya">Gaya</option>
-						<option value="Udaipur">Udaipur</option>
-						<option value="Maheshtala">Maheshtala</option>
-						<option value="Jalgaon">Jalgaon</option>
-						</select>
-				</div>
-				
-				  
+				<div class="col-sm-4"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+
+var citiesByState = {
+Odisha: ["Bhubaneswar","Puri","Cuttack"],
+Maharashtra: ["Mumbai","Pune","Nagpur"],
+Kerala: ["kochi","Kanpur"],
+Karnataka: ["Bengaluru","Hubli-Dharwad","Mysuru","Kalaburagi","Mangaluru","Dakshina Kannada","Belagavi","Davanagere","Ballari","Vijayapura","Shivamogga","Tumakuru","Raichur","Bidar","Hosapete","Vijayanagara","Gadag-Betageri","Gadag","Robertsonpete","Kolara","Hassan","Bhadravati","Gokak","Belagavi","Udupi","Mandya","Chikkamagaluru","Gangavati","Koppal","Bagalkote","Ranebennuru","Haveri"],
+ArunachalPradesh: ["Itanagar"],
+AndhraPradesh: ["Visakhapatnam"],
+Assam: ["Dispur"],
+Bihar: ["Patna"],
+Chhattisgarh:["Naya Raipur"],
+Goa: ["Panaji"],
+Gujarat:	["Gandhinagar"],
+Haryana:	["Chandigarh"],
+HimchalaPradesh: ["Shimla"],
+Jharkhand: ["Ranchi"],	
+Kerala:	["Thiruvananthapuram"],		
+MadhyaPradesh: ["Bhopal"],		
+Maharashtra: ["Mumbai"],
+Manipur: ["Imphal"],	
+Meghalaya: ["Shillong"],	
+Mizoram: ["Aizawl"],	
+Nagaland:	["Kohima"],	
+Odisha: ["Bhubaneswar"],	
+Punjab:	["Chandigarh"],	
+Rajasthan:	["Jaipur"],	
+Sikkim: ["Gangtok"],
+TamilNadu:	["Chennai"],
+Telangana:	["Hyderabad"],	
+Tripura:	["Agartala"],	
+UttarPradesh: ["Lucknow"],	
+Uttarakhand:	["Dehradun"],	
+WestBengal: ["Kolkata"],
+}
+function makeSubmenu(value) {
+if(value.length==0) document.getElementById("pcities").innerHTML = "<option></option>";
+else {
+var citiesOptions = "";
+for(cityId in citiesByState[value]) {
+citiesOptions+="<option>"+citiesByState[value][cityId]+"</option>";
+}
+document.getElementById("pcities").innerHTML = citiesOptions;
+}
+}
+function displaySelected() { var country = document.getElementById("pstates").value;
+var city = document.getElementById("pcities").value;
+alert(country+"\n"+city);
+}
+function resetSelection() {
+document.getElementById("pstates").selectedIndex = 0;
+document.getElementById("pcities").selectedIndex = 0;
+}
+</script>
+
+<label>State</label>
+<body onload="resetSelection()">
+<select class="form-control" id="pstates" name="pstates" size="1" onchange="makeSubmenu(this.value)">
+<option value="<?php echo  $sqldata[0]->pstates;?>"><?php echo  $sqldata[0]->pstates;?></option>
+
+<option>Odisha</option>
+<option>Maharashtra</option>
+<option>Kerala</option>
+<option>ArunachalPradesh</option>
+<option>AndhraPradesh</option>
+<option>Assam</option>
+<option>Chhattisgarh</option>
+<option>Goa</option>
+<option>Gujarat</option> 
+<option>Haryana</option>
+<option>HimchalaPradesh</option>
+<option>Jharkhand</option>
+<option>Karnataka</option>
+<option>Kerala</option>
+<option>MadhyaPradesh</option>
+<option>Manipur</option>
+						<option>Meghalaya</option>
+						<option>Mizoram</option>
+						<option>Nagaland</option>
+						<option>Odisha</option>
+						<option>Punjab</option>
+						<option>Rajasthan</option>
+						<option>Sikkim</option>
+						<option>TamilNadu</option>
+						<option>Telangana</option>
+						<option>Tripura</option>
+						<option>UttarKhand </option>
+						<option>UttarPradesh</option>
+						<option>WestBengal</option>
+						<option>Andaman and nicobar</option>
+						<option>Chandigarh</option>
+						<option>Dadra and Nagar Haveli and Daman & Diu</option>
+						<option>Jammu and kashmir</option>
+						<option>ladakh</option>
+						<option>puduchery</option>
+</select>
+
+
+</div>
+
+<div class="col-sm-4"> 
+<label>City</label>
+	<select class="form-control" id="pcities" name="pcities" size="1" >
+	<option value="<?php echo  $sqldata[0]->pcities;?>"><?php echo  $sqldata[0]->pcities;?></option>
+
+<option></option>
+</select>
+</div>
+
 				  <div class="col-sm-12">
 					<label for="description">Description:</label>
 					<textarea class="form-control" rows="5" name="description" id="description"  value="<?php echo  $sqldata[0]->description;?>"><?php echo  $sqldata[0]->description;?></textarea>

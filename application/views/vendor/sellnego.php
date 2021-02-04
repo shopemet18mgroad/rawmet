@@ -22,7 +22,7 @@
     <thead class="bg-primary text-white">
       <tr>
 			<th>Supplier Name</th>
-			<th>Buyer Name</th>
+	
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
@@ -48,8 +48,8 @@
 		
 			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
 							<?php echo $row->vname;?></td>
-			<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
-							<?php echo $row->busername;?></td>
+		 
+							
 			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
 								<?php echo $row->productname;?></td>
 			<td><input type="hidden" name="productid" value="<?php echo $row->productid;?>">

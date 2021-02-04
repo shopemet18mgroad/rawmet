@@ -71,11 +71,18 @@ class Customer_add_renegotiate extends CI_Controller {
 			$productvalidityto = $this->input->post('productvalidityto');
 			
 			//$_FILES['uploadproductimage']['name'];
-			$uploadproductimage  = serialize($this->input->post('uploadproductimage')); 
+			$uploadproductimage  = serialize($this->input->post('uploadproductimage'));
+
+				
+			$renegoStatus = 0;
+			if(array_key_exists('btnsubmit_final',$this->input->post())){
+				$renegoStatus = 1;
+			}
 	
 	
 	      // $data1 = array('vname'=>$vname );
-			$data2 = array('productid'=>$productid ,'productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'selqan'=>$selqan,'selunits'=>$selunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'estdeltime'=>$estdeltime,'datetime'=>$datetime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage );
+			$data2 = array('productid'=>$productid ,'productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'selqan'=>$selqan,'selunits'=>$selunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'estdeltime'=>$estdeltime,'datetime'=>$datetime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage ,'status' => $renegoStatus );
+			
 			//print_r($data2);die;
 		/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('quotes', $data1)){
