@@ -34,7 +34,7 @@
 			<th style="color:orange";>Buyer Quantity</th>
 			<th style="color:orange";>Buyer Price</th>
 			<th>View Quotation</th>
-			<th>View Purchase Order</th>
+		
       </tr>
     </thead>
     <tbody>

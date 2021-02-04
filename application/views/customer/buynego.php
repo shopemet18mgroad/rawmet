@@ -22,22 +22,19 @@
 							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 								<thead class="bg-primary text-white">
 									<tr>
-			<th>Seller Name</th>
-			<th>Buyername Name</th>
-			
+			<th>Supplier Name</th>
+			<th>Buyer Name</th>
 			<th>Product Name</th>
-			
 			<th>Product Id</th>
 			<th>Category</th>
-		  <th>Location</th>
+			<th>Company Name</th>
 			<th>Supplier Price</th>
-			<th>Supplier Quantity</th>
-			
-			<th style="color:orange";>Buyer Quantity</th>
-			<th style="color:orange";>Buyer Price</th>
-			<th> Re-Supplier Price</th>
+			<th>Location</th>
+			<th>Buyer Quantity</th>
+		   <th>buyer price</th>
+			<th>Seller price</th>
 			<th>View Quotation</th>
-			<th>View Purchase Order</th>
+			
 
 
 									</tr>

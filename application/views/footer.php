@@ -117,8 +117,8 @@ autocomplete(document.getElementById("myInput"), countries);
 </script>
 
   <script>
-		$('#gettable_search').on('keyup', function(){
-			var contents = $('#gettable_search').val(); 
+		$('#productname').on('keyup', function(){
+			var contents = $('#productname').val(); 
 			$.get('<?php echo base_url() .'home_contactsupplier/get_table/'; ?>'+contents, function(data){
 				$('#ajaxrslt_search').html(data);
 			});
@@ -126,22 +126,44 @@ autocomplete(document.getElementById("myInput"), countries);
 	
  </script>
 
- <script>
- function search_product(){
-	 $("#dp").hide();
- if(document.getElementById("gettable_search").value.length > 1){
-	 $("#dp").show();
-			var contents = $('#gettable_search').val(); 
-			$.get('<?php echo base_url() .'home_contactsupplier/get_product_table/'; ?>'+contents, function(data){
-				$('#dp').html(data);
-			});
 
-					
- }else{
-	 return;
- }
-}
-</script>
+<div class="modal fade" id="new_userlogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">finel?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        
+        <form action="/action_page.php">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" placeholder="Enter email" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+  </div>
+  <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+        
+        
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+		  <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2"  name="btnsubmit_final" id= "btnsubmit_final" role="submit"  onclick= "return validate_selnego()">Final-Negotiated</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

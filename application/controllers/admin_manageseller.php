@@ -42,6 +42,24 @@ class Admin_manageseller extends CI_Controller {
 		$this->load->view('admin/footer');
 	
 	}
+		public function reject(){
+		$this->load->helper('url');
+		$this->load->model('Admin_model');
+         $vname = urldecode($this->uri->segment(3));
+	
+
+		$retriveval = array('vname'=>$vname);
+		
+		$data2 = array('voptions'=>False);
+
+		
+		
+		$status = $this->Admin_model->update_custom('vendor_register',$data2,$retriveval,$retriveval);
+		
+		header('location: '.base_url().'Admin_manageseller/index/'.urlencode($retriveval));
+		
+		die;
+	}
 	
 	
 	

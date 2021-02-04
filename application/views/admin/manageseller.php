@@ -43,7 +43,8 @@
 		
 
      <td>
-	 <a href="<?php echo base_url()."admin_sellerprofile/delete_seller/".urldecode($row->vname).'/'.urldecode($row->vcompanyname);?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash"></i>Suspend</a>
+		
+		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
 
 				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanyname);?>"><i class="fa fa-edit">Edit</a></td>
 				
