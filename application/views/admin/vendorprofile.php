@@ -83,14 +83,7 @@
 								<td>Username</td>
 								<td><?php echo $sqldata[0]->busername;?></td>
 							</tr> 
-							<tr>
-								<td>Password</td>
-								<td><?php echo $sqldata[0]->bpassword;?></td>
-							</tr> 	
-							<tr>
-								<td>Repeat Password</td>
-								<td><?php echo $sqldata[0]->brepeatpassword;?></td>
-							</tr> 
+							
 							<tr>
 								<td>Address</td>
 								<td><?php echo $sqldata[0]->baddress;?></td>
@@ -107,15 +100,7 @@
 								<td>pincode</td>
 								<td><?php echo $sqldata[0]->bpincode;?></td>
 							</tr>
-                              <tr>
-								<td>Business type</td>
-								<td>Rajkot</td>
-							</tr>
-                             <tr>
-								<td>Business description</td>
-								<td>Verified</td>
-							</tr>
-														
+                              			
 						</tbody>
 					</table>							
                 

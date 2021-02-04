@@ -46,4 +46,22 @@ class Admin_managebuyer extends CI_Controller {
 	
 	
 }
+	public function reject(){
+		$this->load->helper('url');
+		$this->load->model('Admin_model');
+         $vname = urldecode($this->uri->segment(3));
+	
+
+		$retriveval = array('vname'=>$vname);
+		
+		$data2 = array('voptions'=>False);
+
+		
+		
+		$status = $this->Admin_model->update_custom('vendor_register',$data2,$retriveval,$retriveval);
+		
+		header('location: '.base_url().'Admin_managebuyer/index/'.urlencode($retriveval));
+		
+		die;
+	}
 	}

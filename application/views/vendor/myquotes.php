@@ -27,7 +27,7 @@
 			<th>Category</th>
 		    <th style ="color:pink";>Buyer Quantity</th>
 			<th style ="color:pink";>Buyer Price</th>
-			<th style ="color:orange"; >Supplier Quantity</th>
+			
 			<th style ="color:orange";>Supplier Price</th>
 			
 			<th style ="color:pink";>Buyer Re-negotiated Quantity</th>
@@ -51,7 +51,7 @@
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bunits;?></td>
 			
-			<td><?php echo $row->selqan.""; echo $row->sunits;?></td>
+			<!--<td><?php //echo $row->selqan.""; echo $row->sunits;?></td>-->
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			
 			<td><?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>

@@ -83,14 +83,7 @@
 								<td>Username</td>
 								<td><?php echo $sqldata[0]->vusername;?></td>
 							</tr> 
-							<tr>
-								<td>Password</td>
-								<td><?php echo $sqldata[0]->vpassword;?></td>
-							</tr> 	
-							<tr>
-								<td>Repeat Password</td>
-								<td><?php echo $sqldata[0]->vrepeatpassword;?></td>
-							</tr> 
+							
 							<tr>
 								<td>Address</td>
 								<td><?php echo $sqldata[0]->vaddress;?></td>
