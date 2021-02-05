@@ -1,9 +1,6 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-	<?php
-
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Customer_quotationpur extends CI_Controller {
+class Admin_quotationpur extends CI_Controller {
 
   public function __construct()
   {
@@ -70,7 +67,7 @@ class Customer_quotationpur extends CI_Controller {
     // Output  PDF (1 = download and 0 = preview)
     $ci->dompdf->stream($vname.".pdf", array("Attachment" => 0));
     
-  
   }
  }
+
 	?>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_reqpurchaseorder extends CI_Controller {
+class Admin_sellnego extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,26 +23,23 @@ class Admin_reqpurchaseorder extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-
+		
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-
-		$reqapproval = array('bname'=>$sess['sessi'],'sellprove'=>true);
-
-		
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);
+		$active1 = array('busername'=>$sess['sessi'],'sellapproval'=>true);
+	
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
-	
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/reqpurchaseorder',$query);
+		$this->load->view('admin/sellnego',$query);
 		$this->load->view('admin/footer');
-			}
+			}	
 	}
-
 	
+
 }
