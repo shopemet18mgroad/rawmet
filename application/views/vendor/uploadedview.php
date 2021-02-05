@@ -43,8 +43,10 @@
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
 					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->units;?><br>
 					<b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?><br>
-					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->units;?><br>
-					</p>
+					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->units;?>
+					<br><b style="color:green">Payable To Rawmet&nbsp;:</b>&nbsp;&nbsp;&nbsp;<?php echo $sqldata[0]->payable."%";?>
+					
+					</p><b>ISO Certificate Number</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->uploadcertificate;?>
 					</div>
 					 <a style="margin:15%" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
 				  

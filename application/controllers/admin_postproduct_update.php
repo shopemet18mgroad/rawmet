@@ -52,7 +52,8 @@ class Admin_postproduct_update extends CI_Controller {
 		 $comapprove = $this->input->post('comapprove');
 		$productvalidityto = $this->input->post('productvalidityto');
 		 $productvalidityfrom = $this->input->post('productvalidityfrom');
-		
+		 $uploadcertificate = $this->input->post('uploadcertificate');
+	
 				$_FILES['uploadproductimage']['name'];
 			//$pic_array1  = self::upload_files('uploadproductimage'); die;
 			 $pic_array1  = self::upload_files('uploadproductimage'); 
@@ -98,7 +99,7 @@ class Admin_postproduct_update extends CI_Controller {
 		
 		//==================================================================
 		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array,'poptions'=>false,'comapprove'=>false,
-		'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom);
+		'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom	,'uploadcertificate'=>	$uploadcertificate);
 		
 		//print_r($data);die;
 		$datainserr = "Data Inserted Successfully";

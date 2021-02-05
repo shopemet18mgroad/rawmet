@@ -140,10 +140,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$q = $this->db->get();
 			return $q->result_array();
 		  }
-		  
-			
-
-
+		
 			function fetch_all()
 			 {
 			  $query = $this->db->get("auction");
@@ -158,7 +155,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       }
 
      
-		  
+	function getAllbuyReqlist() {
+			
+		$this->db->select('a.bname,a.bcity,a.bselectstate,b.productname,b.uploadimage,b.productid,b.bcompanyname,b.description,b.price,b.priceperkg,b.quantity,b.units');
+			$this->db->join('buyerrequriement b','a.bname = b.bname','left outer');
+			//$this->db->group_by('b.requirement_id');
+			//$this->db->where("a.user_created", $user_created);
+			//$this->db->order_by('b.buyername desc');
+			$query = $this->db->get("buyer_register a");
+			 $result = $query->result();
+			  return $result;
+
+		
+		}	  
 		 
 		  
    }

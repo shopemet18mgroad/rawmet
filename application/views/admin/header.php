@@ -100,10 +100,24 @@
         </div>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>Admin_adminvendorproducts">
-          <i class="fas fa-fw fa-shopping-cart"></i>
+
+     
+=
+	  
+	  
+	   <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment6" aria-expanded="true" aria-controls="collapseUtilities">
+     <i class="fas fa-fw fa-shopping-cart" aria-hidden="true"></i>
+
           <span>Avaliable Stocks</span></a>
+		  <div id="payment6" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+           <!-- <a class="collapse-item" href="<?php// echo base_url();?>admin_approvedquotes">Ongoing Purchase Order</a>-->
+            <a class="collapse-item" href="<?php echo base_url();?>Admin_adminvendorproducts">Approve Stocks</a>
+			  <a class="collapse-item" href="<?php echo base_url();?>Admin_viewstock">Manage Stocks</a>
+			
+          </div>
+        </div>
       </li>
 
       <li class="nav-item">
@@ -113,6 +127,26 @@
       </li>
 
       <li class="nav-item">
+	  
+	  
+	   
+  <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment9" aria-expanded="true" aria-controls="collapseUtilities">
+     <i class="fas fa-list" aria-hidden="true"></i>
+          <span>Buying Requirements</span></a>
+		  <div id="payment9" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+           <!-- <a class="collapse-item" href="<?php// echo base_url();?>admin_approvedquotes">Ongoing Purchase Order</a>-->
+            <a class="collapse-item" href="<?php echo base_url();?>Admin_managebuyrequirements">Approve Buying<br> Requirements</a>
+			  <a class="collapse-item" href="<?php echo base_url();?>Admin_viewbuyingreq">Manage Buying <br>Requirements</a>
+			
+          </div>
+        </div>
+      </li>
+	  
+	   
+	  
+	   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment5" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-receipt" aria-hidden="true"></i>
           <span>Purchase Order</span></a>
@@ -131,10 +165,10 @@
     
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment6" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment10" aria-expanded="true" aria-controls="collapseUtilities">
           <i class='fas fa-check'></i>
           <span>Finalized Quotation and Orders</span></a>
-        <div id="payment6" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="payment10" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url(); ?>Admin_sellnego">Seller's 1st Approved<br> Negotiation</a>
             <a class="collapse-item" href="<?php echo base_url(); ?>Admin_buynego">Buyer's Approved<br> Negotiation</a> 

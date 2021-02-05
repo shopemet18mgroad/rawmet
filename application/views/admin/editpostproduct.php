@@ -71,6 +71,17 @@
                     
                 </div>
 				
+				<div class="col-sm-4">  
+				
+			   	<label for="category">Types:</label>
+					<select class="form-control" id="types" name="types" value="">
+					<option value="<?php echo $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
+					
+						<option value="Primary">Primary</option>
+						<option value="Secondary">Secondary</option>
+				        <option value="Scrap" >Scrap</option>
+				    </select>  
+				</div>
 				
 				
              
@@ -271,6 +282,12 @@ document.getElementById("pcities").selectedIndex = 0;
 					<input type="text" class="form-control" id="estdeltime" name="estdeltime"  placeholder="" value="<?php echo  $sqldata[0]->estdeltime;?>">
                     
                 </div>
+				<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">ISO Certificate Number</label>
+					<input type="text" class="form-control" id="uploadcertificate" name="uploadcertificate"  placeholder="" value="<?php echo  $sqldata[0]->uploadcertificate;?>">
+                    
+                </div>
+				 
 				 
 		
 					<div class="col-sm-4 mt-4">

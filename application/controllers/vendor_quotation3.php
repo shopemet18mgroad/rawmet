@@ -3,7 +3,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_sellnegoquotation extends CI_Controller {
+class Vendor_quotation3 extends CI_Controller {
 
   public function __construct()
   {
@@ -19,13 +19,17 @@ class Customer_sellnegoquotation extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
 	
+	   
+	   $bname = urldecode($this->uri->segment(4));
 	   $vname = urldecode($this->uri->segment(3));
-	   $busername = urldecode($this->uri->segment(4));
-		 $active = array('vname'=>$vname);
-		  $active1 = array('busername'=>$busername);
+		
+		
+	      
+		  $active1 = array('bname'=>$bname);
+		  $active = array('vname'=>$vname);
 	
 		
-      $query = $this->Admin_model->getdatafromtable('quotes', $active);
+      $query = $this->Admin_model->getdatafromtable('buyerrequriement', $active);
 	 // print_r( $query);die;
         $query1 = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$query2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);
@@ -40,16 +44,16 @@ class Customer_sellnegoquotation extends CI_Controller {
 
 		
       $data2 = array(
-        'title' => $vname,
+        'title' => $bname,
         'data' => 'List Of Lots');
 		$data3 = array(
-        'title' => $busername,
+        'title' => $vname,
         'data' => 'List Of Lots');
 		//print_r( $data2);die;
 	 $ci = &get_instance();
     $data['data'] = $data2;
 	 $data['data'] = $data3;
-    $ci->load->view("quotat",$data);	 
+    $ci->load->view("quotation3",$data);	 
     // Get output html 
     $html = $ci->output->get_output();
 // add external css library
@@ -62,7 +66,7 @@ class Customer_sellnegoquotation extends CI_Controller {
     // Render the HTML as PDF
     $ci->dompdf->render();
     // Output  PDF (1 = download and 0 = preview)
-    $ci->dompdf->stream($vname.".pdf", array("Attachment" => 0));
+    $ci->dompdf->stream($bname.".pdf", array("Attachment" => 0));
 		
   }
  }

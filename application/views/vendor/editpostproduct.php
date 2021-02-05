@@ -80,7 +80,7 @@
 			   	<label for="category">Types:</label>
 					<select class="form-control" id="types" name="types" value="">
 					<option value="<?php echo  $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
-					<option value="Types">Types</option>
+					
 						<option value="Primary">Primary</option>
 						<option value="Secondary">Secondary</option>
 				        <option value="Scrap" >Scrap</option>
@@ -304,6 +304,11 @@ document.getElementById("pcities").selectedIndex = 0;
 								<input  type="file" id="uploadproductimage" name="uploadproductimage">
 								</div>
 							</div>
+							<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">ISO Certificate Number</label>
+					<input type="text" class="form-control" id="uploadcertificate" name="uploadcertificate"  placeholder="" value="<?php echo  $sqldata[0]->uploadcertificate;?>">
+                    
+                </div>
 				
 					<div class="col-md-12 text-center mt-4">
 						<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);

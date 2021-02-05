@@ -289,11 +289,13 @@ document.getElementById("pcities").selectedIndex = 0;
 					
 					<input type="file" id="uploadproductimage" name="uploadproductimage[]" multiple="multiple">
 				</div>
-				<div class="col-sm-5 mt-4">
-					<p>Upload ISO Certificate:</p>
+				
+					<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname"> ISO Certificate Number:</label>
+					<input type="text" class="form-control" id="uploadcertificate" name="uploadcertificate"  placeholder="" >
 					
-					<input type="file" id="uploadcertificate" name="uploadcertificate[]" multiple="multiple">
-				</div>
+               </div>
+				
 				
 					
 					
