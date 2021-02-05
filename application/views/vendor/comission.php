@@ -54,13 +54,13 @@
 		
 
 	
-		 <a href="<?php  echo base_url()."vendor_comission/approve_produc/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
+	<td>	 <a href="<?php  echo base_url()."vendor_comission/approve_produc/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
 		
 		<a href="<?php  echo base_url()."vendor_comission/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-info">Reject</button></a>
 		
 		
 		 
-		  <a href="<?php  echo base_url()."vendor_comission/delete_seller/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Delete</button></a>
+		  <a href="<?php  echo base_url()."vendor_comission/delete_seller/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
 
 		
 
