@@ -32,7 +32,7 @@
 			<th style="color:orange;">Suplier Price</th>
 			
 			<th> View Purchase Order</th>
-			<th> Action</th>
+	
       </tr>
     </thead>
     <tbody>
@@ -71,8 +71,7 @@
 <?php }?>	
 
     
-					
-		<td><a href="<?php  echo base_url()."admin_reqpurchaseorder/approve_product/".$proid."/".urldecode($row->vusername);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
+
       </tr>      
      <?php }?>	    
          
