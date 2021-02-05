@@ -16,7 +16,7 @@
     <thead class="bg-primary text-white">
       <tr>
 	  <th>Image</th>
-	  <th>ISO Certificate</th>
+	  <th>ISO Certificate Number</th>
 	  <th>Product Id</th>
 	  <th>Vendor Name</th>
        <th>Product Name</th>
@@ -40,8 +40,8 @@
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 					<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="55px"></td>
-					<td><?php $img = unserialize($row->uploadcertificate)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="55px"></td>
+					  <td><?php echo $row->uploadcertificate;?></td>
+			
 	  <td><?php echo $row->productid;?></td> 
 	   <td><?php echo $row->vname;?></td>
 		<td><?php echo $row->productname;?></td> 

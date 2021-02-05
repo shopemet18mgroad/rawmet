@@ -3,7 +3,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_sellnegoquotation extends CI_Controller {
+class Vendor_sellnegoquotation extends CI_Controller {
 
   public function __construct()
   {
