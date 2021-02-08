@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_sellnego extends CI_Controller {
+class Admin_editbuyerreq extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,23 +23,32 @@ class Admin_sellnego extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		
-		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
-			$datainserr = "Invalid Login Session";
-			header('location: '.base_url().'login/index_error/'.$datainserr);
-			die;
-			}else{
-		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('sellapproval'=>true);
-	
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
+		$reqapproval = array('adapproval'=>false);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/sellnego',$query);
+		$this->load->view('admin/editbuyerreq',$query);
 		$this->load->view('admin/footer');
-			}	
+		
 	}
 	
+	public function editproduct(){
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 
+		$retriveval = array('productid'=>$retrivevaltmp);
+		
+		$this->load->model('Admin_model');
+		$data['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$retriveval);
+			//print_r($data['sqldata']); die;
+		$this->load->helper('url');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$this->load->view('admin/header',$sess);
+		$this->load->view('admin/editbuyerreq', $data);
+		$this->load->view('admin/footer');
+	}
+	
+	
+	
 }

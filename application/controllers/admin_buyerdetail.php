@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_vendorprofile extends CI_Controller {
+class Admin_buyerdetail extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,34 +22,33 @@ class Admin_vendorprofile extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->library('session');
-		$this->load->library('session');
-
-		if(!$this->session->has_userdata('username') || $this->session->userdata('auth') != "ADMIN"){
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
-		}else{
-		
+			}else{
 		$this->load->model('Admin_model');
 		$bname = urldecode($this->uri->segment(3));
+		
 		$bcompanyname = urldecode($this->uri->segment(4));
 		
 		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
-		
 	
 		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
 		$data['sqldata']= $query;
-		$sess = array('sessi'=>$this->session->userdata('username')); 
+		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active = array('ausername'=>$sess['sessi']);
-		}
+			}
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/vendorprofile',$data);
+		$this->load->view('admin/buyerdetail',$data);
 		$this->load->view('admin/footer');
+		
+		
+		
+			
+			
+	}
+	
 		
 	}
 	
-	
-	
-
-	
-}

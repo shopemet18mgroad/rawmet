@@ -21,6 +21,7 @@
                             <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
                                 <thead class="bg-primary text-white">
                                     <tr>
+									   <th>Sl.No.</th>
                                         <th>Seller Name</th>
 
                                         <th>Product Name</th>
@@ -33,40 +34,40 @@
                                         <th style="color:orange" ;>Buyer Quantity</th>
                                         <th style="color:orange" ;>Buyer Price</th>
                                         <th>View Quotation</th>
-                                        <th>View Purchase Order</th>
+                                      
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <?php $k = 0; ?>
+									  <?php  $count = 1;?>
                                     <?php foreach ($sqldata as $row) { ?>
                                         <tr>
                                             <?php $proid = str_ireplace('/', '-', $row->productid);
                                             ?>
                                             <?php $prodid = str_ireplace('/', '-', $row->productid); ?>
-                                            <?php echo $row->vname; ?></td>
-                                            <?php echo $row->productname; ?></td>
-                                            <?php echo $row->productid; ?></td>
-                                            <?php echo $row->category; ?></td>
-                                            <?php echo $row->pcities; ?></td>
-                                            <?php echo $row->price . "/";
+												<td><?php echo $count;?></td>
+                                           <td> <?php echo $row->vname; ?></td>
+                                             <td> <?php echo $row->productname; ?></td>
+                                             <td> <?php echo $row->productid; ?></td>
+                                            <td>  <?php echo $row->category; ?></td>
+                                           <td>   <?php echo $row->pcities; ?></td>
+                                           <td>   <?php echo $row->price . "/";
                                             echo $row->units; ?>
                                             </td>
-                                            <?php echo $row->quantity . "/";
+                                            <td>  <?php echo $row->quantity . "/";
                                             echo $row->supplyunits; ?>
                                             </td>
-                                            <?php echo $row->bquantity . "/";
+                                           <td>   <?php echo $row->bquantity . "/";
                                             echo $row->bunits; ?>
                                             </td>
-                                            <?php echo $row->bprice . "/";
+                                             <td> <?php echo $row->bprice . "/";
                                             echo $row->bsupplyability; ?>
                                             </td>
                                             <td> <a href="<?php echo base_url() . 'Admin_sellnegoquotation/auc_no/' . urldecode($row->busername) . "/" . urldecode($row->vname) . "/" . urldecode($proid); ?>" target="_blank">
 
                                                     <i class="fa fa-download" aria-hidden="true"></i></a></td>
-
-                                            <td>
-                                            </td>
+<?php $count++;?>
                                         <?php $k++;
                                     } ?>
                                         </tr>

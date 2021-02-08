@@ -43,6 +43,7 @@ class Customer_postbuyreq  extends CI_Controller {
 			$bname = $this->input->post('bname');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
+			$types = $this->input->post('types');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$description = $this->input->post('description');
@@ -77,7 +78,7 @@ class Customer_postbuyreq  extends CI_Controller {
 		}
 		
 			 $this->load->model('Admin_model');
-			$data2 = array('bname'=>$bname,'bcompanyname'=>$bcompanyname,'category'=>$category,'productname'=> $productname,'productid'=>$productid,'description'=>$description,'price'=> $price, 'priceperkg'=> $priceperkg,'quantity'=> $quantity,'units'=>$units,'requireddate' => $requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=>$contactnumber,'uploadimage'=>$pic_array,'uploadpdf'=>$doc_array,'iagreee'=>$iagreee);
+			$data2 = array('bname'=>$bname,'bcompanyname'=>$bcompanyname,'category'=>$category,'types'=>$types,'productname'=> $productname,'productid'=>$productid,'description'=>$description,'price'=> $price, 'priceperkg'=> $priceperkg,'quantity'=> $quantity,'units'=>$units,'requireddate' => $requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=>$contactnumber,'uploadimage'=>$pic_array,'uploadpdf'=>$doc_array,'iagreee'=>$iagreee);
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('buyerrequriement',$data2);

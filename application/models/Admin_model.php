@@ -126,6 +126,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 $this->db->where($colname, $comp);
 			 $this->db->update($table, $data); 
 		  } 
+		   public function update_custom2($table,$data) { 
+			 $this->db->set($data); 
+			 $this->db->where($productid);
+			 $this->db->update($table, $data); 
+		  } 
 		  public function get_distinct($table,$col,$id) { 
 			$this->db->select($col);
 			$this->db->distinct();

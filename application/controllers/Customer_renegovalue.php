@@ -29,7 +29,7 @@ class Customer_renegovalue extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('busername'=>$sess['sessi']);
+		$active1 = array('selapprove'=>true);
 		
 		
 		

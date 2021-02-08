@@ -15,6 +15,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	  <th>Sl.No.</th>
 	  <th>Image</th>
 	  <th>ISO Certificate Number</th>
 	  <th>Product Id</th>
@@ -30,7 +31,8 @@
     <tbody>
 	
       
-      
+            
+      <?php  $count = 1;?>
 	   <?php foreach($sqldata as $row){?>
       <tr>
 	  
@@ -38,10 +40,11 @@
 	 
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
+				<td><?php echo $count;?></td> 
 					<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="55px"></td>
 					  <td><?php echo $row->uploadcertificate;?></td>
-			
+				 
 	  <td><?php echo $row->productid;?></td> 
 	   <td><?php echo $row->vname;?></td>
 		<td><?php echo $row->productname;?></td> 
@@ -65,6 +68,7 @@
 		
 	
 </td>
+<?php $count++;?>
         
 <?php }?>	
 </tr>   

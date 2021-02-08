@@ -21,6 +21,7 @@
                 <table class="table table-striped table-bordered table-sm w-auto small" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	      	  <th>Sl.No.</th>
 			<th>Product Id</th>
 			<th>Buyer Name</th>
 			<th>Product Name</th>
@@ -35,10 +36,11 @@
       </tr>
     </thead>
     <tbody>
+	<?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);?>
-	 
+	 		<td><?php echo $count;?></td> 
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->bname;?></td>
 			<td><?php echo $row->productname;?></td>
@@ -67,7 +69,8 @@
 				
 			
 		
-      </tr>      
+      </tr>   
+<?php $count++;?>	  
      <?php }?>	
     </tbody>
   </table>

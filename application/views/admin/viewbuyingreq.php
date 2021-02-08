@@ -20,7 +20,9 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm w-auto small" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr> <th>Images</th>
+      <tr> 
+	  <th>Sl.No.</th>
+	  <th>Images</th>
 			<th>Product Id</th>
 			<th>Product Name</th>
 			<th>Buyer Name</th>
@@ -32,8 +34,10 @@
       </tr>
     </thead>
     <tbody>
+	  <?php  $count = 1;?>  
 	 <?php foreach($sqldata as $row){?>
       <tr>
+	  <td><?php echo $count;?></td> 
 	
 	<td><?php $img = unserialize($row->uploadimage)?>
 		<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
@@ -46,6 +50,7 @@
 			<td><?php echo $row->bcity;?></td>
 			<td><?php echo $row->price.'/'.$row->priceperkg;?></td>
 			<td><?php echo $row->quantity.'/'.$row->units;?></td>	
+				<?php $count++;?>
 			
 		
       </tr>      

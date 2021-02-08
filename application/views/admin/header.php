@@ -67,13 +67,25 @@
 
 
       <!-- Nav Item - Utilities Collapse Menu -->
-
-
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>admin_approvevendor">
-          <i class="fas fa-check"></i>
-          <span>Vendor approve</span></a>
+      
+	  
+	     <li class="nav-item">
+        <a class="nav-link collapsed" href="<?php echo base_url(); ?>admin_manageseller" data-toggle="collapse" data-target="#manage4" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Manage user</span>
+        </a>
+        <div id="manage4" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url(); ?>admin_approvevendor">Vendor</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>admin_approvebuyer">Buyer</a>
+          </div>
+        </div>
       </li>
+	  
+	  
+	  
+
+      
 
       <!-- Divider -->
       <!--<hr class="sidebar-divider">
@@ -81,7 +93,7 @@
    
 
 	  <!--<li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>admin_managesubscription">
+        <a class="nav-link" href="<?php// echo base_url(); ?>admin_managesubscription">
           <i class="fas fa-rupee-sign"></i>
           <span>Subscription Management</span></a>
       </li>
@@ -102,7 +114,7 @@
 
 
      
-=
+
 	  
 	  
 	   <li class="nav-item">
@@ -120,13 +132,13 @@
         </div>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>Admin_managebuyrequirements">
+     <!-- <li class="nav-item">
+        <a class="nav-link" href="<?php //echo base_url(); ?>Admin_managebuyrequirements">
           <i class="fas fa-list"></i>
           <span>Manage Buying Requirements</span></a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item">-->
 	  
 	  
 	   

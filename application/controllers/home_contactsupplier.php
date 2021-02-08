@@ -70,7 +70,7 @@ class Home_contactsupplier extends CI_Controller {
 	
 			echo '<h6><b>Supply Ability:</b>
 			'.$dat['quantity'].'  '.$dat['supplyunits'].'</h6>';
-			echo '<h6><b>Posted Date: </b>'.$dat['datetime'].'</b></h6>';
+			echo '<h6><b>Last Modified Stock and Price: </b>'.$dat['datetime'].'</b></h6>';
 			echo '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
 			echo '';
 			echo '';
