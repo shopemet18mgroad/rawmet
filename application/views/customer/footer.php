@@ -110,6 +110,8 @@ function validate_password(){
  }
  </script>
  
+ 
+ 
   <script>
  function validate_prodid(){
 	 var vname = document.getElementById('vname').value;
