@@ -35,36 +35,33 @@
 						
 						<tr>
 						<td>Name</td>
-								<td><?php echo $sqldata[0]->vname;?></td>
+								<td><?php echo $sqldata[0]->bname;?></td>
 							</tr> 
-							<tr>
+						
 								<td>Company Name</td>
-								<td><?php echo $sqldata[0]->vcompanyname;?></td>
+								<td><?php echo $sqldata[0]->bcompanyname;?></td>
 							</tr> 
 							<tr>
 								<td>Company Type</td>
-								<td><?php echo $sqldata[0]->vcompanytype;?></td>
+								<td><?php echo $sqldata[0]->bcompanytype;?></td>
 							</tr> 	
 							<tr>
 								<td>Contact Person</td>
-								<td><?php echo $sqldata[0]->vcontactperson;?></td>
+								<td><?php echo $sqldata[0]->bcontactperson;?></td>
 							</tr> 
 							<tr>
 								<td>Contact Number</td>
-								<td><?php echo $sqldata[0]->vcontactnumber;?></td>
+								<td><?php echo $sqldata[0]->bcontactnumber;?></td>
 							</tr> 
 							<tr>
 								<td>Pan</td>
-								<td><?php echo $sqldata[0]->vpan;?></td>
+								<td><?php echo $sqldata[0]->bpan;?></td>
 							</tr> 	
 							<tr>
 								<td>GST</td>
-								<td><?php echo $sqldata[0]->vgst;?></td>
+								<td><?php echo $sqldata[0]->bgst;?></td>
 							</tr> 
-							<tr>
-								<td>PCB</td>
-								<td><?php echo $sqldata[0]->vpcb;?></td>
-							</tr> 
+							
 
 						
 						</tbody>
@@ -77,28 +74,28 @@
 						<tbody>
 						<tr>
 								<td width="43%">Email</td>
-								<td><?php echo $sqldata[0]->vemail;?></td>
+								<td><?php echo $sqldata[0]->bemail;?></td>
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td><?php echo $sqldata[0]->vusername;?></td>
+								<td><?php echo $sqldata[0]->busername;?></td>
 							</tr> 
 							
 							<tr>
 								<td>Address</td>
-								<td><?php echo $sqldata[0]->vaddress;?></td>
+								<td><?php echo $sqldata[0]->baddress;?></td>
 							</tr> 
 							<tr>
 								<td>City</td>
-								<td><?php echo $sqldata[0]->vcity;?></td>
+								<td><?php echo $sqldata[0]->bcity;?></td>
 							</tr>	
 							<tr>
 								<td>Select State</td>
-								<td><?php echo $sqldata[0]->vselectstate;?></td>
+								<td><?php echo $sqldata[0]->bselectstate;?></td>
 							</tr>
 							<tr>
 								<td>Pincode</td>
-								<td><?php echo $sqldata[0]->vpincode;?></td>
+								<td><?php echo $sqldata[0]->bpincode;?></td>
 							</tr>
                              				
 						</tbody>

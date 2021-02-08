@@ -43,12 +43,13 @@
 		
 
      <td>
-		
-		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
-
-				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanyname);?>"><i class="fa fa-edit">Edit</a></td>
+	 <a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanyname);?>"><i class="fa fa-edit"></i>Edit</a>
 				
+		
+		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Deactivate</button></a>
 
+				
+</td>
     
 
       </tr> 

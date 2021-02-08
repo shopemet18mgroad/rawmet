@@ -21,7 +21,9 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>	<th>Seller Name</th>
+      <tr>	
+	        <th>Sl.No.</th>
+	        <th>Seller Name</th>
 			<th>Buyer Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
@@ -41,6 +43,7 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
+					<td><?php echo $row->id;?></td>
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>

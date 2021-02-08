@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_approvebuyer extends CI_Controller {
+class Admin_buyerdetail extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -16,56 +16,39 @@ class Admin_approvebuyer extends CI_Controller {
 	 *
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.php
+	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
 	{
-		$this->load->model('Admin_model');
+		$this->load->helper('url');
 		$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
-			}else{  
-		$boptions = array('boptions'=>2);
+			}else{
+		$this->load->model('Admin_model');
+		$bname = urldecode($this->uri->segment(3));
 		
-		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
+		$bcompanyname = urldecode($this->uri->segment(4));
 		
-		$adac['data']= $query;
-		
-			
-		
+		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
+	
+		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
+		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active = array('ausername'=>$sess['sessi']);
-		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/approvebuyer',$adac);
-		$this->load->view('admin/footer');
-	
-	
 			}
+		$this->load->view('admin/header',$sess);
+		$this->load->view('admin/buyerdetail',$data);
+		$this->load->view('admin/footer');
+		
+		
+		
+			
+			
 	}
 	
-	public function approve_buyer(){
 		
-		$busername= $this->uri->segment(3);
-		
-		$busername = urldecode($busername);
-		//print_r($bcompanytype);die;
-		$this->load->model('Admin_model');
-		$app= array('boptions'=>true);
-		$adaction2 = array('busername'=>$busername);
-		$query = $this->Admin_model->update_custom('buyer_register', $app, $adaction2, $adaction2);
-		if($busername){
-			echo "HI";
-		}else{
-			echo "BYE";
-		}
-	
 	}
-}
-		
-		
 	
-	
-
-

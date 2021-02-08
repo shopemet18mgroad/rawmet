@@ -20,7 +20,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-        <th> Buyer Name</th>
+        <th>Buyer Name</th>
         <th>Company Type</th>
         <th>Contact Person</th>
 		<th>Location</th>
@@ -41,9 +41,9 @@
 		<td><?php echo $row->bcity;?></td>
         <td>
 	
-				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"> <i class="fa fa-edit"></i>Edit</a>
+				<a class="btn btn-primary btn-xl text-white" href="<?php echo base_url()."admin_managebuyer/approve_buyer/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"> <i class="fa fa-edit"></i>Edit</a>
 				
-				<a href="<?php  echo base_url()."admin_vendorprofile/reject/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
+				<a href="<?php  echo base_url()."admin_managebuyer/reject/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"><button type="button"  class="btn btn-danger btn-xl text-white""><i class="fa fa-ban" aria-hidden="true"></i>Deactivate</button></a>
 				</td>
       </tr> 
 <?php }?>	  

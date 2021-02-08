@@ -48,7 +48,7 @@
 					<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendordetail/index/".urldecode($row->vusername)."/".urldecode($row->vcompanyname);;?>"><i class="fa fa-eye"></i></a>
 		
 		
-					<button type="submit" name="submit" id="<?php echo urldecode($row->vusername);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Approve</button>	</td>
+					<button type="submit" name="submit" id="<?php echo urldecode($row->vusername);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Activate</button>	</td>
 				
 	
 				</tr>

@@ -22,6 +22,7 @@
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	        <th>Sl.No.</th>	
 			<th>Supplier Name</th>
 			<th>Buyer Name</th>
 			<th>Product Name</th>
@@ -48,7 +49,7 @@
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
  
-		
+		    <td><?php echo $row->id;?></td> 
 			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
 							<?php echo $row->vname;?></td>
 								<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">

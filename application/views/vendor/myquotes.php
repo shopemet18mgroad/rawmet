@@ -20,7 +20,9 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>
+      <tr>   
+	  
+	        	  <th>Sl.No.</th>
 			<th>Supplier Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
@@ -41,7 +43,7 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				 
+		 <td><?php echo $row->id;?></td>  
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>

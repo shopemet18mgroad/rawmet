@@ -21,7 +21,8 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>
+      <tr> 
+         	  <th>Sl.No.</th>
 	        <th>Image</th>
 			<th>Supplier Name</th>
 			<th>Buyer Name</th>
@@ -45,6 +46,7 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+								<td><?php echo $row->id;?></td>
 				<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
 			<td><?php echo $row->vname;?></td>
