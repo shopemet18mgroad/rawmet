@@ -38,11 +38,12 @@
       </tr>
     </thead>
     <tbody>
+	<?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid =str_ireplace('/','-',$row->productid);
 				?>
-				<td><?php echo $row->id;?></td>
+				<td><?php echo $count;?></td>  
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
 			<td><?php echo $row->busername;?></td>
@@ -65,7 +66,8 @@
 		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".urldecode($proid)."/".urldecode($row->busername)."/".urldecode($row->vname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Negotiate</a></center>
 		
 		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
-      </tr>      
+      </tr> 
+<?php $count++;?>	  
      <?php }?>	
     </tbody>
   </table>

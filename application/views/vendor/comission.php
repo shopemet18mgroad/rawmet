@@ -27,7 +27,7 @@
     </thead>
     <tbody>
 	
-      
+       <?php  $count = 1;?>
       
 	   <?php foreach($sqldata as $row){?>
       <tr>
@@ -36,7 +36,7 @@
 				?>
    <?php $prodid= str_ireplace('/','-',$row->productid);
 				?>
-				<td><?php echo $row->id;?></td> 
+				<td><?php echo $count;?></td> 
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->payable."%" ;?></td>
@@ -66,7 +66,7 @@
 
 		
 
-        
+       <?php $count++;?> 
 <?php }?>	
 </tr>   
       

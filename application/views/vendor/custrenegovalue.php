@@ -38,12 +38,13 @@
      
     </thead>
     <tbody>
+	   <?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
-					<td><?php echo $row->id;?></td>
+					<td><?php echo $count;?></td>
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>
@@ -76,7 +77,9 @@
 		</center>
 		<br>
 		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
-      </tr>      
+      </tr> 
+	    <?php $count++;?>	  
+	  
      <?php }?>	
     </tbody>
   </table>

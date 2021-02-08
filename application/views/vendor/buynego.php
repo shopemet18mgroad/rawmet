@@ -43,13 +43,14 @@
     <tbody>
 	<form action="<?php echo base_url();?>Customer_purchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
 	<?php $k=0;?>
+	  <?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
  
-		    <td><?php echo $row->id;?></td> 
+		    <td><?php echo $count;?></td> 
 			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
 							<?php echo $row->vname;?></td>
 								<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
@@ -122,7 +123,7 @@
 		 </tr> 
 		<?php $k++;}?>
             
-      
+      <?php $count++;?>
     </tbody>
   </table>
   </form>

@@ -132,13 +132,13 @@
         </div>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(); ?>Admin_managebuyrequirements">
+     <!-- <li class="nav-item">
+        <a class="nav-link" href="<?php //echo base_url(); ?>Admin_managebuyrequirements">
           <i class="fas fa-list"></i>
           <span>Manage Buying Requirements</span></a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item">-->
 	  
 	  
 	   

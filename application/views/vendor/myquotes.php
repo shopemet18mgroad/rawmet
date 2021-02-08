@@ -23,10 +23,10 @@
       <tr>   
 	  
 	        	  <th>Sl.No.</th>
-			<th>Supplier Name</th>
-			<th>Product Name</th>
+			    <th>Supplier Name</th>
+			     <th>Product Name</th>
 			<th>Product Id</th>
-			<th>Category</th>
+			 <th>Category</th>
 		    <th style ="color:pink";>Buyer Quantity</th>
 			<th style ="color:pink";>Buyer Price</th>
 			
@@ -39,11 +39,12 @@
       </tr>
     </thead>
     <tbody>
+	      <?php  $count = 1;?>
        	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-		 <td><?php echo $row->id;?></td>  
+		 <td><?php echo $count;?></td>  
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
@@ -73,7 +74,9 @@
 
  
 </a></td>
+<?php $count++;?>
 <?php }?>	
+
 
       </tr>      
      <?php }?>	    

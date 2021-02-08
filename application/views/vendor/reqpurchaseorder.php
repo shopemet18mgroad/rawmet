@@ -37,11 +37,12 @@
       </tr>
     </thead>
     <tbody>
+	<?php  $count = 1;?>
        	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				 <td><?php echo $row->id;?></td>  
+				 <td><?php echo $count;?></td>  
 			<td><?php echo $row->vusername;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
 			<td><?php echo $row->category;?></td>
@@ -70,6 +71,7 @@
 
  
 </a></td>
+<?php $count++;?>
 <?php }?>	
 
     

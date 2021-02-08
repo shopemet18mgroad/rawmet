@@ -37,13 +37,13 @@
     <tbody>
 	
       
-      
+         <?php  $count = 1;?>
 	   <?php foreach($sqldata as $row){?>
       <tr>
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				<td><?php echo $row->id;?></td>
+				<td><?php echo $count;?></td>
 	  <td><?php echo $row->bname;?></td> 
 		<td><?php echo $row->bcompanyname;?></td> 
 		<td><?php  echo $row->category;?></td>
@@ -60,7 +60,7 @@
 	
 	<td style="color:orange"><b><?php  if($row->bapprove == 0) {echo 'Pending to Approve';}else if($row->bapprove == 2) {echo 'Rejected';}else if($row->bapprove == 1) {echo 'Approved';}?></b></td>
 		
-        
+        <?php $count++;?>
 <?php }?>	
 </tr>   
       

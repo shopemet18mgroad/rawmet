@@ -29,7 +29,7 @@ class Admin_buynego extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('busername'=>$sess['sessi'],'buyerapprove'=>true);
+		$active1 = array('buyerapprove'=>true);
 		//$reqapproval = array('sellapproval'=>false);
 		
 		

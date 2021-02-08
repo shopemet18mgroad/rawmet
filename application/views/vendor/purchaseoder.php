@@ -31,18 +31,18 @@
     <tbody>
 	
       
-      
+    <?php  $count = 1;?>
 	   <?php foreach($sqldata as $row){?>
       <tr>
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				 <td><?php echo $row->id;?></td>  
+				 <td><?php echo $count;?></td>  
 					<td><?php echo $row->vname;?></td>
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
-         <td><?php echo $row->payable;?></td>
+         <td><?php echo $row->payable."%";?></td>
 
 		
 		
@@ -54,7 +54,7 @@
 		<td><button type="button" class="btn btn-primary btn-sm"><?php  if($row->pooptions == 2) {echo 'Pay now';}?></button></td>
 		
 
-
+<?php $count++;?>
         
 <?php }?>	
 </tr>   

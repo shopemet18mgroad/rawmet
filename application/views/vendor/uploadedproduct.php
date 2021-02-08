@@ -17,8 +17,8 @@
       <tr>
 	  <th>Sl.No.</th>
 	  <th>Product Id</th>
-        <th>Product Name</th>
-        <th>Category</th>
+      <th>Product Name</th>
+      <th>Category</th>
       <th>Image</th>
 	  <th>Status</th>
 	  <th>Update New Price<br> and Quantity </th>
@@ -30,13 +30,13 @@
     <tbody>
 	
       
-      
+      <?php  $count = 1;?>
 	   <?php foreach($sqldata as $row){?>
       <tr>
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				 <td><?php echo $row->id;?></td> 
+				 <td><?php echo $count;?></td>  
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
@@ -63,7 +63,7 @@
 		
 	
 			<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
-
+<?php $count++;?>
         
 <?php }?>	
 </tr>   
