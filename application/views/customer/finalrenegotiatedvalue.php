@@ -35,7 +35,7 @@
 			<th style="color:orange;">Your 2nd Re-Negotiated price</th>
 			<th style="color:orange;">Your 2nd Re-Negotiated Quantity</th>
 			<th style="color:yellow;">Seller final Re-Negotiated price</th>
-			<th>Status</th>
+			<th>View Quotation</th>
 			<th>Upload Purchase Order</th>
 
 									</tr>
@@ -112,7 +112,7 @@
 													<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]">
 
 
-													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload purchase order">
+													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload ">
 
 
 

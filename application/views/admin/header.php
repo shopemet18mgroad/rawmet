@@ -72,7 +72,7 @@
 	     <li class="nav-item">
         <a class="nav-link collapsed" href="<?php echo base_url(); ?>admin_manageseller" data-toggle="collapse" data-target="#manage4" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-user"></i>
-          <span>Manage user</span>
+          <span> Manage Inactive user</span>
         </a>
         <div id="manage4" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -102,7 +102,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="<?php echo base_url(); ?>admin_manageseller" data-toggle="collapse" data-target="#manage" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-user"></i>
-          <span>Manage user</span>
+          <span>Manage active user</span>
         </a>
         <div id="manage" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">

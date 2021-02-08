@@ -46,7 +46,7 @@
 				
 					<label for="">Category</label>
 					
-					<select class="form-control" id="category" name="category">
+					<select class="form-control" id="category" name="category" readonly >
 					       <option value="<?php echo  $sqldata[0]->category;?>"><?php echo  $sqldata[0]->category;?></option>
 						<option value="Non Metal">Non Metal</option>
 						<option value="Ferrous">Ferrous</option>
@@ -58,7 +58,7 @@
                 </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Product Name</label>
-					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name" value="<?php echo  $sqldata[0]->productname;?>" onkeyup="product_id()" >
+					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name" value="<?php echo  $sqldata[0]->productname;?>" onkeyup="product_id()"readonly >
                     
                 </div>
 
@@ -76,8 +76,7 @@
 			   	<label for="category">Types:</label>
 					<select class="form-control" id="types" name="types" value="">
 					<option value="<?php echo $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
-					
-						<option value="Primary">Primary</option>
+					      <option value="Primary">Primary</option>
 						<option value="Secondary">Secondary</option>
 				        <option value="Scrap" >Scrap</option>
 				    </select>  
