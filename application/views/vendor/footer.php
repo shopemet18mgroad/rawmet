@@ -66,7 +66,8 @@
 <script type="text/javascript">
   function validate_Postproduct() {
    //  swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
-    var vname = document.getElementById("vname").value;
+    
+   var vname = document.getElementById("vname").value;
     var vusername = document.getElementById("vusername").value;
     var companyname = document.getElementById("companyname").value;
     var category = document.getElementById("category").value;
@@ -79,8 +80,7 @@
     var quantity = document.getElementById("quantity").value;
     var price = document.getElementById("price").value;
     var units = document.getElementById("units").value;
-    var materialname = document.getElementById("materialname").value;
-    var pic_array1 = document.getElementsByName("pic_array1");
+   // var pic_array1 = document.getElementsByName("pic_array1");
     var uploadcertificate = document.getElementById("uploadcertificate").value;
     var minoderquant = document.getElementById("minoderquant").value;
     var supplyability = document.getElementById("supplyability").value;
@@ -90,7 +90,7 @@
     var productvalidityfrom = document.getElementById("productvalidityfrom").value;
     var productvalidityto = document.getElementById("productvalidityto").value;
     var estdeltime = document.getElementById("estdeltime").value;
-    var uploadproductimage = document.getElementById("uploadproductimage").value;
+    var uploadproductimage = document.getElementsByName("uploadproductimage");
     var uploadcertificate = document.getElementById("uploadcertificate").value;
  
     if (vname == '' ||
@@ -106,10 +106,7 @@
       quantity == '' ||
       price == '' ||
       units == '' ||
-      materialnam == '' ||
-      pic_array1 == '' ||
-      doc_array1 == '' ||
-      minoderquant == '' ||
+       minoderquant == '' ||
       supplyability == '' ||
       supplyunits == '' ||
       payable == '' ||
