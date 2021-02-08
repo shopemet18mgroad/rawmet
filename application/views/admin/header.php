@@ -155,6 +155,19 @@
           </div>
         </div>
       </li>
+	        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment10" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class='fas fa-check'></i>
+          <span>Finalized Quotation and Orders</span></a>
+        <div id="payment10" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_sellnego">Seller's 1st Approved<br> Negotiation</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_buynego">Buyer's Approved<br> Negotiation</a> 
+            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_renegovalue">Seller's 2nd Approved<br> Re-Negotiation</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_finalrenegotiatedvalue">Buyer Final Approved<br> Re-Negotiation</a>
+          </div>
+        </div>
+        </li>
 	  
 	   
 	  
@@ -176,19 +189,7 @@
 
     
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment10" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class='fas fa-check'></i>
-          <span>Finalized Quotation and Orders</span></a>
-        <div id="payment10" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_sellnego">Seller's 1st Approved<br> Negotiation</a>
-            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_buynego">Buyer's Approved<br> Negotiation</a> 
-            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_renegovalue">Seller's 2nd Approved<br> Re-Negotiation</a>
-            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_finalrenegotiatedvalue">Buyer Final Approved<br> Re-Negotiation</a>
-          </div>
-        </div>
-        </li>
+
 
 
 
