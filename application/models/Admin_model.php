@@ -126,11 +126,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 $this->db->where($colname, $comp);
 			 $this->db->update($table, $data); 
 		  } 
-		   public function update_custom2($table,$data) { 
-			 $this->db->set($data); 
-			 $this->db->where($productid);
-			 $this->db->update($table, $data); 
-		  } 
 		  public function get_distinct($table,$col,$id) { 
 			$this->db->select($col);
 			$this->db->distinct();
@@ -167,13 +162,105 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			//$this->db->group_by('b.requirement_id');
 			//$this->db->where("a.user_created", $user_created);
 			//$this->db->order_by('b.buyername desc');
+			
 			$query = $this->db->get("buyer_register a");
 			 $result = $query->result();
 			  return $result;
 
 		
 		}	  
-		 
+		
+	 
+		
+		function getdatafromtable_buyer() {			 
+			$this->db->select('b.buyerrequriement_id,
+					b.bname,
+					b.productid,
+					b.quantity as seller_qua,
+					b.units,
+					b.price,
+					b.vusername,
+					a.id,
+					a.price,
+					a.priceperkg,
+					a.quantity,
+					a.email,
+					a.bname,a.*, count(b.productid) as cnt');
+					$this->db->group_by('a.id');					 			
+					$this->db->join('seller_mbuyreq b', 'a.id=b.buyerrequriement_id',
+					'left outer');			   
+					$query = $this->db->get("buyerrequriement a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			function getdatafrombuyer_req_response() {			 
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,					
+					a.id,
+					a.bname,
+					a.bcompanyname,
+					a.vusername as sellername,
+					a.category,
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,a.bsupplyability');
+					$this->db->where('b.status', 0);
+					$this->db->join('buyer_req_response b', 'a.id=b.seller_mbuyreq_id',
+					'left outer');			   
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+
+			function getUserData($strUID1){
+				$this->db->where("productid",$strUID1);
+				$query = $this->db->get("seller_mbuyreq");
+				$result = $query->result();
+				return $result;
+			}
+
+			
+			
+		/*  function getdatafromtable_sellerqut($table,$adac) {		 
+			      
+			$this->db->where('productid =', $adac);
+			$query = $this->db->get();
+			$result = $query->result();
+			return $result;
+	
+		} */
+		
+	 public function getdatafromtable_sellerqut($table, $data) { 
+			 $this->db->select('productid');			 
+			 $query = $this->db->get($table, $data); 
+			 return $query->result();
+		}
+					
+ 
+					
+				 	
+	
+
+
+
+		
 		  
    }
    

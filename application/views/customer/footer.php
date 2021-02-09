@@ -110,8 +110,6 @@ function validate_password(){
  }
  </script>
  
- 
- 
   <script>
  function validate_prodid(){
 	 var vname = document.getElementById('vname').value;
@@ -127,7 +125,7 @@ function validate_password(){
 		 
 		 
 	 }
-	  $.get('<?php echo base_url() .'customer_add_contactsupplier/index/'; ?>'+productname+'/'+vname'/'+productid'/'+bquantity'/'+bprice'/'+bunits'/'+bsupplyability, function(data2){						
+	  $.get('<?php echo base_url() ."customer_add_contactsupplier/index/"; ?>'+productname+'/'+vname+'/'+productid+'/'+bquantity+'/'+bprice+'/'+bunits+'/'+bsupplyability, function(data2){						
 				 if($.trim(data2) == "HI"){
 					return true;
 				}else{

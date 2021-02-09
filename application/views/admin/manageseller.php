@@ -21,7 +21,6 @@
                 <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
 	      <tr>
-		  <th>Sl.No.</th>
         <th>Vendor Name</th>
         <th>Company Type</th>
         <th>Contact Person</th>
@@ -33,10 +32,9 @@
     <tbody>
 	
       
-            <?php  $count = 1;?>
+      
 	   <?php foreach($data as $row){?>
       <tr>
-	        <td><?php echo $count;?></td>
 	                  <td><?php echo $row->vname;?></td>
 					<td><?php  echo $row->vcompanytype; ?></td>
 					<td><?php  echo $row->vcontactperson; ?></td>
@@ -45,14 +43,12 @@
 		
 
      <td>
-	 <a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanyname);?>"><i class="fa fa-edit"></i>Edit</a>
-				
 		
-		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Inactive</button></a>
+		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
 
+				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanyname);?>"><i class="fa fa-edit">Edit</a></td>
 				
-</td>
-<?php $count++;?>
+
     
 
       </tr> 

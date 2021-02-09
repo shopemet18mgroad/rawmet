@@ -22,7 +22,6 @@
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	        <th>Sl.No.</th>	
 			<th>Supplier Name</th>
 			<th>Buyer Name</th>
 			<th>Product Name</th>
@@ -43,14 +42,13 @@
     <tbody>
 	<form action="<?php echo base_url();?>Customer_purchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
 	<?php $k=0;?>
-	  <?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
  
-		    <td><?php echo $count;?></td> 
+		
 			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
 							<?php echo $row->vname;?></td>
 								<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
@@ -123,7 +121,7 @@
 		 </tr> 
 		<?php $k++;}?>
             
-      <?php $count++;?>
+      
     </tbody>
   </table>
   </form>

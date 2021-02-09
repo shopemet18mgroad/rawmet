@@ -30,7 +30,7 @@
 				<div class="row ml-4">
 				<?php $img = unserialize($sqldata[0]->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="30%" height="100%">
-				
+			
 
 			<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
 				<div class="caption col-7 p-2 ml-5 bg-light">
@@ -38,7 +38,9 @@
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label for="">Buyer Name</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
+						
 						<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">
+						
 						
                     </div>
 					
@@ -148,7 +150,7 @@
 				</div>
 				</div>
 			
-					
+					<input type="hidden" value="<?php echo  $sqldata[0]->id;?> "  class="form-control" id="buyerrequriement_id" name="buyerrequriement_id" >
 					
 					
 				

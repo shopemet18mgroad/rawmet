@@ -31,36 +31,25 @@
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="200px">
 				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
-					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?><br>
-					<b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?><br>
-					<b>Buyer Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->bname;?><br>
-					<b>Buyer Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->bcompanyname;?><br>
+					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
+					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
+					<p><b>Buyer Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->bname;?></p>
+					<p><b>Buyercompany Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->bcompanyname;?></p>
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
-					<b>Price:&nbsp;</b><?php echo$sqldata[0]->price."/".$sqldata[0]->priceperkg;?></br>
-					<b>Stock:</b><?php echo  $sqldata[0]->quantity."/".$sqldata[0]->units;?>
-					</br>
-					<b>Email Id:</b><?php echo  $sqldata[0]->email;?>
-					</br>
-					<b>Contact Number:</b><?php echo  $sqldata[0]->contactnumber;?></p>
+					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
 					
 				  </div>
 
-<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
-	 
-				?>
-				  <a href="<?php echo base_url()."Admin_editbuyerreq/editproduct/".$proid;?>"><button type="button" class="btn btn-info"><i class="fa fa-edit">Edit</i></button></a>
-				  
 				<table class="table bg-white table-sm table-borderless">
 					
 						<tbody>
 							<tr>
-							<td><b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6></td>
-								
+								<td><b>Price:&nbsp;</b><?php echo$sqldata[0]->price."/".$sqldata[0]->priceperkg;?></td>
 							</tr>
-							
-								<td><b>Valtidity Till:&nbsp;</b><?php echo$sqldata[0]->requireddate." to ".$sqldata[0]->lastdate;?></td>
+							<tr>
+								<td><b>Stock:</b><?php echo  $sqldata[0]->quantity."/".$sqldata[0]->units;?></td>
 							</tr>
-							
+	<tr>			
 <td><b>Customer Uploaded PDF:</b>
  <?php $aucfl = unserialize($sqldata[0]->uploadpdf);?>
  <?php if(isset($aucfl[0])){?>

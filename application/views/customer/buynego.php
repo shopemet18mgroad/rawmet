@@ -34,7 +34,6 @@
 		   <th>buyer price</th>
 			<th>Seller price</th>
 			<th>View Quotation</th>
-			<th>Upload Purchase Order</th>
 			
 
 
@@ -98,7 +97,9 @@
 												
 											
 
-												<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' . urldecode($row->vname) . "/" . urldecode($row->busername); ?>" target="_blank">
+
+												<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' . urldecode($row->busername) . "/" . urldecode($row->vname) . "/" . urldecode($proid); ?>" target="_blank">
+
 
 
 
@@ -110,7 +111,7 @@
 													<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]">
 
 
-													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload">
+													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload purchase order">
 
 
 
