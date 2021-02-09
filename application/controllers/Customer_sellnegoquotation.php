@@ -19,8 +19,8 @@ class Customer_sellnegoquotation extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
 	
-	   $vname = urldecode($this->uri->segment(3));
-	   $busername = urldecode($this->uri->segment(4));
+	   $vname = urldecode($this->uri->segment(4));
+	   $busername = urldecode($this->uri->segment(3));
 		 $active = array('vname'=>$vname);
 		  $active1 = array('busername'=>$busername);
 	

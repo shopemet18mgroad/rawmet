@@ -48,8 +48,23 @@ class Admin_vendorprofile extends CI_Controller {
 		
 	}
 	
+	public function delete_vendor(){
 	
+		
+		$bname = urldecode($this->uri->segment(3));
+		$bcompanyname = urldecode($this->uri->segment(4));
+		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
+		
+		$this->load->model('Admin_model');
+		if($bname){
+			$this->Admin_model->delete_data('buyer_register', $active);
 	
-
+		}
+		$this->load->helper('url');
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		header('location: '.base_url().'admin_managebuyer/index/'.$bname);
+	
+}
 	
 }

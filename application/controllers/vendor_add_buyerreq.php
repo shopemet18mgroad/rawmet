@@ -49,10 +49,11 @@ class Vendor_add_buyerreq extends CI_Controller {
 			$priceperkg = $this->input->post('priceperkg');
 			$sellerprice= $this->input->post('sellerprice');
 			$bsupplyability = $this->input->post('bsupplyability');
-			 
+			$buyerrequriement_id = $this->input->post('buyerrequriement_id');
+			$uploadimage =serialize( $this->input->post('uploadimage'));
 			
 			
-			$data2= array('bname' => $bname,'bcompanyname'=>$bcompanyname,'vusername'=>$vusername,'category'=> $category,'productname'=>$productname,'productid'=>$productid,'description' => $description,'quantity'=>$quantity,'units'=>$units,'price'=>$price,'priceperkg'=>$priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability);
+			$data2= array('bname' => $bname,'bcompanyname'=>$bcompanyname,'vusername'=>$vusername,'category'=> $category,'productname'=>$productname,'productid'=>$productid,'description' => $description,'quantity'=>$quantity,'units'=>$units,'price'=>$price,'priceperkg'=>$priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'buyerrequriement_id'=>$buyerrequriement_id,'uploadimage'=>$uploadimage);
 			
 			 	
 				

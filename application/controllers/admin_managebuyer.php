@@ -1,5 +1,4 @@
-
-	<?php
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_managebuyer extends CI_Controller {
@@ -20,49 +19,49 @@ class Admin_managebuyer extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
+	
 	{
-		
-		
 		$this->load->model('Admin_model');
-		$this->load->library('session');
+		 $this->load->library('session');
+		 /*
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
-			 $datainserr = "Invalid Login Session";
+			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
-			}else{ 
-		$boptions = array('boptions'=>true);
+			}else{  */
+		$busername = array('busername'=>false);
 		
-		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
+		$query = $this->Admin_model->getdatafromtable('buyer_register',$busername);
 		
 		$adac['data']= $query;
+		//$sess = array('sessi'=>$this->session->userdata('username'));
+		//$active = array('ausername'=>$sess['sessi']);
+		
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('ausername'=>$sess['sessi']);
-			}
-			$this->load->view('admin/header',$sess);
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/managebuyer',$adac);
 		$this->load->view('admin/footer');
+		$this->load->helper('url');
 	
-	}
-		public function reject(){
+	
+	
+}
+	public function reject(){
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
-         $bname = urldecode($this->uri->segment(3));
+         $vname = urldecode($this->uri->segment(3));
 	
 
-		$retriveval = array('bname'=>$bname);
+		$retriveval = array('vname'=>$vname);
 		
-		$data2 = array('boptions'=>2);
+		$data2 = array('voptions'=>False);
 
 		
 		
-		$status = $this->Admin_model->update_custom('buyer_register',$data2,$retriveval,$retriveval);
+		$status = $this->Admin_model->update_custom('vendor_register',$data2,$retriveval,$retriveval);
 		
 		header('location: '.base_url().'Admin_managebuyer/index/'.urlencode($retriveval));
 		
 		die;
 	}
-	
-	
-	
-}
-	
+	}
