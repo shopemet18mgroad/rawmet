@@ -19,19 +19,24 @@
         <th>Product Name</th>
         <th>Category</th>
       <th>Image</th>
+	  
 
 		<th>Status</th>
+		 <th>Update the Quantity and Price</th>
 		<th>options</th>
 	</tr>
     </thead>
     <tbody>
 	
       
-      
+
+      <?php  $count = 1;?>
+	  
+
 	   <?php foreach($sqldata as $row){?>
       <tr>
-	  
-	 <?php $proid = str_ireplace('/','-',$row->productid);
+	 
+	 <?php $proid =urldecode( str_ireplace('/','-',$row->productid));
 				?>
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
@@ -48,6 +53,11 @@
 		<td style="color:green;"><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
 
 
+<td> <a href="<?php echo base_url() .'Vendor_uploadedproduct/price_update/'.$proid."/". urldecode($row->vname) ; ?>" target="_blank" data-target="#new_userlogin-<?php echo $count; ?>"  data-toggle="modal" >update</a>
+														</td>
+
+
+
 		
 
 		<td style="display:inline-flex;">
@@ -57,6 +67,96 @@
 		
 	
 			<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
+
+			<div class="modal fade" id="new_userlogin-<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update New Price,Quantity and Live stock</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+		<form action="<?php echo base_url();?>Vendor_uploadedproduct/price_update/" method="POST" enctype="multipart/form-data">
+        <div class="modal-body">
+        
+       
+		  	<div class="col-sm-4 ">
+					<label for="Pname"> Live Stock:</label>
+					<input type="hidden" class="form-control" id="productid" name="productid"  
+					value="<?php echo $row->productid;?>" placeholder="">
+					
+					<input type="text" class="form-control" id="supplyability" name="supplyability"  placeholder="" value="<?php echo $row->supplyability;?>">
+					 
+                    
+                </div>
+  <div class="form-inline">
+
+				<div class="col-sm-4 ">
+					
+					 <label for="price">Price:</label>
+                    <input type="text" class="form-control" id="price" name="price" placeholder="0" value="<?php echo $row->price;?>">
+                    
+                </div>
+				<div class="col-sm-4  offset-sm-3">	
+				<label for="quantity">Units:</label>/
+			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" value="<?php echo $row->supplyunits;?>" >
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+				    </select>
+			</div>
+	</div>
+ <div class="form-inline">
+				<div class="col-sm-4 ">
+					<label for="quantity">Supply Ability:</label>
+                  <input type="text" class="form-control" id="quantity" name="quantity" placeholder value="<?php echo $row->quantity;?>" >
+                    
+                </div>
+				<div class="col-sm-4  offset-sm-3">	
+				<label for="quantity">Units:</label>
+			   	<select class="form-control col-sm-0" id="units" name="units" value="<?php echo $row->units;?>" >
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+				    </select>
+			</div>
+	</div>
+	<br>
+	<button type="submit" name "update" class="btn btn-success">Success</button>
+	
+	
+	
+	
+ 
+	</form>        
+        
+        </div>
+
+
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+		  </div>
+        </div>
+      </div>
+    </div>
+
+ 
+				
+				
+				
+				
+<?php $count++;?>
+
 
         
 <?php }?>	
@@ -83,4 +183,7 @@
      
       <!-- End of Footer -->
 </div>
+
 </div>
+
+
