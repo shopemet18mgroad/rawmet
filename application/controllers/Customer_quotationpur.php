@@ -69,8 +69,7 @@ class Customer_quotationpur extends CI_Controller {
     $ci->dompdf->render();
     // Output  PDF (1 = download and 0 = preview)
     $ci->dompdf->stream($vname.".pdf", array("Attachment" => 0));
-    
-  
+		
   }
  }
 	?>

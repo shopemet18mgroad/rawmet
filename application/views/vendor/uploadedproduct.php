@@ -15,29 +15,29 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Sl.No.</th>
 	  <th>Product Id</th>
-      <th>Product Name</th>
-      <th>Category</th>
+        <th>Product Name</th>
+        <th>Category</th>
       <th>Image</th>
-	  <th>Status</th>
-	  <th>Update New Price<br> and Quantity </th>
+	  
 
-		
+		<th>Status</th>
+		 <th>Update the Quantity and Price</th>
 		<th>options</th>
 	</tr>
     </thead>
     <tbody>
 	
       
+
       <?php  $count = 1;?>
 	  
+
 	   <?php foreach($sqldata as $row){?>
       <tr>
 	 
 	 <?php $proid =urldecode( str_ireplace('/','-',$row->productid));
 				?>
-				 <td><?php echo $count;?></td>  
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
@@ -48,26 +48,26 @@
 
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="55px"></td>
-				
+	
+
 		<td style="color:green;"><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
 
-
-
-			<!--<td><button style="" type="button" class="btn btn-primary btn-sm mt-2" 
-			href="<?php //echo base_url();?>" data-toggle="modal" data-target="#new_userlogin">Update</button></td>-->
 
 <td> <a href="<?php echo base_url() .'Vendor_uploadedproduct/price_update/'.$proid."/". urldecode($row->vname) ; ?>" target="_blank" data-target="#new_userlogin-<?php echo $count; ?>"  data-toggle="modal" >update</a>
 														</td>
 
 
 
+		
+
 		<td style="display:inline-flex;">
-	
+		
 		
 		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
 		
 	
 			<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
+
 			<div class="modal fade" id="new_userlogin-<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -136,11 +136,11 @@
 	
 	
 	
- <!--<input type="submit" name "update" class="btn btn-warning btn-sm text-white" value="submit" name="submit">-->
+ 
 	</form>        
         
         </div>
-<!-- <a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php //echo base_url()."price_postproduct_update/index/".$sqldata[0]->productid;?>"><i class="fa fa-eye"></i></a>-->
+
 
 
         <div class="modal-footer">
@@ -156,6 +156,8 @@
 				
 				
 <?php $count++;?>
+
+
         
 <?php }?>	
 </tr>   
@@ -181,4 +183,7 @@
      
       <!-- End of Footer -->
 </div>
+
 </div>
+
+

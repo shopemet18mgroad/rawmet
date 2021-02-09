@@ -34,7 +34,6 @@
 			<th style="color:orange";>Buyer Quantity</th>
 			<th style="color:orange";>Buyer Price</th>
 			<th>View Quotation</th>
-			<th>Upload Purchase Order</th>
 		
       </tr>
     </thead>
@@ -99,7 +98,7 @@
 				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
 					
 			
-					<input type="submit" id="" class="btn btn-info " name="submit" value="Upload">
+					<input type="submit" id="" class="btn btn-info " name="submit" value="Upload purchase order">
 					
 			
 				

@@ -137,9 +137,8 @@ autocomplete(document.getElementById("myInput"), countries);
           </button>
         </div>
         <div class="modal-body">
-     
-<form action="<?php echo base_url();?>price_postproduct_update" method="POST" enctype="multipart/form-data">	 
-     
+        
+        <form action="/action_page.php">
   <div class="form-group">
     <label for="email">Email address:</label>
     <input type="email" class="form-control" placeholder="Enter email" id="email">

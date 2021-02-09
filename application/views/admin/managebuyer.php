@@ -20,8 +20,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Sl.No.</th>
-        <th>Buyer Name</th>
+        <th> Buyer Name</th>
         <th>Company Type</th>
         <th>Contact Person</th>
 		<th>Location</th>
@@ -31,25 +30,22 @@
     </thead>
     <tbody>
 	
-            <?php  $count = 1;?>
+      
       
 	   <?php foreach($data as $row){?>
       <tr>
-	      <td><?php echo $count;?></td>
 		<td><?php echo $row->bname;?></td> 
 		<td><?php  echo $row->bcompanytype;?></td>
 		<td><?php  echo $row->bcontactperson;?></td>
         <td><?php echo $row->baddress; ?></td>
 		<td><?php echo $row->bcity;?></td>
-        <td style="form-inline";>
+        <td>
 	
-				<a class="btn btn-primary btn-xl text-white" href="<?php echo base_url()."admin_managebuyer/approve_buyer/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"> <i class="fa fa-edit"></i>Edit</a>
+				<a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"> <i class="fa fa-edit"></i>Edit</a>
 				
-				<a href="<?php  echo base_url()."admin_managebuyer/reject/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"><button type="button"  class="btn btn-danger btn-xl text-white">Inactive</button></a>
+				<a href="<?php  echo base_url()."admin_vendorprofile/reject/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
 				</td>
-				
       </tr> 
-	  <?php $count++;?>
 <?php }?>	  
       
     </tbody>

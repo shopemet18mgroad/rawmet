@@ -23,17 +23,8 @@ class Admin_reqpurchaseorder extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-
-		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
-			$datainserr = "Invalid Login Session";
-			header('location: '.base_url().'login/index_error/'.$datainserr);
-			die;
-			}else{
-		$sess = array('sessi'=>$this->session->userdata('username'));
-
-		$reqapproval = array('bname'=>$sess['sessi'],'sellprove'=>true);
-
 		
+		$reqapproval = array('sellprove'=>false);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
@@ -41,8 +32,27 @@ class Admin_reqpurchaseorder extends CI_Controller {
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/reqpurchaseorder',$query);
 		$this->load->view('admin/footer');
-			}
 	}
-
 	
+		public function approve_product(){
+		
+		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+         $vusername = urldecode($this->uri->segment(4));
+
+		$retriveval = array('productid'=>$productid,'vusername'=>$vusername);
+		
+		
+		
+		$this->load->model('Admin_model');
+		$app= array('sellprove'=>true);
+		
+		$query = $this->Admin_model->update_custom('reqpurchaseorder', $app, $retriveval, $retriveval);
+	
+		if($retriveval){
+			header('location: '.base_url().'Admin_reqpurchaseorder/index/'.urlencode($retriveval));
+		}else{
+			echo "BYE";
+		}
+	
+	}
 }
