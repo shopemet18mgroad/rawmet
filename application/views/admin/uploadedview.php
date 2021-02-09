@@ -31,8 +31,9 @@
 				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="200px">
 						
-	
-						
+				  				  <?php $img = unserialize($sqldata[0]->uploadcertificate)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="200px">
+		
 				<div class="col-sm-4 mb-3 mb-sm-2 ml-10">
 				
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
@@ -42,8 +43,7 @@
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
 							<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->units;?><br><b>Stock:&nbsp;</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?>
-							<br><b style="color:green">Payable To Rawmet&nbsp;:</b>&nbsp;&nbsp;&nbsp;<?php echo $sqldata[0]->payable."%";?><br>
-							<b>ISO Certificate Number</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->uploadcertificate;?>
+							<br><b style="color:green">Payable To Rawmet&nbsp;:</b>&nbsp;&nbsp;&nbsp;<?php echo $sqldata[0]->payable."%";?>
 				  </div>
 
 				   <?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
@@ -59,7 +59,6 @@
 						</tr>
 					</thead>
 						<tbody> 
-						
 							<tr>
 								<td><b>Minimum Order Quantity:&nbsp;</b><?php echo $sqldata[0]->minoderquant;?></td>
 							</tr>

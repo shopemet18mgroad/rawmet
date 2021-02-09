@@ -28,7 +28,7 @@
                 <div class="card-body">
 					
 			
-			<form action="<?php echo base_url();?>vendor_postproduct_update" onsubmit="return validate_Postproduct()" method="POST" enctype="multipart/form-data">
+			<form action="<?php echo base_url();?>vendor_postproduct_update" method="POST" enctype="multipart/form-data">
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
@@ -80,7 +80,7 @@
 			   	<label for="category">Types:</label>
 					<select class="form-control" id="types" name="types" value="">
 					<option value="<?php echo  $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
-					
+					<option value="Types">Types</option>
 						<option value="Primary">Primary</option>
 						<option value="Secondary">Secondary</option>
 				        <option value="Scrap" >Scrap</option>
@@ -257,7 +257,7 @@ document.getElementById("pcities").selectedIndex = 0;
 			</div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Payable To Rawmet:(%)</label>
-					<input type="text" class="form-control" id="payable" name="payable"  placeholder="" value="<?php echo  $sqldata[0]->payable;?>" >
+					<input type="text" class="form-control" id="payable" name="payable"  placeholder="" value="<?php echo  $sqldata[0]->payable;?>" required>
 					
                     
                 </div>
@@ -304,19 +304,14 @@ document.getElementById("pcities").selectedIndex = 0;
 								<input  type="file" id="uploadproductimage" name="uploadproductimage">
 								</div>
 							</div>
-							<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="Pname">ISO Certificate Number</label>
-					<input type="text" class="form-control" id="uploadcertificate" name="uploadcertificate"  placeholder="" value="<?php echo  $sqldata[0]->uploadcertificate;?>">
-                    
-                </div>
 				
 					<div class="col-md-12 text-center mt-4">
 						<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
 				?>
 						
 						<center>	
-			<!--	<input class="btn btn-primary btn-sm" onclick="return validate_Postproduct()" type="submit" value=" Submit">-->			
-                <input type="submit" id="submitBtn" a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_postproduct_update/approve_product/".$proid;?>" class="btn btn-primary" name="submit" value="Update">	</center>
+							
+                <input type="submit" id="submitBtn" a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_postproduct_update/approve_product/".$proid;?>" class="btn btn-primary" name="submit" value="Update">	</center>	
 					</div>	
 					
 				</div>

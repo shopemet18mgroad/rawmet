@@ -53,8 +53,8 @@
 						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
                     </div>
 				</div>
-				<div class="form-inline">
-				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+				
+				<div class="col-sm-4 mb-3 mb-sm-1">
 					<label for="">Category</label>
 					<select class="form-control" id="category" name="category">
 					       <option value="Category">--Category--</option>
@@ -64,20 +64,8 @@
 				        <option value="Scrap" >Scrap</option>
 						<option value="Metal" >Metal</option>
 				    </select> 
-					</div>
-				
-							
-				<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
-                    <label for="category">Types:</label>
-					<select class="form-control" id="types" name="types">
-					<option value="Types">Types</option>
-						<option value="Primary">Primary</option>
-						<option value="Secondary">Secondary</option>
-				        <option value="Scrap" >Scrap</option>
-				    </select>  
+                    
                 </div>
-				</div>
-				
 							
 				<div class="form-inline">
 				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">

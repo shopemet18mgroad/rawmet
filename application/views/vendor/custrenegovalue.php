@@ -21,9 +21,7 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>	
-	        <th>Sl.No.</th>
-	        <th>Seller Name</th>
+      <tr>	<th>Seller Name</th>
 			<th>Buyer Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
@@ -38,13 +36,11 @@
      
     </thead>
     <tbody>
-	   <?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
-					<td><?php echo $count;?></td>
 			<td><?php echo $row->vname;?></td>
 			<td><?php echo $row->busername;?></td>
 			<td><?php echo $row->productname;?></td>
@@ -77,9 +73,7 @@
 		</center>
 		<br>
 		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
-      </tr> 
-	    <?php $count++;?>	  
-	  
+      </tr>      
      <?php }?>	
     </tbody>
   </table>
