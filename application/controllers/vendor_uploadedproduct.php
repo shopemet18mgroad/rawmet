@@ -72,6 +72,44 @@ class Vendor_uploadedproduct extends CI_Controller {
 		header('location: '.base_url().'vendor_uploadedproduct/index/');
 	
 }
+	public function price_update(){
+		if($this->input->post('productid')){
+			$date =  Date('Y-m-d'); 
+		$this->load->library('fileupload');
+		$this->load->helper(array('url','form','file','html'));
+		$this->load->model('Admin_model');
+				
+	 $productid = $this->input->post('productid'); 
+	$price = $this->input->post('price');
+	 $quantity = $this->input->post('quantity');
+  $units = $this->input->post('units');
+		         $supplyability = $this->input->post('supplyability');
+			    $supplyunits = $this->input->post('supplyunits');
+		
+		
+			
+$data = array('units'=>$units,'price'=>$price,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantity'=>$quantity);
+//print_r($data); die;
+	
+
+		
+		
+		$datainserr = "Data Inserted Successfully";
+		$updatech = array('productid'=>$productid);
+		//print_r($updatech);die;
+			
+		$status = $this->Admin_model->update_custom('sellerpostproduct',$data,$updatech,$updatech);
+	
+		
+		header('location: '.base_url().'vendor_uploadedproduct/index/'.$datainserr);
+	
+	
+		}
+
+	
+	
+
+	}
 	
 	
 		

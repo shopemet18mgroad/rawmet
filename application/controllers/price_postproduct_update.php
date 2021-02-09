@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class price_postproduct_update extends CI_Controller {
+class Price_postproduct_update extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -45,17 +45,18 @@ class price_postproduct_update extends CI_Controller {
 		
 		
 		//==================================================================
-		$data = array('units'=>$units,'price'=>$price,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits);
+		$data = array('units'=>$units,'price'=>$price,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantity'=>$quantity);
 	
 
 		
 		
 		$datainserr = "Data Inserted Successfully";
 		$updatech = array('productid'=>$productid);
+			print_r($updatech); die;
 			
 		$status = $this->Admin_model->update_custom('sellerpostproduct',$data,$updatech,$updatech);
-		//print_r($status); die;
 	
+		
 		header('location: '.base_url().'vendor_uploadedproduct/index/'.$datainserr);
 	
 	
