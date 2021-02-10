@@ -41,6 +41,8 @@ class vendor_buyerResponse_req extends CI_Controller {
 		$query = $this->Admin_model->getdatafrombuyer_req_response();	
 		$adac['sqldata']= $query;
 		
+		
+		
 			
 		
 		$this->load->view('vendor/header',$sess);

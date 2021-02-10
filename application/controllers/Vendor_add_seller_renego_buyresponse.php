@@ -31,15 +31,21 @@ class Vendor_add_seller_renego_buyresponse extends CI_Controller {
 			$seller_renego_price = $this->input->post('seller_renego_price');
 			$seller_renego_units = $this->input->post('seller_renego_units');
 			$buyer_req_response_id = $this->input->post('buyer_req_response_id');
+			$seller_mbuyreq_id = $this->input->post('seller_mbuyreq_id');
 			
 			
-			
-			$data = array('vusername' => $vusername,'seller_renego_price'=> $seller_renego_price,'seller_renego_units'=>$seller_renego_units,'buyer_req_response_id'=>$buyer_req_response_id);
+			$renegoStatus = 0;
+			if(array_key_exists('btnsubmit_final',$this->input->post())){
+				$renegoStatus = 3;
+			}
+	
+	
+			$data = array('vusername' => $vusername,'seller_renego_price'=> $seller_renego_price,'seller_renego_units'=>$seller_renego_units,'buyer_req_response_id'=>$buyer_req_response_id,'seller_mbuyreq_id'=>$seller_mbuyreq_id ,'buyer_approval' => $renegoStatus );
 			
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('seller_req_response',$data);
-			header('location: ./vendor_buyerResponse_req/index/'.$datainserr);
+			header('location: ./vendor_req_renego_status/index/'.$datainserr);
 			}
 			
 		
@@ -49,9 +55,9 @@ class Vendor_add_seller_renego_buyresponse extends CI_Controller {
 	
 				
 				
-		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/buyer_response_req',$data);
-		$this->load->view('customer/footer');
+		$this->load->view('vendor/header',$sess);
+		$this->load->view('vendor/buyer_response_req',$data);
+		$this->load->view('vendor/footer');
 			 
 	 
 //}

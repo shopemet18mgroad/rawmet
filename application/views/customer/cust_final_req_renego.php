@@ -2,7 +2,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Buyer's Negotiated Price</h1>
+            <h1 class="h3 mb-0 text-gray-800">Seller Requirements Negotiated</h1>
            
           </div>
 
@@ -12,52 +12,51 @@
 			<div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
-                
-  
-  
-  
-  
-  
-  
-  
-  
-  <table class="table table-striped table-bordered table-sm w-auto small" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Id</th>
-		<th>Buyer Name</th>
-	  <th>Buyer Company Name</th>
-	  <th>Category</th>
-	  <th>Buyer Product Name</th>
-	  <th>Buyer Product Id</th>
-      <th>Buyer Base Quantity</th>
-	  <th>Buyer Base Price</th>
-	  <th>Seller Name</th>
-	  <th style="color:orange">Seller Price</th>
-	  <th style="color:orange">Buyer Negotiated Price</th>
-	  <th> Buyer's Status</th>			 
+		<th>Seller Name</th>
+		<th>Buyer Company Name</th>
+	    <th>Category</th>
+		<th>Buyer Product Name</th>
+		<th>Buyer Product Id</th>
+        <th>Quantity</th>
+		<th>Buyer Price</th>
+		<th style="color:orange">Seller Price</th>
+		<th>Buyer Negotiated Price</th>
+		<th>Seller's Re-Negotiated Price</th>
+		<th>Buyer's Status</th>
+		
+		
+                    
+             
+		
       </tr>
     </thead>
-       <tbody>
+ 
+	
+	
+	<tbody>
                                  
                                                <?php
                                                $strTable = "";
-                                             foreach($sqldata as $seller){                                             
+                                             foreach($sqldata3 as $seller){                                             
                                              $strTable .= " 
                                           <tr>
-										  <td>".$seller->id."</td>
-                                          <td>".$seller->bname."</td>
+										  <td>".$seller->vusername."</td>
+										  
                                           <td>".$seller->bcompanyname."</td>
                                           <td>".$seller->category."</td>
                                           <td>".$seller->productname."</td>
                                           <td>".$seller->productid."</td>
-                                          <td>".$seller->quantity."</td> 
-                                          <td>".$seller->price."</td> 
-                                          <td>".$seller->sellername."</td>
-										  <td>".$seller->sellerprice."</td> 
-										  <td>".$seller->buyer_nego_price."</td> 
-                            <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>
-				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Renegotiate</a></td>     
+                                          <td>".$seller->quantity."/".$seller->units."</td>
+                                          <td>".$seller->price."/".$seller->priceperkg."</td>
+                                           <td>".$seller->sellerprice."/".$seller->bsupplyability."</td>
+										   <td>".$seller->buyer_nego_price."/".$seller->buyer_nego_units."</td>
+										   <td>".$seller->seller_renego_price."/".$seller->seller_renego_units."</td>
+                                           
+                            <td> <a href='javascript:finalapproveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>
+				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->seller_mbuyreq_id."'>Renegotiate</a></td>     
                                       </tr>
                                      
                                       </tr>
@@ -66,8 +65,7 @@
                   echo $strTable;
                  ?>
                 </tbody>
-  
-   
+  </table>
 
 		  </div>
             </div>
@@ -87,11 +85,12 @@
      
       <!-- End of Footer -->
 </div>
+</div>
 
 <script type="text/javascript">
 
 $baseURL = "<?php echo base_url(); ?>"; 
-function approveProduct(seller_mbuyreq_id)
+function finalapproveProduct(seller_mbuyreq_id)
 {
   alert(seller_mbuyreq_id);
   swal({
@@ -106,7 +105,7 @@ function approveProduct(seller_mbuyreq_id)
   if (willDelete) {   
                      $.ajax({
                          type:'post',
-                         url:$baseURL+'vendor_buyerResponse_req/approveProduct',
+                         url:$baseURL+'Customer_cust_final_req_renego/finalapproveProduct',
                          data:'seller_mbuyreq_id='+seller_mbuyreq_id,
                          success:function(msg){
                              if(msg){
