@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_postproduct_update extends CI_Controller {
+class Admin_buyingrequirement_update extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -28,35 +28,26 @@ class Admin_postproduct_update extends CI_Controller {
 		$this->load->library('fileupload');
 		$this->load->helper(array('url','form','file','html'));
 		$this->load->model('Admin_model');
-		    $vname = $this->input->post('vname');
+		    $bname = $this->input->post('bname');
+			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
-			//$materialname = $this->input->post('materialname');
+			$types = $this->input->post('types');
+			$productname = $this->input->post('quantity');
+			$productid = $this->input->post('productid');
+
+			
 			$description = $this->input->post('description');
 			$price = $this->input->post('price');
+			$priceperkg = $this->input->post('priceperkg');
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
-			
-			//$pic_array = $this->input->post('uploadproductimage');
-			$minoderquant = $this->input->post('minoderquant');
-			$supplyability = $this->input->post('supplyability');
-			$supplyunits = $this->input->post('supplyunits');
-			$quantpermonth = $this->input->post('quantpermonth');
-			$estdeltime = $this->input->post('estdeltime');
-			$pstates= $this->input->post('pstates');
-			$pcities = $this->input->post('pcities');
-		    $types= $this->input->post('types');			 
-		    $payable = $this->input->post('payable');
-			$productid = $this->input->post('productid');
-		$companyname = $this->input->post('companyname');
-		$poptions = $this->input->post('poptions');
-		 $comapprove = $this->input->post('comapprove');
-		$productvalidityto = $this->input->post('productvalidityto');
-		 $productvalidityfrom = $this->input->post('productvalidityfrom');
-		 $uploadcertificate = $this->input->post('uploadcertificate');
-	
-				$_FILES['uploadproductimage']['name'];
+			$requireddate= $this->input->post('requireddate');
+			$lastdate = $this->input->post('lastdate');
+		    $email= $this->input->post('email');			 
+		    $contactnumber = $this->input->post('contactnumber');
+				$_FILES['uploadimage']['name'];
 			//$pic_array1  = self::upload_files('uploadproductimage'); die;
-			 $pic_array1  = self::upload_files('uploadproductimage'); 
+			 $pic_array  = self::upload_files('uploadimage'); 
 		
 		     
 		     $profileimage[] = $this->input->post('profileimage');
@@ -76,9 +67,9 @@ class Admin_postproduct_update extends CI_Controller {
 		}
 	
 			
-			if($_FILES['uploadproductimage']['tmp_name'][0]){
+			if($_FILES['uploadimage']['tmp_name'][0]){
 		("../web_files/uploads/".$profileimage[0]);
-			$pic_array = self::upload_files('uploadproductimage');
+			$pic_array = self::upload_files('uploadimage');
 			
 		}
 		
@@ -98,18 +89,17 @@ class Admin_postproduct_update extends CI_Controller {
 		
 		
 		//==================================================================
-		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array,'poptions'=>false,'comapprove'=>false,
-		'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom	,'uploadcertificate'=>	$uploadcertificate);
-		
-		//print_r($data);die;
-		$datainserr = "Data Inserted Successfully";
-		$updatech = array('vname'=> $vname,'companyname'=>$companyname,'productid'=>$productid);
-		
-		$app= array('poptions'=>false);
-		$status = $this->Admin_model->update_custom('sellerpostproduct',$data,$updatech,$updatech);
+		$data = array('category'=> $category,'description' => $description,'price'=>$price,'priceperkg'=>$priceperkg,'quantity'=>$quantity,'units'=>$units,'requireddate'=>$requireddate,'lastdate'=>$lastdate,'email'=>$email,'types'=>$types,'contactnumber'=> $contactnumber ,'uploadimage' => $pic_array,'productname'=>$productname);
 		
 	
-		header('location: '.base_url().'Admin_adminvendorproducts/index/'.$datainserr);
+		$datainserr = "Data Inserted Successfully";
+		$updatech = array('bname'=> $bname,'bcompanyname'=>$bcompanyname,'productid'=>$productid);
+		
+		$app= array('poptions'=>false);
+		$status = $this->Admin_model->update_custom('buyerrequriement',$data,$updatech,$updatech);
+		
+	
+		header('location: '.base_url().'Admin_managebuyrequirements/index/'.$datainserr);
 	
 	
 	}
@@ -151,25 +141,14 @@ class Admin_postproduct_update extends CI_Controller {
       }
 	 return $datar;
     }
-		public function approve_product(){
-		
-		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-
-		$retriveval = array('productid'=>$retrivevaltmp);
-		
-		
-		$this->load->model('Admin_model');
-		$app= array('poptions'=>false);
-		$query = $this->Admin_model->update_custom('sellerpostproduct', $app, $retriveval, $retriveval);
-		if($retriveval){
-			echo "HI";
-		}else{
-			echo "BYE";
-		}
-		}
-	
 	
 }
+	
+
+
+
+
+
 
 
 

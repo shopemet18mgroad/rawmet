@@ -20,6 +20,7 @@
                 <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	  <th>Sl.No.</th>
         <th>Buyer Name</th>
         <th>Company Type</th>
         <th>Contact Person</th>
@@ -30,9 +31,10 @@
       </tr>
     </thead>
 	<tbody>
-					
+					      <?php  $count = 1;?>
 				<?php foreach($data as $row){?>
-				<tr>												
+				<tr>	
+    <td><?php echo $count;?></td>				
 					<td><?php echo $row->bname;?></td>
 					<td><?php  echo $row->bcompanytype; ?></td>
 					<td><?php echo $row->bcontactperson; ?></td>
@@ -40,7 +42,10 @@
 					<td><?php echo $row->baddress; ?></td>
 					<td><?php echo $row->bcity;?></td>
 					
-					<td><button type="submit" name="submit" id="<?php echo $row->busername;?>" onclick="admin_buyerapprove(this.id)" class="btn btn-info btn-sm">Approve</button></td>	
+					<td><a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyerdetail/index/".urldecode($row->busername)."/".urldecode($row->bcompanyname);;?>"><i class="fa fa-eye"></i>View</a>
+					
+					<button type="submit" name="submit" id="<?php echo $row->busername;?>" onclick="admin_buyerapprove(this.id)" class="btn btn-success btn-sm">Activate</button></td>	
+					<?php $count++;?>
 				</tr>
 				<?php }?>
 	 

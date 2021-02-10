@@ -27,7 +27,7 @@ class Admin_approvebuyer extends CI_Controller {
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{  
-		$boptions = array('boptions'=>false);
+		$boptions = array('boptions'=>2);
 		
 		$query = $this->Admin_model->getdatafromtable('buyer_register',$boptions);
 		

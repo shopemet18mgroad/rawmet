@@ -80,11 +80,26 @@
 		<form action="<?php echo base_url();?>Vendor_uploadedproduct/price_update/" method="POST" enctype="multipart/form-data">
         <div class="modal-body">
         
-       
-		  	<div class="col-sm-4 ">
-					<label for="Pname"> Live Stock:</label>
+		
+			  	<div class="col-sm-8">
+		
+			<label for="Pname"> Product Id:</label>
+				<input type="text" class="form-control" id="productid" name="productid"  
+					value="<?php echo $row->productid;?>" placeholder="" readonly>
 					<input type="hidden" class="form-control" id="productid" name="productid"  
 					value="<?php echo $row->productid;?>" placeholder="">
+       </div>
+		  	<div class="col-sm-4 ">
+	
+					
+					
+					<label for="Pname"> Live Stock:</label>
+					
+					
+					
+					
+					
+					
 					
 					<input type="text" class="form-control" id="supplyability" name="supplyability"  placeholder="" value="<?php echo $row->supplyability;?>">
 					 
@@ -131,7 +146,7 @@
 			</div>
 	</div>
 	<br>
-	<button type="submit" name "update" class="btn btn-success">Success</button>
+	<button type="submit" name "update" class="btn btn-success">Submit</button>
 	
 	
 	

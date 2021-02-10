@@ -71,12 +71,12 @@
 					</table>			
 
 				<table class="table table-sm table-borderless">
-					 <thead width="50%"><th>Contact Info</th>
+					 <thead width="50%"><th >Contact Info</th>
 				
 					 </thead>
 						<tbody>
 						<tr>
-								<td>Email</td>
+								<td width="43%">Email</td>
 								<td><?php echo $sqldata[0]->vemail;?></td>
 							</tr> 
 							<tr>
@@ -100,15 +100,7 @@
 								<td>Pincode</td>
 								<td><?php echo $sqldata[0]->vpincode;?></td>
 							</tr>
-                              <tr>
-								<td>Business type</td>
-								<td>Rajkot</td>
-							</tr>
-                             <tr>
-								<td>Business description</td>
-								<td>Verified</td>
-							</tr>
-														
+                             				
 						</tbody>
 					</table>							
                 

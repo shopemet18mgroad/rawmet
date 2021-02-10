@@ -74,12 +74,14 @@ class Vendor_postproduct extends CI_Controller
 			$payable = $this->input->post('payable');
 			$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
+			$uploadcertificate = $this->input->post('uploadcertificate');
 			//$uploadproductimage = self::upload_files('uploadproductimage');
 		
 			$pic_array1  = self::upload_files('uploadproductimage');
 			$_FILES['uploadproductimage']['name'];
-			$doc_array1 = self::upload_files('uploadcertificate');
-			$_FILES['uploadcertificate']['name'];
+			
+			//$doc_array1 = self::upload_files('uploadcertificate');
+			//$_FILES['uploadcertificate']['name'];
 
 			if (!count($pic_array1)) {
 				echo '<script language="javascript">';
@@ -90,13 +92,13 @@ class Vendor_postproduct extends CI_Controller
 			}
 		
 
-			if(!count($doc_array1)){
+			/* if(!count($doc_array1)){
 				echo '<script language="javascript">';
 				echo 'alert("Documents Upload Failed")';  //not showing an alert box.
 				echo '</script>';
 			}else{
 				$doc_array1 = serialize($doc_array1);
-			}
+			} */
 
 
 
@@ -113,7 +115,7 @@ class Vendor_postproduct extends CI_Controller
 			'quantity' => $quantity, 
 			'units' => $units, 
 			'uploadproductimage' => $pic_array1,
-			'uploadcertificate' => $doc_array1, 
+			'uploadcertificate' => $uploadcertificate, 
 			'minoderquant' => $minoderquant, 
 			'supplyability' => $supplyability, 
 			'supplyunits' => $supplyunits, 
