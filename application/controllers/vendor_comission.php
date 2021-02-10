@@ -30,7 +30,7 @@ class Vendor_comission extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vusername'=>$sess['sessi']);
+		$active1 = array('vusername'=>$sess['sessi'],'comapprove'=>false);
 		
 		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
 		
@@ -53,46 +53,27 @@ class Vendor_comission extends CI_Controller {
 		$this->load->helper('url');
 
 		}
-
-			
 	}
-	public function approve_product(){
+		public function comission_approve(){
 		
-		 $productid = urldecode(str_ireplace('/','-',$this->uri->segment(3)));
+		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
          $vname = urldecode($this->uri->segment(4));
 
 		$retriveval = array('productid'=>$productid,'vname'=>$vname);
 		
-		//print_r($retriveval);die;
 		
 		
 		$this->load->model('Admin_model');
 		$app= array('comapprove'=>true);
 		$query = $this->Admin_model->update_custom('sellerpostproduct', $app, $retriveval, $retriveval);
 		if($retriveval){
-			header('location:'.base_url().'vendor_comission/index/'.urlencode($retriveval));
+			header('location: '.base_url().'vendor_comission/index/'.urlencode($retriveval));
 		}else{
 			echo "BYE";
 		}
 	
 	}
-
-	public function delete_seller(){
-	
-	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-		
-		$active = array('productid'=>$productid);
-		
-		$this->load->model('Admin_model');
-		$this->Admin_model->delete_data('sellerpostproduct', $active);
-		
-		$this->load->helper('url');
-		$this->load->library('session');
-		
-		header('location: '.base_url().'vendor_comission/index/');
-	
-}
-public function reject(){
+		public function comission_reject(){
 		$this->load->helper('url');
 		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
          $vname = urldecode($this->uri->segment(4));
@@ -110,7 +91,24 @@ public function reject(){
 		die;
 	}
 	
+	public function delete_comission(){
 	
+	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		
+		
+		$vname = urldecode($this->uri->segment(4));
+		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		
+		$this->load->model('Admin_model');
+		$this->Admin_model->delete_data('sellerpostproduct',$retriveval);
+		
+		$this->load->helper('url');
+		$this->load->library('session');
+		
+		header('location: '.base_url().'vendor_comission/index/'.urlencode($retriveval));
+	
+}
+
+			
+
 	}
-		

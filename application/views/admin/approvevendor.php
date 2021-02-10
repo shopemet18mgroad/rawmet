@@ -22,6 +22,7 @@
                 <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	  <th>Sl.No.</th>
         <th>Vendor Name</th>
         <th>Company Type</th>
 		<th>Username</th>
@@ -33,9 +34,11 @@
       </tr>
     </thead>
     <tbody>
+	      <?php  $count = 1;?>
        
 <?php foreach($data as $row){?>
 				<tr>
+				    <td><?php echo $count;?></td>
                     <td><?php echo $row->vname; ?></td>
 					<td><?php echo $row->vcompanytype; ?></td>
 					<td><?php echo $row->vusername; ?></td>
@@ -48,7 +51,8 @@
 					<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendordetail/index/".urldecode($row->vusername)."/".urldecode($row->vcompanyname);;?>"><i class="fa fa-eye"></i></a>
 		
 		
-					<button type="submit" name="submit" id="<?php echo urldecode($row->vusername);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Approve</button>	</td>
+					<button type="submit" name="submit" id="<?php echo urldecode($row->vusername);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Activate</button>	</td>
+					<?php $count++;?>
 				
 	
 				</tr>

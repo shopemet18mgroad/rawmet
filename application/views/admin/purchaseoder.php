@@ -15,6 +15,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	   <th>Sl.No.</th>
 	  	<th>Supplier Name</th>
 	  <th>Product Id</th>
         <th>Product Name</th>
@@ -29,13 +30,15 @@
     </thead>
     <tbody>
 	
-      
-      
+       
+      <?php  $count = 1;?>
 	   <?php foreach($sqldata as $row){?>
       <tr>
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+				
+				  <td><?php echo $count;?></td> 
 				<td><?php echo $row->vname;?></td>
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
@@ -54,6 +57,7 @@
 		<a href="<?php  echo base_url()."admin_purchaseoder/reject_unpaid/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger btn-sm mt-1">Unpaid</button></a>
 		
 		</td>
+		      <?php $count++;?>
 
 
         

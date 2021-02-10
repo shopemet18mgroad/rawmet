@@ -1,7 +1,8 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_reqpurchaseorder extends CI_Controller {
+class Admin_buynego extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,29 +21,42 @@ class Admin_reqpurchaseorder extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('url');
-		$this->load->library('session');
 		$this->load->model('Admin_model');
-
+		$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-
-		$reqapproval = array('bname'=>$sess['sessi'],'sellprove'=>true);
-
+		$active1 = array('buyerapprove'=>true);
+		//$reqapproval = array('sellapproval'=>false);
 		
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);
 		
-		$sess = array('sessi'=>$this->session->userdata('username'));
-	
+		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
+		//print_r($query); die;
+		
+		$adac['sqldata']= $query;
+		
+		
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/reqpurchaseorder',$query);
+		$this->load->view('admin/Buynego',$adac);
 		$this->load->view('admin/footer');
-			}
+		$this->load->helper('url');
+		
+			
+			
+		
+		}
+
+			
+	}
+	
+
+	
+	
+	
+
 	}
 
-	
-}
+		

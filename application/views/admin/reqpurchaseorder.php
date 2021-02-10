@@ -21,6 +21,7 @@
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	  	   <th>Sl.No.</th>
 			<th>Supplier Name</th>
 			<th>Company Name</th>
 			<th>Category</th>
@@ -32,14 +33,16 @@
 			<th style="color:orange;">Suplier Price</th>
 			
 			<th> View Purchase Order</th>
-			<th> Action</th>
+	
       </tr>
     </thead>
     <tbody>
+	    <?php  $count = 1;?>
        	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+				<td><?php echo $count;?></td> 
 			<td><?php echo $row->vusername;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
 			<td><?php echo $row->category;?></td>
@@ -68,11 +71,11 @@
 
  
 </a></td>
+<?php $count++;?>
 <?php }?>	
 
     
-					
-		<td><a href="<?php  echo base_url()."admin_reqpurchaseorder/approve_product/".$proid."/".urldecode($row->vusername);?>"><button type="button" class="btn btn-success">Approve</button></a></td>
+
       </tr>      
      <?php }?>	    
          

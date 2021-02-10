@@ -15,7 +15,9 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	  <th>Sl.No.</th>
 	      <th>Product Id</th>
+		      <th>Seller Name</th>
           <th>Product Name</th>
           <th style="color:orange">Commission to Rawmet</th>
           <th>Image</th>
@@ -26,15 +28,16 @@
     </thead>
     <tbody>
 	
-      
-      
+    
+       <?php  $count = 1;?>
 	   <?php foreach($sqldata as $row){?>
       <tr>
 	  
-	 <?php $proid = str_ireplace('/','-',$row->productid);
+	 <?php $proid = urldecode(str_ireplace('/','-',$row->productid));
 				?>
-   <?php $prodid= str_ireplace('/','-',$row->productid);
-				?>
+   
+		  <td><?php echo $count;?></td> 		
+       <td><?php echo $row->vname;?></td> 				
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->payable."%" ;?></td>
@@ -54,17 +57,17 @@
 		
 
 	
-		 <a href="<?php  echo base_url()."vendor_comission/approve_produc/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
+	<td> <a href="<?php  echo base_url()."Vendor_comission/comission_approve/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
 		
-		<a href="<?php  echo base_url()."vendor_comission/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-info">Reject</button></a>
+		<a href="<?php  echo base_url()."Vendor_comission/comission_reject/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-info">Reject</button></a>
 		
-		
+	
 		 
-		  <a href="<?php  echo base_url()."vendor_comission/delete_seller/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Delete</button></a>
+		  <a href="<?php  echo base_url()."Vendor_comission/delete_comission/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
 
 		
-
-        
+<?php $count++;?>
+       
 <?php }?>	
 </tr>   
       
