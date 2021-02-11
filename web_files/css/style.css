@@ -176,8 +176,30 @@ html{
     overflow-y:scroll; 
 }
 .option{
+	margin-bottom:10%;
+	 border: 1px solid transparent;
 	
-	width:250px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+    width: 100%;
+	 color: black;
+	   display:block;
+  position: absolute;
+  background-color: #FFA500;
+  min-width:240px;
+  overflow: hidden;
+  
+  width: 90px;
+  font-size: 13px;
+  white-space: nowarp;
+  z-index: -1;
+ border: 2px solid #ddd;
+
+	
+        
+		
+	/* 
 	padding-left:100px;
 	display:inline-flex;
 	height:50px;
@@ -198,24 +220,25 @@ html{
 	  font-weight:bold;
 	  background-color: #FFA500;
 	    display: inline-block;
-		  margin-top: 0px;
+		  margin-top: 0px; */
 }
 
 .select{
 	position:absolute;
-	margin-top:220px;
-	margin-right:700px;
+	margin:0px;
+	margin-left:-40px;
+
 }
 .option2{
 	
 	
-	width:250px;
+	width:200px;
 padding:6px,12px;
 	height:30px;
 	margin-bottom:1000%;
 	border:  solid #d4d4d4;
 	text-align:center;
-	border-radius: 25px;
+	border-radius: 0spx;
 	position:absolute;
 	cursor: pointer;
 	  color:black;
