@@ -29,6 +29,7 @@
 			<th>Product Id</th>
 			<th>Category</th>
 			<th>Your Base Price</th>
+			<th>Your Base Quantity</th>
 			<th style="color:pink;">Buyer Negotiated Quantity</th>
 			<th style="color:pink;">Buyer Negotiated Price</th>
 			<th style="color:yellow;">Your Negotiated price</th>
@@ -50,7 +51,8 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-				<td><?php echo $row->price."/"; echo $row->supplyunits;?></td>
+				<td><?php echo $row->price."/"; echo $row->units;?></td>
+				<td><?php echo $row->quantity."/"; echo $row->supplyunits;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
@@ -64,14 +66,16 @@
 		<center><?php
 		/* <a href="<?php echo base_url()."Vendor_sellrenegotiate/index/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</a> */
 					
-				$st = 	$row->status;
+		$st = 	$row->status;
 		if($st == true){
+			echo '<b>Finalized by Buyer</b>.';
+		}
+		else
+		
+		{
 				echo '<a href="'.base_url().'Vendor_sellrenegotiate/index/'.$proid."/".urldecode($row->vname)."/".urldecode($row->busername).'">';
 				echo '<button class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</button>';
 		echo '</a>';}
-		else{
-			echo '<b>Finalized by Buyer</b>.';
-		}
 		
 			?>
 		</center>

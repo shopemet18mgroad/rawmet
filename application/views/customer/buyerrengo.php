@@ -99,10 +99,12 @@
 					<div class="col-sm-12">
 					<center><b>Seller 1st Value</b></center>
 							<hr class="sidebar-divider">
-					<p style="color:orange;"><b>Seller Price:<?php echo $sqldata[0]->quantity.""; echo $sqldata[0]->units;?></b></p>
+					<p style="color:orange;"><b>Seller Quantity:<?php echo $sqldata[0]->quantity.""; echo $sqldata[0]->units;?></b></p>
 								<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo $sqldata[0]->quantity;?>">
 								<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo $sqldata[0]->units;?>">
+						<p style="color:orange;"><b>Seller Price:<?php echo $sqldata[0]->price."/"; echo $sqldata[0]->supplyunits;?></b></p>
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
+							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $sqldata[0]->supplyunits;?>">
 					<center><b>Buyer 1st Negotiate</b></center>
 							<hr class="sidebar-divider">
 					<p style="color:green;"><b>Buyer Price:<?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></b></p>
