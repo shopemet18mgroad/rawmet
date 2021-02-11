@@ -36,7 +36,7 @@
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label for="">Buyer Name</label>
-						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
+						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata1[0]->bname;?>" readonly>
 						
 						<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">
 						
@@ -49,7 +49,7 @@
               
 					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
 						<label for="">Companyname</label>
-						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $sqldata[0]->bcompanyname;?>" readonly>
+						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $sqldata1[0]->bcompanyname;?>" readonly>
                     </div>
 				</div>
 				
@@ -57,7 +57,7 @@
 				<label for="">Category</label>
 					
 					<select class="form-control" id="category" name="category" readonly>
-					       <option value="<?php echo  $sqldata[0]->category;?>"><?php echo  $sqldata[0]->category;?></option>
+					       <option value="<?php echo  $sqldata1[0]->category;?>"><?php echo  $sqldata1[0]->category;?></option>
 						<option value="Non Metal">Non Metal</option>
 						<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
@@ -70,20 +70,20 @@
 				<div class="form-inline">
 				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label> Buyer Productname:</label>
-						 <input type="text" class="form-control" id="productname" name="productname"placeholder="Enter product name.." onkeyup="product_id()" value="<?php echo  $sqldata[0]->productname;?>" readonly>
+						 <input type="text" class="form-control" id="productname" name="productname"placeholder="Enter product name.." onkeyup="product_id()" value="<?php echo  $sqldata1[0]->productname;?>" readonly>
 						
 						</div>
 				
 					
 				<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
 					<label for="">Buyer Productid</label>
-					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id" value="<?php echo  $sqldata[0]->productid;?>" readonly>
+					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id" value="<?php echo  $sqldata1[0]->productid;?>" readonly>
                     
                 </div>
 				</div>
 					<h6 class="mt-2"><b>&nbsp;&nbsp;Describe your Buying requirement</b></h6>
 					<div class="col-sm-5 col-md-12">
-                      <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."value="<?php echo  $sqldata[0]->description;?>"readonly><?php echo  $sqldata[0]->description;?></textarea>
+                      <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."value="<?php echo  $sqldata1[0]->description;?>"readonly><?php echo  $sqldata1[0]->description;?></textarea>
 					</div>
 					
 					
@@ -92,14 +92,14 @@
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 					 
 						<label>Buyer Base Quantity:</label>
-						<input type="text" class="form-control" id="quantity" name="quantity"value="<?php echo  $sqldata[0]->quantity.' '.$sqldata[0]->units;?>" readonly>
+						<input type="text" class="form-control" id="quantity" name="quantity"value="<?php echo  $sqldata1[0]->quantity.' '.$sqldata1[0]->units;?>" readonly>
 					</div>
 					
 					
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 				 
 						<label> Buyer Base Price:</label>
-						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata[0]->price.' / '.$sqldata[0]->priceperkg;?> " readonly>
+						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata1[0]->price.' / '.$sqldata1[0]->priceperkg;?> " readonly>
 					</div>
 					
 					</div>
@@ -110,7 +110,7 @@
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 					 	<b>Seller Negotiated Price</b>
 						<label>Seller Price:</label>
-						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata[0]->sellerprice.' / '.$sqldata[0]->bsupplyability;?> " readonly>
+						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?> " readonly>
 					</div>
 					
 					
@@ -118,7 +118,7 @@
 				 
 						<b>Buyer Negotiated Price</b>
 						<label>Buyer Price:</label>
-						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata[0]->buyer_nego_price.' / '.$sqldata[0]->buyer_nego_units;?> " readonly>
+						<input type="text" class="form-control" id="price" name="price" value="<?php echo  $sqldata1[0]->buyer_nego_price.' / '.$sqldata1[0]->buyer_nego_units;?> " readonly>
 					</div>
 					
 					</div>
@@ -129,13 +129,21 @@
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 					 	
 						<label>Seller Price:</label>
-						<input type="text" class="form-control" id="seller_renego_price" name="seller_renego_price" >
+						<input type="text" class="form-control" id="seller_renego_price" name="seller_renego_price"  >
 					</div>
 					
 					
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
-					<label>Units:</label>
-						<input type="text" class="form-control" id="seller_renego_units" name="seller_renego_units" >
+					<div class="col-sm-4 pr-5 mb-3 mb-sm-0">
+						<label>Units:</label>
+						<select class="form-control col-sm-0" id="seller_renego_units" name="seller_renego_units">
+							<option  value="KG">KG</option>
+							<option value="Metric ton">Metric ton</option>
+							<option value="Litre">Litre</option>
+							<option value="lot">lot</option>
+							<option value="litre">litre</option>
+							<option value="Number">Number</option>
+							<option value="Meter">Meter</option>
+						</select>
 					</div>
 					
 					</div>
@@ -145,7 +153,7 @@
 					
 					
 					
-				
+				<input type="hidden" class="form-control" id="seller_mbuyreq_id" name="seller_mbuyreq_id" value="<?php echo  $sqldata1[0]->seller_mbuyreq_id;?> ">
 						
 						
 						
@@ -169,7 +177,7 @@
         <div class="modal-footer">
 		
           <button class="btn btn-danger btn-sm mt-2" type="button" data-dismiss="modal">Cancel</button>
-		  <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2"  name="btnsubmit_final" id= "btnsubmit_final" role="submit"  onclick= "return validate_selnego()">Final-Negotiated</a></button>
+	<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2"  name="btnsubmit_final" id= "btnsubmit_final" role="submit" >Final-Negotiated</a></button>
 
         </div>
       </div>

@@ -2,7 +2,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class vendor_buyerResponse_req extends CI_Controller {
+class Customer_Buyer_final_renego_status extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,35 +19,25 @@ class vendor_buyerResponse_req extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	 
-	 
-	 
-	
-	 
-	 
-	 
 	public function index()
 	{
 		$this->load->model('Admin_model');
 		$this->load->library('session');
-		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		//$active1 = array('preeti'=>$sess['sessi']);	
+	
+		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response4();	
 		
-		$query = $this->Admin_model->getdatafrombuyer_req_response();	
-		$adac['sqldata']= $query;
-		
-		
-		
+		//print_r($adac['sqldata3']); die;
 			
 		
-		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/buyer_response_req',$adac);
-		$this->load->view('vendor/footer');
+		$this->load->view('customer/header',$sess);
+		$this->load->view('customer/Buyer_final_renego_status',$adac);
+		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		
 		
@@ -56,18 +46,6 @@ class vendor_buyerResponse_req extends CI_Controller {
 
 			
 	}
-	
-
-	 function approveProduct(){
-		$this->load->model('Admin_model');
-		$seller_mbuyreq_id1 = $this->input->post('seller_mbuyreq_id');
-		$data['status'] = 1;
-		$this->db->where('seller_mbuyreq_id',$seller_mbuyreq_id1);
-		echo $this->db->update('buyer_req_response', $data);exit;
-	}
-	 
-	
-		
 	}
 
 		

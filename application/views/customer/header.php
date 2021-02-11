@@ -84,8 +84,9 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>customer_postbuyreq">Add Your Requirement</a>
 			<a class="collapse-item" href="<?php echo base_url();?>customer_myrequirements">My Requirements</a>
-            <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Seller's Negotiated <br>Requirement</a>
-			
+            <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Buyer's Negotiated <br>Status</a>
+			 <a class="collapse-item" href="<?php echo base_url();?>Customer_cust_final_req_renego">Final Re-Negotiation</a>
+			  <a class="collapse-item" href="<?php echo base_url();?>Customer_Buyer_final_renego_status">Buyer's Final <br>Re-Negotiation Status</a>
           </div>
         </div>
       </li>

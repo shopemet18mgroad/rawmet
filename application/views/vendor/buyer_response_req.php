@@ -24,6 +24,7 @@
   <table class="table table-striped table-bordered table-sm w-auto small" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
+	  <th>Id</th>
 		<th>Buyer Name</th>
 	  <th>Buyer Company Name</th>
 	  <th>Category</th>
@@ -44,6 +45,7 @@
                                              foreach($sqldata as $seller){                                             
                                              $strTable .= " 
                                           <tr>
+										  <td>".$seller->id."</td>
                                           <td>".$seller->bname."</td>
                                           <td>".$seller->bcompanyname."</td>
                                           <td>".$seller->category."</td>
@@ -54,8 +56,8 @@
                                           <td>".$seller->sellername."</td>
 										  <td>".$seller->sellerprice."</td> 
 										  <td>".$seller->buyer_nego_price."</td> 
-                                          <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>
-				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->bname."/".$seller->sellername."/".$seller->productid."'>Renegotiate</a></td>     
+                            <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>
+				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Renegotiate</a></td>     
                                       </tr>
                                      
                                       </tr>

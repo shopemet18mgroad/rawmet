@@ -91,6 +91,7 @@
             <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Ongoing Requirement</a>
             <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">Approved Requriement</a>
 			<a class="collapse-item" href="<?php echo base_url();?>vendor_buyerResponse_req">Ongoing Re-Negotiation</a>
+			<a class="collapse-item" href="<?php echo base_url();?>vendor_req_renego_status">Approved Re-Negotiation</a>
           </div>
         </div>
       </li>

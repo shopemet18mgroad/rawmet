@@ -29,7 +29,7 @@ class Customer_negotiated extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('bname'=>$sess['sessi'],'bapprove'=>false);
+		$active1 = array('bname'=>$sess['sessi']);
 		
 		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
 		
@@ -37,7 +37,7 @@ class Customer_negotiated extends CI_Controller {
 		//$poptions = array('vname'=>$vendorname);
 		
 		
-		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);
+		$query = $this->Admin_model->getdatafromtable_buyer2();
 		
 		
 		$adac['sqldata']= $query;
