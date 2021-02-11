@@ -30,7 +30,7 @@ class Customer_Buyer_final_renego_status extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
-		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response4();	
+		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response5();	
 		
 		//print_r($adac['sqldata3']); die;
 			
