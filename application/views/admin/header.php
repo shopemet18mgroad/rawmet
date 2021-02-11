@@ -205,6 +205,13 @@
           <i class='fas fa-rupee-sign'></i>
           <span>Payable money</span></a>
       </li>
+	  
+	  <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url(); ?>admin_feedback">
+		 <i class='fas fa-comment-dots'></i>
+      
+          <span>Feedback</span></a>
+      </li>
 
 
 

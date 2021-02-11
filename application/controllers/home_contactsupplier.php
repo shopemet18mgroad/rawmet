@@ -183,11 +183,11 @@ public function get_product_table(){
 	
 	if($search){
 		foreach($search as $sear){
-			echo "<p onclick=\"getPaging(this.id)\" id=\"".$sear['productname'].'|'.$sear['vname']."\" class=\"option\">".$sear['productname']."</p>\n";
+			echo "<p  onclick=\"getPaging(this.id)\" id=\"".$sear['productname'].'|'.$sear['vname']."\" class=\"option\">".$sear['productname']."</p>\n";
 			
 		}
 	}else{
-		echo "<p onclick=\"\" value=\"1\" class=\"option\">No Results</p>";
+		echo "<p onclick=\"\" value=\"1\" class=\"option2\">No Results</p>";
 	}
 	
 }
