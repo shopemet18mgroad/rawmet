@@ -2,7 +2,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Seller Requirements Negotiated</h1>
+            <h1 class="h3 mb-0 text-gray-800">Buyer's Final Re-Negotiated</h1>
            
           </div>
 
@@ -19,83 +19,64 @@
 		<th>Buyer Company Name</th>
 	    <th>Category</th>
 		<th>Buyer Product Name</th>
-		<th>Buyer Product Id</th>
+		<th>Product Id</th>
+		<th>Description</th>
         <th>Quantity</th>
 		<th>Buyer Price</th>
-		<th style="color:orange">Seller Price</th>
+		<th>Seller Price</th>
 		<th>Buyer Negotiated Price</th>
 		<th>Seller's Re-Negotiated Price</th>
-		<th>Buyer's Status</th>
-		
-		
-                    
-             
-		
-      </tr>
-    </thead>			
-				
-				<tbody>
-	 <?php foreach($sqldata3 as $row){?>
+		<th>Buyer's Re-Negotiated Price</th>
+		<th>Vendor's Status</th>
+	  </tr>
+    </thead>
+	<tbody>
+	
+      
+
+	   <?php  $strTable = "";
+        foreach($sqldata3 as $seller){ ?>
       <tr>
-	  <?php $proid = str_ireplace('/','-',$row->productid);
+	  
+	 <?php //$proid = str_ireplace('/','-',$row->productid);
 				?>
-				<?php $prodid = str_ireplace('/','-',$row->productid);?>
-			<td><?php echo $row->vusername;?></td>
-			<td><?php echo $row->bcompanyname;?></td>
-			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->quantity."/"; echo $row->units;?></td>
-			<td><?php echo $row->price.""; echo $row->priceperkg;?></td>
-			<td><?php echo $row->sellerprice."/"; echo $row->bsupplyability;?></td>
-			<td><?php echo $row->buyer_nego_price."/"; echo $row->buyer_nego_units;?></td>
-			<td><?php echo $row->seller_renego_price."/"; echo $row->seller_renego_units;?></td>
-			 <td> <a href='javascript:finalapproveProduct(<?php echo $row->seller_mbuyreq_id; ?>)'>Approve</a>
-			 
-			 <?php
+	  <td><?php echo $seller->sellername;?></td> 
+		<td><?php echo $seller->bcompanyname;?></td> 
+		<td><?php  echo $seller->category;?></td>
+		 <td><?php echo $seller->productname?></td>
+		  <td><?php echo $seller->productid?></td>
+         <td><?php echo $seller->description?></td>
+		<td><?php echo $seller->quantity." ";echo $seller->units;?></td>
+		<td><?php echo $seller->price."/";echo $seller->priceperkg;?></td>
+		<td><?php echo $seller->sellerprice."/";echo $seller->bsupplyability;?></td>
+		<td><?php echo $seller->buyer_nego_price."/";echo $seller->buyer_nego_units;?></td>
+		<td><?php echo $seller->seller_renego_price."/";echo $seller->seller_renego_units;?></td>					
 		
-				$r =	$row->seller_mbuyreq_id;
-				$st = 	$row->buyer_approval;
-		if($st == 3){
-			echo '<b>Finalized by Seller</b>.';
-		}
-		else
-		{
-				echo '<a href="'.base_url().'Customer_finalReq_buyer_selResponse/index/'.$r.'">';
-				echo '<button class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</button>';
-		echo '</a>';}
+		<td><?php echo $seller->buyer_final_price."/";echo $seller->buyer_final_units;?></td>							
 		
-			?>
-			
-			
-			 
-			
-			
-			
-			</td>
-			 
-      </tr>      
-     <?php }?>	
+		<td style="color:orange;" ><b><?php  if($seller->sel_status == 0) {echo 'Pending';}else if($seller->sel_status == 2) {echo 'Rejected';}else if($seller->sel_status == 1) {echo 'Approved!';}?></b></td>
+		
+
+		
+        
+<?php }?>	
+</tr>   
+      
     </tbody>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
   </table>
 
 		  </div>
@@ -159,8 +140,4 @@ function finalapproveProduct(seller_mbuyreq_id)
 
  
 </script>
-
-
-
-
  

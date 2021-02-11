@@ -133,9 +133,17 @@
 					</div>
 					
 					
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
-					<label>Units:</label>
-						<input type="text" class="form-control" id="seller_renego_units" name="seller_renego_units" >
+					<div class="col-sm-4 pr-5 mb-3 mb-sm-0">
+						<label>Units:</label>
+						<select class="form-control col-sm-0" id="seller_renego_units" name="seller_renego_units">
+							<option  value="KG">KG</option>
+							<option value="Metric ton">Metric ton</option>
+							<option value="Litre">Litre</option>
+							<option value="lot">lot</option>
+							<option value="litre">litre</option>
+							<option value="Number">Number</option>
+							<option value="Meter">Meter</option>
+						</select>
 					</div>
 					
 					</div>
