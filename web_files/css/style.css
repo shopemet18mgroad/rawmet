@@ -39,8 +39,10 @@
             border-right: 1px solid #000;
         }
         .input1 {
+			 
             min-width: 200px;
             width: 100%;
+			
         }
         .input2 {
             min-width: 100px;
@@ -86,6 +88,8 @@
         .links a {
             padding: 0 10px;
 			display: inline;
+			
+
         }
         @media (max-width: 600px){
             .navbar-header {
@@ -171,9 +175,56 @@ input{
 html{
     overflow-y:scroll; 
 }
+.option{
+	
+	width:250px;
+	padding-left:100px;
+	display:inline-flex;
+	height:50px;
 
+	border: 2px solid #d4d4d4;
+	text-align:center;
+	
+	margin-right:25%;
+	margin-left:23%;
+	padding:6px,12px;
+	float:left;
+	left: 12px;
+	right: 12px;
+	position:absolute;
+	cursor: pointer;
+	  
+	  color:black;
+	  font-weight:bold;
+	  background-color: #FFA500;
+	    display: inline-block;
+		  margin-top: 0px;
+}
 
-
+.select{
+	position:absolute;
+	margin-top:220px;
+	margin-right:700px;
+}
+.option2{
+	
+	
+	width:250px;
+padding:6px,12px;
+	height:30px;
+	margin-bottom:1000%;
+	border:  solid #d4d4d4;
+	text-align:center;
+	border-radius: 25px;
+	position:absolute;
+	cursor: pointer;
+	  color:black;
+	  font-weight:bold;
+	  background-color: #FFA500;	
+	margin-top:0%;
+	margin-right:700px;
+	
+}
 
   
 

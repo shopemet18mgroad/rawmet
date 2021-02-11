@@ -118,7 +118,7 @@
 								
 				<a href="#"><button type="submit" name="sb3" onclick="return validatearry2()" onclick=" validatebuyer1()" class="btn btn-info offset-sm-3 mt-2">Submit</button></a>
 												
-				<a href="#"><button type="submit" name="sb4" class="btn btn-info offset-sm-1 mt-2">Cancel</button></a>
+				<!--<a href="#"><button type="submit" name="sb4" class="btn btn-info offset-sm-1 mt-2">Cancel</button></a>-->
 				</form>								
 				
               </div>

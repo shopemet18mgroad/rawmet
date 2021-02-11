@@ -6,9 +6,10 @@
 		
             <div class="form-group input1">
                 <input type="text" class="form-control" id="productname" onkeyup="search_product()" placeholder="Enter your raw material">
+					
             </div>
 			
-		
+
 			
 			
             <div class="form-group input2">
@@ -42,16 +43,21 @@
 				
 			
 </form>
-	<div id="select" class="select"><ul id="dp"></ul></div>
-		
-        <div class="links mt-2">
+<div id="select" class="select"> <ul  id="dp"></ul></div>	
+<div class="links mt2">
                <a href="<?php echo base_url();?>#Live Procurement">Live Procurement</a>
 				<a href="<?php echo base_url();?>#Upcoming Procurement">Tenders</a>			
 				<a href="<?php echo base_url();?>#Upcoming Disposals">Upcoming Disposals</a>
 				<a href="<?php echo base_url();?>home_feedback">feedback</a>
+				
         </div>
 
-	<div class="ajaxrslt mt-5" style="width:100%; height:300px;overflow-y:scroll;" id="ajaxrslt_search">
+	
+
+		
+        
+
+	<!--<div class="ajaxrslt mt-5" style="width:100%; height:300px;overflow-y:scroll;" id="ajaxrslt_search">-->
 	
     
 			<!----Insert Ajax Table Here------>
@@ -64,7 +70,7 @@
    <script>
  function search_product(){
 	 $("#dp").hide();
- if(document.getElementById("productname").value.length > 1){
+ if(document.getElementById("productname").value.length >1){
 	 $("#dp").show();
 			var contents = $('#productname').val(); 
 			$.get('<?php echo base_url() .'home_contactsupplier/get_product_table/'; ?>'+contents, function(data){

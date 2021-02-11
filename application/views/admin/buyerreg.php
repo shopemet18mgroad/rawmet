@@ -26,7 +26,7 @@
                 <div class="card-body">
 					 <table class="table table-sm table-borderless">
 					 <thead><th width="45%">Personal Info</th>
-					  <form action="<?php echo base_url();?>Admin_buyer_basicinfo_add"  method="POST" onsubmit = "return validateForm()"  enctype="multipart/form-data">
+					  <form action="<?php echo base_url();?>Admin_buyer_basicinfo_add"  method="POST"  enctype="multipart/form-data">
 					 </thead>
 						<tbody>
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
@@ -52,7 +52,7 @@
 						</tr>
 						<tr>
 							<td class="btxt">Email:</td>
-							<td><input class="form-control w-50" type="text" id="bemail" name="bemail" ></td>
+							<td><input class="form-control w-50" type="text"  onkeyup ="return validateForm() id="bemail" name="bemail" ></td>
 						</tr>
 						<tr>
 							<td class="btxt">UserName:</td>
@@ -115,12 +115,13 @@
 								
 <!--<a href="#"><button type="submit" name="sb3"  class="btn btn-info offset-sm-3 mt-2">Submit</button></a>-->
   <center>
-				<input type="submit" name="submit" id="btn1"   onclick= " return validatebuyer()"  value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
-				</center>
+				<input type="submit" name="submit" id="btn1"   onclick= "return adminaddbuyer()" class="btn btn-info offset-sm-1 mt-2"  value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
+		
 
  
-												
-				<a href="#"><button type="submit" name="sb4" class="btn btn-info offset-sm-1 mt-2">Cancel</button></a>
+	<!--<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>-->
+				  </center>
+				
 				</form>								
 				
               </div>
@@ -150,6 +151,48 @@
     <!-- End of Content Wrapper -->
 
   </div>
+  <script>
+  
+function adminaddbuyer(){
+
+	var bname = document.getElementById("bname").value;
+	var bcompanyname = document.getElementById("bcompanyname").value;
+	var bcompanytype = document.getElementById("bcompanytype").value;
+	var bcontactperson = document.getElementById("bcontactperson").value;
+	var bcontactnumber = document.getElementById("bcontactnumber").value;
+	var bemail = document.getElementById("bemail").value;
+	var busername = document.getElementById("busername").value;
+	var bpassword = document.getElementById("bpassword").value;
+	var brepeatpassword = document.getElementById("brepeatpassword").value;
+	var bpan = document.getElementById("bpan").value;
+	var bgst = document.getElementById("bgst").value;
+	var baddress = document.getElementById("baddress").value;
+	var bcity = document.getElementById("bcity").value;
+	var bselectstate = document.getElementById("bselectstate").value;
+	var bpincode = document.getElementById("bpincode").value;
+	
+
+if(bname == '' || bcompanyname == '' || bcompanytype == '' || bcontactperson == '' || bcontactnumber == '' || bemail == '' || busername == '' || bpassword == '' || brepeatpassword == '' || bpan == '' || bgst == '' || baddress == '' || bcity == '' || bselectstate == '' || bpincode == ''){
+		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!", "error");
+		return false;
+	}
+	if (bcontactnumber.value.length < 10 || bcontactnumber.value.length > 10) {
+    swal("Alert!", "Mobile No. is not valid, Please Enter 10 Digit Mobile No.", "error");
+    return false;
+  }
+  else if (bcontactnumber.value == "") {
+    swal("Alert!","Please enter your Mobile No.","error");
+    return false;
+  }
+	
+	if(bpassword != brepeatpassword){
+		swal("Alert!",  "Password and Confirm Password Should Match!", "error");
+		return false;
+	}
+	
+}
+  </script>
+  
 
   
 
