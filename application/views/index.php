@@ -6,7 +6,7 @@
 		
             <div class="form-group input1">
                 <input type="text" class="form-control" id="productname" onkeyup="search_product()" placeholder="Enter your raw material">
-					
+				<div id="select" class="select"> <ul  id="dp"></ul></div>		
             </div>
 			
 
@@ -43,7 +43,7 @@
 				
 			
 </form>
-<div id="select" class="select"> <ul  id="dp"></ul></div>	
+
 <div class="links mt2">
                <a href="<?php echo base_url();?>#Live Procurement">Live Procurement</a>
 				<a href="<?php echo base_url();?>#Upcoming Procurement">Tenders</a>			
