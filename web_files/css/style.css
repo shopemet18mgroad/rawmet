@@ -176,15 +176,17 @@ html{
     overflow-y:scroll; 
 }
 .option {
-	   margin-bottom:10%;
+	   margin-bottom:0%;
+	    text-transform: capitalize;
 	    border-bottom: 1px solid transparent;
       	margin-top:1%;
-      background-color: #f1f1f1;
-      padding: 10px;
-     font-size: 16px;
-      width: 100%;
-      color: black;
-     display:block;
+        background-color: #f1f1f1;
+        padding: 10px;
+        font-size: 18px;
+        width: 100%;
+         color: black;
+         display:block;
+		 font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
  
         background-color: #FFA500;
         min-width:240px;
@@ -194,7 +196,7 @@ html{
   font-size: 13px;
   white-space: nowarp;
   z-index: -1;
- border: 2px solid #ddd;
+ 
  cursor: pointer;
         
 		
@@ -203,13 +205,13 @@ html{
 
 .select{
 	position:absolute;
-	margin:0px;
+	margin-top:0.3%;
 	margin-left:-40px;
 
 }
 
 .option div:hover {
-  /*when hovering an item:*/
+  
   background-color: #e9e9e9;
 }
 .option div {
