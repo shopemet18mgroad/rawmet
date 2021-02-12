@@ -50,7 +50,7 @@ class Customer_add_renegotiate extends CI_Controller {
 			
 			$pstates= $this->input->post('pstates');
 			$pcities = $this->input->post('pcities');
-			
+			$description = $this->input->post('description');
 			$bquantity = $this->input->post('bquantity');
 			$bprice = $this->input->post('bprice');
 			$bunits = $this->input->post('bunits');

@@ -74,9 +74,12 @@
 						
 								<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $sqldata[0]->supplyunits;?>">
 							
-							<p><b>My base Price:</b><?php echo $sqldata[0]->price."/"; echo $sqldata[0]->supplyunits;?></p>
+							<p><b>My base Price:</b><?php echo $sqldata[0]->price."/"; echo $sqldata[0]->units;?></p>
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
 							
+							<p><b>My base Quantity:</b><?php echo $sqldata[0]->quantity."/"; echo $sqldata[0]->supplyunits;?></p>
+							<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo $sqldata[0]->quantity;?>">
+							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo $sqldata[0]->units;?>">
 							
 							<p class="mt-3"><b>Stock Available at : </b><?php echo $sqldata[0]->pcities."|"; echo $sqldata[0]->pstates;?></p>
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">

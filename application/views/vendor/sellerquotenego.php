@@ -76,7 +76,7 @@
 							
 							<p><b>Supplier Price:</b><?php echo $sqldata[0]->price."/"; echo $sqldata[0]->units;?></p>
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
-							<p><b>Supplier Price:</b><?php echo $sqldata[0]->quantity."/"; echo $sqldata[0]->units;?></p>
+							<p><b>Supplier Quantity:</b><?php echo $sqldata[0]->quantity."/"; echo $sqldata[0]->supplyunits;?></p>
 							<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo $sqldata[0]->quantity;?>">
 							
 							
@@ -104,7 +104,7 @@
 					<hr class="sidebar-divider">
 					<p><b>Buyer Name:</b><?php echo $sqldata[0]->busername;?></p>
 							<input type="hidden" class="form-control" id="busername" name="busername"  value="<?php echo $sqldata[0]->busername;?>">
-					
+					<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo $sqldata[0]->units;?>">
 							
 								<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $sqldata[0]->supplyunits;?>">
 						

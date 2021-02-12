@@ -48,8 +48,8 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->quantity."/"; echo $row->units;?></td>
-			<td><?php echo $row->price."/"; echo $row->supplyunits;?></td>
+			<td><?php echo $row->quantity."/"; echo $row->supplyunits;?></td>
+			<td><?php echo $row->price."/"; echo $row->units;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>

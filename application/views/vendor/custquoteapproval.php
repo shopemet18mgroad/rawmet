@@ -52,8 +52,8 @@
 			<td><?php echo $row->category;?></td>
 				<td><?php echo $row->pcities;?></td>
 			
-			<td><?php echo $row->price;?></td>
-			<td><?php echo $row->supplyability;?></td>
+			<td><?php echo $row->price."/"; echo $row->units;?></td>
+			<td><?php echo $row->quantity." "; echo $row->supplyunits;?></td>
 		
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
