@@ -461,6 +461,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					return $result;
 		
 			}
+			public function search_job($keyword, $location){
+          $this->db->select('*');
+           $this->db->from('sellerpostproduct');
+            if(!empty($keyword)) {
+              $this->db->group_start();
+            $this->db->like('name', $keyword);
+             $this->db->or_like('description', $keyword);
+            $this->db->group_end();
+           }
+            $this->db->like('location', $location);
+            $query = $this->db->get();
+
+    return $query->result_array();
+}
 	
 	 
 
