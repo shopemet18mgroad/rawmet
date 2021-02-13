@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_buyingrequirement_update extends CI_Controller {
+class Customer_buyingrequirement_update extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -90,7 +90,6 @@ class Admin_buyingrequirement_update extends CI_Controller {
 		
 		//==================================================================
 		$data = array('category'=> $category,'description' => $description,'price'=>$price,'priceperkg'=>$priceperkg,'quantity'=>$quantity,'units'=>$units,'requireddate'=>$requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=> $contactnumber ,'uploadimage' => $pic_array,'productname'=>$productname);
-		//print_r($data);die;
 		
 	
 		$datainserr = "Data Inserted Successfully";
@@ -100,7 +99,7 @@ class Admin_buyingrequirement_update extends CI_Controller {
 		$status = $this->Admin_model->update_custom('buyerrequriement',$data,$updatech,$updatech);
 		
 	
-		header('location: '.base_url().'Admin_managebuyrequirements/index/'.$datainserr);
+		header('location: '.base_url().'customer_managebuyrequirements/index/'.$datainserr);
 	
 	
 	}

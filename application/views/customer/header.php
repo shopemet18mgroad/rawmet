@@ -83,7 +83,7 @@
 		  <div id="payment10" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>customer_postbuyreq">Add Your Requirement</a>
-			<a class="collapse-item" href="<?php echo base_url();?>">Edit Requirement List</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Customer_managebuyrequirements">Edit Requirement List</a>
            
           </div>
         </div>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_managebuyrequirements extends CI_Controller {
+class Customer_managebuyrequirements extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,7 +25,7 @@ class Admin_managebuyrequirements extends CI_Controller {
 		$this->load->model('Admin_model');
 
 
-		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
@@ -34,9 +34,9 @@ class Admin_managebuyrequirements extends CI_Controller {
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/managebuyrequirements',$query);
-		$this->load->view('admin/footer');
+		$this->load->view('customer/header',$sess);
+		$this->load->view('customer/managebuyrequirements',$query);
+		$this->load->view('customer/footer');
 		
 	}
 	}
