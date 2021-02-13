@@ -48,6 +48,9 @@
 					
 					</p><b>ISO Certificate Number</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->uploadcertificate;?>
 					</div>
+					
+					
+					
 					 <a style="margin:15%" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
 				  
           

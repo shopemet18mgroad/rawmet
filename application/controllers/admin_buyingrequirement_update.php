@@ -31,7 +31,7 @@ class Admin_buyingrequirement_update extends CI_Controller {
 		    $bname = $this->input->post('bname');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
-			$types = $this->input->post('types');
+			//$types = $this->input->post('types');
 			$productname = $this->input->post('quantity');
 			$productid = $this->input->post('productid');
 
@@ -89,7 +89,7 @@ class Admin_buyingrequirement_update extends CI_Controller {
 		
 		
 		//==================================================================
-		$data = array('category'=> $category,'description' => $description,'price'=>$price,'priceperkg'=>$priceperkg,'quantity'=>$quantity,'units'=>$units,'requireddate'=>$requireddate,'lastdate'=>$lastdate,'email'=>$email,'types'=>$types,'contactnumber'=> $contactnumber ,'uploadimage' => $pic_array,'productname'=>$productname);
+		$data = array('category'=> $category,'description' => $description,'price'=>$price,'priceperkg'=>$priceperkg,'quantity'=>$quantity,'units'=>$units,'requireddate'=>$requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=> $contactnumber ,'uploadimage' => $pic_array,'productname'=>$productname);
 		
 	
 		$datainserr = "Data Inserted Successfully";
