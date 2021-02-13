@@ -40,8 +40,8 @@
 				   <div class="col-sm-6 mt-2">
                    <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number" >
                   </div>
-				   <div class="col-sm-6 mt-2">
-                    
+				    <div class="col-sm-6 mt-2">
+                    <input type="text" class="form-control form-control-user" id="buyerid" value="BYR<?php echo(rand(1,1000000));?>" name="buyerid"  placeholder="Buyer Id" Readonly>
                   </div>
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
@@ -60,7 +60,7 @@
                     <input type="password" class="form-control form-control-user"id="bpassword" name="bpassword" placeholder="Password" onkeyup="validate_username()"><span id = "message1" style="color:red"> </span>
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"   placeholder="Repeat Password"><span id = "message2" style="color:red"> </span>
+                    <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"   placeholder="Confirm Password"><span id = "message2" style="color:red"> </span>
                   </div>
 				  <h3 class="h5 text-gray-700 mb-2"></h3>
                 </div>
