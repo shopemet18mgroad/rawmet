@@ -79,7 +79,7 @@ $data2 .='</div>';
 	
 			$data2 .='<h6><b>Supply Ability:</b>
 			'.$dat['quantity'].'  '.$dat['supplyunits'].'</h6>';
-			$data2 .= '<h6><b>Posted Date: </b>'.$dat['datetime'].'</b></h6>';
+			$data2 .= '<h6><b>last Modified Stock & Price: </b>'.$dat['datetime'].'</b></h6>';
 			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
 			$data2 .= '';
 			$data2 .= '';
@@ -267,7 +267,7 @@ $data2 .='</div>';
 
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
-			$data2 .= '<form class="user">';
+			$data2 .= '<form  class="user">';
 			$data2 .='<div class="row  bg-light">';
 			$data2 .='<div class="col-sm-3">';
 			$data2 .='<h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4>';
@@ -300,7 +300,7 @@ $data2 .='</div>';
 	
 			$data2 .='<h6><b>Supply Ability:</b>
 			'.$dat['quantity'].'  '.$dat['supplyunits'].'</h6>';
-			$data2 .= '<h6><b>Posted Date: </b>'.$dat['datetime'].'</b></h6>';
+			$data2 .= '<h6><b>last Modified Stock & Price: </b>'.$dat['datetime'].'</b></h6>';
 			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
 			$data2 .= '';
 			$data2 .= '';

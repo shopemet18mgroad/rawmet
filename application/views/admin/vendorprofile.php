@@ -84,6 +84,16 @@
 								<td><?php echo $sqldata[0]->busername;?></td>
 							</tr> 
 							
+							
+							
+							<tr>
+								<td>Password</td>
+								<td>********</td>
+							</tr> 	
+							<tr>
+								<td>Repeat Password</td>
+								<td>********</td>
+							</tr> 
 							<tr>
 								<td>Address</td>
 								<td><?php echo $sqldata[0]->baddress;?></td>

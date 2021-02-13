@@ -65,5 +65,22 @@ class Admin_managebuyrequirements extends CI_Controller {
 		}
 	
 	}
+		public function reject1(){
+		$this->load->helper('url');
+		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+         $bname = urldecode($this->uri->segment(4));
+
+		$retriveval = array('productid'=>$productid,'bname'=>$bname);
+		
+		$data2 = array('adapproval'=>2);
+	
+		$this->load->model('Admin_model');
+		
+		$status = $this->Admin_model->update_custom('buyerrequriement',$data2,$retriveval,$retriveval);
+		
+		header('location: '.base_url().'Admin_managebuyrequirements/index/'.urlencode($retriveval));
+		
+		die;
+	}
 	
 }
