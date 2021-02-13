@@ -60,11 +60,23 @@ class vendor_buyerResponse_req extends CI_Controller {
 
 	 function approveProduct(){
 		$this->load->model('Admin_model');
-		$seller_mbuyreq_id1 = $this->input->post('seller_mbuyreq_id');
-		$data['status'] = 1;
-		$this->db->where('seller_mbuyreq_id',$seller_mbuyreq_id1);
-		echo $this->db->update('buyer_req_response', $data);exit;
+		$id = $this->uri->segment(3);
+		$id = $this->input->post('seller_mbuyreq_id');		
+		//$active = array('seller_mbuyreq_id'=> $seller_mbuyreq_id1);
+		//$this->db->where('buyer_req_response',$active);
+		//$data['status'] = 1;
+		$data2 = array('status'=>5);
+		$data = array('status'=>1);
+		$comp = array('id'=>$id);
+		$comp2 = array('seller_mbuyreq_id'=>$id);
+		$this->Admin_model->update_custom('buyer_req_response',$data,$comp2,$comp2);
+		$this->Admin_model->update_custom('seller_mbuyreq',$data2,$comp,$comp);
+		exit;
+		
+		 
 	}
+	 
+	
 	 
 	
 		

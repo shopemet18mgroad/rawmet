@@ -56,7 +56,7 @@
 		
 	<td><?php echo $row->buyer_nego_price."/";echo $row->buyer_nego_units;?></td>
 	<td><?php echo $row->seller_renego_price."/";echo $row->seller_renego_units;?></td>
-	<td style="color:orange"><b><?php  if($row->buyer_approval == 0) {echo 'Pending to Approve';}else if($row->buyer_approval == 2) {echo 'Rejected';}else if($row->buyer_approval == 1) {echo 'Approved';}else if($row->buyer_approval == 3) {echo 'Pending to Approve';}?></b></td>
+	<td style="color:orange"><b><?php  if($row->buyer_approval == 0) {echo 'Pending to Approve';}else if($row->buyer_approval == 2) {echo 'Rejected';}else if($row->buyer_approval == 1) {echo 'Approved';}else if($row->buyer_approval == 3) {echo 'Pending to Approve';}else if($row->buyer_approval == 5) {echo 'Approved-check in final Approval';}?></b></td>
 		
         
 <?php }?>	

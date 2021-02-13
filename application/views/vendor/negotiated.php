@@ -56,7 +56,7 @@
 								<td><?php echo $row->sellerprice."/";echo $row->bsupplyability;?></td>
 		
 	
-	<td style="color:orange"><b><?php  if($row->status == 0) {echo 'Pending to Approve';}else if($row->status == 2) {echo 'Rejected';}else if($row->status == 1) {echo 'Approved';}?></b></td>
+	<td style="color:orange"><b><?php  if($row->status == 0) {echo 'Pending to Approve';}else if($row->status == 2) {echo 'Rejected';}else if($row->status == 1) {echo 'Approved';}else if($row->status == 5) {echo '2nd Renegotiation Approved ';}?></b></td>
 		
         
 <?php }?>	

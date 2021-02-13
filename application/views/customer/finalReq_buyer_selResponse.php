@@ -160,7 +160,7 @@
 						
 						
 				
-					<button type="submit" href="<?php echo base_url();?>" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" name="submit" role="submit"><b>Submit</b></a>
+					<button type="submit" href="<?php echo base_url();?>" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" name="submit" role="submit"><b>Final Submit</b></a>
 					</form>
 					
 					</div>

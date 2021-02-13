@@ -57,7 +57,7 @@
 										
 		<td><?php echo $row->buyer_nego_price."/";echo $row->buyer_nego_units;?></td>
 									
-		<td style="color:orange;" ><b><?php  if($row->status == 0) {echo 'Pending';}else if($row->status == 2) {echo 'Rejected';}else if($row->status == 1) {echo 'Approved!';}?></b></td>
+		<td style="color:orange;" ><b><?php  if($row->status == 0) {echo 'Pending';}else if($row->status == 2) {echo 'Rejected';}else if($row->status == 1) {echo 'Approved!';}else if($row->status == 5) {echo 'Approved-check in final Approval!';}?></b></td>
 		
 
 		

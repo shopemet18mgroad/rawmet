@@ -46,7 +46,7 @@ class Customer_myrequirements extends CI_Controller {
 		//print_r($custreq); die;
 		
 		$adac['sqldata2']= $adac2;
-		$adac['sqldata3'] = $this->Admin_model->getdatafromtable('seller_mbuyreq',$custreq);
+		//$adac['sqldata3'] = $this->Admin_model->getdatafromtable('seller_mbuyreq',$custreq);
 
 
 

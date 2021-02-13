@@ -34,7 +34,7 @@ class vendor_req_renego_status extends CI_Controller {
 		
 		
 		
-		$adac['sqldata'] = $this->Admin_model->getsellerrenego_data();	
+		$adac['sqldata'] = $this->Admin_model->getsellerrenego_data5();	
 		
 		
 			

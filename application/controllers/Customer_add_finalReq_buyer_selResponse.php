@@ -39,7 +39,7 @@ class Customer_add_finalReq_buyer_selResponse extends CI_Controller {
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('buyer_final_req',$data);
-			header('location: ./Customer_cust_final_req_renego/index/'.$datainserr);
+			header('location: ./Customer_Buyer_final_renego_status/index/'.$datainserr);
 			}
 			
 		
@@ -50,7 +50,7 @@ class Customer_add_finalReq_buyer_selResponse extends CI_Controller {
 				
 				
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/cust_final_req_renego',$data);
+		$this->load->view('customer/Buyer_final_renego_status',$data);
 		$this->load->view('customer/footer');
 			 
 	 

@@ -19,15 +19,7 @@ class Customer_cust_final_req_renego extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	 
-	 
-	  
-	 
-	 
-	 
-	 
-	 
-	public function index()
+	 public function index()
 	{
 		$this->load->model('Admin_model');
 		$this->load->library('session');
@@ -62,11 +54,34 @@ class Customer_cust_final_req_renego extends CI_Controller {
 	
 	function finalapproveProduct(){
 		$this->load->model('Admin_model');
-		$seller_mbuyreq_id1 = $this->input->post('seller_mbuyreq_id');
-		$data['status'] = 1;
-		$this->db->where('seller_mbuyreq_id',$seller_mbuyreq_id1);
-		echo $this->db->update('buyer_req_response', $data);exit;
+		$id = $this->uri->segment(3);
+		$id = $this->input->post('seller_mbuyreq_id');	
+		//$id = $this->input->post('seller_mbuyreq_id');			
+		//$active = array('seller_mbuyreq_id'=> $seller_mbuyreq_id1);
+		//$this->db->where('buyer_req_response',$active);
+		//$data['status'] = 1;
+		$data = array('buyer_approval'=>1);
+		$data2 = array('status'=>5);
+		$data3 = array('status'=>5);
+		
+		$comp = array('id'=>$id);
+		$comp2 = array('seller_mbuyreq_id'=>$id);
+		$comp3 = array('seller_mbuyreq_id'=>$id);
+		
+		$this->Admin_model->update_custom('seller_req_response',$data,$comp2,$comp2,$comp2);
+		$this->Admin_model->update_custom('seller_mbuyreq',$data2,$comp,$comp,$comp);
+		$this->Admin_model->update_custom('buyer_req_response',$data3,$comp3,$comp3,$comp3);
+		
+
+		exit;
+		
+		 
 	}
+	
+	
+	
+	
+	
 
 	
 		
