@@ -25,7 +25,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">		
-				<form action="<?php echo base_url();?>Admin_buyingrequirement_update" method="POST" enctype="multipart/form-data">
+				<form action="<?php echo base_url();?>Customer_buyingrequirement_update" method="POST" enctype="multipart/form-data">
 				
 				<div class="row ml-4">
 				<div class="col-sm-4 bg-warning">
@@ -43,7 +43,7 @@
 				
 			
 
-
+			<form action="<?php echo base_url();?>Customer_buyingrequirement_update" method="POST" enctype="multipart/form-data">
 				<div class="caption col-7 p-2 ml-5 bg-light">
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
@@ -210,10 +210,10 @@
 							</div>
 						</div>-->
 				 <center>
-				<input type="submit" name="submit"  role="submit" value="Post Buying Requirement" class="btn btn-info mt-4" style="font-size:13px">
+				<input type="submit" name="submit"  role="submit" onclick="return validatepostreq()" value="Post Buying Requirement" class="btn btn-info mt-4" style="font-size:13px">
 				</center>
 					
-				
+					</form>
 					</div>
 			
 				  </div>

@@ -127,11 +127,11 @@
 				<div class="form-inline">	
 				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 					<label>Required Date</label>
-					<input class="form-control" type="Date" id="requireddate" name="requireddate">
+					<input class="form-control" type="datetime-local" id="requireddate" name="requireddate">
 				</div>
 				<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
 					<label>Last Date</label>
-					<input class="form-control" type="Date" id="lastdate" name="lastdate">
+					<input class="form-control" type="datetime-local" id="lastdate" name="lastdate">
 				</div>
 				</div>
 						<div class="col-sm-12 col-md-9 mt-2">
