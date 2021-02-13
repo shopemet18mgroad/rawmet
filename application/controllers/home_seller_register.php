@@ -41,6 +41,8 @@ class Home_seller_register extends CI_Controller {
 		$vcity  = $this->input->post('vcity');
 		$vselectstate  = $this->input->post('vselectstate');
 		$vpincode  = $this->input->post('vpincode');
+		$sellerid = $this->input->post('sellerid');
+		$dealer_type = $this->input->post('dealer_type');
 		$this->load->model('Admin_model');
 		
 		$data = array('vname' => $vname,'vcompanyname' => $vcompanyname, 
@@ -48,7 +50,7 @@ class Home_seller_register extends CI_Controller {
 	'vcontactnumber'=>$vcontactnumber ,
 	'vemail'=> $vemail ,'vusername' => $vusername,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,
-	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
+	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode,'sellerid'=>$sellerid,'dealer_type'=>$dealer_type);
 	$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('vendor_register',$data);
 		header('location:'.base_url().'home/index/');
@@ -68,6 +70,19 @@ class Home_seller_register extends CI_Controller {
 	 public function validate_username(){
 		$dat = urldecode($this->uri->segment(3));
 		$check_db = array('vusername' => $dat);
+		$this->load->model('Admin_model');
+			  if($this->Admin_model->check('vendor_register', $check_db)){
+				  echo "BYE";
+			  }else{
+				  echo "HI";
+			  }
+		
+	}
+	
+	public function validate_vgst(){
+		$dat = urldecode($this->uri->segment(3));
+		
+		$check_db = array('vgst' => $dat);
 		$this->load->model('Admin_model');
 			  if($this->Admin_model->check('vendor_register', $check_db)){
 				  echo "BYE";

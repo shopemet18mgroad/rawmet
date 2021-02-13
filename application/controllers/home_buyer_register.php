@@ -39,10 +39,10 @@ class Home_buyer_register extends CI_Controller {
 			$bcity = $this->input->post('bcity');
 			$bselectstate = $this->input->post('bselectstate');
 			$bpincode = $this->input->post('bpincode');
-			
+			$buyerid = $this->input->post('buyerid');
             
               $this->load->model('Admin_model');
-			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword,  'brepeatpassword' => $brepeatpassword,'bpan'=>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword,  'brepeatpassword' => $brepeatpassword,'bpan'=>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode,'buyerid'=>$buyerid);
 		//$this->load->view('xya', $data);
 		
 		

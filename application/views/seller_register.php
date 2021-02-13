@@ -63,7 +63,7 @@
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-				   <input type="text" class="form-control form-control-user" id="vusername"  name="vusername"   placeholder="User Name" onkeyup="validate_name()">
+				   <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
                     
                   </div>
                   <div class="col-sm-6">
@@ -76,7 +76,7 @@
                     <input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password" onkeyup="validate_username()"><span id = "message1" style="color:red"> </span>
                   </div>
 				  <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Repeat Password"><span id = "message2" style="color:red"> </span>
+                    <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><span id = "message2" style="color:red"> </span>
                   </div>
                   
                   
@@ -93,10 +93,10 @@
                 </div>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-				  <input type="text" class="form-control form-control-user gst" id="vgst"  name="vgst"   placeholder="GST">
+				 <input type="text" class="form-control form-control-user gst"id="vgst"  name="vgst"   placeholder="GST">
                   </div>
                     <div class="col-sm-6">
-				  <input type="text" class="form-control form-control-user" id="vpcb"  name="vpcb"  placeholder="PCB license">
+				  <input type="text" onkeyup="vgst()" class="form-control form-control-user" id="vpcb"  name="vpcb"  placeholder="PCB license"  >
 				   </div>
                </div>
 		 
@@ -151,7 +151,7 @@
   <script>
   
 function validateseller(){
-
+ 
 	var vname = document.getElementById("vname").value;
 	var vcompanyname = document.getElementById("vcompanyname").value;
 	var vcompanytype = document.getElementById("vcompanytype").value;
@@ -227,7 +227,7 @@ function validateForm() {
  }
 </script> 
 
-  <script>
+ <script>
   function validate_username(){
 	  var val = document.getElementById("vusername").value;
 		if(val != ''){
@@ -247,7 +247,7 @@ function validateForm() {
 		}
   }
   </script>
-
+  
 <script type="text/javascript">    
 $(document).ready(function(){     
         
@@ -270,7 +270,7 @@ $(document).ready(function(){
         
 $(".gst").change(function () {      
 var inputvalues = $(this).val();      
-  var regex = /^([0-9]){2}([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}([0-9]){1}([a-zA-Z]){1}([0-9A-Z]){1}?$/;    
+var regex = /^([0-9]){2}([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}([0-9]){1}([a-zA-Z]){1}([0-9A-Z]){1}?$/;  
   if(!regex.test(inputvalues)){      
   $(".gst").val("");    
   swal("Alert!","Invalid gst no", "error");    
@@ -279,7 +279,7 @@ var inputvalues = $(this).val();
 });      
     
 });    
-</script>
+</script> 
 
 <script>
  function validate_name(){
@@ -289,3 +289,26 @@ var inputvalues = $(this).val();
 	 }
  }
 </script>
+
+ <script>
+  function vgst(){
+	  var val = document.getElementById("vgst").value;
+		if(val != ''){
+			 $.get('<?php echo base_url() .'Home_seller_register/validate_vgst/'; ?>'+val, function(data2){				 
+				 if($.trim(data2) == "BYE"){
+					swal("Alert!",  "GST Already Exists", "error");
+					document.getElementById("vgst").value = "";
+					return false;
+				}else{
+					return true;
+				}
+			 });
+			
+		}else{
+			swal("Alert!",  "Please Enter GST!", "error");
+			return false;
+		}
+  }
+  </script>
+
+ 
