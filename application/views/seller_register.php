@@ -42,6 +42,22 @@
 				   <div class="col-sm-6 mt-2">
                     <input type="text" class="form-control form-control-user" id="vcontactnumber"  name="vcontactnumber"  placeholder="Contact Number">
                   </div>
+				  <div class="col-sm-6 mt-2">
+                  
+				  <select class="form-control" id="dealer_type" name="dealer_type">
+					       <option value="Manufacturer">Manufacturer</option>
+						<option value="Wholesaler">Wholesaler</option>
+						<option value="Re-saler">Re-saler</option>
+						<option value="Dealer">Dealer</option>
+				        <option value="Distributor">Distributor</option>
+						<option value="Others">Others</option>
+						
+				    </select> 
+                  </div>
+				  
+				  <div class="col-sm-6 mt-2">
+                    <input type="text" class="form-control form-control-user" id="sellerid" value="SLR<?php echo(rand(1,1000000));?>" name="sellerid"  placeholder="Seller Id" Readonly>
+                  </div>
 				  
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>

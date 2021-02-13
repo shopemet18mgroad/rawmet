@@ -77,13 +77,26 @@
 	 
 	  
 	   <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment6" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment10" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-upload"></i>
           <span>Post Buying <br>Requirement</span></a>
-		  <div id="payment6" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+		  <div id="payment10" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>customer_postbuyreq">Add Your Requirement</a>
-			<a class="collapse-item" href="<?php echo base_url();?>customer_myrequirements">My Requirements</a>
+			<a class="collapse-item" href="<?php echo base_url();?>">Edit Requirement List</a>
+           
+          </div>
+        </div>
+      </li>
+	 
+
+<li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment6" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-upload"></i>
+          <span>Requirement<br> Negotiation</span></a>
+		  <div id="payment6" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+           <a class="collapse-item" href="<?php echo base_url();?>customer_myrequirements">My Requirements</a>
             <a class="collapse-item" href="<?php echo base_url();?>customer_negotiated">Buyer's Negotiated <br>Status</a>
 			 <a class="collapse-item" href="<?php echo base_url();?>Customer_cust_final_req_renego">Final Re-Negotiation</a>
 			  <a class="collapse-item" href="<?php echo base_url();?>Customer_Buyer_final_renego_status">Buyer's Final <br>Re-Negotiation Status</a>
