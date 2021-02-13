@@ -187,7 +187,7 @@ public function get_product_table(){
 			
 		}
 	}else{
-		echo "<p onclick=\"\" value=\"1\" class=\"option2\">No Results</p>";
+		echo "<p onclick=\"\" value=\"1\" class=\"option\">No Results</p>";
 	}
 	
 }

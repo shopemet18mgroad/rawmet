@@ -1,19 +1,21 @@
 
  <main class="main-section">
         <img src="<?php echo base_url()."web_files/";?>img/rawmet logo.png">
-        <form class="form-custom" autocomplete="off" class="form-control">
+        <form class="form-custom" autocomplete="off" class="form-control" method="GET"  action="search">
 		
 		
             <div class="form-group input1">
-                <input type="text" class="form-control" id="productname" onkeyup="search_product()" placeholder="Enter your raw material">
-				<div id="select" class="select"> <ul  id="dp"></ul></div>		
+                <input type="text" class="form-control" name="productname" id="productname" onkeyup="search_product()" placeholder="Enter your raw material">
+		  
+				<div id="select" class="select"> <ul  id="dp"></ul></div>	  
             </div>
+				
 			
 
 			
 			
             <div class="form-group input2">
-                <select class="form-control rounded-0" id="sel1">
+                <select class="form-control rounded-0" name="category" id="category">
                 <option value="Primary">Primary</option>
 				<option value="Seconadry">Secondary</option>
 				<option value="Scrap">Scrap</option>
@@ -37,7 +39,8 @@
 			
 				<div class="form-group input4">
 					   <a href="<?php echo base_url();?>home_contactsupplier">
-						  <button type="button" class="btn searchbtn input4"><i class="fa fa-search pr-1"></i>Search</button>
+						  <button type="submit" value="search" class="btn searchbtn input4"><i class="fa fa-search pr-1"></i>Search</button>
+						  <input type="hidden" name="c" id="search-country" value="0">
 						</a>
 				</div>
 				
@@ -70,7 +73,7 @@
    <script>
  function search_product(){
 	 $("#dp").hide();
- if(document.getElementById("productname").value.length >1){
+ if(document.getElementById("productname").value.length =1){
 	 $("#dp").show();
 			var contents = $('#productname').val(); 
 			$.get('<?php echo base_url() .'home_contactsupplier/get_product_table/'; ?>'+contents, function(data){
