@@ -115,6 +115,8 @@
             <a class="collapse-item" href="<?php echo base_url();?>Customer_custapprovedreq">Your 1st Approved <br>Requirements</a>
             
 			<a class="collapse-item" href="<?php echo base_url();?>Customer_sellerapprovedreq">Seller's 1st Approved <br>Requirement</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Customer_cust2ndApprovedReq">Your 2nd Approved <br> Requirements</a>
+			
           </div>
         </div>
       </li>

@@ -496,6 +496,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     }
 	
+	function getsellerrenego_datafetch() {
+
+			$this->db->select('
+			b.buyer_nego_price,
+			b.buyer_nego_units,
+			b.bname,
+			
+			c.seller_renego_price,
+			c.seller_renego_units,
+			c.vusername,	
+			c.buyer_approval,
+			c.seller_mbuyreq_id,
+			
+            a.bcompanyname,			
+			a.category,
+			a.productname,
+			a.productid,
+			a.quantity,
+			a.units,
+			a.price,
+			a.priceperkg,
+			a.sellerprice,
+			a.bsupplyability');	
+			
+			$this->db->where('c.buyer_approval',1 );
+			
+            $this->db->join('seller_mbuyreq a', 'a.buyerrequriement_id=b.seller_mbuyreq_id','left outer');	
+			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');			
+			$query = $this->db->get("buyer_req_response b");
+        $result = $query->result();
+     //echo $this->db->last_query(); exit;
+        return $result;
+
+
+    }
+	
 	
 	function getdatafrombuyer_req_response4() {			 
 			$this->db->select('		

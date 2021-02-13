@@ -83,7 +83,7 @@ function getUserData(){
 	$userData = $this->Admin_model->getUserData($strUID1);
 	echo json_encode($userData);exit;
 }
-	
+	 
 		/* public function cust(){
 		
 		$this->load->model('Admin_model');
