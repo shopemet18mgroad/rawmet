@@ -267,7 +267,7 @@ $data2 .='</div>';
 
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
-			$data2 .= '<form  class="user">';
+			$data2 .= '<form class="user">';
 			$data2 .='<div class="row  bg-light">';
 			$data2 .='<div class="col-sm-3">';
 			$data2 .='<h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4>';
@@ -369,6 +369,20 @@ $data2 .='</div>';
 			$data2 .='';
 			$data2 .='</select>';
 			$data2 .= '</div>';
+			
+				$data2 .='<td>';
+				$data2 .='<button type="button" id="'.$productid.'|'.$dat['productname'].'" onClick="addtocart(this.id)">';
+				$data2 .='<i class="fas fa-heart" id="'.$productid.'|'.$dat['productname'].'"></i>';
+				$data2 .='</button>';
+				$data2 .='</td>';
+			
+			
+			
+			
+			
+			
+			
+			
 
 			$data2 .= '<button style="" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
 			href="<?php echo base_url();?>#" data-toggle="modal" data-target="">Submit</button>';
@@ -415,4 +429,41 @@ $data2 .='</div>';
 	}
 	
 }
+	public function Addtocart(){
+		$dat = urldecode($this->uri->segment(3));
+		$this->load->library('session');
+		$bidderuname = $this->session->userdata('username');
+		$datexp = explode('|',$dat);
+		$auctionid = str_ireplace('-','/',$datexp[0]);
+		$lotno = $datexp[1];
+		$data = array('productid'=>$productid);
+		$data2 = array('productid'=>$productid,'productname'=>$productname);		
+		$dat4 = $this->Admin_model->getdatafromtable('addlot',$data2);
+		$dat3 = $this->Admin_model->getdatafromtable('auction',$data);
+		$aucstart = $dat3[0]->saucstartdate_time;
+		$aucend = $dat3[0]->saucclosedate_time;
+		$aucstartbid = $dat4[0]->sstartbidprice;
+		$aucstartbidprice = $dat4[0]->sprice;
+		$bcheck = array('bidderusername'=>$bidderuname,'auctionid'=>$auctionid,'lotno'=>$lotno);
+		$cartdata = array(
+		'bidderusername'  => $bidderuname,'auctionid'=>$auctionid,'lotno' => $lotno,'aucstartdate_time'=>$aucstart,'aucclosedate_time'=>$aucend,'bidstart'=>$aucstartbid,'bidprice'=>$aucstartbidprice);
+		if($this->Admin_model->check('biddercart',$bcheck)){
+			echo "EX";
+		}else{
+			$status = $this->Admin_model->insert('biddercart', $cartdata);
+			echo "IN";
+		}
+		die;
+		
+		
+	
+	}
+
+
+
+
+
+
+
+
 }
