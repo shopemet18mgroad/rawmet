@@ -1,7 +1,7 @@
 
  <main class="main-section">
         <img src="<?php echo base_url()."web_files/";?>img/rawmet logo.png">
-        <form class="form-custom" autocomplete="off" class="form-control" method="GET"  action="search">
+        <form class="form-custom" autocomplete="off" class="form-control" method="POST"  action="<?php echo base_url()."home/search";?>">
 		
 		
             <div class="form-group input1">
@@ -40,7 +40,7 @@
 				<div class="form-group input4">
 					   <a href="<?php echo base_url();?>home_contactsupplier">
 						  <button type="submit" value="search" class="btn searchbtn input4"><i class="fa fa-search pr-1"></i>Search</button>
-						  <input type="hidden" name="c" id="search-country" value="0">
+						 
 						</a>
 				</div>
 				

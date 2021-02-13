@@ -23,6 +23,14 @@ class Admin_editbuyerreq extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
+
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "ADMIN"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+		
+		
 		$reqapproval = array('adapproval'=>false);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
 		
@@ -32,7 +40,7 @@ class Admin_editbuyerreq extends CI_Controller {
 		$this->load->view('admin/footer');
 		
 	}
-	
+	}
 	public function editproduct(){
 		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 

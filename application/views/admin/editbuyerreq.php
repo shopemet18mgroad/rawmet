@@ -26,7 +26,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">		
-				<form action="<?php echo base_url();?>customer_postbuyreq" method="POST" enctype="multipart/form-data">
+				<form action="<?php echo base_url();?>Admin_buyingrequirement_update" method="POST" enctype="multipart/form-data">
 				
 		
 				
@@ -60,16 +60,16 @@
 					</div>
 				
 							
-				<div  class="col-sm-6 mb-5 pl-5 mb-sm-0 ">
+				<!--<div  class="col-sm-6 mb-5 pl-5 mb-sm-0 ">
                     <label  class="col-sm-6 mb-5 pl-5 mb-sm-0 " >Types:</label>
 					<select class="form-control" id="types" name="types" readonly>
-					<option value="<?php echo  $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
+					<option value="<?php //echo  $sqldata[0]->types;?>"><?php //echo  $sqldata[0]->types;?></option>
 						<option value="Primary">Primary</option>
 						<option value="Secondary">Secondary</option>
 				        <option value="Scrap" >Scrap</option>
 				    </select>  
                 </div>
-				</div>
+				</div>-->
 				
 							
 				<div class="form-inline">

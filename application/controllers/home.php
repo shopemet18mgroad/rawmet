@@ -33,5 +33,386 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 		
 	}
+	public function search()
+	{
+		$this->load->helper(array('url','html','date'));
+		$productname = $this->input->post('productname');
+		date_default_timezone_set('Asia/Kolkata');
+		$time =  Date('Y-m-d H:i:s');
+		$this->load->model('Admin_model');
+		$data = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$productname);
+		$data2 = "";
+		if(count($data)){
+
+			foreach($data as $dat){
+			$proid = str_ireplace('/','-',$dat['productid']);
+			$data2 .= '<form class="user">';
+			$data2 .='<div class="row  bg-light">';
+			$data2 .='<div class="col-sm-3">';
+			$data2 .='<h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4>';
+			$data2 .='<div class="col-sm-4">';
+			$data2 .='<div class="thumbnail mt-5">';
+
+			$img = unserialize($dat['uploadproductimage']);
+
+			$data2 .='<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="100px" height="100px">';
+		
+
+$data2 .='</div>';
+		
+			$data2 .='</div>';
+			$data2 .='<b>Description:</b><div>'.$dat['description'].'</div></p>';	
+			$data2 .='</div>';
+			
+			$data2 .='';
+			$data2 .='';
+			$data2 .='<div class="col-sm-3 p-2">';
+			$data2 .='<div class="row p-2">';
+		$data2 .='<div class="col-sm-12">';
+			$data2 .= '';
+			
+			$data2 .='<p><b>Product Id:</b>'.$dat['productid'].'</p>';
+			$data2 .='<p><b>Category:</b>'.$dat['category'].'</p>';
+			
+			
+			 //'<p><b>Supplier Price:</b> <div>'.$dat['price'].'  '.$dat['units'].'</div></p>';
 	
+			$data2 .='<h6><b>Supply Ability:</b>
+			'.$dat['quantity'].'  '.$dat['supplyunits'].'</h6>';
+			$data2 .= '<h6><b>Posted Date: </b>'.$dat['datetime'].'</b></h6>';
+			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
+			$data2 .= '';
+			$data2 .= '';
+
+
+			$data2 .= '</div>';
+			$data2 .='</div>';
+			$data2 .='</div>';
+			$data2 .='';
+			$data2 .='';
+			$data2 .='<div class="col-sm-2 p-2">';
+			$data2 .='<div class="row p-2">';
+			$data2 .='<div class="col-sm-12">';
+			
+			$data2 .='';
+			$data2 .='<p class="w-auto small">';
+		
+			$data2 .= '';
+			$data2 .= '<h6><b>Validity Till: </b>'.$dat['productvalidityto'].'</b></h6>';
+			$data2 .='<p><b>Place of Stock:</b><div>'.$dat['pcities'].' | '.$dat['pstates'].'</div></p>';
+			$data2 .='</div>';
+			$data2 .= '</div>';
+			$data2 .='</div>';
+			$data2 .= '';
+			$data2 .= '';
+			$data2 .= '<div class="col-sm-4 p-2">';
+			$data2 .= '<div class="row p-2">';
+			$data2 .= '<div class="col-sm-10">';
+			$data2 .= '<h6 style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
+				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['units'].'</h6>';
+			 //'<div class="form-check mt-3 text-left">';
+			 //'<input type="checkbox" class="form-check-input" id="exampleCheck1">';
+			//'<label class="form-check-label" for="exampleCheck1">Negotiate</label>';
+		 //'</div>';
+			//'';
+			$data2 .='<form class="col-12">';
+			$data2 .= '<div class="form-row">';
+			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Quantity</label>';
+			$data2 .= '<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="Quantity" id="name" [(ngModel)]="person.name" />';
+			$data2 .='<div class="col-sm-3">';
+			$data2 .='<select class="form-control col-sm-0" id="type">';
+			$data2 .='<option>KG</option>';
+			$data2 .= '<option>Metric Ton</option>';
+			$data2 .= '<option>Litre</option>';
+			$data2 .= '<option>lot</option>';
+			$data2 .='<option>litre</option>';
+			$data2 .='<option>Number</option>';
+			$data2 .= '<option>Meter</option>';
+			$data2 .= '';
+			$data2 .= '</select>';
+			$data2 .='</div>';
+			$data2 .='';
+			$data2 .='</div>';
+			$data2 .='<div class="form-row mt-2">';
+			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Your Price</label>';
+			$data2 .='<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="price" id="name" [(ngModel)]="person.name" />'.'/';
+			$data2 .='<div class="col-sm-3">';
+			$data2 .= '<select class="form-control col-sm-0" id="type">';
+			$data2 .= '<option>KG</option>';
+			$data2 .='<option>Metric ton</option>';
+			$data2 .= '<option>Litre</option>';
+			$data2 .='<option>lot</option>';
+			$data2 .='<option>litre</option>';
+			$data2 .= '<option>Number</option>';
+			$data2 .= '<option>Meter</option>';
+			$data2 .='';
+			$data2 .='</select>';
+			$data2 .= '</div>';
+
+			$data2 .= '<button style="" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
+			href="<?php echo base_url();?>#" data-toggle="modal" data-target="#new_userlogin">Submit</button>';
+
+			
+	
+							
+			$data2 .=  '</div>';
+			$data2 .=  '</form>';
+			$data2 .= '';
+			$data2 .= '</div>';
+			$data2 .=  '</div>';
+			$data2 .= '</div>';
+			$data2 .=  '';
+			
+			$data2 .=  '</div>';
+			
+			$data2 .=  '</form>';
+			$data2 .=  '<hr />';
+						}
+			
+		}
+		$datapass['sr'] = $data2;
+		$this->load->view('header');
+		$this->load->view('search',$datapass);
+		$this->load->view('footer');
+		
+	}
+	
+		public function login(){
+			
+		
+		$this->load->helper('url');
+		$this->load->library('session');
+		$this->session->sess_expiration = '3600';
+		if($this->input->post('user')){
+			if($this->input->post('optradio')=="Buyer"){
+				$table = "buyer_register";
+				$colname = "busername";
+				$colname2 = "bpassword";
+			     $status ="boptions";
+			}else if($this->input->post('optradio')=="Seller"){
+				$table = "vendor_register";
+				$colname = "vusername";
+				$colname2 = "vpassword";
+				$status ="voptions";
+			}else{
+				$table = "adminprofile";
+				$colname = "ausername";
+				$colname2 = "apassword";
+				$status="aoptions";
+			  }
+			$user = $this->input->post('user');
+			$pass = $this->input->post('pass');
+			$pass = base64_encode($pass);
+			$check_db = array($colname => $user, $colname2 => $pass, $status=>true);
+			$this->load->model('Admin_model');
+			$productid= $this->uri->segment(3);
+			  if($this->Admin_model->check($table, $check_db)){
+				  if($table == "buyer_register"){
+					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE);
+						$this->session->set_userdata($newdata);
+					  header('location: '.base_url().'home/buyerlogin');
+					  die;
+				  }else if($table == "buyer_register"){
+					  $this->load->model('Admin_model');
+					$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE,'productid'=>$productid);
+						$this->session->set_userdata($newdata);
+					  header('location: '.base_url().'home_contactsupplier/index/');
+					  die;
+				  }else if($table == "vendor_register"){
+					  $newdata = array('username'=>$user,'auth'=>'SELLER','logged_in' => TRUE);
+						$this->session->set_userdata($newdata);
+					  header('location: '.base_url().'vendor_indexm');
+					  die;
+				  }else if($table == "adminprofile"){
+					  $newdata = array('username'=>$user,'auth'=>'ADMIN','logged_in' => TRUE);
+						$this->session->set_userdata($newdata);
+					 header('location: '.base_url().'admin_indexm');
+					 die; 
+				  }
+			  }else{
+				  $datainserr = "Invalid Password";
+				  header('location: '.base_url().'Home/index_error/'.$datainserr);
+				  die;
+			  }
+			  die;
+		}else{
+			$this->load->view('header');
+			$this->load->view('home');
+			$this->load->view('footer');
+		}
+		
+		
+	}
+	public function buyerlogin(){
+		
+		$this->load->model('Admin_model');
+		$this->load->library('session');
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
+			$datainserr = "Invalid Login Session";
+			header('location: '.base_url().'login/index_error/'.$datainserr);
+			die;
+			}else{
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active1 = array('busername'=>$sess['sessi']);
+			{
+		$this->load->helper(array('url','html','date'));
+		$productname = $this->input->post('productname');
+		date_default_timezone_set('Asia/Kolkata');
+		$time =  Date('Y-m-d H:i:s');
+		$this->load->model('Admin_model');
+		$data = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$productname);
+		$data2 = "";
+		if(count($data)){
+
+			foreach($data as $dat){
+			$proid = str_ireplace('/','-',$dat['productid']);
+			$data2 .= '<form class="user">';
+			$data2 .='<div class="row  bg-light">';
+			$data2 .='<div class="col-sm-3">';
+			$data2 .='<h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4>';
+			$data2 .='<div class="col-sm-4">';
+			$data2 .='<div class="thumbnail mt-5">';
+
+			$img = unserialize($dat['uploadproductimage']);
+
+			$data2 .='<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="100px" height="100px">';
+		
+
+$data2 .='</div>';
+		
+			$data2 .='</div>';
+			$data2 .='<b>Description:</b><div>'.$dat['description'].'</div></p>';	
+			$data2 .='</div>';
+			
+			$data2 .='';
+			$data2 .='';
+			$data2 .='<div class="col-sm-3 p-2">';
+			$data2 .='<div class="row p-2">';
+		$data2 .='<div class="col-sm-12">';
+			$data2 .= '';
+			
+			$data2 .='<p><b>Product Id:</b>'.$dat['productid'].'</p>';
+			$data2 .='<p><b>Category:</b>'.$dat['category'].'</p>';
+			
+			
+			 //'<p><b>Supplier Price:</b> <div>'.$dat['price'].'  '.$dat['units'].'</div></p>';
+	
+			$data2 .='<h6><b>Supply Ability:</b>
+			'.$dat['quantity'].'  '.$dat['supplyunits'].'</h6>';
+			$data2 .= '<h6><b>Posted Date: </b>'.$dat['datetime'].'</b></h6>';
+			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
+			$data2 .= '';
+			$data2 .= '';
+
+
+			$data2 .= '</div>';
+			$data2 .='</div>';
+			$data2 .='</div>';
+			$data2 .='';
+			$data2 .='';
+			$data2 .='<div class="col-sm-2 p-2">';
+			$data2 .='<div class="row p-2">';
+			$data2 .='<div class="col-sm-12">';
+			
+			$data2 .='';
+			$data2 .='<p class="w-auto small">';
+		
+			$data2 .= '';
+			$data2 .= '<h6><b>Validity Till: </b>'.$dat['productvalidityto'].'</b></h6>';
+			$data2 .='<p><b>Place of Stock:</b><div>'.$dat['pcities'].' | '.$dat['pstates'].'</div></p>';
+			$data2 .='</div>';
+			$data2 .= '</div>';
+			$data2 .='</div>';
+			$data2 .= '';
+			$data2 .= '';
+			$data2 .= '<div class="col-sm-4 p-2">';
+			$data2 .= '<div class="row p-2">';
+			$data2 .= '<div class="col-sm-10">';
+			$data2 .= '<h6 style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
+				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['units'].'</h6>';
+			 //'<div class="form-check mt-3 text-left">';
+			 //'<input type="checkbox" class="form-check-input" id="exampleCheck1">';
+			//'<label class="form-check-label" for="exampleCheck1">Negotiate</label>';
+		 //'</div>';
+			//'';
+			$data2 .='<form class="col-12">';
+			$data2 .= '<div class="form-row">';
+			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Quantity</label>';
+			$data2 .= '<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="Quantity" id="name" [(ngModel)]="person.name" />';
+			$data2 .='<div class="col-sm-3">';
+			$data2 .='<select class="form-control col-sm-0" id="type">';
+			$data2 .='<option>KG</option>';
+			$data2 .= '<option>Metric Ton</option>';
+			$data2 .= '<option>Litre</option>';
+			$data2 .= '<option>lot</option>';
+			$data2 .='<option>litre</option>';
+			$data2 .='<option>Number</option>';
+			$data2 .= '<option>Meter</option>';
+			$data2 .= '';
+			$data2 .= '</select>';
+			$data2 .='</div>';
+			$data2 .='';
+			$data2 .='</div>';
+			$data2 .='<div class="form-row mt-2">';
+			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Your Price</label>';
+			$data2 .='<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="price" id="name" [(ngModel)]="person.name" />'.'/';
+			$data2 .='<div class="col-sm-3">';
+			$data2 .= '<select class="form-control col-sm-0" id="type">';
+			$data2 .= '<option>KG</option>';
+			$data2 .='<option>Metric ton</option>';
+			$data2 .= '<option>Litre</option>';
+			$data2 .='<option>lot</option>';
+			$data2 .='<option>litre</option>';
+			$data2 .= '<option>Number</option>';
+			$data2 .= '<option>Meter</option>';
+			$data2 .='';
+			$data2 .='</select>';
+			$data2 .= '</div>';
+
+			$data2 .= '<button style="" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
+			href="<?php echo base_url();?>#" data-toggle="modal" data-target="">Submit</button>';
+
+			
+	
+							
+			$data2 .=  '</div>';
+			$data2 .=  '</form>';
+			$data2 .= '';
+			$data2 .= '</div>';
+			$data2 .=  '</div>';
+			$data2 .= '</div>';
+			$data2 .=  '';
+			
+			$data2 .=  '</div>';
+			
+			$data2 .=  '</form>';
+			$data2 .=  '<hr />';
+						}
+			
+		}
+		$datapass['sr'] = $data2;
+	
+	    $this->load->view('header1',$sess);
+	   $this->load->view('search',$datapass);
+		$this->load->view('footer');
+		$this->load->helper('url');
+	
+		
+	}
+	
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+			
+	}
+	
+}
 }

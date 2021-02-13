@@ -43,7 +43,7 @@
 		<td><?php echo $row->bcity;?></td>
         <td style="form-inline";>
 	
-				<a class="btn btn-primary btn-xl text-white" href="<?php echo base_url()."admin_managebuyer/approve_buyer/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"> <i class="fa fa-edit"></i>Edit</a>
+				<a class="btn btn-primary btn-xl text-white" href="<?php echo base_url()."admin_vendorprofile/index/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"> <i class="fa fa-edit"></i>Edit</a>
 				
 				<a href="<?php  echo base_url()."admin_managebuyer/reject/".urldecode($row->bname).'/'.urldecode($row->bcompanyname);?>"><button type="button"  class="btn btn-danger btn-xl text-white">Inactive</button></a>
 				</td>
