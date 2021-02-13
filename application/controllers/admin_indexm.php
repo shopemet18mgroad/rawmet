@@ -46,10 +46,16 @@ class Admin_indexm extends CI_Controller {
 		$active4 = array('pooptions'=>true);
 		$query['data4'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$active4);
 		
+		
+		 
+		$query['data5'] = $this->Admin_model->getdatafromtableliveneg();
+		
 		$val['sql']=count($query['data1']);
 		$val['sql2']=count($query['data2']);
 		$val['sql3']=count($query['data3']);
 		$val['sql4']=count($query['data4']);
+		$val['sql5']=$query['data5'];
+		
 			}
 	
 		$this->load->view('admin/header',$sess);
@@ -57,5 +63,17 @@ class Admin_indexm extends CI_Controller {
 		$this->load->view('admin/footer');
 		
 	}
+	
+	
+	
+	function getUserDatalive(){
+	$this->load->model('Admin_model');
+	$strUID1   = $this->input->post('productid');
+	$userData = $this->Admin_model->getUserDatalive($strUID1);
+	echo json_encode($userData);exit;
+}
+	
+	
+	
 	
 }

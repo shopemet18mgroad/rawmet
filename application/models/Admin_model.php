@@ -20,12 +20,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}else{
 						return TRUE;
 					}
-		
+		 
 		  } 
 		public function getdatafromtable($table, $data) { 
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		} 
+		
+		public function getdatafromtableliveneg() { 
+			 $query = $this->db->get_where('buyerrequriement'); 
+			 return $query->result();
+		}
 		
 		public function get1datafromtable($table, $data) { 
 			 $this->db->select('vcompanyname');
@@ -368,6 +373,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$result = $query->result();
 				return $result;
 			}
+			
+			function getUserDatalive($strUID1){
+				$this->db->where("productid",$strUID1);				 
+				$query = $this->db->get("buyerrequriement");
+				$result = $query->result();
+				return $result;
+			}
 
 			
 			
@@ -496,6 +508,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     }
 	
+	function getsellerrenego_datafetch() {
+
+			$this->db->select('
+			b.buyer_nego_price,
+			b.buyer_nego_units,
+			b.bname,
+			
+			c.seller_renego_price,
+			c.seller_renego_units,
+			c.vusername,	
+			c.buyer_approval,
+			c.seller_mbuyreq_id,
+			
+            a.bcompanyname,			
+			a.category,
+			a.productname,
+			a.productid,
+			a.quantity,
+			a.units,
+			a.price,
+			a.priceperkg,
+			a.sellerprice,
+			a.bsupplyability');	
+			
+			$this->db->where('c.buyer_approval',1 );
+			
+            $this->db->join('seller_mbuyreq a', 'a.buyerrequriement_id=b.seller_mbuyreq_id','left outer');	
+			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');			
+			$query = $this->db->get("buyer_req_response b");
+        $result = $query->result();
+     //echo $this->db->last_query(); exit;
+        return $result;
+
+
+    }
+	
 	
 	function getdatafrombuyer_req_response4() {			 
 			$this->db->select('		
@@ -525,6 +573,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					d.sel_status,
 					d.bname');	
 					$this->db->where('d.sel_status', 0);
+ 					
+					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
+					'left outer');	
+					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
+					$this->db->join('buyer_final_req d', 'a.id=d.seller_mbuyreq_id','left outer');
+										
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			function getdatafrombuyer_req_selfetch() {			 
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,					
+					a.id,
+					a.bname,
+					a.bcompanyname,
+					a.vusername,
+					a.category,   
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,
+					a.bsupplyability,
+					c.seller_renego_price,
+					c.seller_renego_units,
+					d.buyer_final_price,
+					d.buyer_final_units,
+					d.sel_status,
+					d.bname');	
+					$this->db->where('d.sel_status', 1);
  					
 					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
 					'left outer');	

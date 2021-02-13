@@ -87,7 +87,7 @@
 					
 						<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
-						<label>Price:</label>
+						<label>Expected Price:</label>
 						<input type="text" class="form-control" id="price" name="price">
 					</div>
 					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">			
@@ -203,7 +203,7 @@ function validatepostreq(){
 	var category = document.getElementById("category").value;
 	var productname = document.getElementById("productname").value;
 	var description = document.getElementById("description").value;
-	var price = document.getElementById("price").value;
+	//var price = document.getElementById("price").value;
 	var priceperkg = document.getElementById("priceperkg").value;
 	var quantity = document.getElementById("quantity").value;
 	var units = document.getElementById("units").value;
@@ -214,14 +214,14 @@ function validatepostreq(){
 
 	
 
-if(category == '' || productname == '' || description == '' || price == '' || quantity == '' || priceperkg == '' || units == '' || requireddate == '' || lastdate == '' || email == '' || contactnumber == ''){
-swal("Alert!","Category, Product Name, Description, Price, Quantity, Price/KG, Units, Dates , Email, Contact Number cannot leave any field blank!","error");
+if(category == '' || productname == '' || description == '' || quantity == ''  || units == '' || requireddate == '' || lastdate == '' || email == '' || contactnumber == ''){
+swal("Alert!","Category, Product Name, Description, Quantity, Units, Dates , Email, Contact Number cannot leave any field blank!","error");
 		return false;
 	}
 	else{
         $.ajax({
             type:'submit',
-            data: {category:category,productname:productname,description:description,price:price,quantity:quantity,priceperkg:priceperkg,units:units,requireddate:requireddate,lastdate:lastdate,email:email,contactnumber:contactnumber},
+            data: {category:category,productname:productname,description:description,quantity:quantity,units:units,requireddate:requireddate,lastdate:lastdate,email:email,contactnumber:contactnumber},
            success:function(data){
                 swal("Success", "Data Saved Successfully", "success");
             },
