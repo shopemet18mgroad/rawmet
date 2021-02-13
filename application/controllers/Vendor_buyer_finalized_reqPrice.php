@@ -50,10 +50,30 @@ class Vendor_buyer_finalized_reqPrice extends CI_Controller {
 	
 	function buyerfinalapproveProduct(){
 		$this->load->model('Admin_model');
-		$seller_mbuyreq_id1 = $this->input->post('seller_mbuyreq_id');
-		$data['sel_status'] = 1;
-		$this->db->where('seller_mbuyreq_id',$seller_mbuyreq_id1);
-		echo $this->db->update('buyer_final_req', $data);exit;
+		$id = $this->uri->segment(3);
+		$id = $this->input->post('seller_mbuyreq_id');	
+		//$id = $this->input->post('seller_mbuyreq_id');			
+		//$active = array('seller_mbuyreq_id'=> $seller_mbuyreq_id1);
+		//$this->db->where('buyer_req_response',$active);
+		//$data['status'] = 1;
+		$data = array('buyer_approval'=>5);
+		$data2 = array('status'=>5);
+		$data3 = array('status'=>5);
+		$data4 = array('sel_status'=>1);
+		
+		$comp = array('id'=>$id);
+		$comp2 = array('seller_mbuyreq_id'=>$id);
+		$comp3 = array('seller_mbuyreq_id'=>$id);
+		$comp4 = array('seller_mbuyreq_id'=>$id);
+		
+		$this->Admin_model->update_custom('seller_req_response',$data,$comp2,$comp2,$comp2,$comp2);
+		$this->Admin_model->update_custom('seller_mbuyreq',$data2,$comp,$comp,$comp,$comp);
+		$this->Admin_model->update_custom('buyer_req_response',$data3,$comp3,$comp3,$comp3,$comp3);
+		
+		$this->Admin_model->update_custom('buyer_final_req',$data4,$comp4,$comp4,$comp4,$comp4);
+		
+
+		exit;
 	}
 	
 	 

@@ -29,21 +29,12 @@ class Customer_custapprovedreq extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('bname'=>$sess['sessi'],'bapprove'=>true);
-		
-		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
-		
-		//$vendorname = $query2[0]->vname;
-		//$poptions = array('vname'=>$vendorname);
-		
+		$active1 = array('bname'=>$sess['sessi'],'status'=>true);
 		
 		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);
 		
 		
 		$adac['sqldata']= $query;
-		
-			//$active = array('vusername'=>$sess['sessi']);
-		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
 		
 		
 		$this->load->view('customer/header',$sess);

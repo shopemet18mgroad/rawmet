@@ -99,9 +99,9 @@
           <span>Approved Requirements</span></a>
 		  <div id="payment8" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>Customer_custapprovedreq">My Approved <br>Requirements</a>
+            <a class="collapse-item" href="<?php echo base_url();?>Customer_custapprovedreq">Your 1st Approved <br>Requirements</a>
             
-			<a class="collapse-item" href="<?php echo base_url();?>Customer_sellerapprovedreq">Seller's Approved <br>Requirement</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Customer_sellerapprovedreq">Seller's 1st Approved <br>Requirement</a>
           </div>
         </div>
       </li>
