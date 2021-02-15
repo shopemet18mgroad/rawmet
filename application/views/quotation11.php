@@ -101,15 +101,14 @@ table-border
 <p><b>ADDRESS:<br/>
 <p><b>  From:<br/><?php// echo $sqldata3[0]->bname.""."<br>". $sqldata3[0]->baddress.""."<br>".$sqldata3[0]->bcity." ".  $sqldata3[0]->bselectstate.""."<br>". $sqldata3[0]->bpincode;?></b><br></p>
 
-<p><b>To:<br/><?php //echo $sqldata2[0]->vname.""."<br>".  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity." ".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>-->
-
+<p><b>To:<br/><?php// echo $sqldata2[0]->vname.""."<br>".  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity." ".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>
+-->
 <p><b>Quotation Prepared By:</b>Shopemet Network Private Limited</p>
 
 
 
 <table  class="table-border" id="customers">
   <tr>
- 
     <th>ITEMS</th>
     <th>SPECIFICATION</th> 
     
@@ -123,8 +122,8 @@ table-border
     <td><?php echo  $sqldata1[0]->description;?></td>
     
 		<td><?php echo $sqldata1[0]->quantity.""; echo $sqldata1[0]->units;?></td>
-	<td><?php echo$sqldata1[0]->sellerprice."/"; echo $sqldata1[0]->bsupplyability;?></td>
-    <td><?php echo $a = $sqldata1[0]->quantity*$sqldata1[0]->sellerprice;?></td>
+	<td><?php echo$sqldata1[0]->seller_renego_price."/"; echo $sqldata1[0]->seller_renego_units;?></td>
+    <td><?php echo $a = $sqldata1[0]->quantity*$sqldata1[0]->seller_renego_price;?></td>
   </tr>
   
 </table>

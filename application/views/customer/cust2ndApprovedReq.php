@@ -54,7 +54,7 @@
 			<td><input type="hidden" name="seller_renego_price" value="<?php echo $row->seller_renego_price;?>"><?php echo $row->seller_renego_price."/"; echo $row->seller_renego_units;?><input type="hidden" name="seller_renego_units" value="<?php echo $row->seller_renego_units;?>"></td>
 			
 			<td> 
-		<a href="<?php echo base_url().'Customer_quotation10/auc_no/'.urldecode($row->bname)."/".urldecode($row->vusername)."/".urldecode($proid);?>" target="_blank">
+		<a href="<?php echo base_url().'Customer_quotation11/auc_no/'.$row->seller_mbuyreq_id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			

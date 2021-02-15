@@ -3,7 +3,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_quotation10 extends CI_Controller {
+class Customer_quotation11 extends CI_Controller {
 
   public function __construct()
   {
@@ -20,19 +20,12 @@ class Customer_quotation10 extends CI_Controller {
 		$this->load->model('Admin_model');
 		
 		$seller_mbuyreq_id = urldecode($this->uri->segment(3));
-		//$active = array('id'=>$id);
-	
 		
-      $query = $this->Admin_model->getdatafrom_vregistration23($seller_mbuyreq_id);
-	 //print_r( $query);die;
-       // $query1 = $this->Admin_model->getdatafromtable('vendor_register', $active);
-		//$query2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);
+		
+      $query = $this->Admin_model->getdatafrom_vregistration24($seller_mbuyreq_id);
+	
 	  $data['sqldata1']= $query;
-	 //print_r( $data['sqldata1']);die;
-	  //$data['sqldata2']= $query1;
-	 // $data['sqldata3']= $query2;
-	// print_r( $data['sqldata3']);die;
-
+	
 			
 			
 
@@ -40,14 +33,11 @@ class Customer_quotation10 extends CI_Controller {
       $data2 = array(
         'title' => $seller_mbuyreq_id,
         'data' => 'List Of Lots');
-		//$data3 = array(
-       // 'title' => $vusername,
-        //'data' => 'List Of Lots');
-		//print_r( $data2);die;
+		
 	 $ci = &get_instance();
     $data['data'] = $data2;
-	// $data['data'] = $data3;
-    $ci->load->view("quotation10",$data);	 
+
+    $ci->load->view("quotation11",$data);	 
     // Get output html 
     $html = $ci->output->get_output();
 // add external css library
