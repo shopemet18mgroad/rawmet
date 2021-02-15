@@ -49,7 +49,7 @@ class Customer_basicpassword_update extends CI_Controller {
 
 		$status = $this->Admin_model->update_custom('buyer_register',$data4,$hidden,$hidden);
 		
-		header('location: '.base_url().'customer_dashboard/index/'.$datainserr);
+		header('location: '.base_url().'customer_index/index/'.$datainserr);
 		}
 	}
 }
