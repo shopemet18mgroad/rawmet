@@ -50,7 +50,7 @@
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
 			<td><?php echo $row->companyname;?></td>
-			<td><?php echo $row->price.""; echo $row->units;?></td>
+			<td><?php echo $row->price."/"; echo $row->units;?></td>
 			<td><?php echo $row->quantity.""; echo $row->supplyunits;?></td>
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>

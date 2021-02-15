@@ -91,6 +91,7 @@ class Customer_repurchase_order extends CI_Controller {
 			'brenegounit'=>$brenegounit,
 			'brenegoquantity'=>$brenegoquantity,
 			'brenegoquantityunit'=>$brenegoquantityunit);
+			print_r($data);die;
 			
 			$status = $this->Admin_model->insert('purchaseoder',$data);
 			

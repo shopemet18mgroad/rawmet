@@ -39,6 +39,7 @@ class Vendor_basicinfo_update extends CI_Controller {
 		$vcontactnumber=$this->input->post('vcontactnumber');
 		$vpan=$this->input->post('vpan');
 		$vgst=$this->input->post('vgst');
+			$dealer_type = $this->input->post('dealer_type');
 		$vpcb=$this->input->post('vpcb');
 		$vemail=$this->input->post('vemail');
 		$vaddress=$this->input->post('vaddress');
@@ -50,7 +51,7 @@ class Vendor_basicinfo_update extends CI_Controller {
 	//=================================================================================================
 		//==================================================================
 		$this->load->model('Admin_model');
-		$data2 = array('vname' => $vname,'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 'vcontactnumber' =>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate'=>$vselectstate,'vpincode' => $vpincode);
+		$data2 = array('vname' => $vname,'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 'vcontactnumber' =>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate'=>$vselectstate,'vpincode' => $vpincode,'dealer_type'=>$dealer_type);
 		//print_r($data2);die;
 		//$this->load->view('xya', $data);
 		

@@ -84,13 +84,8 @@
 							<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $sqldata[0]->pstates;?>">
 							
-							<h6 style="color:purple;"><b>Validity Till: <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
-							<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
-							<h6><b>Posted Date: <?php echo  $sqldata[0]->datetime;?></b></h6>
-							<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
+						
 							
-							<h6><b>Estimated Delivery: <?php echo  $sqldata[0]->estdeltime;?></b></h6>
-							<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
 							
 					</div>
 					</div>
@@ -100,6 +95,7 @@
 					<div class="col-sm-3 p-2">
 					<div class="row p-2">
 					<div class="col-sm-12">
+					
 					<center><b>Buyer Negotiated</b></center>
 					<hr class="sidebar-divider">
 					<p><b>Buyer Name:</b><?php echo $sqldata[0]->busername;?></p>
@@ -116,6 +112,11 @@
 							<p><b>Price:</b><?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></p>
 							<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata[0]->bprice;?>">
 							<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata[0]->bunits;?>">
+							<h6 style="color:purple;"><b>Posted Date: <?php echo  $sqldata[0]->datetime;?></b></h6>
+							<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
+							
+							<h6 style="color:purple;"><b>Estimated Delivery: <?php echo  $sqldata[0]->estdeltime;?></b></h6>
+							<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
 						
 							
 							
@@ -129,7 +130,8 @@
 					<div class="col-sm-10">
 							
 						
-							
+								<h6 style="color:purple;"><b>Validity Till: <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
+							<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
 							
 							<center><b>Seller Negotiate</b></center>
 							<hr class="sidebar-divider">
@@ -152,9 +154,9 @@
 				</div>-->
 								
 							</div>
-							<div class="form-row mt-2">
+							<div class="form-row ml-3">
 								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price </b></label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="selprice" placeholder="price" id="selprice" [(ngModel)]="person.name"/>/
+								<input type="text" class="form-control col-sm-2 mr-10" name="selprice" placeholder="price" id="selprice" [(ngModel)]="person.name"/>/
 								<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="sunits" name="sunits">
 						<option value="KG">KG</option>

@@ -62,7 +62,11 @@
 							<tr>
 								<td>Pan</td>
 								<td><?php echo $sqldata[0]->vpan;?></td>
-							</tr> 
+							</tr>
+                           <tr>
+								<td>Type of Dealer</td>
+								<td><?php echo $sqldata[0]->dealer_type;?></td>
+							</tr> 							
 							<tr>
 								<td>GST</td>
 								<td><?php echo $sqldata[0]->vgst;?></td>

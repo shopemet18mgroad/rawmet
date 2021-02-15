@@ -58,6 +58,11 @@
 								<td><?php echo $sqldata[0]->vcontactperson;?></td>
 							</tr> 
 							<tr>
+								<td>Type of Dealer</td>
+								<td><?php echo $sqldata[0]->dealer_type;?></td>
+							</tr>
+							<tr>
+							
 								<td>Contact Number</td>
 								<td><?php echo $sqldata[0]->vcontactnumber;?></td>
 							</tr> 

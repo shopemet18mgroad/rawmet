@@ -56,7 +56,7 @@
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bunits;?></td>
 			
-			<!--<td><?php //echo $row->selqan.""; echo $row->sunits;?></td>-->
+		
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			
 			<td><?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>
@@ -68,21 +68,23 @@
 
 				
 <td>
- <?php $aucfl = unserialize($row->uploadporder);?>
- <?php if(isset($aucfl[0])){	?>
-<a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
-<?php echo '<i class="fa fa-download"></i>' ; ?>
+      <?php $aucfl = unserialize($row->uploadporder);?>
+    <?php if(isset($aucfl[0])){	?>
+    <a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
+    <?php echo '<i class="fa fa-download"></i>' ; ?>
 
- 
+	 <?php }?>	
 </a>
 </td>
+ 
 <td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
 </td>
 <?php $count++;?>
-<?php }?>	
+
 
       </tr>      
-     <?php }?>	    
+     <?php }?>	  
+
  
     </tbody>
   </table>

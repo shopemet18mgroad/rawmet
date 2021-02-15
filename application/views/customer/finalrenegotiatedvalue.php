@@ -22,7 +22,8 @@
 						<form action="<?php echo base_url(); ?>Customer_respurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
 							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 								<thead class="bg-primary text-white">
-									<tr>
+						<tr>
+								<th>Seller Name</th>	
 			<th>Buyer Name</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
@@ -49,6 +50,8 @@
 												<?php $proid = str_ireplace('/', '-', $row->productid); ?>
 
 												<?php $prodid = str_ireplace('/', '-', $row->productid); ?>
+	<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
+							<?php echo $row->vname;?></td>
 
 	<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
 							<?php echo $row->busername;?></td>
