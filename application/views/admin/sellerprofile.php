@@ -94,11 +94,11 @@
 							</tr> 
 							<tr>
 								<td>Password</td>
-								<td><?php echo $sqldata[0]->vpassword;?></td>
+								<td>********</td>
 							</tr> 	
 							<tr>
 								<td>Repeat Password</td>
-								<td><?php echo $sqldata[0]->vrepeatpassword;?></td>
+								<td>********</td>
 							</tr> 
 							<tr>
 								<td>Address</td>

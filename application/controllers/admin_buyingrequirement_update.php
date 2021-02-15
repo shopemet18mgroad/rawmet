@@ -32,7 +32,7 @@ class Admin_buyingrequirement_update extends CI_Controller {
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
 			//$types = $this->input->post('types');
-			$productname = $this->input->post('quantity');
+			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 
 			

@@ -51,12 +51,12 @@
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="">Category</label>
-								<select class="form-control" id="category" name="category">
-									<option value="Category">--Category--</option>
+								<select class="form-control" id="category" name="category" >
+								<option default>Select Your Category</option>
 									<option value="Non Metal">Non Metal</option>
 									<option value="Ferrous">Ferrous</option>
 									<option value="Non Ferrous">Non Ferrous</option>
-									<option value="Scrap">Scrap</option>
+									
 									<option value="Metal">Metal</option>
 								</select>
 
@@ -77,9 +77,9 @@
 
 							<div class="col-sm-4">
 
-								<label for="category">Types:</label>
+								<label for="category">Type:</label>
 								<select class="form-control" id="types" name="types">
-									<option value="Types">Types</option>
+									<option default>Select Your Type</option>
 									<option value="Primary">Primary</option>
 									<option value="Secondary">Secondary</option>
 									<option value="Scrap">Scrap</option>

@@ -55,7 +55,10 @@
 			<td>
 			<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyreqview/index/".$proid."/".urldecode($row->bname);?>"><i class="fa fa-eye"></i></a>
 			
-			<button type="submit" name="submit" id="<?php  echo urldecode($row->bname).'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-success btn-sm">Approve</button></td>
+			<button type="submit" name="submit" id="<?php  echo urldecode($row->bname).'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-success btn-sm">Approve</button>
+
+				<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."Admin_managebuyrequirements/reject1/".$proid."/".urldecode($row->bname);?>">Reject</a></td>
+			
 			<?php $count++;?>
 		
       </tr>      
