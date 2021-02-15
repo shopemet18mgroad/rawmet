@@ -22,10 +22,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 		 
 		  } 
-		public function getdatafromtable($table, $data) { 
+		public function getdatafromtable($table, $data) {
+				
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		} 
+		
 		
 		public function getdatafromtableliveneg() {
 			$this->db->select('b.buyerrequriement_id,
@@ -36,7 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					b.bcompanyname,
 					b.description,
 					b.buyerrequriement_id,
-					a.id');				
+					a.id');
+					$this->db->where('a.adapproval', 1);
 					$this->db->join('seller_mbuyreq b', 'a.id=b.buyerrequriement_id',
 					'left outer');		     			
 					$query = $this->db->get("buyerrequriement a");
@@ -187,7 +190,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		}	  
 		
-	 
+	  
 		
 		function getdatafromtable_buyer() {			 
 			$this->db->select('b.buyerrequriement_id,
@@ -397,8 +400,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						a.vusername,
 						a.sellerprice,
 						c.seller_renego_price,
-						d.buyer_final_price');
-						$this->db->join('buyer_req_response b', 'a.buyerrequriement_id=b.seller_mbuyreq_id',
+						d.buyer_final_price'); 
+						
+						$this->db->where('b.status', 0); 
+						
+						$this->db->join('buyer_req_response b', 'a.id=b.seller_mbuyreq_id',
 						'left outer');
 						
 						$this->db->join('seller_req_response c', 'c.seller_mbuyreq_id=b.seller_mbuyreq_id',

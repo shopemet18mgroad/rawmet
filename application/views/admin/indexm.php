@@ -338,10 +338,10 @@ function showUserData(buyerrequriement_id){
         success:function(msg){
             var tempmsg = JSON.parse(msg);
             $('#final_Negotiated1').modal('show');
-            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller name</td> <td>Seller's Send Offer</td><td>Buyer's 1st Negotiation Price</td><td>Seller's 2nd Negotiation Price</td><td>Buyer's 3rd Negotiation Price</td><td>Seller's 4th Negotiation Price</td><td>Buyer's Final Price</td></tr>";
+            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller name</td> <td>Seller's Send Offer</td><td>Buyer's 1st Negotiation Price</td><td>Seller's 2nd Negotiation Price</td><td>Buyer's Final Price</td></tr>";
             for(var i=0; i<tempmsg.length; i++){
                 $sellerMBueryReqId = tempmsg[i]['buyerrequriement_id'];								
-                tbleData = tbleData+"<tr><td>"+tempmsg[i]['vusername']+"</td><td>"+tempmsg[i]['sellerprice']+"</td><td>"+tempmsg[i]['buyer_nego_price']+"</td><td>"+tempmsg[i]['seller_renego_price']+"</td><td>"+tempmsg[i]['buyer_final_price']+"</td><td>5</td><td>6</td> </tr>";	
+                tbleData = tbleData+"<tr><td>"+tempmsg[i]['vusername']+"</td><td>"+tempmsg[i]['sellerprice']+"</td><td>"+tempmsg[i]['buyer_nego_price']+"</td><td>"+tempmsg[i]['seller_renego_price']+"</td><td>"+tempmsg[i]['buyer_final_price']+"</td></tr>";	
             }			  
             tbleData = tbleData+"</table>";
             $("#sellerResponse").html(tbleData);
