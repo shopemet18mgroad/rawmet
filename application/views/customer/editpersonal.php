@@ -47,8 +47,17 @@
 								<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" value="<?php echo$sqldata[0]->bcompanyname; ?>"></td>
 							</tr> 
 							<tr>
-								<td>Company Type</td>
-								<td><input class="form-control w-50" type="text" id="bcompanytype" name="bcompanytype" value="<?php echo$sqldata[0]->bcompanytype; ?>">
+										<td class="btxt">Company Type:</td>
+						<td> <select class="form-control w-50" id="bcompanytype" name="bcompanytype">
+								<option default>PVT Ltd.</option>
+					 
+						<option value="OPC PVT Ltd.">OPC PVT Ltd.</option>
+						<option value="Ltd">Ltd</option>
+						<option value="LLP">LLP</option>
+				        <option value="Partnership">Partnership</option>
+						<option value="proprietorship">proprietorship</option>
+						<option value="Others">Others</option>
+				    </select> </td>
 							</tr> 	
 							<tr>
 								<td>Contact Person</td>

@@ -195,8 +195,8 @@
           <span>Quotes</span></a>
 		  <div id="payment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>customer_approvedquotes"> My Approved Quotes</a>
-            <a class="collapse-item" href="<?php echo base_url();?>customer_myquotes">My Pending Quotes</a>
+            <a class="collapse-item" href="<?php// echo base_url();?>customer_approvedquotes"> My Approved Quotes</a>
+            <a class="collapse-item" href="<?php //echo base_url();?>customer_myquotes">My Pending Quotes</a>
           </div>
         </div>
       </li>-->

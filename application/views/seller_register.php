@@ -27,6 +27,7 @@
 				   <div class="col-sm-6">
                   
 				  <select class="form-control" id="vcompanytype" name="vcompanytype">
+				  <option default>--Company Type--</option>
 					       <option value="PVT Ltd.">PVT Ltd.</option>
 						<option value="OPC PVT Ltd.">OPC PVT Ltd.</option>
 						<option value="Ltd">Ltd</option>
@@ -45,6 +46,7 @@
 				  <div class="col-sm-6 mt-2">
                   
 				  <select class="form-control" id="dealer_type" name="dealer_type">
+				  <option default>--Type of Dealer--</option>
 					       <option value="Manufacturer">Manufacturer</option>
 						<option value="Wholesaler">Wholesaler</option>
 						<option value="Re-saler">Re-saler</option>

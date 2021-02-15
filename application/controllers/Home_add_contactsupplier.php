@@ -199,3 +199,5 @@ private function upload_files($nameid){
 	 return $datar;
     }
 	}
+	
+}

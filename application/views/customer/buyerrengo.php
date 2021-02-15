@@ -44,7 +44,9 @@
 				
 				</div>	
 					 <label><b>Description:</b></label>
-				<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
+					 
+					 
+				   <p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
 							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">	
 				</div>
 				

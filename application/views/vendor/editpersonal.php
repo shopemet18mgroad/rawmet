@@ -46,10 +46,39 @@
 								<td>Company Name</td>
 								<td><input class="form-control w-50" type="text" id="vcompanyname" name="vcompanyname" value="<?php echo $sqldata[0]->vcompanyname; ?>"></td>
 							</tr> 
-							<tr>
-								<td>Company Type</td>
-								<td><input class="form-control w-50" type="text" id="vcompanytype" name="vcompanytype" value="<?php echo $sqldata[0]->vcompanytype; ?>">
-							</tr> 	
+													<tr>
+					
+							<td class="btxt">Company Type:</td>
+						<td> <select class="form-control w-50" id="vcompanytype" name="vcompanytype">
+								<option default>PVT Ltd.</option>
+					 
+						<option value="OPC PVT Ltd.">OPC PVT Ltd.</option>
+						<option value="Ltd">Ltd</option>
+						<option value="LLP">LLP</option>
+				        <option value="Partnership">Partnership</option>
+						<option value="proprietorship">proprietorship</option>
+						<option value="Others">Others</option>
+				    </select> </td>
+						</tr>  
+						
+						
+						
+						
+						
+					<tr>
+							<td class="btxt">Type of Dealer:</td>
+							<td>  <select class="form-control w-50" id="dealer_type" name="dealer_type">
+							<option default>Manufacturer</option>
+					      
+						<option value="Wholesaler">Wholesaler</option>
+						<option value="Re-saler">Re-saler</option>
+						<option value="Dealer">Dealer</option>
+				        <option value="Distributor">Distributor</option>
+						<option value="Others">Others</option></td>
+						
+				    </select> 
+						</tr>	
+						 	
 							<tr>
 								<td>Contact Person</td>
 								<td><input class="form-control w-50" type="text" id="vcontactperson" name="vcontactperson" value="<?php echo $sqldata[0]->vcontactperson; ?>"></td>
