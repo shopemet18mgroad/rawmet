@@ -48,7 +48,7 @@
 </form>
 
 <div class="links mt2">
-               <a href="<?php echo base_url();?>#Live Procurement">Live Procurement</a>
+               <a href="<?php echo base_url();?>home_viewbuyingreq">Live Procurement</a>
 				<a href="<?php echo base_url();?>#Upcoming Procurement">Tenders</a>			
 				<a href="<?php echo base_url();?>#Upcoming Disposals">Upcoming Disposals</a>
 				<a href="<?php echo base_url();?>home_feedback">feedback</a>

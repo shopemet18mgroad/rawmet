@@ -182,7 +182,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			//$this->db->group_by('b.requirement_id');
 			//$this->db->where("a.user_created", $user_created);
 			//$this->db->order_by('b.buyername desc');
-			
+				$this->db->where("b.sname", $compdata);
 			$query = $this->db->get("buyer_register a");
 			 $result = $query->result();
 			  return $result;

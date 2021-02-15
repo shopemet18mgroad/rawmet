@@ -383,11 +383,11 @@ $data2 .='</div>';
 			$data2 .='</select>';
 			$data2 .= '</div>';
 			
-		$data2 .='<td>';
-		$data2 .='<button type="button" id="'.$proid.'|'.$dat['productname'].'" onClick="addtocart(this.id)">';
-		$data2 .='<i class="fas fa-heart" id="'.$proid.'|'.$dat['productname'].'"></i>';
-		$data2 .='</button>';
-		$data2 .='</td>';
+		//$data2 .='<td>';
+		//$data2 .='<button type="button" id="'.$proid.'|'.$dat['productname'].'" onClick="addtocart(this.id)">';
+		//$data2 .='<i class="fas fa-heart" id="'.$proid.'|'.$dat['productname'].'"></i>';
+		//$data2 .='</button>';
+		//$data2 .='</td>';
 			
 			
 			
@@ -422,7 +422,7 @@ $data2 .='</div>';
 	
 	    $this->load->view('header1',$sess);
 	   $this->load->view('search',$datapass);
-		$this->load->view('footer');
+		$this->load->view('footer1');
 		$this->load->helper('url');
 	
 		
