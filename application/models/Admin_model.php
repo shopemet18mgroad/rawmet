@@ -386,8 +386,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				return $result;
 			}
 
-			function getUserDatalive($strUID1)
-			
+			function getUserDatalive($strUID1)	
 			
 			{
 				$this->db->select('
@@ -396,13 +395,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						a.id,
 						a.bsupplyability,
 						a.vusername,
-						a.sellerprice');
-
+						a.sellerprice,
+						c.seller_renego_price,
+						d.buyer_final_price');
 						$this->db->join('buyer_req_response b', 'a.buyerrequriement_id=b.seller_mbuyreq_id',
-						'left outer');		     			
+						'left outer');
+						
+						$this->db->join('seller_req_response c', 'c.seller_mbuyreq_id=b.seller_mbuyreq_id',
+						'left outer');
+
+						$this->db->join('buyer_final_req d', 
+						'd.seller_mbuyreq_id=b.seller_mbuyreq_id',
+						'left outer');
 						$query = $this->db->get("seller_mbuyreq a");
-				   
-				 return $query->result();
+				   		return $query->result();
 			}
 			
 			
