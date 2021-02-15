@@ -31,9 +31,7 @@
     </thead>
 	 
 	
-	 <tbody>
-                                 
-                                               <?php
+	 <tbody>                              <?php
                                                $strTable = "";
                                              foreach($sqldata3 as $seller){                                             
                                              $strTable .= " 
