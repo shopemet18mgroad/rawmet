@@ -109,7 +109,7 @@
 					</div>
 					</div>
 					
-					<div class="form-inline">
+					<div hidden class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label> Buyer Price:</label>
 						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata[0]->price;?> " readonly>
@@ -119,7 +119,7 @@
 					
 						
 						<select class="form-control col-sm-0" id="priceperkg" name="priceperkg" readonly>
-						<option value="<?php echo  $sqldata[0]->priceperkg;?> "><?php echo  $sqldata[0]->priceperkg;?></option>	
+						<option value="<?php  echo  $sqldata[0]->priceperkg;?> "><?php echo  $sqldata[0]->priceperkg;?></option>	
 							<option  value="KG">KG</option>
 							<option value="Metric ton">Metric ton</option>
 							<option value="Litre">Litre</option>

@@ -21,7 +21,6 @@
 		<th>Buyer Product Name</th>
 		<th>Buyer Product Id</th>
         <th>Quantity</th>
-		<th>Buyer Price</th>
 		<th style="color:orange">Seller Price</th>
 		<th>Buyer Negotiated Price</th>
 		<th>Seller's Re-Negotiated Price</th>
@@ -50,7 +49,7 @@
 		
 
 		<td><?php echo $row->quantity."";echo $row->units;?></td>
-				<td><?php echo $row->price."/";echo $row->priceperkg;?></td>
+				
 						
 								<td><?php echo $row->sellerprice."/";echo $row->bsupplyability;?></td>
 		
