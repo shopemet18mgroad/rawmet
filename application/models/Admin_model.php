@@ -22,13 +22,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 		 
 		  } 
-		public function getdatafromtable($table, $data) { 
+		public function getdatafromtable($table, $data) {
+				
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		} 
 		
-		public function getdatafromtableliveneg() { 
-			 $query = $this->db->get_where('buyerrequriement'); 
+		
+		public function getdatafromtableliveneg() {
+			$this->db->select('b.buyerrequriement_id,
+					b.bname,
+					b.productid,
+					b.productname,
+					b.bname,
+					b.bcompanyname,
+					b.description,
+					b.buyerrequriement_id,
+					a.id');
+					$this->db->where('a.adapproval', 1);
+					$this->db->join('seller_mbuyreq b', 'a.id=b.buyerrequriement_id',
+					'left outer');		     			
+					$query = $this->db->get("buyerrequriement a");
+			   
 			 return $query->result();
 		}
 		
@@ -175,7 +190,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		}	  
 		
-	 
+	  
 		
 		function getdatafromtable_buyer() {			 
 			$this->db->select('b.buyerrequriement_id,
@@ -373,13 +388,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$result = $query->result();
 				return $result;
 			}
+
+			function getUserDatalive($strUID1)	
 			
-			function getUserDatalive($strUID1){
-				$this->db->where("productid",$strUID1);				 
-				$query = $this->db->get("buyerrequriement");
-				$result = $query->result();
-				return $result;
+			{
+				$this->db->select('
+						b.buyer_nego_price,
+						b.buyer_nego_units,
+						a.id,
+						a.bsupplyability,
+						a.vusername,
+						a.sellerprice,
+						c.seller_renego_price,
+						d.buyer_final_price'); 
+						
+						$this->db->where('b.status', 0); 
+						
+						$this->db->join('buyer_req_response b', 'a.id=b.seller_mbuyreq_id',
+						'left outer');
+						
+						$this->db->join('seller_req_response c', 'c.seller_mbuyreq_id=b.seller_mbuyreq_id',
+						'left outer');
+
+						$this->db->join('buyer_final_req d', 
+						'd.seller_mbuyreq_id=b.seller_mbuyreq_id',
+						'left outer');
+						$query = $this->db->get("seller_mbuyreq a");
+				   		return $query->result();
 			}
+			
+			
+			
+			// {
+			// 	$this->db->where("buyerrequriement_id",$strUID1);				 
+			// 	$query = $this->db->get("seller_mbuyreq");
+			// 	$result = $query->result();
+			// 	return $result;
+			// }
+			
+			// function getUserDatalive($strUID1){
+
+
+			// 	$this->db->select('		
+			// 		a.bname,
+			// 		b.buyerrequriement_id,			
+			// 		b.id,
+			// 		b.sellerprice');					
+			// 		$this->db->join('seller_mbuyreq b','a.id=b.buyerrequriement_id',
+			// 		'left outer');					
+			// 		$this->db->where('b.buyerrequriement_id',$buyerrequriement_id);					
+			// 		$query = $this->db->get("buyerrequriement a");					 
+			// 		$result = $query->result();	
+			// 		//echo $this->db->last_query();exit;			
+			// 		return $result;
+				
+
+
+
+			// 	// $this->db->where("productid",$strUID1);				 
+			// 	// $query = $this->db->get("buyerrequriement");
+			// 	// $result = $query->result();
+			// 	// return $result;
+			// }
 
 			
 			

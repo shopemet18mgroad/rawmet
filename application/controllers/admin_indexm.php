@@ -46,7 +46,7 @@ class Admin_indexm extends CI_Controller {
 		$active4 = array('pooptions'=>true);
 		$query['data4'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$active4);
 		
-		
+		 
 		 
 		$query['data5'] = $this->Admin_model->getdatafromtableliveneg();
 		
@@ -64,11 +64,11 @@ class Admin_indexm extends CI_Controller {
 		
 	}
 	
-	
+	 
 	
 	function getUserDatalive(){
 	$this->load->model('Admin_model');
-	$strUID1   = $this->input->post('productid');
+	$strUID1   = $this->input->post('buyerrequriement_id');
 	$userData = $this->Admin_model->getUserDatalive($strUID1);
 	echo json_encode($userData);exit;
 }
