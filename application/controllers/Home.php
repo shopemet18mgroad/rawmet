@@ -54,7 +54,7 @@ class Home extends CI_Controller {
 			$data2 .='<div class="thumbnail mt-5">';
 
 			$img = unserialize($dat['uploadproductimage']);
-			if(isset($img)){
+			if($img){
 				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="100px" height="100px">';
 			}else{
 				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/emptyproductimg.png" alt="Chania" width="100px" height="100px">';
