@@ -25,7 +25,6 @@
 		
 		<th>Stock</th>
 	   
-		<th>Price</th>
 		<th>Seller Price</th>
 		<th>Buyer Negotiated Price</th>
 		<th>Seller's Action</th>
@@ -52,7 +51,6 @@
          <td><?php echo $row->description?></td>
 		<td><?php echo $row->quantity." ";echo $row->units;?></td>
 		
-				<td><?php echo $row->price."/";echo $row->priceperkg;?></td>
 				<td><?php echo $row->sellerprice."/";echo $row->bsupplyability;?></td>
 										
 		<td><?php echo $row->buyer_nego_price."/";echo $row->buyer_nego_units;?></td>

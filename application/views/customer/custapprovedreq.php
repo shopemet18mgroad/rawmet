@@ -81,9 +81,9 @@
 				<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php //echo $img;?>">
 				
 					
-					</div>	-->
+					</div>	--> 
 			 
-		<td> <a href="<?php echo base_url().'customer_quotation2/auc_no/'.urldecode($row->bname)."/".urldecode($row->vusername)."/".urldecode($proid);?>" target="_blank">
+		<td> <a href="<?php echo base_url().'customer_quotation2/auc_no/'.$row->id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			

@@ -66,10 +66,9 @@
 										
 		<td><input type="hidden" name="buyer_nego_price" value="<?php echo $row->buyer_nego_price;?>"><?php echo $row->buyer_nego_price."/";echo $row->buyer_nego_units;?><input type="hidden" name="buyer_nego_units" value="<?php echo $row->buyer_nego_units;?>"></td>
 									
-		<td> 
-		<a href="<?php echo base_url().'Customer_quotation10/auc_no/'.urldecode($row->bname)."/".urldecode($row->vusername)."/".urldecode($proid);?>" target="_blank">
+	<td> 
+		<a href="<?php echo base_url().'Customer_quotation10/auc_no/'.$row->seller_mbuyreq_id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
-					
 			
 			<td>
 				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">

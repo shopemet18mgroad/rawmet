@@ -22,7 +22,6 @@
 		<th>Product Id</th>
 		<th>Description</th>
         <th>Quantity</th>
-		<th>Buyer Price</th>
 		<th>Seller Price</th>
 		<th>Buyer Negotiated Price</th>
 		<th>Seller's Re-Negotiated Price</th>
@@ -46,7 +45,7 @@
                                           <td>".$seller->productid."</td>
                                           <td>".$seller->description."</td>
                                           <td>".$seller->quantity."/".$seller->units."</td> 
-                                          <td>".$seller->price."/".$seller->priceperkg."</td>
+                                          
 										   <td>".$seller->sellerprice."/".$seller->bsupplyability."</td>
 										    <td>".$seller->buyer_nego_price."/".$seller->buyer_nego_units."</td>
 											 <td>".$seller->seller_renego_price."/".$seller->seller_renego_units."</td>

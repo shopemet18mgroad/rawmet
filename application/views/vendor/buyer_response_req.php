@@ -31,7 +31,6 @@
 	  <th>Buyer Product Name</th>
 	  <th>Buyer Product Id</th>
       <th>Buyer Base Quantity</th>
-	  <th>Buyer Base Price</th>
 	  <th>Seller Name</th>
 	  <th style="color:orange">Seller Price</th>
 	  <th style="color:orange">Buyer Negotiated Price</th>
@@ -40,28 +39,23 @@
     </thead>
        <tbody>
                                  
-                                               <?php
-                                               $strTable = "";
-                                             foreach($sqldata as $seller){                                             
-                                             $strTable .= " 
-                                          <tr>
-										  <td>".$seller->id."</td>
-                                          <td>".$seller->bname."</td>
-                                          <td>".$seller->bcompanyname."</td>
-                                          <td>".$seller->category."</td>
-                                          <td>".$seller->productname."</td>
-                                          <td>".$seller->productid."</td>
-                                          <td>".$seller->quantity."</td> 
-                                          <td>".$seller->price."</td> 
-                                          <td>".$seller->sellername."</td>
-										  <td>".$seller->sellerprice."</td> 
-										  <td>".$seller->buyer_nego_price."</td> 
-                            <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>
+        <?php $strTable = "";
+           foreach($sqldata as $seller){     $strTable .= " 
+               <tr>
+					 <td>".$seller->id."</td>
+                     <td>".$seller->bname."</td>
+                     <td>".$seller->bcompanyname."</td>
+                     <td>".$seller->category."</td>
+                     <td>".$seller->productname."</td>
+                     <td>".$seller->productid."</td>
+                     <td>".$seller->quantity." ".$seller->units."</td>
+                     <td>".$seller->sellername."</td>
+					 <td>".$seller->sellerprice."/".$seller->bsupplyability."</td> 
+					 <td>".$seller->buyer_nego_price."/".$seller->buyer_nego_units."</td> 
+                     <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>
 				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Renegotiate</a></td>     
-                                      </tr>
-                                     
-                                      </tr>
-                                 ";
+            </tr>
+             ";
                   }
                   echo $strTable;
                  ?>

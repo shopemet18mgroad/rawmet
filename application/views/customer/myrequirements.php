@@ -25,7 +25,6 @@
 			<th>Product Name</th>			 
 			<th>Description</th>
 			<th>Quantity</th>
-			<th>Units</th>
 			<th>Required Date</th>
 			<th>Last Date</th>
 			<th>Email</th>		 
@@ -42,8 +41,8 @@
                                           <td>".$seller->productid."</td>
                                           <td>".$seller->productname."</td>
                                           <td>".$seller->description."</td>
-                                          <td>".$seller->seller_qua."</td>
-                                          <td>".$seller->units."</td>
+                                          <td>".$seller->seller_qua." ".$seller->units."</td>
+                                          
                                           <td>".$seller->requireddate."</td> 
                                           <td>".$seller->lastdate."</td> 
                                           <td>".$seller->lastdate."</td> 
@@ -143,7 +142,7 @@ function showUserData(productid){
             var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller name</td><td>Product Id</td><td>Product Name</td><td>Seller Price</td><td>Option</td></tr>";
             for(var i=0; i<tempmsg.length; i++){
                 $sellerMBueryReqId = tempmsg[i]['id'];								
-                tbleData = tbleData+"<tr><td>"+tempmsg[i]['sellerid']+"</td><td>"+tempmsg[i]['productid']+"</td><td>"+tempmsg[i]['productname']+"</td><td>"+tempmsg[i]['sellerprice']+" / "+tempmsg[i]['supplyability']+"</td><td><button  onclick='approveProduct(\""+$sellerMBueryReqId+"\");'>Approve</button> || <a href='Customer_seller_response_renego/index/"+tempmsg[i]['id']+ "/"+tempmsg[i]['vusername']+"';>Negotiate</a></td></tr>";	
+                tbleData = tbleData+"<tr><td>"+tempmsg[i]['sellerid']+"</td><td>"+tempmsg[i]['productid']+"</td><td>"+tempmsg[i]['productname']+"</td><td>"+tempmsg[i]['sellerprice']+" / "+tempmsg[i]['bsupplyability']+"</td><td><button  onclick='approveProduct(\""+$sellerMBueryReqId+"\");'>Approve</button> || <a href='Customer_seller_response_renego/index/"+tempmsg[i]['id']+ "/"+tempmsg[i]['vusername']+"';>Negotiate</a></td></tr>";	
             }			  
             tbleData = tbleData+"</table>";
             $("#sellerResponse").html(tbleData);
