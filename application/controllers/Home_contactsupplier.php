@@ -175,13 +175,16 @@ class Home_contactsupplier extends CI_Controller {
 
 
 		
-		
+
+
 public function get_product_table(){
 	$dataw = urldecode($this->uri->segment(3));
 	$this->load->model('Admin_model');
 	$search = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$dataw);	
 	
 	if($search){
+		$tempArr = array_unique(array_column($search, 'productname'));
+		$search = array_intersect_key($search, $tempArr);
 		foreach($search as $sear){
 			echo "<p  onclick=\"getPaging(this.id)\" id=\"".$sear['productname'].'|'.$sear['vname']."\" class=\"option\">".$sear['productname']."</p>\n";
 			
@@ -191,8 +194,6 @@ public function get_product_table(){
 	}
 	
 }
-
-
 	
 
 
