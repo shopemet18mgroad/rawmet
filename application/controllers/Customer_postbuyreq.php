@@ -41,6 +41,7 @@ class Customer_postbuyreq  extends CI_Controller {
 			$this->load->library('session');
 			
 			$bname = $this->input->post('bname');
+			$buyerid = $this->input->post('buyerid');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
 			$productname = $this->input->post('productname');
@@ -77,7 +78,7 @@ class Customer_postbuyreq  extends CI_Controller {
 		}
 		
 			 $this->load->model('Admin_model');
-			$data2 = array('bname'=>$bname,'bcompanyname'=>$bcompanyname,'category'=>$category,'productname'=> $productname,'productid'=>$productid,'description'=>$description,'price'=> $price, 'priceperkg'=> $priceperkg,'quantity'=> $quantity,'units'=>$units,'requireddate' => $requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=>$contactnumber,'uploadimage'=>$pic_array,'uploadpdf'=>$doc_array,'iagreee'=>$iagreee);
+			$data2 = array('bname'=>$bname,'buyerid'=>$buyerid,'bcompanyname'=>$bcompanyname,'category'=>$category,'productname'=> $productname,'productid'=>$productid,'description'=>$description,'price'=> $price, 'priceperkg'=> $priceperkg,'quantity'=> $quantity,'units'=>$units,'requireddate' => $requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=>$contactnumber,'uploadimage'=>$pic_array,'uploadpdf'=>$doc_array,'iagreee'=>$iagreee);
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('buyerrequriement',$data2);
@@ -95,7 +96,7 @@ class Customer_postbuyreq  extends CI_Controller {
 				$this->load->model('Admin_model');
 				$sess = array('sessi'=>$this->session->userdata('username'));
 	
-				$active1 = array('busername'=>$sess['sessi']);
+				$active1 = array('buyerid'=>$sess['sessi']);
 				//print_r($active1);die;
 				$data['scomp'] = $this->Admin_model->getbuyerdatafromtable('buyer_register', $active1);
 				

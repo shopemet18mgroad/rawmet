@@ -29,7 +29,7 @@ class Customer_custapprovedreq extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('bname'=>$sess['sessi'],'status'=>true);
+		$active1 = array('buyerid'=>$sess['sessi'],'status'=>true);
 		
 		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);
 		

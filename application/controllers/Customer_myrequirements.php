@@ -30,12 +30,12 @@ class Customer_myrequirements extends CI_Controller {
 			}else
 	{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('busername'=>$sess['sessi']);
+		$active1 = array('buyerid'=>$sess['sessi']);
 		//print_r($active1); die; 
-		$query2 = $this->Admin_model->getdatafromtable('buyer_register',$active1);
+		//	$query2 = $this->Admin_model->getdatafromtable('buyer_register',$active1);
 		
-		$buyername = $query2[0]->bname;
-		$custreq = array('bname'=>$buyername);
+		//$buyername = $query2[0]->bname;
+		//$custreq = array('bname'=>$buyername);
 		
 		
 		//$adac['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$custreq);

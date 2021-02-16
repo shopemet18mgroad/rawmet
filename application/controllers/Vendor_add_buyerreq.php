@@ -37,6 +37,8 @@ class Vendor_add_buyerreq extends CI_Controller {
 			
 			
 			$bname = $this->input->post('bname');
+			$sellerid = $this->input->post('sellerid');
+			$buyerid = $this->input->post('buyerid');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$vusername = $this->input->post('vusername');
 			$category = $this->input->post('category');
@@ -52,7 +54,7 @@ class Vendor_add_buyerreq extends CI_Controller {
 			$buyerrequriement_id = $this->input->post('buyerrequriement_id'); 
 			
 			
-			$data2= array('bname' => $bname,'bcompanyname'=>$bcompanyname,'vusername'=>$vusername,'category'=> $category,'productname'=>$productname,'productid'=>$productid,'description' => $description,'quantity'=>$quantity,'units'=>$units,'price'=>$price,'priceperkg'=>$priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'buyerrequriement_id'=>$buyerrequriement_id);
+			$data2= array('bname' => $bname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'bcompanyname'=>$bcompanyname,'vusername'=>$vusername,'category'=> $category,'productname'=>$productname,'productid'=>$productid,'description' => $description,'quantity'=>$quantity,'units'=>$units,'price'=>$price,'priceperkg'=>$priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'buyerrequriement_id'=>$buyerrequriement_id);
 			
 			 	
 				

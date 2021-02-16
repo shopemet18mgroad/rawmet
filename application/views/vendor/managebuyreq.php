@@ -56,7 +56,7 @@
 				
 		
 
-		<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->bname);?>"  class="btn btn-secondary text-white delete-confirm">Send Offer</a>
+		<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->buyerid);?>"  class="btn btn-secondary text-white delete-confirm">Send Offer</a>
 
 		
 		

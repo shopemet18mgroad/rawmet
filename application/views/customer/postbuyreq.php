@@ -47,8 +47,9 @@
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label for="">Customer Name</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->bname;?>" readonly>
+						<input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
                     </div>
-					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
+					<div class="col-sm-4 mb-12 pl-5 mb-sm-0">
 						<label for="">Company Name</label>
 						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
                     </div>

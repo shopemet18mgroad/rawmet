@@ -49,7 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		public function get1datafromtable($table, $data) { 
 			 $this->db->select('vcompanyname');
-			  $this->db->select('vname');
+			 $this->db->select('vname');  
+			 $this->db->select('sellerid'); 			  
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
@@ -57,6 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function getusernamedatafromtable($table, $data) { 
 			 //$this->db->select('scomapnyname');
 			  $this->db->select('vusername');
+			   $this->db->select('sellerid'); 	
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
@@ -71,6 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			public function getbuyerdatafromtable($table, $data) { 
 			 $this->db->select('bcompanyname');
 			  $this->db->select('bname');
+			  $this->db->select('buyerid');
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
