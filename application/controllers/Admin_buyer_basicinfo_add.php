@@ -27,6 +27,7 @@ class Admin_buyer_basicinfo_add extends CI_Controller {
 			$bcontactperson = $this->input->post('bcontactperson');
 			$bcontactnumber = $this->input->post('bcontactnumber');
 			$bemail = $this->input->post('bemail');
+			$buyerid = $this->input->post('buyerid');
 			$busername = $this->input->post('busername');
 			$bpassword =  base64_encode($this->input->post('bpassword'));
 		$brepeatpassword = base64_encode($this->input->post('brepeatpassword'));
@@ -38,7 +39,7 @@ class Admin_buyer_basicinfo_add extends CI_Controller {
 			$bpincode = $this->input->post('bpincode');
 			
 			$this->load->model('Admin_model');
-			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'bpan' =>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'bpan' =>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode,'buyerid'=>$buyerid);
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('buyer_register', $data2);
 		header('location: '.base_url().'admin_buyerreg/index/'.$datainserr);
