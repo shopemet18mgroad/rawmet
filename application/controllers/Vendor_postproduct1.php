@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Vendor_postproduct  extends CI_Controller {
+class Vendor_postproduct extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -18,40 +19,37 @@ class Vendor_postproduct  extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	function __construct() {
-    parent::__construct();
-			// Load session library
-			$this->load->library('session');
-			// Load the captcha helper
-			$this->load->helper('captcha');
-			$this->load->library('fileupload');
-			$this->load->helper('url');
-			$this->load->helper('form');
-			$this->load->helper('file');
-			$this->load->helper('html');
-			$this->load->helper('date');
-			date_default_timezone_set("Asia/Kolkata");
-    }
-		public function index()
+	function __construct()
+	{
+		parent::__construct();
+		// Load session library
+		$this->load->library('session');
+		// Load the captcha helper
+		$this->load->helper('captcha');
+		$this->load->helper('url');
+		$this->load->helper('date');
+		date_default_timezone_set("Asia/Kolkata");
+	}
+
+	public function index()
 	{
 		$this->load->model('Admin_model');
 		$this->load->library('session');
-		$sess = array('sessi'=>$this->session->userdata('username'));
-	
-				$active1 = array('vusername'=>$sess['sessi']);
-				//print_r($active1); die;
-				$data2 = $this->Admin_model->getusernamedatafromtable('vendor_register', $active1);
-				//print_r($data2); die;
-				$vusername= $data2[0]->vusername;
-				//	print_r($vusername); die;
-	 if($this->input->post('productname')){
-			 $date =  Date('Y-m-d'); 
+		$sess = array('sessi' => $this->session->userdata('username'));
+
+		$active1 = array('vusername' => $sess['sessi']);
+		//print_r($active1); die;
+		$data2 = $this->Admin_model->getusernamedatafromtable('vendor_register', $active1);
+		//print_r($data2); die;
+		$vusername = $data2[0]->vusername;
+		//	print_r($vusername); die;
+		if ($this->input->post('productname')) {
+			$date =  Date('Y-m-d');
 			$this->load->library('fileupload');
-			$this->load->helper(array('url','form','file','html'));
+			$this->load->helper(array('url', 'form', 'file', 'html'));
 			$this->load->model('Admin_model');
 			$this->load->library('session');
 
-			
 			$productname = $this->input->post('productname');
 			$vname = $this->input->post('vname');
 			$category = $this->input->post('category');
@@ -77,23 +75,39 @@ class Vendor_postproduct  extends CI_Controller {
 			$productid = $this->input->post('productid');
 			$companyname = $this->input->post('companyname');
 			$uploadcertificate = $this->input->post('uploadcertificate');
-			
-			$pic_array1 = self::upload_files('uploadproductimage');
+			$uploadproductimage = self::upload_files('uploadproductimage');
+		
+			$pic_array1  = self::upload_files('uploadproductimage');
 			$_FILES['uploadproductimage']['name'];
 			
-			
-			
-			if(!count($pic_array1)){
-			echo '<script language="javascript">';
-			echo 'alert("Documents Upload Failed")';  //not showing an alert box.
-			echo '</script>';
-		}else{
-			$pic_array1 = serialize($pic_array1);
-		}
+			//$doc_array1 = self::upload_files('uploadcertificate');
+			//$_FILES['uploadcertificate']['name'];
+
+			if (!count($pic_array1)) {
+				echo '<script language="javascript">';
+				echo 'alert("Documents Upload Failed")';  //not showing an alert box.
+				echo '</script>';
+			} else {
+				$pic_array1 = serialize($pic_array1);
+			}
 		
-		
-			 $this->load->model('Admin_model');
-		 $data2 = array('productname' => $productname, 
+
+			/* if(!count($doc_array1)){
+				echo '<script language="javascript">';
+				echo 'alert("Documents Upload Failed")';  //not showing an alert box.
+				echo '</script>';
+			}else{
+				$doc_array1 = serialize($doc_array1);
+			} */
+
+
+
+
+
+
+			$data1 = array('productid' => $productid);
+			
+			$data2 = array('productname' => $productname, 
 			'vname' => $vname, 
 			'category' => $category, 
 			'description' => $description, 
@@ -116,45 +130,69 @@ class Vendor_postproduct  extends CI_Controller {
 			'productid' => $productid, 
 			'companyname' => $companyname, 
 			'vusername' => $vusername);
-//print_r( $data2);die;
-			$datainserr = "Data Inserted Successfully";
-			$status = $this->Admin_model->insert('sellerpostproduct',$data2);
-			header('location: ./Vendor_postproduct/index/');
-		 }
-			
-			
-				if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
-				$datainserr = "Invalid Login Session";
-				header('location: '.base_url().'login/index_error/'.$datainserr);
+			print_r($data2);die;
+
+
+			$this->load->model('Admin_model');
+			if ($this->Admin_model->check('sellerpostproduct', $data1)) {
+				$datainserr = "ProductId already exist";
+				header('location: ' . base_url() . 'Vendor_postproduct/index_error/' . $datainserr);
 				die;
+			} else {
+
+
+				$datainserr = "Data Inserted Successfully";
+				$status = $this->Admin_model->insert('sellerpostproduct', $data2);
+				header('location: ./Vendor_postproduct/');
 			}
-			else
-			{ 
-				$this->load->model('Admin_model');
-				$sess = array('sessi'=>$this->session->userdata('username'));
-	
-				$active1 = array('vusername'=>$sess['sessi']);
-				//print_r($active1);die;
-				$data['scomp'] = $this->Admin_model->get1datafromtable('vendor_register', $active1);
-				
-			
-		
-		$sess = array('sessi'=>$this->session->userdata('username'));
-		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/postproduct',$data);
+		}
+
+		if (!$this->session->has_userdata('username') || $this->session->userdata('auth') != "SELLER") {
+			$datainserr = "Invalid Login Session";
+			header('location: ' . base_url() . 'login/index_error/' . $datainserr);
+			die;
+		} else {
+			$this->load->model('Admin_model');
+			$sess = array('sessi' => $this->session->userdata('username'));
+
+			$active1 = array('vusername' => $sess['sessi']);
+			//print_r($active1); die;
+			$data['scomp'] = $this->Admin_model->get1datafromtable('vendor_register', $active1);
+			$data['sessi'] = $this->session->userdata('username');
+			//print_r($data['sessi']); die;
+			$this->load->view('vendor/header', $sess);
+			$this->load->view('vendor/postproduct', $data);
+			$this->load->view('vendor/footer');
+		}
+	}
+	public function index_error()
+	{
+		$alertmsg = $this->uri->segment(3);
+		$alertmsg = urldecode($alertmsg);
+		echo '<script language="javascript">';
+		echo 'alert("' . $alertmsg . '")';  //not showing an alert box.
+		echo '</script>';
+		$this->load->view('vendor/header');
+		$this->load->view('vendor/postproduct');
 		$this->load->view('vendor/footer');
-		
-	}
 	}
 
 
-private function upload_files($nameid){
-    	print_r($nameid);
+
+
+
+
+
+
+
+
+	private function upload_files($nameid){
+    	//print_r($nameid);
     //$countfiles = count($_FILES[$nameid]['name']);
 	$countfiles=1;
       // Looping all files
       for($i=0;$i<$countfiles;$i++){
-        if(!empty($_FILES[$nameid]['name'][$i])){
+        if(!empty($_FILES[$nameid]['name'])){
  
           // Define new $_FILES array - $_FILES['file']
           $_FILES['file']['name'] = $_FILES[$nameid]['name'];
@@ -167,7 +205,7 @@ private function upload_files($nameid){
            $config['upload_path'] = 'web_files/uploads/';
 			$config['allowed_types'] = 'doc|docx|pdf|xlsx|jpg|png|gif';
           $config['max_size'] = '50000000'; // max_size in kb
-          $config['file_name'] = $_FILES[$nameid]['name'][$i];
+          $config['file_name'] = $_FILES[$nameid]['name'];
  
           //Load upload library
           $this->load->library('upload',$config); 
@@ -184,5 +222,5 @@ private function upload_files($nameid){
  
       }
 	 return $datar;
-    }	
+    }
 }

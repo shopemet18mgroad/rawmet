@@ -47,15 +47,15 @@ class Admin_approvebuyer extends CI_Controller {
 	
 	public function approve_buyer(){
 		
-		$busername= $this->uri->segment(3);
+		$buyerid= $this->uri->segment(3);
 		
-		$busername = urldecode($busername);
+		$buyerid = urldecode($buyerid);
 		//print_r($bcompanytype);die;
 		$this->load->model('Admin_model');
 		$app= array('boptions'=>true);
-		$adaction2 = array('busername'=>$busername);
+		$adaction2 = array('buyerid'=>$buyerid);
 		$query = $this->Admin_model->update_custom('buyer_register', $app, $adaction2, $adaction2);
-		if($busername){
+		if($buyerid){
 			echo "HI";
 		}else{
 			echo "BYE";

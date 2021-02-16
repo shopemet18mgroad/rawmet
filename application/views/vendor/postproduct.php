@@ -294,11 +294,28 @@
 								<input type="text" class="form-control" id="estdeltime" name="estdeltime" placeholder="">
 
 							</div>
-							<div class="col-sm-5 mt-4">
+							
+									<div class="col-sm-5 mt-4">
+								<label for="exampleInputFile">Upload Product Images:</label>
+								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage">
+								
+							</div>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+						<!--	<div class="col-sm-5 mt-4">
 								<p>Upload Product Images:</p>
 
-								<input type="file" id="uploadproductimage" name="uploadproductimage[]" multiple="multiple">
-							</div>
+								<input type="file" id="uploadproductimage" name="uploadproductimage" multiple="multiple">
+							</div>-->
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="Pname"> ISO Certificate Number:</label>

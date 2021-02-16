@@ -146,9 +146,17 @@ autocomplete(document.getElementById("myInput"), countries);
 
 <div class="modal fade" id="new_userlogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe" aria-hidden="true">
     <div class="modal-dialog" role="document">
+	  
       <div class="modal-content">
+	
         <div class="modal-header">
-          <center><h5 class="modal-title" id="exampleModalLabel">Login</h5></center>
+		<div class="justify-content-center">
+		<center>
+
+         <img  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img-fluid" alt="" width="80%;" height="400px">
+		 </center>
+        </div>
+		
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -156,6 +164,9 @@ autocomplete(document.getElementById("myInput"), countries);
         <div class="modal-body">
      
 			  <form class="user" action="<?php echo base_url()."home/login";?>" method="post">
+			    <div  class="text-center">
+          <center><h5 class="modal-title" id="exampleModalLabel">Login</h5></center>
+		</div>
                     <div class="form-group">
                       <input type="text" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." required>
                     </div>

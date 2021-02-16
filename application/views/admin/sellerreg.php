@@ -43,6 +43,10 @@
 							<td class="btxt">Company Name:</td>
 							<td><input class="form-control w-50" type="text" id="vcompanyname" name="vcompanyname" ></td>
 							</tr>
+								<tr>												
+							<td class="btxt">Seller Id:</td>
+							<td><input class="form-control w-50" type="text" id="sellerid" name="sellerid" value="SLR<?php echo(rand(1,1000000));?>" readonly></td>
+							</tr>
 						<tr>
 					
 							<td class="btxt">Company Type:</td>
@@ -155,7 +159,7 @@
 								
 				<a href="#"><button type="submit" name="sb3" onclick="return validatearry2()" onclick=" validatebuyer1()" class="btn btn-info offset-sm-3 mt-2">Submit</button></a>
 												
-				<!--<a href="#"><button type="submit" name="sb4" class="btn btn-info offset-sm-1 mt-2">Cancel</button></a>-->
+					<a type="button" href="admin_sellerreg"  class="btn btn-info offset-sm-1 mt-2">cancel</a>
 				</form>								
 				
               </div>
