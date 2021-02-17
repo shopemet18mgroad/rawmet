@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		} 
-		
+		 
 		
 		public function getdatafromtableliveneg() {
 			$this->db->select('b.buyerrequriement_id,
@@ -244,7 +244,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					b.bsupplyability,
 					b.units,
 					b.price,
-					b.vusername');
+					b.vusername,
+					b.sellerid');
 					 					 			
 					$this->db->join('seller_mbuyreq b', 'a.seller_mbuyreq_id=b.id',
 					'left outer');			   

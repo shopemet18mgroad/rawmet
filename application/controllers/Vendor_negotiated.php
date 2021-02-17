@@ -29,14 +29,8 @@ class Vendor_negotiated extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vusername'=>$sess['sessi']);
-		
-		
-		
-		
-		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);
-		
-		
+		$active1 = array('sellerid'=>$sess['sessi']);	
+		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);	
 		$adac['sqldata']= $query;
 		
 			
