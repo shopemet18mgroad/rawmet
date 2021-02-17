@@ -41,7 +41,7 @@
 					<td><?php echo $row->baddress; ?></td>
 					<td><?php echo $row->bcity;?></td>
 					
-					<td><a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyerdetail/index/".urldecode($row->buyerid)."/".urldecode($row->bcompanyname);;?>"><i class="fa fa-eye"></i>View</a>
+					<td><a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyerdetail/index/".urldecode($row->buyerid)."/".urldecode($row->bcompanyname);?>"><i class="fa fa-eye"></i>View</a>
 					
 					<button type="submit" name="submit" id="<?php echo $row->buyerid;?>" onclick="admin_buyerapprove(this.id)" class="btn btn-success btn-sm">Activate</button></td>	
 					

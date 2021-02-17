@@ -29,11 +29,11 @@ class Admin_sellerprofile extends CI_Controller {
 			die;
 			}else{
 		$this->load->model('Admin_model');
-		$vname = urldecode($this->uri->segment(3));
+		$sellerid = urldecode($this->uri->segment(3));
 		
 		$vcompanyname = urldecode($this->uri->segment(4));
 		//print_r($vcompanyname); die;
-		$active = array('vname'=>$vname,'vcompanyname'=>$vcompanyname);
+		$active = array('sellerid'=>$sellerid,'vcompanyname'=>$vcompanyname);
 	
 		$query = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$data['sqldata']= $query;
@@ -50,9 +50,9 @@ class Admin_sellerprofile extends CI_Controller {
 	public function delete_seller(){
 	
 		
-		$vname = urldecode($this->uri->segment(3));
+		$sellerid = urldecode($this->uri->segment(3));
 		$vcompanyname = urldecode($this->uri->segment(4));
-		$active = array('vname'=>$vname,'vcompanyname'=>$vcompanyname);
+		$active = array('sellerid'=>$sellerid,'vcompanyname'=>$vcompanyname);
 		
 		$this->load->model('Admin_model');
 		if($vname){

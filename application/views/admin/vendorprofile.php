@@ -29,7 +29,7 @@
                 <div class="card-body">
 					 <table class="table table-sm table-borderless">
 					 <thead><th>Personal Info</th>
-					 <th style="text-align:right"> <a  href="<?php echo base_url()."admin_editcustprofile/index/".urldecode($sqldata[0]->bname).'/'.urldecode($sqldata[0]->bcompanyname);?>"><u>Edit Personal Info</u></a></th>
+					 <th style="text-align:right"> <a  href="<?php echo base_url()."admin_editcustprofile/index/".urldecode($sqldata[0]->buyerid).'/'.urldecode($sqldata[0]->bcompanyname);?>"><u>Edit Personal Info</u></a></th>
 					 </thead>
 						<tbody>
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td>
@@ -38,6 +38,10 @@
 						<td>Name</td>
 								<td><?php echo $sqldata[0]->bname; ?></td>
 							</tr> 
+							<tr>
+						<td>Buyer Id</td>
+								<td><?php echo $sqldata[0]->buyerid; ?></td>
+							</tr>
 							<tr>
 								<td>Company Name</td>
 								<td><?php echo $sqldata[0]->bcompanyname;?></td>
@@ -71,7 +75,7 @@
 				<table class="table table-sm table-borderless">
 					 <thead><th width="47%">Contact Info</th>
 					<!-- <th style="text-align:right">
-					    <a  href="<?php echo base_url()."admin_editcustprofile/index/".urldecode($sqldata[0]->bname).'/'.urldecode($sqldata[0]->bcompanyname);?>">Edit personal</a></th>-->
+					    <a  href="<?php echo base_url()."admin_editcustprofile/index/".urldecode($sqldata[0]->buyerid).'/'.urldecode($sqldata[0]->bcompanyname);?>">Edit personal</a></th>-->
 					 
 					 </thead>
 						<tbody>

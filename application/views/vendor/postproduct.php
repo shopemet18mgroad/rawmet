@@ -67,6 +67,11 @@
 								<input type="text" class="form-control" id="productname" name="productname" placeholder="Product Name" onkeyup="product_id()">
 
 							</div>
+								<div class="col-sm-4 mb-3 mb-sm-0">
+								<label for="">Product Name</label>
+								<input type="text" class="form-control" id="productname" name="productname" placeholder="Product Name" onkeyup="product_id()">
+
+							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="">Product Id</label>
 								<input type="text" class="form-control" id="productid" name="productid" placeholder="Product Id" readonly>

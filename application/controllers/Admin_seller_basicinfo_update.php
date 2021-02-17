@@ -22,6 +22,7 @@ class Admin_seller_basicinfo_update extends CI_Controller {
 	 	public function index()
 	{
 		//$this->load->library('fileupload');
+		$sellerid = $this->input->post('sellerid');
 		$vname = $this->input->post('vname');
 		$vcompanyname = $this->input->post('vcompanyname');
 		$vcompanytype = $this->input->post('vcompanytype');
@@ -42,13 +43,13 @@ class Admin_seller_basicinfo_update extends CI_Controller {
 			$this->load->model('Admin_model');
 			 $data2 = array('vcompanyname' => $vcompanyname,'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
 	'vcontactnumber'=>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,
-	'vemail'=> $vemail ,'vusername' => $vusername,
+	'vemail'=> $vemail ,'vusername' => $vusername,'vname'=>$vname,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode);
 
 			  
 			  $datainserr = "Data Inserted Successfully";
-			  $updatech = array('vname' => $vname);
+			  $updatech = array('sellerid' => $sellerid);
 			 
 			  $status = $this->Admin_model->update_custom('vendor_register',$data2,$updatech,$updatech);
 		//$status = $this->Admin_model->insert('vendor_register',$data2);
