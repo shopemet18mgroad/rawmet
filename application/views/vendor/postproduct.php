@@ -38,9 +38,9 @@
 
 						<div class="form-group row">
 							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="">Supplier Name</label>
-								<input type="text" class="form-control" id="vname" name="vname" value="<?php echo  $scomp[0]->vname; ?>" readonly>
-								<input type="hidden" class="form-control" id="vusername" name="vusername" value="<?php echo $sessi; ?>">
+								<label for="">Supplier Id</label>
+								<input type="text" class="form-control" id="sellerid" name="sellerid" value="<?php echo  $scomp[0]->sellerid; ?>" readonly>
+								<input type="hidden" class="form-control" id="sellerid" name="sellerid" value="<?php echo $sessi; ?>">
 
 							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -62,11 +62,7 @@
 
 							</div>
 
-							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="">Product Name</label>
-								<input type="text" class="form-control" id="productname" name="productname" placeholder="Product Name" onkeyup="product_id()">
-
-							</div>
+						
 								<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="">Product Name</label>
 								<input type="text" class="form-control" id="productname" name="productname" placeholder="Product Name" onkeyup="product_id()">
@@ -212,16 +208,35 @@
 								<label for="description">Description:</label>
 								<textarea class="form-control" rows="5" name="description" id="description"></textarea>
 							</div>
-							<div class="col-sm-2">
-								<label for="quantity">Supply Ability:</label>
-								<input type="text" class="form-control" id="quantity" name="quantity" placeholder>
+								<div class="col-sm-3 mb-3 mb-sm-0">
+								<label for="Pname"> ISO Certificate Number:</label>
+								<input type="text" class="form-control" id="uploadcertificate" name="uploadcertificate" placeholder="">
+
 							</div>
+
+						
 
 							<div class="col-sm-2">
 								<label for="price">Price:</label>
 								<input type="text" class="form-control" id="price" name="price" placeholder="0">
 							</div>/
+							<div class="col-sm-2 mb-3 mb-sm-0">
+								<label for="quantity">Units:</label>
+								<select class="form-control col-sm-0" id="punits" name="punits">
+									<option value="KG">KG</option>
+									<option value="Metric ton">Metric ton</option>
+									<option value="Litre">Litre</option>
+									<option value="lot">lot</option>
+									<option value="litre">litre</option>
+									<option value="Number">Number</option>
+									<option value="Meter">Meter</option>
 
+								</select>
+							</div>
+	                  <div class="col-sm-2">
+								<label for="quantity">Supply Ability:</label>
+								<input type="text" class="form-control" id="quantity" name="quantity" placeholder>
+							</div>
 
 
 							<div class="col-sm-2 mb-3 mb-sm-0">
@@ -236,19 +251,16 @@
 									<option value="Meter">Meter</option>
 
 								</select>
+								
 							</div>
+								<div class="col-sm-4 mb-3 mb-sm-0">
+								<label for="Pname">Payable To Rawmet:(%)</label>
+								<input type="text" class="form-control" id="payable" name="payable" placeholder="">
 
-
-
-
-							<!--<img class="img-fluid" src="<?php echo base_url() . "web_files/"; ?>img/iron.jpg" alt="Chania" width="150" height="20">-->
-							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="Pname">Minimum Order Stock:</label>
-								<input type="text" class="form-control" id="minoderquant" name="minoderquant" placeholder="">
 
 							</div>
-							<div class="col-sm-2 mb-3 mb-sm-0">
-								<label for="Pname">Stock:</label>
+								<div class="col-sm-2">
+								<label for="Pname"> Live Stock:</label>
 								<input type="text" class="form-control" id="supplyability" name="supplyability" placeholder="">
 
 							</div>
@@ -264,12 +276,18 @@
 									<option value="Meter">Meter</option>
 								</select>
 							</div>
-							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="Pname">Payable To Rawmet:(%)</label>
-								<input type="text" class="form-control" id="payable" name="payable" placeholder="">
 
+
+
+
+							<!--<img class="img-fluid" src="<?php// echo base_url() . "web_files/"; ?>img/iron.jpg" alt="Chania" width="150" height="20">-->
+							<div class="col-sm-4 mb-3 mb-sm-0">
+								<label for="Pname">Minimum Order Stock:</label>
+								<input type="text" class="form-control" id="minoderquant" name="minoderquant" placeholder="">
 
 							</div>
+						
+						
 							<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="Pname">Stock Per Month:</label>
 								<input type="text" class="form-control" id="quantpermonth" name="quantpermonth" placeholder="">
@@ -322,12 +340,7 @@
 								<input type="file" id="uploadproductimage" name="uploadproductimage" multiple="multiple">
 							</div>-->
 
-							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="Pname"> ISO Certificate Number:</label>
-								<input type="text" class="form-control" id="uploadcertificate" name="uploadcertificate" placeholder="">
-
-							</div>
-
+						
 
 							<!-- 		<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
 										Name: <input type="text" name="fname">

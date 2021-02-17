@@ -33,11 +33,11 @@ class Vendor_editpostproduct extends CI_Controller {
 		}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
 
-			$active = array('vusername'=>$sess['sessi']);
+			$active = array('sellerid'=>$sess['sessi']);
 			//print_r($active);die;
 			$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active);
 		
-			$vendorname = $query2[0]->vname;
+			$vendorname = $query2[0]->sellerid;
 		
 			$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$vendorname);
 			//print_r($data['sqldata']); die;

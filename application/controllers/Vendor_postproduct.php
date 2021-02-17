@@ -38,11 +38,11 @@ class Vendor_postproduct  extends CI_Controller {
 		$this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
-				$active1 = array('vusername'=>$sess['sessi']);
+				$active1 = array('sellerid'=>$sess['sessi']);
 				//print_r($active1); die;
 				$data2 = $this->Admin_model->getusernamedatafromtable('vendor_register', $active1);
 				//print_r($data2); die;
-				$vusername= $data2[0]->vusername;
+				$sellerid= $data2[0]->sellerid;
 				//	print_r($vusername); die;
 	 if($this->input->post('productname')){
 			 $date =  Date('Y-m-d'); 
@@ -53,14 +53,15 @@ class Vendor_postproduct  extends CI_Controller {
 
 			
 			$productname = $this->input->post('productname');
+			$punits = $this->input->post('punits');
 			$vname = $this->input->post('vname');
 			$category = $this->input->post('category');
 			$description = $this->input->post('description');
 			$price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
-
-			$vusername = $this->input->post('vusername');
+			$sellerid = $this->input->post('sellerid');
+			//$vusername = $this->input->post('vusername');
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');
@@ -94,7 +95,7 @@ class Vendor_postproduct  extends CI_Controller {
 		
 			 $this->load->model('Admin_model');
 		 $data2 = array('productname' => $productname, 
-			'vname' => $vname, 
+			//'vname' => $vname, 
 			'category' => $category, 
 			'description' => $description, 
 			'price' => $price, 
@@ -115,7 +116,7 @@ class Vendor_postproduct  extends CI_Controller {
 			'payable' => $payable, 
 			'productid' => $productid, 
 			'companyname' => $companyname, 
-			'vusername' => $vusername);
+			'sellerid' => $sellerid,'punits'=>$punits);
 //print_r( $data2);die;
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('sellerpostproduct',$data2);
@@ -133,7 +134,7 @@ class Vendor_postproduct  extends CI_Controller {
 				$this->load->model('Admin_model');
 				$sess = array('sessi'=>$this->session->userdata('username'));
 	
-				$active1 = array('vusername'=>$sess['sessi']);
+				$active1 = array('sellerid'=>$sess['sessi']);
 				//print_r($active1);die;
 				$data['scomp'] = $this->Admin_model->get1datafromtable('vendor_register', $active1);
 				

@@ -30,7 +30,7 @@ class Vendor_uploadedproduct extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vusername'=>$sess['sessi']);
+		$active1 = array('sellerid'=>$sess['sessi']);
 		
 		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
 		
@@ -81,6 +81,7 @@ class Vendor_uploadedproduct extends CI_Controller {
 				
 	 $productid = $this->input->post('productid'); 
 	$price = $this->input->post('price');
+	$punits = $this->input->post('punits');
 	 $quantity = $this->input->post('quantity');
   $units = $this->input->post('units');
 		         $supplyability = $this->input->post('supplyability');
@@ -88,7 +89,7 @@ class Vendor_uploadedproduct extends CI_Controller {
 		
 		
 			
-$data = array('units'=>$units,'price'=>$price,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantity'=>$quantity);
+$data = array('units'=>$units,'price'=>$price,'punits'=>$punits,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantity'=>$quantity);
 //print_r($data); die;
 	
 

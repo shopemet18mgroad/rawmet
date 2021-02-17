@@ -28,13 +28,14 @@ class Admin_postproduct_update extends CI_Controller {
 		$this->load->library('fileupload');
 		$this->load->helper(array('url','form','file','html'));
 		$this->load->model('Admin_model');
-		    $vname = $this->input->post('vname');
+		    $sellerid = $this->input->post('sellerid');
 			$category = $this->input->post('category');
 			//$materialname = $this->input->post('materialname');
 			$description = $this->input->post('description');
 			$price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
+			$punits = $this->input->post('punits');
 			
 			//$pic_array = $this->input->post('uploadproductimage');
 			$minoderquant = $this->input->post('minoderquant');
@@ -47,12 +48,12 @@ class Admin_postproduct_update extends CI_Controller {
 		    $types= $this->input->post('types');			 
 		    $payable = $this->input->post('payable');
 			$productid = $this->input->post('productid');
-		$companyname = $this->input->post('companyname');
-		$poptions = $this->input->post('poptions');
-		 $comapprove = $this->input->post('comapprove');
-		$productvalidityto = $this->input->post('productvalidityto');
-		 $productvalidityfrom = $this->input->post('productvalidityfrom');
-		 $uploadcertificate = $this->input->post('uploadcertificate');
+		    $companyname = $this->input->post('companyname');
+		     $poptions = $this->input->post('poptions');
+			 $comapprove = $this->input->post('comapprove');
+		     $productvalidityto = $this->input->post('productvalidityto');
+		     $productvalidityfrom = $this->input->post('productvalidityfrom');
+			 $uploadcertificate = $this->input->post('uploadcertificate');
 	
 				$_FILES['uploadproductimage']['name'];
 			//$pic_array1  = self::upload_files('uploadproductimage'); die;
@@ -98,12 +99,11 @@ class Admin_postproduct_update extends CI_Controller {
 		
 		
 		//==================================================================
-		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array,'poptions'=>false,'comapprove'=>false,
-		'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom	,'uploadcertificate'=>	$uploadcertificate);
+		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array,'poptions'=>false,'comapprove'=>false,'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom,'uploadcertificate'=>$uploadcertificate,'units'=>$punits);
 		
 		//print_r($data);die;
 		$datainserr = "Data Inserted Successfully";
-		$updatech = array('vname'=> $vname,'companyname'=>$companyname,'productid'=>$productid);
+			$updatech = array('sellerid'=> $sellerid,'companyname'=>$companyname,'productid'=>$productid);
 		
 		$app= array('poptions'=>false);
 		$status = $this->Admin_model->update_custom('sellerpostproduct',$data,$updatech,$updatech);

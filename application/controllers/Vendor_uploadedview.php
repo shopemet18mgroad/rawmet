@@ -39,7 +39,7 @@ class Vendor_uploadedview extends CI_Controller {
 		
 		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('vusername'=>$sess['sessi']);
+		$active = array('sellerid'=>$sess['sessi']);
 			
 		$this->load->view('vendor/header',$sess);
 		$this->load->view('vendor/uploadedview',$data);

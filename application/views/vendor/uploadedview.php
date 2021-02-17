@@ -35,15 +35,19 @@
 				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="200px">
 				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
+				
+				<h6 class="m-0 font-weight-bold text-primary"><b><u>Seller Id</u></b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->sellerid;?></h6></br>
+				
+				
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
 					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
 					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
 					<p><b>Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></p>
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
-					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->units;?><br>
-					<b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?><br>
-					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->units;?>
+					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->punits;?><br>
+					<b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?><br>
+					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?>
 					<br><b style="color:green">Payable To Rawmet&nbsp;:</b>&nbsp;&nbsp;&nbsp;<?php echo $sqldata[0]->payable."%";?>
 					
 					</p><b>ISO Certificate Number</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->uploadcertificate;?>

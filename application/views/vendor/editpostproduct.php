@@ -32,12 +32,12 @@
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Supplier Name</label>
-					<input type="text" class="form-control" id="vname" name="vname"  value="<?php echo  $sqldata[0]->vname;?>" readonly>
+					<label for="">Seller Id</label>
+					<input type="text" class="form-control" id="sellerid" name="sellerid"  value="<?php echo  $sqldata[0]->sellerid;?>" readonly>
                     
                 </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Supplier Id</label>
+					<label for="">Company Name</label>
 					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" value="<?php echo  $sqldata[0]->companyname;?>"readonly>
                     
                 </div>
@@ -202,10 +202,24 @@ document.getElementById("pcities").selectedIndex = 0;
 					<textarea class="form-control" rows="5" name="description" id="description"  value="<?php echo  $sqldata[0]->description;?>"><?php echo  $sqldata[0]->description;?></textarea>
 					</div>
 				
-				   <div class="col-sm-4">
+				   <div class="col-sm-3">
 				   <label for="price">Price:</label>
                     <input type="text" class="form-control" id="price" name="price" placeholder="0"  value="<?php echo  $sqldata[0]->price;?>">
                   </div>
+				    <div class="col-sm-2 mb-3 mb-sm-0">	
+				<label for="quantity">Units:</label>
+			   	<select class="form-control col-sm-0" id="punits" name="punits" value="">
+				<option value="<?php echo  $sqldata[0]->punits;?>"><?php echo  $sqldata[0]->punits;?></option>
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+					
+				    </select> 
+			</div>
                 
 				
                 <div class="col-sm-2">
