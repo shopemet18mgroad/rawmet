@@ -180,21 +180,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      
 	function getAllbuyReqlist() {
 			
-		$this->db->select('a.bname,a.bcity,a.bselectstate,b.productname,b.uploadimage,b.productid,b.bcompanyname,b.description,b.price,b.priceperkg,b.quantity,b.units');
-			$this->db->join('buyerrequriement b','a.bname = b.bname','left outer');
-			//$this->db->group_by('b.requirement_id');
-			//$this->db->where("a.user_created", $user_created);
-			//$this->db->order_by('b.buyername desc');
-				$this->db->where("b.sname", $compdata);
+		$this->db->select('a.buyerid,
+		a.bcity,
+		a.bselectstate,a.bname,
+		
+		b.productname,
+		b.uploadimage,
+		b.productid,
+		b.bcompanyname,
+		b.description,
+		b.price,
+		b.buyerid,
+		b.priceperkg,
+		b.quantity,
+		b.units');
+			
+			$this->db->join('buyerrequriement b','a.buyerid = b.buyerid','left outer');
+			
+	 
+		
 			$query = $this->db->get("buyer_register a");
 			 $result = $query->result();
 			  return $result;
 
 		
 		}	  
-		
-	  
-		
+	
 		function getdatafromtable_buyer() {			 
 			$this->db->select('b.buyerrequriement_id,
 					b.bname,
@@ -258,32 +269,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}
 			
 			  
-			 function getdatafrom_vregistration24($seller_mbuyreq_id) {
+	 function getdatafrom_vregistration24($seller_mbuyreq_id) {
 			
 		$this->db->select('
-		a.vname,
-		a.sellerid,
 		
-		b.id,
-		b.productname,
-		b.description,
-		b.sellerprice,
-		b.bsupplyability,
-		b.quantity,
-		b.units,
+		
+		a.id,
+		a.productname,
+		a.description,
+		a.sellerprice,
+		a.bsupplyability,
+		a.quantity,
+		a.units,
+		a.sellerid,
 		 
-		 c.buyer_nego_price,
-		 c.buyer_nego_units,
-		 c.seller_mbuyreq_id,
-		 d.seller_renego_price,
-		 d.seller_renego_units'
+		 b.buyer_nego_price,
+		 b.buyer_nego_units,
+		 b.seller_mbuyreq_id,
+		 
+		 c.seller_renego_price,
+		 c.seller_renego_units'
 		
 		);
 		$this->db->where('c.seller_mbuyreq_id', $seller_mbuyreq_id);
-			$this->db->join('seller_mbuyreq b','a.vname = b.vusername','left outer');
-			$this->db->join('seller_req_response d','d.seller_mbuyreq_id = b.id','left outer');
-			$this->db->join('buyer_req_response c','c.seller_mbuyreq_id = b.id','left outer');
-			$query = $this->db->get("vendor_register a");
+			
+			$this->db->join('seller_req_response c','c.seller_mbuyreq_id = a.id','left outer');
+			$this->db->join('buyer_req_response b','b.seller_mbuyreq_id = a.id','left outer');
+			$query = $this->db->get("seller_mbuyreq a");
 			 $result = $query->result();
 			  return $result;
 
@@ -293,37 +305,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 function getdatafrom_vregistration25($seller_mbuyreq_id) {
 			
 		$this->db->select('
-		a.vname,
+		
+		
+		a.id,
+		a.productname,
+		a.description,
+		a.sellerprice,
+		a.bsupplyability,
+		a.quantity,
+		a.units,
 		a.sellerid,
 		
-		b.id,
-		b.productname,
-		b.description,
-		b.sellerprice,
-		b.bsupplyability,
-		b.quantity,
-		b.units,
+		 b.buyer_nego_price,
+		 b.buyer_nego_units,
+		 b.seller_mbuyreq_id,
 		 
-		 c.buyer_nego_price,
-		 c.buyer_nego_units,
-		 c.seller_mbuyreq_id,
-		 d.seller_renego_price,
-		 d.seller_renego_units,
-		 e.buyer_final_price,
-		 e.buyer_final_units'
+		 c.seller_renego_price,
+		 c.seller_renego_units,
+		 
+		 d.buyer_final_price,
+		 d.buyer_final_units'
 		 
 		
 		);
 		$this->db->where('c.seller_mbuyreq_id', $seller_mbuyreq_id);
-			$this->db->join('seller_mbuyreq b','a.vname = b.vusername','left outer');
 			
-			$this->db->join('buyer_final_req e','e.seller_mbuyreq_id = b.id','left outer');
 			
-			$this->db->join('seller_req_response d','d.seller_mbuyreq_id = b.id','left outer');
+			$this->db->join('buyer_final_req d','d.seller_mbuyreq_id = a.id','left outer');
 			
-			$this->db->join('buyer_req_response c','c.seller_mbuyreq_id = b.id','left outer');
+			$this->db->join('seller_req_response c','c.seller_mbuyreq_id = a.id','left outer');
 			
-			$query = $this->db->get("vendor_register a");
+			$this->db->join('buyer_req_response b','b.seller_mbuyreq_id = a.id','left outer');
+			
+			$query = $this->db->get("seller_mbuyreq a");
 			 $result = $query->result();
 			  return $result;
 
@@ -335,25 +349,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		function getdatafrom_vregistration23($seller_mbuyreq_id) {
 			
 		$this->db->select('
-		a.vname,
-		a.sellerid,
 		
-		b.id,
-		b.productname,
-		b.description,
-		b.sellerprice,
-		b.bsupplyability,
-		b.quantity,
-		b.units,
+		a.id,
+		a.productname,
+		a.description,
+		a.sellerprice,
+		a.bsupplyability,
+		a.quantity,
+		a.units,
+		a.sellerid,
 		 
-		 c.buyer_nego_price,
-		 c.buyer_nego_units'
+		 b.buyer_nego_price,
+		 b.buyer_nego_units'
 		
 		);
-		$this->db->where('c.seller_mbuyreq_id', $seller_mbuyreq_id);
-			$this->db->join('seller_mbuyreq b','a.vname = b.vusername','left outer');
-			$this->db->join('buyer_req_response c','c.seller_mbuyreq_id = b.id','left outer');
-			$query = $this->db->get("vendor_register a");
+		$this->db->where('b.seller_mbuyreq_id', $seller_mbuyreq_id);
+			$this->db->join('buyer_req_response b','a.id = b.seller_mbuyreq_id','left outer');
+			
+			$query = $this->db->get("seller_mbuyreq a");
 			 $result = $query->result();
 			  return $result;
 
@@ -384,7 +397,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					b.units,
 					b.price,
 					b.vusername');
-					$this->db->where('a.status', 1);				 			
+					$this->db->where('a.status', 1);	
+					
 					$this->db->join('seller_mbuyreq b', 'a.seller_mbuyreq_id=b.id',
 					'left outer');			   
 					$query = $this->db->get("buyer_req_response a");
@@ -640,8 +654,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			
             $this->db->join('seller_mbuyreq a', 'a.buyerrequriement_id=b.seller_mbuyreq_id','left outer');
-			$this->db->where('c.buyer_approval !=', 0);			 
-			$this->db->or_where('b.status', 0);
+			$this->db->where('c.buyer_approval !=', 1);			 
+			$this->db->or_where('b.status', 5);
 			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');			
 			$query = $this->db->get("buyer_req_response b");
         $result = $query->result();
@@ -675,8 +689,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			a.sellerprice,
 			a.bsupplyability');	
 			
-			$this->db->where('c.buyer_approval !=',1 );
-			$this->db->or_where('c.buyer_approval',3 );
+			$this->db->where('c.buyer_approval ',0 );
+			$this->db->or_where('a.status!=',5 );
+			 
             $this->db->join('seller_mbuyreq a', 'a.buyerrequriement_id=b.seller_mbuyreq_id','left outer');	
 			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');			
 			$query = $this->db->get("buyer_req_response b");
@@ -849,40 +864,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					return $result;
 		
 			}
-			public function search_job($keyword, $location){
-          $this->db->select('*');
-           $this->db->from('sellerpostproduct');
-            if(!empty($keyword)) {
-              $this->db->group_start();
-            $this->db->like('name', $keyword);
-             $this->db->or_like('description', $keyword);
-            $this->db->group_end();
-           }
-            $this->db->like('location', $location);
-            $query = $this->db->get();
 
-    return $query->result_array();
-}
 	
 	 
 
 function getdatafrom_vregistration($id) {
 			
-		$this->db->select('
-		a.vname,
-		a.sellerid,
-		
-		b.id,
-		b.productname,
-		b.description,
-		b.sellerprice,
-		b.bsupplyability,
-		b.quantity,
-		b.units');
-		$this->db->where('b.id', $id);
-			$this->db->join('seller_mbuyreq b','a.vname = b.vusername','left outer');
+		$this->db->select('*');
+		$this->db->where('id', $id);
+			//$this->db->join('seller_mbuyreq b','a.vname = b.vusername','left outer');
 			
-			$query = $this->db->get("vendor_register a");
+			$query = $this->db->get("seller_mbuyreq");
 			 $result = $query->result();
 			  return $result;
 
