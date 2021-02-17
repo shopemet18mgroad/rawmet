@@ -57,9 +57,9 @@ $this->load->library('session');
 		public function approve_product(){
 		
 		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-         $vname = urldecode($this->uri->segment(4));
+         $sellerid = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid);
 		
 		
 		
@@ -76,9 +76,9 @@ $this->load->library('session');
 		public function reject(){
 		$this->load->helper('url');
 		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-         $vname = urldecode($this->uri->segment(4));
+         $sellerid = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid);
 		
 		$data2 = array('poptions'=>2);
 	

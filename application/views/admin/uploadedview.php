@@ -34,8 +34,10 @@
 	
 						
 				<div class="col-sm-4 mb-3 mb-sm-2 ml-10">
+				<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
+				<h6 class="m-0 font-weight-bold "><b>Seller Id</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->sellerid;?></h6>
 				
-					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
+					
 					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
 					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
 			<p><b>Supplier Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></p>
@@ -51,7 +53,7 @@
 				?>
 				  <a href="<?php echo base_url()."admin_editpostproduct/editproduct/".$proid;?>"><button type="button" class="btn btn-info"><i class="fa fa-edit">Edit</i></button></a>
 				  
-				  <a href="<?php  echo base_url()."admin_adminvendorproducts/approve_product/".$proid."/".urldecode($sqldata[0]->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
+				  <a href="<?php  echo base_url()."admin_adminvendorproducts/approve_product/".$proid."/".urldecode($sqldata[0]->sellerid);?>"><button type="button" class="btn btn-success">Approve</button></a>
 				<table class="table bg-white table-sm table-borderless">
 					<thead class="bg-primary text-white">
 						<tr>

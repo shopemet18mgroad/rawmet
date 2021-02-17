@@ -39,7 +39,10 @@
 							<tr>
 							<form action = "<?php echo base_url();?>admin_seller_basicinfo_update" method="POST" enctype="multipart/form-data">
 							<td>   Name</td>
-								<td><input class="form-control w-50" type="text" id="vname" name="vname" readonly value="<?php echo $sqldata[0]->vname; ?>"></td>
+								<td><input class="form-control w-50" type="text" id="vname" name="vname" value="<?php echo $sqldata[0]->vname; ?>"></td>
+							</tr> 
+							<td>Seller Id </td>
+								<td><input class="form-control w-50" type="text" id="sellerid" name="sellerid" readonly value="<?php echo $sqldata[0]->sellerid; ?>"></td>
 							</tr> 
 							<tr>
 								<td>Company Name</td>
@@ -88,7 +91,7 @@
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td> <input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" readonly></td>
+								<td> <input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>"></td>
 							</tr> 
 							<tr>
 								<td>Password</td>

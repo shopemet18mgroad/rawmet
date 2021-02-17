@@ -28,11 +28,11 @@ class Admin_buyerdetail extends CI_Controller {
 			die;
 			}else{
 		$this->load->model('Admin_model');
-		$bname = urldecode($this->uri->segment(3));
+		$buyerid = urldecode($this->uri->segment(3));
 		
 		$bcompanyname = urldecode($this->uri->segment(4));
 		
-		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
+		$active = array('buyerid'=>$buyerid,'bcompanyname'=>$bcompanyname);
 	
 		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
 		$data['sqldata']= $query;
