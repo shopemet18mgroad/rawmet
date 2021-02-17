@@ -28,17 +28,17 @@
                 <div class="card-body">
 					
 			
-			<form action="<?php echo base_url();?>admin_postproduct_update" method="POST" enctype="multipart/form-data">
+			<form action="<?php echo base_url();?>admin_postproduct_update" onsubmit="return validate_Postproduct()" method="POST" enctype="multipart/form-data">
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Supplier Name</label>
-					<input type="text" class="form-control" id="vname" name="vname"  value="<?php echo  $sqldata[0]->vname;?>" readonly>
+					<label for="">Seller Id</label>
+					<input type="text" class="form-control" id="sellerid" name="sellerid"  value="<?php echo  $sqldata[0]->sellerid;?>" readonly>
                     
                 </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="">Supplier Id</label>
-					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" value="<?php echo  $sqldata[0]->companyname;?>" readonly>
+					<label for="">Company Name</label>
+					<input type="text" class="form-control" id="companyname" name="companyname"  placeholder="Company Name" value="<?php echo  $sqldata[0]->companyname;?>"readonly>
                     
                 </div>
 				
@@ -46,19 +46,19 @@
 				
 					<label for="">Category</label>
 					
-					<select class="form-control" id="category" name="category" readonly >
+					<select class="form-control" id="category" name="category">
 					       <option value="<?php echo  $sqldata[0]->category;?>"><?php echo  $sqldata[0]->category;?></option>
 						<option value="Non Metal">Non Metal</option>
 						<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
-				        <option value="Scrap" >Scrap</option>
+				        <
 						<option value="Metal" >Metal</option>
 				    </select> 
                     
                 </div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="">Product Name</label>
-					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name" value="<?php echo  $sqldata[0]->productname;?>" onkeyup="product_id()"readonly >
+					<input type="text" class="form-control" id="productname" name="productname"  placeholder="Product Name" value="<?php echo  $sqldata[0]->productname;?>" onkeyup="product_id()" >
                     
                 </div>
 
@@ -71,20 +71,21 @@
                     
                 </div>
 				
+				
+				
+              
+			
 				<div class="col-sm-4">  
 				
-			   	<label for="category">Types:</label>
+			   	<label for="category">Type:</label>
 					<select class="form-control" id="types" name="types" value="">
-					<option value="<?php echo $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
-					      <option value="Primary">Primary</option>
+					<option value="<?php echo  $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
+					
+						<option value="Primary">Primary</option>
 						<option value="Secondary">Secondary</option>
 				        <option value="Scrap" >Scrap</option>
 				    </select>  
 				</div>
-				
-				
-             
-			
 				<div class="col-sm-4"> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript">
@@ -146,6 +147,7 @@ document.getElementById("pcities").selectedIndex = 0;
 <body onload="resetSelection()">
 <select class="form-control" id="pstates" name="pstates" size="1" onchange="makeSubmenu(this.value)">
 <option value="<?php echo  $sqldata[0]->pstates;?>"><?php echo  $sqldata[0]->pstates;?></option>
+
 <option>Odisha</option>
 <option>Maharashtra</option>
 <option>Kerala</option>
@@ -194,17 +196,30 @@ document.getElementById("pcities").selectedIndex = 0;
 <option></option>
 </select>
 </div>
-				
-				  
+
 				  <div class="col-sm-12">
 					<label for="description">Description:</label>
 					<textarea class="form-control" rows="5" name="description" id="description"  value="<?php echo  $sqldata[0]->description;?>"><?php echo  $sqldata[0]->description;?></textarea>
 					</div>
 				
-				   <div class="col-sm-4">
+				   <div class="col-sm-3">
 				   <label for="price">Price:</label>
                     <input type="text" class="form-control" id="price" name="price" placeholder="0"  value="<?php echo  $sqldata[0]->price;?>">
                   </div>
+				    <div class="col-sm-2 mb-3 mb-sm-0">	
+				<label for="quantity">Units:</label>
+			   	<select class="form-control col-sm-0" id="punits" name="punits" value="">
+				<option value="<?php echo  $sqldata[0]->punits;?>"><?php echo  $sqldata[0]->punits;?></option>
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+					
+				    </select> 
+			</div>
                 
 				
                 <div class="col-sm-2">
@@ -256,7 +271,7 @@ document.getElementById("pcities").selectedIndex = 0;
 			</div>
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Payable To Rawmet:(%)</label>
-					<input type="text" class="form-control" id="payable" name="payable"  placeholder="" value="<?php echo  $sqldata[0]->payable;?>" required>
+					<input type="text" class="form-control" id="payable" name="payable"  placeholder="" value="<?php echo  $sqldata[0]->payable;?>" >
 					
                     
                 </div>
@@ -265,7 +280,6 @@ document.getElementById("pcities").selectedIndex = 0;
 					<input type="text" class="form-control" id="quantpermonth" name="quantpermonth" value="<?php echo  $sqldata[0]->quantpermonth;?>"placeholder="">
                     
                 </div>
-			 </div>
 					<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Validity From Date:</label>
 					<input type="datetime-local" class="form-control" id="productvalidityfrom" name="productvalidityfrom"  placeholder="" value="<?php echo date('Y-m-d\TH:i', strtotime($sqldata[0]->productvalidityfrom)); ?>">               
@@ -281,12 +295,6 @@ document.getElementById("pcities").selectedIndex = 0;
 					<input type="text" class="form-control" id="estdeltime" name="estdeltime"  placeholder="" value="<?php echo  $sqldata[0]->estdeltime;?>">
                     
                 </div>
-				<div class="col-sm-4 mb-3 mb-sm-0">
-					<label for="Pname">ISO Certificate Number</label>
-					<input type="text" class="form-control" id="uploadcertificate" name="uploadcertificate"  placeholder="" value="<?php echo  $sqldata[0]->uploadcertificate;?>">
-                    
-                </div>
-				 
 				 
 		
 					<div class="col-sm-4 mt-4">
@@ -310,14 +318,19 @@ document.getElementById("pcities").selectedIndex = 0;
 								<input  type="file" id="uploadproductimage" name="uploadproductimage">
 								</div>
 							</div>
+							<div class="col-sm-4 mb-3 mb-sm-0">
+					<label for="Pname">ISO Certificate Number</label>
+					<input type="text" class="form-control" id="uploadcertificate" name="uploadcertificate"  placeholder="" value="<?php echo  $sqldata[0]->uploadcertificate;?>">
+                    
+                </div>
 				
 					<div class="col-md-12 text-center mt-4">
 						<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
 				?>
 						
 						<center>	
-							
-                <input type="submit" id="submitBtn" a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_postproduct_update/approve_product/".$proid;?>" class="btn btn-primary" name="submit" value="Update">	</center>	
+			<!--	<input class="btn btn-primary btn-sm" onclick="return validate_Postproduct()" type="submit" value=" Submit">-->			
+                <input type="submit" id="submitBtn" a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_postproduct_update/approve_product/".$proid;?>" class="btn btn-primary" name="submit" value="Update">	</center>
 					</div>	
 					
 				</div>

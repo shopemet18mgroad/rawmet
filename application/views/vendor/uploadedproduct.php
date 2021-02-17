@@ -89,32 +89,19 @@
 					<input type="hidden" class="form-control" id="productid" name="productid"  
 					value="<?php echo $row->productid;?>" placeholder="">
        </div>
-		  	<div class="col-sm-4 ">
-	
-					
-					
-					<label for="Pname"> Live Stock:</label>
-					
-					
-					
-					
-					
-					
-					
-					<input type="text" class="form-control" id="supplyability" name="supplyability"  placeholder="" value="<?php echo $row->supplyability;?>">
-					 
-                    
-                </div>
-  <div class="form-inline">
-
-				<div class="col-sm-4 ">
-					
-					 <label for="price">Price:</label>
-                    <input type="text" class="form-control" id="price" name="price" placeholder="0" value="<?php echo $row->price;?>">
+	   
+	   
+	   
+	   
+	   
+	   	 <div class="form-inline">
+				<div class="col-sm-4  mr-3">
+				<label for="price">Live Stock:</label>
+					 <input type="text" class="form-control" id="supplyability" name="supplyability"  placeholder="" value="<?php echo $row->supplyability;?>">
                     
                 </div>
 				<div class="col-sm-4  offset-sm-3">	
-				<label for="quantity">Units:</label>/
+				
 			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" value="<?php echo $row->supplyunits;?>" >
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
@@ -126,8 +113,60 @@
 				    </select>
 			</div>
 	</div>
+	
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+				
+
+		
+ 
+	
+	 <div class="form-inline">
+				<div class="col-sm-4  mr-3">
+					 <label for="price">Price:</label>
+                    <input type="text" class="form-control" id="price" name="price" placeholder="0" value="<?php echo $row->price;?>">
+                    
+                </div>
+				<div class="col-sm-4  offset-sm-3">	
+				
+			   	<label for="quantity">Units:</label>/
+			   	<select class="form-control col-sm-0" id="punits" name="punits" value="<?php echo $row->punits;?>" >
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+				    </select>
+			</div>
+	</div>
+	
+	
+	
+	
+	
+	
  <div class="form-inline">
-				<div class="col-sm-4 ">
+				<div class="col-sm-4  mr-3">
 					<label for="quantity">Supply Ability:</label>
                   <input type="text" class="form-control" id="quantity" name="quantity" placeholder value="<?php echo $row->quantity;?>" >
                     
@@ -146,14 +185,17 @@
 			</div>
 	</div>
 	<br>
-	<button type="submit" name "update" class="btn btn-success">Submit</button>
 	
 	
+	<div class="modal-footer">
+        <button type="submit" name "update" class="btn btn-success">Submit</button>
+		  </div>
 	
 	
+
  
 	</form>        
-        
+        </div>
         </div>
 
 

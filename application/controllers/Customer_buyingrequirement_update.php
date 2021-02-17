@@ -28,7 +28,13 @@ class Customer_buyingrequirement_update extends CI_Controller {
 		$this->load->library('fileupload');
 		$this->load->helper(array('url','form','file','html'));
 		$this->load->model('Admin_model');
-		    $bname = $this->input->post('bname');
+		
+	
+		
+		
+		
+		
+		    $buyerid = $this->input->post('buyerid');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
 			//$types = $this->input->post('types');
@@ -83,7 +89,7 @@ class Customer_buyingrequirement_update extends CI_Controller {
 			$pic_array = serialize($pic_array);
 		}
 		
-		
+			
 		//=================================================================================================
 		
 		
@@ -93,14 +99,14 @@ class Customer_buyingrequirement_update extends CI_Controller {
 		
 	
 		$datainserr = "Data Inserted Successfully";
-		$updatech = array('bname'=> $bname,'bcompanyname'=>$bcompanyname,'productid'=>$productid);
+		$updatech = array('buyerid'=> $buyerid,'bcompanyname'=>$bcompanyname,'productid'=>$productid);
 		
 		$app= array('poptions'=>false);
 		$status = $this->Admin_model->update_custom('buyerrequriement',$data,$updatech,$updatech);
 		
 	
 		header('location: '.base_url().'customer_managebuyrequirements/index/'.$datainserr);
-	
+		
 	
 	}
 

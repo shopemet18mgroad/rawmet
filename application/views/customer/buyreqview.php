@@ -30,6 +30,7 @@
 				<?php $img = unserialize($sqldata[0]->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="200px">
 				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
+				<h6 class="m-0 font-weight-bold text-primary"><b>Buyer Id</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->buyerid;?></h6>
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
 					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?><br>
 					<b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?><br>
