@@ -35,7 +35,7 @@ class Customer_buypurchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('vusername')){
+	if($this->input->post('sellerid')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
@@ -52,6 +52,8 @@ class Customer_buypurchase_order extends CI_Controller {
 			$price = $this->input->post('price');
 			$priceperkg = $this->input->post('priceperkg');
 			$sellerprice = $this->input->post('sellerprice');
+			$buyerid = $this->input->post('buyerid');
+			$sellerid = $this->input->post('sellerid');
 			$bsupplyability = $this->input->post('bsupplyability');
 	        $pic_array1 = self::upload_files('upload_dd');
 			
@@ -75,7 +77,8 @@ class Customer_buypurchase_order extends CI_Controller {
 			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
 			'quantity' => $quantity,'units' => $units, 'price'=> $price,
-			'priceperkg' => $priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1);
+			'priceperkg' => $priceperkg,'sellerprice'=>$sellerprice,
+			'bsupplyability'=>$bsupplyability,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'uploadporder'=>$pic_array1);
 			//print_r($data);die;
 			$status = $this->Admin_model->insert('reqpurchaseorder',$data);
 			

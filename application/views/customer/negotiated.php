@@ -15,7 +15,7 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Supplier name</th>
+	  <th>Supplier Id</th>
 	  
         <th>companyname</th>
 	   <th>Category</th>
@@ -43,7 +43,7 @@
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-	  <td><?php echo $row->vusername;?></td> 
+	  <td><?php echo $row->sellerid;?></td> 
 		<td><?php echo $row->bcompanyname;?></td> 
 		<td><?php  echo $row->category;?></td>
 		 <td><?php echo $row->productname?></td>

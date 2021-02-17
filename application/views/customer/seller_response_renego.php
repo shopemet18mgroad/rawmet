@@ -105,8 +105,8 @@
 					<center><b>Seller Negotiated Price</b>	</center>
 				<div class="form-inline">
 				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
-						<label>Seller Name:</label>
-						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata[0]->vusername;?> " readonly>
+						<label>Seller ID:</label>
+						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata[0]->sellerid;?> " readonly>
 					</div>
 					
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">

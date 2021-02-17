@@ -35,11 +35,11 @@ class Customer_seller_response_renego extends CI_Controller {
 		
 		
 		$id = $this->uri->segment(3);
-	$bname = urldecode(($this->uri->segment(4)));
 		
-		$active = array('id'=>$id ,'bname'=>$sess['sessi']);
-		//print_r($active); die;
-	
+		$buyerid = urldecode(($this->uri->segment(4)));
+		
+		$active = array('id'=>$id ,'buyerid'=>$sess['sessi']);
+		
 		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq', $active);
 		
 		$data['sqldata']= $query;
