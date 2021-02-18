@@ -49,10 +49,10 @@
 												<?php $proid = str_ireplace('/', '-', $row->productid); ?>
 
 												<?php $prodid = str_ireplace('/', '-', $row->productid); ?>
-														<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
-							<?php echo $row->vname;?></td>
-								<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
-							<?php echo $row->busername;?></td>
+														<td><input type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
+							<?php echo $row->sellerid;?></td>
+								<td><input type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
+							<?php echo $row->buyerid;?></td>
 		
 			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
 								<?php echo $row->productname;?></td>
@@ -65,15 +65,15 @@
 		
 		
 		<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
-		     <?php echo $row->price."/" ;echo $row->units;?>
-			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
+		     <?php echo $row->price."/" ;echo $row->punits;?>
+			 <input type="hidden" name="punits" value="<?php echo $row->punits;?>">
 		</td>
 		
 		
 												
 		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
-		     <?php echo $row->quantity."/" ;echo $row->supplyunits;?>
-			 <input type="hidden" name="supplyunits" value="<?php echo $row->supplyunits;?>">
+		     <?php echo $row->quantity."/" ;echo $row->units;?>
+			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
 		</td>
 		
 			
@@ -99,7 +99,7 @@
 											
 
 
-												<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' . urldecode($row->busername) . "/" . urldecode($row->vname) . "/" . urldecode($proid); ?>" target="_blank">
+												<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' . urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
 
 
 

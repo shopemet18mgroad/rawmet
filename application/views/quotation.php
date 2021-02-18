@@ -96,9 +96,9 @@ table-border
 </table>
 
 <p><b>ADDRESS:<br/>
-<p><b> To:<br/><?php echo $sqldata3[0]->bname.""."<br>". $sqldata3[0]->baddress.""."<br>".$sqldata3[0]->bcity." ".  $sqldata3[0]->bselectstate.""."<br>". $sqldata3[0]->bpincode;?></b><br></p>
+<p><b> From:<br/><?php echo $sqldata3[0]->buyerid.""."<br>"?></b><br></p>
 
-<p><b> From:<br/><?php echo $sqldata2[0]->vname.""."<br>".  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity." ".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>
+<p><b>  To:<br/><?php echo $sqldata2[0]->sellerid.""."<br>"?></b><br></p>
 
 <p><b>Quotation Prepared By:</b>&nbsp;Shopemet Network Private Limited</p>
 
@@ -119,8 +119,8 @@ table-border
     <td><?php echo  $sqldata1[0]->description;?></td>
     
 	<td><?php echo $sqldata1[0]->selprice.""; echo $sqldata1[0]->sunits;?></td>
-	<td><?php echo$sqldata1[0]->selqan."/"; echo $sqldata1[0]->selunits;?></td>
-    <td><?php echo $a = $sqldata1[0]->selprice*$sqldata1[0]->selqan;?></td>
+	<td><?php echo $sqldata1[0]->bquantity."/"; echo $sqldata1[0]->bunits;?></td>
+    <td><?php echo $a = $sqldata1[0]->selprice*$sqldata1[0]->bquantity;?></td>
   </tr>
   
 </table>
@@ -136,7 +136,7 @@ table-border
             <table id="custom mt-5" style="width: 100%">
                 <tr>
                     <th>SUB TOTAL</th>
-                    <td><?php echo $a = $sqldata1[0]->selprice*$sqldata1[0]->selqan;?></td>
+                    <td><?php echo $a = $sqldata1[0]->selprice*$sqldata1[0]->bquantity;?></td>
 
                 </tr>
                 <tr>

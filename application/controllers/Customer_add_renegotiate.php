@@ -23,12 +23,12 @@ class Customer_add_renegotiate extends CI_Controller {
 		$this->load->model('Admin_model');
 		$this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
-				$active1 = array('busername'=>$sess['sessi']);
+				$active1 = array('buyerid'=>$sess['sessi']);
 				$data2 = $this->Admin_model->getbusernamedatafromtable('buyer_register', $active1);
-				$busername= $data2[0]->busername;
+				$buyerid= $data2[0]->buyerid;
 				
 		
-	if($this->input->post('brenegoprice')){
+	if($this->input->post('productname')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
@@ -37,16 +37,17 @@ class Customer_add_renegotiate extends CI_Controller {
 			
 			$productid = $this->input->post('productid');
 			$productname = $this->input->post('productname');
-			$vname = $this->input->post('vname');
-			$busername = $this->input->post('busername');
+			$sellerid = $this->input->post('sellerid');
+			$buyerid = $this->input->post('buyerid');
 			$category = $this->input->post('category');
 			$description = $this->input->post('description');
 			$companyname = $this->input->post('companyname');
 			
 			$price = $this->input->post('price');
+			$punits = $this->input->post('punits');
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
-			$supplyunits = $this->input->post('supplyunits');
+			
 			
 			$pstates= $this->input->post('pstates');
 			$pcities = $this->input->post('pcities');
@@ -58,8 +59,7 @@ class Customer_add_renegotiate extends CI_Controller {
 			
 			$selprice = $this->input->post('selprice');
 			$sunits = $this->input->post('sunits');
-			$selqan = $this->input->post('selqan');
-			$selunits = $this->input->post('selunits');
+			
 			
 			$brenegoprice = $this->input->post('brenegoprice');
 			$brenegounit = $this->input->post('brenegounit');
@@ -81,15 +81,9 @@ class Customer_add_renegotiate extends CI_Controller {
 	
 	
 	      // $data1 = array('vname'=>$vname );
-			$data2 = array('productid'=>$productid ,'productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'selqan'=>$selqan,'selunits'=>$selunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'estdeltime'=>$estdeltime,'datetime'=>$datetime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage ,'status' => $renegoStatus );
+			$data2 = array('productid'=>$productid ,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'punits'=> $punits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'estdeltime'=>$estdeltime,'datetime'=>$datetime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage ,'status' => $renegoStatus );
 			
-			//print_r($data2);die;
-		/* 	$this->load->model('Admin_model');
-			  if($this->Admin_model->check('quotes', $data1)){
-				 $datainserr = "ProductId already exist";
-				header('location: '.base_url().'customer_sellernegotiatedquote/index_error/'.$datainserr);
-				die;
-			  }else{ */
+	
 				 
 			  
 				$datainserr = "Data Inserted Successfully";

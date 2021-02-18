@@ -39,13 +39,19 @@
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
 							
 							<form action = "<?php echo base_url();?>vendor_basicinfo_update" method="POST" enctype="multipart/form-data">
-							<td>Name</td>
-								<td><input class="form-control w-50" type="text" id="vname" name="vname" value="<?php echo $sqldata[0]->vname; ?>" readonly></td>
+							<td>Supplier Id</td>
+								<td><input class="form-control w-50" type="text" id="sellerid" name="sellerid" value="<?php echo $sqldata[0]->sellerid; ?>" readonly></td>
 							</tr> 
 							<tr>
 								<td>Company Name</td>
 								<td><input class="form-control w-50" type="text" id="vcompanyname" name="vcompanyname" value="<?php echo $sqldata[0]->vcompanyname; ?>"></td>
 							</tr> 
+								<tr>
+								<td>Supplier Name</td>
+								<td><input class="form-control w-50" type="text" id="vname" name="vname" value="<?php echo $sqldata[0]->vname; ?>"></td>
+							</tr> 
+							
+							
 													<tr>
 					
 							<td class="btxt">Company Type:</td>
@@ -110,7 +116,7 @@
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td><input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" readonly ></td>
+								<td><input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" ></td>
 							</tr>
 						
 							 	

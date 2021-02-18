@@ -30,7 +30,7 @@ class Vendor_editvendorprofile extends CI_Controller {
 			die;
 			}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
-			$active = array('vusername'=>$sess['sessi']);
+			$active = array('sellerid'=>$sess['sessi']);
 		
 		$query = $this->Admin_model->getdatafromtable('vendor_register',$active);
 		
@@ -54,7 +54,7 @@ class Vendor_editvendorprofile extends CI_Controller {
 			die;
 			}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
-			$active = array('vusername'=>$sess['sessi']);
+			$active = array('sellerid'=>$sess['sessi']);
 		
 		$query = $this->Admin_model->getdatafromtable('vendor_register',$active);
 		

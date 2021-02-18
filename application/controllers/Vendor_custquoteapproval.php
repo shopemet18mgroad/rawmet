@@ -30,7 +30,7 @@ class Vendor_custquoteapproval extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vname'=>$sess['sessi'],'sellapproval'=>false);
+		$active1 = array('sellerid'=>$sess['sessi'],'sellapproval'=>false);
 	
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
 		
@@ -51,16 +51,16 @@ class Vendor_custquoteapproval extends CI_Controller {
 		
 		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$busername = urldecode(($this->uri->segment(4)));
+		$buyerid = urldecode(($this->uri->segment(4)));
 
-		$retriveval = array('busername'=>$busername,'productid'=>$productid);
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid);
 
 		//print_r($retriveval );die;
 		
 		$this->load->model('Admin_model');
 		$app= array('sellapproval'=>true);
 		$query = $this->Admin_model->update_custom('quotes', $app, $retriveval, $retriveval);
-		header('location: '.base_url().'Vendor_custquoteapproval/index/'.urldecode($productid)."/".urldecode($busername));
+		header('location: '.base_url().'Vendor_custquoteapproval/index/'.urldecode($productid)."/".urldecode($buyerid));
 		
 		die;
 	
@@ -70,16 +70,16 @@ class Vendor_custquoteapproval extends CI_Controller {
 		$this->load->helper('url');
 		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$busername = urldecode(($this->uri->segment(4)));
+		$buyerid = urldecode(($this->uri->segment(4)));
 
-		$retriveval = array('busername'=>$busername,'productid'=>$productid);
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid);
 
 		
 		
 		$this->load->model('Admin_model');
 		$app= array('sellapproval'=>2);
 		$query = $this->Admin_model->update_custom('quotes', $app, $retriveval, $retriveval);
-		header('location: '.base_url().'Vendor_custquoteapproval/index/'.urldecode($productid)."/".urldecode($busername));
+		header('location: '.base_url().'Vendor_custquoteapproval/index/'.urldecode($productid)."/".urldecode($buyerid));
 		
 		die;
 	}

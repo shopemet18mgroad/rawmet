@@ -29,7 +29,7 @@ class Vendor_custrenegovalue extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vname'=>$sess['sessi'],'selapprove'=>false);
+		$active1 = array('sellerid'=>$sess['sessi'],'selapprove'=>false);
 		//$reqapproval = array('sellapproval'=>false);
 		
 		
@@ -57,18 +57,18 @@ class Vendor_custrenegovalue extends CI_Controller {
 			
 		$this->load->model('Admin_model');
 		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
-		$vname = urldecode(($this->uri->segment(4)));
-		$busername = urldecode(($this->uri->segment(5)));
+		$sellerid = urldecode(($this->uri->segment(4)));
+		$buyerid = urldecode(($this->uri->segment(5)));
 		
 		
-		$retriveval = array('busername'=>$busername,'productid'=>$productid,'vname'=>$vname);
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid,'sellerid'=>$sellerid);
 
 		//print_r($retriveval );die;
 		
 		$this->load->model('Admin_model');
 		$app= array('selapprove'=>true);
 		$query = $this->Admin_model->update_custom('cust_renego', $app, $retriveval, $retriveval);
-		header('location: '.base_url().'Vendor_custrenegovalue/index/'.urldecode($productid)."/".urldecode($busername)."/".urldecode($vname));
+		header('location: '.base_url().'Vendor_custrenegovalue/index/'.urldecode($productid)."/".urldecode($buyerid)."/".urldecode($sellerid));
 		
 		die;
 	
@@ -89,7 +89,7 @@ class Vendor_custrenegovalue extends CI_Controller {
 		//$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
 		
 		$data2 = array('buyerapprove'=>2);
-		$updatech = array('productid'=>$comp,'vname'=>$compname);
+		$updatech = array('productid'=>$comp,'buyerid'=>$compname);
 		$this->load->model('Admin_model');
 		
 		$status = $this->Admin_model->update_custom('selquotenegotate',$data2,$updatech,$updatech);

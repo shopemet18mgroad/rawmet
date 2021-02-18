@@ -22,17 +22,21 @@
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-			<th>Seller Name</th>
-			
+			<th>Sl.No.</th>
+	       
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
-			<th>Category</th>
-		  <th>Location</th>
-			<th>Supplier Price</th>
-			<th>Supplier Quantity</th>
 			
-			<th style="color:orange";>Buyer Quantity</th>
-			<th style="color:orange";>Buyer Price</th>
+			
+			<th>Category</th>
+			<th>Location</th>
+		
+			<th>Supplier Base Price</th>
+			<th>Supplier Base Quantity</th>
+			<th style="color:orange;">Buyer Price</th>
+			<th style="color:orange;">Buyer Quantity</th>
 			<th>View Quotation</th>
 		<th>Upload Purchase Order</th>
 		
@@ -41,18 +45,23 @@
     <tbody>
 	
 	<?php $k=0;?>
+	  <?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 		
-			
+			<td><?php echo $count ?></td> 
 		
-	
+	<td><input type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
+							<?php echo $row->buyerid;?>
+							
+							<input type="hidden" name="q_id" id="q_id" value="<?php echo $row->id;?>">
+							</td>
 						
-			<td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
-							<?php echo $row->vname;?></td>
+			<td><input type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
+							<?php echo $row->sellerid;?></td>
 		
 			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
 								<?php echo $row->productname;?></td>
@@ -65,21 +74,21 @@
 		
 		
 		<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
-		     <?php echo $row->price."/" ;echo $row->units;?>
-			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
+		     <?php echo $row->price."/" ;echo $row->punits;?>
+			 <input type="hidden" name="punits" value="<?php echo $row->punits;?>">
 		</td>
 		
 		
 												
 		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
-		     <?php echo $row->quantity."/" ;echo $row->supplyunits;?>
-			 <input type="hidden" name="supplyunits" value="<?php echo $row->supplyunits;?>">
+		     <?php echo $row->quantity."" ;echo $row->units;?>
+			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
 		</td>
 		
 			
 							
 		<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
-		     <?php echo $row->bquantity."/" ;echo $row->bunits;?>
+		     <?php echo $row->bquantity."" ;echo $row->bunits;?>
 			 <input type="hidden" name="bunits" value="<?php echo $row->bunits;?>">
 		
 	</td>
@@ -89,7 +98,7 @@
 			 <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
 		</td>
 		
-			<td> <a href="<?php echo base_url().'Customer_sellnegoquotation/auc_no/'.urldecode($row->busername)."/".urldecode($row->vname)."/".urldecode($proid);?>" target="_blank">
+			<td> <a href="<?php echo base_url().'Customer_sellnegoquotation/auc_no/'.$row->id."/".urldecode($row->buyerid)."/".urldecode($row->sellerid);?>" target="_blank">
 				
 		<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
@@ -99,11 +108,12 @@
 				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
 					
 			
-					<input type="submit" id="" class="btn btn-info " name="submit" value="Upload">
+			 	<input type="submit" id="<?php echo $row->id;?>" class="btn btn-info " name="submit" value="Upload">
 					
 			
 				
-		 </td>
+		  </td>
+		 <?php $count++;?>	
 		<?php $k++;}?>
       </tr>      
       

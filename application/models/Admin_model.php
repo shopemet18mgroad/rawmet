@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						return TRUE;
 					}
 		 
-		  } 
+		  }  
 		
 		public function getdatafromtable($table, $data) {
 			$query = $this->db->get_where($table, $data); 
@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		public function getbusernamedatafromtable($table, $data) { 
 			 //$this->db->select('scomapnyname');
-			  $this->db->select('busername');
+			  $this->db->select('buyerid');
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
