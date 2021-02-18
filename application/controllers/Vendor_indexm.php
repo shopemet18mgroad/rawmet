@@ -30,13 +30,13 @@ class Vendor_indexm extends CI_Controller {
 			}else{
 		$this->load->model('Admin_model');
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('vname'=>$sess['sessi']);
+		$active = array('sellerid'=>$sess['sessi']);
 			
 		$query['data'] = $this->Admin_model->getdatafromtable('selquotenegotate',$active);
 		
 		$adac['sql']= count($query['data']);
 		
-		$active3 = array('vname'=>$sess['sessi'],'sellapproval'=>true);
+		$active3 = array('sellerid'=>$sess['sessi'],'sellapproval'=>true);
 		$query['data'] = $this->Admin_model->getdatafromtable('purchaseoder',$active3);
 		
 
