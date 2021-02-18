@@ -37,12 +37,17 @@
 						<tbody>
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
 						
-						 <form action = "<?phpdecho base_url();?>" method="POST" enctype="multipart/form-data">
+						 <form action = "<?php echo base_url();?>" method="POST" enctype="multipart/form-data">
 						 <tr>
 								
-								<td>Name</td>
-								<td><?php echo $sqldata[0]->vname; ?></td>
+								<td>Supplier Id</td>
+								<td><?php echo $sqldata[0]->sellerid; ?></td>
 							</tr> 
+							<tr>
+								
+								<td>Supplier Name</td>
+								<td><?php echo $sqldata[0]->vname; ?></td>
+							</tr>
 							<tr>
 								<td>Companyname</td>
 								<td><?php echo $sqldata[0]->vcompanyname;?></td>

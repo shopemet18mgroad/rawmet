@@ -23,19 +23,19 @@
 							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 								<thead class="bg-primary text-white">
 									<tr>
-								<th>Buyer Name</th>
-								<th>Supplier Name</th>
+								<th>Buyer Id</th>
+								<th>Supplier Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Supplier Original Price</th>
-			<th>Supplier Original Quantity</th>
-			<th style="color:pink;">Your Negotiated Quantity</th>
-			<th style="color:pink;">Your Negotiated Price</th>
-			<th style="color:yellow;">Seller Re-Negotiated price</th>
-			<th style="color:orange;">Your Re-Negotiated price</th>
-			<th style="color:orange;">Your Re-Negotiated Quantity</th>
-			<th>status</th>
+			<th style="color:orange;">Supplier Base Price</th>
+			<th style="color:orange;">Supplier Base Quantity</th>
+			<th style="color:green;">Your Negotiated Quantity</th>
+			<th style="color:green;">Your Negotiated Price</th>
+			<th style="color:orange;">Seller Re-Negotiated price</th>
+			<th style="color:green;">Your Re-Negotiated price</th>
+			<th style="color:green;">Your Re-Negotiated Quantity</th>
+			<th>View Quotation</th>
 			<th>Upload Purchase Order</th>
 
 
@@ -52,11 +52,11 @@
 											<?php $prodid = str_ireplace('/', '-', $row->productid); ?>
 												
 	 
-	 <td><input type="hidden" name="vname" value="<?php echo $row->vname;?>">
-							<?php echo $row->vname;?></td>
+	 <td><input type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
+							<?php echo $row->sellerid;?></td>
 
-	<td><input type="hidden" name="busername" value="<?php echo $row->busername;?>">
-							<?php echo $row->busername;?></td>
+	<td><input type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
+							<?php echo $row->buyerid;?></td>
 							<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
 							<?php echo $row->productname;?></td>
 								<td><input type="hidden" name="productid" value="<?php echo $row->productid;?>">
@@ -65,18 +65,18 @@
 							<?php echo $row->category;?></td>
 	<td><input type="hidden" name="price" value="<?php echo $row->price; ?>">
 													<?php echo $row->price . "/";
-													echo $row->supplyunits; ?>
-		          <input type="hidden" name="supplyunits" value="<?php echo $row->supplyunits; ?>">
+													echo $row->punits; ?>
+		          <input type="hidden" name="punits" value="<?php echo $row->punits; ?>">
 												</td>
 													<td><input type="hidden" name="quantity" value="<?php echo $row->quantity; ?>">
-													<?php echo $row->quantity . "/";
+													<?php echo $row->quantity . "";
 													echo $row->units; ?>
 		          <input type="hidden" name="units" value="<?php echo $row->units; ?>">
 												</td>
 							
 						
 			<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity; ?>">
-													<?php echo $row->bquantity . "/";
+													<?php echo $row->bquantity . "";
 													echo $row->bunits; ?>
 		          <input type="hidden" name="bunits" value="<?php echo $row->bunits; ?>">
 												</td>
@@ -101,7 +101,7 @@
 													echo $row->brenegoquantityunit; ?>
 													<input type="hidden" name="brenegoquantityunit" value="<?php echo $row->brenegoquantityunit; ?>">
 									</td>
-										<td> <a href="<?php echo base_url().'Customer_renegovaluequotation/auc_no/'.urldecode($row->busername)."/".urldecode($row->vname)."/".urldecode($proid);?>" target="_blank">
+										<td> <a href="<?php echo base_url().'Customer_renegovaluequotation/auc_no/'.urldecode($row->buyerid)."/".urldecode($row->sellerid)."/".urldecode($proid);?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true" ></i></a></td>
 					<td>
 

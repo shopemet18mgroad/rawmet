@@ -30,7 +30,7 @@ class Customer_sellerrenegotiatedvalue extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$active1 = array('busername'=>$sess['sessi'],'custapprove'=>false);
+		$active1 = array('buyerid'=>$sess['sessi'],'custapprove'=>false);
 		//print_r($active1); die;
 		
 		
@@ -58,16 +58,16 @@ class Customer_sellerrenegotiatedvalue extends CI_Controller {
 			
 		$this->load->model('Admin_model');
 		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
-		$busername = urldecode(($this->uri->segment(4)));
+		$buyerid = urldecode(($this->uri->segment(4)));
 		
-		$retriveval = array('busername'=>$busername,'productid'=>$productid);
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid);
 
 		//
 		
 		$this->load->model('Admin_model');
 		$app= array('custapprove'=>true);
 		$query = $this->Admin_model->update_custom('vend_renego', $app, $retriveval, $retriveval);
-		header('location: '.base_url().'Customer_sellerrenegotiatedvalue/index/'.urldecode($productid)."/".urldecode($busername));
+		header('location: '.base_url().'Customer_sellerrenegotiatedvalue/index/'.urldecode($productid)."/".urldecode($buyerid));
 		
 		die;
 	
@@ -78,16 +78,16 @@ class Customer_sellerrenegotiatedvalue extends CI_Controller {
 		$this->load->helper('url');
 		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$busername = urldecode(($this->uri->segment(4)));
+		$buyerid = urldecode(($this->uri->segment(4)));
 
-		$retriveval = array('busername'=>$busername,'productid'=>$productid);
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid);
 
 		
 		
 		$this->load->model('Admin_model');
 		$app= array('custapprove'=>2);
 		$query = $this->Admin_model->update_custom('vend_renego', $app, $retriveval, $retriveval);
-		header('location: '.base_url().'Customer_sellerrenegotiatedvalue/index/'.urldecode($productid)."/".urldecode($busername));
+		header('location: '.base_url().'Customer_sellerrenegotiatedvalue/index/'.urldecode($productid)."/".urldecode($buyerid));
 		
 		die;
 	}

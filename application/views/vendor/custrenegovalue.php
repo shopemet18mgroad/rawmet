@@ -23,18 +23,19 @@
     <thead class="bg-primary text-white">
       <tr>	
 	        <th>Sl.No.</th>
-	        <th>Seller Name</th>
-			<th>Buyer Name</th>
+	        <th>Seller Id</th>
+			<th>Buyer Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Your Base Price</th>
-			<th>Your Base Quantity</th>
-			<th style="color:pink;">Buyer Negotiated Quantity</th>
-			<th style="color:pink;">Buyer Negotiated Price</th>
-			<th style="color:yellow;">Your Negotiated price</th>
-			<th style="color:orange;">Buyer Re-Negotiated price</th>
-			<th style="color:orange;">Buyer Re-Negotiated Quantity</th>
+			<th  style="color:orange;">Seller Base Quantity</th>
+			<th  style="color:orange;">Seller Base Price</th>
+			
+			<th style="color:green;">Buyer Negotiated Quantity</th>
+			<th style="color:green;">Buyer Negotiated Price</th>
+			<th style="color:orange;">Seller Negotiated price</th>
+			<th style="color:green;">Buyer Re-Negotiated price</th>
+			<th style="color:green;">Buyer Re-Negotiated Quantity</th>
 			<th>Action</th>
      
     </thead>
@@ -46,13 +47,13 @@
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 					<td><?php echo $count;?></td>
-			<td><?php echo $row->vname;?></td>
-			<td><?php echo $row->busername;?></td>
+			<td><?php echo $row->sellerid;?></td>
+			<td><?php echo $row->buyerid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-				<td><?php echo $row->price."/"; echo $row->units;?></td>
-				<td><?php echo $row->quantity."/"; echo $row->supplyunits;?></td>
+				<td><?php echo $row->price."/"; echo $row->punits;?></td>
+				<td><?php echo $row->quantity.""; echo $row->units;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
@@ -61,7 +62,7 @@
 				
 		<td>	
 	
-		<a href="<?php  echo base_url()."Vendor_custrenegovalue/approve_requote/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success btn-sm">Approve</button></a>
+		<a href="<?php  echo base_url()."Vendor_custrenegovalue/approve_requote/".$proid."/".urldecode($row->sellerid)."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-success btn-sm">Approve</button></a>
 		<br><br>			
 		<center><?php
 		/* <a href="<?php echo base_url()."Vendor_sellrenegotiate/index/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</a> */
@@ -73,14 +74,14 @@
 		else
 		
 		{
-				echo '<a href="'.base_url().'Vendor_sellrenegotiate/index/'.$proid."/".urldecode($row->vname)."/".urldecode($row->busername).'">';
+				echo '<a href="'.base_url().'Vendor_sellrenegotiate/index/'.$proid."/".urldecode($row->sellerid)."/".urldecode($row->buyerid).'">';
 				echo '<button class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</button>';
 		echo '</a>';}
 		
 			?>
 		</center>
 		<br>
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
       </tr> 
 	    <?php $count++;?>	  
 	  

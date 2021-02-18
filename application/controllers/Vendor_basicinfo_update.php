@@ -31,7 +31,7 @@ class Vendor_basicinfo_update extends CI_Controller {
 		$this->load->library('session');
 		//$this->load->model('Admin_model');
 		//$busername = $this->uri->segment(3);	
-	
+	     $sellerid=$this->input->post('sellerid');
 		$vname=$this->input->post('vname');
 		$vcompanyname=$this->input->post('vcompanyname');
 		$vcompanytype=$this->input->post('vcompanytype');
@@ -51,7 +51,7 @@ class Vendor_basicinfo_update extends CI_Controller {
 	//=================================================================================================
 		//==================================================================
 		$this->load->model('Admin_model');
-		$data2 = array('vname' => $vname,'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 'vcontactnumber' =>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate'=>$vselectstate,'vpincode' => $vpincode,'dealer_type'=>$dealer_type);
+		$data2 = array( 'sellerid'=>$sellerid,'vname' => $vname,'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 'vcontactnumber' =>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate'=>$vselectstate,'vpincode' => $vpincode,'dealer_type'=>$dealer_type);
 		//print_r($data2);die;
 		//$this->load->view('xya', $data);
 		
@@ -60,7 +60,7 @@ class Vendor_basicinfo_update extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		//print_r($sess);die;
 		
-		 $hidden = array('vusername'=>$sess['sessi']);
+		 $hidden = array('sellerid'=>$sess['sessi']);
 		//print_r($hidden);die;
 		
 		//$updatech = array('baddress' => $baddress);

@@ -31,14 +31,14 @@ class Customer_index extends CI_Controller {
 		$this->load->model('Admin_model');
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('busername'=>$sess['sessi'],'buyerapprove'=>false);
+		$active = array('buyerid'=>$sess['sessi'],'buyerapprove'=>false);
 		
 		$query['data'] = $this->Admin_model->getdatafromtable('selquotenegotate',$active);
 		
-		$active2 = array('busername'=>$sess['sessi'],'buyerapprove'=>true);
+		$active2 = array('buyerid'=>$sess['sessi'],'buyerapprove'=>true);
 		$query['data2'] = $this->Admin_model->getdatafromtable('selquotenegotate',$active2);
 		
-		$active3 = array('busername'=>$sess['sessi'],'sellapproval'=>true);
+		$active3 = array('buyerid'=>$sess['sessi'],'sellapproval'=>true);
 		$query['data3'] = $this->Admin_model->getdatafromtable('purchaseoder',$active3);
 		
 		$val['sql']=count($query['data']);

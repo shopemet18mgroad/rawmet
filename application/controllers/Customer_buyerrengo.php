@@ -24,8 +24,8 @@ class Customer_buyerrengo extends CI_Controller {
 		$this->load->model('Admin_model');
 		$this->load->library('session');
 		$productid = urldecode(str_ireplace('-','/', $this->uri->segment(3)));
-		$busername =  urldecode($this->uri->segment(4));
-		$vname =  urldecode($this->uri->segment(5));
+		$buyerid =  urldecode($this->uri->segment(4));
+		$sellerid =  urldecode($this->uri->segment(5));
 	//print_r($vname); die;
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
@@ -34,12 +34,12 @@ class Customer_buyerrengo extends CI_Controller {
 			}else{
 				
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('productid '=>$productid,'busername'=>$sess['sessi'],'vname'=>$vname);
+		$active1 = array('productid '=>$productid,'buyerid'=>$sess['sessi'],'sellerid'=>$sellerid);
 		//$reqapproval = array('sellapproval'=>false);
 		
 		
 $query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
-		//print_r($query[0]->bprice); die;
+		
 		
 		$adac['sqldata']= $query;
 		

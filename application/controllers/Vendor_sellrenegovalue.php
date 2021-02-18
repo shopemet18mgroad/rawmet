@@ -30,7 +30,7 @@ class vendor_sellrenegovalue extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$active1 = array('vname'=>$sess['sessi']);
+		$active1 = array('sellerid'=>$sess['sessi']);
 		
 		
 		
@@ -69,7 +69,7 @@ class vendor_sellrenegovalue extends CI_Controller {
 		
 		//$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 
-		$retriveval = array('productid'=>$comp,'vname'=>$compname);
+		$retriveval = array('productid'=>$comp,'sellerid'=>$compname);
 		
 		
 		$this->load->model('Admin_model');
@@ -98,7 +98,7 @@ class vendor_sellrenegovalue extends CI_Controller {
 		//$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
 		
 		$data2 = array('buyerapprove'=>2);
-		$updatech = array('productid'=>$comp,'vname'=>$compname);
+		$updatech = array('productid'=>$comp,'sellerid'=>$compname);
 		$this->load->model('Admin_model');
 		
 		$status = $this->Admin_model->update_custom('selquotenegotate',$data2,$updatech,$updatech);

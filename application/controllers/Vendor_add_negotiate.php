@@ -35,21 +35,21 @@ class Vendor_add_negotiate extends CI_Controller {
 		$this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
-				$active1 = array('vusername'=>$sess['sessi']);
+				$active1 = array('sellerid'=>$sess['sessi']);
 				//print_r($active1); die;
 				$data2 = $this->Admin_model->getusernamedatafromtable('vendor_register', $active1);
 				//print_r($data2); die;
-				$vusername= $data2[0]->vusername;
+				$sllerid= $data2[0]->sellerid;
 				//	print_r($vusername); die;
-	         if($this->input->post('busername')){
+	         if($this->input->post('buyerid')){
 			 $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			$this->load->library('session');
 
-			$vname = $this->input->post('vname');
-			$busername = $this->input->post('busername');
+			$sellerid = $this->input->post('sellerid');
+			$buyerid = $this->input->post('buyerid');
 			$category = $this->input->post('category');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
@@ -57,12 +57,13 @@ class Vendor_add_negotiate extends CI_Controller {
 			$category = $this->input->post('category');
 		
 			$price = $this->input->post('price');
-	        $supplyunits = $this->input->post('supplyunits');
-			$quantity = $this->input->post('quantity');
+			$punits = $this->input->post('punits');
 	        $units = $this->input->post('units');
+			$quantity = $this->input->post('quantity');
+	     
 		    $pstates = $this->input->post('pstates');
 			$pcities = $this->input->post('pcities');
-			$negotiate= $this->input->post('negotiate');
+		
 			$bquantity = $this->input->post('bquantity');
 		    $bprice= $this->input->post('bprice');			 
 		    $bunits = $this->input->post('bunits');
@@ -82,7 +83,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'price'=>$price,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname,'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'units' =>$units);
+			$data2 = array('productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'price'=>$price,'units'=> $units,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'punits' =>$punits);
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){

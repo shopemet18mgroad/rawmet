@@ -35,13 +35,13 @@ class Vendor_add_renegotiate extends CI_Controller {
 		$this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
-				$active1 = array('vusername'=>$sess['sessi']);
+				$active1 = array('sellerid'=>$sess['sessi']);
 				//print_r($active1); die;
 				$data2 = $this->Admin_model->getusernamedatafromtable('vendor_register', $active1);
 				//print_r($data2); die;
-				$vusername= $data2[0]->vusername;
+				$sellerid= $data2[0]->sellerid;
 				//print_r($vusername); die;
-	 if($this->input->post('busername')){
+	 if($this->input->post('buyerid')){
 			 $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
@@ -50,17 +50,17 @@ class Vendor_add_renegotiate extends CI_Controller {
 
 			$productid = $this->input->post('productid');
 			$productname = $this->input->post('productname');
-			$vname = $this->input->post('vname');
-			//print_r($vname); die;
-			$busername = $this->input->post('busername');
+			$sellerid = $this->input->post('sellerid');
+		
+			$buyerid = $this->input->post('buyerid');
 			$category = $this->input->post('category');
 			$description = $this->input->post('description');
 			$companyname = $this->input->post('companyname');
 			
 			$price = $this->input->post('price');
+			$punits = $this->input->post('punits');
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
-			$supplyunits = $this->input->post('supplyunits');
 			
 			$pstates= $this->input->post('pstates');
 			$pcities = $this->input->post('pcities');
@@ -72,8 +72,7 @@ class Vendor_add_renegotiate extends CI_Controller {
 			
 			$selprice = $this->input->post('selprice');
 			$sunits = $this->input->post('sunits');
-			$selqan = $this->input->post('selqan');
-			$selunits = $this->input->post('selunits');
+		
 			$datetime = $this->input->post('datetime');
 			$estdeltime = $this->input->post('estdeltime');
 			$productvalidityto = $this->input->post('productvalidityto');
@@ -86,14 +85,14 @@ class Vendor_add_renegotiate extends CI_Controller {
 			
 			$sellrenegoprice = $this->input->post('sellrenegoprice');
 			$sellrenegounits = $this->input->post('sellrenegounits');
-			//$_FILES['uploadproductimage']['name'];
+			
 			$uploadproductimage  = serialize($this->input->post('uploadproductimage')); 
 			
 			
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('productid'=>$productid ,'productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'selqan'=>$selqan,'selunits'=>$selunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits,'uploadproductimage'=>$uploadproductimage,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto );
+			$data2 = array('productid'=>$productid ,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units, 'punits'=>$punits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits,'uploadproductimage'=>$uploadproductimage,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto );
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){
