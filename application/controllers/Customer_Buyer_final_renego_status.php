@@ -23,12 +23,14 @@ class Customer_Buyer_final_renego_status extends CI_Controller {
 	{
 		$this->load->model('Admin_model');
 		$this->load->library('session');
+		
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active1 = array('buyerid'=>$sess['sessi'],'status'=>true);
 	
 		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response5();	
 		

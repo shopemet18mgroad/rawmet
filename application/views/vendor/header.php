@@ -105,9 +105,9 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>Vendor_custapprovedreq">Your 1st Approved <br>Requirements</a>
             
-			<a class="collapse-item" href="<?php echo base_url();?>Customer_sellerapprovedreq">Seller's 1st Approved <br>Requirement</a>
-			<a class="collapse-item" href="<?php echo base_url();?>Customer_cust2ndApprovedReq">Your 2nd Approved <br> Requirements</a>
-			<a class="collapse-item" href="<?php echo base_url();?>Customer_sel2ndApprovedReq">Seller's 2nd Approved <br> Requirements</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Vendor_sellerapprovedreq">Seller's 1st Approved <br>Requirement</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Vendor_cust2ndApprovedReq">Your 2nd Approved <br> Requirements</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Vendor_sel2ndApprovedReq">Seller's 2nd Approved <br> Requirements</a>
           </div>
         </div>
       </li>

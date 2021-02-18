@@ -30,6 +30,8 @@ class Customer_sellerapprovedreq extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$reqapproval = array('buyerid'=>$sess['sessi'],'selapprove'=>true);
+		
+		
 		//$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
 		$query = $this->Admin_model->getdatafromtable_buyer10();
 		$adac['sqldata']= $query;

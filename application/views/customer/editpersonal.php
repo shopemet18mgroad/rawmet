@@ -39,8 +39,12 @@
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
 							
 							<form action = "<?php echo base_url();?>customer_basicinfo_update" method="POST" enctype="multipart/form-data">
-							<td>Name</td>
-								<td><input class="form-control w-50" type="text" id="bname" name="bname" value="<?php echo $sqldata[0]->bname; ?>" readonly></td>
+							<tr>
+								<td>Buyer Id</td>
+								<td><input class="form-control w-50" type="text" id="buyerid" name="buyerid" value="<?php echo$sqldata[0]->buyerid; ?>"readonly></td>
+							</tr> 
+							<tr><td>Name</td>
+								<td><input class="form-control w-50" type="text" id="bname" name="bname" value="<?php echo $sqldata[0]->bname; ?>"></td>
 							</tr> 
 							<tr>
 								<td>Company Name</td>

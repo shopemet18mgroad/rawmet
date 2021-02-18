@@ -27,32 +27,15 @@ class Customer_myrequirements extends CI_Controller {
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
-			}else
-	{
+			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('buyerid'=>$sess['sessi']);
-		//print_r($active1); die; 
-		//	$query2 = $this->Admin_model->getdatafromtable('buyer_register',$active1);
-		
-		//$buyername = $query2[0]->bname;
-		//$custreq = array('bname'=>$buyername);
-		
-		
-		//$adac['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$custreq);
+		$active1 = array('buyerid'=>$sess['sessi'],'status'=>true);
 		
 		$adac2 = $this->Admin_model->getdatafromtable_buyer();
-		//$a = $adac2[0]->productid;
-		//$custreq2 = array('productid'=>$a);
-		//print_r($custreq); die;
+	 
 		
 		$adac['sqldata2']= $adac2;
-		//$adac['sqldata3'] = $this->Admin_model->getdatafromtable('seller_mbuyreq',$custreq);
-
-
-
-		//echo "<pre>";print_r($adac['sqldata3']);exit;
-		//$adac['sqldata_mbuyer'] = $this->Admin_model->getdatafromtable_buyer1(//$buyername);
-		//echo "<pre>";print_r($adac['sqldata_mbuyer']);exit;
+		 
 		
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/myrequirements',$adac);
@@ -74,6 +57,9 @@ function setApproveproduct(){
 		$data['status'] = 1;
 		$this->db->where('id',$seller_mbuyreq_id);
 		echo $this->db->update('seller_mbuyreq', $data);exit;
+		
+
+
 	}
 
 

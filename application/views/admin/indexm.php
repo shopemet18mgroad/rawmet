@@ -243,7 +243,7 @@
                                           <td>".$seller->bname."</td>
                                           <td>".$seller->bcompanyname."</td>
                                           <td>".$seller->description."</td>                                          
-                                          <td> <a  href='javascript:showUserData(\"".$seller->buyerrequriement_id."\")'> View</a></td>     
+                                          <td> <a  href='javascript:showUserData(\"".$seller->bcompanyname."\")'> View</a></td>     
                                       </tr>
                                      
                                       </tr>
@@ -316,11 +316,11 @@
         <script type="text/javascript">
 
 $baseURL = "<?php echo base_url(); ?>";  
-function showreneg_productid(buyerrequriement_id) {
+function showreneg_productid(id) {
 	$.ajax({
         type:'post',
         url:$baseURL+'Customer_seller_response_renego/index',
-        data:'buyerrequriement_id='+buyerrequriement_id,
+        data:'id='+id,
         success:function(msg){
             var tempmsg = JSON.parse(msg);                 
             
@@ -330,18 +330,18 @@ function showreneg_productid(buyerrequriement_id) {
 }
 
      
-function showUserData(buyerrequriement_id){
+function showUserData(bcompanyname){
     $.ajax({
         type:'post',
         url:$baseURL+'Admin_indexm/getUserDatalive',
-        data:'buyerrequriement_id='+buyerrequriement_id,
+        data:'bcompanyname='+bcompanyname,
         success:function(msg){
             var tempmsg = JSON.parse(msg);
             $('#final_Negotiated1').modal('show');
-            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller name</td> <td>Seller's Send Offer</td><td>Buyer's 1st Negotiation Price</td><td>Seller's 2nd Negotiation Price</td><td>Buyer's Final Price</td></tr>";
+            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller name</td> <td>Seller's Send Offer</td><td>Buyer's 1st Negotiation Price</td><td>Seller's 2nd Negotiation Price</td><td>Buyer's Final Price</td><td>Quotation</td></tr>";
             for(var i=0; i<tempmsg.length; i++){
-                $sellerMBueryReqId = tempmsg[i]['buyerrequriement_id'];								
-                tbleData = tbleData+"<tr><td>"+tempmsg[i]['vusername']+"</td><td>"+tempmsg[i]['sellerprice']+"</td><td>"+tempmsg[i]['buyer_nego_price']+"</td><td>"+tempmsg[i]['seller_renego_price']+"</td><td>"+tempmsg[i]['buyer_final_price']+"</td></tr>";	
+                $sellerMBueryReqId = tempmsg[i]['bcompanyname'];								
+                tbleData = tbleData+"<tr><td>"+tempmsg[i]['vusername']+"</td><td>"+tempmsg[i]['sellerprice']+"</td><td>"+tempmsg[i]['buyer_nego_price']+"</td><td>"+tempmsg[i]['seller_renego_price']+"</td><td>"+tempmsg[i]['buyer_final_price']+"</td><td> <a href='Customer_seller_response_renego/index/"+tempmsg[i]['id']+ "';>Quotation</a></td></tr>";	
             }			  
             tbleData = tbleData+"</table>";
             $("#sellerResponse").html(tbleData);

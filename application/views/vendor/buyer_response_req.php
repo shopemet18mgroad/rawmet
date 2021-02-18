@@ -52,7 +52,7 @@
                      <td>".$seller->sellername."</td>
 					 <td>".$seller->sellerprice."/".$seller->bsupplyability."</td> 
 					 <td>".$seller->buyer_nego_price."/".$seller->buyer_nego_units."</td> 
-                     <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>
+                     <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>|| <a href=''>Reject</a>
 				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Renegotiate</a></td>     
             </tr>
              ";
