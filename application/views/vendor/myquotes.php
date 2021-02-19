@@ -23,14 +23,18 @@
       <tr>   
 	  
 	        	  <th>Sl.No.</th>
-			    <th>Supplier ID</th>
+
+			    <th>Supplier Id</th>
+
 			     <th>Product Name</th>
 			<th>Product Id</th>
 			 <th>Category</th>
-		    <th style ="color:pink";>Buyer Quantity</th>
-			<th style ="color:pink";>Buyer Price</th>
+			 <th style ="color:orange";>Supplier Base Quantity</th>
+			<th style ="color:orange";>Supplier base Price</th>
+		    <th style ="color:pink";>Buyer 1st  Quantity</th>
+			<th style ="color:pink";>Buyer 1st Price</th>
 			
-			<th style ="color:orange";>Supplier Price</th>
+			<th style ="color:orange";>Supplier Re-negotiated Price</th>
 			
 			<th style ="color:pink";>Buyer Re-negotiated Quantity</th>
 			<th style ="color:pink";>Buyer Re-negotiated Price</th>
@@ -50,11 +54,11 @@
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
 			
-			
-			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
+			<td><?php echo $row->price.""; echo $row->punits;?></td>
+			<td><?php echo $row->bquantity.""; echo $row->bsupplyunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bunits;?></td>
 			
-			<!--<td><?php //echo $row->selqan.""; echo $row->sunits;?></td>-->
+			
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			
 			<td><?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>

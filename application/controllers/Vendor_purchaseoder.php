@@ -29,7 +29,7 @@ class Vendor_purchaseoder extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vusername'=>$sess['sessi']);
+		$active1 = array('sellerid'=>$sess['sessi']);
 				
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$active1);
 		
