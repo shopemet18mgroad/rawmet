@@ -50,7 +50,7 @@
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-				    <input type="text" class="form-control form-control-user" id="buyerid" value="BYR<?php echo(rand(1,1000000));?>" name="buyerid"  placeholder="Buyer Id" Readonly>
+				    <input type="text" class="form-control form-control-user" id="buyerid" value="B<?php echo(rand(1,1000000));?>" name="buyerid"  placeholder="Buyer Id" Readonly>
                   </div>
                   <div class="col-sm-6">
 				   <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_bname()"  placeholder="Name">

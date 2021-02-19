@@ -45,7 +45,7 @@
 							</tr>
 								<tr>												
 							<td class="btxt">Seller Id:</td>
-							<td><input class="form-control w-50" type="text" id="sellerid" name="sellerid" value="SLR<?php echo(rand(1,1000000));?>" readonly></td>
+							<td><input class="form-control w-50" type="text" id="sellerid" name="sellerid" value="S<?php echo(rand(1,1000000));?>" readonly></td>
 							</tr>
 						<tr>
 					

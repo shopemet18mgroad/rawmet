@@ -81,8 +81,18 @@ table-border
 <center><h2 style="color:orange;">RAWMET24</h2></center>
 
 <table style="padding-left:70% ">
+<tr>
+    <th>Buyer ID</th>
+    <td><?php echo  $sqldata1[0]->buyerid; ?></td> 
+    
+  </tr>
+<tr>
+    <th>Seller ID</th>
+    <td><?php echo  $sqldata1[0]->sellerid; ?></td> 
+    
+  </tr>
   <tr>
-    <th>DATE</th>
+    <th style="text-align:left;">DATE</th>
     <td><?php echo date('Y-m-d'); ?></td> 
     
   </tr>

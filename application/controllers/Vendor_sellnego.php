@@ -30,7 +30,7 @@ class Vendor_sellnego extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vname'=>$sess['sessi'],'sellapproval'=>true);
+		$active1 = array('sellerid'=>$sess['sessi'],'sellapproval'=>true);
 		
 	
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);

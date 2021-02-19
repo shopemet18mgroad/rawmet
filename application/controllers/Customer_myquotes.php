@@ -29,7 +29,7 @@ class Customer_myquotes extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$reqapproval = array('busername'=>$sess['sessi'],'sellapproval'=>true);
+		$reqapproval = array('buyerid'=>$sess['sessi'],'sellapproval'=>true);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));

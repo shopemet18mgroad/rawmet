@@ -30,7 +30,7 @@ class Customer_finalrenegotiatedvalue extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$active1 = array('busername'=>$sess['sessi'],'custapprove'=>true);
+		$active1 = array('buyerid'=>$sess['sessi'],'custapprove'=>true);
 		//print_r($active1); die;
 		
 		
@@ -60,14 +60,14 @@ class Customer_finalrenegotiatedvalue extends CI_Controller {
 		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 		$busername = urldecode(($this->uri->segment(4)));
 		
-		$retriveval = array('busername'=>$busername,'productid'=>$productid);
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid);
 
 		//
 		
 		$this->load->model('Admin_model');
 		$app= array('custapprove'=>false);
 		$query = $this->Admin_model->update_custom('vend_renego', $app, $retriveval, $retriveval);
-		header('location: '.base_url().'Customer_finalrenegotiatedvalue/index/'.urldecode($productid)."/".urldecode($busername));
+		header('location: '.base_url().'Customer_finalrenegotiatedvalue/index/'.urldecode($productid)."/".urldecode($buyerid));
 		
 		die;
 	
@@ -80,14 +80,14 @@ class Customer_finalrenegotiatedvalue extends CI_Controller {
 	
 		$busername = urldecode(($this->uri->segment(4)));
 
-		$retriveval = array('busername'=>$busername,'productid'=>$productid);
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid);
 
 		
 		
 		$this->load->model('Admin_model');
 		$app= array('custapprove'=>2);
 		$query = $this->Admin_model->update_custom('vend_renego', $app, $retriveval, $retriveval);
-		header('location: '.base_url().'Customer_finalrenegotiatedvalue/index/'.urldecode($productid)."/".urldecode($busername));
+		header('location: '.base_url().'Customer_finalrenegotiatedvalue/index/'.urldecode($productid)."/".urldecode($buyerid));
 		
 		die;
 	}
