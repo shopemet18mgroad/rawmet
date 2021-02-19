@@ -38,11 +38,13 @@ class Admin_myquotes extends CI_Controller {
 		public function approve_product(){
 		
 		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		 $sellerid = $this->uri->segment(4);
+		 
+		  $buyerid = $this->uri->segment(5);
 		 
         // $vname = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid);
-		
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid,'buyerid'=>$buyerid);
 		
 		
 		$this->load->model('Admin_model');

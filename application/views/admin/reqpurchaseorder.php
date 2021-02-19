@@ -27,13 +27,11 @@
 			<th>Category</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
-			
 			<th style="color:pink;">Buyer Quantity</th>
 			<th style="color:pink;">Buyer Price</th>
 			<th style="color:orange;">Suplier Price</th>
-			
 			<th> View Purchase Order</th>
-	
+			<th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -71,6 +69,10 @@
 
  
 </a></td>
+
+ 
+<td><a href="<?php  echo base_url()."Admin_reqpurchaseorder/approve_product/".$proid."/".$row->sellerid."/".$row->buyerid;?>"><button type="button" class="btn btn-success">Approve</button></a>
+</td>
 <?php $count++;?>
 <?php }?>	
 
