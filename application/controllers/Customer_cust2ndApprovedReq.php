@@ -29,6 +29,7 @@ class Customer_cust2ndApprovedReq extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active1 = array('buyerid'=>$sess['sessi'],'status'=>true);
 		
 		$adac['sqldata3'] = $this->Admin_model->getsellerrenego_datafetch();
 		

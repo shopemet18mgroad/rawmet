@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -23,26 +22,20 @@ class Customer_negotiated extends CI_Controller {
 	{
 		$this->load->model('Admin_model');
 		$this->load->library('session');
+		
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('buyerid'=>$sess['sessi']);
-		
-		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
-		
-		//$vendorname = $query2[0]->vname;
-		//$poptions = array('vname'=>$vendorname);
-		
-		
-		$query = $this->Admin_model->getdatafromtable_buyer2($active1);
+		$active1 = array('buyerid'=>$sess['sessi'],'status'=>true);	
+		$query = $this->Admin_model->getdatafromtable_buyer2();
 		
 		
 		$adac['sqldata']= $query;
 		
-			//$active = array('vusername'=>$sess['sessi']);
+		//$active = array('vusername'=>$sess['sessi']);
 		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
 		
 		
