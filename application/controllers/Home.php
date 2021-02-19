@@ -36,7 +36,10 @@ class Home extends CI_Controller {
 	public function search()
 	{
 		$this->load->helper(array('url','html','date'));
-		$productname = $this->input->post('productname');
+		echo $productname = $this->input->post('productname');
+		echo $category = $this->input->post('category');
+		echo $myCountry = $this->input->post('myCountry');
+		die;
 		date_default_timezone_set('Asia/Kolkata');
 		$time =  Date('Y-m-d H:i:s');
 		$this->load->model('Admin_model');

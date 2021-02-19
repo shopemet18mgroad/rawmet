@@ -186,11 +186,11 @@ public function get_product_table(){
 		$tempArr = array_unique(array_column($search, 'productname'));
 		$search = array_intersect_key($search, $tempArr);
 		foreach($search as $sear){
-			echo "<p  onclick=\"getPaging(this.id)\" id=\"".$sear['productname'].'|'.$sear['vname']."\" class=\"option\">".$sear['productname']."</p>\n";
+			echo "<li onclick=\"getPaging(this.id)\" id=\"".$sear['productname'].'|'.$sear['vname']."\" class=\"option\">".$sear['productname']."</li>\n";
 			
 		}
 	}else{
-		echo "<p onclick=\"\" value=\"1\" class=\"option\">No Results</p>";
+		echo "<li onclick=\"getPagingnr()\" value=\"1\" class=\"option\">No Results</li>";
 	}
 	
 }
