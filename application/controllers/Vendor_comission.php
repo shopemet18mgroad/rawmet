@@ -30,7 +30,7 @@ class Vendor_comission extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vusername'=>$sess['sessi'],'comapprove'=>false);
+		$active1 = array('sellerid'=>$sess['sessi'],'comapprove'=>false);
 		
 		//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active1);
 		
@@ -57,9 +57,9 @@ class Vendor_comission extends CI_Controller {
 		public function comission_approve(){
 		
 		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-         $vname = urldecode($this->uri->segment(4));
+         $sellerid = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid);
 		
 		
 		
@@ -76,9 +76,9 @@ class Vendor_comission extends CI_Controller {
 		public function comission_reject(){
 		$this->load->helper('url');
 		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-         $vname = urldecode($this->uri->segment(4));
+         $sellerid = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid);
 		
 		$data2 = array('comapprove'=>2);
 	
@@ -96,8 +96,8 @@ class Vendor_comission extends CI_Controller {
 	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		
 		
-		$vname = urldecode($this->uri->segment(4));
-		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		$sellerid = urldecode($this->uri->segment(4));
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid);
 		
 		$this->load->model('Admin_model');
 		$this->Admin_model->delete_data('sellerpostproduct',$retriveval);

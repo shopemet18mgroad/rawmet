@@ -24,8 +24,7 @@
         <th>Buyer Name</th>
         <th>Company Type</th>
         <th>Contact Person</th>
-		<th>Username</th>
-		<th>Location</th>
+	   <th>Location</th>
 		<th>City</th>
 		<th>Option</th>
       </tr>
@@ -38,19 +37,20 @@
 					<td><?php echo $row->bname;?></td>
 					<td><?php  echo $row->bcompanytype; ?></td>
 					<td><?php echo $row->bcontactperson; ?></td>
-					<td><?php echo $row->busername; ?></td>
+					
 					<td><?php echo $row->baddress; ?></td>
 					<td><?php echo $row->bcity;?></td>
 					
-					<td><a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyerdetail/index/".urldecode($row->busername)."/".urldecode($row->bcompanyname);;?>"><i class="fa fa-eye"></i>View</a>
+					<td><a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyerdetail/index/".urldecode($row->buyerid)."/".urldecode($row->bcompanyname);?>"><i class="fa fa-eye"></i>View</a>
 					
-					<button type="submit" name="submit" id="<?php echo $row->busername;?>" onclick="admin_buyerapprove(this.id)" class="btn btn-success btn-sm">Activate</button></td>	
-					<?php $count++;?>
+					<button type="submit" name="submit" id="<?php echo $row->buyerid;?>" onclick="admin_buyerapprove(this.id)" class="btn btn-success btn-sm">Activate</button></td>	
+					
 				</tr>
+					<?php $count++;?>
 				<?php }?>
 	 
   
-	
+
 				</tbody>
           
       	

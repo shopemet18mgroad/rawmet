@@ -34,12 +34,13 @@
     </thead>			
 				
 				<tbody>
+				
 	 <?php foreach($sqldata3 as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				<?php $prodid = str_ireplace('/','-',$row->productid);?>
-			<td><?php echo $row->vusername;?></td>
+				<?php if($row->seller_renego_price !== null){$prodid = str_ireplace('/','-',$row->productid);?>
+			<td><?php  echo $row->sellerid;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
 			<td><?php echo $row->category;?></td>
 			<td><?php echo $row->productname;?></td>
@@ -48,7 +49,7 @@
 			<td><?php echo $row->sellerprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->buyer_nego_price."/"; echo $row->buyer_nego_units;?></td>
 			<td><?php echo $row->seller_renego_price."/"; echo $row->seller_renego_units;?></td>
-			 <td> <a href='javascript:finalapproveProduct(<?php echo $row->seller_mbuyreq_id; ?>)'>Approve</a>
+			 <td> <a href='javascript:finalapproveProduct(<?php echo $row->seller_mbuyreq_id; ?>)'>Approve</a>|| <a href=''>Reject</a>
 			 
 			 <?php
 		
@@ -63,8 +64,8 @@
 				echo '<button class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</button>';
 		echo '</a>';}
 		
-			?>
-			
+				} ?>
+						
 			
 			 
 			

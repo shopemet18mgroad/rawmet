@@ -29,12 +29,12 @@ class Admin_editcustprofile extends CI_Controller {
 			}else{
 		$this->load->model('Admin_model');
 		
-		$bname = urldecode($this->uri->segment(3));
+		$buyerid = urldecode($this->uri->segment(3));
 	
 		$bcompanyname = urldecode($this->uri->segment(4));
 	
 		
-		$active = array('bname'=>$bname,'bcompanyname'=>$bcompanyname);
+		$active = array('buyerid'=>$buyerid,'bcompanyname'=>$bcompanyname);
 
 	
 		$query = $this->Admin_model->getdatafromtable('buyer_register',$active);

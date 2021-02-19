@@ -54,7 +54,7 @@ class Admin_managebuyrequirements extends CI_Controller {
 		$comp = str_ireplace('-','/',$compnameurl2[1]);
 		$this->load->model('Admin_model');
 
-		$retriveval = array('productid'=>$comp,'bname'=>$compname);
+		$retriveval = array('productid'=>$comp,'buyerid'=>$compname);
 		$this->load->model('Admin_model');
 		$app= array('adapproval'=>true);
 		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
@@ -68,9 +68,9 @@ class Admin_managebuyrequirements extends CI_Controller {
 		public function reject1(){
 		$this->load->helper('url');
 		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-         $bname = urldecode($this->uri->segment(4));
+         $buyerid = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'bname'=>$bname);
+		$retriveval = array('productid'=>$productid,'buyerid'=>$buyerid);
 		
 		$data2 = array('adapproval'=>2);
 	

@@ -40,7 +40,7 @@
 				<div class="thumbnail mt-2">
 				
 						<td><?php $img = unserialize($sqldata[0]->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="150px" height="100%"></td>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="150px" height="180"></td>
 					<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img;?>">
 				
 				</div>	
@@ -55,9 +55,13 @@
 					<div class="row p-2">
 					<div class="col-sm-12">
 			
-				
+				      
+					  
+					  
+					    <p><b>Seller Id:</b><?php echo $sqldata[0]->sellerid;?></p>
+						
 								
-							<input type="hidden" class="form-control" id="vname" name="vname"  value="<?php echo $sqldata[0]->vname;?>">
+							<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
 							
 							
 							
@@ -72,12 +76,13 @@
 							
 							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $sqldata[0]->companyname;?>">
 						
-								<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo $sqldata[0]->supplyunits;?>">
 							
-							<p><b>My base Price:</b><?php echo $sqldata[0]->price."/"; echo $sqldata[0]->units;?></p>
+							
+							<p style="color:Orange;"><b>Seller Base Price:</b><?php echo $sqldata[0]->price."/"; echo $sqldata[0]->punits;?></p>
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
+							<input type="hidden" class="form-control" id="punits" name="punits"  value="<?php echo $sqldata[0]->punits;?>">
 							
-							<p><b>My base Quantity:</b><?php echo $sqldata[0]->quantity."/"; echo $sqldata[0]->supplyunits;?></p>
+							<p style="color:Orange;"><b>Seller Base Quantity:</b><?php echo $sqldata[0]->quantity.""; echo $sqldata[0]->units;?></p>
 							<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo $sqldata[0]->quantity;?>">
 							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo $sqldata[0]->units;?>">
 							
@@ -101,17 +106,17 @@
 					<div class="col-sm-12">
 					<center><b>Buyer Negotiated Price</b></center>
 					<hr class="sidebar-divider">
-					<p><b>Buyer Name:</b><?php echo $sqldata[0]->busername;?></p>
-							<input type="hidden" class="form-control" id="busername" name="busername"  value="<?php echo $sqldata[0]->busername;?>">
+					<p><b>Buyer Id:</b><?php echo $sqldata[0]->buyerid;?></p>
+							<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sqldata[0]->buyerid;?>">
 					
 							
 						
-							<p><b>Quantity:</b><?php echo $sqldata[0]->bquantity; echo $sqldata[0]->bsupplyability;?></p>
+							<p   style="color:green;"  ><b>Quantity:</b><?php echo $sqldata[0]->bquantity; echo $sqldata[0]->bsupplyability;?></p>
 							<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo $sqldata[0]->bquantity;?>">
 							<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo $sqldata[0]->bsupplyability;?>">
 							
 							
-							<p><b>Price:</b><?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></p>
+							<p  style="color:green;"><b>Price:</b><?php echo $sqldata[0]->bprice."/"; echo $sqldata[0]->bunits;?></p>
 							<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata[0]->bprice;?>">
 							<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata[0]->bunits;?>">
 							
@@ -119,7 +124,7 @@
 							<center><b>Seller's Negotiate Price</b></center>
 							<hr class="sidebar-divider">
 							
-							<p style="color:orange;"><b>Your Previous Re-Negotiated Price:</b><?php echo $sqldata[0]->selprice."/"; echo $sqldata[0]->sunits;?></p>
+							<p style="color:orange;"><b>Seller Re-Negotiated Price:</b><?php echo $sqldata[0]->selprice."/"; echo $sqldata[0]->sunits;?></p>
 							<input type="hidden" class="form-control" id="selprice" name="selprice"  value="<?php echo $sqldata[0]->selprice;?>">
 							<input type="hidden" class="form-control" id="sunits" name="sunits"  value="<?php echo $sqldata[0]->sunits;?>">
 							

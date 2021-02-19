@@ -67,8 +67,8 @@
   function validate_Postproduct() {
    //  swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
     
-   var vname = document.getElementById("vname").value;
-    var vusername = document.getElementById("vusername").value;
+
+    var sellerid = document.getElementById("sellerid").value;
     var companyname = document.getElementById("companyname").value;
     var category = document.getElementById("category").value;
     var productname = document.getElementById("productname").value;
@@ -77,8 +77,10 @@
     var pstates = document.getElementById("pstates").value;
     var pcities = document.getElementById("pcities").value;
     var description = document.getElementById("description").value;
-    var quantity = document.getElementById("quantity").value;
+   
     var price = document.getElementById("price").value;
+	 var punits = document.getElementById("punits").value;
+	 var quantity = document.getElementById("quantity").value;
     var units = document.getElementById("units").value;
    // var pic_array1 = document.getElementsByName("pic_array1");
     var uploadcertificate = document.getElementById("uploadcertificate").value;
@@ -93,8 +95,8 @@
     var uploadproductimage = document.getElementsByName("uploadproductimage");
     var uploadcertificate = document.getElementById("uploadcertificate").value;
  
-    if (vname == '' ||
-      vusername == '' ||
+    if (
+      sellerid == '' ||
       companyname == '' ||
       category == '' ||
       productname == '' ||
@@ -103,8 +105,10 @@
       pstates == '' ||
       pcities == '' ||
       description == '' ||
+	   price == '' ||
+	    punits == '' ||
       quantity == '' ||
-      price == '' ||
+     
       units == '' ||
        minoderquant == '' ||
       supplyability == '' ||

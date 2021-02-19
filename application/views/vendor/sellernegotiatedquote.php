@@ -24,16 +24,17 @@
       <tr> 
          	  <th>Sl.No.</th>
 	        <th>Image</th>
-			<th>Supplier Name</th>
-			<th>Buyer Name</th>
+			<th>Supplier Id</th>
+			<th>Buyer Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
 			
-			<th>Supplier Price</th>
+			<th style="color:orange">Supplier Base Price</th>
+			<th style="color:orange">Supplier Quantity Price</th>
 			<th>Location</th>
-			<th>Buyer Quantity</th>
-			<th>Buyer Price</th>
+			<th style="color:green">Buyer Quantity</th>
+			<th style="color:green">Buyer Price</th>
 			
 			<th style="color:orange;">Seller price</th>
 			<th> Buyer's Action  </th>
@@ -50,13 +51,14 @@
 								<td><?php echo $count;?></td>
 				<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
-			<td><?php echo $row->vname;?></td>
-			<td><?php echo $row->busername;?></td>
+			<td><?php echo $row->sellerid;?></td>
+			<td><?php echo $row->buyerid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
 		
-			<td><?php echo $row->price."/"; echo $row->supplyunits;?></td>
+			<td><?php echo $row->price."/"; echo $row->punits;?></td>
+			<td><?php echo $row->quantity.""; echo $row->units;?></td>
 			<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>

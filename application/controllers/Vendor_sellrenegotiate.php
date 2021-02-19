@@ -23,11 +23,11 @@ class Vendor_sellrenegotiate extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		$productid = urldecode(str_ireplace('-','/', $this->uri->segment(3)));
-		$vname =  urldecode($this->uri->segment(4));
-		$busername =  urldecode($this->uri->segment(5));
+		$sellerid =  urldecode($this->uri->segment(4));
+		$buyerid =  urldecode($this->uri->segment(5));
 		//print_r($vname); die;
 		
-		$active = array('productid '=>$productid ,'busername'=>$busername,'vname'=>$vname);
+		$active = array('productid '=>$productid ,'buyerid'=>$buyerid,'sellerid'=>$sellerid);
 	
 	
 		$query = $this->Admin_model->getdatafromtable('cust_renego', $active);

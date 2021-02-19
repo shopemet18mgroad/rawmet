@@ -33,7 +33,7 @@ class Customer_editpersonal extends CI_Controller {
 			die;
 		}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
-			$active = array('busername'=>$sess['sessi']);
+			$active = array('buyerid'=>$sess['sessi']);
 			$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
 			$data['sqldata']= $query;
 			//$data['bcompanyname'] = $bcompanyname;

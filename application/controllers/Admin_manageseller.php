@@ -45,10 +45,10 @@ class Admin_manageseller extends CI_Controller {
 		public function reject(){
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
-         $vname = urldecode($this->uri->segment(3));
+         $sellerid = urldecode($this->uri->segment(3));
 	
 
-		$retriveval = array('vname'=>$vname);
+		$retriveval = array('sellerid'=>$sellerid);
 		
 		$data2 = array('voptions'=>False);
 

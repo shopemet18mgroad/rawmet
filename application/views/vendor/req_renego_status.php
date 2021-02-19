@@ -40,7 +40,7 @@
       <tr>
 	  
 	   
-	  <td><?php echo $row->bname;?></td> 
+	  <td><?php echo $row->buyerid;?></td> 
 		<td><?php echo $row->bcompanyname;?></td> 
 		<td><?php  echo $row->category;?></td>
 		 <td><?php echo $row->productname?></td>

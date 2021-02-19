@@ -19,7 +19,7 @@
 	  <th>Image</th>
 	  <th>ISO Certificate Number</th>
 	  <th>Product Id</th>
-	  <th>Vendor Name</th>
+	  <th>Seller ID</th>
        <th>Product Name</th>
 	   <th>Payable to Rawmet<br>Status</th>
 	   
@@ -46,7 +46,7 @@
 					  <td><?php echo $row->uploadcertificate;?></td>
 				 
 	  <td><?php echo $row->productid;?></td> 
-	   <td><?php echo $row->vname;?></td>
+	   <td><?php echo $row->sellerid;?></td>
 		<td><?php echo $row->productname;?></td> 
 		<td style="color:green;"><b><?php  if($row->comapprove == 0) {echo 'Pending';}else if($row->comapprove == 2) {echo 'Rejected';}else if($row->comapprove == 1) {echo 'Approved';}?></b></td>
 	
@@ -62,7 +62,7 @@
 		
 		
 		
-		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Reject</button></a>
+		<a href="<?php  echo base_url()."admin_adminvendorproducts/reject/".$prodid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger">Reject</button></a>
 		
 		
 		

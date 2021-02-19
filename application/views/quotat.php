@@ -81,9 +81,19 @@ table-border
 <center><h2 style="color:orange;">RAWMET24</h2></center>
 
 <table style="padding-left:70% ">
+<tr>
+    <th>Buyer ID</th>
+    <td><?php echo  $sqldata1[0]->buyerid; ?></td> 
+    
+  </tr>
+<tr>
+    <th>Seller ID</th>
+    <td><?php echo  $sqldata1[0]->sellerid; ?></td> 
+    
+  </tr>
   <tr>
-    <th>DATE</th>
-    <td><?php echo date('Y-m-d H:i:s'); ?></td> 
+    <th style="text-align:left;">DATE</th>
+    <td><?php echo date('Y-m-d'); ?></td> 
     
   </tr>
   <tr>
@@ -93,11 +103,16 @@ table-border
   </tr>
   
 </table>
-
+<!--
 <p><b>ADDRESS:<br/>
-<p><b>  From:<br/><?php echo $sqldata3[0]->bname.""."<br>". $sqldata3[0]->baddress.""."<br>".$sqldata3[0]->bcity." ".  $sqldata3[0]->bselectstate.""."<br>". $sqldata3[0]->bpincode;?></b><br></p>
+    <td><?php //echo  $sqldata1[0]->buyerid;?></td>
 
-<p><b>To:<br/><?php echo $sqldata2[0]->vname.""."<br>".  $sqldata2[0]->vaddress.""."<br>".  $sqldata2[0]->vcity." ".  $sqldata2[0]->vselectstate.""."<br>". $sqldata2[0]->vpincode;?></b><br></p>
+
+<p><b>To:<br/>
+ <td><?php //echo  $sqldata1[0]->sellerid;?></td>
+
+-->
+
 
 <p><b>Quotation Prepared By:</b>Shopemet Network Private Limited</p>
 

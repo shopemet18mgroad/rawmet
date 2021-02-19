@@ -22,6 +22,7 @@ class Admin_buyer_basicinfo_update extends CI_Controller {
 	 	public function index()
 	{
 		//$this->load->library('fileupload');
+		$buyerid = $this->input->post('buyerid');
 		$bname = $this->input->post('bname');
 		$bcompanyname = $this->input->post('bcompanyname');
 		$bcompanytype = $this->input->post('bcompanytype');
@@ -42,12 +43,12 @@ class Admin_buyer_basicinfo_update extends CI_Controller {
 			 $data2 = array('bcompanyname' => $bcompanyname,'bcompanytype' => $bcompanytype,'bcontactperson' => $bcontactperson,'bpan'=>$bpan,'bgst'=>$bgst,
 	'bcontactnumber'=>$bcontactnumber ,
 	'bemail'=> $bemail ,'busername' => $busername,
-	'bpassword'=> $vpassword,'brepeatpassword' => $brepeatpassword,
+	'bpassword'=> $vpassword,'brepeatpassword' => $brepeatpassword,'bname'=>$bname,
 	'baddress' => $baddress, 'bcity'=>$bcity,'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
 
 			  
 			  $datainserr = "Data Inserted Successfully";
-			  $updatech = array('bname' => $bname);
+			  $updatech = array('buyerid' => $buyerid);
 			 
 			  $status = $this->Admin_model->update_custom('buyer_register',$data2,$updatech,$updatech);
 		//$status = $this->Admin_model->insert('vendor_register',$data2);

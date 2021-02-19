@@ -52,7 +52,7 @@
 			<td><?php echo $row->quantity.""; echo $row->units;?></td>
 			<td><?php echo $row->price."/" ;echo $row->priceperkg;?></td>
 			<td><?php echo $row->sellerprice."/" ;echo $row->bsupplyability;?></td>
-			<td> <a href="<?php echo base_url().'customer_quotation2/auc_no/'.urldecode($row->bname)."/".urldecode($row->vusername)."/".urldecode($proid);?>" target="_blank">
+			<td> <a href="<?php echo base_url().'Vendor_quotation_seller/auc_no/'.$row->id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 			
 

@@ -68,7 +68,7 @@ class Admin_indexm extends CI_Controller {
 	
 	function getUserDatalive(){
 	$this->load->model('Admin_model');
-	$strUID1   = $this->input->post('buyerrequriement_id');
+	$strUID1   = $this->input->post('bcompanyname');
 	$userData = $this->Admin_model->getUserDatalive($strUID1);
 	echo json_encode($userData);exit;
 }

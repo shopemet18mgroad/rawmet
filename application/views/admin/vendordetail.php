@@ -32,6 +32,10 @@
 				 
 					 </thead>
 						<tbody>
+						<tr>
+						<td>Seller Id</td>
+								<td><?php echo $sqldata[0]->sellerid;?></td>
+							</tr> 
 						
 						<tr>
 						<td>Name</td>

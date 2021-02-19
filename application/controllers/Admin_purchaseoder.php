@@ -49,9 +49,9 @@ class Admin_purchaseoder extends CI_Controller {
 	public function approve_paid(){
 		
 		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-         $vname = urldecode($this->uri->segment(4));
+         $sellerid = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid);
 		
 		
 		
@@ -69,9 +69,9 @@ class Admin_purchaseoder extends CI_Controller {
 		public function reject_unpaid(){
 		$this->load->helper('url');
 		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-         $vname = urldecode($this->uri->segment(4));
+         $sellerid = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'vname'=>$vname);
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid);
 		
 		$data2 = array('pooptions'=>2);
 	

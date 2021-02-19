@@ -45,10 +45,10 @@
 		
 
      <td>
-	 <a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanyname);?>"><i class="fa fa-edit"></i>Edit</a>
+	 <a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->sellerid).'/'.urldecode($row->vcompanyname);?>"><i class="fa fa-edit"></i>Edit</a>
 				
 		
-		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Inactive</button></a>
+		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger">Inactive</button></a>
 
 				
 </td>

@@ -32,6 +32,7 @@ class Customer_basicinfo_update extends CI_Controller {
 		$this->load->model('Admin_model');
 		//$busername = $this->uri->segment(3);
         $bname=$this->input->post('bname');
+		$buyerid=$this->input->post('buyerid');
 		$bcompanyname=$this->input->post('bcompanyname');
 		$bcompanytype=$this->input->post('bcompanytype');
 		$bcontactperson=$this->input->post('bcontactperson');
@@ -49,19 +50,19 @@ class Customer_basicinfo_update extends CI_Controller {
 	//=================================================================================================
 		//==================================================================
 		$this->load->model('Admin_model');
-		$data2 = array('bname' => $bname,'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber,'bemail' => $bemail,'bpan'=>$bpan,'bgst'=>$bgst,'busername'=>$busername ,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
+		$data2 = array('bname' => $bname,'buyerid'=>$buyerid,'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber,'bemail' => $bemail,'bpan'=>$bpan,'bgst'=>$bgst,'busername'=>$busername ,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode);
 		//$this->load->view('xya', $data);
 		
 		$datainserr = "Data Inserted Successfully";
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$hidden = array('busername'=>$sess['sessi']);
+		$hidden = array('buyerid'=>$sess['sessi']);
 		
 		//$updatech = array('baddress' => $baddress);
 		$status = $this->Admin_model->update_custom('buyer_register',$data2,$hidden,$hidden);
 		
-		header('location: '.base_url().'customer_customerprofile/index_error/'.$datainserr);
+		header('location: '.base_url().'customer_customerprofile/index/'.$datainserr);
 		}
 	}
 

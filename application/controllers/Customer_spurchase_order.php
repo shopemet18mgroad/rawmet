@@ -38,23 +38,25 @@ class Customer_spurchase_order extends CI_Controller {
 
 				
 		 
-	if($this->input->post('productname')){
+	if($this->input->post('q_id')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
-			$vname = $this->input->post('vname');
-		
-			//$busername = $this->input->post('busername');
+			$sellerid = $this->input->post('sellerid');
+			$buyerid = $this->input->post('buyerid');
+			$q_id = $this->input->post('q_id');
+			
 			
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
 			
 			$price  = $this->input->post('price');
-			$units  = $this->input->post('units');
+			$punits  = $this->input->post('punits');
 			$quantity  = $this->input->post('quantity');
-			$supplyunits  = $this->input->post('supplyunits');
+		
+			$units  = $this->input->post('units');
 			$pcities = $this->input->post('pcities');
 			$bquantity = $this->input->post('bquantity');
 			$bunits = $this->input->post('bunits');
@@ -81,11 +83,11 @@ class Customer_spurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vname' => $vname, 
+			$data = array('id'=>$id,'q_id'=>$q_id,'sellerid' => $sellerid,'buyerid'=>$buyerid, 
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
 			
 			'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
-			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1,'price'=>$price,'units'=>$units,'quantity'=>$quantity,'supplyunits'=>$supplyunits);
+			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1,'price'=>$price,'units'=>$units, 'punits'=>$punits,'quantity'=>$quantity);
 			
 			$status = $this->Admin_model->insert('purchaseoder', $data);
 			

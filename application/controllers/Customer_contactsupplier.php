@@ -33,15 +33,6 @@ class Customer_contactsupplier extends CI_Controller {
 		}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
 
-			//$active = array('vusername'=>$sess['sessi']);
-			//print_r($active);die;
-			//$query2 = $this->Admin_model->getdatafromtable('vendor_register',$active);
-		
-			//$vendorname = $query2[0]->vname;
-		//$category='scrap';
-		//$active2 = array('category'=>$category);
-		//	$data['sqldata'] = $this->Admin_model->getdatafromtable('sellerpostproduct',$active2);
-		
 		$this->load->model('Admin_model');
 		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		$active = array('productid'=>$productid);

@@ -11,6 +11,9 @@
          
           <div class="col-lg-12">
             <div class="p-5">
+			<marquee Style="Color:orange;" attribute_name = "attribute_value"....more attributes>
+  REMEMBER YOUR ID...
+</marquee>
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-2"> Buyer Registration Account!</h1>
 				
@@ -41,17 +44,18 @@
                    <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number" >
                   </div>
 				    <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="buyerid" value="BYR<?php echo(rand(1,1000000));?>" name="buyerid"  placeholder="Buyer Id" Readonly>
+                 
                   </div>
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-				  <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_bname()"  placeholder="User Name">
-                    
+				    <input type="text" class="form-control form-control-user" id="buyerid" value="B<?php echo(rand(1,1000000));?>" name="buyerid"  placeholder="Buyer Id" Readonly>
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="" readonly>
+				   <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_bname()"  placeholder="Name">
+                    
+                    <input hidden type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="" readonly>
                   </div>
                 </div>
                 

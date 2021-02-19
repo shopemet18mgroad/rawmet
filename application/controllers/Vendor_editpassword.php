@@ -31,7 +31,7 @@ class Vendor_editpassword extends CI_Controller {
 			die;
 		}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
-			$active = array('vusername'=>$sess['sessi']);
+			$active = array('sellerid'=>$sess['sessi']);
 			$data['sqldata']= $this->Admin_model->getdatafromtable('vendor_register', $active);
 			
 			$this->load->view('vendor/header',$sess);

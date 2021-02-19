@@ -16,7 +16,7 @@
     <thead class="bg-primary text-white">
       <tr>
 	    <th>Sl.No.</th>
-	  <th>Supplier Name</th>
+	  <th>Supplier Id</th>
 	  <th>Product Id</th>
         <th>Product Name</th>
         <th>Category</th>
@@ -38,7 +38,7 @@
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				 <td><?php echo $count;?></td>  
-					<td><?php echo $row->vname;?></td>
+					<td><?php echo $row->sellerid;?></td>
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>

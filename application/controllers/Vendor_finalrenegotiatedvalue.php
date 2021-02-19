@@ -30,7 +30,7 @@ class Vendor_finalrenegotiatedvalue extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$active1 = array('vname'=>$sess['sessi'],'custapprove'=>true);
+		$active1 = array('sellerid'=>$sess['sessi'],'custapprove'=>true);
 	//print_r($active1); die;
 		
 		

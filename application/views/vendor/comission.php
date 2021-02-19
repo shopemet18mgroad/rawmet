@@ -17,7 +17,7 @@
       <tr>
 	  <th>Sl.No.</th>
 	      <th>Product Id</th>
-		      <th>Seller Name</th>
+		      <th>Seller Id</th>
           <th>Product Name</th>
           <th style="color:orange">Commission to Rawmet</th>
           <th>Image</th>
@@ -37,7 +37,7 @@
 				?>
    
 		  <td><?php echo $count;?></td> 		
-       <td><?php echo $row->vname;?></td> 				
+       <td><?php echo $row->sellerid;?></td> 				
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->payable."%" ;?></td>
@@ -57,13 +57,13 @@
 		
 
 	
-	<td> <a href="<?php  echo base_url()."Vendor_comission/comission_approve/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
+	<td> <a href="<?php  echo base_url()."Vendor_comission/comission_approve/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-success">Approve</button></a>
 		
-		<a href="<?php  echo base_url()."Vendor_comission/comission_reject/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-info">Reject</button></a>
+		<a href="<?php  echo base_url()."Vendor_comission/comission_reject/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-info">Reject</button></a>
 		
 	
 		 
-		  <a href="<?php  echo base_url()."Vendor_comission/delete_comission/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
+		  <a href="<?php  echo base_url()."Vendor_comission/delete_comission/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
 
 		
 <?php $count++;?>

@@ -31,7 +31,7 @@ class Admin_reqpurchaseorder extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 
-		$reqapproval = array('bname'=>$sess['sessi'],'sellprove'=>true);
+		$reqapproval = array('sellprove'=>false);
 
 		
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);
@@ -43,6 +43,29 @@ class Admin_reqpurchaseorder extends CI_Controller {
 		$this->load->view('admin/footer');
 			}
 	}
+	public function approve_product(){
+		
+		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		 $sellerid = $this->uri->segment(4);
+		 
+		  $buyerid = $this->uri->segment(5);
+		 
+        // $vname = urldecode($this->uri->segment(4));
 
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid,'buyerid'=>$buyerid);
+		//print_r($retriveval); die;
+		
+		$this->load->model('Admin_model');
+		$app= array('sellprove'=>true);
+		
+		$query = $this->Admin_model->update_custom('reqpurchaseorder', $app, $retriveval, $retriveval);
+	
+		if($retriveval){
+			header('location: '.base_url().'Admin_reqpurchaseorder/index/'.urlencode($retriveval));
+		}else{
+			echo "BYE";
+		}
+	
+	}
 	
 }

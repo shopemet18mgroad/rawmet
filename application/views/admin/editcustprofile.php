@@ -20,12 +20,22 @@
 							<tr>
 							<form action = "<?php echo base_url();?>admin_buyer_basicinfo_update" method="POST" enctype="multipart/form-data">
 							<td>Name</td>
-								<td><input class="form-control w-50" type="text" id="bname" name="bname" readonly value="<?php echo $sqldata[0]->bname; ?> "></td>
+								<td><input class="form-control w-50" type="text" id="bname" name="bname" value="<?php echo $sqldata[0]->bname; ?> "></td>
 							</tr> 
 							<tr>
 								<td>Company Name</td>
 								<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" value="<?php echo$sqldata[0]->bcompanyname; ?>"></td>
+								
 							</tr> 
+								<tr>
+								<td>Buyer Id</td>
+								<td><input class="form-control w-50" type="text" id="buyerid" name="buyerid" value="<?php echo $sqldata[0]->buyerid; ?>" readonly></td>
+							</tr>
+							
+							
+							
+							
+							
 							<tr>
 								<td>Company Type</td>
 								<td><input class="form-control w-50" type="text" id="bcompanytype" name="bcompanytype" value="<?php echo$sqldata[0]->bcompanytype; ?>">
@@ -65,7 +75,7 @@
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td> <input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername;?>" readonly ></td>
+								<td> <input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername;?>" ></td>
 							</tr> 
 						 
 							<tr>

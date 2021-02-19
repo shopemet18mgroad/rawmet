@@ -39,7 +39,7 @@ class Customer_buyreqview extends CI_Controller {
 		
 		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active = array('busername'=>$sess['sessi']);
+		$active = array('buyerid'=>$sess['sessi']);
 			}
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/buyreqview',$data);

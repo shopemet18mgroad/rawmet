@@ -43,7 +43,7 @@
                   </div>
 				  <form class="user" action="<?php echo base_url()."home_login";?>" method="post">
                     <div class="form-group">
-                      <input type="text" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." required>
+                      <input type="text" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter ID..." required>
                     </div>
                     <div class="form-group">
                       <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required>

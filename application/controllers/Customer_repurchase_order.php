@@ -35,22 +35,24 @@ class Customer_repurchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('vname')){
+	if($this->input->post('sellerid')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			
-			$vname = $this->input->post('vname');
+			$sellerid = $this->input->post('sellerid');
+			
 			
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
-		    $busername = $this->input->post('busername');
+		    $buyerid = $this->input->post('buyerid');
 			$price  = $this->input->post('price');
 			$units  = $this->input->post('units');
+			$punits  = $this->input->post('punits');
 			$quantity  = $this->input->post('quantity');
-			$supplyunits  = $this->input->post('supplyunits');
+			
 			$pcities = $this->input->post('pcities');
 			$bquantity = $this->input->post('bquantity');
 			$bunits = $this->input->post('bunits');
@@ -84,10 +86,10 @@ class Customer_repurchase_order extends CI_Controller {
 			//$this->load->model('Admin_model');
 			
 			
-				$data = array('vname' => $vname,'busername'=> $busername,'selprice'=>$selprice ,'sunits'=>$sunits,
-			'productname' => $productname,'productid' => $productid, 'category' => $category,'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
+				$data = array('sellerid' => $sellerid,'buyerid'=> $buyerid,'selprice'=>$selprice ,'sunits'=>$sunits,
+			'productname' => $productname,'productid' => $productid, 'category' => $category,'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,'punits'=>$punits,
 			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1,'price'=>$price
-	,'units' =>	$units ,'quantity'  =>$quantity,'supplyunits'=>$supplyunits,'quantity'=>$quantity,'supplyunits'=>$supplyunits,'brenegoprice'=>$brenegoprice,
+	,'units' =>	$units ,'quantity'  =>$quantity,'quantity'=>$quantity,'supplyunits'=>$supplyunits,'brenegoprice'=>$brenegoprice,
 			'brenegounit'=>$brenegounit,
 			'brenegoquantity'=>$brenegoquantity,
 			'brenegoquantityunit'=>$brenegoquantityunit);

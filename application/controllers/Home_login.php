@@ -27,12 +27,12 @@ class Home_login extends CI_Controller {
 		if($this->input->post('user')){
 			if($this->input->post('optradio')=="Buyer"){
 				$table = "buyer_register";
-				$colname = "busername";
+				$colname = "buyerid";
 				$colname2 = "bpassword";
 			     $status ="boptions";
 			}else if($this->input->post('optradio')=="Seller"){
 				$table = "vendor_register";
-				$colname = "vusername";
+				$colname = "sellerid";
 				$colname2 = "vpassword";
 				$status ="voptions";
 			}else{

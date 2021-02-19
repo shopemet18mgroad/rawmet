@@ -36,7 +36,7 @@
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label for="">Buyer Name</label>
-						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata1[0]->bname;?>" readonly>
+						<input type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $sqldata1[0]->buyerid;?>" readonly>
 						
 						<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">
 						

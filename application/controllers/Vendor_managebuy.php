@@ -24,10 +24,10 @@ class Vendor_managebuy extends CI_Controller {
 		$this->load->model('Admin_model');
 		$productid = urldecode( str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$bname = urldecode(($this->uri->segment(4)));
+		$buyerid = urldecode(($this->uri->segment(4)));
 	
 		
-		$active = array('productid '=>$productid ,'bname'=>$bname);
+		$active = array('productid '=>$productid ,'buyerid'=>$buyerid);
 		//print_r($active);die;
 	
 		$query = $this->Admin_model->getdatafromtable('buyerrequriement', $active);

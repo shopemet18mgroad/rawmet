@@ -45,7 +45,7 @@ class Customer_basicpassword_update extends CI_Controller {
 		$datainserr = "Data Inserted Successfully";
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$hidden = array('busername'=>$sess['sessi']);
+		$hidden = array('buyerid'=>$sess['sessi']);
 
 		$status = $this->Admin_model->update_custom('buyer_register',$data4,$hidden,$hidden);
 		

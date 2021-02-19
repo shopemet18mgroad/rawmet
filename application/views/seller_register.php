@@ -11,6 +11,9 @@
          
           <div class="col-lg-12">
             <div class="p-5">
+			<marquee Style="Color:orange;" attribute_name = "attribute_value"....more attributes>
+  REMEMBER YOUR ID...
+</marquee>
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-2">Vendor's Registration Account!</h1>
 				
@@ -58,18 +61,20 @@
                   </div>
 				  
 				  <div class="col-sm-6 mt-2">
-                    <input type="text" class="form-control form-control-user" id="sellerid" value="SLR<?php echo(rand(1,1000000));?>" name="sellerid"  placeholder="Seller Id" Readonly>
+                    
                   </div>
 				  
                 </div>
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-				   <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
+				  <input type="text" class="form-control form-control-user" id="sellerid" value="S<?php echo(rand(1,1000000));?>" name="sellerid"  placeholder="Seller Id" Readonly>
                     
                   </div>
                   <div class="col-sm-6">
-                   <input type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
+				   <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
+                   <input hidden type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
+				 
                   </div>
                 </div>
                 
@@ -172,7 +177,7 @@ function validateseller(){
 	
 
 if(vname == '' || vcompanyname == '' || vcompanytype == '' || vcontactperson == '' || vcontactnumber == '' || vemail == '' || vusername == '' || vpassword == '' || vrepeatpassword == '' || vpan == '' || vgst == '' || vaddress == '' || vcity == '' || vselectstate == '' || vpincode == ''){
-swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST,Pcb, Address, Street, City, State, Pin  cannot leave any field blank!","error");
+swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!","error");
 		return false;
 	}else{
         $.ajax({

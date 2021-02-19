@@ -49,13 +49,13 @@ class Admin_approvevendor extends CI_Controller {
 	}
 	
 	public function approve_seller(){
-		$vusername= urldecode($this->uri->segment(3));
+		$sellerid= urldecode($this->uri->segment(3));
 	
 		$this->load->model('Admin_model');
 		$app= array('voptions'=>true);
-		$adaction2 = array('vusername'=>$vusername);
+		$adaction2 = array('sellerid'=>$sellerid);
 		$query = $this->Admin_model->update_custom('vendor_register', $app, $adaction2, $adaction2);
-		if($vusername){
+		if($sellerid){
 			echo "HI";
 		}else{
 			echo "BYE";

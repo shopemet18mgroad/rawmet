@@ -46,10 +46,10 @@ class Admin_managebuyer extends CI_Controller {
 		public function reject(){
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
-         $bname = urldecode($this->uri->segment(3));
+         $buyerid = urldecode($this->uri->segment(3));
 	
 
-		$retriveval = array('bname'=>$bname);
+		$retriveval = array('buyerid'=>$buyerid);
 		
 		$data2 = array('boptions'=>2);
 

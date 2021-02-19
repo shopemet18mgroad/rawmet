@@ -30,6 +30,7 @@
 					 </thead>
 						<tbody>
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
+						
 						<tr>
 							<td class="btxt">Buyer Name:</td>
 							<td><input class="form-control w-50" type="text" id="bname" name="bname" ></td>
@@ -38,7 +39,18 @@
 							<td class="btxt">Company Name:</td>
 							<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" ></td>
 							</tr>
-							<tr>
+						<tr>												
+							<td class="btxt">Buyer Id:</td>
+							<td><input class="form-control w-50" type="text" id="buyerid" value="B<?php echo(rand(1,1000000));?>" name="buyerid" Readonly ></td>
+							</tr>
+
+
+					
+							
+							
+							
+							
+						<tr>
 					
 							<td class="btxt">Company Type:</td>
 						<td> <select class="form-control w-50" id="bcompanytype" name="bcompanytype">
@@ -125,8 +137,11 @@
 								
 <!--<a href="#"><button type="submit" name="sb3"  class="btn btn-info offset-sm-3 mt-2">Submit</button></a>-->
   <center>
-				<input type="submit" name="submit" id="btn1"   onclick= "return adminaddbuyer()" class="btn btn-info offset-sm-1 mt-2"  value="Register Account" class="btn btn-primary col-3 mt-2 w-100">
-		
+				<input type="submit" name="submit" id="btn1"   onclick= "return adminaddbuyer()" class="btn btn-info offset-sm-1 mt-2"  value="Register Account" class="btn btn-primary col-3 mt-2 w-100">   
+				
+				
+			
+		<a type="button" href="admin_buyerreg"  class="btn btn-info offset-sm-1 mt-2">cancel</a>
 
  
 	<!--<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>-->

@@ -23,19 +23,22 @@
                                 <thead class="bg-primary text-white">
                                     <tr>
 										   <th>Sl.No.</th>
-                                        <th>Supplier Name</th>
-                                        <th>Buyer Name</th>
-                                        <th>Product Name</th>
-                                        <th>Product Id</th>
-                                        <th>Category</th>
-                                         <th>Location</th>
-                                        <th>Supplier Price</th>
-                                     
-                                        <th>Buyer Quantity</th>
-                                        <th>buyer price</th>
-                                        <th>Seller price</th>
-                                        <th>View Quotation</th>
-
+            	<th>Supplier Id</th>
+			<th>Buyer Id</th>
+			<th>Product Name</th>
+			<th>Product Id</th>
+			<th>Category</th>
+			<th>Location</th>
+			
+			<th>Supplier base  Quantity</th>
+			<th>Supplier  Base Price</th>
+			
+			
+			 <th>Buyer 1st Quantity</th>
+		     <th>buyer 1st  price</th>
+			<th>Seller Re-Negotiated price</th>
+			<th>View Quotation</th>
+		
 
 
                                     </tr>
@@ -51,36 +54,53 @@
                                             <?php $proid = str_ireplace('/', '-', $row->productid); ?>
                                             <?php $prodid = str_ireplace('/', '-', $row->productid); ?>
 											<td><?php echo $count;?></td> 
-                                            <td><?php echo $row->vname; ?></td>
-                                            <td><?php echo $row->busername; ?></td>
-                                            <td><?php echo $row->productname; ?></td>
-                                            <td><?php echo $row->productid; ?></td>
-                                            <td><?php echo $row->category; ?></td>
-                                            <td><?php echo $row->pcities; ?></td>
-                                            <?php echo $row->price . "/";
-                                            echo $row->units; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->quantity . "/";
-                                                echo $row->supplyunits; ?>
-                                                <input type="hidden" name="supplyunits" value="<?php echo $row->supplyunits; ?>">
-                                            </td>
-                                            <td>
-                                                <?php echo $row->bquantity . "/";
-                                                echo $row->bunits; ?>
-                                                <input type="hidden" name="bunits" value="<?php echo $row->bunits; ?>">
+                                           <td><input type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
+							<?php echo $row->sellerid;?></td>
+								<td><input type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
+							<?php echo $row->buyerid;?></td>
+		
+			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
+								<?php echo $row->productname;?></td>
+			<td><input type="hidden" name="productid" value="<?php echo $row->productid;?>">
+								<?php echo $row->productid;?></td>
+			<td><input type="hidden" name="category" value="<?php echo $row->category;?>">
+								<?php echo $row->category;?></td>
+			<td><input type="hidden" name="pcities" value="<?php echo $row->pcities;?>">
+								<?php echo $row->pcities;?></td>
+		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
+		     <?php echo $row->quantity."" ;echo $row->units;?>
+			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
+		</td>
+		
+		
+		<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
+		     <?php echo $row->price."/" ;echo $row->punits;?>
+			 <input type="hidden" name="punits" value="<?php echo $row->punits;?>">
+		</td>
+		
+		
+												
+		
+			
+							
+		<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
+		     <?php echo $row->bquantity."" ;echo $row->bunits;?>
+			 <input type="hidden" name="bunits" value="<?php echo $row->bunits;?>">
+		
+	</td>
+	
+		<td><input type="hidden" name="bprice" value="<?php echo $row->bprice;?>">
+		     <?php echo $row->bprice."/" ;echo $row->bsupplyability;?>
+			 <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
+		</td>
+			<td><input type="hidden" name="selprice" value="<?php echo $row->selprice; ?>">
+													<?php echo $row->selprice . "/";
+													echo $row->sunits; ?>
+		<input type="hidden" name="sunits" value="<?php echo $row->sunits; ?>">
+								</td>
 
-                                            </td>
-                                            <td>
-                                                <?php echo $row->bprice . "/";
-                                                echo $row->bsupplyability; ?>
-                                                <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability; ?>">
-                                            </td>
-                                            <td>
-                                                <?php echo $row->selprice . "/";
-                                                echo $row->sunits; ?>
-                                            </td>
-                                            <td> <a href="<?php echo base_url() . 'Admin_quotationpur/auc_no/' . urldecode($row->busername) . "/" . urldecode($row->vname) . "/" . urldecode($proid); ?>" target="_blank">
+
+                                            <td> <a href="<?php echo base_url() . 'Admin_quotationpur/auc_no/' .$row->id. urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
 
 
 

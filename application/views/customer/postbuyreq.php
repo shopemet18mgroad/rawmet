@@ -47,8 +47,9 @@
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label for="">Customer Name</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->bname;?>" readonly>
+						<input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
                     </div>
-					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
+					<div class="col-sm-4 mb-12 pl-5 mb-sm-0">
 						<label for="">Company Name</label>
 						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
                     </div>
@@ -211,17 +212,19 @@ function validatepostreq(){
 	var lastdate = document.getElementById("lastdate").value;
 	var email = document.getElementById("email").value;
 	var contactnumber = document.getElementById("contactnumber").value;
-
+	var uploadimage = document.getElementById("uploadimage").value;
+	var uploadpdf = document.getElementById("uploadpdf").value;
+	var iagreee = document.getElementById("iagreee").value;
 	
 
-if(category == '' || productname == '' || description == '' || quantity == ''  || units == '' || requireddate == '' || lastdate == '' || email == '' || contactnumber == ''){
-swal("Alert!","Category, Product Name, Description, Quantity, Units, Dates , Email, Contact Number cannot leave any field blank!","error");
+if(category == '' || productname == '' || description == '' || quantity == ''  || units == '' || requireddate == '' || lastdate == '' || email == '' || contactnumber == '' || uploadimage == ''|| uploadpdf == '' || iagreee == ''){
+swal("Alert!","Category, Product Name, Description, Quantity, Units, Dates , Email, Contact Number, Image, PDF, Terms and condition cannot leave any field blank!","error");
 		return false;
 	}
 	else{
         $.ajax({
             type:'submit',
-            data: {category:category,productname:productname,description:description,quantity:quantity,units:units,requireddate:requireddate,lastdate:lastdate,email:email,contactnumber:contactnumber},
+            data: {category:category,productname:productname,description:description,quantity:quantity,units:units,requireddate:requireddate,lastdate:lastdate,email:email,contactnumber:contactnumber,uploadimage:uploadimage,uploadpdf:uploadpdf,iagreee:iagreee},
            success:function(data){
                 swal("Success", "Data Saved Successfully", "success");
             },

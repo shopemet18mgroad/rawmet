@@ -22,18 +22,19 @@
     <thead class="bg-primary text-white">
       <tr>   <th>Sl.No.</th>
 	        <th>Image</th>
-			<th>Buyer Name</th>
+			<th>Buyer Id</th>
 			<th>Product Name</th>
-			
 			<th>Product Id</th>
+			
+			
 			<th>Category</th>
 			<th>Location</th>
 		
 			<th>Supplier Price</th>
 			<th>Supply Ability</th>
-			
-			<th style="color:orange;">Buyer Quantity</th>
 			<th style="color:orange;">Buyer Price</th>
+			<th style="color:orange;">Buyer Quantity</th>
+			
 			<th>Action</th>
       </tr>
     </thead>
@@ -46,26 +47,26 @@
 				<td><?php echo $count;?></td>  
 		<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
-			<td><?php echo $row->busername;?></td>
+			<td><?php echo $row->buyerid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
 				<td><?php echo $row->pcities;?></td>
 			
-			<td><?php echo $row->price."/"; echo $row->units;?></td>
-			<td><?php echo $row->quantity." "; echo $row->supplyunits;?></td>
-		
+			<td><?php echo $row->price."/"; echo $row->punits;?></td>
+			<td><?php echo $row->quantity." "; echo $row->units;?></td>
+		     <td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
-			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
+			
 						
 			
 		<td>	
 	
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selnego()">Approve </button></a>
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selnego()">Approve </button></a>
 					
-		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".urldecode($proid)."/".urldecode($row->busername)."/".urldecode($row->vname);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Negotiate</a></center>
+		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".urldecode($proid)."/".urldecode($row->buyerid)."/".urldecode($row->sellerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Negotiate</a></center>
 		
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->busername);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
       </tr> 
 <?php $count++;?>	  
      <?php }?>	

@@ -29,7 +29,7 @@ class Vendor_buyer_finalized_reqPrice extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-	
+		$active1 = array('sellerid'=>$sess['sessi']);
 		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response4();	
 		
 		//print_r($adac['sqldata3']); die;

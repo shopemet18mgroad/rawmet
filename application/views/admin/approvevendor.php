@@ -25,7 +25,7 @@
 	  <th>Sl.No.</th>
         <th>Vendor Name</th>
         <th>Company Type</th>
-		<th>Username</th>
+		
         <th>Contact Person</th>
 		<th>Location</th>
 		
@@ -41,23 +41,26 @@
 				    <td><?php echo $count;?></td>
                     <td><?php echo $row->vname; ?></td>
 					<td><?php echo $row->vcompanytype; ?></td>
-					<td><?php echo $row->vusername; ?></td>
+					
 					<td><?php echo $row->vcontactperson; ?></td>
 					
 					<td><?php echo $row->vaddress;?></td>
 					<td><?php echo $row->vcity;?></td>
 					<td style="display:inline-flex;">
 					
-					<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendordetail/index/".urldecode($row->vusername)."/".urldecode($row->vcompanyname);;?>"><i class="fa fa-eye"></i></a>
+					<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendordetail/index/".urldecode($row->sellerid)."/".urldecode($row->vcompanyname);?>"><i class="fa fa-eye"></i></a>
 		
 		
-					<button type="submit" name="submit" id="<?php echo urldecode($row->vusername);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Activate</button>	</td>
-					<?php $count++;?>
+					<button type="submit" name="submit" id="<?php echo urldecode($row->sellerid);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Activate</button>	
+					
+					</td>
+					
 				
 	
 				</tr>
+					<?php $count++;?>
 				<?php }?>
-	
+
 				</tbody>	  
     
     </tbody>

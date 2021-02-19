@@ -43,13 +43,13 @@
 		<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->bname;?></td>
+			<td><?php echo $row->buyerid;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
 		
 			<td><?php echo $row->description;?></td>
 			<td><?php echo $row->bcity;?></td>
 			<td><?php echo $row->price.'/'.$row->priceperkg;?></td>
-			<td><?php echo $row->quantity.'/'.$row->units;?></td>	
+			<td><?php echo $row->quantity.' '.$row->units;?></td>	
 				<?php $count++;?>
 			
 		

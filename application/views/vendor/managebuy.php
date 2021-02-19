@@ -39,8 +39,11 @@
 						<label for="">Buyer Name</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
 						
+						<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo  $sessi;?>" readonly>
+						
 						<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">
 						
+						<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $sqldata[0]->buyerid;?>">
 						
                     </div>
 					

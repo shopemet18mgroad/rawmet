@@ -30,7 +30,7 @@
 					 <table class="table table-sm table-borderless">
 					 <thead><th>Personal Info</th>
 					  <th style="text-align:right">
-					   <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urldecode($sqldata[0]->vname).'/'.urldecode($sqldata[0]->vcompanyname);?>"><u>Edit personal</u></a></th>
+					   <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urldecode($sqldata[0]->sellerid).'/'.urldecode($sqldata[0]->vcompanyname);?>"><u>Edit personal</u></a></th>
 					
 
 					 	
@@ -45,6 +45,10 @@
 						<td>Name</td>
 								<td><?php echo $sqldata[0]->vname;?></td>
 							</tr> 
+								<tr>
+						<td>Name</td>
+								<td><?php echo $sqldata[0]->sellerid;?></td>
+							</tr>
 							<tr>
 								<td>Company Name</td>
 								<td><?php echo $sqldata[0]->vcompanyname;?></td>
@@ -86,7 +90,7 @@
 				<table class="table table-sm table-borderless">
 					 <thead><th>Contact Info</th>
 					 <th style="text-align:right">
-					 <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urldecode($sqldata[0]->vname).'/'.urldecode($sqldata[0]->vcompanyname);?>"><u>Edit Contact Info</u></a></th>
+					 <a  href="<?php echo base_url()."admin_editsellerprofile/index/".urldecode($sqldata[0]->sellerid).'/'.urldecode($sqldata[0]->vcompanyname);?>"><u>Edit Contact Info</u></a></th>
 					 </thead>
 						<tbody>
 						<tr>

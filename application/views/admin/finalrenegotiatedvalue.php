@@ -23,20 +23,20 @@
                                 <thead class="bg-primary text-white">
                                     <tr>
 									   <th>Sl.No.</th>
-                                        <th>Buyer Name</th>
+                                        <th>Buyer ID</th>
+										<th>Supplier ID</th>
                                         <th>Product Name</th>
                                         <th>Product Id</th>
                                         <th>Category</th>
-                                        <th>Seller's Base Price</th>
-                                        <th>Seller's Base Quantity</th>
-                                        <th style="color:pink;">Your 1st Negotiated Quantity</th>
-                                        <th style="color:pink;">Your 1st Negotiated Price</th>
-                                        <th style="color:yellow;">Seller 1st Negotiated price</th>
-                                        <th style="color:orange;">Your 2nd Re-Negotiated price</th>
-                                        <th style="color:orange;">Your 2nd Re-Negotiated Quantity</th>
-                                        <th style="color:yellow;">Seller final Re-Negotiated price</th>
+										<th>Supplier Base Quantity</th>
+                                        <th>Supplier Base Price</th>
+                                        <th style="color:pink;">Buyer 1st Negotiated Quantity</th>
+                                        <th style="color:pink;">Buyer 1st Negotiated Price</th>
+                                        <th style="color:yellow;">Supplier 1st Negotiated price</th>
+										<th style="color:orange;">Buyer 2nd Re-Negotiated Quantity</th>
+                                        <th style="color:orange;">Buyer 2nd Re-Negotiated price</th>
+                                        <th style="color:yellow;">Supplier final Re-Negotiated price</th>
                                         <th>Status</th>
-                                        <th>Upload Purchase Order</th>
 
                                     </tr>
                                 </thead>
@@ -53,7 +53,10 @@
 												<td><?php echo $count;?></td> 
 
                                                 <td>
-                                                    <?php echo $row->busername; ?>
+                                                    <?php echo $row->buyerid; ?>
+                                                </td>
+												<td>
+                                                    <?php echo $row->sellerid; ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $row->productname; ?></td>
@@ -61,17 +64,17 @@
                                                     <?php echo $row->productid; ?></td>
                                                 <td>
                                                     <?php echo $row->category; ?></td>
-
+												<td>
+                                                    <?php echo $row->quantity . " ";
+                                                    echo $row->units; ?>
+                                                </td>
                                                 <td>
                                                     <?php echo $row->price . "/";
-                                                    echo $row->units; ?>
+                                                    echo $row->punits; ?>
                                                 </td>
+                                               
                                                 <td>
-                                                    <?php echo $row->quantity . "/";
-                                                    echo $row->units; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $row->bquantity . "/";
+                                                    <?php echo $row->bquantity . " ";
                                                     echo $row->bunits; ?>
                                                 </td>
                                                 <td>
@@ -84,19 +87,21 @@
                                                     echo $row->sunits; ?>
                                                 </td>
                                                 <td>
+                                                    <?php echo $row->brenegoquantity . " ";
+                                                    echo $row->brenegoquantityunit; ?>
+												</td>
+												<td>
                                                     <?php echo $row->brenegoprice . "/";
                                                     echo $row->brenegounit; ?>
                                                 </td>
-                                                <td>
-                                                    <?php echo $row->brenegoquantity . "/";
-                                                    echo $row->brenegoquantityunit; ?>
+                                                
                                                 <td>
                                                     <?php echo $row->sellrenegoprice . "/";
                                                     echo $row->sellrenegounits; ?>
 
                                                 </td>
 
-                                                <td> <a href="<?php echo base_url() . 'Customer_quotation5/auc_no/' . urldecode($row->busername) . "/" . urldecode($row->vname) . "/" . urldecode($proid); ?>" target="_blank">
+                                                <td> <a href="<?php echo base_url() . 'Admin_quotation5/auc_no/' . $row->id."/". urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
 
                                                         <i class="fa fa-download" aria-hidden="true"></i></a></td>
       <?php $count++;?>

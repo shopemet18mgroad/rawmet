@@ -47,8 +47,8 @@
 				<div class="caption col-7 p-2 ml-5 bg-light">
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
-						<label for="">Customer Name</label>
-						<input type="text" class="form-control" id="bname" name="bname" value="<?php echo  $sqldata[0]->bname;?>"" readonly>
+						<label for="">Buyer Id</label>
+						<input type="text" class="form-control" id="buyerid" name="buyerid" value="<?php echo  $sqldata[0]->buyerid;?>"" readonly>
                     </div>
 					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
 						<label for="">Company Name</label>
@@ -84,7 +84,7 @@
 				</div>
 					<h6 class="mt-2"><b>&nbsp;&nbsp;Describe your Buying requirement</b></h6>
 					<div class="col-sm-5 col-md-12">
-                      <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."     value="<?php echo  $sqldata[0]->description;?>"  ></textarea>
+                  <input style="height:160px" type="text" class="form-control" id="description" name="description"      value="<?php echo  $sqldata[0]->description;?>"  placeholder="description">
 					</div>
 					
 						<div class="form-inline">
