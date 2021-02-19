@@ -60,6 +60,7 @@ class Vendor_uploadedproduct extends CI_Controller {
 	public function delete_seller(){
 	
 	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+	
 		
 		$active = array('productid'=>$productid);
 		
