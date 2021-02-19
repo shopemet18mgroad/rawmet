@@ -61,6 +61,17 @@ function setApproveproduct(){
 
 
 	}
+	
+	function setrejectproduct(){
+		$this->load->model('Admin_model');
+		$seller_mbuyreq_id = $this->input->post('id');
+		$data['status'] = 2;
+		$this->db->where('id',$seller_mbuyreq_id);
+		echo $this->db->update('seller_mbuyreq', $data);exit;
+		
+
+
+	}
 
 
 function getUserData(){

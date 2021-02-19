@@ -320,7 +320,7 @@
 							
 									<div class="col-sm-5 mt-4">
 								<label for="exampleInputFile">Upload Product Images:</label>
-								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage">
+								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage[]">
 								
 							</div>
 							

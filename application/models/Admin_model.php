@@ -20,12 +20,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}else{
 						return TRUE;
 					}
-		 
-
-		  } 
+		 } 
 	
 		public function getdatafromtable($table, $data) {
-
 			$query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		} 

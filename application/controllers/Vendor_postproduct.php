@@ -79,8 +79,9 @@ class Vendor_postproduct  extends CI_Controller {
 			$companyname = $this->input->post('companyname');
 			$uploadcertificate = $this->input->post('uploadcertificate');
 			
-			$pic_array1 = self::upload_files('uploadproductimage');
 			$_FILES['uploadproductimage']['name'];
+			$pic_array1 = self::upload_files('uploadproductimage');
+			
 			
 			
 			
@@ -150,7 +151,7 @@ class Vendor_postproduct  extends CI_Controller {
 
 
 private function upload_files($nameid){
-    	print_r($nameid);
+    	//print_r($nameid);
     //$countfiles = count($_FILES[$nameid]['name']);
 	$countfiles=1;
       // Looping all files

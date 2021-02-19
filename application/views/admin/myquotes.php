@@ -47,7 +47,7 @@
 				?>
 				<td><?php echo $count;?></td> 
 				 
-			<td><?php echo $row->vname;?></td>
+			<td><?php echo $row->sellerid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
@@ -77,7 +77,7 @@
 </a>
 </td>
  
-<td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-success">Approve</button></a>
+<td><a href="<?php  echo base_url()."admin_myquotes/approve_product/".$proid."/".$row->sellerid."/".$row->buyerid;?>"><button type="button" class="btn btn-success">Approve</button></a>
 </td>
 <?php $count++;?>
 

@@ -142,7 +142,7 @@ function showUserData(productid){
             var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller name</td><td>Product Id</td><td>Product Name</td><td>Seller Price</td><td>Option</td></tr>";
             for(var i=0; i<tempmsg.length; i++){
                 $sellerMBueryReqId = tempmsg[i]['id'];								
-                tbleData = tbleData+"<tr><td>"+tempmsg[i]['sellerid']+"</td><td>"+tempmsg[i]['productid']+"</td><td>"+tempmsg[i]['productname']+"</td><td>"+tempmsg[i]['sellerprice']+" / "+tempmsg[i]['bsupplyability']+"</td><td><button  onclick='approveProduct(\""+$sellerMBueryReqId+"\");'>Approve</button> || <a href='Customer_seller_response_renego/index/"+tempmsg[i]['id']+ "';>Negotiate</a>|| <a href='';>Reject</a></td></tr>";	
+                tbleData = tbleData+"<tr><td>"+tempmsg[i]['sellerid']+"</td><td>"+tempmsg[i]['productid']+"</td><td>"+tempmsg[i]['productname']+"</td><td>"+tempmsg[i]['sellerprice']+" / "+tempmsg[i]['bsupplyability']+"</td><td><button  onclick='approveProduct(\""+$sellerMBueryReqId+"\");'>Approve</button> || <button  onclick='rejectproduct(\""+$sellerMBueryReqId+"\");'>Reject</button> || <a href='Customer_seller_response_renego/index/"+tempmsg[i]['id']+ "';>Negotiate</a></td></tr>";	
             }			  
             tbleData = tbleData+"</table>";
             $("#sellerResponse").html(tbleData);
@@ -192,5 +192,42 @@ function approveProduct(id)
 
 }
 
+
+
+function rejectproduct(id)
+{
+  alert(id);
+  swal({
+  title: "Are you sure?",
+  content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'Customer_myrequirements/setrejectproduct',
+                         data:'id='+id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Your imaginary file is safe!");
+  }  
+});
+
+
+}
  
 </script>
