@@ -25,7 +25,7 @@
  <th>Images</th>
 			<th>Product Id</th>
 			<th>Product Name</th>
-			<th>Buyer Name</th>
+			<th>Buyer ID</th>
 			<th>company Name</th>
 			<th>Description</th>
 		
@@ -45,7 +45,7 @@
 		<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->bname;?></td>
+			<td><?php echo $row->buyerid;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
 		
 			<td><?php echo $row->description;?></td>

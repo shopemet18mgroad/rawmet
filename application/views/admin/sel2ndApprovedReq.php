@@ -15,8 +15,8 @@
 			    <form action="<?php echo base_url();?>Customer_buypurchase_order4" method="POST" id="upload-form" enctype="multipart/form-data">
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>
-		<th>Seller Name</th>
+      <tr><th>Sl. No.</th>
+		<th>Seller ID</th>
 		<th>Buyer Company Name</th>
 	    <th>Category</th>
 		<th>Buyer Product Name</th>
@@ -35,13 +35,14 @@
     </thead>			
 				
 				<tbody>
+				<?php $count=1;?>
 	<?php $k=0;?>
 	 <?php foreach($sqldata3 as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
-			
+			<td><?php echo $count;?></td>
 			<td><input type="hidden" name="vusername" value="<?php echo $row->
 			vusername;?>"><?php echo $row->vusername;?></td>
 			
@@ -70,7 +71,7 @@
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			
-		
+		<?php $count++;?>
       </tr>      
     <?php $k++;}?>	
     </tbody>
