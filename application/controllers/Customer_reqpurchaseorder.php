@@ -31,7 +31,7 @@ class Customer_reqpurchaseorder extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 
-		$reqapproval = array('bname'=>$sess['sessi'],'sellprove'=>true);
+		$reqapproval = array('sellprove'=>true);
 
 		
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('reqpurchaseorder',$reqapproval);

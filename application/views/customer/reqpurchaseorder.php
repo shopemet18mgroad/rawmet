@@ -40,7 +40,7 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-			<td><?php echo $row->vusername;?></td>
+			<td><?php echo $row->sellerid;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
 			<td><?php echo $row->category;?></td>
 			<td><?php echo $row->productname;?></td>

@@ -21,7 +21,7 @@
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-			<th>Supplier Name</th>
+			<th>Supplier ID</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
@@ -43,7 +43,7 @@
 				?>
 				 
 		
-			<td><?php echo $row->vname;?></td>
+			<td><?php echo $row->sellerid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>

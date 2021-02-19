@@ -49,7 +49,7 @@
 											 <td>".$seller->seller_renego_price."/".$seller->seller_renego_units."</td>
 											  <td>".$seller->buyer_final_price."/".$seller->buyer_final_units."</td>
                             <td> <a href='javascript:finalapproveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>
-				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Reject</a></td>     
+				|| <a href='javascript:buyerfinalrejectProduct(\"".$seller->seller_mbuyreq_id."\")'>Reject</a></td>     
                                       </tr>
                                      
                                       </tr>
@@ -113,6 +113,42 @@ function finalapproveProduct(seller_mbuyreq_id)
                      $.ajax({
                          type:'post',  
                          url:$baseURL+'Vendor_buyer_finalized_reqPrice/buyerfinalapproveProduct',
+                         data:'seller_mbuyreq_id='+seller_mbuyreq_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+
+function buyerfinalrejectProduct(seller_mbuyreq_id)
+{
+  alert(seller_mbuyreq_id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',  
+                         url:$baseURL+'Vendor_buyer_finalized_reqPrice/buyerfinalrejectProduct',
                          data:'seller_mbuyreq_id='+seller_mbuyreq_id,
                          success:function(msg){
                              if(msg){

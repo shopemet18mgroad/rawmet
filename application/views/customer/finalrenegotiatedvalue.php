@@ -19,7 +19,7 @@
 			<div class="card shadow mb-4">
 				<div class="card-body">
 					<div class="table-responsive">
-						<form action="<?php echo base_url(); ?>Customer_respurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
+						
 							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 								<thead class="bg-primary text-white">
 						<tr>
@@ -30,11 +30,11 @@
 			<th>Category</th>
 			<th>Seller's Base Price</th>
 			<th>Seller's Base Quantity</th>
-			<th style="color:pink;">Your 1st Negotiated Quantity</th>
-			<th style="color:pink;">Your 1st Negotiated Price</th>
+			<th style="color:pink;">Buyer 1st Negotiated Quantity</th>
+			<th style="color:pink;">Buyer 1st Negotiated Price</th>
 			<th style="color:yellow;">Seller 1st Negotiated price</th>
-			<th style="color:orange;">Your 2nd Re-Negotiated price</th>
-			<th style="color:orange;">Your 2nd Re-Negotiated Quantity</th>
+			<th style="color:orange;">Buyer 2nd Re-Negotiated price</th>
+			<th style="color:orange;">Buyer 2nd Re-Negotiated Quantity</th>
 			<th style="color:yellow;">Seller final Re-Negotiated price</th>
 			<th>View Quotation</th>
 			<th>Upload Purchase Order</th>
@@ -42,16 +42,18 @@
 									</tr>
 								</thead>
 								<tbody>
-								<form action="<?php echo base_url(); ?>Customer_repurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
+								
 	
 										<?php $k = 0; ?>
 										<?php foreach ($sqldata as $row) { ?>
 											<tr>
+											<form action="<?php echo base_url(); ?>Customer_respurchase_order" method="POST" enctype="multipart/form-data">
 												<?php $proid = str_ireplace('/', '-', $row->productid); ?>
 
 												<?php $prodid = str_ireplace('/', '-', $row->productid); ?>
 	<td><input type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
-							<?php echo $row->sellerid;?></td>
+							<?php echo $row->sellerid;?>
+					<input type="hidden" name="v_id" value="<?php echo $row->id;?>"></td>
 
 	<td><input type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
 							<?php echo $row->buyerid;?></td>
@@ -94,9 +96,9 @@
 													<input type="hidden" name="brenegounit" value="<?php echo $row->brenegounit; ?>">
 												</td>
 		<td><input type="hidden" name="brenegoquantity" value="<?php echo $row->brenegoquantity; ?>">
-													<?php echo $row->brenegoquantity . "";
+													<?php echo $row->brenegoquantity . " ";
 													echo $row->brenegoquantityunit; ?>
-													<input type="hidden" name="brenegoquantityunit" value="<?php echo $row->brenegoquantityunit; ?>">
+													<input type="hidden" name="brenegoquantityunit" value="<?php echo $row->brenegoquantityunit; ?>"></td>
 		<td><input type="hidden" name="sellrenegoprice" value="<?php echo $row->sellrenegoprice; ?>">
 													<?php echo $row->sellrenegoprice . "/";
 													echo $row->sellrenegounits; ?>
@@ -122,12 +124,12 @@
 												</td>
 
 
-
-											</tr>
+</form>
+											
 										<?php $k++;
 										} ?>
-
-									</form>
+</tr>
+									
 								</tbody>
 							</table>
 						
