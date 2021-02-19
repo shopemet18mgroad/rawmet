@@ -31,7 +31,7 @@ class Admin_finalrenegotiatedvalue extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$active1 = array('busername'=>$sess['sessi'],'custapprove'=>true);
+		$active1 = array('custapprove'=>true);
 		//print_r($active1); die;
 		
 		

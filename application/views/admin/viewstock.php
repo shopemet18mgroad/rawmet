@@ -19,7 +19,7 @@
 	  <th>Image</th>
 	 <th>Product Id</th>
 	 <th>Product Name</th>
-	 <th>Vendor Name</th>
+	 <th>Seller ID</th>
      <th>Company Name</th>
 	 <th>Description</th>
 	 <th>Price</th>
@@ -42,11 +42,11 @@
 				   
 	<td><?php echo $row->productid;?></td> 
 	<td><?php echo $row->productname;?></td>
-	   <td><?php echo $row->vname;?></td>
+	   <td><?php echo $row->sellerid;?></td>
 <td><?php echo $row->companyname;?></td> 
 <td><?php echo $row->description;?></td>
-	<td><?php echo $row->price."/". $row->supplyunits;?></td>
-	  <td><?php echo $row->quantity."/". $row->units;?></td> 
+	<td><?php echo $row->price."/". $row->punits;?></td>
+	  <td><?php echo $row->quantity." ". $row->units;?></td> 
       <td><?php echo $row->pcities."/". $row->pstates;?></td>  
 <?php $count++;?>		  
 <?php }?>

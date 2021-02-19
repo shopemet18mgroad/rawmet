@@ -23,20 +23,16 @@
       <tr>
 				
 			<th>Sl.No.</th>
-	        <th>Image</th>
-			<th>Buyer Id</th>
 			<th>Seller Id</th>
+			<th>Buyer Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
-			
-			
 			<th>Category</th>
 			<th>Location</th>
-		
-			<th>Supplier Price</th>
-			<th>Supply Ability</th>
-			<th style="color:orange;">Buyer Price</th>
+			<th>Supply Base Quantity</th>
+			<th>Supplier Base Price</th>
 			<th style="color:orange;">Buyer Quantity</th>
+			<th style="color:orange;">Buyer Price</th>
 			<th>View Quotation</th>
 		
 			
@@ -69,22 +65,17 @@
 								<?php echo $row->pcities;?></td>
 		
 		
+		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
+		     <?php echo $row->quantity." " ;echo $row->units;?>
+			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
+		</td>
 		<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
 		     <?php echo $row->price."/" ;echo $row->punits;?>
 			 <input type="hidden" name="punits" value="<?php echo $row->punits;?>">
 		</td>
 		
-		
-												
-		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
-		     <?php echo $row->quantity."/" ;echo $row->units;?>
-			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
-		</td>
-		
-			
-							
 		<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
-		     <?php echo $row->bquantity."/" ;echo $row->bunits;?>
+		     <?php echo $row->bquantity." " ;echo $row->bunits;?>
 			 <input type="hidden" name="bunits" value="<?php echo $row->bunits;?>">
 		
 	</td>
@@ -93,9 +84,9 @@
 		     <?php echo $row->bprice."/" ;echo $row->bsupplyability;?>
 			 <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
 			 </td>
-			<td> <a href="<?php echo base_url().'Vendor_sellnegoquotation/auc_no/'.urldecode($row->sellerid)."/".urldecode($row->buyerid);?>">
+			<td> <a href="<?php echo base_url().'Vendor_sellnegoquotation/auc_no/'.$row->id."/".urldecode($row->sellerid)."/".urldecode($row->buyerid);?>"  target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
-					
+			<?php $count++;?>		
 			
 			
 				
@@ -110,7 +101,7 @@
 		<?php $k++;}?>
 		  
       </tr>     
-<?php $count++;?>		  
+		  
       
     </tbody>
   </table>

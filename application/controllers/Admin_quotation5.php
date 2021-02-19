@@ -3,7 +3,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendor_sellnegoquotation extends CI_Controller {
+class Admin_quotation5 extends CI_Controller {
 
   public function __construct()
   {
@@ -18,14 +18,17 @@ class Vendor_sellnegoquotation extends CI_Controller {
 	  
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
-	    $id = urldecode($this->uri->segment(3));
-	   $sellerid = urldecode($this->uri->segment(4));
-	   $buyerid = urldecode($this->uri->segment(5));
-		 $active = array('sellerid'=>$sellerid,'id'=>$id);
+	
+		$id = urldecode($this->uri->segment(3));
+	   $sellerid = urldecode($this->uri->segment(5));
+	   $buyerid = urldecode($this->uri->segment(4));
+		
+		
+	      $active = array('sellerid'=>$sellerid,'id'=>$id);
 		  $active1 = array('buyerid'=>$buyerid);
 	
 		
-      $query = $this->Admin_model->getdatafromtable('quotes', $active);
+      $query = $this->Admin_model->getdatafromtable('vend_renego', $active);
 	 // print_r( $query);die;
         $query1 = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$query2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);
@@ -40,16 +43,16 @@ class Vendor_sellnegoquotation extends CI_Controller {
 
 		
       $data2 = array(
-        'title' => $sellerid,
+        'title' => $buyerid,
         'data' => 'List Of Lots');
 		$data3 = array(
-        'title' => $buyerid,
+        'title' => $sellerid,
         'data' => 'List Of Lots');
 		//print_r( $data2);die;
 	 $ci = &get_instance();
     $data['data'] = $data2;
 	 $data['data'] = $data3;
-    $ci->load->view("quotat",$data);	 
+    $ci->load->view("quotation5",$data);	 
     // Get output html 
     $html = $ci->output->get_output();
 // add external css library
@@ -62,7 +65,7 @@ class Vendor_sellnegoquotation extends CI_Controller {
     // Render the HTML as PDF
     $ci->dompdf->render();
     // Output  PDF (1 = download and 0 = preview)
-    $ci->dompdf->stream($sellerid.".pdf", array("Attachment" => 0));
+    $ci->dompdf->stream($buyerid.".pdf", array("Attachment" => 0));
 		
   }
  }

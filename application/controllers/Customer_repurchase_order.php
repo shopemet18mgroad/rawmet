@@ -43,6 +43,7 @@ class Customer_repurchase_order extends CI_Controller {
 			
 			$sellerid = $this->input->post('sellerid');
 			
+			
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
@@ -85,7 +86,7 @@ class Customer_repurchase_order extends CI_Controller {
 			//$this->load->model('Admin_model');
 			
 			
-				$data = array('vname' => $vname,'busername'=> $busername,'selprice'=>$selprice ,'sunits'=>$sunits,
+				$data = array('sellerid' => $sellerid,'buyerid'=> $buyerid,'selprice'=>$selprice ,'sunits'=>$sunits,
 			'productname' => $productname,'productid' => $productid, 'category' => $category,'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,'punits'=>$punits,
 			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1,'price'=>$price
 	,'units' =>	$units ,'quantity'  =>$quantity,'quantity'=>$quantity,'supplyunits'=>$supplyunits,'brenegoprice'=>$brenegoprice,

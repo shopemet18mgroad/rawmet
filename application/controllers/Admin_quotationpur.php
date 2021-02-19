@@ -18,14 +18,14 @@ class Admin_quotationpur extends CI_Controller {
 	
 	  
 	   
-	    $vname = urldecode($this->uri->segment(4));
-		
-		$busername = urldecode($this->uri->segment(3));
+	    $sellerid = urldecode($this->uri->segment(5));
+		$id = urldecode($this->uri->segment(3));
+		$buyerid = urldecode($this->uri->segment(4));
 		
 	     
-		  $active1 = array('busername'=>$busername);
+		  $active1 = array('buyerid'=>$buyerid,'id'=>$id);
 		 
-		   $active = array('vname'=>$vname);
+		   $active = array('sellerid'=>$sellerid);
 	
 		
       $query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
@@ -43,10 +43,10 @@ class Admin_quotationpur extends CI_Controller {
 
 		
       $data2 = array(
-        'title' => $vname,
+        'title' => $sellerid,
         'data' => 'List Of Lots');
 		$data3 = array(
-        'title' => $busername,
+        'title' => $buyerid,
         'data' => 'List Of Lots');
 		//print_r( $data2);die;
 	 $ci = &get_instance();
@@ -65,7 +65,7 @@ class Admin_quotationpur extends CI_Controller {
     // Render the HTML as PDF
     $ci->dompdf->render();
     // Output  PDF (1 = download and 0 = preview)
-    $ci->dompdf->stream($vname.".pdf", array("Attachment" => 0));
+    $ci->dompdf->stream($sellerid.".pdf", array("Attachment" => 0));
     
   }
  }

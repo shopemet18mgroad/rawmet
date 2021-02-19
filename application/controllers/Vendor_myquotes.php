@@ -30,7 +30,7 @@ class Vendor_myquotes extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$reqapproval = array('vname'=>$sess['sessi'],'sellapproval'=>true);
+		$reqapproval = array('sellerid'=>$sess['sessi'],'sellapproval'=>true);
 		
 		
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);

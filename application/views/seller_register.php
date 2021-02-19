@@ -68,7 +68,7 @@
 				<h3 class="h5 text-gray-700 mb-2">User Info</h3>
 				<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-				  <input type="text" class="form-control form-control-user" id="sellerid" value="SLR<?php echo(rand(1,1000000));?>" name="sellerid"  placeholder="Seller Id" Readonly>
+				  <input type="text" class="form-control form-control-user" id="sellerid" value="S<?php echo(rand(1,1000000));?>" name="sellerid"  placeholder="Seller Id" Readonly>
                     
                   </div>
                   <div class="col-sm-6">

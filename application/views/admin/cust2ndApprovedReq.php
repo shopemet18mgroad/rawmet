@@ -16,7 +16,8 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-		<th>Seller Name</th>
+	  <th>Sl. No.</th>
+		<th>Seller ID</th>
 		<th>Buyer Company Name</th>
 	    <th>Category</th>
 		<th>Buyer Product Name</th>
@@ -35,12 +36,14 @@
     </thead>			
 				
 				<tbody>
+				<?php $count=1;?>
 	<?php $k=0;?>
 	 <?php foreach($sqldata3 as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
+				<td><?php echo $count;?></td>
 			<td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>"><?php echo $row->vusername;?></td>
 			<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"><?php echo $row->bcompanyname;?></td>
 			<td><input type="hidden" name="category" value="<?php echo $row->category;?>"><?php echo $row->category;?></td>
@@ -55,7 +58,7 @@
 			<td> 
 		<a href="<?php echo base_url().'Vendor_quotation11/auc_no/'.$row->seller_mbuyreq_id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
-					
+				<?php $count++;?>		
 			
 			
       </tr>      

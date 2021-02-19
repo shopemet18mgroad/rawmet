@@ -29,7 +29,7 @@ class Vendor_buynego extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('vname'=>$sess['sessi'],'buyerapprove'=>true);
+		$active1 = array('sellerid'=>$sess['sessi'],'buyerapprove'=>true);
 		//$reqapproval = array('sellapproval'=>false);
 		
 		

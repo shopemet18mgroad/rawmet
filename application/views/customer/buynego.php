@@ -22,19 +22,24 @@
 							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 								<thead class="bg-primary text-white">
 									<tr>
-			<th>Supplier Name</th>
-			<th>Buyer Name</th>
+									
+			<th>Supplier Id</th>
+			<th>Buyer Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Company Name</th>
-			<th>Supplier Price</th>
 			<th>Location</th>
-			<th>Buyer Quantity</th>
-		   <th>buyer price</th>
-			<th>Seller price</th>
+			
+			<th>Supplier base  Quantity</th>
+			<th>Supplier  Base Price</th>
+			
+			
+			 <th>Buyer 1st Quantity</th>
+		     <th>buyer 1st  price</th>
+			<th>Seller Re-Negotiated price</th>
 			<th>View Quotation</th>
-			<th>Upload Purchase Order</th>
+				<th>Upload Purchase Order</th>
+			
 			
 
 
@@ -62,7 +67,11 @@
 								<?php echo $row->category;?></td>
 			<td><input type="hidden" name="pcities" value="<?php echo $row->pcities;?>">
 								<?php echo $row->pcities;?></td>
-		
+												
+		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
+		     <?php echo $row->quantity."" ;echo $row->units;?>
+			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
+		</td>
 		
 		<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
 		     <?php echo $row->price."/" ;echo $row->punits;?>
@@ -70,25 +79,22 @@
 		</td>
 		
 		
-												
-		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
-		     <?php echo $row->quantity."/" ;echo $row->units;?>
-			 <input type="hidden" name="units" value="<?php echo $row->units;?>">
-		</td>
+		
 		
 			
 							
 		<td><input type="hidden" name="bquantity" value="<?php echo $row->bquantity;?>">
-		     <?php echo $row->bquantity."/" ;echo $row->bunits;?>
+		     <?php echo $row->bquantity."" ;echo $row->bunits;?>
 			 <input type="hidden" name="bunits" value="<?php echo $row->bunits;?>">
 		
-	</td>
+	     </td>
 	
 		<td><input type="hidden" name="bprice" value="<?php echo $row->bprice;?>">
 		     <?php echo $row->bprice."/" ;echo $row->bsupplyability;?>
 			 <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
 		</td>
-			<td><input type="hidden" name="selprice" value="<?php echo $row->selprice; ?>">
+			
+		<td><input type="hidden" name="selprice" value="<?php echo $row->selprice; ?>">
 													<?php echo $row->selprice . "/";
 													echo $row->sunits; ?>
 		<input type="hidden" name="sunits" value="<?php echo $row->sunits; ?>">
@@ -99,7 +105,7 @@
 											
 
 
-												<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' . urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
+												<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' .$row->id. urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
 
 
 

@@ -83,8 +83,18 @@ table-border
 
 <table style="padding-left:70% ">
   <tr>
-    <th>DATE</th>
-    <td><?php echo date('Y-m-d H:i:s'); ?></td> 
+    <th>Seller ID</th>
+    <td><?php echo $sqldata1[0]->buyerid; ?></td> 
+    
+  </tr>
+ <tr>
+    <th>Buyer ID</th>
+    <td><?php echo $sqldata1[0]->sellerid; ?></td> 
+    
+  </tr>
+  <tr>
+    <th style="text-align:left;">DATE</th>
+    <td><?php echo date('Y-m-d'); ?></td> 
     
   </tr>
   <tr>
@@ -94,12 +104,12 @@ table-border
   </tr>
   
 </table>
-
+<!--
 <p><b>ADDRESS:<br/>
-<p><b> From:<br/><?php echo $sqldata3[0]->buyerid.""."<br>"?></b><br></p>
+<p><b> From:<br/><?php// echo $sqldata3[0]->buyerid.""."<br>"?></b><br></p>
 
-<p><b>  To:<br/><?php echo $sqldata2[0]->sellerid.""."<br>"?></b><br></p>
-
+<p><b>  To:<br/><?php //echo $sqldata2[0]->sellerid.""."<br>"?></b><br></p>
+-->
 <p><b>Quotation Prepared By:</b>&nbsp;Shopemet Network Private Limited</p>
 
 

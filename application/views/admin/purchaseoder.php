@@ -16,7 +16,7 @@
     <thead class="bg-primary text-white">
       <tr>
 	   <th>Sl.No.</th>
-	  	<th>Supplier Name</th>
+	  	<th>Supplier Id</th>
 	  <th>Product Id</th>
         <th>Product Name</th>
         <th>Category</th>
@@ -39,7 +39,7 @@
 				?>
 				
 				  <td><?php echo $count;?></td> 
-				<td><?php echo $row->vname;?></td>
+				<td><?php echo $row->sellerid;?></td>
 	  <td><?php echo $row->productid;?></td> 
 		<td><?php echo $row->productname;?></td> 
 		<td><?php  echo $row->category;?></td>
@@ -52,9 +52,9 @@
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	
 
-		<td><a href="<?php  echo base_url()."admin_purchaseoder/approve_paid/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-warning btn-sm">Paid</button></a>
+		<td><a href="<?php  echo base_url()."admin_purchaseoder/approve_paid/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-warning btn-sm">Paid</button></a>
 		
-		<a href="<?php  echo base_url()."admin_purchaseoder/reject_unpaid/".$proid."/".urldecode($row->vname);?>"><button type="button" class="btn btn-danger btn-sm mt-1">Unpaid</button></a>
+		<a href="<?php  echo base_url()."admin_purchaseoder/reject_unpaid/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger btn-sm mt-1">Unpaid</button></a>
 		
 		</td>
 		      <?php $count++;?>

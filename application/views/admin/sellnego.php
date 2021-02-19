@@ -22,22 +22,20 @@
                                 <thead class="bg-primary text-white">
                                     <tr>
 									   <th>Sl.No.</th>
-	       
+	    
+			<th>Seller Id</th>
 			<th>Buyer Id</th>
-			<th>Supplier Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
-			
-			
 			<th>Category</th>
 			<th>Location</th>
-		
-			<th>Supplier Price</th>
-			<th>Supplier Quantity</th>
-			<th style="color:orange;">Buyer Price</th>
+			<th>Supply Base Quantity</th>
+			<th>Supplier Base Price</th>
 			<th style="color:orange;">Buyer Quantity</th>
+			<th style="color:orange;">Buyer Price</th>
 			<th>View Quotation</th>
-		<th>Upload Purchase Order</th>
+		
+		
                                       
                                     </tr>
                                 </thead>
@@ -57,19 +55,20 @@
                                              <td> <?php echo $row->productid; ?></td>
                                             <td>  <?php echo $row->category; ?></td>
                                            <td>   <?php echo $row->pcities; ?></td>
-                                           <td>   <?php echo $row->price . "/";
-                                            echo $row->punits; ?>
-                                            </td>
-                                            <td>  <?php echo $row->quantity . "/";
+                                           
+                                            <td>  <?php echo $row->quantity . " ";
                                             echo $row->units; ?>
                                             </td>
-                                           <td>   <?php echo $row->bquantity . "/";
+											<td>   <?php echo $row->price . "/";
+                                            echo $row->punits; ?>
+                                            </td>
+                                           <td>   <?php echo $row->bquantity . " ";
                                             echo $row->bunits; ?>
                                             </td>
                                              <td> <?php echo $row->bprice . "/";
                                             echo $row->bsupplyability; ?>
                                             </td>
-                                            <td> <a href="<?php echo base_url() . 'Admin_sellnegoquotation/auc_no/' . urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
+                                            <td> <a href="<?php echo base_url() . 'Admin_sellnegoquotation/auc_no/'.($row->id) ."/". urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
 
                                                     <i class="fa fa-download" aria-hidden="true"></i></a></td>
 <?php $count++;?>

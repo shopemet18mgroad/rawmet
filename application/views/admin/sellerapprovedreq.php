@@ -15,8 +15,8 @@
 			  <form action="<?php echo base_url();?>Customer_buypurchase_order2" method="POST" id="upload-form" enctype="multipart/form-data">
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>
-	  <th>Supplier name</th>
+      <tr><th>Sl. No.</th>
+	  <th>Supplier ID</th>
 	  <th>companyname</th>
 	   <th>Category</th>
 		<th>productname</th>
@@ -36,13 +36,15 @@
     </thead>
     <tbody>
 	
-      
+     <?php $count=1;?> 
       <?php $k=0;?>
 	   <?php foreach($sqldata as $row){?>
       <tr>
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
+				
+				 <td><?php echo $count;?></td> 
 	  <td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>"><?php echo $row->vusername;?><input type="hidden" name="bname" value="<?php echo $row->bname;?>"></td> 
 		
 		<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"><?php echo $row->bcompanyname;?></td> 
@@ -68,7 +70,7 @@
 		<a href="<?php echo base_url().'Vendor_quotation10/auc_no/'.$row->seller_mbuyreq_id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 			
-			
+			<?php $count++;?>
 		
  
 </tr>   
