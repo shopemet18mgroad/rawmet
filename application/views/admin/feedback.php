@@ -21,7 +21,7 @@
       
 	  <th>Email</th>
 	  <th>State|City</th>
-	  <th>Mobile Number</th>
+	  <th>Message</th>
 	</tr>
     </thead>
     <tbody>
