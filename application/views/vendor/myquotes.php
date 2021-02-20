@@ -23,7 +23,9 @@
       <tr>   
 	  
 	        	  <th>Sl.No.</th>
+
 			    <th>Supplier Id</th>
+
 			     <th>Product Name</th>
 			<th>Product Id</th>
 			 <th>Category</th>

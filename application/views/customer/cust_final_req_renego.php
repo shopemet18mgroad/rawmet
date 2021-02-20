@@ -49,7 +49,7 @@
 			<td><?php echo $row->sellerprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->buyer_nego_price."/"; echo $row->buyer_nego_units;?></td>
 			<td><?php echo $row->seller_renego_price."/"; echo $row->seller_renego_units;?></td>
-			 <td> <a href='javascript:finalapproveProduct(<?php echo $row->seller_mbuyreq_id; ?>)'>Approve</a>|| <a href=''>Reject</a>
+			 <td> <a href='javascript:finalapproveProduct(<?php echo $row->seller_mbuyreq_id; ?>)'>Approve</a>|| <a href='javascript:finalrejectProduct(<?php echo $row->seller_mbuyreq_id; ?>)'>Reject</a>
 			 
 			 <?php
 		
@@ -150,6 +150,43 @@ function finalapproveProduct(seller_mbuyreq_id)
 
   }else {
     swal("Approved!");
+  }  
+});
+
+
+}
+
+
+function finalrejectProduct(seller_mbuyreq_id)
+{
+  alert(seller_mbuyreq_id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'Customer_cust_final_req_renego/finalrejectProduct',
+                         data:'seller_mbuyreq_id='+seller_mbuyreq_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Rejected!");
   }  
 });
 

@@ -35,7 +35,7 @@ class Customer_repurchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('sellerid')){
+	if($this->input->post('cust_id')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
@@ -52,6 +52,7 @@ class Customer_repurchase_order extends CI_Controller {
 			$units  = $this->input->post('units');
 			$punits  = $this->input->post('punits');
 			$quantity  = $this->input->post('quantity');
+			$cust_id  = $this->input->post('cust_id');
 			
 			$pcities = $this->input->post('pcities');
 			$bquantity = $this->input->post('bquantity');
@@ -86,14 +87,14 @@ class Customer_repurchase_order extends CI_Controller {
 			//$this->load->model('Admin_model');
 			
 			
-				$data = array('sellerid' => $sellerid,'buyerid'=> $buyerid,'selprice'=>$selprice ,'sunits'=>$sunits,
+				$data = array('sellerid' => $sellerid,'buyerid'=> $buyerid,'cust_id'=>$cust_id,'selprice'=>$selprice ,'sunits'=>$sunits,
 			'productname' => $productname,'productid' => $productid, 'category' => $category,'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,'punits'=>$punits,
 			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1,'price'=>$price
-	,'units' =>	$units ,'quantity'  =>$quantity,'quantity'=>$quantity,'supplyunits'=>$supplyunits,'brenegoprice'=>$brenegoprice,
+	,'units' =>	$units ,'quantity'  =>$quantity,'quantity'=>$quantity,'brenegoprice'=>$brenegoprice,
 			'brenegounit'=>$brenegounit,
 			'brenegoquantity'=>$brenegoquantity,
 			'brenegoquantityunit'=>$brenegoquantityunit);
-			print_r($data);die;
+			//print_r($data);die;
 			
 			$status = $this->Admin_model->insert('purchaseoder',$data);
 			

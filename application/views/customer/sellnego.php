@@ -18,7 +18,7 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
-			  <form action="<?php echo base_url();?>Customer_spurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
+			 <!-- <form action="<?php //echo base_url();?>Customer_spurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">-->
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
@@ -43,11 +43,12 @@
       </tr>
     </thead>
     <tbody>
-	
 	<?php $k=0;?>
 	  <?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
+	
       <tr>
+	   <form action="<?php echo base_url();?>Customer_spurchase_order" method="POST"  enctype="multipart/form-data">
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
@@ -57,7 +58,7 @@
 	<td><input type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
 							<?php echo $row->buyerid;?>
 							
-							<input type="hidden" name="q_id" id="q_id" value="<?php echo $row->id;?>">
+							<input type="hidden" name="q_id" value="<?php echo $row->id;?>">
 							</td>
 						
 			<td><input type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
@@ -106,7 +107,7 @@
 			<td>
 				
 				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
-					
+				<input class="form-group w-auto" value="<?php echo urldecode($row->buyerid);?>"  type="hidden" name="buyerid_hidden">	
 			
 			 	<input type="submit" id="<?php echo $row->id;?>" class="btn btn-info " name="submit" value="Upload">
 					
@@ -114,12 +115,13 @@
 				
 		  </td>
 		 <?php $count++;?>	
+		 </form>
 		<?php $k++;}?>
       </tr>      
       
     </tbody>
   </table>
-  </form>
+  
 		</div>
 		</div>
 		</div>

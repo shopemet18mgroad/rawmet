@@ -46,7 +46,7 @@ class Customer_spurchase_order extends CI_Controller {
 			$sellerid = $this->input->post('sellerid');
 			$buyerid = $this->input->post('buyerid');
 			$q_id = $this->input->post('q_id');
-			
+			//print_r($q_id); die;
 			
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
@@ -63,9 +63,11 @@ class Customer_spurchase_order extends CI_Controller {
 			$bprice = $this->input->post('bprice');
 			$bsupplyability = $this->input->post('bsupplyability');
 
-			
+			$buyerid_hidden = $this->input->post('buyerid_hidden');
+			//print_r($buyerid_hidden); 
 			//$sterms_condiaccept  = $this->input->post('sterms_condiaccept');
-			$pic_array1 = self::upload_files('upload_dd');
+			 $pic_array1 = self::upload_files('upload_dd');
+			//print_r($pic_array1); die;
 			
 			if(!count($pic_array1)){
 			echo '<script language="javascript">';
