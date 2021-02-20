@@ -1,3 +1,4 @@
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -227,7 +228,7 @@
 									<option value="Metric ton">Metric ton</option>
 									<option value="Litre">Litre</option>
 									<option value="lot">lot</option>
-									<option value="litre">litre</option>
+								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
 
@@ -246,7 +247,7 @@
 									<option value="Metric ton">Metric ton</option>
 									<option value="Litre">Litre</option>
 									<option value="lot">lot</option>
-									<option value="litre">litre</option>
+								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
 
@@ -271,7 +272,7 @@
 									<option value="Metric ton">Metric ton</option>
 									<option value="Litre">Litre</option>
 									<option value="lot">lot</option>
-									<option value="litre">litre</option>
+								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
 								</select>
@@ -297,13 +298,13 @@
 
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="Pname">Validity From Date:</label>
+								<label for="Pname">[ From:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityfrom" name="productvalidityfrom" placeholder="">
 							</div>
 
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="Pname">Validity To Date:</label>
+								<label for="Pname"> [To:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityto" name="productvalidityto" placeholder="">
 							</div>
 

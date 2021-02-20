@@ -34,11 +34,11 @@
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
 					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?><br>
 					<b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?><br>
-					<b>Buyer Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->bname;?><br>
+					<b>Buyer Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->bname;?><br>
 					<b>Buyer Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->bcompanyname;?><br>
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
 					<b>Price:&nbsp;</b><?php echo$sqldata[0]->price."/".$sqldata[0]->priceperkg;?></br>
-					<b>Stock:</b><?php echo  $sqldata[0]->quantity."/".$sqldata[0]->units;?>
+					<b>Stock:</b><?php echo  $sqldata[0]->quantity." ".$sqldata[0]->units;?>
 					</br>
 					<b>Email Id:</b><?php echo  $sqldata[0]->email;?>
 					</br>
@@ -59,7 +59,7 @@
 								
 							</tr>
 							
-								<td><b>Valtidity Till:&nbsp;</b><?php echo$sqldata[0]->requireddate." to ".$sqldata[0]->lastdate;?></td>
+								<td><b>Requried Rate:</b><?php echo$sqldata[0]->requireddate."</br>"." <b> Last Date</b> ".$sqldata[0]->lastdate;?></td>
 							</tr>
 							
 <td><b>Customer Uploaded PDF:</b>

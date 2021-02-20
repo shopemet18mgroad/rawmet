@@ -107,7 +107,7 @@
 			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" value="<?php echo $row->supplyunits;?>" >
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
-						<option value="Litre">Litre</option>
+					
 						<option value="lot">lot</option>
 						<option value="litre">litre</option>
 						<option value="Number">Number</option>
