@@ -46,7 +46,7 @@
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label for="">Customer Name</label>
-						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->bname;?>" readonly>
+						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
 						<input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
                     </div>
 					<div class="col-sm-4 mb-12 pl-5 mb-sm-0">
@@ -54,8 +54,22 @@
 						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
                     </div>
 				</div>
-				
-				<div class="col-sm-4 mb-3 mb-sm-1">
+				<div class="form-inline">
+							<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+								<label>Email:</label>
+								<input type="email" class="form-control" id="email" name="email" value="<?php echo  $scomp[0]->bemail;?>" readonly>
+							</div>
+							<div class="col-sm-7 mb-3 pl-5 mb-sm-0">
+							<label>Contact Number</label>
+							<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="inputGroup-sizing-sm">+91</span>
+							</div>
+								<input type="text" class="form-control" aria-label="Small" id="contactnumber" name="contactnumber" aria-describedby="inputGroup-sizing-sm" value="<?php echo  $scomp[0]->bcontactnumber;?>" readonly>
+							</div>
+						</div>
+						</div>
+				<div class="col-sm-11 mb-3 mb-sm-1">
 					<label for="">Category</label>
 					<select class="form-control" id="category" name="category">
 					       <option value="Category">--Category--</option>
@@ -91,39 +105,77 @@
 						<label>Expected Price:</label>
 						<input type="text" class="form-control" id="price" name="price">
 					</div>
-					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">			
-						<label for="price">Units:</label>
-						<select class="form-control col-sm-0" id="priceperkg" name="priceperkg">
-							<option  value="KG">KG</option>
-							<option value="Metric ton">Metric ton</option>
-							<option value="Litre">Litre</option>
-							<option value="lot">lot</option>
-							<option value="litre">litre</option>
-							<option value="Number">Number</option>
-							<option value="Meter">Meter</option>
-						</select>
-					</div>
-					</div>
-					 
-					<div class="form-inline">
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+					
+			
+					
+			<div class="col-sm-4 mb-3 pl-5 mb-sm-0">	
+								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+								<script type="text/javascript">
+									var citiesByState = {
+										KG: ["KG"],
+										Litre: ["Litre"],
+										Metric_Ton: ["Metric_Ton"],
+										Number: ["Number"],
+										Meter: ["Meter"],
+										lot: ["lot"],
+										
+									}
+
+									function makeSubmenu(value) {
+										if (value.length == 0) document.getElementById("units").innerHTML = "<option></option>";
+										else {
+											var citiesOptions = "";
+											for (cityId in citiesByState[value]) {
+												citiesOptions += "<option>" + citiesByState[value][cityId] + "</option>";
+											}
+											document.getElementById("units").innerHTML = citiesOptions;
+										}
+									}
+
+									function displaySelected() {
+										var country = document.getElementById("priceperkg").value;
+										var city = document.getElementById("units").value;
+										alert(country + "\n" + city);
+									}
+
+									function resetSelection() {
+										document.getElementById("priceperkg").selectedIndex = 0;
+										document.getElementById("units").selectedIndex = 0;
+									}
+								</script>
+	
+								<label>Units</label>
+
+								<body onload="resetSelection()">
+									<select class="form-control" id="priceperkg" name="priceperkg" size="1" onchange="makeSubmenu(this.value)">
+										<option value="" disabled selected>Choose Units</option>
+										<option>KG</option>
+										<option>Litre</option>
+										<option>Metric_Ton</option>
+	                                    <option>Number</option>
+									<option>Meter</option>
+									<option>lot</option>
+										
+									</select>
+									
+
+
+							</div>
+							<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label>Quantity:</label>
 						<input type="text" class="form-control" id="quantity" name="quantity">
 					</div>
-					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">			
-						<label for="quantity">Units:</label>
-						<select class="form-control col-sm-0" id="units" name="units">
-							<option  value="KG">KG</option>
-							<option value="Metric ton">Metric ton</option>
-							<option value="Litre">Litre</option>
-							<option value="lot">lot</option>
-							<option value="litre">litre</option>
-							<option value="Number">Number</option>
-							<option value="Meter">Meter</option>
-						</select>
-					</div>
-					</div>
+					<div class="form-inline">
 
+	                 <div class="col-sm-10 mb-3 pl-5 mb-sm-0">
+						<label>Units</label>
+								<select class="form-control" id="units" name="units" size="1">
+									<option value="" disabled selected>Choose Units</option>
+									<option></option>
+								</select>
+							</div>
+							</div>
+			
 					<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label>Required Date</label>
@@ -136,33 +188,20 @@
 					</div>
 					 
 
-						<div class="col-sm-12 col-md-9 mt-2">
-							<div class="form-group">
-								<label>Email:</label>
-								<input type="email" class="form-control" id="email" name="email">
-							</div>
-							<label>Contact Number</label>
-							<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="inputGroup-sizing-sm">+91</span>
-							</div>
-								<input type="text" class="form-control" aria-label="Small" id="contactnumber" name="contactnumber" aria-describedby="inputGroup-sizing-sm">
-							</div>
-						</div>
+						<div class="form-inline">
+						<div class="col-sm-6 pr-5 mb-3 mb-sm-0 mt-1">
 						
-						<div class="col-sm-12 col-md-6 mt-2">
-							<div class="form-group">
 								<label for="exampleInputFile">Upload Image</label>
 								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage[]">
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
 							</div>
-							<div class="form-group">
+					<div class="col-sm-6 mb-3 pl-5 mb-sm-0 mt-1">	
 								<label for="exampleInputFile">Upload PDF Files</label>
 								<input type="file" class="form-control-file" id="uploadpdf"  name="uploadpdf[]">
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
 							</div>
 						</div>
-						
+					
 						<div class="col-sm-12 col-md-7 mt-2">
 							<div class="form-check">
 								<input type="checkbox" class="form-check-input" id="iagreee" name="iagreee">
@@ -237,3 +276,19 @@ swal("Alert!","Category, Product Name, Description, Quantity, Units, Dates , Ema
 }
   </script>
       
+	<script>  
+	  var category = document.getElementById('category');
+document.getElementById('elements').onchange = function() {
+  var optionSelected = this.options[this.selectedIndex];
+  if (optionSelected.textContent != '-') {
+    if (optionSelected.dataset.val === 'category') {
+      category.value = 'KG';
+    } else {
+      category.value = 'KG';
+    }
+  } else {
+    category.value = '';
+  }
+}
+
+</script>

@@ -74,6 +74,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 $this->db->select('bcompanyname');
 			  $this->db->select('bname');
 			  $this->db->select('buyerid');
+			  $this->db->select('bemail');
+			  $this->db->select('bcontactnumber');
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}

@@ -212,7 +212,7 @@ document.getElementById("pcities").selectedIndex = 0;
 				<option value="<?php echo  $sqldata[0]->punits;?>"><?php echo  $sqldata[0]->punits;?></option>
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
-						<option value="Litre">Litre</option>
+					
 						<option value="lot">lot</option>
 						<option value="litre">litre</option>
 						<option value="Number">Number</option>
@@ -232,7 +232,7 @@ document.getElementById("pcities").selectedIndex = 0;
 				<option value="<?php echo  $sqldata[0]->units;?>"><?php echo  $sqldata[0]->units;?></option>
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
-						<option value="Litre">Litre</option>
+					
 						<option value="lot">lot</option>
 						<option value="litre">litre</option>
 						<option value="Number">Number</option>
@@ -261,7 +261,7 @@ document.getElementById("pcities").selectedIndex = 0;
 				<option value="<?php echo  $sqldata[0]->supplyunits;?>"><?php echo  $sqldata[0]->supplyunits;?></option>
 						<option>KG</option>
 						<option>Metric ton</option>
-						<option>Litre</option>
+				
 						<option>lot</option>
 						<option>litre</option>
 						<option>Number</option>
