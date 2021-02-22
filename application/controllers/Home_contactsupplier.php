@@ -180,7 +180,7 @@ class Home_contactsupplier extends CI_Controller {
 public function get_product_table(){
 	$dataw = urldecode($this->uri->segment(3));
 	$this->load->model('Admin_model');
-	$search = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$dataw);	
+	$search = $this->Admin_model->get_lookalike_search('sellerpostproduct','productname','description',$dataw);	
 	
 	if($search){
 		$tempArr = array_unique(array_column($search, 'productname'));

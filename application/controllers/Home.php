@@ -36,25 +36,23 @@ class Home extends CI_Controller {
 	public function search()
 	{
 		$this->load->helper(array('url','html','date'));
-		echo $productname = $this->input->post('productname');
-		echo $category = $this->input->post('category');
-		echo $myCountry = $this->input->post('myCountry');
-		die;
+		$productname = $this->input->post('productname');
+		$category = $this->input->post('category');
+		$myCountry = $this->input->post('myCountry');
 		date_default_timezone_set('Asia/Kolkata');
+		$data2 = "";  
 		$time =  Date('Y-m-d H:i:s');
 		$this->load->model('Admin_model');
-		$data = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$productname);
-		$data2 = "";
+		$data = $this->Admin_model->get_lookalike_search2('sellerpostproduct','productname','description',$productname,$category, $myCountry);
 		if(count($data)){
-
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
 			$data2 .= '<form class="user">';
 			$data2 .='<div class="row  bg-light">';
-			$data2 .='<div class="col-sm-3">';
+			$data2 .='<div class="col-sm-3 text-center">';
 			$data2 .='<h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4>';
 			$data2 .='<div class="col-sm-4">';
-			$data2 .='<div class="thumbnail mt-5">';
+			$data2 .='<div class="mt-5 ml-5">';
 
 			$img = unserialize($dat['uploadproductimage']);
 			if($img){
@@ -169,9 +167,7 @@ $data2 .='</div>';
 			$data2 .=  '</div>';
 			$data2 .= '</div>';
 			$data2 .=  '';
-			
 			$data2 .=  '</div>';
-			
 			$data2 .=  '</form>';
 			$data2 .=  '<hr />';
 						}
