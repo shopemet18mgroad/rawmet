@@ -18,7 +18,7 @@
 			<div class="card shadow mb-4">
 				<div class="card-body">
 					<div class="table-responsive">
-						<form action="<?php echo base_url(); ?>Customer_purchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
+						
 							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 								<thead class="bg-primary text-white">
 									<tr>
@@ -51,13 +51,16 @@
 										<?php $k = 0; ?>
 										<?php foreach ($sqldata as $row) { ?>
 											<tr>
+											<form action="<?php echo base_url(); ?>Customer_purchase_order" method="POST"  enctype="multipart/form-data">
 												<?php $proid = str_ireplace('/', '-', $row->productid); ?>
 
 												<?php $prodid = str_ireplace('/', '-', $row->productid); ?>
 														<td><input type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
 							<?php echo $row->sellerid;?></td>
 								<td><input type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
-							<?php echo $row->buyerid;?></td>
+							<?php echo $row->buyerid;?>
+							
+							<input type="hidden" name="sqn_id" value="<?php echo $row->id;?>"></td>
 		
 			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
 								<?php echo $row->productname;?></td>
@@ -125,11 +128,12 @@
 												</td>
 
 
-											</tr>
+											
+											</form>
 										<?php $k++;
 										} ?>
-
-									</form>
+</tr>
+									
 								</tbody>
 							</table>
 						

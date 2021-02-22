@@ -1,4 +1,4 @@
-
+	
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -208,12 +208,11 @@ document.getElementById("pcities").selectedIndex = 0;
                   </div>
 				    <div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="punits" name="punits" value="">
-				<option value="<?php echo  $sqldata[0]->punits;?>"><?php echo  $sqldata[0]->punits;?></option>
+			   	<select class="form-control col-sm-0" id="punits" name="punits" value="<?php echo  $sqldata[0]->punits;?>">
+				
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
-						<option value="Litre">Litre</option>
-						<option value="lot">lot</option>
+				         <option value="lot">lot</option>
 						<option value="litre">litre</option>
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
@@ -228,13 +227,13 @@ document.getElementById("pcities").selectedIndex = 0;
 				  </div>
 				  <div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="units" name="units" value="">
-				<option value="<?php echo  $sqldata[0]->units;?>"><?php echo  $sqldata[0]->units;?></option>
+			   	<select class="form-control col-sm-0" id="units" name="units" value= "<?php echo  $sqldata[0]->punits;?>">
+				
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
 						<option value="Litre">Litre</option>
 						<option value="lot">lot</option>
-						<option value="litre">litre</option>
+				
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
 					
@@ -257,11 +256,11 @@ document.getElementById("pcities").selectedIndex = 0;
                 </div>
 				<div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits">
-				<option value="<?php echo  $sqldata[0]->supplyunits;?>"><?php echo  $sqldata[0]->supplyunits;?></option>
+			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" value="<?php echo  $sqldata[0]->supplyunits;?>">
+			
 						<option>KG</option>
 						<option>Metric ton</option>
-						<option>Litre</option>
+			
 						<option>lot</option>
 						<option>litre</option>
 						<option>Number</option>

@@ -1,3 +1,4 @@
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -34,7 +35,7 @@
 							-->
 
 
-					<form name="myForm" action="<?php echo base_url(); ?>vendor_postproduct" onsubmit="return validate_Postproduct()" method="POST">
+					<form name="myForm" action="<?php echo base_url(); ?>vendor_postproduct"  method="POST">
 
 						<div class="form-group row">
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -227,7 +228,7 @@
 									<option value="Metric ton">Metric ton</option>
 									<option value="Litre">Litre</option>
 									<option value="lot">lot</option>
-									<option value="litre">litre</option>
+								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
 
@@ -246,7 +247,7 @@
 									<option value="Metric ton">Metric ton</option>
 									<option value="Litre">Litre</option>
 									<option value="lot">lot</option>
-									<option value="litre">litre</option>
+								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
 
@@ -271,7 +272,7 @@
 									<option value="Metric ton">Metric ton</option>
 									<option value="Litre">Litre</option>
 									<option value="lot">lot</option>
-									<option value="litre">litre</option>
+								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
 								</select>
@@ -297,13 +298,13 @@
 
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="Pname">Validity From Date:</label>
+								<label for="Pname">[ From:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityfrom" name="productvalidityfrom" placeholder="">
 							</div>
 
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
-								<label for="Pname">Validity To Date:</label>
+								<label for="Pname"> [To:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityto" name="productvalidityto" placeholder="">
 							</div>
 
@@ -334,11 +335,7 @@
 							
 							
 							
-						<!--	<div class="col-sm-5 mt-4">
-								<p>Upload Product Images:</p>
-
-								<input type="file" id="uploadproductimage" name="uploadproductimage" multiple="multiple">
-							</div>-->
+						
 
 						
 
@@ -370,7 +367,7 @@
 
 
 
-								<input class="btn btn-primary btn-sm" onclick="return validate_Postproduct()" type="submit" value=" Submit">
+								<input class="btn btn-primary btn-sm"  type="submit" name="submit" value=" Submit">
 								<!-- 								<input type="submit" name="submit2" id="btn1" onclick="return validate1()" value=" Proceed" class="btn btn-primary col-3 mt-2 w-25">
 								-->
 
@@ -386,24 +383,8 @@
 
 
 
-					<!-- /* if (payable.value == "") {
-								swal("Alert!","Please enter your Payable to Rawmet.","error");
-								return false;
-							}
-								else if (estdeltime.value == "") {
-								swal("Alert!","Please enter your Estimated Delivary Time.","error");
-								return false;
-							}
-							else if (uploadproductimage.value == "") {
-								swal("Alert!","Upload Image.","error");
-								return false;
-							}
-								
-							else if (uploadcertificate.value == "") {
-								swal("Alert!","Upload Image.","error");
-								return false;
-							} */
-														-->
+					
+										
 
 
 
@@ -439,7 +420,7 @@ var inputvalues = $(this).val();
     
 });    
 </script>
-<!-- <script type="text/javascript">
+ <script type="text/javascript">
 	function validate_Postproduct() {
 		var category = document.getElementById("category").value;
 		var description = document.getElementById("description").value;
@@ -448,8 +429,8 @@ var inputvalues = $(this).val();
 		var quantity = document.getElementById("quantity").value;
 		var units = document.getElementById("units").value;
 		var materialname = document.getElementById("materialname").value;
-		var pic_array1 = document.getElementById("pic_array1").value;
-		var doc_array1 = document.getElementById("doc_array1").value;
+		
+		
 		var minoderquant = document.getElementById("minoderquant").value;
 		var supplyability = document.getElementById("supplyability").value;
 		var minoderquant = document.getElementById("minoderquant").value;
@@ -464,8 +445,8 @@ var inputvalues = $(this).val();
 		var payable = document.getElementById("payable").value;
 		var productid = document.getElementById("productid").value;
 		var companyname = document.getElementById("companyname").value;
-		var vusername = document.getElementById("vusername").value;
-		if (category == '' || description == '' || productname == '' || price == '' || quantity == '' || units == '' || materialname == '' || pic_array1 == '' || doc_array1 == '' || minoderquant == '' || supplyability == '' || minoderquant == '' || supplyunits == '' || quantpermonth == '' || productvalidityfrom == '' || productvalidityto == '' || estdeltime == '' || pstates == '' || types == '' || pcities == '' || payable == '' || productid == '' || companyname == '' || vusername == '') {
+		var sellerid = document.getElementById("sellerid").value;
+		if (category == '' || description == '' || productname == '' || price == '' || quantity == '' || units == '' || materialname == '' ||  minoderquant == '' || supplyability == '' || minoderquant == '' || supplyunits == '' || quantpermonth == '' || productvalidityfrom == '' || productvalidityto == '' || estdeltime == '' || pstates == '' || types == '' || pcities == '' || payable == '' || productid == '' || companyname == '' || vusername == '') {
 			swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
 			return false;
 		}

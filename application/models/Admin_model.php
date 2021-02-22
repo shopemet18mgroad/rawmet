@@ -74,6 +74,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 $this->db->select('bcompanyname');
 			  $this->db->select('bname');
 			  $this->db->select('buyerid');
+			  $this->db->select('bemail');
+			  $this->db->select('bcontactnumber');
 			 $query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
@@ -802,12 +804,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			a.sellerprice,
 			a.bsupplyability');	
 			
-			 $this->db->from("buyer_req_response b");
+			$this->db->from("buyer_req_response b");
             $this->db->join('seller_mbuyreq a', 'a.id=b.seller_mbuyreq_id','left outer');	
 			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');		
 			$this->db->join('buyer_final_req d', 'c.seller_mbuyreq_id=d.seller_mbuyreq_id','left outer');
 			$this->db->where('d.sel_status =',NULL );
-			 $this->db->where('c.buyer_approval !=',1 );
+			 $this->db->where('c.buyer_approval !=',2);
 			//$this->db->or_where('b.status !=',5 ); 
 			 $this->db->where('a.buyerid', $id);
 			$query = $this->db->get();

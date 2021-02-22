@@ -59,6 +59,7 @@ class Customer_postbuyreq  extends CI_Controller {
 			
 			$_FILES['uploadimage']['name'];
 			$pic_array = self::upload_files('uploadimage');
+			
 			$_FILES['uploadpdf']['name'];
 			$doc_array = self::upload_files('uploadpdf');
 			

@@ -30,7 +30,8 @@ class Customer_managebuyrequirements extends CI_Controller {
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
-		$reqapproval = array('adapproval'=>false);
+				$sess = array('sessi'=>$this->session->userdata('username'));
+		$reqapproval = array('buyerid'=>$sess['sessi']);
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('buyerrequriement',$reqapproval);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));

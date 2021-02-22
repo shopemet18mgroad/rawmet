@@ -35,18 +35,21 @@ class Customer_respurchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('busername')){
+	if($this->input->post('v_id')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
-			$vname = $this->input->post('vname');
-			$busername = $this->input->post('busername');
+			$sellerid = $this->input->post('sellerid');
+			$buyerid = $this->input->post('buyerid');
+			
+			$v_id = $this->input->post('v_id');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
 		     $price = $this->input->post('price');
-		     $supplyunits = $this->input->post('supplyunits');
+			  $punits= $this->input->post('punits');
+		   
 			$pcities = $this->input->post('pcities');
 			$bquantity = $this->input->post('bquantity');
 			$bunits = $this->input->post('bunits');
@@ -54,8 +57,7 @@ class Customer_respurchase_order extends CI_Controller {
 			$bsupplyability = $this->input->post('bsupplyability');
 			$selprice = $this->input->post('selprice');
 			$sunits = $this->input->post('sunits');
-			$selqan = $this->input->post('selqan');
-			$selunits = $this->input->post('selunits');
+		
 			$brenegoprice = $this->input->post('brenegoprice');
 			$brenegounit = $this->input->post('brenegounit');
 			$brenegoquantity = $this->input->post('brenegoquantity');
@@ -82,13 +84,13 @@ class Customer_respurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vname' => $vname, 'busername' => $busername,'productname' => $productname,'productid'=> $productid,'category' => $category,'quantity' => $quantity,'units' => $units,'price' => $price,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'uploadporder'=>$pic_array1,'price' =>$price,'supplyunits'=>$supplyunits,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits);
+			$data = array('sellerid' => $sellerid, 'buyerid' => $buyerid,'v_id'=>$v_id,'productname' => $productname,'productid'=> $productid,'category' => $category,'quantity' => $quantity,'units' => $units,'price' => $price,'punits' => $punits,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'uploadporder'=>$pic_array1,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits);
 			
 			$status = $this->Admin_model->insert('purchaseoder',$data);
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_renegovalue');
+				  header('location: ./Customer_finalrenegotiatedvalue');
 				  }
 			
 	}

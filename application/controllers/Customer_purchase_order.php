@@ -43,7 +43,7 @@ class Customer_purchase_order extends CI_Controller {
 	
 		
 			$sellerid = $this->input->post('sellerid');
-			
+			$sqn_id = $this->input->post('sqn_id');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
@@ -82,7 +82,7 @@ class Customer_purchase_order extends CI_Controller {
 		   
 			//$this->load->model('Admin_model');
 			
-			$data = array('sellerid' => $sellerid,'buyerid'=> $buyerid,'selprice'=>$selprice ,'sunits'=>$sunits,'punits'=>$punits,
+			$data = array('sellerid' => $sellerid,'buyerid'=> $buyerid,'sqn_id'=>$sqn_id,'selprice'=>$selprice ,'sunits'=>$sunits,'punits'=>$punits,
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
 			
 			'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
