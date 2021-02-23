@@ -1,4 +1,4 @@
-<?php
+  <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
@@ -25,9 +25,9 @@ class Home extends CI_Controller {
 		$this->load->helper('url');
 		if($this->uri->segment(3)){
 			$errormsg = urldecode($this->uri->segment(3));
-			echo '<script language="javascript">';
-			echo 'alert("'.$errormsg.'")';
-			echo '</script>';
+		echo '<script language="javascript">';
+		echo	 'alert("'.$errormsg.'")';
+		echo '</script>';
 		}
 		
 		$this->load->view('header');
@@ -52,7 +52,7 @@ class Home extends CI_Controller {
 			$data2 .= '<form class="user">';
 			$data2 .='<div class="row  bg-light">';
 			$data2 .='<div class="col-sm-3 text-center">';
-			$data2 .='<h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4>';
+			$data2 .='<center><h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4></center>';
 			$data2 .='<div class="col-sm-4">';
 			$data2 .='<div class="mt-5 ml-5">';
 
@@ -82,10 +82,10 @@ $data2 .='</div>';
 			$data2 .='<p><b>Category:</b>'.$dat['category'].'</p>';
 			
 			
-			 //'<p><b>Supplier Price:</b> <div>'.$dat['price'].'  '.$dat['units'].'</div></p>';
+		
 	
 			$data2 .='<h6><b>Supply Ability:</b>
-			'.$dat['quantity'].'  '.$dat['supplyunits'].'</h6>';
+			'.$dat['quantity'].'  '.$dat['units'].'</h6>';
 			$data2 .= '<h6><b>last Modified Stock & Price: </b>'.$dat['datetime'].'</b></h6>';
 			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
 			$data2 .= '';
@@ -116,12 +116,57 @@ $data2 .='</div>';
 			$data2 .= '<div class="row p-2">';
 			$data2 .= '<div class="col-sm-10">';
 			$data2 .= '<h6 style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
-				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['units'].'</h6>';
-			 //'<div class="form-check mt-3 text-left">';
-			 //'<input type="checkbox" class="form-check-input" id="exampleCheck1">';
-			//'<label class="form-check-label" for="exampleCheck1">Negotiate</label>';
-		 //'</div>';
-			//'';
+				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['punits'].'</h6>';
+   
+
+   
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+			
+			
+				
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			$data2 .='<form class="col-12">';
 			$data2 .= '<div class="form-row">';
 			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Quantity</label>';
@@ -130,7 +175,7 @@ $data2 .='</div>';
 			$data2 .='<select class="form-control col-sm-0" id="type">';
 			$data2 .='<option>KG</option>';
 			$data2 .= '<option>Metric Ton</option>';
-			$data2 .= '<option>Litre</option>';
+			
 			$data2 .= '<option>lot</option>';
 			$data2 .='<option>litre</option>';
 			$data2 .='<option>Number</option>';
@@ -156,8 +201,8 @@ $data2 .='</div>';
 			$data2 .='</select>';
 			$data2 .= '</div>';
 
-			$data2 .= '<button style="" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
-			href="<?php echo base_url();?>#" data-toggle="modal" data-target="#new_userlogin">Submit</button>';
+			$data2 .= '<button style="width:100%" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
+			href="<?php $data2 .=  base_url();?>#" data-toggle="modal" data-target="#new_userlogin">Login</button>';
 
 			
 	
@@ -250,9 +295,9 @@ $data2 .='</div>';
 			public function index_error(){
 			$alertmsg = $this->uri->segment(3);
 			$alertmsg = urldecode($alertmsg);
-			echo '<script language="javascript">';
-			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
-			echo '</script>';
+			$data2 .=  '<script language="javascript">';
+			$data2 .=  'alert("'.$alertmsg.'")';  //not showing an alert box.
+			$data2 .=  '</script>';
 			$this->load->view('header');
 			$this->load->view('login_pp');
 			$this->load->view('footer');
@@ -285,6 +330,42 @@ $data2 .='</div>';
 
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			$data2 .= '<form class="user">';
 			$data2 .='<div class="row  bg-light">';
 			$data2 .='<div class="col-sm-3">';
@@ -403,7 +484,7 @@ $data2 .='</div>';
 			
 
 			$data2 .= '<button style="" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
-			href="<?php echo base_url();?>#" data-toggle="modal" data-target="">Submit</button>';
+			href="<?php $data2 .=  base_url();?>#" data-toggle="modal" data-target="">Submit</button>';
 
 			
 	
@@ -420,6 +501,27 @@ $data2 .='</div>';
 			
 			$data2 .=  '</form>';
 			$data2 .=  '<hr />';
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 						}
 			
 		}
