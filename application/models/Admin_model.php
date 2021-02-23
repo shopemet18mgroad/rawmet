@@ -28,7 +28,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 
 		 public function getdatafromtable_neg() {
-			$this->db->select('b.buyer_nego_price,
+			 $id = $this->session->userdata('username');
+			$this->db->select('
+					b.buyer_nego_price,
 					b.buyer_nego_units,					 
 					a.id,
 					a.bname,
@@ -47,7 +49,8 @@ a.uploadimage,
 					a.vusername,
 					a.bcompanyname,
 					a.buyerid,
-					a.sellerid');				 
+					a.sellerid');
+$this->db->where('a.buyerid', $id);						
 					$this->db->join('buyer_req_response b', 'a.id=b.seller_mbuyreq_id',
 					'left outer');		     			
 					$query = $this->db->get("seller_mbuyreq a");
@@ -1122,7 +1125,7 @@ function getsellerrenego_admin_datafetch() {
 					return $result;
 		
 			}
-			
+			 
 			function getdatafrombuyer_req_response5() {	
 				$id = $this->session->userdata('username'); 
 			$this->db->select('		
@@ -1150,6 +1153,7 @@ function getsellerrenego_admin_datafetch() {
 					d.buyer_final_price,
 					d.buyer_final_units,
 					d.sel_status,
+				 
 					d.data_fetch2,
 					d.bname');	
 					$this->db->where('d.data_fetch2', 0);
