@@ -35,7 +35,7 @@
 							-->
 
 
-					<form name="myForm" action="<?php echo base_url(); ?>vendor_postproduct"  method="POST">
+					<form name="myForm" action="<?php echo base_url(); ?>vendor_postproduct"   enctype="multipart/form-data"  method="POST">
 
 						<div class="form-group row">
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -66,7 +66,7 @@
 						
 								<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="">Product Name</label>
-								<input type="text" class="form-control" id="productname" name="productname" placeholder="Product Name" onkeyup="product_id()">
+								<input type="text" class="form-control" id="productname" name="productname"  value ="abc" placeholder="Product Name" onkeyup="product_id()">
 
 							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -321,7 +321,7 @@
 							
 									<div class="col-sm-5 mt-4">
 								<label for="exampleInputFile">Upload Product Images:</label>
-								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage[]">
+								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage">
 								
 							</div>
 							
@@ -367,9 +367,8 @@
 
 
 
-								<input class="btn btn-primary btn-sm"  type="submit" name="submit" value=" Submit">
-								<!-- 								<input type="submit" name="submit2" id="btn1" onclick="return validate1()" value=" Proceed" class="btn btn-primary col-3 mt-2 w-25">
-								-->
+								<input class="btn btn-primary btn-sm"  type="submit" name="submit" value="submit">
+								
 
 								<button class="btn btn-primary btn-sm offset-sm-2 " type="reset" href="<?php echo base_url(); ?>vendor_postproduct" value="Clear" name="Clear" role="button">Clear</a>
 

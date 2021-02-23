@@ -45,7 +45,7 @@ class Vendor_add_seller_renego_buyresponse extends CI_Controller {
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('seller_req_response',$data);
-			header('location: ./vendor_req_renego_status/index/'.$datainserr);
+			header('location: ./Vendor_seller_renego_buyresponse/index/'.$seller_mbuyreq_id);
 			}
 			
 		
