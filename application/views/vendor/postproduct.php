@@ -66,7 +66,7 @@
 						
 								<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="">Product Name</label>
-								<input type="text" class="form-control" id="productname" name="productname"  value ="abc" placeholder="Product Name" onkeyup="product_id()">
+								<input type="text" class="form-control" id="productname" name="productname"   placeholder="Product Name" onkeyup="product_id()">
 
 							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -320,8 +320,20 @@
 							</div>
 							
 									<div class="col-sm-5 mt-4">
-								<label for="exampleInputFile">Upload Product Images:</label>
-								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage">
+							<!--	<label for="exampleInputFile">Upload Product Images:</label>
+								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage">-->
+								
+								
+								<div class="input_fields_wrap">
+								
+								<input  type="file" id="uploadproductimage" name="uploadproductimage">
+								</div>
+								
+								
+								
+								
+								
+								
 								
 							</div>
 							

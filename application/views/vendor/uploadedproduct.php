@@ -103,8 +103,10 @@
                     
                 </div>
 				<div class="col-sm-4  offset-sm-3">	
+					<label for="quantity">Units:</label>
 				
 			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" value="<?php echo $row->supplyunits;?>" >
+				
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
 					

@@ -149,7 +149,7 @@ $data2 .='</div>';
 			$data2 .='<option>Metric ton</option>';
 			$data2 .= '<option>Litre</option>';
 			$data2 .='<option>lot</option>';
-			$data2 .='<option>litre</option>';
+		
 			$data2 .= '<option>Number</option>';
 			$data2 .= '<option>Meter</option>';
 			$data2 .='';
@@ -191,12 +191,12 @@ $data2 .='</div>';
 		if($this->input->post('user')){
 			if($this->input->post('optradio')=="Buyer"){
 				$table = "buyer_register";
-				$colname = "busername";
+				$colname = "buyerid";
 				$colname2 = "bpassword";
 			     $status ="boptions";
 			}else if($this->input->post('optradio')=="Seller"){
 				$table = "vendor_register";
-				$colname = "vusername";
+				$colname = "sellerid";
 				$colname2 = "vpassword";
 				$status ="voptions";
 			}else{
@@ -272,7 +272,7 @@ $data2 .='</div>';
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('busername'=>$sess['sessi']);
+		$active1 = array('buyerid'=>$sess['sessi']);
 			{
 		$this->load->helper(array('url','html','date'));
 		$productname = $this->input->post('productname');
@@ -364,7 +364,7 @@ $data2 .='</div>';
 			$data2 .= '<option>Metric Ton</option>';
 			$data2 .= '<option>Litre</option>';
 			$data2 .= '<option>lot</option>';
-			$data2 .='<option>litre</option>';
+		
 			$data2 .='<option>Number</option>';
 			$data2 .= '<option>Meter</option>';
 			$data2 .= '';
@@ -381,7 +381,7 @@ $data2 .='</div>';
 			$data2 .='<option>Metric ton</option>';
 			$data2 .= '<option>Litre</option>';
 			$data2 .='<option>lot</option>';
-			$data2 .='<option>litre</option>';
+		
 			$data2 .= '<option>Number</option>';
 			$data2 .= '<option>Meter</option>';
 			$data2 .='';
