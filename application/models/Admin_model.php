@@ -193,7 +193,24 @@ a.uploadimage,
 			$q = $this->db->get();
 			return $q->result_array();
 		  }
-		
+		  public function get_lookalike_search($table,$col,$col2,$query){			  
+			$this->db->from($table);
+			$this->db->like($col,$query);
+			$this->db->or_like($col2,$query);
+			//$this->db->where('comapprove',1);
+			$q = $this->db->get();
+			return $q->result_array();
+		  }
+		  public function get_lookalike_search2($table,$col,$col2,$query,$cat,$loc){
+			$this->db->from($table);
+			$this->db->like($col,$query);
+			$this->db->or_like($col2,$query);
+			$this->db->where('types',$cat);
+			$this->db->or_where(array('pstates'=>$loc,'pcities'=>$loc));
+			$this->db->where('comapprove',1);
+			$q = $this->db->get();
+			return $q->result_array();
+		}
 			function fetch_all()
 			 {
 			  $query = $this->db->get("auction");
