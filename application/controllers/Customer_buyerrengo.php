@@ -45,7 +45,7 @@ $query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
 		
 		
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/Buyerrengo',$adac);
+		$this->load->view('customer/buyerrengo',$adac);
 		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		

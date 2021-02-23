@@ -29,7 +29,7 @@
 			<!--Make sure the form has the autocomplete function switched off:-->
 
 						 <div class="autocomplete" style="width:200px;">
-						   <input id="myInput" type="text" name="myCountry" placeholder="&#xf041 All India" class="form-control">
+						   <input id="myInput" type="text" name="myCountry" placeholder="&#xf041 All India" value="India" class="form-control">
 					
 						</div>
 			  </div>
@@ -90,9 +90,12 @@
  function getPaging(v){
 var s = v.split("|");
 	document.getElementById("productname").value  = s[0];
-	document.getElementById("vname").value = s[1];
+	//document.getElementById("vname").value = s[1];
 	 $("#dp").hide();
  }
+function getPagingnr(){
+	$("#dp").hide();
+}
  </script>        
   
        

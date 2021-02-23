@@ -36,7 +36,11 @@
 </head>
 <body>
 
- 
+ <div class="container border">
+
+<img style=" float: left"  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img-fluid mt-5" alt="" width="10%;">
+</div>
+
 <nav class="navbar-header">
 
 	     <a href="<?php echo base_url();?>home_login">

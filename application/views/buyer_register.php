@@ -41,7 +41,7 @@
                     <input type="text" class="form-control form-control-user" id="bcontactperson" name="bcontactperson" placeholder="Contact Person">
                   </div>
 				   <div class="col-sm-6 mt-2">
-                   <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number" >
+                   <input type="text" class="form-control form-control-user" id="bcontactnumber" name="bcontactnumber" placeholder="Contact Number"  >
                   </div>
 				    <div class="col-sm-6 mt-2">
                  
@@ -178,6 +178,15 @@ if(bname == '' || bcompanyname == '' || bcompanytype == '' || bcontactperson == 
 		return false;
 	}
 	
+	if (bcontactnumber.value.length < 10 || bcontactnumber.value.length > 10) {
+    swal("Alert!", "Mobile No. is not valid, Please Enter 10 Digit Mobile No.", "error");
+    return false;
+  }
+  else if (bcontactnumber.value == "") {
+    swal("Alert!","Please enter your Mobile No.","error");
+    return false;
+  }
+	
 }
   </script>
  
@@ -270,3 +279,4 @@ var inputvalues = $(this).val();
 	 }
  }
 </script>
+

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
- 
+  
    class Admin_model extends CI_Model {
 	
 		  function __construct() { 
@@ -25,8 +25,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		public function getdatafromtable($table, $data) {
 			$query = $this->db->get_where($table, $data); 
 			 return $query->result();
-		} 
-		 
+		}
+
+		 public function getdatafromtable_neg() {
+			$this->db->select('b.buyer_nego_price,
+					b.buyer_nego_units,					 
+					a.id,
+					a.bname,
+					a.description,
+a.quantity,
+a.units,
+a.price,
+a.priceperkg,
+a.sellerprice,
+a.bsupplyability,
+a.status,
+a.uploadimage,				
+					a.productid,
+					a.productname,
+					a.category,
+					a.vusername,
+					a.bcompanyname,
+					a.buyerid,
+					a.sellerid');				 
+					$this->db->join('buyer_req_response b', 'a.id=b.seller_mbuyreq_id',
+					'left outer');		     			
+					$query = $this->db->get("seller_mbuyreq a");
+			   
+			 return $query->result();
+		}
 		
 		public function getdatafromtableliveneg() {
 			$this->db->select('b.buyerrequriement_id,
@@ -46,6 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   
 			 return $query->result();
 		}
+		
 		
 		public function get1datafromtable($table, $data) { 
 			 $this->db->select('vcompanyname');
@@ -165,7 +193,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$q = $this->db->get();
 			return $q->result_array();
 		  }
-		
+		  public function get_lookalike_search($table,$col,$col2,$query){			  
+			$this->db->from($table);
+			$this->db->like($col,$query);
+			$this->db->or_like($col2,$query);
+			//$this->db->where('comapprove',1);
+			$q = $this->db->get();
+			return $q->result_array();
+		  }
+		  public function get_lookalike_search2($table,$col,$col2,$query,$cat,$loc){
+			$this->db->from($table);
+			$this->db->like($col,$query);
+			$this->db->or_like($col2,$query);
+			$this->db->where('types',$cat);
+			$this->db->or_where(array('pstates'=>$loc,'pcities'=>$loc));
+			$this->db->where('comapprove',1);
+			$q = $this->db->get();
+			return $q->result_array();
+		}
 			function fetch_all()
 			 {
 			  $query = $this->db->get("auction");
@@ -787,7 +832,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			a.sellerprice,
 			a.bsupplyability');	
 			
-			 $this->db->from("buyer_req_response b");
+			$this->db->from("buyer_req_response b");
             $this->db->join('seller_mbuyreq a', 'a.id=b.seller_mbuyreq_id','left outer');	
 			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');		
 			$this->db->join('buyer_final_req d', 'c.seller_mbuyreq_id=d.seller_mbuyreq_id','left outer');

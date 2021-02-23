@@ -40,7 +40,7 @@ class Vendor_buynego extends CI_Controller {
 		
 		
 		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/Buynego',$adac);
+		$this->load->view('vendor/buynego',$adac);
 		$this->load->view('vendor/footer');
 		$this->load->helper('url');
 		

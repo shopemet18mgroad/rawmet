@@ -1,9 +1,5 @@
 
 
-
-
-
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -19,7 +15,7 @@
                     <div class="row">
 
                       <!-- Pie Chart -->
-                        <div class="col-xl-7 col-lg-5">
+                        <div class="col-xl-6 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -41,163 +37,61 @@
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-
-         <div class="card-body">
-           <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
-		   
+	<form action="<?php echo base_url();?>customer_add_sellerResponse_renego" method="POST" enctype="multipart/form-data">
+                                <div class="card-body">
+       <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-    	<form action="<?php echo base_url();?>customer_add_sellerResponse_renego" method="POST" enctype="multipart/form-data">
-    </thead>
-	
-       <tbody>
-	   <tr  style="text-align:center;">
-	   
-           	<input hidden  type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
-          
-			<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">
-			<input type="hidden" value="<?php echo  $sqldata[0]->id;?> "  class="form-control" id="seller_mbuyreq_id" name="seller_mbuyreq_id" >
-			<input type="hidden" value="<?php echo  $sqldata[0]->bsupplyability;?> "  class="form-control" id="buyer_nego_units" name="buyer_nego_units" >
-						
-						
- 		
-		<td style="font-size:15px; width:150px;">Seller's Offer <br /><small style="color:orange;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></small></td>
-			
-		<td>
-			<input required style="width:80px;" type="text" class="form-control" id="buyer_nego_price" name="buyer_nego_price">	
-		</td>
-		
-		
-		<td>
- 
-		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm"  name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></a></button>	
-		
-		 
-			<button type="button" class="btn btn-outline-primary  btn-sm"><i class="fas fa-check"></i></button>		
-			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
-			</form>
-			<small>	  <?php foreach($sqldata as $row){?>
- 
-	 
-									
-		<td style="color:orange;" ><b><?php  if($row->status == 0) {echo  $sqldata[0]->buyer_nego_price. " / " .$sqldata[0]->bsupplyability. "</br>  ". "Pending" ;}else if($row->status == 2) {echo 'Rejected';}else if($row->status == 1) {echo 'Approved!';}else if($row->status == 5) {echo 'Approved-check in final Approval!';}?></b></td>
-		
-
-		
-        
-<?php }?>	</small>
-			</td>
-			 
-	</tr>
-	
- 
-	
-	
-	
-	
-	 
-	
-	
-	
-
-  
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		 			
     
-                </tbody>
-
-
-
-
-
-
-
-  </table>
-  
-   <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
-		   
-    <thead class="bg-primary text-white">
-    	<form action="<?php echo base_url();?>customer_add_sellerResponse_renego" method="POST" enctype="multipart/form-data">
     </thead>
-	
        <tbody>
 	   <tr  style="text-align:center;">
-	   
-           	<input hidden type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata3[0]->bname;?>" readonly>
-           	<input hidden type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata3[0]->bname;?>" readonly>
-			<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">
-			<input type="hidden" value="<?php echo  $sqldata3[0]->seller_mbuyreq_id;?> "  class="form-control" id="seller_mbuyreq_id" name="seller_mbuyreq_id" >
-			<input type="hidden" value="<?php echo  $sqldata3[0]->bsupplyability;?> "  class="form-control" id="buyer_nego_units" name="buyer_nego_units" >
-						
-						
- 		
-		<td style="font-size:15px; width:150px;">2nd Seller Negotiate <br /><small style="color:orange;"><b><?php echo  $sqldata3[0]->seller_renego_price. " / " .$sqldata3[0]->bsupplyability;?></b></small></td>
+           
+ 		   <td style="font-size:15px; width:150px;">1st Negotiate <br /><small style="color:orange;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></small></td>
+			<td><input style="width:80px;" type="number" class="form-control" id="buyer_nego_price" name="buyer_nego_price	"></td>			 
+			<td>
+ 
+		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm" name="submit" role="submit">Negotiate</button>
+			<button type="button" class="btn btn-outline-primary  btn-sm"><i class="fas fa-check"></i></button>		
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+			<td>
+			<small>Pending</small>
+		</td> 
+	</tr>
+	<tr style="text-align:center;">
+			<td style="font-size:15px; width:150px;">2nd Negotiate <br /><small>350/KG</small></td>
+			<td><input style="width:80px;" type="number" class="form-control" id="bname" name="bname"></td>			 
+			<td>		
+			<button type="button" class="btn btn-outline-success btn-sm">Negotiate</button>
+			<button type="button" class="btn btn-outline-primary  btn-sm"><i class="fas fa-check"></i></button>		
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+		
+			<td style="width:80px;">
+			<small>Pending</small>
+		</td> 			
+	</tr>
+	<tr style="text-align:center;">  
+			<td style="font-size:15px; width:150px;">3rd Negotiate <br /><small>550/KG</small></td>
+			<td><input style="width:80px;" type="number" class="form-control" id="bname" name="bname"></td>			 
+			<td>		
+			<button type="button" class="btn btn-outline-success btn-sm">Negotiate</button>
+			<button type="button" class="btn btn-outline-primary  btn-sm"><i class="fas fa-check"></i></button>		
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+			<td style="width:80px;">
+			<small>Pending</small>
+		</td>  			
+    </tr> 
+	<tr style="text-align:center;">  
+			<td style="font-size:15px; width:150px;">4th Negotiate <br /><small>650/KG </small></td>
+			<td><input style="width:80px;" type="number" class="form-control" id="bname" name="bname"></td>			 
+			<td>		
+			<button type="button" class="btn btn-outline-success btn-sm">Negotiate</button>
+			<button type="button" class="btn btn-outline-primary  btn-sm"><i class="fas fa-check"></i></button>		
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button></td>
 			
 		<td>
-			<input required style="width:80px;" type="text" class="form-control" id="buyer_nego_price" name="buyer_nego_price">	
-		</td>
-		
-		
-		<td>
- 
-		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm"  name="submit" role="submit" onclick="return validate()"><b>Final<br/> Negotiate</b></a></button>	
-		
-		 
-			<button type="button" class="btn btn-outline-primary  btn-sm"><i class="fas fa-check"></i></button>		
-			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
-			</form>
-			<small>	  <?php foreach($sqldata as $row){?>
- 
-	 
-									
-		<td style="color:orange;" ><b><?php  if($row->status == 0) {echo 'Pending';}else if($row->status == 2) {echo 'Rejected';}else if($row->status == 1) {echo 'Approved!';}else if($row->status == 5) {echo 'Approved-check in final Approval!';}?></b></td>
-		
-
-		
-        
-<?php }?>	</small>
-			</td>
-			 
-	</tr>
-	
- 
-	
-	
-	
-	
-	 
-	
-	
-	
-
-  
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		 			
+			<small>Pending</small>
+		</td> 			
+    </tr>	 			
     
                 </tbody>
 
@@ -212,7 +106,7 @@
                             </div>
                         </div>
 						
-						<div class="col-xl-5 col-lg-7">
+						<div class="col-xl-6 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -243,7 +137,7 @@
 
           <div class="view overlay z-depth-1-half">
             <?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="60%" height="100%">
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="30%" height="100%">
             <div class="mask rgba-white-light"></div>
           </div>
 		  <br />
@@ -273,7 +167,7 @@
      
     
   </div>
-
+</form>
                                 </div>
                             </div>
                         </div>
@@ -294,18 +188,6 @@
 		 
     
 </div>
-  <script>
-  
-function validate(){
-swal("You have negotiated", {
-  submit: ["Oh noez!", "Aww yess!"],
-});
-
-}
-  </script>
  
- <script>
-
- </script>
-
-      
+ 
+ 
