@@ -33,36 +33,26 @@
     </thead>
        <tbody>
                                  
-                                               <?php
-                                               $strTable = "";
-                                             foreach($sqldata2 as $seller){                                             
-                                             $strTable .= " 
-                                          <tr>
-                                          <td>".$seller->productid."</td>
-                                          <td>".$seller->productname."</td>
-                                          <td>".$seller->description."</td>
-                                          <td>".$seller->seller_qua." ".$seller->units."</td>
-                                          
-                                          <td>".$seller->requireddate."</td> 
-                                          <td>".$seller->lastdate."</td> 
-                                          <td>".$seller->lastdate."</td> 
-                                          <td> <a  href='javascript:showUserData(\"".$seller->productid."\")'>".$seller->cnt." Res</a></td>     
-                                      </tr>
-                                     
-                                      </tr>
-                                 ";
-                  }
-                  echo $strTable;
-                 ?>
-                </tbody>
-
-
-
-
-
-
-
-  </table>
+         <?php
+           $strTable = "";
+           foreach($sqldata2 as $seller){                                             
+           $strTable .= " 
+           <tr>
+               <td>".$seller->productid."</td>
+               <td>".$seller->productname."</td>
+               <td>".$seller->description."</td>
+               <td>".$seller->seller_qua." ".$seller->units."</td>
+               <td>".$seller->requireddate."</td> 
+               <td>".$seller->lastdate."</td> 
+               <td>".$seller->lastdate."</td> 
+               <td> <a  href='javascript:showUserData(\"".$seller->productid."\")'>".$seller->cnt." Res</a></td>     
+           </tr>
+			";
+            }
+		 echo $strTable;
+         ?>
+         </tbody>
+		</table>
 		</div>
 		</div>
 		</div>
@@ -96,18 +86,10 @@
           </button>
         </div>
         <div class="modal-body">
-        
         Seller Response
-
-        <div class="table-responsive">
-                  <span id="sellerResponse">Please wait...</span>
-                
-  </div>
-
-        
-        
-
-        
+		<div class="table-responsive">
+         <span id="sellerResponse">Please wait...</span>
+         </div>
         
         </div>
       

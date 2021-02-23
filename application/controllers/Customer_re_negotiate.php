@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Customer_seller_response_renego extends CI_Controller {
+class Customer_re_negotiate extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -40,21 +40,19 @@ class Customer_seller_response_renego extends CI_Controller {
 		
 		$active = array('id'=>$id ,'buyerid'=>$sess['sessi']);
 		
-		$query = $this->Admin_model->getdatafromtable_neg();
+		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq', $active);
 		
 		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$data['sqldata3'] = $this->Admin_model->getsellerrenego_data3();
+			
 		
-		//print_r($data['sqldata3']); die;
 			
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/seller_response_renego',$data);
+		$this->load->view('customer/re_negotiate',$data);
 		$this->load->view('customer/footer');
 	}
 		
 	}
-	
 	public function index_error(){
 			$alertmsg = $this->uri->segment(3);
 			$alertmsg = urldecode($alertmsg);
@@ -63,7 +61,7 @@ class Customer_seller_response_renego extends CI_Controller {
 			echo '</script>';
 			$this->load->helper('url');
 		$this->load->view('customer/header');
-		$this->load->view('customer/seller_response_renego');
+		$this->load->view('customer/re_negotiate');
 		$this->load->view('customer/footer');
 			
 	}

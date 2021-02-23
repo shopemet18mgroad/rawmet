@@ -18,6 +18,8 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	 
+	 
 	public function index()
 	{
 		$this->load->helper('url');
@@ -175,7 +177,7 @@ $data2 .='</div>';
 			
 		}
 		$datapass['sr'] = $data2;
-		$this->load->view('header');
+		$this->load->view('search_header');
 		$this->load->view('search',$datapass);
 		$this->load->view('footer');
 		
