@@ -119,54 +119,6 @@ $data2 .='</div>';
 				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['punits'].'</h6>';
    
 
-   
-  
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-  
-			
-			
-				
-		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			$data2 .='<form class="col-12">';
 			$data2 .= '<div class="form-row">';
 			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Quantity</label>';
@@ -295,9 +247,9 @@ $data2 .='</div>';
 			public function index_error(){
 			$alertmsg = $this->uri->segment(3);
 			$alertmsg = urldecode($alertmsg);
-			$data2 .=  '<script language="javascript">';
-			$data2 .=  'alert("'.$alertmsg.'")';  //not showing an alert box.
-			$data2 .=  '</script>';
+			echo '<script language="javascript">';
+			echo  'alert("'.$alertmsg.'")';  //not showing an alert box.
+			echo  '</script>';
 			$this->load->view('header');
 			$this->load->view('login_pp');
 			$this->load->view('footer');
@@ -401,54 +353,6 @@ $data2 .='</div>';
 			$data2 .= '<h6 style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
 				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['punits'].'</h6>';
    
-
-   
-  
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-  
-			
-			
-				
-		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			
 			$data2 .='<form class="col-12">';
 			$data2 .= '<div class="form-row">';

@@ -100,7 +100,7 @@
 								</td>
 
 
-                                            <td> <a href="<?php echo base_url() . 'Admin_quotationpur/auc_no/' .$row->id. urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
+                                            <td> <a href="<?php echo base_url() . 'Admin_quotationpur/auc_no/' .$row->id."/". urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
 
 
 
