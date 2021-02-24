@@ -47,6 +47,8 @@ class Customer_respurchase_order extends CI_Controller {
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
+			$quantity = $this->input->post('quantity');
+			  $units= $this->input->post('units');
 		     $price = $this->input->post('price');
 			  $punits= $this->input->post('punits');
 		   
@@ -67,7 +69,7 @@ class Customer_respurchase_order extends CI_Controller {
 			
 			//$sterms_condiaccept  = $this->input->post('sterms_condiaccept');
 			$pic_array1 = self::upload_files('upload_dd');
-			
+		
 			if(!count($pic_array1)){
 			echo '<script language="javascript">';
 			echo 'alert("Documents Upload Failed")';  //not showing an alert box.
