@@ -42,8 +42,7 @@
 									</tr>
 								</thead>
 								<tbody>
-								<form action="<?php echo base_url(); ?>Customer_repurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">
-	
+							
 										<?php $k = 0; ?>
 										<?php foreach ($sqldata as $row) { ?>
 											<tr>
@@ -103,7 +102,7 @@
 													echo $row->brenegoquantityunit; ?>
 													<input type="hidden" name="brenegoquantityunit" value="<?php echo $row->brenegoquantityunit; ?>">
 									</td>
-										<td> <a href="<?php echo base_url().'Customer_renegovaluequotation/auc_no/'.urldecode($row->buyerid)."/".urldecode($row->sellerid)."/".urldecode($proid);?>" target="_blank">
+										<td> <a href="<?php echo base_url().'Customer_renegovaluequotation/auc_no/'.urldecode($row->id)."/".urldecode($row->buyerid)."/".urldecode($row->sellerid)."/".urldecode($proid);?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true" ></i></a></td>
 					<td>
 
