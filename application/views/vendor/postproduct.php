@@ -298,12 +298,14 @@
 
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
+								<label for="Pname">Validity </label>
 								<label for="Pname">[ From:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityfrom" name="productvalidityfrom" placeholder="">
 							</div>
 
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
+							<label for="Pname">Validity </label>
 								<label for="Pname"> [To:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityto" name="productvalidityto" placeholder="">
 							</div>

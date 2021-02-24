@@ -319,63 +319,33 @@ $data2 .='</div>';
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('buyerid'=>$sess['sessi']);
 			{
+
 		$this->load->helper(array('url','html','date'));
 		$productname = $this->input->post('productname');
+		$category = $this->input->post('category');
+		$myCountry = $this->input->post('myCountry');
 		date_default_timezone_set('Asia/Kolkata');
+		$data2 = "";  
 		$time =  Date('Y-m-d H:i:s');
 		$this->load->model('Admin_model');
-		$data = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$productname);
-		$data2 = "";
+		$data = $this->Admin_model->get_lookalike_search2('sellerpostproduct','productname','description',$productname,$category, $myCountry);
 		if(count($data)){
-
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			$data2 .= '<form class="user">';
 			$data2 .='<div class="row  bg-light">';
-			$data2 .='<div class="col-sm-3">';
-			$data2 .='<h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4>';
+			$data2 .='<div class="col-sm-3 text-center">';
+			$data2 .='<center><h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4></center>';
 			$data2 .='<div class="col-sm-4">';
-			$data2 .='<div class="thumbnail mt-5">';
+			$data2 .='<div class="mt-5 ml-5">';
 
 			$img = unserialize($dat['uploadproductimage']);
-
-			$data2 .='<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="100px" height="100px">';
+			if($img){
+				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="100px" height="100px">';
+			}else{
+				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/emptyproductimg.png" alt="Chania" width="100px" height="100px">';
+			}
+			
 		
 
 $data2 .='</div>';
@@ -395,10 +365,10 @@ $data2 .='</div>';
 			$data2 .='<p><b>Category:</b>'.$dat['category'].'</p>';
 			
 			
-			 //'<p><b>Supplier Price:</b> <div>'.$dat['price'].'  '.$dat['units'].'</div></p>';
+		
 	
 			$data2 .='<h6><b>Supply Ability:</b>
-			'.$dat['quantity'].'  '.$dat['supplyunits'].'</h6>';
+			'.$dat['quantity'].'  '.$dat['units'].'</h6>';
 			$data2 .= '<h6><b>last Modified Stock & Price: </b>'.$dat['datetime'].'</b></h6>';
 			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
 			$data2 .= '';
@@ -429,12 +399,57 @@ $data2 .='</div>';
 			$data2 .= '<div class="row p-2">';
 			$data2 .= '<div class="col-sm-10">';
 			$data2 .= '<h6 style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
-				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['units'].'</h6>';
-			 //'<div class="form-check mt-3 text-left">';
-			 //'<input type="checkbox" class="form-check-input" id="exampleCheck1">';
-			//'<label class="form-check-label" for="exampleCheck1">Negotiate</label>';
-		 //'</div>';
-			//'';
+				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['punits'].'</h6>';
+   
+
+   
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+			
+			
+				
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			$data2 .='<form class="col-12">';
 			$data2 .= '<div class="form-row">';
 			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Quantity</label>';
@@ -443,9 +458,9 @@ $data2 .='</div>';
 			$data2 .='<select class="form-control col-sm-0" id="type">';
 			$data2 .='<option>KG</option>';
 			$data2 .= '<option>Metric Ton</option>';
-			$data2 .= '<option>Litre</option>';
+			
 			$data2 .= '<option>lot</option>';
-		
+			$data2 .='<option>litre</option>';
 			$data2 .='<option>Number</option>';
 			$data2 .= '<option>Meter</option>';
 			$data2 .= '';
@@ -468,23 +483,9 @@ $data2 .='</div>';
 			$data2 .='';
 			$data2 .='</select>';
 			$data2 .= '</div>';
-			
-		//$data2 .='<td>';
-		//$data2 .='<button type="button" id="'.$proid.'|'.$dat['productname'].'" onClick="addtocart(this.id)">';
-		//$data2 .='<i class="fas fa-heart" id="'.$proid.'|'.$dat['productname'].'"></i>';
-		//$data2 .='</button>';
-		//$data2 .='</td>';
-			
-			
-			
-			
-			
-			
-			
-			
 
-			$data2 .= '<button style="" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
-			href="<?php $data2 .=  base_url();?>#" data-toggle="modal" data-target="">Submit</button>';
+			$data2 .= '<button style="width:100%" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
+			href="<?php $data2 .=  base_url();?>#" data-toggle="modal" data-target="#new_userlogin">Login</button>';
 
 			
 	
@@ -496,33 +497,12 @@ $data2 .='</div>';
 			$data2 .=  '</div>';
 			$data2 .= '</div>';
 			$data2 .=  '';
-			
 			$data2 .=  '</div>';
-			
 			$data2 .=  '</form>';
 			$data2 .=  '<hr />';
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 						}
+			
+	
 			
 		}
 		$datapass['sr'] = $data2;

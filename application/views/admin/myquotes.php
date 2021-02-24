@@ -22,10 +22,14 @@
     <thead class="bg-primary text-white">
       <tr>
 	   <th>Sl.No.</th>
-			<th>Supplier Name</th>
+			<th>Supplier Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
+			
+			  <th style ="color:orange";>Supplier Base Quantity</th>
+			<th style ="color:orange";>Supplier Base Price</th>
+			
 		    <th style ="color:pink";>Buyer Quantity</th>
 			<th style ="color:pink";>Buyer Price</th>
 			
@@ -51,19 +55,28 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-			
+		  <td><?php echo $row->quantity.""; echo $row->units;?></td>
+			<td><?php echo $row->price."/"; echo $row->punits;?></td>
 			
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bunits;?></td>
 			
 		
-			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
+			<td style="text-align:center;"><?php if($row->selprice == null){echo " - ";}
+			else{echo $row->selprice."/"; echo $row->sunits;}?></td>
+			<td style="text-align:center;"><?php if($row->brenegoquantity == null){echo " - ";}
+			else{echo $row->brenegoquantity."/"; echo $row->brenegoquantityunit;}?></td>
 			
-			<td><?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>
-			<td><?php echo $row->brenegoprice."/"; echo $row->brenegounit;?></td>
+				<td style="text-align:center;"><?php if($row->brenegoprice == null){echo " - ";}
+			else{echo $row->brenegoprice."/"; echo $row->brenegounit;}?></td>
 			
-			<td><?php echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;?></td>
+				<td style="text-align:center;"><?php if($row->sellrenegoprice == null){echo " - ";}
+			else{echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;}?></td>
 			
+			
+				
+			
+		
 	
 
 				

@@ -108,7 +108,7 @@ class Customer_add_renegotiate extends CI_Controller {
 				
 				
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/Custrenegovalue');
+		$this->load->view('customer/custrenegovalue');
 		$this->load->view('customer/footer');
 			 
 	 

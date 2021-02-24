@@ -40,7 +40,7 @@ class Admin_buynego extends CI_Controller {
 		
 		
 		$this->load->view('admin/header',$sess);
-		$this->load->view('admin/Buynego',$adac);
+		$this->load->view('admin/buynego',$adac);
 		$this->load->view('admin/footer');
 		$this->load->helper('url');
 		

@@ -108,7 +108,7 @@
 											
 
 
-												<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' .$row->id. urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
+												<td> <a href="<?php echo base_url() . 'Customer_quotationpur/auc_no/' . urldecode($row->id)."/". urldecode($row->buyerid) . "/" . urldecode($row->sellerid) . "/" . urldecode($proid); ?>" target="_blank">
 
 
 

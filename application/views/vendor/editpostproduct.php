@@ -48,10 +48,11 @@
 					
 					<select class="form-control" id="category" name="category">
 					       <option value="<?php echo  $sqldata[0]->category;?>"><?php echo  $sqldata[0]->category;?></option>
+						     	
 						<option value="Non Metal">Non Metal</option>
 						<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
-				        <
+				        
 						<option value="Metal" >Metal</option>
 				    </select> 
                     
@@ -80,7 +81,7 @@
 			   	<label for="category">Type:</label>
 					<select class="form-control" id="types" name="types" value="">
 					<option value="<?php echo  $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
-					
+					   	
 						<option value="Primary">Primary</option>
 						<option value="Secondary">Secondary</option>
 				        <option value="Scrap" >Scrap</option>
