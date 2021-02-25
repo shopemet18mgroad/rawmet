@@ -30,9 +30,9 @@ class Admin_vendordetail extends CI_Controller {
 		$this->load->model('Admin_model');
 		$sellerid = urldecode($this->uri->segment(3));
 		
-		$vcompanyname = urldecode($this->uri->segment(4));
+	
 		
-		$active = array('sellerid'=>$sellerid,'vcompanyname'=>$vcompanyname);
+		$active = array('sellerid'=>$sellerid,);
 	
 		$query = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$data['sqldata']= $query;

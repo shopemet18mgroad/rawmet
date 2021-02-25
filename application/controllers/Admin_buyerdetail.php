@@ -30,9 +30,9 @@ class Admin_buyerdetail extends CI_Controller {
 		$this->load->model('Admin_model');
 		$buyerid = urldecode($this->uri->segment(3));
 		
-		$bcompanyname = urldecode($this->uri->segment(4));
 		
-		$active = array('buyerid'=>$buyerid,'bcompanyname'=>$bcompanyname);
+		
+		$active = array('buyerid'=>$buyerid);
 	
 		$query = $this->Admin_model->getdatafromtable('buyer_register', $active);
 		$data['sqldata']= $query;
