@@ -29,7 +29,7 @@
 				<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
 				?>
 		
-		
+			 <a style="float:right;" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
 			 	<div class="form-group row">
 				
 				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
@@ -40,7 +40,7 @@
 				
 				
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
-						 <a style="margin:15%" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
+					
 					
 					
 					
