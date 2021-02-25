@@ -40,9 +40,18 @@
 				
 				
 					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
+						 <a style="margin:15%" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
+					
+					
+					
+					
 					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
 					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
 					<p><b>Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></p>
+					
+					
+					
+					
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
 					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
 					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->punits;?><br>
@@ -55,7 +64,7 @@
 					
 					
 					
-					 <a style="margin:15%" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
+				
 				  
           
 				<table class="table bg-white table-sm table-borderless">
@@ -65,6 +74,7 @@
 						</tr>
 					</thead>
 						<tbody> 
+					
 							<tr>
 								<td><b>Minimum Order Quantity:&nbsp;</b><?php echo $sqldata[0]->minoderquant;?></td>
 							</tr>
