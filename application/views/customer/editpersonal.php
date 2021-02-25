@@ -89,7 +89,7 @@
 							</tr>
 							<tr>
 								<td>Username</td>
-								<td><input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername; ?>" readonly ></td>
+								<td><input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername; ?>"  ></td>
 							</tr>
 						
 							 	
