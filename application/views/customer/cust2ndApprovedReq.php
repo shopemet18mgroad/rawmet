@@ -42,7 +42,7 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
-			<td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>"><?php echo $row->vusername;?></td>
+			<td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>"><?php echo $row->vusername;?><input type="hidden" name="bname" value="<?php echo $row->bname;?>"></td>
 			<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"><?php echo $row->bcompanyname;?></td>
 			<td><input type="hidden" name="category" value="<?php echo $row->category;?>"><?php echo $row->category;?></td>
 			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>"><?php echo $row->productname;?></td>

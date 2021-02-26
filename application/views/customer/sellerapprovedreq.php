@@ -16,12 +16,12 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Supplier name</th>
+	  <th>Supplier Id</th>
 	  
-        <th>companyname</th>
+
 	   <th>Category</th>
-		<th>productname</th>
-		<th>product Id</th>
+		<th>Product Name</th>
+		<th>Product Id</th>
         <th>Description</th>
 		
 		<th>Stock</th>
@@ -45,9 +45,11 @@
 	  
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-	  <td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>"><?php echo $row->vusername;?><input type="hidden" name="bname" value="<?php echo $row->bname;?>"></td> 
-		
-		<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"><?php echo $row->bcompanyname;?></td> 
+		  		
+	  <td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>"><?php echo $row->vusername;?><input type="hidden" name="bname" value="<?php echo $row->bname;?>">
+	  <input type="hidden" name="sellerid" value="<?php echo $row->vusername;?>"><input type="hidden" name="buyerid" value="<?php echo $row->bname;?>">
+	  <input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"></td> 
+
 		
 		<td><input type="hidden" name="category" value="<?php echo $row->category;?>"><?php  echo $row->category;?></td>
 		

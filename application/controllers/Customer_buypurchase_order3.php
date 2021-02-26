@@ -42,6 +42,8 @@ class Customer_buypurchase_order3 extends CI_Controller {
 			$this->load->model('Admin_model');
 			$vusername = $this->input->post('vusername');
 			$bname = $this->input->post('bname');
+				$vusername = $this->input->post('sellerid');
+			$buyerid = $this->input->post('buyerid');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
 			$productname = $this->input->post('productname');
@@ -75,7 +77,7 @@ class Customer_buypurchase_order3 extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('vusername' => $vusername,'bname'=>$bname,
+			$data = array('sellerid' => $vusername,'buyerid'=>$bname,
 			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
 			'quantity' => $quantity,'units' => $units, 'price'=> $price,
