@@ -22,7 +22,8 @@
     <thead class="bg-primary text-white">
       <tr>
 	  	   <th>Sl.No.</th>
-			<th>Supplier Name</th>
+			<th>Supplier ID</th>
+			<th>Buyer ID</th>
 			<th>Company Name</th>
 			<th>Category</th>
 			<th>Product Name</th>
@@ -40,8 +41,9 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				<td><?php echo $count;?></td> 
-			<td><?php echo $row->vusername;?></td>
+			 <td><?php echo $count;?></td> 
+			<td><?php echo $row->sellerid;?></td>
+			<td><?php echo $row->bname;?></td>
 			<td><?php echo $row->bcompanyname;?></td>
 			<td><?php echo $row->category;?></td>
 			<td><?php echo $row->productname;?></td>
@@ -71,7 +73,7 @@
 </a></td>
 
  
-<td><a href="<?php  echo base_url()."Admin_reqpurchaseorder/approve_product/".$proid."/".$row->sellerid."/".$row->buyerid;?>"><button type="button" class="btn btn-success">Approve</button></a>
+<td><a href="<?php  echo base_url()."Admin_reqpurchaseorder/approve_product/".$proid."/".$row->sellerid."/".$row->bname;?>"><button type="button" class="btn btn-success">Approve</button></a>
 </td>
 <?php $count++;?>
 <?php }?>	

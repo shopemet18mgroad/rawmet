@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-   
+    
    class Admin_model extends CI_Model {
 	
 		  function __construct() { 
@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						return TRUE;
 					}
 		 } 
-	
+	 
 		public function getdatafromtable($table, $data) {
 			$query = $this->db->get_where($table, $data); 
 			 return $query->result();
@@ -274,7 +274,7 @@ $this->db->where('a.buyerid', $id);
 					a.email,
 					a.buyerid,a.*, count(b.productid) as cnt');				
 					$this->db->group_by('a.id');
-					$this->db->where('b.status', 0);
+					//$this->db->where('b.status', 0);
 					$this->db->where('a.buyerid', $id);					
 					 
 					
@@ -313,7 +313,8 @@ $this->db->where('a.buyerid', $id);
 					b.units,
 					b.price,
 					b.vusername,
-					b.sellerid');
+					b.sellerid,
+					');
 					$this->db->where('b.buyerid', $id);				 			
 					$this->db->join('seller_mbuyreq b', 'a.seller_mbuyreq_id=b.id',
 					'left outer');			   
@@ -547,9 +548,9 @@ $this->db->where('a.buyerid', $id);
 					b.buyer_nego_price,
 					b.buyer_nego_units,
 					b.seller_mbuyreq_id,
-c.buyer_approval,
-c.seller_renego_price,
-c.seller_renego_units,					
+			c.buyer_approval,
+			c.seller_renego_price,
+			c.seller_renego_units,					
 					a.id,
 					a.bname,
 					a.bcompanyname,
@@ -565,7 +566,7 @@ c.seller_renego_units,
 					a.sellerprice,a.bsupplyability');
 					
 					$this->db->where('a.sellerid', $id);
-					$this->db->where('b.status', 0);
+					//$this->db->where('b.status', 0);
 					$this->db->join('buyer_req_response b', 'a.id=b.seller_mbuyreq_id',
 					'left outer');	
 					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id',
@@ -626,7 +627,8 @@ c.seller_renego_units,
 					b.bname,
 					b.buyer_nego_price,
 					b.buyer_nego_units,
-					b.seller_mbuyreq_id,					
+					b.seller_mbuyreq_id,
+b.status,					
 					a.id,
 					a.bname,
 					a.bcompanyname,
@@ -657,7 +659,7 @@ c.seller_renego_units,
 			 
 			function getUserData($strUID1){
 				$this->db->where("productid",$strUID1);
-				 $this->db->where('status',0);
+				 //$this->db->where('status',0);
 				$query = $this->db->get("seller_mbuyreq");
 				$result = $query->result();
 				return $result;

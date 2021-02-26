@@ -48,12 +48,12 @@ class Admin_reqpurchaseorder extends CI_Controller {
 		 $productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		 $sellerid = $this->uri->segment(4);
 		 
-		  $buyerid = $this->uri->segment(5);
-		 
+		  $bname = $this->uri->segment(5);
+		 //print_r($bname); die;
         // $vname = urldecode($this->uri->segment(4));
 
-		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid,'buyerid'=>$buyerid);
-		//print_r($retriveval); die;
+		$retriveval = array('productid'=>$productid,'sellerid'=>$sellerid,'bname'=>$bname);
+		// print_r($retriveval); die;
 		
 		$this->load->model('Admin_model');
 		$app= array('sellprove'=>true);

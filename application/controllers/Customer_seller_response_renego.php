@@ -40,16 +40,28 @@ class Customer_seller_response_renego extends CI_Controller {
 		
 		$active = array('id'=>$id ,'buyerid'=>$sess['sessi']);
 		
-		$query = $this->Admin_model->getdatafromtable_neg();
 		
+		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active);
 		$data['sqldata']= $query;
+		
+		$data['buyer2'] = $this->Admin_model->getdatafromtable_buyer2();		
+		//echo '<pre>';  print_r($data['buyer2']); die;
+		
+		
+		
+		
+		
+		//$query = $this->Admin_model->getdatafromtable_neg();
+		
+		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$data['sqldata3'] = $this->Admin_model->getsellerrenego_data3();
+		$data['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_selfetch();
 		
 		//print_r($data['sqldata3']); die;
 		$data['sqldata4'] = $this->Admin_model->getdatafrombuyer_req_response2($id);
-$data['sqldata5'] = $this->Admin_model->getdatafrombuyer_req_response5();		
-			
+		$data['sqldata5'] = $this->Admin_model->getdatafrombuyer_req_response5();		
+		//print_r($data['sqldata5']); die;	
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/seller_response_renego',$data);
 		$this->load->view('customer/footer');

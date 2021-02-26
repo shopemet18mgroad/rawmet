@@ -31,7 +31,7 @@ class Customer_sel2ndApprovedReq extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
 		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_selfetch();
-		
+		//print_r($adac['sqldata3']); die;
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/sel2ndApprovedReq',$adac);

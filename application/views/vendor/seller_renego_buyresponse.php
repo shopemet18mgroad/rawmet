@@ -2,7 +2,7 @@
 
 
 
-<!---------------------------------------------------------------------->
+
 
 
 
@@ -20,7 +20,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Customer Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Seller Dashboard</h1>
          
           </div>
 
@@ -70,14 +70,31 @@
        		
 			<input type="hidden" class="form-control" id="seller_mbuyreq_id" name="seller_mbuyreq_id" value="<?php echo  $sqldata1[0]->seller_mbuyreq_id;?> ">
  		
-			<td style="font-size:15px; width:150px;">Buyer Base Quantity:<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->quantity.' '.$sqldata1[0]->units;?></b></small></td>
+		
 			
-			<td>Seller Negotiated Price<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?></b></small></td>
+			<td>Seller's 1st Offer<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?></b></small></td>
 		
 		
-			<td>Buyer Negotiated Price:<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->buyer_nego_price.' / '.$sqldata1[0]->buyer_nego_units;?></td>
+			<td>Buyer Negotiated Price:<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->buyer_nego_price.' / '.$sqldata1[0]->buyer_nego_units;?></br>
 			
-			<td></td>
+			
+			<?php $strTable = "";
+           foreach($sqldata as $seller){     $strTable .= " 
+              <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>|| <a href='javascript:rejectProduct(\"".$seller->seller_mbuyreq_id."\")'>Reject</a>
+				  
+             ";
+                  }
+                  echo $strTable;
+                 ?>
+			
+			
+			</td>
+			
+			<small>	  <?php foreach($sqldata as $row){?>
+		<td colspan="3" style="color:orange;" ></br><b><?php  if($row->buyer_approval == 0) {echo $sqldata[0]->seller_renego_price.' / '.$sqldata[0]->bsupplyability ."</br>"."Pending";}else if($row->buyer_approval == 2) {echo 'Rejected';}else if($row->buyer_approval == 1) {echo 'Approved';}else if($row->buyer_approval == 3) {echo 'Pending to Approve';}else if($row->buyer_approval == 5) {echo 'Approved-check in final Approval';}?></b></td>
+		
+		<?php }?>	
+	</small>
 			 
 		</tr>
 	
@@ -90,11 +107,11 @@
 		<td><center><input required style="width:100px;" type="text" class="form-control" id="seller_renego_price" name="seller_renego_price"></center></td>
 		
 		
-		<td><button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm" style="font-size:13px" name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></button>
-		<br/>
+		<td colspan="2"><button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm" style="font-size:13px" name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></button>
 		
-		<button type="button" class="btn btn-outline-warning btn-sm mt-1" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiated</button>
 		
+		<button type="button" class="btn btn-outline-warning btn-sm" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiated</button>
+		  
 		
 		<div class="modal fade" id="final_Negotiated" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -116,19 +133,7 @@
 		  
 		  
 	</form>
-	<small>	  <?php foreach($sqldata as $row){?>
-		<td style="color:orange;" ><b><?php  if($row->buyer_approval == 0) {echo $sqldata[0]->seller_renego_price.' / '.$sqldata[0]->bsupplyability ."</br>"."Pending";}else if($row->buyer_approval == 2) {echo 'Rejected';}else if($row->buyer_approval == 1) {echo 'Approved';}else if($row->buyer_approval == 3) {echo 'Pending to Approve';}else if($row->buyer_approval == 5) {echo 'Approved-check in final Approval';}?></b></td>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<?php }?>	
-	</small>
+	
 	
 	</td>
 			 
@@ -138,17 +143,39 @@
 		   <tr  style="text-align:center;">
 	   		
  		
-			<td>Buyer's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->buyer_final_price.' / '.$sqldata1[0]->bsupplyability;?></b></small></td>
+			<td colspan="3">Buyer's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->buyer_final_price.' / '.$sqldata1[0]->bsupplyability;?></b></small></td>
 		
 		
 		 <br/>
 		
-
-	<small>	  <?php foreach($sqldata1 as $row){?>
-		<td style="color:orange;" ><b><?php  if($row->sel_status == 0) {echo "Pending";}else if($row->sel_status == 2) {echo 'Rejected';}else if($row->sel_status == 1) {echo 'Approved';}else if($row->sel_status == 3) {echo 'Pending to Approve';}else if($row->sel_status == 5) {echo 'Approved-check in final Approval';}?></b></td>
 		
-	<?php }?>	
-	</small>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	
+		
+		<td><button type="button" class="btn btn-outline-primary  btn-sm"> <?php $strTable = "";foreach($sqldata3 as $seller){              
+                                             $strTable .= "   <a href='javascript:finalapproveProduct(\"".$seller->seller_mbuyreq_id."\")'> <i class='fas fa-check'></i></a> ";}echo $strTable;
+                 ?></button>		
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+
 	
 	</td>
 			 
@@ -230,4 +257,158 @@ swal("You have negotiated", {
 }
   </script>
  
+ 
+ <script type="text/javascript">
+
+$baseURL = "<?php echo base_url(); ?>"; 
+function finalapproveProduct(seller_mbuyreq_id)
+{
+  alert(seller_mbuyreq_id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',  
+                         url:$baseURL+'Vendor_buyer_finalized_reqPrice/buyerfinalapproveProduct',
+                         data:'seller_mbuyreq_id='+seller_mbuyreq_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+
+function buyerfinalrejectProduct(seller_mbuyreq_id)
+{
+  alert(seller_mbuyreq_id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',  
+                         url:$baseURL+'Vendor_buyer_finalized_reqPrice/buyerfinalrejectProduct',
+                         data:'seller_mbuyreq_id='+seller_mbuyreq_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+
+
+
+$baseURL = "<?php echo base_url(); ?>"; 
+function approveProduct(seller_mbuyreq_id)
+{
+  alert(seller_mbuyreq_id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'vendor_buyerResponse_req/approveProduct',
+                         data:'seller_mbuyreq_id='+seller_mbuyreq_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+
+
+
+function rejectProduct(seller_mbuyreq_id)
+{
+  alert(seller_mbuyreq_id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'vendor_buyerResponse_req/rejectProduct',
+                         data:'seller_mbuyreq_id='+seller_mbuyreq_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+ 
+</script>
       

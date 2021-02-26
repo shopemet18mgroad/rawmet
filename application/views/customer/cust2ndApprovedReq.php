@@ -59,8 +59,8 @@
 					
 			
 			<td>
-				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
-				<input type="submit" id="" class="btn btn-info " name="submit" value="Upload">
+				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]" id ="upload_dd">
+				<input onclick="return upload_2ndapprovedpo()" type="submit" id="" class="btn btn-info " name="submit" value="Upload">
 			</td>
 			
       </tr>      
@@ -92,7 +92,33 @@
 
 
 
+<script>
+  
+function upload_2ndapprovedpo(){
 
+	var upload_dd = document.getElementById("upload_dd").value;
+	
+
+if(upload_dd == ''){
+swal("Alert!","Upload Purchase Order,cannot be empty!","error");
+		return false;
+	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {upload_dd:upload_dd
+			},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
+
+}
+  </script>
 
 
  

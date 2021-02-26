@@ -44,7 +44,9 @@
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 			
 			<td><input type="hidden" name="vusername" value="<?php echo $row->
-			vusername;?>"><?php echo $row->vusername;?></td>
+			vusername;?>"><?php echo $row->vusername;?>
+			<input type="hidden" name="bname" value="<?php echo $row->
+			bname;?>"></td>
 			
 			<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"><?php echo $row->bcompanyname;?></td>
 			
@@ -72,8 +74,8 @@
 					
 			
 			<td>
-				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
-				<input type="submit" id="" class="btn btn-info " name="submit" value="Upload">
+				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]" id ="upload_dd">
+				<input  type="submit" id="" class="btn btn-info " onclick="return upload_sel2ndapprovedpo()" name="submit" value="Upload">
 			</td>
 			
       </tr>      
@@ -104,7 +106,33 @@
 </div>
 
 
+<script>
+  
+function upload_sel2ndapprovedpo(){
 
+	var upload_dd = document.getElementById("upload_dd").value;
+	
+
+if(upload_dd == ''){
+swal("Alert!","Upload Purchase Order,cannot be empty!","error");
+		return false;
+	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {upload_dd:upload_dd
+			},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
+
+}
+  </script>
 
 
 
