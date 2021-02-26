@@ -28,12 +28,9 @@
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Location</th>
-			
+			<th>Location</th>			
 			<th>Supplier base  Quantity</th>
-			<th>Supplier  Base Price</th>
-			
-			
+			<th>Supplier  Base Price</th>			
 			 <th>Buyer 1st Quantity</th>
 		     <th>buyer 1st  price</th>
 			<th>Seller Re-Negotiated price</th>
@@ -118,10 +115,10 @@
      
 												<td>
 
-													<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]">
+				<input class="form-group w-auto" multiple="multiple" type="file" id="upload_dd" name="upload_dd[]">
 
 
-													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload">
+			<input type="submit" id="" onclick="return upload_buynegonegoapprovedpo()" class="btn btn-info " name="submit" value="Upload">
 
 
 
@@ -181,3 +178,32 @@
 			   });
 			  }*/
 </script>
+
+
+<script>
+  
+function upload_buynegonegoapprovedpo(){
+
+	var upload_dd = document.getElementById("upload_dd").value;
+	
+
+if(upload_dd == ''){
+swal("Alert!","Upload Purchase Order,cannot be empty!","error");
+		return false;
+	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {upload_dd:upload_dd
+			},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
+
+}
+  </script>

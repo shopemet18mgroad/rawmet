@@ -106,10 +106,10 @@
 			
 			<td>
 				
-				<input class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
+				<input class="form-group w-auto"  multiple="multiple" id ="upload_dd"  type="file" name="upload_dd[]">
 				<input class="form-group w-auto" value="<?php echo urldecode($row->buyerid);?>"  type="hidden" name="buyerid_hidden">	
 			
-			 	<input type="submit" id="<?php echo $row->id;?>" class="btn btn-info " name="submit" value="Upload">
+			 	<input type="submit" onclick="return upload_selnegoapprovedpo()" id="<?php echo $row->id;?>" class="btn btn-info " name="submit" value="Upload">
 					
 			
 				
@@ -144,3 +144,31 @@
 
   </div>
   <!-- End of Page Wrapper -->
+
+<script>
+  
+function upload_selnegoapprovedpo(){
+
+	var upload_dd = document.getElementById("upload_dd").value;
+	
+
+if(upload_dd == ''){
+swal("Alert!","Upload Purchase Order,cannot be empty!","error");
+		return false;
+	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {upload_dd:upload_dd
+			},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
+
+}
+  </script>

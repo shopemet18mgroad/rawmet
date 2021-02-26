@@ -84,7 +84,7 @@ class Customer_buypurchase_order extends CI_Controller {
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_Custapprovedreq');
+				  header('location: ./Customer_custapprovedreq');
 				  }
 			
 	}

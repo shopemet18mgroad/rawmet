@@ -114,10 +114,10 @@
 
      	<td>
 
-													<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]">
+			<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]" id="upload_dd">
 
 
-													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload">
+		<input type="submit" id="" onclick="return upload_finalrenvalue()" class="btn btn-info " name="submit" value="Upload">
 
 
 
@@ -157,4 +157,30 @@
 <!-- End of Page Wrapper -->
 
 
+<script>
+  
+function upload_finalrenvalue(){
 
+	var upload_dd = document.getElementById("upload_dd").value;
+	
+
+if(upload_dd == ''){
+swal("Alert!","Upload Purchase Order,cannot be empty!","error");
+		return false;
+	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {upload_dd:upload_dd
+			},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
+
+}
+  </script>

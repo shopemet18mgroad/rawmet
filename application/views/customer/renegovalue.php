@@ -106,10 +106,10 @@
 				<i class="fa fa-download" aria-hidden="true" ></i></a></td>
 					<td>
 
-													<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]">
+													<input class="form-group w-auto" multiple="multiple" type="file" id="upload_dd" name="upload_dd[]">
 
 
-													<input type="submit" id="" class="btn btn-info " name="submit" value="Upload">
+								<input type="submit" onclick="return upload_renegovalue()" id="" class="btn btn-info " name="submit" value="Upload">
 
 
 
@@ -149,5 +149,31 @@
 
 </div>
 <!-- End of Page Wrapper -->
+<script>
+  
+function upload_renegovalue(){
 
+	var upload_dd = document.getElementById("upload_dd").value;
+	
+
+if(upload_dd == ''){
+swal("Alert!","Upload Purchase Order,cannot be empty!","error");
+		return false;
+	}
+	else{
+        $.ajax({
+            type:'submit',
+            data: {upload_dd:upload_dd
+			},
+           success:function(data){
+                swal("Success", "Data Saved Successfully", "success");
+            },
+            error:function(xhr, thrownError, ajaxOptions){
+
+            },
+        });
+    }
+
+}
+  </script>
       
