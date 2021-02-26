@@ -115,13 +115,121 @@
 				</div>
 				
                 <div class="form-group row">
-				<div class="col-sm-6 mb-3 mb-sm-0">
-					<input type="text" class="form-control form-control-user" id="vcity"  name="vcity"  placeholder="City">
-                  </div>
-                  <div class="col-sm-6 mb-3 mb-sm-2">
-					<input type="text" class="form-control form-control-user" id="vselectstate"  name="vselectstate"   placeholder="State">
-                  </div>
+				
+				 		<div class="col-sm-6 mb-3 mb-sm-2">
+								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+								<script type="text/javascript">
+									var citiesByState = {
+										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
+										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
+										Kerala: ["kochi", "Kanpur"],
+										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
+										ArunachalPradesh: ["Itanagar"],
+										AndhraPradesh: ["Visakhapatnam"],
+										Assam: ["Dispur"],
+										Bihar: ["Patna"],
+										Chhattisgarh: ["Naya Raipur"],
+										Goa: ["Panaji"],
+										Gujarat: ["Gandhinagar"],
+										Haryana: ["Chandigarh"],
+										HimchalaPradesh: ["Shimla"],
+										Jharkhand: ["Ranchi"],
+										Kerala: ["Thiruvananthapuram"],
+										MadhyaPradesh: ["Bhopal"],
+										Maharashtra: ["Mumbai"],
+										Manipur: ["Imphal"],
+										Meghalaya: ["Shillong"],
+										Mizoram: ["Aizawl"],
+										Nagaland: ["Kohima"],
+										Odisha: ["Bhubaneswar"],
+										Punjab: ["Chandigarh"],
+										Rajasthan: ["Jaipur"],
+										Sikkim: ["Gangtok"],
+										TamilNadu: ["Chennai"],
+										Telangana: ["Hyderabad"],
+										Tripura: ["Agartala"],
+										UttarPradesh: ["Lucknow"],
+										Uttarakhand: ["Dehradun"],
+										WestBengal: ["Kolkata"],
+									}
+
+									function makeSubmenu(value) {
+										if (value.length == 0) document.getElementById("vcity").innerHTML = "<option></option>";
+										else {
+											var citiesOptions = "";
+											for (cityId in citiesByState[value]) {
+												citiesOptions += "<option>" + citiesByState[value][cityId] + "</option>";
+											}
+											document.getElementById("vcity").innerHTML = citiesOptions;
+										}
+									}
+
+									function displaySelected() {
+										var country = document.getElementById("vselectstate").value;
+										var city = document.getElementById("vcity").value;
+										alert(country + "\n" + city);
+									}
+
+									function resetSelection() {
+										document.getElementById("vselectstate").selectedIndex = 0;
+										document.getElementById("vcity").selectedIndex = 0;
+									}
+								</script>
+
+						
+
+								<body onload="resetSelection()">
+									<select class="form-control" id="vselectstate" name="vselectstate" size="1" onchange="makeSubmenu(this.value)">
+										<option value="" disabled selected>Choose State</option>
+										<option>Odisha</option>
+										<option>Maharashtra</option>
+										<option>Kerala</option>
+										<option>ArunachalPradesh</option>
+										<option>AndhraPradesh</option>
+										<option>Assam</option>
+										<option>Chhattisgarh</option>
+										<option>Goa</option>
+										<option>Gujarat</option>
+										<option>Haryana</option>
+										<option>HimchalaPradesh</option>
+										<option>Jharkhand</option>
+										<option>Karnataka</option>
+										<option>Kerala</option>
+										<option>MadhyaPradesh</option>
+										<option>Manipur</option>
+										<option>Meghalaya</option>
+										<option>Mizoram</option>
+										<option>Nagaland</option>
+										<option>Odisha</option>
+										<option>Punjab</option>
+										<option>Rajasthan</option>
+										<option>Sikkim</option>
+										<option>TamilNadu</option>
+										<option>Telangana</option>
+										<option>Tripura</option>
+										<option>UttarKhand </option>
+										<option>UttarPradesh</option>
+										<option>WestBengal</option>
+										<option>Andaman and nicobar</option>
+										<option>Chandigarh</option>
+										<option>Dadra and Nagar Haveli and Daman & Diu</option>
+										<option>Jammu and kashmir</option>
+										<option>ladakh</option>
+										<option>puduchery</option>
+									</select>
+
+
+							</div>
+
+							<div class="col-sm-6 mb-3 mb-sm-0">
+							
+								<select class="form-control" id="vcity" name="vcity" size="1">
+									<option value="" disabled selected>Choose City</option>
+									<option></option>
+								</select>
+							</div>	  
 				  
+				      
                   <div class="col-sm-6">
                     <input type="text" class="form-control form-control-user" id="vpincode"  name="vpincode"   placeholder="Pincode">
                   </div>

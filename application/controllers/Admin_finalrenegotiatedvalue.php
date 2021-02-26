@@ -42,9 +42,9 @@ class Admin_finalrenegotiatedvalue extends CI_Controller {
 		$adac['sqldata']= $query;
 		
 		
-		$this->load->view('Admin/header',$sess);
-		$this->load->view('Admin/finalrenegotiatedvalue',$adac);
-		$this->load->view('Admin/footer');
+		$this->load->view('admin/header',$sess);
+		$this->load->view('admin/finalrenegotiatedvalue',$adac);
+		$this->load->view('admin/footer');
 		$this->load->helper('url');
 		
 			

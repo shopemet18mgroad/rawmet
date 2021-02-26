@@ -41,11 +41,12 @@
                   </div>
 	<form name="myForm" action="<?php echo base_url(); ?>home_feedback"  method="POST">
                     <div class="form-group">
-                      <input type="text" class="form-control " id="mobilenumber"  name="mobilenumber" aria-describedby="emailHelp" placeholder="Mobile Number">
-                    </div>
-                    <div class="form-group">
+					 <div class="form-group">
                       <input type="text" class="form-control " id="fname" name="fname" placeholder="Name">
                     </div>
+                      <input type="text" class="form-control " id="mobilenumber"  name="mobilenumber" aria-describedby="emailHelp" placeholder="Mobile Number">
+                    </div>
+                   
 					<div class="form-group">
                      <input type="email" class="form-control form-control-user"  id="emailid" name="emailid" placeholder="Email">
                     </div>
@@ -56,7 +57,7 @@
 										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
 										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
 										Kerala: ["kochi", "Kanpur"],
-										Karnataka: ["Bengaluru", "Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
+										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
 										AndhraPradesh: ["Visakhapatnam"],
 										Assam: ["Dispur"],

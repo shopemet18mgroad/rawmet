@@ -44,12 +44,12 @@
 			<form action="<?php echo base_url();?>customer_postbuyreq" method="POST" enctype="multipart/form-data">
 				<div class="caption col-7 p-2 ml-5 bg-light">
 				<div class="form-inline">
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+					<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
 						<label for="">Customer Name</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
 						<input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
                     </div>
-					<div class="col-sm-4 mb-12 pl-5 mb-sm-0">
+					<div class="col-sm-6 mb-12 pl-5 mb-sm-0">
 						<label for="">Company Name</label>
 						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
                     </div>
@@ -59,7 +59,7 @@
 								<label>Email:</label>
 								<input type="email" class="form-control" id="email" name="email" value="<?php echo  $scomp[0]->bemail;?>" readonly>
 							</div>
-							<div class="col-sm-7 mb-3 pl-5 mb-sm-0">
+							<div class="col-sm-6 mb-3 pl-5 mb-sm-0">
 							<label>Contact Number</label>
 							<div class="input-group">
 							<div class="input-group-prepend">

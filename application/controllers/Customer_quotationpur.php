@@ -19,14 +19,14 @@ class Customer_quotationpur extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
 	
-	  
+	  $id = urldecode($this->uri->segment(3));
 	   
-	    $sellerid = urldecode($this->uri->segment(4));
+	    $sellerid = urldecode($this->uri->segment(5));
 		
-		$buyerid = urldecode($this->uri->segment(3));
+		$buyerid = urldecode($this->uri->segment(4));
 		
 	     
-		  $active1 = array('buyerid'=>$buyerid);
+		  $active1 = array('buyerid'=>$buyerid,'id'=>$id);
 		 
 		   $active = array('sellerid'=>$sellerid);
 	

@@ -35,7 +35,7 @@ class Customer_repurchase_order extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('cust_id')){
+	if($this->input->post('productid')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));

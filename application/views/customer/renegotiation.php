@@ -27,7 +27,7 @@
 			<th>Product Name</th>
 			<th>Product Id</th>
 			<th>Category</th>
-			<th>Company Name</th>
+			
 			<th>Location</th>
 			<th style="color:Orange">Supplier Base Price</th>
 			<th style="color:Orange">Supplier base Quantity</th>
@@ -50,7 +50,7 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->companyname;?></td>
+			
 				<td><?php echo $row->pcities;?></td>
 			<td><?php echo $row->price."/"; echo $row->punits;?></td>
 			<td><?php echo $row->quantity.""; echo $row->units;?></td>

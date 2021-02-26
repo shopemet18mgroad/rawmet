@@ -48,7 +48,7 @@
 					<td><?php echo $row->vcity;?></td>
 					<td style="display:inline-flex;">
 					
-					<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendordetail/index/".urldecode($row->sellerid)."/".urldecode($row->vcompanyname);?>"><i class="fa fa-eye"></i></a>
+					<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendordetail/index/".urldecode($row->sellerid);?>"><i class="fa fa-eye"></i></a>
 		
 		
 					<button type="submit" name="submit" id="<?php echo urldecode($row->sellerid);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Activate</button>	

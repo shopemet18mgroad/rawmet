@@ -16,8 +16,8 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-		<th>Seller Name</th>
-		<th>Buyer Company Name</th>
+		<th>Seller ID</th>
+		
 	    <th>Category</th>
 		<th>Buyer Product Name</th>
 		<th>Buyer Product Id</th>
@@ -46,9 +46,11 @@
 			<td><input type="hidden" name="vusername" value="<?php echo $row->
 			vusername;?>"><?php echo $row->vusername;?>
 			<input type="hidden" name="bname" value="<?php echo $row->
-			bname;?>"></td>
+			bname;?>">
 			
-			<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"><?php echo $row->bcompanyname;?></td>
+			<input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"></td>
+			
+		
 			
 			<td><input type="hidden" name="category" value="<?php echo $row->category;?>"><?php echo $row->category;?></td>
 			

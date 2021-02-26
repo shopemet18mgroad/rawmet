@@ -66,7 +66,7 @@
 						
 								<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="">Product Name</label>
-								<input type="text" class="form-control" id="productname" name="productname"  value ="abc" placeholder="Product Name" onkeyup="product_id()">
+								<input type="text" class="form-control" id="productname" name="productname"   placeholder="Product Name" onkeyup="product_id()">
 
 							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -95,7 +95,7 @@
 										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
 										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
 										Kerala: ["kochi", "Kanpur"],
-										Karnataka: ["Bengaluru", "Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
+										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru","Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
 										AndhraPradesh: ["Visakhapatnam"],
 										Assam: ["Dispur"],
@@ -298,12 +298,14 @@
 
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
+								<label for="Pname">Validity </label>
 								<label for="Pname">[ From:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityfrom" name="productvalidityfrom" placeholder="">
 							</div>
 
 
 							<div class="col-sm-4 mb-3 mb-sm-0">
+							<label for="Pname">Validity </label>
 								<label for="Pname"> [To:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityto" name="productvalidityto" placeholder="">
 							</div>
@@ -320,8 +322,20 @@
 							</div>
 							
 									<div class="col-sm-5 mt-4">
-								<label for="exampleInputFile">Upload Product Images:</label>
-								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage">
+							<!--	<label for="exampleInputFile">Upload Product Images:</label>
+								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage">-->
+								
+								
+								<div class="input_fields_wrap">
+								
+								<input  type="file" id="uploadproductimage" name="uploadproductimage">
+								</div>
+								
+								
+								
+								
+								
+								
 								
 							</div>
 							

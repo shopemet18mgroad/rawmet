@@ -41,9 +41,9 @@ class Customer_sellerrenegotiatedvalue extends CI_Controller {
 		$adac['sqldata']= $query;
 		
 		
-		$this->load->view('Customer/header',$sess);
-		$this->load->view('Customer/sellerrenegotiatedvalue',$adac);
-		$this->load->view('Customer/footer');
+		$this->load->view('customer/header',$sess);
+		$this->load->view('customer/sellerrenegotiatedvalue',$adac);
+		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		
 			

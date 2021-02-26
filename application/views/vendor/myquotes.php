@@ -24,17 +24,18 @@
 	  
 	        	  <th>Sl.No.</th>
 
-			    <th>Supplier Id</th>
-
-			     <th>Product Name</th>
+			   	<th>Supplier Id</th>
+			<th>Product Name</th>
 			<th>Product Id</th>
-			 <th>Category</th>
-			 <th style ="color:orange";>Supplier Base Quantity</th>
-			<th style ="color:orange";>Supplier base Price</th>
-		    <th style ="color:pink";>Buyer 1st  Quantity</th>
-			<th style ="color:pink";>Buyer 1st Price</th>
+			<th>Category</th>
 			
-			<th style ="color:orange";>Supplier Re-negotiated Price</th>
+			  <th style ="color:orange";>Supplier Base Quantity</th>
+			<th style ="color:orange";>Supplier Base Price</th>
+			
+		    <th style ="color:pink";>Buyer Quantity</th>
+			<th style ="color:pink";>Buyer Price</th>
+			
+			<th style ="color:orange";>Supplier Price</th>
 			
 			<th style ="color:pink";>Buyer Re-negotiated Quantity</th>
 			<th style ="color:pink";>Buyer Re-negotiated Price</th>
@@ -53,38 +54,44 @@
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
+		  <td><?php echo $row->quantity.""; echo $row->units;?></td>
+			<td><?php echo $row->price."/"; echo $row->punits;?></td>
 			
-			<td><?php echo $row->price.""; echo $row->punits;?></td>
-			<td><?php echo $row->bquantity.""; echo $row->bsupplyunits;?></td>
+			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
 			<td><?php echo $row->bprice."/"; echo $row->bunits;?></td>
 			
+		
+			<td style="text-align:center;"><?php if($row->selprice == null){echo " - ";}
+			else{echo $row->selprice."/"; echo $row->sunits;}?></td>
+			<td style="text-align:center;"><?php if($row->brenegoquantity == null){echo " - ";}
+			else{echo $row->brenegoquantity."/"; echo $row->brenegoquantityunit;}?></td>
 			
-			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
+				<td style="text-align:center;"><?php if($row->brenegoprice == null){echo " - ";}
+			else{echo $row->brenegoprice."/"; echo $row->brenegounit;}?></td>
 			
-			<td><?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>
-			<td><?php echo $row->brenegoprice."/"; echo $row->brenegounit;?></td>
+				<td style="text-align:center;"><?php if($row->sellrenegoprice == null){echo " - ";}
+			else{echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;}?></td>
 			
-			<td><?php echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;?></td>
-			
-			
-	
+  <td>
+      <?php $aucfl = unserialize($row->uploadporder);?>
+    <?php if(isset($aucfl[0])){	?>
+    <a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
+    <?php echo '<i class="fa fa-download"></i>' ; ?>
+
+	 <?php }?>	
+</a>
+</td>			
+	   
 
 				
-<td>
- <?php $aucfl = unserialize($row->uploadporder);?>
- <?php if(isset($aucfl[0])){	?>
-<a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
-<?php echo '<i class="fa fa-download"></i>' ; ?>
+ <?php $count++;?>
+<?php }?>
 
- 
-</a></td>
-<?php $count++;?>
-<?php }?>	
 
 
       </tr>      
-     <?php }?>	    
- 
+       
+	
     </tbody>
   </table>
 		</div>
@@ -109,4 +116,16 @@
 
   </div>
   <!-- End of Page Wrapper -->
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
