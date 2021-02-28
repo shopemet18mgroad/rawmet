@@ -40,6 +40,7 @@ class Customer_buypurchase_order4 extends CI_Controller {
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
+			$seller_mbuyreq_id = $this->input->post('seller_mbuyreq_id');
 			$vusername = $this->input->post('vusername');
 			$bname = $this->input->post('bname');
 			$sellerid = $this->input->post('sellerid');
@@ -79,7 +80,8 @@ class Customer_buypurchase_order4 extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('sellerid' => $vusername,'buyerid'=>$bname,
+ 
+			$data = array('seller_mbuyreq_id'=>$seller_mbuyreq_id, 'sellerid' => $vusername,'buyerid'=>$bname, 
 			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
 			'quantity' => $quantity,'units' => $units, 'price'=> $price,
@@ -89,7 +91,7 @@ class Customer_buypurchase_order4 extends CI_Controller {
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_sel2ndApprovedReq');
+				  header('location: ./Customer_seller_response_renego/index/'.$seller_mbuyreq_id);
 				  }
 			
 	}

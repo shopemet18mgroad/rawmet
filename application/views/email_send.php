@@ -35,28 +35,18 @@
               <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
-                    <p class="mb-4">We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!</p>
-                  </div>
-				   <form name="myform" class="user"  action="<?php echo base_url()."forgot_password";?>" method="post">
-                 
-                    <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
-                    </div>
-                    
-					
-					<button name="submit" type="submit" class="btn btn-primary btn-user btn-block">
-                      <b>Submit</b>
-                    </button>
-                 
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="<?php echo base_url();?>home_register">Create an Account!</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="<?php echo base_url();?>home_login">Already have an account? Login!</a>
-                  </div>
-<div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1><br>
+
+ <?php if($error = $this->session->flashdata('msg')){ ?>
+       <p style="color: green;"><strong>Success!</strong> <?php echo  $error; ?><p>
+  <?php } ?>
+  
+<form action="<?php echo base_url(); ?>email_send/send" method="post">
+    <input type="email" name="from" class="form-control form-control-user" placeholder="Enter Email" required><br>
+    <!--<textarea name="message" class="form-control" placeholder="Enter message here" required></textarea><br>-->
+    <button type="submit" class="btn btn-primary">Send Message</button>
+	
+	<div class="text-center">
 	<div class="form-check-inline">
   <label class="form-check-label">
     <input type="radio" class="form-check-input" value="Buyer" name="optradio" checked>Buyer
@@ -70,9 +60,12 @@
 
 	</div>	
 	
-                </div>
-				
-	 </form>	
+	
+</form>
+
+
+   </div>
+
 	
               </div>
             </div>
