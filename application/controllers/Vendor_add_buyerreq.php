@@ -52,9 +52,11 @@ class Vendor_add_buyerreq extends CI_Controller {
 			$sellerprice= $this->input->post('sellerprice');
 			$bsupplyability = $this->input->post('bsupplyability');
 			$buyerrequriement_id = $this->input->post('buyerrequriement_id'); 
+		
+			$uploadimage  = serialize($this->input->post('uploadimage'));
+			//print_r($uploadimage); die;
 			
-			
-			$data2= array('bname' => $bname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'bcompanyname'=>$bcompanyname,'vusername'=>$vusername,'category'=> $category,'productname'=>$productname,'productid'=>$productid,'description' => $description,'quantity'=>$quantity,'units'=>$units,'price'=>$price,'priceperkg'=>$priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'buyerrequriement_id'=>$buyerrequriement_id);
+			$data2= array('bname' => $bname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'bcompanyname'=>$bcompanyname,'vusername'=>$vusername,'category'=> $category,'productname'=>$productname,'productid'=>$productid,'description' => $description,'quantity'=>$quantity,'units'=>$units,'price'=>$price,'priceperkg'=>$priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'buyerrequriement_id'=>$buyerrequriement_id,'uploadimage'=>$uploadimage);
 			
 			 	
 				
@@ -94,4 +96,41 @@ class Vendor_add_buyerreq extends CI_Controller {
 	}
 	
 		}
+		
+		private function upload_files($nameid){
+    	
+	$countfiles=1;
+      // Looping all files
+      for($i=0;$i<$countfiles;$i++){
+        if(!empty($_FILES[$nameid]['name'][$i])){
+ 
+          // Define new $_FILES array - $_FILES['file']
+          $_FILES['file']['name'] = $_FILES[$nameid]['name'][$i];
+          $_FILES['file']['type'] = $_FILES[$nameid]['type'][$i];
+          $_FILES['file']['tmp_name'] = $_FILES[$nameid]['tmp_name'][$i];
+          $_FILES['file']['error'] = $_FILES[$nameid]['error'][$i];
+          $_FILES['file']['size'] = $_FILES[$nameid]['size'][$i];
+
+          // Set preference
+           $config['upload_path'] = 'web_files/uploads/';
+			$config['allowed_types'] = 'doc|docx|pdf|xlsx|jpg|png|gif';
+          $config['max_size'] = '50000000'; // max_size in kb
+          $config['file_name'] = $_FILES[$nameid]['name'][$i];
+ 
+          //Load upload library
+          $this->load->library('upload',$config); 
+		$this->upload->initialize($config);
+          // File upload
+          if($this->upload->do_upload('file')){
+            // Get data about the file
+            $uploadData = $this->upload->data();
+            $filename = $uploadData['file_name'];
+            // Initialize array
+            $datar[] = $filename;
+          }
+        }
+ 
+      }
+	 return $datar;
+    }
 }

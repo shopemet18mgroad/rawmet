@@ -47,7 +47,7 @@ class Customer_seller_response_renego extends CI_Controller {
 		$data['buyer2'] = $this->Admin_model->getdatafromtable_buyer2();
 		$data['uploadPo'] = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active);	
 		$data['sqldata4'] = $this->Admin_model->getdatafrombuyer_req_response2($id);
-		$data['sqldata15'] = $this->Admin_model->getdatafrombuyer_req_response15();
+		$data['sqldata15'] = $this->Admin_model->getdatafrombuyer_req_response15($id);
 		$data['twouploadPo'] = $this->Admin_model->getdatafromtable_buyer10();
 		$data['reqres_appl'] = $this->Admin_model->req_approval($id);
 		$data['finalapprovalstatus'] = $this->Admin_model->getdatafrombuyer_req_response5(); 
@@ -59,7 +59,7 @@ class Customer_seller_response_renego extends CI_Controller {
 		//echo '<pre>';  print_r($data['buyer2']); die;
 		
 		
-		
+		$data['sqldata3'] = $this->Admin_model->getsellerrenego_datafetch();
 		
 		
 		//$query = $this->Admin_model->getdatafromtable_neg();

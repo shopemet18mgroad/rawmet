@@ -43,7 +43,7 @@ class Vendor_seller_renego_buyresponse extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		
+		$active = array('id'=>$id ,'sellerid'=>$sess['sessi']);
 		
 		$query = $this->Admin_model->getdatafrombuyer_req_response();	
 		$adac['sqldata']= $query;
@@ -59,6 +59,11 @@ class Vendor_seller_renego_buyresponse extends CI_Controller {
 		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response40($id);
 		
 		
+		
+		$adac['first_approve'] = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active);
+		
+		
+		//$adac['second_approve']= $this->Admin_model->getdatafromtable_seller10($id);
 	//echo '<pre>'; print_r($adac['sqldata3']);die;
 		
 		$this->load->view('vendor/header',$sess);

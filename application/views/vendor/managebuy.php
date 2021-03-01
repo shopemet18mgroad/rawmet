@@ -8,7 +8,6 @@
             <h1 class="h3 mb-0 text-gray-800">Vendor Profile</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div> -->
-
           <!-- Content Row -->
 
           <!-- Content Row -->
@@ -30,7 +29,8 @@
 				<div class="row ml-4">
 				<?php $img = unserialize($sqldata[0]->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="30%" height="100%">
-			
+				
+			<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $sqldata[0]->uploadimage;?>">
 
 			<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
 				<div class="caption col-7 p-2 ml-5 bg-light">
@@ -38,7 +38,10 @@
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label for="">Buyer Name</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
-						
+					
+					
+					
+					
 						<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo  $sessi;?>" readonly>
 						
 						<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">

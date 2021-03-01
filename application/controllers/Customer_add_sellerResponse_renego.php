@@ -39,7 +39,7 @@ class customer_add_sellerResponse_renego extends CI_Controller {
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('buyer_req_response',$data);
-			header('location: ./customer_negotiated/index/'.$seller_mbuyreq_id);
+			header('location: ./Customer_seller_response_renego/index/'.$seller_mbuyreq_id);
 			}
 			
 		
@@ -50,7 +50,7 @@ class customer_add_sellerResponse_renego extends CI_Controller {
 				
 				
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/negotiated',$data);
+		$this->load->view('customer/seller_response_renego',$data);
 		$this->load->view('customer/footer');
 			 
 	 
