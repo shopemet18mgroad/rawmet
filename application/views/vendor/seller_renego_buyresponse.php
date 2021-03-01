@@ -1,20 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -72,29 +56,20 @@
  		
 		
 			
-			<td>Seller's 1st Offer<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?></b></small></td>
+			<td>Seller's Offer<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?></b></small></td>
 		
 		
-			<td>Buyer Negotiated Price:<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->buyer_nego_price.' / '.$sqldata1[0]->buyer_nego_units;?></br>
+			<td>Buyer Negotiated Price:<br /><small style="color:orange;"><b>
+			<?php echo  $sqldata1[0]->buyer_nego_price.' / '.$sqldata1[0]->buyer_nego_units;?></br>
 			
 			
-			<?php $strTable = "";
-           foreach($sqldata as $seller){     $strTable .= " 
-              <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>|| <a href='javascript:rejectProduct(\"".$seller->seller_mbuyreq_id."\")'>Reject</a>
-				  
-             ";
-                  }
-                  echo $strTable;
-                 ?>
+	 <?php echo "<a href='javascript:approveProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'>Approve</a>|| <a href='javascript:rejectProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'>Reject</a>";?>
 			
 			
 			</td>
-			
-			<small>	  <?php foreach($sqldata as $row){?>
-		<td colspan="3" style="color:orange;" ></br><b><?php  if($row->buyer_approval == 0) {echo $sqldata[0]->seller_renego_price.' / '.$sqldata[0]->bsupplyability ."</br>"."Pending";}else if($row->buyer_approval == 2) {echo 'Rejected';}else if($row->buyer_approval == 1) {echo 'Approved';}else if($row->buyer_approval == 3) {echo 'Pending to Approve';}else if($row->buyer_approval == 5) {echo 'Approved-check in final Approval';}?></b></td>
-		
-		<?php }?>	
-	</small>
+			<td>Seller Re_Negotiation Price: <br />
+			 <b style="color:orange;"><?php echo  $sqldata4[0]->seller_renego_price.' / '.$sqldata4[0]->bsupplyability;?></b> 
+		</td>
 			 
 		</tr>
 	
@@ -102,9 +77,9 @@
 	   <tr style="text-align:center;">
 	   		
  		
-		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /></td>
+		<td style="font-size:15px; width:190px;">Seller Re Negotiation Price<br /></td>
 			
-		<td><center><input required style="width:100px;" type="text" class="form-control" id="seller_renego_price" name="seller_renego_price"></center></td>
+		<td><center><input required style="width:160px;" type="text" class="form-control" id="seller_renego_price" name="seller_renego_price"></center></td>
 		
 		
 		<td colspan="2"><button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm" style="font-size:13px" name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></button>
@@ -143,42 +118,22 @@
 		   <tr  style="text-align:center;">
 	   		
  		
-			<td colspan="3">Buyer's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->buyer_final_price.' / '.$sqldata1[0]->bsupplyability;?></b></small></td>
+			<td colspan="3">Buyer's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price.' / '.$sqldata4[0]->bsupplyability;?></b></small></td>
 		
 		
 		 <br/>
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	
 		
-		<td><button type="button" class="btn btn-outline-primary  btn-sm"> <?php $strTable = "";foreach($sqldata3 as $seller){              
-                                             $strTable .= "   <a href='javascript:finalapproveProduct(\"".$seller->seller_mbuyreq_id."\")'> <i class='fas fa-check'></i></a> ";}echo $strTable;
-                 ?></button>		
+		<td><button type="button" class="btn btn-outline-primary  btn-sm">
+<?php echo "<a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?>		
 			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button></td>
 
 	
 	</td>
 			 
+ 
 	</tr>
  </tbody>
 </table>
@@ -220,8 +175,8 @@
         <!--Grid column-->
 <div class="col-md-5">
 	<p><b>Supper Id :</b><?php echo  $sqldata1[0]->buyerid;?> </p> 
-	<p><b>Category :</b> <?php echo  $sqldata[0]->category;?></p>
-	<p><b>Stock :</b> <?php echo  $sqldata[0]->quantity. " / " .$sqldata[0]->units;?>"</p> 
+	<p><b>Category :</b> <?php echo  $sqldata1[0]->category;?></p>
+	<p><b>Stock :</b> <?php echo  $sqldata1[0]->quantity. " / " .$sqldata1[0]->units;?>"</p> 
 </div>
 <input style="width:10px" class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
  <a href="#" class="btn btn-primary">Upload!</a>

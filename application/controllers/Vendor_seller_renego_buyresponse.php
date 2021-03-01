@@ -52,8 +52,11 @@ class Vendor_seller_renego_buyresponse extends CI_Controller {
 		$query2 = $this->Admin_model->getdatafrombuyer_req_response1($id);	
 		$adac['sqldata1']= $query2;
 		
+		$query2 = $this->Admin_model->getdatafrombuyer_req_response121($id);	
+		$adac['sqldata4']= $query2;
+		
 		//$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response4();	
-		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response4();
+		$adac['sqldata3'] = $this->Admin_model->getdatafrombuyer_req_response40($id);
 		
 		
 	//echo '<pre>'; print_r($adac['sqldata3']);die;

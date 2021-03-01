@@ -1,8 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-    get_lookalike
-   class Admin_model extends CI_Model {
-	
+ 
+ 
+           
+   class Admin_model extends CI_Model {	
+ 
 		  function __construct() { 
 			 parent::__construct(); 
 			$this->load->database(); 
@@ -578,6 +580,53 @@ $this->db->where('a.buyerid', $id);
 		
 			}
 			
+			
+			function getdatafrombuyer_req_response121($id) {			 
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,					
+					a.id,
+					a.bname,
+					a.buyerid,
+					a.bcompanyname,
+					a.vusername as sellername,
+					a.category,
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,
+					a.bsupplyability,
+					C.seller_renego_price,
+					C.seller_renego_units,
+					d.buyer_final_price,
+					d.buyer_final_units,
+					d.sel_status');					
+					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
+					'left outer');	
+					
+					$this->db->join('seller_req_response c', 'c.seller_mbuyreq_id=b.seller_mbuyreq_id',
+						'left outer');
+					$this->db->join('buyer_final_req d', 
+						'c.seller_mbuyreq_id=d.seller_mbuyreq_id',
+						'left outer');
+						
+					$this->db->where('a.id',$id);					
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			
 			function getdatafrombuyer_req_response1($id) {			 
 			$this->db->select('		
 					b.buyer_req_response_id ,						
@@ -619,7 +668,73 @@ $this->db->where('a.buyerid', $id);
 					//echo $this->db->last_query();exit;			
 					return $result;
 		
+			} 
+			
+			function req_approval($id) {			 
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,
+b.status,					
+					a.id,
+					a.bname,
+					a.bcompanyname,
+					a.vusername as sellername,
+					a.category,
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,
+					a.bsupplyability,
+					c.seller_renego_price,
+					c.seller_renego_units,
+					c.buyer_approval,
+					d.buyer_final_price,
+					d.sel_status');					
+					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
+					'left outer');	
+					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
+					$this->db->join('buyer_final_req d', 'c.seller_mbuyreq_id=d.seller_mbuyreq_id','left outer');
+					$this->db->where('a.id',$id);
+					
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
 			}
+			
+			
+			
+			function getdatafrombuyer_req_response30() {			 
+			$this->db->select('		
+					b.buyer_final_price ,						
+					b.buyer_final_units,
+					b.seller_mbuyreq_id,
+					b.sel_status,
+					 
+					a.seller_renego_price,
+					a.seller_renego_units,
+					a.seller_mbuyreq_id');					
+					$this->db->join('buyer_final_req b','a.seller_mbuyreq_id=b.seller_mbuyreq_id',
+					'left outer');						 
+					//$this->db->where('a.id',$id);					
+					$query = $this->db->get("seller_req_response a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			
+			
 			
 		 function getdatafrombuyer_req_response2($id) {			 
 			$this->db->select('		
@@ -644,10 +759,13 @@ b.status,
 					a.sellerprice,
 					a.bsupplyability,
 					c.seller_renego_price,
-					c.seller_renego_units');					
+					c.seller_renego_units,
+					d.buyer_final_price,
+					d.buyer_final_units');					
 					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
 					'left outer');	
 					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
+					$this->db->join('buyer_final_req d', 'c.seller_mbuyreq_id=d.seller_mbuyreq_id','left outer');
 					$this->db->where('a.id',$id);					
 					$query = $this->db->get("seller_mbuyreq a");					 
 					$result = $query->result();	
@@ -663,7 +781,7 @@ b.status,
 				$query = $this->db->get("seller_mbuyreq");
 				$result = $query->result();
 				return $result;
-			}
+			} 
  
 			function getUserDatalive($strUID1)	
 			
@@ -1020,8 +1138,137 @@ function getsellerrenego_admin_datafetch() {
 		
 			}
 			 
+			 
+			 function getdatafrombuyer_req_response40($id) {	
+			$id = $this->session->userdata('username'); 	
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,					
+					
+					a.id,
+					a.bname,
+					a.bcompanyname,
+					a.vusername as sellername,
+					a.category,
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,
+					a.bsupplyability,
+					c.seller_renego_price,
+					c.seller_renego_units,
+					d.buyer_final_price,
+					d.buyer_final_units,
+					d.sel_status,
+					d.bname');	
+					//$this->db->where('a.sellerid', $id);
+					$this->db->where('d.sel_status', 0);
+ 					$this->db->where('a.id',$id);
+					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
+					'left outer');	
+					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
+					$this->db->join('buyer_final_req d', 'a.id=d.seller_mbuyreq_id','left outer');
+										
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
 			
 			function getdatafrombuyer_req_selfetch() {	
+				$id = $this->session->userdata('username'); 
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,					
+					a.id,
+					a.bname,
+					a.bcompanyname,
+					a.vusername,
+					a.category,   
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,
+					a.bsupplyability,
+					c.seller_renego_price,
+					c.seller_renego_units,
+					d.buyer_final_price,
+					d.buyer_final_units,
+					d.sel_status,
+					d.bname');	
+					$this->db->where('d.sel_status', 1); 					
+					$this->db->where('a.buyerid', $id);
+					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
+					'left outer');	
+					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
+					$this->db->join('buyer_final_req d', 'a.id=d.seller_mbuyreq_id','left outer');
+										
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			function getdatafrombuyer_req_selfetchlast() {	
+				$id = $this->session->userdata('username'); 
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,					
+					a.id,
+					a.bname,
+					a.bcompanyname,
+					a.vusername,
+					a.category,   
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,
+					a.bsupplyability,
+					c.seller_renego_price,
+					c.seller_renego_units,
+					d.buyer_final_price,
+					d.buyer_final_units,
+					d.sel_status,
+					d.bname');	
+					$this->db->where('d.sel_status', 1); 					
+					$this->db->where('a.buyerid', $id);
+					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
+					'left outer');	
+					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
+					$this->db->join('buyer_final_req d', 'a.id=d.seller_mbuyreq_id','left outer');
+										
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			function getdatafrombuyer_final() {	
 				$id = $this->session->userdata('username'); 
 			$this->db->select('		
 					b.buyer_req_response_id ,						
@@ -1144,9 +1391,11 @@ function getsellerrenego_admin_datafetch() {
 					return $result;
 		
 			}
-			 
-			function getdatafrombuyer_req_response5() {	
-			$id = $this->session->userdata('username'); 
+ 
+			
+			function getdatafrombuyer_req_response20() {	
+				$id = $this->session->userdata('username'); 
+ 
 			$this->db->select('		
 					b.buyer_req_response_id ,						
 					b.bname,
@@ -1180,6 +1429,94 @@ function getsellerrenego_admin_datafetch() {
 					
 					$this->db->where('d.data_fetch2', 0);
  					$this->db->where('a.buyerid', $id);
+					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
+					'left outer');	
+					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
+					$this->db->join('buyer_final_req d', 'b.seller_mbuyreq_id=d.seller_mbuyreq_id','left outer');
+										
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			 
+			function getdatafrombuyer_req_response5() {	
+				$id = $this->session->userdata('username'); 
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,					
+					a.id,
+					a.bname,
+					a.bcompanyname,
+					a.vusername as sellername,
+					a.category,
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,
+					a.bsupplyability,
+					c.seller_renego_price,
+					c.seller_renego_units,
+					d.buyer_final_price,
+					d.buyer_final_units,
+					d.sel_status,				 
+					d.data_fetch2,
+					d.bname');	
+					$this->db->where('d.data_fetch2', 0);
+ 					$this->db->where('a.buyerid', $id);
+					//$this->db->where('a.id',$id);
+					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
+					'left outer');	
+					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
+					$this->db->join('buyer_final_req d', 'a.id=d.seller_mbuyreq_id','left outer');
+										
+					$query = $this->db->get("seller_mbuyreq a");					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			function getdatafrombuyer_req_response15() {	
+				//$id = $this->session->userdata('username'); 
+			$this->db->select('		
+					b.buyer_req_response_id ,						
+					b.bname,
+					b.buyer_nego_price,
+					b.buyer_nego_units,
+					b.seller_mbuyreq_id,					
+					a.id,
+					a.bname,
+					a.bcompanyname,
+					a.vusername as sellername,
+					a.category,
+					a.productname,
+					a.productid,
+					a.description,
+					a.quantity,
+					a.units,
+					a.price,
+					a.priceperkg,
+					a.sellerprice,
+					a.bsupplyability,
+					c.seller_renego_price,
+					c.seller_renego_units,
+					d.buyer_final_price,
+					d.buyer_final_units,
+					d.sel_status,				 
+					d.data_fetch2,
+					d.bname');	
+					$this->db->where('d.data_fetch2', 0);
+ 					//$this->db->where('a.buyerid', $id);
+					//$this->db->where('a.id',$id);
 					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
 					'left outer');	
 					$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');

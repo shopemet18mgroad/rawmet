@@ -31,9 +31,7 @@ class Customer_custapprovedreq extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('buyerid'=>$sess['sessi'],'status'=>true);
 		
-		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);
-		
-		
+		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);	
 		$adac['sqldata']= $query;
 		
 		
