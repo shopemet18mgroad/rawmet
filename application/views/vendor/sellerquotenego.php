@@ -72,7 +72,7 @@
 						
 						
 							<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $sqldata[0]->companyname;?>">
-						<!--	<h6 class="text-center" style="color:orange;"><b>Quantity : <?php// echo $sqldata[0]->supplyability."/"; echo $sqldata[0]->supplyunits;?></b></h6>-->
+						
 							
 							<p style="color:orange"><b>Supplier Base Price:</b><?php echo $sqldata[0]->price."/"; echo $sqldata[0]->punits;?></p>
 							<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">

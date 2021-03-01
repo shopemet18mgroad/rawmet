@@ -164,7 +164,7 @@
 		 
 			<button type="button" class="btn btn-outline-primary  btn-sm"><?php $strTable = "";foreach($sqldata4 as $seller){              
                                              $strTable .= "   <a href='javascript:finalapproveProduct(\"".$seller->seller_mbuyreq_id."\")'> <i class='fas fa-check'></i></a> ";}echo $strTable;
-                 ?></button>	<br />
+                 ?></button><br/>
 			
 			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
 			

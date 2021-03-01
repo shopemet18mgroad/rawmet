@@ -60,6 +60,18 @@
 				
 								
 							<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
+							
+							
+							
+								<input type="hidden" class="form-control" id="sellerpostproduct_id" name="sellerpostproduct_id"  value="<?php echo $sqldata[0]->sellerpostproduct_id;?>">
+							
+							
+							
+							
+							
+							
+							
+							
 							<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sqldata[0]->buyerid;?>">
 							
 							
@@ -194,7 +206,9 @@
 				  </div>
 								<a href="#" class="neg"> </a>
 								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="btnsubmit_rengo" id= "btnsubmit_rengo" role="submit"  onclick= "return validate_selnego()">Re-Negotiated</a></button>
+								
 								 <button type="button" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="btncancel" id= "btncancel" role="Cancel">Cancel</a></button>
+								 
 								 <button style="background-color:orange" type="button" class="btn btn-info btn-sm mt-2 offset-sm-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiation Submit </button>
 								 
 							

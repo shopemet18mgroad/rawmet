@@ -24,7 +24,7 @@ class Customer_contactsupplier extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Admin_model');
 		$productname= $this->uri->segment(3);	
-		$productid= $this->uri->segment(4);	
+		$id= $this->uri->segment(4);	
 		//$category= urldecode($this->uri->segment(5));
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
@@ -34,10 +34,18 @@ class Customer_contactsupplier extends CI_Controller {
 			$sess = array('sessi'=>$this->session->userdata('username'));
 
 		$this->load->model('Admin_model');
-		$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-		$active = array('productid'=>$productid);
+		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$active = array('id'=>$id);
+		
+		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		$data['sqldata']= $query;
+		
+		
+		
+		
+		
+		
 			
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/contactsupplier',$data);

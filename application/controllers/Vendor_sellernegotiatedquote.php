@@ -38,8 +38,7 @@ class Vendor_sellernegotiatedquote extends CI_Controller {
 		
 		$adac['sqldata']= $query;
 		
-			//$active = array('vusername'=>$sess['sessi']);
-		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
+		
 		
 		
 		$this->load->view('vendor/header',$sess);

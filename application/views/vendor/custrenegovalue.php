@@ -24,17 +24,9 @@
       <tr>	
 	        <th>Sl.No.</th>
 	        <th>Seller Id</th>
-			<th>Buyer Id</th>
-			<th>Product Name</th>
-			<th>Product Id</th>
-			<th>Category</th>
-			<th  style="color:orange;">Seller Base Quantity</th>
-			<th  style="color:orange;">Seller Base Price</th>
 			
-			<th style="color:green;">Buyer Negotiated Quantity</th>
-			<th style="color:green;">Buyer Negotiated Price</th>
-			<th style="color:orange;">Seller Negotiated price</th>
-			<th style="color:green;">Buyer Re-Negotiated price</th>
+			<th style="color:green;">Buyer Re-Negotiated Quantity</th>
+			<th>Action</th>
 			<th style="color:green;">Buyer Re-Negotiated Quantity</th>
 			<th>Action</th>
      
@@ -47,18 +39,14 @@
 				?>
 				<?php $prodid = str_ireplace('/','-',$row->productid);?>
 					<td><?php echo $count;?></td>
-			<td><?php echo $row->sellerid;?></td>
-			<td><?php echo $row->buyerid;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->category;?></td>
-				<td><?php echo $row->price."/"; echo $row->punits;?></td>
-				<td><?php echo $row->quantity.""; echo $row->units;?></td>
-			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
-			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
-			<td><?php echo $row->brenegoprice."/"; echo $row->brenegounit;?></td>
-			<td><?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>
+		
+			<td style="float:center;"> Seller base Quantity<br><?php echo $row->quantity.""; echo $row->units;?><br>Seller base Price<br><?php echo $row->price."/"; echo $row->punits;?><br>Buyer base Quantity<br></td>
+		
+			<td>Buyer base Quantity<br><?php echo $row->bquantity.""; echo $row->bunits;?><br>Buyer base Price<br>
+			<?php echo $row->bprice."/"; echo $row->bsupplyability;?><br>Buyer base Quantity<br></td>
+			<td><?php echo $row->selprice."/"; echo $row->sunits;?><br>Seller base Price<br></td>
+		<td>	<?php echo $row->brenegoprice."/"; echo $row->brenegounit;?><br>Seller base Price<br>
+			<?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>
 				
 		<td>	
 	

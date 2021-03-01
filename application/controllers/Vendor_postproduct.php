@@ -39,11 +39,11 @@ class Vendor_postproduct  extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
 				$active1 = array('sellerid'=>$sess['sessi']);
-				//print_r($active1); die;
+			
 				$data2 = $this->Admin_model->getusernamedatafromtable('vendor_register', $active1);
-				//print_r($data2); die;
+				
 				$sellerid= $data2[0]->sellerid;
-				//	print_r($vusername); die;
+				
 	 if($this->input->post('productname')){
 			 $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');

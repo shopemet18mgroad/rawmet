@@ -48,6 +48,7 @@
 					 <label><b>Description:</b></label>
 				<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
 							<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">
+							<input type="text" class="form-control" id="sellerpostproduct_id" name="sellerpostproduct_id"  value="<?php echo  $sqldata[0]->sellerpostproduct_id;?>">
 				</div>
 			
 
