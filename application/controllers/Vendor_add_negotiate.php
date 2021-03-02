@@ -47,7 +47,8 @@ class Vendor_add_negotiate extends CI_Controller {
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			$this->load->library('session');
-
+			
+            $id = $this->input->post('id');
 			$sellerid = $this->input->post('sellerid');
 			$buyerid = $this->input->post('buyerid');
 			$category = $this->input->post('category');
@@ -83,7 +84,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'price'=>$price,'units'=> $units,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'punits' =>$punits);
+			$data2 = array( 'sellerpostproduct_id''productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'price'=>$price,'units'=> $units,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'punits' =>$punits);
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){
@@ -162,5 +163,5 @@ private function upload_files($nameid){
     }
 		
 
+		  }
 
-} 

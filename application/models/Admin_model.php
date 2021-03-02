@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
- 
+  
            
    class Admin_model extends CI_Model {	
  
@@ -315,7 +315,7 @@ $this->db->where('a.buyerid', $id);
 					b.units,
 					b.price,
 					b.vusername,
-					b.sellerid,
+					b.sellerid
 					');
 					$this->db->where('b.buyerid', $id);				 			
 					$this->db->join('seller_mbuyreq b', 'a.seller_mbuyreq_id=b.id',
@@ -327,6 +327,190 @@ $this->db->where('a.buyerid', $id);
 					return $result;
 		
 			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+			
+			  
+			
+			
+			
+			
+			
+			
+			
+			
+			function getdatafromtable_seller5($id) {
+			 //$id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.id,					 			
+					b.bquantity,
+					b.bprice,
+					b.bunits,				 
+					b.bsupplyability,
+					c.selprice,
+					c.sunits,
+					c.sellerpostproduct_id,
+					d.sellrenegoprice,
+					d.sellrenegounits,
+					d.custapprove,
+					d.sellerpostproduct_id
+					 
+					');
+					$this->db->where('a.id', $id);				 			
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');
+					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
+					'left outer');
+				$this->db->join('vend_renego d', 'a.id=d.sellerpostproduct_id',
+					'left outer');
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			
+			
+			
+			function getdatafromtable_seller3($id) {
+			 //$id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.id,					 			
+					b.bquantity,
+					b.bprice,
+					b.bunits,				 
+					b.bsupplyability,
+					c.selprice,
+					c.sunits,
+					c.sellerpostproduct_id
+					 
+					');
+					$this->db->where('a.id', $id);				 			
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');
+					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
+					'left outer');
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			function getdatafromtable_seller2($id) {
+			 //$id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.id,
+					 			
+					b.bquantity,
+					b.bprice,
+					b.bunits,				 
+					b.bsupplyability,
+					 
+					');
+					$this->db->where('a.id', $id);				 			
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');			   
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+				function getdatafromtable_seller4($id) {
+			 //$id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.id,
+					 			
+					b.brenegoquantity,
+					b.brenegoquantityunit,
+					b.brenegoprice,				 
+					b.brenegounit,
+					 
+					');
+					$this->db->where('a.id', $id);				 			
+					$this->db->join('cust_renego b', 'a.id=b.sellerpostproduct_id',
+					'left outer');			   
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			  
 	 function getdatafrom_vregistration24($seller_mbuyreq_id) {
@@ -731,6 +915,33 @@ b.status,
 					return $result;
 		
 			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
 			
 			
 			

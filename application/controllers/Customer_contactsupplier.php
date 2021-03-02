@@ -41,7 +41,19 @@ class Customer_contactsupplier extends CI_Controller {
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		$data['sqldata']= $query;
 		
+		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id);
 		
+		
+		
+		
+		
+		
+		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3($id);
+		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id);
+		$data['sqldata5'] = $this->Admin_model->getdatafromtable_seller5($id);
+		
+		
+		$adac['sqldata']= $query;
 		
 		
 		

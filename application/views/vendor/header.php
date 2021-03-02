@@ -111,8 +111,42 @@
           </div>
         </div>
       </li>
+      
+      ---
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseUtilities">
+    <i class='fas fa-envelope-open-text'></i>
+          <span>Quotes Negotiation</span></a>
+		 <div id="collapseProduct" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_renegotation1">Ongoing Negotiation</a>
+           
+		
+          </div>
+        </div>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 	  
-	  
+	  ----
 		   <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseUtilities">
     <i class='fas fa-envelope-open-text'></i>

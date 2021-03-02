@@ -31,19 +31,31 @@ class Vendor_custquoteapproval extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$active1 = array('sellerid'=>$sess['sessi'],'sellapproval'=>false);
 	
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
+	
+		$this->load->model('Admin_model');
+		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$active = array('id'=>$id);
+		
+		
+		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
+		$data['sqldata']= $query;
+		
+		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id);
 		
 		
 		
 		
 		
+		
+		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3($id);
+		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id);
+		$data['sqldata5'] = $this->Admin_model->getdatafromtable_seller5($id);
 		
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/custquoteapproval',$query);
+		$this->load->view('vendor/custquoteapproval',$data);
 		$this->load->view('vendor/footer');
 			}
 		
@@ -69,7 +81,7 @@ class Vendor_custquoteapproval extends CI_Controller {
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			$this->load->library('session');
-            $sellerpostproduct_id = $this->input->post('sellerpostproduct_id');
+            $id = $this->input->post('id');
 			$sellerid = $this->input->post('sellerid');
 			$buyerid = $this->input->post('buyerid');
 			$category = $this->input->post('category');
@@ -105,7 +117,7 @@ class Vendor_custquoteapproval extends CI_Controller {
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('sellerpostproduct_id'=>$sellerpostproduct_id,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'price'=>$price,'units'=> $units,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'punits' =>$punits);
+			$data2 = array('sellerpostproduct_id'=>$id,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'price'=>$price,'units'=> $units,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'punits' =>$punits);
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){
