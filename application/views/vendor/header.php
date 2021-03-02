@@ -85,18 +85,20 @@
       
 	         <i class="fas fa-fw fa-shopping-cart"></i>
 	    
-          <span>Requirements</span></a>
+          <span>Requirements Negotiate</span></a>
 		 <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Ongoing Requirement</a>
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">Approved Requriement</a>
+         <!--   <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">Approved Requriement</a>-->
 			<a class="collapse-item" href="<?php echo base_url();?>vendor_buyerResponse_req">Ongoing Re-Negotiation</a>
-			<a class="collapse-item" href="<?php echo base_url();?>vendor_req_renego_status">Approved Re-Negotiation</a>
-			<a class="collapse-item" href="<?php echo base_url();?>Vendor_buyer_finalized_reqPrice">Buyer's Finalized Price</a>
+			<!--<a class="collapse-item" href="<?php echo base_url();?>vendor_req_renego_status">Approved Re-Negotiation</a>
+			<a class="collapse-item" href="<?php echo base_url();?>Vendor_buyer_finalized_reqPrice">Buyer's Finalized Price</a>-->
           </div>
         </div>
       </li>
-	  
+	 
+
+<!--	 
 	    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment9" aria-expanded="true" aria-controls="collapseUtilities">
          <i class="fas fa-fw fa-shopping-cart"></i>
@@ -112,7 +114,7 @@
         </div>
       </li>
 	  
-	  
+-->	  
 		   <li class="nav-item">
         <a class="nav-link collapsed" href="vendor_custquoteapproval" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseUtilities">
     <i class='fas fa-envelope-open-text'></i>

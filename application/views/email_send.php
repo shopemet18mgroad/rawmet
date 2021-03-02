@@ -41,8 +41,8 @@
        <p style="color: green;"><strong>Success!</strong> <?php echo  $error; ?><p>
   <?php } ?>
   
-<form action="<?php echo base_url(); ?>email_send/send" method="post">
-    <input type="email" name="from" class="form-control form-control-user" placeholder="Enter Email" required><br>
+<form action="<?php echo base_url(); ?>Email_send" method="post">
+    <input type="email" name="email" class="form-control form-control-user" placeholder="Enter Email" required><br>
     <!--<textarea name="message" class="form-control" placeholder="Enter message here" required></textarea><br>-->
     <button type="submit" class="btn btn-primary">Send Message</button>
 	
