@@ -89,7 +89,14 @@
         </div>
       </li>
 	 
-
+	 
+	    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url();?>customer_myrequirements">
+          <i class="fas fa-fw fa-upload"></i>
+          <span>Requirement Negotiation</span></a>
+      </li>
+	  
+<!--
 <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment6" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-upload"></i>
@@ -103,10 +110,10 @@
           </div>
         </div>
       </li>
+	  -->
 	  
 	  
-	  
-	   <li class="nav-item">
+	   <!--<li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment8" aria-expanded="true" aria-controls="collapseUtilities">
          <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Approved Requirements</span></a>
@@ -120,7 +127,7 @@
           </div>
         </div>
       </li>
-	  
+	  -->
 	  
 	   <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>#">
