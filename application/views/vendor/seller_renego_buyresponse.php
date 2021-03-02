@@ -56,19 +56,38 @@
  		
 		
 			
-			<td>Seller's Offer<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?></b></small></td>
+			<td>Seller's Offer<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?></b></small>
+			<br/>
+			
+			
+		<b><?php  if($first_approve[0]->status == 0) {echo 'Pending';}else if($first_approve[0]->status == 2) {echo 'Rejected';}else if($first_approve[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation_seller/auc_no/'.$first_approve[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($first_approve[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
+			</td>
 		
 		
 			<td>Buyer Negotiated Price:<br /><small style="color:orange;"><b>
 			<?php echo  $sqldata1[0]->buyer_nego_price.' / '.$sqldata1[0]->buyer_nego_units;?></br>
 			
 			
-	 <?php echo "<a href='javascript:approveProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'>Approve</a>|| <a href='javascript:rejectProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'>Reject</a>";?>
+	 
+			<br/>
 			
+			
+			<button type="button" class="btn btn-outline-primary  btn-sm">
+			<?php echo "<a href='javascript:approveProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?> 	
+			<button type="button" class="btn btn-outline-danger btn-sm">
+			<?php echo "<a href='javascript:rejectProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
+			</button>
+			
+			<br/>
+			
+				<b><?php  if($sqldata1[0]->status == 0) {echo 'Pending';}else if($sqldata1[0]->status == 2) {echo 'Rejected';}else if($sqldata1[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation10/auc_no/'.$sqldata1[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata1[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 			
 			</td>
-			<td>Seller Re_Negotiation Price: <br />
+			
+			<td style="150px">Seller Re_Negotiation Price: <br />
 			 <b style="color:orange;"><?php echo  $sqldata4[0]->seller_renego_price.' / '.$sqldata4[0]->bsupplyability;?></b> 
+			 <br/>
+			 <b><?php  if($sqldata4[0]->buyer_approval == 0) {echo 'Pending';}else if($sqldata4[0]->buyer_approval == 2) {echo 'Rejected';}else if($sqldata4[0]->buyer_approval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation11/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->buyer_approval == 5) {echo 'Approved-check in final Approval!';}?></b>
 		</td>
 			 
 		</tr>
@@ -77,7 +96,7 @@
 	   <tr style="text-align:center;">
 	   		
  		
-		<td style="font-size:15px; width:190px;">Seller Re Negotiation Price<br /></td>
+		<td style="font-size:15px; width:290px;">Seller Re Negotiation Price<br /></td>
 			
 		<td><center><input required style="width:160px;" type="text" class="form-control" id="seller_renego_price" name="seller_renego_price"></center></td>
 		
@@ -128,7 +147,12 @@
 		
 		<td><button type="button" class="btn btn-outline-primary  btn-sm">
 <?php echo "<a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?>		
-			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
+			<br/>
+			
+			 <b><?php  if($sqldata4[0]->sel_status == 0) {echo 'Pending';}else if($sqldata4[0]->sel_status == 2) {echo 'Rejected';}else if($sqldata4[0]->sel_status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation12/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->sel_status == 5) {echo 'Approved-check in final Approval!';}?></b>
+			
+			</td>
 
 	
 	</td>

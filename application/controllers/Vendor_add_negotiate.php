@@ -84,7 +84,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array( 'sellerpostproduct_id''productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'price'=>$price,'units'=> $units,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'punits' =>$punits);
+			$data2 = array('sellerpostproduct_id'=>$id,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'price'=>$price,'units'=> $units,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'punits' =>$punits);
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){
@@ -96,7 +96,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			  
 		$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('selquotenegotate',$data2);
-			header('location: '.base_url().'vendor_sellernegotiatedquote/index/'.$datainserr);
+			header('location: '.base_url().'vendor_custquoteapproval/index/'.$id);
 			//}
 		
 
@@ -107,23 +107,9 @@ class Vendor_add_negotiate extends CI_Controller {
 	
 	 }
 			
-			if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
-				$datainserr = "Invalid Login Session";
-				header('location: '.base_url().'login/index_error/'.$datainserr);
-				die;
-			}
-	}
-	public function index_error(){
-			$alertmsg = $this->uri->segment(3);
-			$alertmsg = urldecode($alertmsg);
-			echo '<script language="javascript">';
-			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
-			echo '</script>';
-			$this->load->view('vendor/header');
-			$this->load->view('vendor/sellernegotiatedquote');
-			$this->load->view('vendor/footer');
 			
 	}
+	
 				
 private function upload_files($nameid){
     	

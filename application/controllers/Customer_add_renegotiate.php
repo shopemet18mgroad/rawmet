@@ -34,7 +34,7 @@ class Customer_add_renegotiate extends CI_Controller {
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			
-			$sellerpostproduct_id = $this->input->post('sellerpostproduct_id');
+			$id = $this->input->post('id');
 			$productid = $this->input->post('productid');
 			$productname = $this->input->post('productname');
 			$sellerid = $this->input->post('sellerid');
@@ -81,14 +81,14 @@ class Customer_add_renegotiate extends CI_Controller {
 	
 	
 	      // $data1 = array('vname'=>$vname );
-			$data2 = array('sellerpostproduct_id'=>$sellerpostproduct_id,'productid'=>$productid ,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'punits'=> $punits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'estdeltime'=>$estdeltime,'datetime'=>$datetime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage ,'status' => $renegoStatus );
+			$data2 = array('sellerpostproduct_id'=>$id,'productid'=>$productid ,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'punits'=> $punits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'estdeltime'=>$estdeltime,'datetime'=>$datetime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage ,'status' => $renegoStatus );
 			
 	
 				 
 			  
 				$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('cust_renego',$data2);
-			header('location: ./Customer_custrenegovalue/index/'.$datainserr);
+			header('location: ./customer_contactsupplier/index/'.$id);
 			//}
 
 			
@@ -108,7 +108,7 @@ class Customer_add_renegotiate extends CI_Controller {
 				
 				
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/custrenegovalue');
+		$this->load->view('customer/contactsupplier');
 		$this->load->view('customer/footer');
 			 
 	 

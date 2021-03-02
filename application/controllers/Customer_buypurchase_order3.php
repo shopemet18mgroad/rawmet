@@ -35,14 +35,15 @@ class Customer_buypurchase_order3 extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('vusername')){
+	if($this->input->post('sellerid')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
-			$vusername = $this->input->post('vusername');
-			$bname = $this->input->post('bname');
-				$vusername = $this->input->post('sellerid');
+			//$vusername = $this->input->post('vusername');
+			//$bname = $this->input->post('bname');
+			$seller_mbuyreq_id = $this->input->post('seller_mbuyreq_id');
+				$sellerid = $this->input->post('sellerid');
 			$buyerid = $this->input->post('buyerid');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
@@ -77,7 +78,7 @@ class Customer_buypurchase_order3 extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('sellerid' => $vusername,'buyerid'=>$bname,
+			$data = array('seller_mbuyreq_id'=>$seller_mbuyreq_id,'sellerid' => $sellerid,'buyerid'=>$buyerid,
 			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
 			'quantity' => $quantity,'units' => $units, 'price'=> $price,
@@ -87,7 +88,7 @@ class Customer_buypurchase_order3 extends CI_Controller {
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_cust2ndApprovedReq');
+				  header('location: ./Customer_seller_response_renego/index/'.$seller_mbuyreq_id);
 				  }
 			
 	}

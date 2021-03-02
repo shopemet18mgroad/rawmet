@@ -39,7 +39,7 @@ class Customer_add_finalReq_buyer_selResponse extends CI_Controller {
 
 			$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('buyer_final_req',$data);
-			header('location: ./Customer_seller_response_renego/index/'.$datainserr);
+			header('location: ./Customer_seller_response_renego/index/'.$seller_mbuyreq_id);
 			}
 			
 		

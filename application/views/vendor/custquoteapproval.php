@@ -37,8 +37,10 @@
                                 </div>
                                 <!-- Card Body -->
 
-         <div class="card-body">
-           <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
+<div class="card-body">
+           
+		   
+		   <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
 		   
 	<td style="font-size:15px; width:150px;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. " / " .$sqldata2[0]->bsupplyability;?></b></small><br/>
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bprice. " / " .$sqldata2[0]->bunits;?></b></small><br/>
@@ -50,20 +52,7 @@
 		</td>	   
 		   
 		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-  
-	<form action="<?php echo base_url();?>vendor_custquoteapproval/buyerprice_update" method="POST" enctype="multipart/form-data">
+<form action="<?php echo base_url();?>vendor_add_negotiate" method="POST" enctype="multipart/form-data">
        <tbody>
 	   
 	    <tr  style="text-align:center;">
@@ -73,8 +62,15 @@
 
 
 				</div>
-	<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo  $sqldata[0]->productname;?>">					
-<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">			
+	<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo  $sqldata[0]->productname;?>">	
+	
+	
+	<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">
+	
+	
+	
+	
+			
   <input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
 								
  <input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
@@ -111,21 +107,7 @@
 <input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo  $sqldata2[0]->bprice;?>">
 <input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo  $sqldata2[0]->bunits;?>">
  		
-		
 
-
-
-
-
-
-
-
-
-
-
-
-
-			
 			<td style="width:290px">
 					
 					
@@ -157,12 +139,12 @@
 									
 								</div>
 							
-									<center><input type="submit" name="submit" onclick="return validatepost()" role="submit" value="Submit" class="btn btn-info btn-sm  offset-sm-0" style="font-size:13px" ></center>
+									<center><input type="submit" name="submit" onclick="" role="submit" value="Submit" class="btn btn-info btn-sm  offset-sm-0" style="font-size:13px" ></center>
 							
 								</td>
 		
 		
-		
+		</form>
 			
 			<small>	  1
 	</small>
@@ -187,116 +169,122 @@
 	
 	  
 		
-		
-		  
-		  
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	</form>
-	
-	<form action="<?php echo base_url();?>vendor_add_renegotiate" method="POST" enctype="multipart/form-data">
-       <tbody>
-	   
-	    <tr  style="text-align:center;">
-		
-		
-		
-
-
-				</div>
-				
-				
-				
-	
-	
-	<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo  $sqldata[0]->productname;?>">					
-<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">			
-  <input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
-								
- <input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
-				
-	<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sessi;?>">
-								
-								
-	<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo  $sqldata[0]->category;?>">
-								
-								
-<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo  $sqldata[0]->companyname;?>">
-								
-								
-									
-<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
-								
-<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
-<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">
+		 
+					 <center><?php
+		/* <a href="<?php echo base_url()."Vendor_sellrenegotiate/index/".$proid."/".urldecode($row->vname)."/".urldecode($row->busername);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Final Renegotation</a> */
 					
-<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo  $sqldata[0]->price;?>">
-<input type="hidden" class="form-control" id="punits" name="punits"  value="<?php echo  $sqldata[0]->punits;?>">
-<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo  $sqldata[0]->supplyability;?>">
-<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo  $sqldata[0]->supplyunits;?>">
-<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
-<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
-								
-								
-								
-<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo  $sqldata[0]->quantity;?>">
-<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
-<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
-<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo  $sqldata2[0]->bquantity;?>">
-<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo  $sqldata2[0]->bsupplyability;?>">
-<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo  $sqldata2[0]->bprice;?>">
-<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo  $sqldata2[0]->bunits;?>">
-
-<input type="hidden" class="form-control" id="brenegoquantity" name="brenegoquantity"  value="<?php echo  $sqldata4[0]->brenegoquantity;?>">
-<input type="hidden" class="form-control" id="brenegoquantityunit" name="brenegoquantityunit"  value="<?php echo  $sqldata4[0]->brenegoquantityunit;?>">
-<input type="hidden" class="form-control" id="selprice" name="selprice"  value="<?php echo  $sqldata3[0]->selprice;?>">
-<input type="hidden" class="form-control" id="sunits" name="sunits"  value="<?php echo  $sqldata3[0]->sunits;?>">
-<input type="hidden" class="form-control" id="brenegoprice" name="brenegoprice"  value="<?php echo  $sqldata4[0]->brenegoprice;?>">
-<input type="hidden" class="form-control" id="brenegounit" name="brenegounit"  value="<?php echo  $sqldata4[0]->brenegounit;?>">
-
- 		
+		$st = $sqldata4[0]->status;
+		if($st == true){
+			echo '<b>Finalized by Buyer</b>.';
+		}
+		else
 		
+		{
 			
-			<td style="width:290px"> <div class="form-row m-2">
-									
-									<input type="text" class="form-control col-sm-4 mr-2" name="sellrenegoprice" placeholder="price" id="sellrenegoprice" [(ngModel)]="person.name" />
-								<div class="col-sm-3">  
-							<select class="form-control col-sm-0" id="sellrenegounits" name="sellrenegounits">
-									<option value="KG">KG</option>
-									<option value="Metric Ton">Metric Ton</option>
-									<option value="Litre">Litre</option>
-									<option value="lot">lot</option>
-									<option value="Number">Number</option>
-									<option value="Meter">Meter</option>
-							</select>
-					</div>
-									
-								</div>
-						
-								
-									<a href="#" class="neg"> </a>
-								
-								
-								<center><input type="submit" name="submit" onclick="" role="submit" value="Submit" class="btn btn-info btn-sm  offset-sm-0" style="font-size:13px" ></center>
-								 
-					 
+				
+	
+echo '<form action="<?php echo base_url();?>vendor_add_renegotiate" method="POST" enctype="multipart/form-data">';
+echo '<tbody>';
+echo '';
+echo '<tr  style="text-align:center;">';
+echo '';
+echo '';
+echo '';
+echo '';
+echo '';
+echo '</div>';
+echo '';
+echo '';
+echo '';
+echo '';
+echo '';
+echo '<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo  $sqldata[0]->productname;?>">';
+echo '<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">';
+echo '<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">';
+echo '';
+echo '<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">';
+echo '';
+echo '<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sessi;?>">';
+echo '';
+echo '';
+echo '<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo  $sqldata[0]->category;?>">';
+echo '';
+echo '';
+echo '<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo  $sqldata[0]->companyname;?>">';
+echo '';
+echo '';
+echo '';
+echo '<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">';
+echo '';
+echo '<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">';
+echo '<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">';
+echo '';
+echo '<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo  $sqldata[0]->price;?>">';
+echo '<input type="hidden" class="form-control" id="punits" name="punits"  value="<?php echo  $sqldata[0]->punits;?>">';
+echo '<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo  $sqldata[0]->supplyability;?>">';
+echo '<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo  $sqldata[0]->supplyunits;?>">';
+echo '<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">';
+echo '<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">';
+echo '';
+echo '';
+echo '';
+echo '<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo  $sqldata[0]->quantity;?>">';
+echo '<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">';
+echo '<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">';
+echo '<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo  $sqldata2[0]->bquantity;?>">';
+echo '<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo  $sqldata2[0]->bsupplyability;?>">';
+echo '<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo  $sqldata2[0]->bprice;?>">';
+echo '<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo  $sqldata2[0]->bunits;?>">';
+echo '';
+echo '<input type="hidden" class="form-control" id="brenegoquantity" name="brenegoquantity"  value="<?php echo  $sqldata4[0]->brenegoquantity;?>">';
+echo '<input type="hidden" class="form-control" id="brenegoquantityunit" name="brenegoquantityunit"  value="<?php echo  $sqldata4[0]->brenegoquantityunit;?>">';
+echo '<input type="hidden" class="form-control" id="selprice" name="selprice"  value="<?php echo  $sqldata3[0]->selprice;?>">';
+echo '<input type="hidden" class="form-control" id="sunits" name="sunits"  value="<?php echo  $sqldata3[0]->sunits;?>">';
+echo '<input type="hidden" class="form-control" id="brenegoprice" name="brenegoprice"  value="<?php echo  $sqldata4[0]->brenegoprice;?>">';
+echo '<input type="hidden" class="form-control" id="brenegounit" name="brenegounit"  value="<?php echo  $sqldata4[0]->brenegounit;?>">';
+echo '';
+echo '';
+echo '';
+echo '';
+echo '<td style="width:290px"> <div class="form-row m-2">';
+echo '';
+echo '<input type="text" class="form-control col-sm-4 mr-2" name="sellrenegoprice" placeholder="price" id="sellrenegoprice" [(ngModel)]="person.name" />';
+echo '<div class="col-sm-3">';
+echo '<select class="form-control col-sm-0" id="sellrenegounits" name="sellrenegounits">';
+echo '<option value="KG">KG</option>';
+echo '<option value="Metric Ton">Metric Ton</option>';
+echo '<option value="Litre">Litre</option>';
+echo '<option value="lot">lot</option>';
+echo '<option value="Number">Number</option>';
+echo '<option value="Meter">Meter</option>';
+echo '</select>';
+echo '</div>';
+echo '';
+
+echo '<center><input type="submit" name="submit" onclick="" role="submit" value="Submit" class="btn btn-info btn-sm  offset-sm-0" style="font-size:13px" ></center>';
+echo '';
+
+echo '';
+echo '';
+echo '</form>';
+};
+		
+		
+
+	?>	
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</center>
 								 
 								 
 								 
@@ -428,31 +416,36 @@
         </div>
  <!-- Card Body -->
 <div class="card-body">
-	<div class="form-row align-items-center">
+
+<div class="form-row align-items-center">
 	
 											
 	
 		 
-		 <div class="form-inline">
-		 <div class="col-md-6">
 
-			  <div class="view overlay z-depth-1-half">
-				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
-					<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="120" height="100">
-				<div class="mask rgba-white-light"></div>
-				<label><b>Description:</b></label>
-					<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
-								<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">
-					<p><b>Supplier Price:</b><?php echo  $sqldata[0]->price."/"; echo $sqldata[0]->punits;?></p>
-								<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo  $sqldata[0]->price;?>">
-								<input type="hidden" class="form-control" id="punits" name="punits"  value="<?php echo  $sqldata[0]->punits;?>">
-								
-								
-								<h6 style="color:green;"><b>Supply Ability: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></b></h6>
-								<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo  $sqldata[0]->quantity;?>">
-								<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
-								
-								<h6 style="color:orange;"><b>Live Stock: <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
+  <div class="form-inline">
+		
+
+    <div class="col-md-6">
+
+
+    <div class="view overlay z-depth-1-half">
+
+<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
+
+<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="120" height="100">
+					
+					
+<p class="w-auto small"><h6><b>Description:</b> <?php echo  $sqldata[0]->description;?></h6></p>					
+					
+			
+
+
+<h6 style="color:green;"><b>Supply Ability: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></b></h6>
+
+<p><b>Supplier Price:</b><?php echo  $sqldata[0]->price."/"; echo $sqldata[0]->punits;?></p>
+
+<h6 style="color:orange;"><b>Live Stock: <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
 								
 								
 						
@@ -479,26 +472,23 @@
 			
 									
 								
-								<p><b>Product Id:</b></br><?php echo  $sqldata[0]->productid;?></p>
-								<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
-								
-								<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
-								<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sessi;?>">
-								
-								<p><b>Category:</b></br><?php echo  $sqldata[0]->category;?></p>
-								<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo  $sqldata[0]->category;?>">
+<p><b>Product Id:</b></br><?php echo  $sqldata[0]->productid;?></p>
 								
 								
-								<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo  $sqldata[0]->companyname;?>">
+							
+								
+<p><b>Category:</b></br><?php echo  $sqldata[0]->category;?></p>
 								
 								
-									<h6><b>Posted Date:</br> <?php echo  $sqldata[0]->datetime;?></b></h6>
-								<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
 								
-									<h6><b>Estimated Delivery:<br> <?php echo  $sqldata[0]->estdeltime;?></b></h6>
-								<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
+
 								
-								<h6 style="color:purple;"><b>Validity Till:<br> <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
+<h6><b>Posted Date:</b></br> <?php echo  $sqldata[0]->datetime;?></h6>
+								
+<h6><b>Estimated Delivery: </b><br> <?php echo  $sqldata[0]->estdeltime;?></h6>
+							
+								
+<h6 style="color:purple;"><b>Validity Till:</b><br> <?php echo  $sqldata[0]->productvalidityto;?></h6>
 								
 			
 			

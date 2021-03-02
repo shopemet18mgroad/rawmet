@@ -177,6 +177,7 @@
 	
 	<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo  $sqldata[0]->productname;?>">					
 			
+	<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">	
   <input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
 								
  <input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
@@ -396,6 +397,9 @@
  </div>
  </div>
  </div>
+ 
+ 
+ 
 						
 <div class="col-xl-5 col-lg-7">
 	<div class="card shadow mb-4">
@@ -431,29 +435,18 @@
 				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
 					<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="120" height="100">
 				<div class="mask rgba-white-light"></div>
-				<label><b>Description:</b></label>
-					<p class="w-auto small"><?php echo  $sqldata[0]->description;?></p>
-								<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">
-								<h6 style="color:green;"><b>Supply Ability: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></b></h6>
-								<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo  $sqldata[0]->quantity;?>">
-								<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
-								
-								
-								
-					<p><b>Supplier Price:</b><?php echo  $sqldata[0]->price."/"; echo $sqldata[0]->punits;?></p>
-								<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo  $sqldata[0]->price;?>">
-								<input type="hidden" class="form-control" id="punits" name="punits"  value="<?php echo  $sqldata[0]->punits;?>">
-								
-								
-								
-								
-								<h6 style="color:orange;"><b>Live Stock: <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
-								
-								
-						
-								
-								
-								
+									
+<p class="w-auto small"><h6><b>Description:</b> <?php echo  $sqldata[0]->description;?></h6></p>					
+					
+			
+
+
+<h6 style="color:green;"><b>Supply Ability: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></b></h6>
+
+<p><b>Supplier Price:</b><?php echo  $sqldata[0]->price."/"; echo $sqldata[0]->punits;?></p>
+
+<h6 style="color:orange;"><b>Live Stock: <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
+				
 								
 								
 								
@@ -475,25 +468,22 @@
 									
 								
 								<p><b>Product Id:</b></br><?php echo  $sqldata[0]->productid;?></p>
-								<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
-								
-								<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
-								<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sessi;?>">
-								
-								<p><b>Category:</b></br><?php echo  $sqldata[0]->category;?></p>
-								<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo  $sqldata[0]->category;?>">
 								
 								
-								<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo  $sqldata[0]->companyname;?>">
+							
+								
+<p><b>Category:</b></br><?php echo  $sqldata[0]->category;?></p>
 								
 								
-									<h6><b>Posted Date:</br> <?php echo  $sqldata[0]->datetime;?></b></h6>
-								<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
 								
-									<h6><b>Estimated Delivery:<br> <?php echo  $sqldata[0]->estdeltime;?></b></h6>
-								<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
+
 								
-								<h6 style="color:purple;"><b>Validity Till:<br> <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
+<h6><b>Posted Date:</b></br> <?php echo  $sqldata[0]->datetime;?></h6>
+								
+<h6><b>Estimated Delivery: </b><br> <?php echo  $sqldata[0]->estdeltime;?></h6>
+							
+								
+<h6 style="color:purple;"><b>Validity Till:</b><br> <?php echo  $sqldata[0]->productvalidityto;?></h6>
 								
 			
 			

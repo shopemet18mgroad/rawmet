@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
- 
-  
-           
+
    class Admin_model extends CI_Model {	
  
 		  function __construct() { 
@@ -477,7 +475,7 @@ $this->db->where('a.buyerid', $id);
 					b.brenegoquantityunit,
 					b.brenegoprice,				 
 					b.brenegounit,
-					 
+					 b.status
 					');
 					$this->db->where('a.id', $id);				 			
 					$this->db->join('cust_renego b', 'a.id=b.sellerpostproduct_id',
@@ -655,8 +653,8 @@ $this->db->where('a.buyerid', $id);
 		
 			}
 			
-			function getdatafromtable_seller10() {
-			$id = $this->session->userdata('username'); 				
+			function getdatafromtable_seller10($id) {
+			//$id = $this->session->userdata('username'); 				
 			$this->db->select('
 					
 					a.buyer_nego_price,
@@ -677,10 +675,12 @@ $this->db->where('a.buyerid', $id);
 					b.bsupplyability,
 					b.units,
 					b.price,
-					b.vusername');
+					b.vusername,
+					b.status');
 					
 					$this->db->where('a.status', 1);	
-					$this->db->where('b.sellerid', $id);
+					//$this->db->where('b.sellerid', $id);
+					$this->db->where('b.id',$id);
 					$this->db->join('seller_mbuyreq b', 'a.seller_mbuyreq_id=b.id',
 					'left outer');			   
 					$query = $this->db->get("buyer_req_response a");
@@ -789,6 +789,7 @@ $this->db->where('a.buyerid', $id);
 					a.bsupplyability,
 					C.seller_renego_price,
 					C.seller_renego_units,
+					c.buyer_approval,
 					d.buyer_final_price,
 					d.buyer_final_units,
 					d.sel_status');					
@@ -817,7 +818,8 @@ $this->db->where('a.buyerid', $id);
 					b.bname,
 					b.buyer_nego_price,
 					b.buyer_nego_units,
-					b.seller_mbuyreq_id,					
+					b.seller_mbuyreq_id,
+b.status,					
 					a.id,
 					a.bname,
 					a.buyerid,
@@ -833,7 +835,7 @@ $this->db->where('a.buyerid', $id);
 					a.priceperkg,
 					a.sellerprice,
 					a.bsupplyability,
-					
+					 
 					d.buyer_final_price,
 					d.buyer_final_units,
 					d.sel_status');					
@@ -1221,7 +1223,7 @@ b.status,
 			a.price,
 			a.priceperkg,
 			a.sellerprice,
-			a.bsupplyability');	
+			a.bsupplyability,a.sellerid');	
 			
 			$this->db->where('c.buyer_approval',1 );
 			$this->db->where('a.buyerid', $id);
