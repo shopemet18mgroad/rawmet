@@ -226,7 +226,7 @@
 
           <div class="view overlay z-depth-1-half">
             <?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="100%">
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="100%">
             <div class="mask rgba-white-light"></div>
 			 <br />
 			 <hr>

@@ -98,7 +98,7 @@
       </li>
 	 
 
-<!--	 
+<!------	 
 	    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment9" aria-expanded="true" aria-controls="collapseUtilities">
          <i class="fas fa-fw fa-shopping-cart"></i>
