@@ -41,18 +41,19 @@ class Vendor_add_renegotiate extends CI_Controller {
 				//print_r($data2); die;
 				$sellerid= $data2[0]->sellerid;
 				//print_r($vusername); die;
-	 if($this->input->post('buyerid')){
+	 if($this->input->post('productid')){
 			 $date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			$this->load->library('session');
-
+$id = $this->input->post('id');
 			$productid = $this->input->post('productid');
 			$productname = $this->input->post('productname');
 			$sellerid = $this->input->post('sellerid');
-		
 			$buyerid = $this->input->post('buyerid');
+		
+			
 			$category = $this->input->post('category');
 			$description = $this->input->post('description');
 			$companyname = $this->input->post('companyname');
@@ -92,7 +93,7 @@ class Vendor_add_renegotiate extends CI_Controller {
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('productid'=>$productid ,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units, 'punits'=>$punits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits,'uploadproductimage'=>$uploadproductimage,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto );
+			$data2 = array('sellerpostproduct_id'=>$id,'buyerid'=>$buyerid,'productid'=>$productid ,'productname' => $productname,'sellerid'=>$sellerid,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units, 'punits'=>$punits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits,'uploadproductimage'=>$uploadproductimage,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto );
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){
@@ -104,7 +105,7 @@ class Vendor_add_renegotiate extends CI_Controller {
 			  
 		$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('vend_renego',$data2);
-			header('location: '.base_url().'vendor_sellrenegovalue/index/'.$datainserr);
+			header('location: '.base_url().'vendor_custquoteapproval/index/'.$id);
 			//}
 		
 
@@ -128,7 +129,7 @@ class Vendor_add_renegotiate extends CI_Controller {
 			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
 			echo '</script>';
 			$this->load->view('vendor/header');
-			$this->load->view('vendor/sellernegotiatedquote');
+			$this->load->view('vendor/custquoteapproval');
 			$this->load->view('vendor/footer');
 			
 	}
