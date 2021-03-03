@@ -29,12 +29,16 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('sellerid'=>$sess['sessi']);
-	
+		$active1 = array('buyerid'=>$sess['sessi']);
+		
+		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$active = array('id'=>$id);
+		$query['sqldata'] = $this->Admin_model->getdatafromtable_buyer_seller($active);
+		//print_r($query['sqldata'] ); die;
 		
 		
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/sellernegotiatedquote');
+		$this->load->view('customer/sellernegotiatedquote',$query);
 		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		
@@ -45,7 +49,7 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 			
 	}
 	
-		
+/* 		
 	public function get_table(){
 		$datatoquerydb = $this->uri->segment(3);
 		$this->load->helper(array('url','html','date'));
@@ -82,7 +86,7 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 				echo '<td>'.$dat['price']."/".$dat['punits'].'</td>';
 				echo '<td>'.$dat['quantity']." ".$dat['units'].'</td>';
 				
-				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.($dat['id'])."/".($dat['bid']).'">';
+				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.($dat['id'])."/".($dat['buyerid']).'">';
 				echo '<button class="btn btn-info">Negotiate</button>';
 				echo '</a>';
 			
@@ -120,7 +124,7 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 
 
 
-	}
+	} */
 	
 	
 	

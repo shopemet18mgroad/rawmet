@@ -156,7 +156,9 @@ $this->db->where('a.buyerid', $id);
 		public function gettable($table) { 
 			 $query = $this->db->get($table); 
 			 return $query->result();
-		}    
+		}  
+
+		
 		public function getdatafromtablejoin($table,$table2,$joincolname,$compdata){
 			$this->db->select('*');
 			$this->db->from($table);
@@ -441,7 +443,38 @@ $this->db->where('a.buyerid', $id);
 			
 			
 			
-			
+			function getdatafromtable_buyer_seller() {
+			// $id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.id,
+					a.uploadproductimage,
+					a.category,
+					a.productname,
+					a.price,
+					a.punits,
+					a.quantity,
+					a.units,
+					
+					b.buyerid, 			
+					b.bquantity,
+					b.bprice,
+					b.bunits,				 
+					b.bsupplyability,
+					b.sellapproval
+					 
+					');
+					//$this->db->where('b.buyerid', $id);
+					//$this->db->where('a.id', $id);				 			
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');			   
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
 			
 			
 			
@@ -451,7 +484,7 @@ $this->db->where('a.buyerid', $id);
 			
 			
 			function getdatafromtable_seller2($id) {
-			 //$id = $this->session->userdata('username');  
+			// $id = $this->session->userdata('username');  
 			$this->db->select('
 					
 					a.id,
@@ -463,6 +496,7 @@ $this->db->where('a.buyerid', $id);
 					b.sellapproval
 					 
 					');
+					//$this->db->where('b.buyerid', $id);
 					$this->db->where('a.id', $id);				 			
 					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
 					'left outer');			   

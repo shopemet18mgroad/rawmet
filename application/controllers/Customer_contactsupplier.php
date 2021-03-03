@@ -32,9 +32,11 @@ class Customer_contactsupplier extends CI_Controller {
 			die;
 		}else{
 			$sess = array('sessi'=>$this->session->userdata('username'));
-
-		$this->load->model('Admin_model');
+			$active1 = array('buyerid'=>$sess['sessi']);
+			
+		
 		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+
 		$active = array('id'=>$id);
 		
 		

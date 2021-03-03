@@ -122,7 +122,7 @@
 							</div>
 								
 								</div>		
-									<center><input type="submit" name="submit" onclick="return validatepost()" role="submit" value="Submit" class="btn btn-info btn-sm  offset-sm-0" style="font-size:13px" ></center>
+									<center><input type="submit" name="submit" onclick="return validatepost()" role="submit" value="Negotiate" class="btn btn-info btn-sm  offset-sm-0" style="font-size:13px" ></center>
 							
 								</td>
 		
@@ -171,47 +171,6 @@
  </td>
 
 
-<script>
-
-function approveProduct(sellerpostproduct_id)
-{
-  alert(sellerpostproduct_id);
-  swal({
-  title: "Are you sure?",
-  //content: "<input type='text' />",
-  text: "hththt",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
- .then((willDelete) => {
-  if (willDelete) {   
-                     $.ajax({
-                         type:'post',
-                         url:$baseURL+'customer_contactsupplier/approveProduct',
-                         data:'sellerpostproduct_id='+sellerpostproduct_id,
-                         success:function(msg){
-                             if(msg){
-                                swal("Information updated success.");
-                             }else{
-                                swal("Information not updated.");
-                             }
-                             location.reload();
-                         }
-                     });
-
-
-  }else {
-    swal("Approved!");
-  }  
-});
-
-
-}
-
-
-
-</script>
 
 
 
@@ -335,11 +294,10 @@ function approveProduct(sellerpostproduct_id)
 								</div>	
 								
 									<a href="#" class="neg"> </a>
-								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="btnsubmit_rengo" id= "btnsubmit_rengo" role="submit"  onclick= "return validate_selnego()">Re-Negotiated</a></button>
-								
-								 <button type="button" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="btncancel" id= "btncancel" role="Cancel">Cancel</a></button>
+								<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="btnsubmit_rengo" id= "btnsubmit_rengo" role="submit"  onclick= "return validate_selnego()">Re-Negotiated</a></button>								
+							 
 								 
-								 <button style="background-color:orange" type="button" class="btn btn-info btn-sm mt-2 offset-sm-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiation Submit </button>
+								 <button style="background-color:orange" type="button" class="btn btn-info btn-sm mt-2 offset-sm-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiation</button>
 								 
 								 
 				  <div class="modal fade" id="final_Negotiated" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -653,7 +611,48 @@ function approveProduct(sellerpostproduct_id)
 	  </script>						
 							
 							
-							
+					
+<script>
+
+function approveProduct(sellerpostproduct_id)
+{
+  alert(sellerpostproduct_id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'customer_contactsupplier/approveProduct',
+                         data:'sellerpostproduct_id='+sellerpostproduct_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+
+
+
+</script>		
 			
 							
 							
