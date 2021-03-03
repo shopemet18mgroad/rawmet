@@ -1,4 +1,4 @@
-
+ 
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -192,7 +192,7 @@
 						<div class="col-sm-6 pr-5 mb-3 mb-sm-0 mt-1">
 						
 								<label for="exampleInputFile">Upload Image</label>
-								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage[]">
+								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage[]" multiple>
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
 							</div>
 					<div class="col-sm-6 mb-3 pl-5 mb-sm-0 mt-1">	
@@ -290,5 +290,19 @@ document.getElementById('elements').onchange = function() {
     category.value = '';
   }
 }
+
+
+
+
+
+function clickEffect(e){
+var d=document.createElement("div");
+d.className="clickEffect";
+d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+document.body.appendChild(d);
+d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+}
+document.addEventListener('click',clickEffect);
+
 
 </script>

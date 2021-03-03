@@ -28,8 +28,44 @@
     min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
 }
 </style>
-</head>
 
+<style type="text/css">
+div.clickEffect{
+position:fixed;
+box-sizing:border-box;
+border-style:solid;
+border-color:#E8EBEF;
+border-radius:50%;
+animation:clickEffect 0.4s ease-out;
+z-index:99999;
+}
+@keyframes clickEffect{
+0%{
+opacity:1;
+width:0.5em; height:0.5em;
+margin:-0.25em;
+border-width:0.5em;
+}
+100%{
+opacity:0.2;
+width:6em; height:6em;
+margin:-7.5em;
+border-width:0.03em;
+}
+}
+</style>
+
+</head>
+<script type="text/javascript">
+function clickEffect(e){
+	var d=document.createElement("div");
+	d.className="clickEffect";
+	d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+	document.body.appendChild(d);
+	d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+}
+document.addEventListener('click',clickEffect);
+</script>
 <body id="page-top">
 
   <!-- Page Wrapper -->
