@@ -27,10 +27,12 @@
 				<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
 				
 				<div class="row ml-4">
-				<?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="30%" height="100%">
+			
+			
+			<?php $img = unserialize($sqldata[0]->uploadimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="180px" height="250"></td>
+					<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $img[0];?>">
 				
-			<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $sqldata[0]->uploadimage;?>">
 
 			<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
 				<div class="caption col-7 p-2 ml-5 bg-light">
@@ -84,7 +86,7 @@
 					
 				<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
 					<label for="">Buyer Productid</label>
-					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id" value="<?php echo  $sqldata[0]->productid;?>" readonly>
+	<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id" value="<?php echo  $sqldata[0]->productid;?>" readonly>
                     
                 </div>
 				</div>
