@@ -196,6 +196,14 @@ $this->db->where('a.buyerid', $id);
 			$q = $this->db->get();
 			return $q->result_array();
 		  }
+		  
+		  public function get_lookalike_buyer($table,$col,$query){			  
+			$this->db->from($table);
+			$this->db->where('poptions',1);
+			$this->db->like($col,$query);
+			$q = $this->db->get();
+			return $q->result_array();
+		  }
 		  public function get_lookalike_search($table,$col,$col2,$query){			  
 			$this->db->from($table);
 			$this->db->like($col,$query);
@@ -402,7 +410,8 @@ $this->db->where('a.buyerid', $id);
 					b.bsupplyability,
 					c.selprice,
 					c.sunits,
-					c.sellerpostproduct_id
+					c.sellerpostproduct_id,
+					c.buyerapprove
 					 
 					');
 					$this->db->where('a.id', $id);				 			
@@ -446,11 +455,12 @@ $this->db->where('a.buyerid', $id);
 			$this->db->select('
 					
 					a.id,
-					 			
+					b.buyerid, 			
 					b.bquantity,
 					b.bprice,
 					b.bunits,				 
 					b.bsupplyability,
+					b.sellapproval
 					 
 					');
 					$this->db->where('a.id', $id);				 			
@@ -475,7 +485,8 @@ $this->db->where('a.buyerid', $id);
 					b.brenegoquantityunit,
 					b.brenegoprice,				 
 					b.brenegounit,
-					 b.status
+					 b.status,
+					 b.selapprove
 					');
 					$this->db->where('a.id', $id);				 			
 					$this->db->join('cust_renego b', 'a.id=b.sellerpostproduct_id',

@@ -87,10 +87,13 @@
  		
 		
 			
-			<td style="width:290px"> <div class="form-row m-2">
+			<td style="width:290px"> 
+			<label> <b>Buyer can Negotiate here</b></label>
+			
+			<div class="form-row m-2">
 									
 									<input type="text" class="form-control col-sm-4 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" />
-								<div class="col-sm-3">  
+								<div class="col-sm-4">  
 							<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
 									<option value="KG">KG</option>
 									<option value="Metric Ton">Metric Ton</option>
@@ -105,7 +108,7 @@
 							<div class="form-row m-2">
 									
 									<input type="text" class="form-control col-sm-4 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name"/>/
-							<div class="col-sm-3">  
+							<div class="col-sm-4">  
 							<select class="form-control col-sm-0" id="bunits" name="bunits">
 							<option value="KG">KG</option>
 									<option value="Metric Ton">Metric Ton</option>
@@ -126,15 +129,14 @@
 		
 		<td style="font-size:15px; width:150px;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. " / " .$sqldata2[0]->bsupplyability;?></b></small><br/>
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bprice. " / " .$sqldata2[0]->bunits;?></b></small><br/>
-	
-	 
+
+		<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	
 		
 		
 		</td>
 			
-			<small>	  1
-	</small>
+
 			 
 		</tr>
 	
@@ -145,12 +147,81 @@
 	
 		
 			
-		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/></td>
+		<td style="font-size:15px; width:150px;"><b>Seller Re_Negotiation Price</b><br/>
+		
+		Seller Price</br>
+		<small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
+		
+		
+		<b><?php  if($sqldata3[0]->buyerapprove == 0) {echo 'Pending';}else if($sqldata3[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata3[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
 		
 		
 		
-		<td colspan="2">
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<td>  <?php echo "<a href='javascript:approveProduct(\"".$sqldata3[0]->sellerpostproduct_id."\")'><i class='fas fa-check'></i></a>";?> 
+ </td>
+
+
+<script>
+
+function approveProduct(sellerpostproduct_id)
+{
+  alert(sellerpostproduct_id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'customer_contactsupplier/approveProduct',
+                         data:'sellerpostproduct_id='+sellerpostproduct_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
 		
 	
 		  
@@ -226,7 +297,11 @@
  		
 		
 			
-			<td style="width:290px"> <div class="form-row m-2">
+			<td style="width:290px"> 
+			
+			
+			<div class="form-row m-2"> 
+			
 									
 									<input type="text" class="form-control col-sm-4 mr-2" name="brenegoquantity" placeholder="Quantity" id="brenegoquantity" [(ngModel)]="person.name" />
 								<div class="col-sm-3">  
@@ -303,16 +378,16 @@
 		
 		<td style="font-size:15px; width:150px;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoquantity. " / " .$sqldata4[0]->brenegoquantityunit;?></b></small><br/>
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoprice. " / " .$sqldata4[0]->brenegounit;?></b></small><br/>
+		
+		
+		<b><?php  if($sqldata4[0]->selapprove == 0) {echo 'Pending';}else if($sqldata4[0]->selapprove == 2) {echo 'Rejected';}else if($sqldata4[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
 	
 	 
 	
 		
 		
 		</td>
-			
-			<small>	  1
-	</small>
-			 
+ 
 		</tr>
 	
 	
@@ -322,14 +397,21 @@
 	
 		
 			
-		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / " .$sqldata5[0]->sellrenegounits;?>custapprove</b></small><br/></td>
+		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / " .$sqldata5[0]->sellrenegounits;?></b></small><br/>
 		
 		
 		
+		
+		
+		
+		
+		
+		
+	<b><?php  if($sqldata5[0]->custapprove == 0) {echo 'Pending';}else if($sqldata5[0]->custapprove == 2) {echo 'Rejected';}else if($sqldata5[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata5[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	
 		
 		
-	
+	</td>
 		  
 		
 		

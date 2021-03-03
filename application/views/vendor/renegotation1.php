@@ -21,7 +21,7 @@
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>   <th>Sl.No.</th>
-	        <th>Image</th>
+	        
 			<th>Buyer Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
@@ -52,15 +52,14 @@
 			<td><?php echo $row->category;?></td>
 				<td><?php echo $row->pcities;?></td>
 			
-			<td><?php echo $row->price."/"; echo $row->punits;?></td>
-			<td><?php echo $row->quantity." "; echo $row->units;?></td>
+	
 		  
 			
 						
 			
 		<td>	
 		<center><a href="<?php echo base_url()."vendor_custquoteapproval/index/".$row->id;?>" class="btn btn-secondary btn-sm text-white delete-confirm">Negotiate</a></center>
-		<center><a href="<?php echo base_url()."vendor_renegotation/index/".$row->id;?>" class="btn btn-secondary btn-sm text-white delete-confirm">Negotiate</a></center>
+		
 	
 		</td>
       </tr> 

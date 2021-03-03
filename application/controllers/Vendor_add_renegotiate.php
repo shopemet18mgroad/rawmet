@@ -47,13 +47,13 @@ class Vendor_add_renegotiate extends CI_Controller {
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			$this->load->library('session');
-			
-             $id = $this->input->post('id');
+$id = $this->input->post('id');
 			$productid = $this->input->post('productid');
 			$productname = $this->input->post('productname');
 			$sellerid = $this->input->post('sellerid');
-		
 			$buyerid = $this->input->post('buyerid');
+		
+			
 			$category = $this->input->post('category');
 			$description = $this->input->post('description');
 			$companyname = $this->input->post('companyname');
@@ -93,15 +93,46 @@ class Vendor_add_renegotiate extends CI_Controller {
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('sellerpostproduct_id'=>$id,'productid'=>$productid,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units, 'punits'=>$punits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits,'uploadproductimage'=>$uploadproductimage,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto);
+			$data2 = array('sellerpostproduct_id'=>$id,'buyerid'=>$buyerid,'productid'=>$productid ,'productname' => $productname,'sellerid'=>$sellerid,'category'=> $category,'description' => $description,'companyname'=>$companyname,'price'=>$price,'quantity'=>$quantity,'units'=>$units, 'punits'=>$punits,'pstates'=>$pstates,'pcities'=> $pcities, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bunits'=> $bunits ,'bsupplyability' => $bsupplyability,'selprice'=>$selprice,'sunits'=>$sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits,'uploadproductimage'=>$uploadproductimage,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto );
 			
-	$status = $this->Admin_model->insert('vend_renego',$data2);
+			/* 	$this->load->model('Admin_model');
+			  if($this->Admin_model->check('selquotenegotate', $data1)){
+				 $datainserr = "ProductId already exist";
+				header('location: '.base_url().'vendor_custquoteapproval/index_error/'.$datainserr);
+				die;
+			  }else{ */
+				 
+			  
+		$datainserr = "Data Inserted Successfully";
+			$status = $this->Admin_model->insert('vend_renego',$data2);
 			header('location: '.base_url().'vendor_custquoteapproval/index/'.$id);
+			//}
+		
 
 
+		
+			  
+			
+	
 	 }
 			
+			if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+				$datainserr = "Invalid Login Session";
+				header('location: '.base_url().'login/index_error/'.$datainserr);
+				die;
+			}
+	}
+	public function index_error(){
+			$alertmsg = $this->uri->segment(3);
+			$alertmsg = urldecode($alertmsg);
+			echo '<script language="javascript">';
+			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
+			echo '</script>';
+			$this->load->view('vendor/header');
+			$this->load->view('vendor/custquoteapproval');
+			$this->load->view('vendor/footer');
 			
+	}
 				
 private function upload_files($nameid){
     	

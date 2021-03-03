@@ -73,7 +73,9 @@
 			
 			
 			<button type="button" class="btn btn-outline-primary  btn-sm">
+			
 			<?php echo "<a href='javascript:approveProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?> 	
+			
 			<button type="button" class="btn btn-outline-danger btn-sm">
 			<?php echo "<a href='javascript:rejectProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
 			</button>
@@ -315,6 +317,10 @@ function buyerfinalrejectProduct(seller_mbuyreq_id)
 
 
 $baseURL = "<?php echo base_url(); ?>"; 
+
+
+
+
 function approveProduct(seller_mbuyreq_id)
 {
   alert(seller_mbuyreq_id);
