@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+  
    class Admin_model extends CI_Model {	
   
 		  function __construct() { 
@@ -477,12 +477,73 @@ $this->db->where('a.buyerid', $id);
 			}
 			
 			
+			function getdatafromtablesellerneg($id) {
+			$id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.*,
+					b.*');
+					$this->db->where('b.sellerid', $id);
+					//$this->db->where('a.sellerpostproduct_id', $sellerpostproduct_id);					 
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');	
+				 					
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			function getdatafromtable_buyers2($id,$buyerid) {
+			// $id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.*,
+					b.buyerid, 			
+					b.bquantity,
+					b.bprice,
+					b.bunits,				 
+					b.bsupplyability,
+					b.sellapproval,
+					b.sellerid,
+					c.*');
+					$this->db->where('b.buyerid', $buyerid);
+					$this->db->where('a.id', $id);				 			
+					$this->db->join('selquotenegotate c', 'b.sellerpostproduct_id=c.sellerpostproduct_id',
+					'left outer');
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');					
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			} 
+			
+			function getdatafromtable_buyerneg($buyerid) {
+			// $id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.*,
+					b.* ');
+					$this->db->where('b.buyerid', $buyerid);
+					//$this->db->where('b.sellerpostproduct_id', $sellerpostproduct_id);				 			
+			 
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');					
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
 			
 			
-			
-			
-			
-			
+			 
 			function getdatafromtable_seller2($id,$buyerid) {
 			// $id = $this->session->userdata('username');  
 			$this->db->select('
@@ -493,9 +554,8 @@ $this->db->where('a.buyerid', $id);
 					b.bprice,
 					b.bunits,				 
 					b.bsupplyability,
-					b.sellapproval
-					 
-					');
+					b.sellapproval,
+					b.sellerid');
 					$this->db->where('b.buyerid', $buyerid);
 					$this->db->where('a.id', $id);				 			
 					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',

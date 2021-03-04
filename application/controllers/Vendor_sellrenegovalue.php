@@ -31,13 +31,13 @@ class Vendor_sellrenegovalue extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$sellerpostproduct_id = $this->uri->segment(3);
+		$id = $this->uri->segment(3);
 		
-		$sellerid = urldecode(($this->uri->segment(4)));
+		 //print_r($sellerpostproduct_id); die;
 		
-		$active1 = array('sellerid'=>$sess['sessi'],'sellapproval'=>false);
+		//$active1 = array('sellerid'=>$sess['sessi'],'sellapproval'=>false);
 	
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
+		$query['sqldata'] = $this->Admin_model->getdatafromtablesellerneg($id);
 		
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));

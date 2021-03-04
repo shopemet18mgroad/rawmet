@@ -73,7 +73,9 @@
 		
 		
 		
-</td>		
+</td>	
+
+<td>/</td>	
 		
 		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
 		
