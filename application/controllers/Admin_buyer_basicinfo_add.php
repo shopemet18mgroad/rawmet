@@ -22,6 +22,7 @@ class Admin_buyer_basicinfo_add extends CI_Controller {
 	{
 		
             $bname = $this->input->post('bname');
+			 $brefer = $this->input->post('brefer');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$bcompanytype = $this->input->post('bcompanytype');
 			$bcontactperson = $this->input->post('bcontactperson');
@@ -39,7 +40,7 @@ class Admin_buyer_basicinfo_add extends CI_Controller {
 			$bpincode = $this->input->post('bpincode');
 			
 			$this->load->model('Admin_model');
-			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'bpan' =>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode,'buyerid'=>$buyerid);
+			  $data2 = array('bname' => $bname,'brefer'=>$brefer, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword, 'brepeatpassword' => $brepeatpassword, 'bpan' =>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode,'buyerid'=>$buyerid);
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('buyer_register', $data2);
 		header('location: '.base_url().'admin_buyerreg/index/'.$datainserr);

@@ -66,7 +66,10 @@
 								<td>GST</td>
 								<td><?php echo $sqldata[0]->bgst;?></td>
 							</tr> 
-							
+								<tr>
+								<td>Reference Name</td>
+								<td><?php echo $sqldata[0]->brefer;?></td>
+							</tr> 
 
 						
 						</tbody>

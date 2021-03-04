@@ -127,6 +127,13 @@
 							<td class="btxt">Pincode:</td>
 							<td><input class="form-control w-50" type="text" id="bpincode" name="bpincode" ></td>
 						</tr> 
+						
+						<tr>
+							<td class="btxt">Reference Name:</td>
+							<td><input class="form-control w-50" type="text" id="brefer" name="brefer" ></td>
+						</tr>
+						
+						
 						 
 						
 						

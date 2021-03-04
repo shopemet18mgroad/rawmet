@@ -82,7 +82,10 @@
 								<td>PCB</td>
 								<td><?php echo $sqldata[0]->vpcb;?></td>
 							</tr> 
-
+<tr>
+								<td>Reference Name</td>
+								<td><?php echo $sqldata[0]->vrefer;?></td>
+							</tr> 
 						
 						</tbody>
 					</table>			

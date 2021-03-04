@@ -150,7 +150,11 @@
 						<tr>
 							<td class="btxt">Pincode:</td>
 							<td><input class="form-control w-50" type="text" id="vpincode" name="vpincode"></td>
-						</tr> 
+						</tr>
+						<tr>
+							<td class="btxt">Refence Name:</td>
+							<td><input class="form-control w-50" type="text" id="vrefer" name="vrefer"></td>
+						</tr>
 						 
 						
 						</tbody>

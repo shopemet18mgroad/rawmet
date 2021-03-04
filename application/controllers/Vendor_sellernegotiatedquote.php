@@ -33,7 +33,7 @@ class Vendor_sellernegotiatedquote extends CI_Controller {
 		$reqapproval = array('sellapproval'=>false);
 		
 		
-		$query = $this->Admin_model->getdatafromtable('quotes',$active1);
+		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
 		
 		
 		$adac['sqldata']= $query;

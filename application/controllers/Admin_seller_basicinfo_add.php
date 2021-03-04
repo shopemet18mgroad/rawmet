@@ -23,6 +23,7 @@ class Admin_seller_basicinfo_add extends CI_Controller {
 		
 
           $vname = $this->input->post('vname');
+		  $vrefer = $this->input->post('vrefer');
 			$vcompanyname = $this->input->post('vcompanyname');
 			$vcompanytype = $this->input->post('vcompanytype');
 			$dealer_type = $this->input->post('dealer_type');
@@ -45,7 +46,7 @@ class Admin_seller_basicinfo_add extends CI_Controller {
 
 		
 	 $this->load->model('Admin_model');
-			  $data2 = array('vname' => $vname, 'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype, 'vcontactperson' => $vcontactperson, 'vcontactnumber' => $vcontactnumber, 'vemail' => $vemail,'vusername'=> $vusername, 'vpassword' => $vpassword, 'vrepeatpassword' => $vrepeatpassword,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb ,'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate' => $vselectstate, 'vpincode' => $vpincode,'dealer_type'=>$dealer_type,'sellerid'=>$sellerid);
+			  $data2 = array('vname' => $vname,'vrefer'=>$vrefer,'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype, 'vcontactperson' => $vcontactperson, 'vcontactnumber' => $vcontactnumber, 'vemail' => $vemail,'vusername'=> $vusername, 'vpassword' => $vpassword, 'vrepeatpassword' => $vrepeatpassword,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb ,'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate' => $vselectstate, 'vpincode' => $vpincode,'dealer_type'=>$dealer_type,'sellerid'=>$sellerid);
 			 
 		$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('vendor_register', $data2);
