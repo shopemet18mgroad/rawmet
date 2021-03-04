@@ -2,7 +2,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendor_sellernegotiatedquote extends CI_Controller {
+class Customer_productnegotation extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,14 +23,15 @@ class Vendor_sellernegotiatedquote extends CI_Controller {
 	{
 		$this->load->model('Admin_model');
 		$this->load->library('session');
-		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
+		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
 			header('location: '.base_url().'login/index_error/'.$datainserr);
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('sellerid'=>$sess['sessi']);
+		$active1 = array('buyerid'=>$sess['sessi']);
 		$reqapproval = array('sellapproval'=>false);
+		
 		
 		
 		$query = $this->Admin_model->getdatafromtable('quotes',$active1);
@@ -41,9 +42,9 @@ class Vendor_sellernegotiatedquote extends CI_Controller {
 		
 		
 		
-		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/sellernegotiatedquote',$adac);
-		$this->load->view('vendor/footer');
+		$this->load->view('customer/header',$sess);
+		$this->load->view('customer/productnegotation',$adac);
+		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		
 			

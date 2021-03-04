@@ -29,16 +29,23 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 			die;
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('buyerid'=>$sess['sessi']);
-		
+		//$active1 = array('sellerid'=>$sess['sessi']);
 		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		$active = array('id'=>$id);
-		$query['sqldata'] = $this->Admin_model->getdatafromtable_buyer_seller($active);
-		//print_r($query['sqldata'] ); die;
+		//$reqapproval = array('sellapproval'=>false);
+		
+		
+		//$query = $this->Admin_model->getdatafromtable('selquotenegotate',$reqapproval);
+		
+		
+		//$adac['sqldata']= $query;
+		
+			//$active = array('vusername'=>$sess['sessi']);
+		//$adac['sess']=array('sessi'=>$this->session->userdata('username'));
 		
 		
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/sellernegotiatedquote',$query);
+		$this->load->view('customer/sellernegotiatedquote',$active);
 		$this->load->view('customer/footer');
 		$this->load->helper('url');
 		
@@ -49,14 +56,14 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 			
 	}
 	
-/* 		
+		
 	public function get_table(){
 		$datatoquerydb = $this->uri->segment(3);
 		$this->load->helper(array('url','html','date'));
 		//date_default_timezone_set('Asia/Kolkata');
 		//$time =  Date('Y-m-d H:i:s');
 		$this->load->model('Admin_model');
-		$data = $this->Admin_model->get_lookalike_buyer('sellerpostproduct','productname',$datatoquerydb);
+		$data = $this->Admin_model->get_lookalike('sellerpostproduct','productname',$datatoquerydb);
 		if(count($data)){
 			echo '<table class="table table-striped table-bordered table-sm text-center mt-5" width="100%" cellspacing="0">';
 			echo '<thead class="bg-primary text-white">';
@@ -86,7 +93,7 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 				echo '<td>'.$dat['price']."/".$dat['punits'].'</td>';
 				echo '<td>'.$dat['quantity']." ".$dat['units'].'</td>';
 				
-				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.($dat['id'])."/".($dat['buyerid']).'">';
+				echo '<td><a href="'.base_url().'customer_contactsupplier/index/'.$proid.'/'.($dat['vname']).'">';
 				echo '<button class="btn btn-info">Negotiate</button>';
 				echo '</a>';
 			
@@ -124,7 +131,7 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 
 
 
-	} */
+	}
 	
 	
 	
@@ -132,3 +139,78 @@ class Customer_sellernegotiatedquote extends CI_Controller {
 	}
 
 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
