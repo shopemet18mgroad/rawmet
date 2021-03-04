@@ -36,14 +36,14 @@ class Customer_renegotiation extends CI_Controller {
 			
 		
 		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-
+		$buyerid = $this->uri->segment(4);
 		$active = array('id'=>$id);
 		
 		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		$data['sqldata']= $query;
 		
-		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id);
+		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id,$buyerid);
 		
 		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3($id);
 		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id);

@@ -75,7 +75,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 			  
 				$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('quotes',$data2);
-			header('location: ./Customer_productnegotation/index/'.$datainserr);
+			header('location: ./Customer_renegotiation/index/'.$id.'/'.$buyerid);
 			//}
 
 			
@@ -95,7 +95,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 				
 				
 		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/productnegotation');
+		$this->load->view('customer/renegotiation');
 		$this->load->view('customer/footer');
 			 
 	 

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
    class Admin_model extends CI_Model {	
- 
+  
 		  function __construct() { 
 			 parent::__construct(); 
 			$this->load->database(); 
@@ -483,11 +483,11 @@ $this->db->where('a.buyerid', $id);
 			
 			
 			
-			function getdatafromtable_seller2($id) {
+			function getdatafromtable_seller2($id,$buyerid) {
 			// $id = $this->session->userdata('username');  
 			$this->db->select('
 					
-					a.id,
+					a.*,
 					b.buyerid, 			
 					b.bquantity,
 					b.bprice,
@@ -496,7 +496,7 @@ $this->db->where('a.buyerid', $id);
 					b.sellapproval
 					 
 					');
-					//$this->db->where('b.buyerid', $id);
+					$this->db->where('b.buyerid', $buyerid);
 					$this->db->where('a.id', $id);				 			
 					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
 					'left outer');			   
