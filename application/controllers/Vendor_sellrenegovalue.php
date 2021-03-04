@@ -1,8 +1,7 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class vendor_sellrenegovalue extends CI_Controller {
+class Vendor_sellrenegovalue extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,6 +20,8 @@ class vendor_sellrenegovalue extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->helper('url');
+		$this->load->library('session');
 		$this->load->model('Admin_model');
 		$this->load->library('session');
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
@@ -30,84 +31,63 @@ class vendor_sellrenegovalue extends CI_Controller {
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		
-		$active1 = array('sellerid'=>$sess['sessi']);
+		$sellerpostproduct_id = $this->uri->segment(3);
+		
+		$sellerid = urldecode(($this->uri->segment(4)));
+		
+		$active1 = array('sellerid'=>$sess['sessi'],'sellapproval'=>false);
+	
+		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
 		
 		
-		
-		
-		$query = $this->Admin_model->getdatafromtable('vend_renego',$active1);
-		
-		
-		$adac['sqldata']= $query;
-		
-		
+		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('vendor/header',$sess);
-		$this->load->view('vendor/sellrenegovalue',$adac);
+		$this->load->view('vendor/sellrenegovalue',$query);
 		$this->load->view('vendor/footer');
-		$this->load->helper('url');
+			}
 		
-			
-			
-		
-		}
-
-			
 	}
-	
-	public function approve_quote(){
+		
+		
+		public function approve_quotes(){
 			
-		$compnameurl = $this->uri->segment(3);
-		$compnameurl = urldecode($compnameurl);
-		$compnameurl2 = explode('|',$compnameurl);
-		//$compnameurl3 = explode('|',$compnameurl);
-		$compname = $compnameurl2[0];
-	
-		$comp = str_ireplace('-','/',$compnameurl2[1]);
-		//$com = urldecode($compnameurl3[2]);
 		$this->load->model('Admin_model');
 		
 		
-		//$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
+	
+		$buyerid = urldecode(($this->uri->segment(4)));
 
-		$retriveval = array('productid'=>$comp,'sellerid'=>$compname);
-		
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid);
+
+		//print_r($retriveval );die;
 		
 		$this->load->model('Admin_model');
-		$app= array('buyerapprove'=>true);
-		$query = $this->Admin_model->update_custom('selquotenegotate', $app, $retriveval, $retriveval);
-		if($retriveval){
-			echo "HI";
-		}else{
-			echo "BYE";
-		}
+		$app= array('sellapproval'=>true);
+		$query = $this->Admin_model->update_custom('quotes', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Vendor_sellrenegovalue/index/'.urldecode($productid)."/".urldecode($buyerid));
+		
+		die;
 	
 	}
-	
-	
+
 	public function reject(){
 		$this->load->helper('url');
-		$compnameurl = $this->uri->segment(3);
-		$compnameurl = urldecode($compnameurl);
-		$compnameurl2 = explode('|',$compnameurl);
-		//$compnameurl3 = explode('|',$compnameurl);
-		$compname = $compnameurl2[0];
+		$productid =urldecode(str_ireplace('-','/', $this->uri->segment(3)));
 	
-		$comp = str_ireplace('-','/',$compnameurl2[1]);
-		//$com = urldecode($compnameurl3[2]);
+		$buyerid = urldecode(($this->uri->segment(4)));
+
+		$retriveval = array('buyerid'=>$buyerid,'productid'=>$productid);
+
+		
+		
 		$this->load->model('Admin_model');
-		//$retrivevaltmp = str_ireplace('-','/',$this->uri->segment(3));
-		
-		$data2 = array('buyerapprove'=>2);
-		$updatech = array('productid'=>$comp,'sellerid'=>$compname);
-		$this->load->model('Admin_model');
-		
-		$status = $this->Admin_model->update_custom('selquotenegotate',$data2,$updatech,$updatech);
-		
-		header('location: '.base_url().'customer_renegotiation/index/'.urlencode($retrivevaltmp3));
+		$app= array('sellapproval'=>2);
+		$query = $this->Admin_model->update_custom('quotes', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Vendor_sellrenegovalue/index/'.urldecode($productid)."/".urldecode($buyerid));
 		
 		die;
 	}
-		
-	}
+	
 
-		
+}

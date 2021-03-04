@@ -76,6 +76,13 @@
 								<td>
 			
 							</tr> 
+							<tr>
+								<td>Reference Name</td>
+								<td><input class="form-control w-50" type="text" id="vrefer" name="vrefer" value="<?php echo $sqldata[0]->vrefer; ?>"></td>
+								<td>
+			
+							</tr> 
+
 
 						
 						</tbody>

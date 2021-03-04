@@ -98,21 +98,7 @@
       </li>
       
       
-       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment10" aria-expanded="true" aria-controls="collapseUtilities">
-      
-	         <i class="fa fa-book" aria-hidden="true"></i>
-	    
-          <span>Quotes Negotiatation</span></a>
-		 <div id="payment10" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_renegotation1">Ongoing Negotiatation</a>
-         
-			<!--<a class="collapse-item" href="<?php echo base_url();?>vendor_req_renego_status">Approved Re-Negotiation</a>
-			<a class="collapse-item" href="<?php echo base_url();?>Vendor_buyer_finalized_reqPrice">Buyer's Finalized Price</a>-->
-          </div>
-        </div>
-      </li> 
+       
       
       
       
@@ -179,12 +165,13 @@
           <span>Quotes Negotiation</span></a>
 		 <div id="collapseProduct" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_custquoteapproval">Ongoing Negotiation</a>
-           
+           <!-- <a class="collapse-item" href="<?php //echo base_url();?>vendor_custquoteapproval">Ongoing Negotiation</a>-->
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_sellrenegovalue">My Re-Negotiated <br>Value</a>
 			<a class="collapse-item" href="<?php echo base_url();?>vendor_sellernegotiatedquote">My Negotiated <br>Value</a>
 			
 			 <a class="collapse-item" href="<?php echo base_url();?>Vendor_custrenegovalue">Ongoing Re-Negotiation</a>
-           <a class="collapse-item" href="<?php echo base_url();?>vendor_sellrenegovalue">My Re-Negotiated <br>Value</a>
+             
+           
           </div>
         </div>
       </li>

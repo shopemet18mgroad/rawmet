@@ -23,6 +23,7 @@ class Admin_seller_basicinfo_update extends CI_Controller {
 	{
 		//$this->load->library('fileupload');
 		$sellerid = $this->input->post('sellerid');
+		$vrefer = $this->input->post('vrefer');
 		$vname = $this->input->post('vname');
 		$vcompanyname = $this->input->post('vcompanyname');
 		$vcompanytype = $this->input->post('vcompanytype');
@@ -41,7 +42,7 @@ class Admin_seller_basicinfo_update extends CI_Controller {
 		$vpincode  = $this->input->post('vpincode');
 	
 			$this->load->model('Admin_model');
-			 $data2 = array('vcompanyname' => $vcompanyname,'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
+			 $data2 = array('vrefer'=>$vrefer,'vcompanyname' => $vcompanyname,'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 
 	'vcontactnumber'=>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,
 	'vemail'=> $vemail ,'vusername' => $vusername,'vname'=>$vname,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,

@@ -64,7 +64,12 @@
 			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
 			
-			<td style="color:orange;" ><b><?php  if($row->buyerapprove == 0) {echo 'Pending';}else if($row->buyerapprove == 2) {echo 'Rejected';}else if($row->buyerapprove == 1) {echo 'Approved!';}?></b></td>
+			<td style="color:orange;" ><b><?php  if($row->buyerapprove == 0) {echo 'Pending';}else if($row->buyerapprove == 2) {echo 'Rejected';}else if($row->buyerapprove == 1) {echo 'Approved!';}?></b>
+			
+			
+			
+			<a href="<?php  echo base_url()."vendor_custquoteapproval/index/".$row->sellerpostproduct_id."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-success btn-sm">Negotiate</button></a>	
+			</td>
 			
 					
 		

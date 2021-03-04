@@ -6,8 +6,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">My Re-Negotiated Value
-			</h1>
+            <h1 class="h3 mb-0 text-gray-800">Ongoing Negotiation</h1>
             
           </div>
 
@@ -21,60 +20,55 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr> 
-         <th>Sl.No.</th>
-	        <th>Seller Id</th>
+      <tr>   <th>Sl.No.</th>
+	        <th>Image</th>
 			<th>Buyer Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
-			<th>Category</th>
-			<th  style="color:orange;">Seller Base Quantity</th>
-			<th  style="color:orange;">Seller Base Price</th>
 			
-			<th style="color:green;">Buyer Negotiated Quantity</th>
-			<th style="color:green;">Buyer Negotiated Price</th>
-			<th style="color:orange;">Seller Negotiated price</th>
-			<th style="color:green;">Buyer Re-Negotiated price</th>
-			<th style="color:green;">Buyer Re-Negotiated Quantity</th>
-			<th style="color:orange;">Your Re-Negotiated price</th>
-			<th>Action</th>	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	        
-     
+			
+			<th>Category</th>
+			<th>Location</th>
+		
+			<th>Supplier Price</th>
+			<th>Supply Ability</th>
+			<th style="color:orange;">Buyer Price</th>
+			<th style="color:orange;">Buyer Quantity</th>
+			
+			<th>Action</th>
+      </tr>
     </thead>
     <tbody>
-	  <?php  $count = 1;?>
+	<?php  $count = 1;?>
 	 <?php foreach($sqldata as $row){?>
       <tr>
-	  <?php $proid = str_ireplace('/','-',$row->productid);
+	  <?php $proid =str_ireplace('/','-',$row->productid);
 				?>
-				<?php $prodid = str_ireplace('/','-',$row->productid);?>
-		     <td><?php echo $count;?></td>
-			 <td><?php echo $row->sellerid;?></td>
+				<td><?php echo $count;?></td>  
+		<td><?php $img = unserialize($row->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
 			<td><?php echo $row->buyerid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-				<td><?php echo $row->price."/"; echo $row->punits;?></td>
-				<td><?php echo $row->quantity.""; echo $row->units;?></td>
+				<td><?php echo $row->pcities;?></td>
+			
+			<td><?php echo $row->price."/"; echo $row->punits;?></td>
+			<td><?php echo $row->quantity." "; echo $row->units;?></td>
+		     <td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
-			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
-			<td><?php echo $row->selprice."/"; echo $row->sunits;?></td>
-			<td><?php echo $row->brenegoprice."/"; echo $row->brenegounit;?></td>
-			<td><?php echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;?></td>
-			<td><?php echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;?></td>	
-			<td style="color:orange;" ><b><?php  if($row->custapprove == 0) {echo 'Pending';}else if($row->custapprove == 2) {echo 'Rejected';}else if($row->custapprove == 1) {echo 'Approved!';}?></b></td>
-      </tr>    
-  <?php $count++;?>	  
+			
+						
+			
+		<td>	
+	
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selnego()">Approve </button></a>
+					
+		<center><a href="<?php echo base_url()."vendor_sellerquotenego/index/".urldecode($proid)."/".urldecode($row->buyerid)."/".urldecode($row->sellerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Negotiate</a></center>
+		
+		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
+      </tr> 
+<?php $count++;?>	  
      <?php }?>	
     </tbody>
   </table>

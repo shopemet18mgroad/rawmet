@@ -112,6 +112,9 @@
 					<!--<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php //echo $sqldata[0]->bunits;?>">-->
 							
 								<!--<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php //echo $sqldata[0]->supplyunits;?>">-->
+								
+								
+								<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo $sqldata[0]->id;?>">	
 						
 							<p style="color:green"><b>Quantity:</b><?php echo $sqldata[0]->bquantity; echo $sqldata[0]->bsupplyability;?></p>
 							<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo $sqldata[0]->bquantity;?>">

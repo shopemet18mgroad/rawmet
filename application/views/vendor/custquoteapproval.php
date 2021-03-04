@@ -50,7 +50,7 @@
 		   
 		   
 		   
-<form action="<?php echo base_url();?>Vendor_add_negotiate" method="POST" enctype="multipart/form-data">
+
        <tbody>
 	   
 	    <tr  style="text-align:center;">
@@ -75,7 +75,13 @@
 		
 </td>		
 		
+		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
 		
+<b><?php  if($sqldata3[0]->buyerapprove == 0) {echo 'Pending';}else if($sqldata3[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata3[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
+		
+		
+		
+		</td>
 		
 		
 		
@@ -85,92 +91,7 @@
 
 
 				</div>
-	<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo  $sqldata[0]->productname;?>">	
 	
-	
-	<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">
-	
-	
-	
-	
-			
-  <input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
-								
- <input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
-				
-	<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sessi;?>">
-								
-								
-	<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo  $sqldata[0]->category;?>">
-								
-								
-<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo  $sqldata[0]->companyname;?>">
-								
-								
-									
-<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
-								
-<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
-<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">
-					
-<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo  $sqldata[0]->price;?>">
-<input type="hidden" class="form-control" id="punits" name="punits"  value="<?php echo  $sqldata[0]->punits;?>">
-<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="<?php echo  $sqldata[0]->supplyability;?>">
-<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo  $sqldata[0]->supplyunits;?>">
-<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
-<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
-								
-								
-								
-<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo  $sqldata[0]->quantity;?>">
-<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
-<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
-<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo  $sqldata2[0]->bquantity;?>">
-<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo  $sqldata2[0]->bsupplyability;?>">
-<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo  $sqldata2[0]->bprice;?>">
-<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo  $sqldata2[0]->bunits;?>">
- 		
-
-			<td style="width:290px">
-		<label class="col-sm-6 col-form-label"  for="name"><b>Your Price </b></label><br>
-					
-					<div class="form-row ml-2">
-
-								<input type="text" class="form-control col-sm-4 mr-10" name="selprice" placeholder="price" id="selprice" [(ngModel)]="person.name"/>/
-								
-	<div class="col-sm-4">  
-	
-	
-						<select class="form-control col-sm-0" id="sunits" name="sunits">
-						         <option value="KG">KG</option>
-								<option value="Metric Ton">Metric Ton</option>
-								<option value="Litre">Litre</option>
-								<option value="lot">lot</option>
-								<option value="Number">Number</option>
-								<option value="Meter">Meter</option>
-					
-				          </select>
-					
-						
-					
-		</div>	
-					
-						</div>
-							
-					
-					
-					
-					
-					
-					
-									
-							
-									<center><input type="submit" name="submit" onclick="" role="submit" value="Submit" class="btn btn-info btn-sm  mt-3" style="font-size:13px" ></center>
-							
-								</td>
-		
-		
-		</form>
 			
 
 		</tr>
@@ -178,14 +99,7 @@
 	
 	   <tr style="text-align:center;">
 	   		
-	
-<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
-		
-<b><?php  if($sqldata3[0]->buyerapprove == 0) {echo 'Pending';}else if($sqldata3[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata3[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
-		
-		
-		
-		</td>
+
 		
 		
 		

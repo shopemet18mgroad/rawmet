@@ -60,6 +60,12 @@
 								<td>
 			
 							</tr> 
+							<tr>
+								<td>Reference Name</td>
+								<td><input class="form-control w-50" type="text" id="brefer" name="brefer" value="<?php echo $sqldata[0]->brefer; ?>"></td>
+								<td>
+			
+							</tr>
 
 						
 						</tbody>
