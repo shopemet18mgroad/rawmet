@@ -45,9 +45,11 @@ class Vendor_custquoteapproval extends CI_Controller {
 		
 		$data['sqldata2'] = $this->Admin_model->getdatafromtable_buyerneg($buyerid);
 		
-		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3($id);
-		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id);
-		$data['sqldata5'] = $this->Admin_model->getdatafromtable_seller5($id);
+
+		$data['sqldata3'] = $this->Admin_model->getdatafromtable_quote_buyer2($id);
+		$data['sqldata4'] = $this->Admin_model->getdatafromtable_quote_seller4($id);
+		$data['sqldata5'] = $this->Admin_model->getdatafromtable_quote_seller5($id);
+
 		
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
