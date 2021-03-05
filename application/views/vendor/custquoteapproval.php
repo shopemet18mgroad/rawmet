@@ -1,4 +1,4 @@
-
+		
         <!-- Begin Page Content -->
      <div class="container-fluid">
 
@@ -75,9 +75,6 @@
 		
 </td>	
 
-<<<<<<< HEAD
-<td>/</td>	
-=======
 <td>
 
 <form class="user" action="<?php echo base_url();?>Vendor_add_negotiate" method="POST" enctype="multipart/form-data">
@@ -178,7 +175,6 @@
 
 
 </td>	
->>>>>>> 12e39ab0c7947994368648d41a43b449d1ea50a1
 		
 		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
 		
@@ -397,7 +393,7 @@ echo '';
 		
 		</td>
 		
-		--
+	
 		
 	<form class="user" action="<?php echo base_url();?>vendor_add_renegotiate" method="POST" enctype="multipart/form-data">
 			
@@ -507,7 +503,7 @@ echo '';
 	   
 	   		
  		
-	--
+
 		
 			
 		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->sellrenegounits;?></b></small><br/>
@@ -765,3 +761,19 @@ echo '';
 							
 							
 	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

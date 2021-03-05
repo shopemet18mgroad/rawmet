@@ -401,6 +401,71 @@ $this->db->where('a.buyerid', $id);
 			
 			
 			
+			function getdatafromtable_quote_seller5($id) {
+			 //$id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.id,					 			
+					b.bquantity,
+					b.bprice,
+					b.bunits,				 
+					b.bsupplyability,
+					c.selprice,
+					c.sunits,
+					c.sellerpostproduct_id,
+					d.sellrenegoprice,
+					d.sellrenegounits,
+					d.custapprove,
+					d.sellerpostproduct_id
+					 
+					');
+					$this->db->where('a.id', $id);				 			
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');
+					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
+					'left outer');
+				$this->db->join('vend_renego d', 'a.id=d.sellerpostproduct_id',
+					'left outer');
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			function getdatafromtable_seller3($id) {
 			 //$id = $this->session->userdata('username');  
 			$this->db->select('
@@ -428,6 +493,55 @@ $this->db->where('a.buyerid', $id);
 					return $result;
 		
 			}
+			
+			
+			
+			function getdatafromtable_quote_buyer2($id) {
+			 //$id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.id,					 			
+					b.bquantity,
+					b.bprice,
+					b.bunits,				 
+					b.bsupplyability,
+					c.selprice,
+					c.sunits,
+					c.sellerpostproduct_id,
+					c.buyerapprove
+					 
+					');
+					$this->db->where('a.id', $id);				 			
+					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					'left outer');
+					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
+					'left outer');
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 			
@@ -593,6 +707,33 @@ $this->db->where('a.buyerid', $id);
 		
 			}
 			
+				
+			function getdatafromtable_quote_seller4($id) {
+			 //$id = $this->session->userdata('username');  
+			$this->db->select('
+					
+					a.id,
+					 			
+					b.brenegoquantity,
+					b.brenegoquantityunit,
+					b.brenegoprice,				 
+					b.brenegounit,
+					 b.status,
+					 b.selapprove
+					');
+					$this->db->where('a.id', $id);				 			
+					$this->db->join('cust_renego b', 'a.id=b.sellerpostproduct_id',
+					'left outer');			   
+					$query = $this->db->get("sellerpostproduct a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}	
+				
+				
+				
 			
 			
 			
