@@ -292,7 +292,7 @@
 		 
 		 <div class="form-inline">
 		 <div class="col-md-8">
-
+<p style="font-size:12px;font-weight-bold">Seller Id: <?php echo  $sqldata2[0]->sellerid;?> </p>
  <p style="font-size:12px;font-weight-bold">Category: <?php echo  $sqldata2[0]->category;?> </p> <p style="font-size:12px;font-weight-bold"> Posted Date: <?php echo  $sqldata2[0]->datetime;?> </p>				
  <p style="font-size:12px;font-weight-bold"> Estimated Delivery:  <?php echo  $sqldata2[0]->estdeltime;?></p>	 
  <p style="font-size:12px;font-weight-bold"> Validity Till:  <?php echo  $sqldata2[0]->productvalidityto;?> </p>	
