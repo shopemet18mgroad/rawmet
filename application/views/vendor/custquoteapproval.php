@@ -75,7 +75,110 @@
 		
 </td>	
 
+<<<<<<< HEAD
 <td>/</td>	
+=======
+<td>
+
+<form class="user" action="<?php echo base_url();?>Vendor_add_negotiate" method="POST" enctype="multipart/form-data">
+			
+				
+				
+
+<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">
+<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
+
+<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sqldata2[0]->buyerid;?>">
+
+
+							
+             <div class="form-row mt-2">
+              <label class="col-sm-6 col-form-label"  for="name"><b>Your Price </b></label>
+                <input type="text" class="form-control col-sm-2 mr-2" name="selprice" placeholder="price" id="selprice" [(ngModel)]="person.name"/>/
+                   <div class="col-sm-3">  
+						<select class="form-control col-sm-0" id="sunits" name="sunits">
+						          <option value="KG">KG</option>
+								<option value="Metric Ton">Metric Ton</option>
+								<option value="Litre">Litre</option>
+								<option value="lot">lot</option>
+								<option value="Number">Number</option>
+								<option value="Meter">Meter</option>
+					
+				            </select>
+					
+						
+					
+					             </div>
+			</div>
+<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="submit" id= "submit" role="submit"  onclick= "">Submit</a>
+<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="submit" id= "submit" role="submit">Cancel</a>
+						
+						
+
+							
+							      
+							
+				
+					
+					
+				  	
+						
+						
+							  
+         
+						
+                </form>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</td>	
+>>>>>>> 12e39ab0c7947994368648d41a43b449d1ea50a1
 		
 		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
 		
