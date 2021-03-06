@@ -51,8 +51,25 @@ class Vendor_add_negotiate extends CI_Controller {
             $id = $this->input->post('id');
 			$sellerid = $this->input->post('sellerid');
 			$buyerid = $this->input->post('buyerid');
-			
-			
+			$category = $this->input->post('category');
+			$productname = $this->input->post('productname');
+			$productid = $this->input->post('productid');
+			$companyname = $this->input->post('companyname');
+			$category = $this->input->post('category');
+		
+			$price = $this->input->post('price');
+			$punits = $this->input->post('punits');
+	        $units = $this->input->post('units');
+			$quantity = $this->input->post('quantity');
+	     
+		    $pstates = $this->input->post('pstates');
+			$pcities = $this->input->post('pcities');
+		
+			$bquantity = $this->input->post('bquantity');
+		    $bprice= $this->input->post('bprice');			 
+		    $bunits = $this->input->post('bunits');
+			$bsupplyability = $this->input->post('bsupplyability');
+			$sellapproval = $this->input->post('sellapproval');
 			
 			$selprice= $this->input->post('selprice');
 			$sunits = $this->input->post('sunits');
@@ -67,7 +84,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			
 			//$data1 = array('busername'=>$busername);
 			
-			$data2 = array('sellerpostproduct_id'=>$id,'sellerid'=>$sellerid,'buyerid'=>$buyerid);
+			$data2 = array('sellerpostproduct_id'=>$id,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'price'=>$price,'units'=> $units,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'uploadproductimage'=>$uploadproductimage,'bsupplyability' => $bsupplyability,'sellapproval' =>$sellapproval,'selprice'=>$selprice,'sunits' =>$sunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'quantity'=>$quantity,'punits' =>$punits);
 			
 			/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('selquotenegotate', $data1)){
@@ -79,7 +96,7 @@ class Vendor_add_negotiate extends CI_Controller {
 			  
 		$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('selquotenegotate',$data2);
-			header('location: '.base_url().'vendor_custquoteapproval/index/'.$id.'/'.$buyerid);
+			header('location: '.base_url().'vendor_sellernegotiatedquote/index/'.$id.'/'.$buyerid);
 			//}
 		
 
