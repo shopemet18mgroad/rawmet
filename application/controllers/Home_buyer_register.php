@@ -56,7 +56,7 @@ class Home_buyer_register extends CI_Controller {
         $this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
        
-		$this->load->view('header',$sess);
+		//$this->load->view('header',$sess);
 		$this->load->view('buyer_register');
 	  
     }

@@ -61,17 +61,18 @@
 <td style="font-size:15px; width:150px;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. " / " .$sqldata2[0]->bsupplyability;?></b></small><br/>
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bprice. " / " .$sqldata2[0]->bunits;?></b></small><br/>
 		
-	
 		
+	<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata2[0]->id.'/'.$sqldata2[0]->sellerid.'/'.$sqldata2[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>	
 		
-	
-		
-	<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>	
-		
-		
-		
-		
-		
+
+<br/>
+
+	<button type="button" class="btn btn-outline-primary  btn-sm">
+			
+	<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
+	</button>
+			
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>	
 		
 </td>	
 
@@ -112,59 +113,26 @@
 
 
 							
-             <div class="form-row mt-2">
-              <label class="col-sm-6 col-form-label"  for="name"><b>Your Price </b></label>
-                <input type="text" class="form-control col-sm-2 mr-2" name="selprice" placeholder="price" id="selprice" [(ngModel)]="person.name"/>/
-                   <div class="col-sm-3">  
-						<select class="form-control col-sm-0" id="sunits" name="sunits">
-						          <option value="KG">KG</option>
-								<option value="Metric Ton">Metric Ton</option>
-								<option value="Litre">Litre</option>
-								<option value="lot">lot</option>
-								<option value="Number">Number</option>
-								<option value="Meter">Meter</option>
-					
-				            </select>
-					
-						
-					
-					             </div>
-			</div>
-<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Submit</a>
-<button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2" name="submit" id= "submit" role="submit">Cancel</a>
+           
+              <center>
+                <input type="text" class="form-control col-sm-8 mt-4" name="selprice" placeholder="price" id="selprice" /> 
+			</center>
+			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiated</a>
+		
+
+ 
 						
 </form>	
 
-
-
-
-
-
-
-
-
-
-
-
-
 </td>	
 		
-		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
+		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata30[0]->selprice. " / " .$sqldata30[0]->sunits;?></b></small><br/>
 		
-<b><?php  if($sqldata3[0]->buyerapprove == 0) {echo 'Pending';}else if($sqldata3[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata3[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
-		
-		
-		
+ 
+		<b><?php  if($sqldata3[0]->buyerapprove == 0) {echo 'Pending';}else if($sqldata3[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotationpur/auc_no/'.$sqldata3[0]->id.'/'.$sqldata3[0]->sellerid.'/'.$sqldata3[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata3[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
+	
 		</td>
-		
-		
-		
-		
-		
-		
-
-
-				</div>
+</div>
 	
 			
 
@@ -173,97 +141,74 @@
 	
 	   <tr style="text-align:center;">
 	   		
-
-		
-		
-		
-		
-		
-		
-
-		<td style="font-size:15px; width:150px;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoquantity. " / " .$sqldata4[0]->brenegoquantityunit;?></b></small><br/>
+<td style="font-size:15px; width:150px;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoquantity. " / " .$sqldata4[0]->brenegoquantityunit;?></b></small><br/>
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoprice. " / " .$sqldata4[0]->brenegounit;?></b></small><br/>	
-		
 	
-		<b><?php  if($sqldata4[0]->selapprove == 0) {echo 'Pending';}else if($sqldata4[0]->selapprove == 2) {echo 'Rejected';}else if($sqldata4[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
-	
+
+<b><?php  if($approve_buyer[0]->selapprove == 0) {echo 'Pending';}else if($approve_buyer[0]->selapprove == 2) {echo 'Rejected';}else if($approve_buyer[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_renegovaluequotation/auc_no/'.$approve_buyer[0]->id.'/'.$approve_buyer[0]->sellerid.'/'.$approve_buyer[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($approve_buyer[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
+
+
+	<button type="button" class="btn btn-outline-primary  btn-sm">
+			
+	<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_renegoquotes/".$sqldata4[0]->sellerpostproduct_id."/".$sqldata4[0]->buyerid;?>"><i class='fas fa-check'></i></a>
+	</button><br />
+			
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>		
+	</td>
 		
 		
-		</td>
-		
-		
-		<td>
-	  
-		
-		 
+<td> 
+
+<form class="user" action="<?php echo base_url();?>vendor_add_renegotiate" method="POST" enctype="multipart/form-data">
+			
+				
+				
+<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo $sqldata[0]->productname;?>">
+<input type="hidden" class="form-control" id="description" name="description"  value="<?php echo  $sqldata[0]->description;?>">
+<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">
+<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
+<input type="hidden" class="form-control" id="category" name="category"  value="<?php echo $sqldata[0]->category;?>">
+<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo $sqldata[0]->productid;?>">
+<input type="hidden" class="form-control" id="companyname" name="companyname"  value="<?php echo $sqldata[0]->companyname;?>">
+<input type="hidden" class="form-control" id="price" name="price"  value="<?php echo $sqldata[0]->price;?>">
+<input type="hidden" class="form-control" id="punits" name="punits"  value="<?php echo $sqldata[0]->punits;?>">
+<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo $sqldata[0]->quantity;?>">
+<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo $sqldata[0]->units;?>">
+<input type="hidden" class="form-control" id="pcities" name="pcities"  value="<?php echo $sqldata[0]->pcities;?>">
+<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo $sqldata[0]->pstates;?>">
+<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
+
+<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="<?php echo  $sqldata[0]->estdeltime;?>">
+
 					
-								 
-								 
-								 
-								 
-								 
-								 
-								 
-								 
-								 
-								 
-								 
-								 
-								 
+<input type="hidden" class="form-control" id="bquantity" name="bquantity"  value="<?php echo $sqldata2[0]->bquantity;?>">
+<input type="hidden" class="form-control" id="bsupplyability" name="bsupplyability"  value="<?php echo $sqldata2[0]->bsupplyability;?>">
+<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sqldata2[0]->buyerid;?>">
+<input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata2[0]->bprice;?>">
+<input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata2[0]->bunits;?>">
+
 							
-								</td>
-		
-		
-		
-	
-	 
-	
-		
-		
-		</td>
-		
-		 
-	
+<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
+<input type="hidden" class="form-control" id="brenegoquantity" name="brenegoquantity"  value="<?php echo $sqldata4[0]->brenegoquantity;?>">
+<input type="hidden" class="form-control" id="brenegoquantityunit" name="brenegoquantityunit"  value="<?php echo $sqldata4[0]->brenegoquantityunit;?>">
 
-				
-				
-			
+<input type="hidden" class="form-control" id="brenegoprice" name="brenegoprice"  value="<?php echo $sqldata4[0]->brenegoprice;?>">
+<input type="hidden" class="form-control" id="brenegounit" name="brenegounit"  value="<?php echo $sqldata4[0]->brenegounit;?>">
 
-	  
-	 
+			<center>
+                <input type="text" class="form-control col-sm-8 mt-4" name="sellrenegoprice" placeholder="price" id="sellrenegoprice" /> 
+			</center>
+			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiated</a>
+		
 
-   	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-			
+ 
+						
+</form>	
 
-			 
-	
-	
-	
-	   
-	   		
- 		 
-		
-			
-		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->sellrenegounits;?></b></small><br/>
+</td>
+<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->sellrenegounits;?></b></small><br/>
 
-	<b><?php  if($sqldata5[0]->custapprove == 0) {echo 'Pending';}else if($sqldata5[0]->custapprove == 2) {echo 'Rejected';}else if($sqldata5[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata5[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
+	<b><?php  if($final_quote[0]->custapprove == 0) {echo 'Pending';}else if($final_quote[0]->custapprove == 2) {echo 'Rejected';}else if($final_quote[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation5/auc_no/'.$final_quote[0]->id.'/'.$final_quote[0]->buyerid.'/'.$final_quote[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($final_quote[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	
 		</td>
 		

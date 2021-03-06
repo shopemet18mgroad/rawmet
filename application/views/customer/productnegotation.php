@@ -69,7 +69,7 @@
 			
 			
 			
-			<a href="<?php  echo base_url()."Customer_renegotiation/index/".$row->sellerpostproduct_id."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-success btn-sm">Approve</button></a>
+			<a href="<?php  echo base_url()."Customer_renegotiation/index/".$row->sellerpostproduct_id."/".urldecode($row->buyerid);?>"><u>Negotiate</u></a>
 	
 			
 			

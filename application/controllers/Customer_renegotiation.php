@@ -42,13 +42,31 @@ class Customer_renegotiation extends CI_Controller {
 		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		$data['sqldata']= $query;
-		
+		$data['approve_buyer'] = $this->Admin_model->getdatafromtable_approve_buyer2($id,$buyerid);
 		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id,$buyerid);
 		
-		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3($id);
-		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id);
-		$data['sqldata5'] = $this->Admin_model->getdatafromtable_seller5($id);
+		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3($id,$buyerid);
+		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id,$buyerid);
 		
+		$data['sqld'] = $this->Admin_model->getdatafromtable_buy_sel($id,$buyerid);
+		$data['sqldata5'] = $this->Admin_model->getdatafromtable_forth_renego($id,$buyerid);
+		$data['forth_renego2'] = $this->Admin_model->getdatafromtable_forth_renego2($id,$buyerid);
+		
+		$data['final_quotebyr'] = $this->Admin_model->getdatafromtable_final_quotebyr($id,$buyerid);
+		
+		$data['buy_quot'] = $this->Admin_model->getdatafromtable_buy_quot($id,$buyerid);
+		$data['approve_buyer2'] = $this->Admin_model->getdatafromtable_approve_buyer2($id,$buyerid);
+		
+		$data['frst_qut'] = $this->Admin_model->getdatafromtable_frst_qut();
+		$data['sce_qut'] = $this->Admin_model->getdatafromtable_sce_qut();
+		$data['thrd_qut']= $this->Admin_model->getdatafromtable_thrd_qut();	
+		$data['forth_qut'] = $this->Admin_model->getdatafromtable_forth_qut();
+		
+		 
+	
+		//print_r($query); die;
+		
+		 
 		
 		$adac['sqldata']= $query;
 		
@@ -63,27 +81,47 @@ class Customer_renegotiation extends CI_Controller {
 	}
 	}
 	
-		 function approveProduct(){
-		$this->load->model('Admin_model');
-		$sellerpostproduct_id = $this->uri->segment(3);
-		$sellerpostproduct_id = $this->input->post('sellerpostproduct_id');		
-		//$active = array('seller_mbuyreq_id'=> $seller_mbuyreq_id1);
-		//$this->db->where('buyer_req_response',$active);
-		//$data['status'] = 1;
-		$data2 = array('buyerapprove'=>1);
-		//$data = array('status'=>1);
-		$comp = array('sellerpostproduct_id'=>$sellerpostproduct_id);
-		//$comp2 = array('seller_mbuyreq_id'=>$id);
-		//$this->Admin_model->update_custom('buyer_req_response',$data,$comp2,$comp2);
-		$this->Admin_model->update_custom('selquotenegotate',$data2,$comp,$comp);
-		exit;
+
+	
 		
-		 
+	
+	public function approve_requotes(){
+			
+		$this->load->model('Admin_model');
+		//$sellerpostproduct_id =$this->uri->segment(3);
+		$buyerid = $this->uri->segment(4);
+		$sellerpostproduct_id = $this->uri->segment(3);
+		$retriveval = array('buyerid'=>$buyerid,'sellerpostproduct_id'=>$sellerpostproduct_id);
+
+		//
+		
+		$this->load->model('Admin_model');
+		$app= array('buyerapprove'=>true);
+		$query = $this->Admin_model->update_custom('selquotenegotate', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Customer_renegotiation/index/'.$sellerpostproduct_id."/".$buyerid);
+		
+		die;
+	
 	}
 	
+		public function approve_requotes_seller(){
+			
+		$this->load->model('Admin_model');
+		//$sellerpostproduct_id =$this->uri->segment(3);
+		$buyerid = $this->uri->segment(4);
+		$sellerpostproduct_id = $this->uri->segment(3);
+		$retriveval = array('buyerid'=>$buyerid,'sellerpostproduct_id'=>$sellerpostproduct_id);
+
+		//
+		
+		$this->load->model('Admin_model');
+		$app= array('custapprove'=>true);
+		$query = $this->Admin_model->update_custom('vend_renego', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Customer_renegotiation/index/'.$sellerpostproduct_id."/".$buyerid);
+		
+		die;
 	
-	
-	
+	}
 	
 	
 	

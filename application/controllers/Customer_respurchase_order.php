@@ -42,7 +42,7 @@ class Customer_respurchase_order extends CI_Controller {
 			$this->load->model('Admin_model');
 			$sellerid = $this->input->post('sellerid');
 			$buyerid = $this->input->post('buyerid');
-			
+			$sellerpostproduct_id = $this->input->post('sellerpostproduct_id');
 			$v_id = $this->input->post('v_id');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
@@ -86,13 +86,13 @@ class Customer_respurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('sellerid' => $sellerid, 'buyerid' => $buyerid,'v_id'=>$v_id,'productname' => $productname,'productid'=> $productid,'category' => $category,'quantity' => $quantity,'units' => $units,'price' => $price,'punits' => $punits,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'uploadporder'=>$pic_array1,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits);
+			$data = array('sellerpostproduct_id'=>$sellerpostproduct_id,'sellerid' => $sellerid, 'buyerid' => $buyerid,'v_id'=>$v_id,'productname' => $productname,'productid'=> $productid,'category' => $category,'quantity' => $quantity,'units' => $units,'price' => $price,'punits' => $punits,'pcities' => $pcities,'bquantity' => $bquantity,'bunits'=>$bunits,'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'selprice' => $selprice,'sunits' => $sunits,'brenegoprice'=>$brenegoprice,'brenegounit'=>$brenegounit,'brenegoquantity'=>$brenegoquantity,'brenegoquantityunit'=>$brenegoquantityunit,'uploadporder'=>$pic_array1,'sellrenegoprice'=>$sellrenegoprice,'sellrenegounits'=>$sellrenegounits);
 			
 			$status = $this->Admin_model->insert('purchaseoder',$data);
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_finalrenegotiatedvalue');
+				header('location: ./Customer_renegotiation/index/'.$sellerpostproduct_id.'/'.$buyerid);
 				  }
 			
 	}

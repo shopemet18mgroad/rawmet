@@ -128,8 +128,8 @@ table-border
     <td><?php echo  $sqldata1[0]->productname;?></td>
     <td><?php echo  $sqldata1[0]->description;?></td>
     
-	<td><?php echo $sqldata1[0]->selprice.""; echo $sqldata1[0]->sunits;?></td>
-	<td><?php echo $sqldata1[0]->bquantity."/"; echo $sqldata1[0]->bunits;?></td>
+	<td><?php echo $sqldata1[0]->bquantity.""; echo $sqldata1[0]->sunits;?></td>
+	<td><?php echo $sqldata1[0]->selprice."/"; echo $sqldata1[0]->bunits;?></td>
     <td><?php echo $a = $sqldata1[0]->selprice*$sqldata1[0]->bquantity;?></td>
   </tr>
   

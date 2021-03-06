@@ -30,7 +30,7 @@
 			<th>Category</th>
 			<th>Location</th>
 		
-			<th>Supplier Price</th>
+			<th>Supplier base Price</th>
 			<th>Supply Ability</th>
 			<th style="color:orange;">Buyer Price</th>
 			<th style="color:orange;">Buyer Quantity</th>
@@ -62,11 +62,11 @@
 			
 		<td>	
 	
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selnego()">Approve </button></a>
+		<!--<a href="<?php // echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selnego()">Approve </button></a>-->
 					
 		<center><a href="<?php echo base_url()."vendor_custquoteapproval/index/".urldecode($row->sellerpostproduct_id)."/".urldecode($row->buyerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Negotiate</a></center>
 		
-		<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>
+		<!--<a href="<?php//  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>-->
       </tr> 
 <?php $count++;?>	  
      <?php }?>	

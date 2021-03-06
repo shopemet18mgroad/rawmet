@@ -43,7 +43,7 @@ class Customer_repurchase_order extends CI_Controller {
 			
 			$sellerid = $this->input->post('sellerid');
 			
-			
+			$sellerpostproduct_id = $this->input->post('sellerpostproduct_id');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
@@ -87,7 +87,7 @@ class Customer_repurchase_order extends CI_Controller {
 			//$this->load->model('Admin_model');
 			
 			
-				$data = array('sellerid' => $sellerid,'buyerid'=> $buyerid,'cust_id'=>$cust_id,'selprice'=>$selprice ,'sunits'=>$sunits,
+				$data = array('sellerpostproduct_id'=>$sellerpostproduct_id,'sellerid' => $sellerid,'buyerid'=> $buyerid,'cust_id'=>$cust_id,'selprice'=>$selprice ,'sunits'=>$sunits,
 			'productname' => $productname,'productid' => $productid, 'category' => $category,'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,'punits'=>$punits,
 			'bprice' => $bprice,'bsupplyability'=>$bsupplyability,'uploadporder'=>$pic_array1,'price'=>$price
 	,'units' =>	$units ,'quantity'  =>$quantity,'quantity'=>$quantity,'brenegoprice'=>$brenegoprice,
@@ -100,7 +100,7 @@ class Customer_repurchase_order extends CI_Controller {
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_renegovalue');
+				  header('location: ./Customer_renegotiation/index/'.$sellerpostproduct_id.'/'.$buyerid);
 				  }
 			
 	}

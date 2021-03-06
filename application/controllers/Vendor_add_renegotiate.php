@@ -105,7 +105,7 @@ $id = $this->input->post('id');
 			  
 		$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('vend_renego',$data2);
-			header('location: '.base_url().'vendor_custquoteapproval/index/'.$id);
+			header('location: '.base_url().'vendor_custquoteapproval/index/'.$id.'/'.$buyerid);
 			//}
 		
 

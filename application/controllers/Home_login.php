@@ -78,7 +78,7 @@ class Home_login extends CI_Controller {
 			  }
 			  die;
 		}else{
-			$this->load->view('header');
+			//$this->load->view('header');
 			$this->load->view('login');
 			$this->load->view('footer');
 		}
@@ -91,7 +91,7 @@ class Home_login extends CI_Controller {
 			echo '<script language="javascript">';
 			echo 'alert("'.$alertmsg.'")';  //not showing an alert box.
 			echo '</script>';
-			$this->load->view('header');
+			//$this->load->view('header');
 			$this->load->view('login');
 			$this->load->view('footer');
 			

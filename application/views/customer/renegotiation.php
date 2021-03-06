@@ -56,7 +56,13 @@
 					<td style="font-size:15px; width:150px;">Buyer's Quantity:<small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. " / " .$sqldata2[0]->bsupplyability;?></b></small><br/>
 		Buyer's price:<small style="color:orange;"><b><?php echo  $sqldata2[0]->bprice. " / " .$sqldata2[0]->bunits;?></b></small><br/>
 
-	<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>
+	<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_sellnegoquotation/auc_no/'.$sqldata2[0]->id.'/'.$sqldata2[0]->buyerid.'/'.$sqldata2[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#frist' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>
+	
+	
+	
+	
+		
+	
 	</td>
 	
 		
@@ -68,11 +74,20 @@
 		<small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
 		
 		
-		<b><?php  if($sqldata3[0]->buyerapprove == 0) {echo 'Pending';}else if($sqldata3[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata3[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
+		<b><?php  if($buy_quot[0]->buyerapprove == 0) {echo 'Pending';}else if($buy_quot[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotationpur/auc_no/'.$buy_quot[0]->id.'/'.$buy_quot[0]->buyerid.'/'.$buy_quot[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#scend' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($buy_quot[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
 		
 		
+		<br/>
 		
-		 <?php echo "<a href='javascript:approveProduct(\"".$sqldata3[0]->sellerpostproduct_id."\")'><i class='fas fa-check'></i></a>";?> 
+		<button type="button" class="btn btn-outline-primary  btn-sm">
+			
+	<a href="<?php  echo base_url()."Customer_renegotiation/approve_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
+	</button> 
+			
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
+	
+	 
+	
 		
 			
 							
@@ -94,7 +109,6 @@
 		
 		
 		
-
 
 				</div>
 				
@@ -211,15 +225,11 @@
 </td>
 		
 		
-		<td style="font-size:15px; width:150px;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoquantity. " / " .$sqldata4[0]->brenegoquantityunit;?></b></small><br/>
-		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoprice. " / " .$sqldata4[0]->brenegounit;?></b></small><br/>
+		<td style="font-size:15px; width:150px;">Buyers Quantity <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoquantity. " / " .$sqld[0]->brenegoquantityunit;?></b></small><br/>
+		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoprice. " / " .$sqld[0]->brenegounit;?></b></small><br/>
 		
 		
-		<b><?php  if($sqldata4[0]->selapprove == 0) {echo 'Pending';}else if($sqldata4[0]->selapprove == 2) {echo 'Rejected';}else if($sqldata4[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
-	
-	 
-	
-		
+<b><?php  if($approve_buyer2[0]->selapprove == 0) {echo 'Pending';}else if($approve_buyer2[0]->selapprove == 2) {echo 'Rejected';}else if($approve_buyer2[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_renegovaluequotation/auc_no/'.$approve_buyer2[0]->id.'/'.$approve_buyer2[0]->sellerid.'/'.$approve_buyer2[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>/ / <a href='' data-toggle='modal' data-target='#thrd' target='_blank'><i class='fa fa-upload'></i></a>  ";}else if($approve_buyer2[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
 		
 		</td>
  
@@ -232,19 +242,18 @@
 	
 		
 			
-		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / " .$sqldata5[0]->sellrenegounits;?></b></small><br/>
+		<td style="font-size:15px; width:150px;">Seller Re Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / " .$sqldata5[0]->sellrenegounits;?></b></small><br/>
 		
-		
-		
-		
-		
-		
-		
-		
-		
-	<b><?php  if($sqldata5[0]->custapprove == 0) {echo 'Pending';}else if($sqldata5[0]->custapprove == 2) {echo 'Rejected';}else if($sqldata5[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata5[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
+	<b><?php  if($final_quotebyr[0]->custapprove == 0) {echo 'Pending';}else if($final_quotebyr[0]->custapprove == 2) {echo 'Rejected';}else if($final_quotebyr[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation5/auc_no/'.$final_quotebyr[0]->id.'/'.$final_quotebyr[0]->sellerid.'/'.$final_quotebyr[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>/<a href='' data-toggle='modal' data-target='#forth' target='_blank'><i class='fa fa-upload'></i></a>";}else if($final_quotebyr[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
+	<br/>
+				
+	<button type="button" class="btn btn-outline-primary  btn-sm">
+			
+	<a href="<?php  echo base_url()."Customer_renegotiation/approve_requotes_seller/".$forth_renego2[0]->sellerpostproduct_id."/".$forth_renego2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
+	</button>
+			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
 	
-		
+	 
 		
 	</td>
 </form>
@@ -362,7 +371,469 @@
 							
 							
 		</div>				
-							
+					
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="frist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Seller Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+		 <div class="table-responsive">
+			 <!-- <form action="<?php //echo base_url();?>Customer_spurchase_order" method="POST" id="upload-form" enctype="multipart/form-data">-->
+                <table class="table table-striped table-bordered table-sm" width="100%" cellspacing="0">
+    <thead class="bg-primary text-white">
+      <tr>
+			
+	       	<th>Product Name</th>
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
+			<th>Company Name</th>
+			<th>Billing Address</th>
+			<th>Shipped To</th>
+			<th>GST Number</th>					 
+			<th style="color:orange;">Buyer Price</th>
+			<th style="color:orange;">Buyer Quantity</th>			 
+			<th>Upload Purchase Order</th>
+		
+      </tr>
+    </thead>
+    <tbody>
+	<?php $k=0;?>
+	  <?php  $count = 1;?>
+	 
+	
+      <tr>
+	   <form action="<?php echo base_url();?>Customer_spurchase_order" method="POST"  enctype="multipart/form-data">
+	  <?php $proid = str_ireplace('/','-',$frst_qut[0]->productid);
+				?>
+				<?php $prodid = str_ireplace('/','-',$frst_qut[0]->productid);?>
+		
+		
+	<td><input type="hidden" name="productname" value="<?php echo $frst_qut[0]->productname;?>">
+		<?php echo $frst_qut[0]->productname;?></td>
+	<td><input type="hidden" name="buyerid" value="<?php echo $frst_qut[0]->buyerid;?>">
+							<?php echo $frst_qut[0]->buyerid;?>
+		<input type="hidden" name="q_id" value="<?php echo $frst_qut[0]->id;?>">
+		<input type="hidden" name="sellerpostproduct_id" value="<?php echo $frst_qut[0]->sellerpostproduct_id;?>"></td>
+	<td><input type="hidden" name="sellerid" value="<?php echo $frst_qut[0]->sellerid;?>">
+							<?php echo $frst_qut[0]->sellerid;?>
+	<input type="hidden" name="productid" value="<?php echo $frst_qut[0]->productid;?>"><input type="hidden" name="category" value="<?php echo $frst_qut[0]->category;?>">
+	<input type="hidden" name="pcities" value="<?php echo $frst_qut[0]->pcities;?>">
+		<input type="hidden" name="price" value="<?php echo $frst_qut[0]->price;?>">
+		 <input type="hidden" name="punits" value="<?php echo $frst_qut[0]->punits;?>">
+	<input type="hidden" name="quantity" value="<?php echo $frst_qut[0]->quantity;?>">
+		<input type="hidden" name="units" value="<?php echo $frst_qut[0]->units;?>">
+	</td>
+	<td><?php echo $frst_qut[0]->vcompanyname;?></td>
+	<td><?php echo $frst_qut[0]->vaddress;?></td>
+	<td><?php echo $frst_qut[0]->vaddress;?></td>
+	<td><?php echo $frst_qut[0]->vgst;?></td>
+	<td><input type="hidden" name="bquantity" value="<?php echo $frst_qut[0]->bquantity;?>">
+	<?php echo $frst_qut[0]->bquantity."" ;echo $frst_qut[0]->bunits;?>
+	<input type="hidden" name="bunits" value="<?php echo $frst_qut[0]->bunits;?>">
+	</td>
+	<td><input type="hidden" name="bprice" value="<?php echo $frst_qut[0]->bprice;?>">
+		<?php echo $frst_qut[0]->bprice."/" ;echo $frst_qut[0]->bsupplyability;?>
+		<input type="hidden" name="bsupplyability" value="<?php echo $frst_qut[0]->bsupplyability;?>"></td>
+	<td>
+				
+		<input class="form-group w-auto"  multiple="multiple" id ="upload_dd"  type="file" name="upload_dd[]">
+		<input class="form-group w-auto" value="<?php echo urldecode($frst_qut[0]->buyerid);?>"  type="hidden" name="buyerid_hidden">	
+			
+		<input type="submit" onclick="return upload_selnegoapprovedpo()" id="<?php echo $frst_qut[0]->id;?>" class="btn btn-info " name="submit" value="Upload"></td>
+		 <?php $count++;?>	
+		 </form>
+		 
+      </tr>      
+      
+    </tbody>
+  </table>
+  
+		</div>
+		
+		
+		
+		
+	  </div>
+
+
+
+
+
+
+ 
+		
+		
+		
+		
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+<div class="modal fade" id="scend" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Seller Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+		  <div class="table-responsive">
+						
+	 	<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
+								<thead class="bg-primary text-white">
+									<tr>
+									
+			
+	       	<th>Product Name</th>
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
+			<th>Company Name</th>
+			<th>Billing Address</th>
+			<th>Shipped To</th>
+			<th>GST Number</th>				
+			<th>Buyer 1st Quantity</th>
+		    <th>Buyer 1st  price</th>
+			<th>Seller Re-Negotiated price</th>
+			<th>Upload Purchase Order</th>
+			
+			
+
+
+									</tr>
+								</thead>
+								<tbody>
+								
+
+				 	<?php $k = 0; ?>
+				  	<?php  $count = 1;?>
+			 	<tr>
+			 	<form action="<?php echo base_url(); ?>Customer_purchase_order" method="POST"  enctype="multipart/form-data">
+			 	<?php $proid = str_ireplace('/', '-', $sce_qut[0]->productid); ?>
+				
+				<td><input type="hidden" name="productname" value="<?php echo $sce_qut[0]->productname;?>">
+								<?php echo $sce_qut[0]->productname;?></td>
+				<td><input type="hidden" name="buyerid" value="<?php echo $sce_qut[0]->buyerid;?>">
+							<?php echo $sce_qut[0]->buyerid;?>
+					<input type="hidden" name="sqn_id" value="<?php echo $sce_qut[0]->id;?>">	
+					<input type="hidden" name="sellerpostproduct_id" value="<?php echo $sce_qut[0]->sellerpostproduct_id;?>"></td>
+				<td><input type="hidden" name="sellerid" value="<?php echo $sce_qut[0]->sellerid;?>">
+							<?php echo $sce_qut[0]->sellerid;?></td>
+				
+		
+			<td><?php echo $sce_qut[0]->vcompanyname;?></td>
+			<td><?php echo $sce_qut[0]->vaddress;?></td>
+			<td><?php echo $sce_qut[0]->vaddress;?></td>
+			<td><?php echo $sce_qut[0]->vgst;?></td>
+			<td><input type="hidden" name="productid" value="<?php echo $sce_qut[0]->productid;?>">
+			<input type="hidden" name="category" value="<?php echo $sce_qut[0]->category;?>">
+			<input type="hidden" name="pcities" value="<?php echo $sce_qut[0]->pcities;?>">
+			<input type="hidden" name="quantity" value="<?php echo $sce_qut[0]->quantity;?>">
+		     
+			 <input type="hidden" name="units" value="<?php echo $sce_qut[0]->units;?>">
+			<input type="hidden" name="price" value="<?php echo  $sce_qut[0]->price;?>">
+		     
+			 <input type="hidden" name="punits" value="<?php echo $sce_qut[0]->punits;?>">
+		<input type="hidden" name="bquantity" value="<?php echo $sce_qut[0]->bquantity;?>">
+		     <?php echo $sce_qut[0]->bquantity."" ;echo $sce_qut[0]->bunits;?>
+			 <input type="hidden" name="bunits" value="<?php echo $sce_qut[0]->bunits;?>">
+		
+	     </td>
+	
+		<td><input type="hidden" name="bprice" value="<?php echo $sce_qut[0]->bprice;?>">
+		     <?php echo $sce_qut[0]->bprice."/" ;echo $sce_qut[0]->bsupplyability;?>
+			 <input type="hidden" name="bsupplyability" value="<?php echo $sce_qut[0]->bsupplyability;?>">
+		</td>
+			
+		<td><input type="hidden" name="selprice" value="<?php echo $sce_qut[0]->selprice; ?>">
+			<?php echo $sce_qut[0]->selprice . "/";echo $sce_qut[0]->sunits; ?>
+		<input type="hidden" name="sunits" value="<?php echo $sce_qut[0]->sunits; ?>"></td>
+			 
+		<td><input class="form-group w-auto" multiple="multiple" type="file" id="upload_dd" name="upload_dd[]">
+
+		<input type="submit" id="" onclick="return upload_buynegonegoapprovedpo()" class="btn btn-info " name="submit" value="Upload">
+		</td>
+		 <?php $count++;?>
+</form>
+										 
+</tr>
+									
+								</tbody>
+							</table>
+						
+					</div>
+		
+		
+		
+		
+	  </div>
+
+
+
+
+
+
+ 
+		
+		
+		
+		
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+<div class="modal fade" id="thrd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Seller Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+		   <div class="table-responsive">
+				<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
+								<thead class="bg-primary text-white">
+									<tr>
+			<th>Product Name</th>
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
+			<th>Company Name</th>
+			<th>Billing Address</th>
+			<th>Shipped To</th>
+			<th>GST Number</th>		
+			<th style="color:green;">Buyer Re-Negotiated price</th>
+			<th style="color:green;">Buyer Re-Negotiated Quantity</th>
+			<th>Upload Purchase Order</th>
+
+
+									</tr>
+</thead>
+<tbody>
+<?php $k = 0; ?>
+<tr>
+<form action="<?php echo base_url(); ?>Customer_repurchase_order" method="POST"  enctype="multipart/form-data">
+<?php $proid = str_ireplace('/', '-', $thrd_qut[0]->productid); ?>
+												
+	 <td><input type="hidden" name="productname" value="<?php echo $thrd_qut[0]->productname;?>">
+							<?php echo $thrd_qut[0]->productname;?></td>
+	<td><input type="hidden" name="buyerid" value="<?php echo $thrd_qut[0]->buyerid;?>">
+							<?php echo $thrd_qut[0]->buyerid;?></td>	
+	<td><input type="hidden" name="sellerid" value="<?php echo $thrd_qut[0]->sellerid;?>">
+							<?php echo $thrd_qut[0]->sellerid;?>
+	<input type="hidden" name="cust_id" value="<?php echo $thrd_qut[0]->id;?>">
+	<input type="hidden" name="sellerpostproduct_id" value="<?php echo $thrd_qut[0]->sellerpostproduct_id;?>"></td>
+	<td><?php echo $thrd_qut[0]->vcompanyname;?></td>
+	<td><?php echo $thrd_qut[0]->vaddress;?></td>
+	<td><?php echo $thrd_qut[0]->vaddress;?></td>
+	<td><?php echo $thrd_qut[0]->vgst;?></td>
+	<td><input type="hidden" name="productid" value="<?php echo $thrd_qut[0]->productid;?>">
+	
+	<input type="hidden" name="category" value="<?php echo $thrd_qut[0]->category;?>">
+	<input type="hidden" name="price" value="<?php echo $thrd_qut[0]->price; ?>">
+	<input type="hidden" name="punits" value="<?php echo $thrd_qut[0]->punits; ?>">
+	<input type="hidden" name="quantity" value="<?php echo $thrd_qut[0]->quantity; ?>">
+	<input type="hidden" name="units" value="<?php echo $thrd_qut[0]->units; ?>">
+	
+	<input type="hidden" name="bquantity" value="<?php echo $thrd_qut[0]->bquantity; ?>">
+	<input type="hidden" name="bunits" value="<?php echo $thrd_qut[0]->bunits; ?>">
+	<input type="hidden" name="bprice" value="<?php echo $thrd_qut[0]->bprice; ?>">
+	<input type="hidden" name="bsupplyability" value="<?php echo $thrd_qut[0]->bsupplyability; ?>">
+	
+	<input type="hidden" name="selprice" value="<?php echo $thrd_qut[0]->selprice; ?>">
+	<input type="hidden" name="sunits" value="<?php echo $thrd_qut[0]->sunits; ?>">
+	
+	<input type="hidden" name="brenegoprice" value="<?php echo $thrd_qut[0]->brenegoprice; ?>">
+	<?php echo $thrd_qut[0]->brenegoprice . "/";echo $thrd_qut[0]->brenegounit; ?>
+	<input type="hidden" name="brenegounit" value="<?php echo $thrd_qut[0]->brenegounit; ?>">
+												</td>
+	<td><input type="hidden" name="brenegoquantity" value="<?php echo $thrd_qut[0]->brenegoquantity; ?>"><?php echo $thrd_qut[0]->brenegoquantity . "/";echo $thrd_qut[0]->brenegoquantityunit; ?>
+	<input type="hidden" name="brenegoquantityunit" value="<?php echo $thrd_qut[0]->brenegoquantityunit; ?>"></td>
+	<td>
+	<input class="form-group w-auto" multiple="multiple" type="file" id="upload_dd" name="upload_dd[]">
+
+	<input type="submit" onclick="return upload_renegovalue()" id="" class="btn btn-info " name="submit" value="Upload">
+	</td>
+
+
+     
+
+											</form>
+											
+										 
+										</tr>
+									
+								</tbody>
+							</table>
+						
+					</div>
+		
+		
+		
+		
+	  </div>
+ </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+<div class="modal fade" id="forth" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Seller Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        	<div class="table-responsive">
+						
+							<table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
+								<thead class="bg-primary text-white">
+						<tr>
+				
+			<th>Product Name</th>
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
+			<th>Company Name</th>
+			<th>Billing Address</th>
+			<th>Shipped To</th>
+			<th>GST Number</th>		
+			<th style="color:orange;">Buyer 2nd Re-Negotiated price</th>
+			<th style="color:orange;">Buyer 2nd Re-Negotiated Quantity</th>
+			<th style="color:yellow;">Seller final Re-Negotiated price</th>
+			<th>Upload Purchase Order</th>
+</tr>
+								</thead>
+								<tbody>
+<?php $k = 0; ?>
+<tr>
+<form action="<?php echo base_url(); ?>Customer_respurchase_order" method="POST" enctype="multipart/form-data">
+<?php $proid = str_ireplace('/', '-', $forth_qut[0]->productid); ?>
+
+<td><input type="hidden" name="productname" value="<?php echo $forth_qut[0]->productname;?>">
+							<?php echo $forth_qut[0]->productname;?>
+<input type="hidden" name="sellerpostproduct_id" value="<?php echo $forth_qut[0]->sellerpostproduct_id;?>"></td>
+<td><input type="hidden" name="buyerid" value="<?php echo $forth_qut[0]->buyerid;?>">
+<?php echo $forth_qut[0]->buyerid;?></td>
+<td><input type="hidden" name="sellerid" value="<?php echo $forth_qut[0]->sellerid;?>">
+<?php echo $forth_qut[0]->sellerid;?>
+<input type="hidden" name="v_id" value="<?php echo $forth_qut[0]->id;?>"></td>
+	
+	<td><?php echo $forth_qut[0]->vcompanyname;?></td>
+	<td><?php echo $forth_qut[0]->vaddress;?></td>
+	<td><?php echo $forth_qut[0]->vaddress;?></td>
+	<td><?php echo $forth_qut[0]->vgst;?></td>
+	
+<td><input type="hidden" name="productid" value="<?php echo $forth_qut[0]->productid;?>">
+
+<input type="hidden" name="category" value="<?php echo $forth_qut[0]->category;?>">
+<input type="hidden" name="price" value="<?php echo $forth_qut[0]->price; ?>">
+
+ <input type="hidden" name="punits" value="<?php echo $forth_qut[0]->punits; ?>">
+<input type="hidden" name="quantity" value="<?php echo $forth_qut[0]->quantity; ?>">
+<input type="hidden" name="units" value="<?php echo $forth_qut[0]->units; ?>">
+<input type="hidden" name="bquantity" value="<?php echo $forth_qut[0]->bquantity; ?>">
+<input type="hidden" name="bunits" value="<?php echo $forth_qut[0]->bunits; ?>">
+<input type="hidden" name="bprice" value="<?php echo $forth_qut[0]->bprice; ?>">
+<input type="hidden" name="bsupplyability" value="<?php echo $forth_qut[0]->bsupplyability; ?>">
+<input type="hidden" name="selprice" value="<?php echo $forth_qut[0]->selprice; ?>">
+<input type="hidden" name="sunits" value="<?php echo $forth_qut[0]->sunits; ?>">
+<input type="hidden" name="brenegoprice" value="<?php echo $forth_qut[0]->brenegoprice; ?>">
+<input type="hidden" name="brenegounit" value="<?php echo $forth_qut[0]->brenegounit; ?>">
+<?php echo $forth_qut[0]->brenegoprice . " ";echo $forth_qut[0]->brenegounit; ?></td>
+<td><input type="hidden" name="brenegoquantity" value="<?php echo $forth_qut[0]->brenegoquantity; ?>">
+<?php echo $forth_qut[0]->brenegoquantity . " ";echo $forth_qut[0]->brenegoquantityunit; ?>
+<input type="hidden" name="brenegoquantityunit" value="<?php echo $forth_qut[0]->brenegoquantityunit; ?>"></td>
+<td><input type="hidden" name="sellrenegoprice" value="<?php echo $forth_qut[0]->sellrenegoprice; ?>">
+<?php echo $forth_qut[0]->sellrenegoprice . "/";echo $forth_qut[0]->sellrenegounits; ?>
+<input type="hidden" name="sellrenegounits" value="<?php echo $forth_qut[0]->sellrenegounits; ?>">
+</td>
+<td>
+
+			<input class="form-group w-auto" multiple="multiple" type="file" name="upload_dd[]" id="upload_dd">
+
+
+		<input type="submit" id="" onclick="return upload_finalrenvalue()" class="btn btn-info " name="submit" value="Upload">
+
+
+
+												</td>
+
+
+</form>
+										 
+</tr>
+									
+								</tbody>
+							</table>
+						
+					</div>
+		
+		
+		
+	  </div>
+
+
+
+
+
+
+ 
+		
+		
+		
+		
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+					
 							
 			<script>
 	  
@@ -398,11 +869,12 @@
 							
 							
 					
-<script>
+<script type="text/javascript">
 
-function approveProduct(sellerpostproduct_id)
+$baseURL = "<?php echo base_url(); ?>"; 
+function approveProduct(buyerid)
 {
-  alert(sellerpostproduct_id);
+  alert(buyerid);
   swal({
   title: "Are you sure?",
   //content: "<input type='text' />",
@@ -415,8 +887,8 @@ function approveProduct(sellerpostproduct_id)
   if (willDelete) {   
                      $.ajax({
                          type:'post',
-                         url:$baseURL+'customer_contactsupplier/approveProduct',
-                         data:'sellerpostproduct_id='+sellerpostproduct_id,
+                         url:$baseURL+'Customer_renegotiation/Approveproduct',
+                         data:'buyerid='+buyerid,
                          success:function(msg){
                              if(msg){
                                 swal("Information updated success.");

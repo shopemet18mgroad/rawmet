@@ -47,7 +47,8 @@ class Customer_spurchase_order extends CI_Controller {
 			$buyerid = $this->input->post('buyerid');
 			$q_id = $this->input->post('q_id');
 			//print_r($q_id); die;
-			
+
+			$sellerpostproduct_id = $this->input->post('sellerpostproduct_id');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
 			$category = $this->input->post('category');
@@ -85,7 +86,7 @@ class Customer_spurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('id'=>$id,'q_id'=>$q_id,'sellerid' => $sellerid,'buyerid'=>$buyerid, 
+			$data = array('sellerpostproduct_id'=>$sellerpostproduct_id,'q_id'=>$q_id,'sellerid' => $sellerid,'buyerid'=>$buyerid, 
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
 			
 			'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
@@ -95,7 +96,7 @@ class Customer_spurchase_order extends CI_Controller {
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_sellnego');
+				  header('location: ./Customer_renegotiation/index/'.$sellerpostproduct_id.'/'.$buyerid);
 				  }
 			
 	}

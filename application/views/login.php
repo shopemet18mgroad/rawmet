@@ -90,7 +90,7 @@
                     <a class="small" href="<?php echo base_url();?>email_send">Forgot Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="<?php echo base_url();?>home_register">Create an Account!</a>
+                    <a class="small" href="<?php echo base_url();?>Home_buyer_register">Create an Account!</a>
                   </div>
                 </div>
               </div>

@@ -41,7 +41,7 @@ class Customer_purchase_order extends CI_Controller {
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 	
-		
+		$sellerpostproduct_id = $this->input->post('sellerpostproduct_id');
 			$sellerid = $this->input->post('sellerid');
 			$sqn_id = $this->input->post('sqn_id');
 			$productname = $this->input->post('productname');
@@ -82,7 +82,7 @@ class Customer_purchase_order extends CI_Controller {
 		   
 			//$this->load->model('Admin_model');
 			
-			$data = array('sellerid' => $sellerid,'buyerid'=> $buyerid,'sqn_id'=>$sqn_id,'selprice'=>$selprice ,'sunits'=>$sunits,'punits'=>$punits,
+			$data = array('sellerpostproduct_id'=>$sellerpostproduct_id,'sellerid' => $sellerid,'buyerid'=> $buyerid,'sqn_id'=>$sqn_id,'selprice'=>$selprice ,'sunits'=>$sunits,'punits'=>$punits,
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
 			
 			'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
@@ -94,7 +94,7 @@ class Customer_purchase_order extends CI_Controller {
 			
 			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
-				  header('location: ./Customer_buynego');
+				  header('location: ./Customer_renegotiation/index/'.$sellerpostproduct_id.'/'.$buyerid);
 				  }
 			
 	}
