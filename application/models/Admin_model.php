@@ -157,6 +157,15 @@ $this->db->where('a.buyerid', $id);
 			 return $query->result();
 		}
 		
+		
+			   
+			 			  
+		
+		
+		
+		
+		
+		
 		public function getusernamedatafromtable($table, $data) { 
 			 //$this->db->select('scomapnyname');
 			  $this->db->select('vusername');
@@ -325,12 +334,14 @@ $this->db->where('a.buyerid', $id);
 		b.priceperkg,
 		b.quantity,
 		b.units');
-			
+	
+			$this->db->where('b.adapproval',1);
 			$this->db->join('buyerrequriement b','a.buyerid = b.buyerid','left outer');
 			
 	 
 		
 			$query = $this->db->get("buyer_register a");
+			
 			 $result = $query->result();
 			  return $result;
 
