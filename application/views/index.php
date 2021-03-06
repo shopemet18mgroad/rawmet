@@ -48,8 +48,12 @@
 </form>
 
 <div class="links mt2">
-               <a href="http://rawmet24.in/procurementtenders2.php">Live Procurement</a>
-				<a href="<?php echo base_url();?>#Upcoming Procurement">Tenders</a>			
+
+<a href="<?php echo base_url();?>home_buyerrequriment2">Live Procurement</a>
+
+
+              
+				<a href="http://rawmet24.in/procurementtenders2.php">Tenders</a>			
 				<a href="https://www.aucjunction.com/">Upcoming Disposals</a>
 				<a href="<?php echo base_url();?>home_feedback">feedback</a>
 				
