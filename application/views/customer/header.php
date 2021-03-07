@@ -128,7 +128,7 @@ document.addEventListener('click',clickEffect);
 	 
 	    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>customer_myrequirements">
-          <i class="fas fa-fw fa-upload"></i>
+          <i class="fas fa-chart-bar"></i>
           <span>Requirement Negotiation</span></a>
       </li>
 	  
@@ -177,20 +177,20 @@ document.addEventListener('click',clickEffect);
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment3" aria-expanded="true" aria-controls="collapseUtilities">
           <i class='fas fa-envelope-open-text'></i>
-          <span>Ongoing Negotiation</span></a>
+          <span>Quote Here</span></a>
 		  <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>customer_sellernegotiatedquote">Ongoing Negotiation</a>
+            <a class="collapse-item" href="<?php echo base_url();?>customer_sellernegotiatedquote">Negotiate Here</a>
 			
 			
-			 <a class="collapse-item" href="<?php echo base_url();?>Customer_productnegotation">Ongoing Negotiation</a>
-            <a class="collapse-item" href="<?php echo base_url();?>Customer_renegotiation">Re-Negotiate</a>
+			 <a class="collapse-item" href="<?php echo base_url();?>Customer_productnegotation">Ongoing Re-Negotiation</a>
+           <!-- <a class="collapse-item" href="<?php echo base_url();?>Customer_renegotiation">Re-Negotiate</a>
 			 <a class="collapse-item" href="<?php echo base_url();?>Customer_custrenegovalue">My Re-Negotiated Value</a> 
-			 <a class="collapse-item" href="<?php echo base_url();?>Customer_sellerrenegotiatedvalue">Seller's Re-Negotated <br>Value</a> 
+			 <a class="collapse-item" href="<?php echo base_url();?>Customer_sellerrenegotiatedvalue">Seller's Re-Negotated <br>Value</a> -->
           </div>
         </div>
       </li>
-	  <li class="nav-item">
+	<!--  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment" aria-expanded="true" aria-controls="collapseUtilities">
          <i class='fas fa-check'></i>
           <span>Finalized Negotiation</span></a>
@@ -204,7 +204,7 @@ document.addEventListener('click',clickEffect);
 			 		 <a class="collapse-item" href="<?php echo base_url();?>Customer_finalrenegotiatedvalue">My Final Approved<br> Re-Negotiation</a>
           </div>
         </div>
-  
+  </li>-->
 	  
 	   <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment5" aria-expanded="true" aria-controls="collapseUtilities">

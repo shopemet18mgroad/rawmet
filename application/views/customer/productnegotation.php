@@ -27,7 +27,6 @@
 			<th>Supplier Id</th>
 			<th>Buyer Id</th>
 			<th>Product Name</th>
-			<th>Product Id</th>
 			<th>Category</th>
 			
 			<th style="color:orange">Supplier Base Price</th>
@@ -36,7 +35,6 @@
 			<th style="color:green">Buyer Quantity</th>
 			<th style="color:green">Buyer Price</th>
 			
-			<th style="color:orange;">Seller price</th>
 			<th> Buyer's Action  </th>
 		
 			
@@ -51,11 +49,9 @@
 								<td><?php echo $count;?></td>
 				<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
-				<td><?php echo $row->sellerpostproduct_id;?></td>
 			<td><?php echo $row->sellerid;?></td>
 			<td><?php echo $row->buyerid;?></td>
 			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
 		
 			<td><?php echo $row->price."/"; echo $row->punits;?></td>
