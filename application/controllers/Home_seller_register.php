@@ -51,6 +51,9 @@ class Home_seller_register extends CI_Controller {
 	'vemail'=> $vemail ,'vusername' => $vusername,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,
 	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode,'sellerid'=>$sellerid,'dealer_type'=>$dealer_type);
+
+
+
 	$datainserr = "Data Inserted Successfully";
 		$status = $this->Admin_model->insert('vendor_register',$data);
 		header('location:'.base_url().'home/index/');

@@ -28,9 +28,7 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="Buyers" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Buyers Registration</h3>
-															<marquee Style="Color:black; " class="ml-5"; attribute_name = "attribute_value"....more attributes>
-  REMEMBER YOUR ID...
-</marquee>
+
                            	<form action="<?php echo base_url();?>home_buyer_register"  method="POST">
                                 <div class="row register-form">
 								
@@ -85,9 +83,9 @@
 
 
 
-<body onload="resetSelection()">
+<body onload="resetSelection1()">
 
-<select class="form-control" id="bselectstate" name="bselectstate" size="1" onchange="makeSubmenu(this.value)">
+<select class="form-control" id="bselectstate" name="bselectstate" size="1" onchange="makeSubmenu1(this.value)">
 										<option value="" disabled selected>Choose State</option>
 										<option>Odisha</option>
 										<option>Maharashtra</option>
@@ -264,7 +262,7 @@
 	
 								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								<script type="text/javascript">
-									var citiesByState = {
+									var citiesByState1 = {
 										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
 										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
 										Kerala: ["kochi", "Kanpur"],
@@ -298,7 +296,7 @@
 										WestBengal: ["Kolkata"],
 									}
 
-									function makeSubmenu(value) {
+									function makeSubmenu1(value) {
 										if (value.length == 0) document.getElementById("bcity").innerHTML = "<option></option>";
 										else {
 											var citiesOptions = "";
@@ -309,13 +307,13 @@
 										}
 									}
 
-									function displaySelected() {
+									function displaySelected1() {
 										var country = document.getElementById("bselectstate").value;
 										var city = document.getElementById("bcity").value;
 										alert(country + "\n" + city);
 									}
 
-									function resetSelection() {
+									function resetSelection1() {
 										document.getElementById("bselectstate").selectedIndex = 0;
 										document.getElementById("bcity").selectedIndex = 0;
 									}
@@ -384,9 +382,7 @@
  <div class="tab-pane fade show" id="Seller" role="tabpanel" aria-labelledby="profile-tab">
                                 <h3  class="register-heading">Seller Registration</h3>
 								
-								<marquee Style="Color:black; " class="ml-5"; attribute_name = "attribute_value"....more attributes>
-  REMEMBER YOUR ID...
-</marquee>
+	
 			
 <form action="<?php echo base_url();?>home_seller_register"  method="POST">
 
@@ -408,19 +404,29 @@
                                              <input type="text" id="vcontactperson"   name="vcontactperson" class="form-control" placeholder="Contact Person*" value="" />
                                  </div>
 								<div class="form-group">
+								
+								
+					 
+				  <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return   ()"  placeholder="PCB license">
+				   </div>			
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
 						
                   
-				  <select class="form-control" id="dealer_type" name="dealer_type">
-				  <option default>--Type of Dealer--</option>
-					       <option value="Manufacturer">Manufacturer</option>
-						<option value="Wholesaler">Wholesaler</option>
-						<option value="Re-saler">Re-saler</option>
-						<option value="Dealer">Dealer</option>
-				        <option value="Distributor">Distributor</option>
-						<option value="Others">Others</option>
-						
-				    </select> 
-                  </div>		
+				 		
 								
 								
 								
@@ -444,123 +450,160 @@
         <div class="form-group">
 		
 		
-            <input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password" onkeyup="validate_username_seller()"><span id = "message1" style="color:red"> </span>
+            <input type="password" class="form-control" id="vpassword" name="vpassword"  placeholder="Password" ><span id = "message11" style="color:red"> </span>
 			
 			
          </div>
 		 
 		 
+		 
+		   <script>
+function validateForm() {
+    //collect form data in JavaScript variables
+    var pw1 = document.getElementById("bpassword").value;
+    var pw2 = document.getElementById("brepeatpassword").value;
+   
+  
+    //check empty password field
+
+    //minimum password length validation
+    if(pw1.length < 8) {
+      document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";
+      return false;
+    }
+
+    //maximum length of password validation
+    if(pw1.length > 15) {
+      document.getElementById("message1").innerHTML = "**Password length must not exceed 15 characters";
+      return false;
+    }
+  
+    if(pw1 != pw2) {
+      document.getElementById("message2").innerHTML = "**Passwords are not same";
+      return false;
+    } 
+ }
+</script> 
+	
+	
+ 
+	
+	
+	
+	
+	
+	
+	
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
            <div class="form-group">
 		   
+		   
+		   <input type="email" class="form-control form-control-user" onkeyup = "return validate_seller_password()" id="vemail" name="vemail" placeholder="Email">
+		   
+		   
 		
-			   <input type="email" class="form-control form-control-user" onkeyup="return validateForm_seller()" id="vemail"  name="vemail" placeholder="Email"> 
+			  
 			   
            </div>
+		   
+		   
+		   
+		    <script>
+function validate_seller_password() {
+    //collect form data in JavaScript variables
+    var pw11 = document.getElementById("vpassword").value;
+    var pw22 = document.getElementById("vrepeatpassword").value;
+   
+  
+    //check empty password field
+
+    //minimum password length validation
+    if(pw11.length < 8) {
+      document.getElementById("message11").innerHTML = "**Password length must be atleast 8 characters";
+      return false;
+    }
+
+    //maximum length of password validation
+    if(pw11.length > 15) {
+      document.getElementById("message11").innerHTML = "**Password length must not exceed 15 characters";
+      return false;
+    }
+  
+    if(pw11 != pw22) {
+      document.getElementById("message22").innerHTML = "**Passwords are not same";
+      return false;
+    } 
+ }
+</script> 	
+	
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
 
           <div class="form-group">
               <input type="text" id="vpan"  name="vpan"   placeholder="PAN"  class="form-control Pan" placeholder="Pan No *" value="" />
           </div>
 		  
 		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		
-         
-	<div class="form-group">
-              <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value="" />
-       </div>    
-	   
-	   
-	  				
-                 
-							
-								<select class="form-control" id="vcity" name="vcity" size="1">
-									<option class="form-control" value="" disabled selected>Choose City</option>
-									<option></option>
-								</select>
-						
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-</div>
-										
-		<div class="col-md-6">
-           <div class="form-group">
-          <select id="vcompanytype" name="vcompanytype" class="form-control">
-             <option class="hidden"  selected disabled>Company Type</option>
-                  <option value="Govt Regd Company">Govt Regd Company</option>
-                       <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
-                         <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
-                      <option value="Other">Other</option>
-                  </select>
-              </div>
-
-         <div class="form-group">
-		 
-		 
-		 
-		 
-
-		 
-		 
-		 
-       <input type="text" id="vcontactnumber"  onclick = "validate_contactnumber1()"    name="vcontactnumber" class="form-control" placeholder="Phone*" value="" />
-  </div>
-
-     <div class="form-group">
-     <input type="text" onkeyup="vgst()" class="form-control form-control-user" id="vpcb"  name="vpcb"  placeholder="PCB license"  >
-     </div>
-	 
-	 
-	 
-	 
-	 <div class="form-group">
-       				   <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
-                   <input hidden type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
-                                        </div>
-
-     <div class="form-group">
-	<input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><span id = "message2" style="color:red"> </span>
-                                            
-                                                                                    </div>
-
-     <div class="form-group">
-   	 <input type="text" class="form-control form-control-user gst"id="vgst"  name="vgst"   placeholder="GST">
-       </div>
-
-      <div class="form-group">
-											
-                                           
-      </div>
-
-       <div class="form-group">
-     <input type="text" class="form-control form-control-user" id="vaddress"  name="vaddress"   placeholder="Address">
-       </div>
-                                        
-<div class="form-group">
+		<div class="form-group">
 								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								
 						
@@ -611,7 +654,123 @@
 							
 			 
 
+</div>  
+		  
+		  
+		  
+		  
+		
+<div class="form-group">
+              <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value="" />
+       </div>   
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		
+         
+	   
+	   
+	   
+	  				
+                 
+							
+			</div>	
+										
+		<div class="col-md-6">
+           <div class="form-group">
+          <select id="vcompanytype" name="vcompanytype" class="form-control">
+             <option class="hidden"  selected disabled>Company Type</option>
+                  <option value="Govt Regd Company">Govt Regd Company</option>
+                       <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
+                         <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
+                      <option value="Other">Other</option>
+                  </select>
+              </div>
+
+         <div class="form-group">
+		 
+		 
+		 
+		 
+
+		 
+		 
+		 
+       <input type="text" id="vcontactnumber"   name="vcontactnumber" class="form-control" placeholder="Phone*" value="" />
+	   
+	
+	   
+	   
+  </div>
+
+     <div class="form-group">
+      <select class="form-control" id="dealer_type" name="dealer_type">
+				  <option default>--Type of Dealer--</option>
+					       <option value="Manufacturer">Manufacturer</option>
+						<option value="Wholesaler">Wholesaler</option>
+						<option value="Re-saler">Re-saler</option>
+						<option value="Dealer">Dealer</option>
+				        <option value="Distributor">Distributor</option>
+						<option value="Others">Others</option>
+						
+				    </select> 
+                  </div>
+ 
+	 
+	 
+	 
+
+	 <div class="form-group">
+       				   <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
+                   <input hidden type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
+                                        </div>
+
+     <div class="form-group">
+	 
+	 
+	<input type="password" class="form-control" id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><span id = "message22" style="color:red"> </span>
+                                            
+                                                                                    </div>
+
+     <div class="form-group">
+   	 <input type="text" class="form-control form-control-user gst"id="vgst"  name="vgst"   placeholder="GST">
+       </div>
+
+
+       <div class="form-group">
+     <input type="text" class="form-control form-control-user" id="vaddress"  name="vaddress"   placeholder="Address">
+       </div>
+	   
+	   
+	   
+	   
+	   <div class="form-group">
+	   				<select class="form-control" id="vcity" name="vcity" size="1">
+									<option class="form-control" value="" disabled selected>Choose City</option>
+									<option></option>
+								</select>
+						
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 </div>
+                                        
 
 
 
@@ -695,7 +854,7 @@ if (vcontactnumber.value.length < 10 || vcontactnumber.value.length > 10) {
     swal("Alert!", "Mobile No. is not valid, Please Enter 10 Digit Mobile No.", "error");
     return false;
   }
-else if
+else
       (vcontactnumber.value == "") {
     swal("Alert!","Please enter your Mobile No.","error");
     return false;
@@ -1042,33 +1201,7 @@ var inputvalues = $(this).val();
 
   
   
-  <script>
-function validateForm_seller() {
-    //collect form data in JavaScript variables
-    var pw1 = document.getElementById("vpassword").value;
-    var pw2 = document.getElementById("vrepeatpassword").value;
-   
-  
-    //check empty password field
 
-    //minimum password length validation
-    if(pw1.length < 8) {
-      document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";
-      return false;
-    }
-
-    //maximum length of password validation
-    if(pw1.length > 15) {
-      document.getElementById("message1").innerHTML = "**Password length must not exceed 15 characters";
-      return false;
-    }
-  
-    if(pw1 != pw2) {
-      document.getElementById("message2").innerHTML = "**Passwords are not same";
-      return false;
-    } 
- }
-</script> 
 
  <script>
   function validate_username_seller(){
