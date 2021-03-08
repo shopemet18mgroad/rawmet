@@ -26,6 +26,7 @@
                
                 </div>
                 <!-- Card Body -->
+		<form action="<?php echo base_url(); ?>seller_email" method="post">
                 <div class="card-body">
 					 <table class="table table-sm table-borderless">
 					 <thead  width="50%"><th>Personal Info</th>
@@ -81,7 +82,11 @@
 						<tbody>
 						<tr>
 								<td width="43%">Email</td>
-								<td><?php echo $sqldata[0]->vemail;?></td>
+								<td>
+								  <input type="email" value="<?php echo $sqldata[0]->vemail;?>" name="email" class="form-control form-control-user" placeholder="Enter Email" required><br>
+								
+								
+								</td>
 							</tr> 
 							<tr>
 								<td>Username</td>
@@ -104,11 +109,20 @@
 								<td>Pincode</td>
 								<td><?php echo $sqldata[0]->vpincode;?></td>
 							</tr>
+							<tr>
+								<td>Seller</td>
+								<td>
+								 <input hidden type="radio" class="form-check-input" value="Seller_activate" name="optradio" checked>
+								
+  <button type="submit" id="<?php echo urldecode($sqldata[0]->sellerid);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-primary">Activate</button></td>
+  .
+							</tr>
                              				
 						</tbody>
 					</table>							
                 
               </div>
+			   
             </div>
 
             <!-- Pie Chart -->
@@ -122,4 +136,16 @@
         <!-- /.container-fluid -->
 
       </div>
+	  
+	  
+	  
+	  
+	 
+   
+ 
+
+	</div>	
+	
+	
+</form>
       <!-- End of Main Content -->

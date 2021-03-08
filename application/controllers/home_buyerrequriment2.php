@@ -46,7 +46,7 @@ class home_buyerrequriment2 extends CI_Controller {
 		
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
-		$this->load->view('header',$sess);
+		$this->load->view('header_nw',$sess);
 		$this->load->view('buyerrequriment2',$adac);
 		$this->load->view('footer');
 		$this->load->helper('url');

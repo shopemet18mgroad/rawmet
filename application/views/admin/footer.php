@@ -79,13 +79,10 @@
   <script>
 		function admin_sellerapprove(varab){
 			$.get('<?php echo base_url() .'Admin_approvevendor/approve_seller/'; ?>'+varab, function(data2){	
-					
-				 if($.trim(data2) == "HI"){
+					alert(data2); return false;
+				 if($.trim(data2) == "vemail"){
 					 window.location.href = '<?php echo base_url().'Admin_approvevendor';?>'
 					return true;
-				}else{
-					swal("Alert!", "Company Name Already Exists", "error");
-					return false;
 				}
 			 });
 			

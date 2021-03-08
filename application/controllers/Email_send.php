@@ -44,7 +44,7 @@ class Email_send extends CI_Controller {
 	// User email pass here
     $subject = 'Welcome To Rawmet';
 
-    $from = 'shopemet18@gmail.com';    // Pass here your mail id
+    $from = 'rawmet24@gmail.com';    // Pass here your mail id
 
     $emailContent = '<!DOCTYPE><html><head></head><body><table width="600px" style="border:0px solid #cccccc;margin: auto;border-spacing:0;"><tr><td style="padding-left:0%"><img src="http://www.rawmet24.com/web_files/img/rawmet%20logo.png" width="25%" vspace=10 /></td></tr>';
 	$emailContent .='<tr style=""><td style="height:20px">Dear :'.$bname.'</td></tr>';
@@ -65,8 +65,8 @@ class Email_send extends CI_Controller {
     $config['smtp_port']  = '465';
     $config['smtp_timeout'] = '60';
 
-    $config['smtp_user']    = 'shopemet18@gmail.com';    //Important
-    $config['smtp_pass']    = 'samosa&098';  //Important
+    $config['smtp_user']    = 'rawmet24@gmail.com';    //Important
+    $config['smtp_pass']    = 'R@wm*_159';  //Important
 
     $config['charset']    = 'utf-8';
     $config['newline']    = "\r\n";
@@ -104,7 +104,7 @@ class Email_send extends CI_Controller {
 	$to =  $this->input->post('email');  // User email pass here
     $subject = 'Welcome To Rawmet';
 
-    $from = 'shopemet18@gmail.com';    // Pass here your mail id
+    $from = 'rawmet24@gmail.com';    // Pass here your mail id
 
     $emailContent = '<!DOCTYPE><html><head></head><body><table width="600px" style="border:0px solid #cccccc;margin: auto;border-spacing:0;"><tr><td style="padding-left:0%"><img src="http://www.rawmet24.com/web_files/img/rawmet%20logo.png" width="25%" vspace=10 /></td></tr>';
 	$emailContent .='<tr style=""><td style="height:20px">Dear :'.$vname.'</td></tr>';
@@ -123,8 +123,8 @@ class Email_send extends CI_Controller {
     $config['smtp_port']  = '465';
     $config['smtp_timeout'] = '60';
 
-    $config['smtp_user']    = 'shopemet18@gmail.com';    //Important
-    $config['smtp_pass']    = 'samosa&098';  //Important
+    $config['smtp_user']    = 'rawmet24@gmail.com';    //Important
+    $config['smtp_pass']    = 'R@wm*_159';  //Important
 
     $config['charset']    = 'utf-8';
     $config['newline']    = "\r\n";

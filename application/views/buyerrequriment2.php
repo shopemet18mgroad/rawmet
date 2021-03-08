@@ -2,11 +2,11 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container-fluid bg-primary">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800 ml-5"><b style="color:light blue";>Manage Buying Requirements</b></h1>
+           
             
           </div>
 
@@ -14,19 +14,18 @@
           <div class="row">
 
             <!-- Earnings (Monthly) Card Example -->
-			<div class="col-xl-10 col-lg-7 ml-5">
+			<div class="col-xl-11 col-lg-6 ml-5">
           <div class="card shadow mb-4">
             <div class="card-body ml-5">
               <div class="table-responsive">
-                <table class="table table-striped table-bordered table-sm w-auto small ml-5" id="dataTable" width="80%" cellspacing="0">
-    <thead class="bg-primary text-white">
+			   <h5 class="offset-sm-5"><b style="text-align:center";>Live Procurements</b></h5>
+                <table class="table table-striped table-bordered table-sm w-auto small ml-5" id="dataTable" width="100%" cellspacing="0">
+    <thead class="bg-info text-white">
       <tr> 
 	  <th>Sl.No.</th>
 	  <th>Images</th>
 			<th>Product Id</th>
 			<th>Product Name</th>
-			
-			
 			<th>Description</th>
 		<th>Location</th>
 		<th>Price||Quantity</th>
