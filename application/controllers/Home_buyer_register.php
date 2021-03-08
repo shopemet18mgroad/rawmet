@@ -72,4 +72,19 @@ class Home_buyer_register extends CI_Controller {
 			  }
 		
 	}
+	
+		
+	
+	
+	public function validate_buyer_companyname()
+	{
+		$dat = urldecode($this->uri->segment(3));
+		$check_db = array('bcompanyname' => $dat);
+		$this->load->model('Admin_model');
+		if ($this->Admin_model->check('buyer_register', $check_db)) {
+			echo "BYE";
+		} else {
+			echo "HI";
+		}
+	}
 }

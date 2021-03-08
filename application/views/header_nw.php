@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Rawment : <?php echo $this->session->userdata('role');?> </title>
+    <title>Rawmet : <?php echo $this->session->userdata('role');?> </title>
 
 
     <!-- Custom styles for this template-->

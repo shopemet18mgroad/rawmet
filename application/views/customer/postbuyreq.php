@@ -78,6 +78,7 @@
 						<option value="Non Ferrous">Non Ferrous</option>
 				        <option value="Scrap" >Scrap</option>
 						<option value="Metal" >Metal</option>
+						<option value="Others" >Others</option>
 				    </select> 
                     
                 </div>
@@ -247,8 +248,8 @@ function validatepostreq(){
 	var priceperkg = document.getElementById("priceperkg").value;
 	var quantity = document.getElementById("quantity").value;
 	var units = document.getElementById("units").value;
-	var requireddate = document.getElementById("requireddate").value;
-	var lastdate = document.getElementById("lastdate").value;
+	//var requireddate = document.getElementById("requireddate").value;
+	//var lastdate = document.getElementById("lastdate").value;
 	var email = document.getElementById("email").value;
 	var contactnumber = document.getElementById("contactnumber").value;
 	var uploadimage = document.getElementById("uploadimage").value;
@@ -256,14 +257,14 @@ function validatepostreq(){
 	var iagreee = document.getElementById("iagreee").value;
 	
 
-if(category == '' || productname == '' || description == '' || quantity == ''  || units == '' || requireddate == '' || lastdate == '' || email == '' || contactnumber == '' || uploadimage == ''|| uploadpdf == '' || iagreee == ''){
-swal("Alert!","Category, Product Name, Description, Quantity, Units, Dates , Email, Contact Number, Image, PDF, Terms and condition cannot leave any field blank!","error");
+if(category == '' || productname == '' || description == '' || quantity == ''  || units == '' || email == '' || contactnumber == '' || uploadimage == ''|| uploadpdf == '' || iagreee == ''){
+swal("Alert!","Category, Product Name, Description, Quantity, Units , Email, Contact Number, Image, PDF, Terms and condition cannot leave any field blank!","error");
 		return false;
 	}
 	else{
         $.ajax({
             type:'submit',
-            data: {category:category,productname:productname,description:description,quantity:quantity,units:units,requireddate:requireddate,lastdate:lastdate,email:email,contactnumber:contactnumber,uploadimage:uploadimage,uploadpdf:uploadpdf,iagreee:iagreee},
+            data: {category:category,productname:productname,description:description,quantity:quantity,units:units,email:email,contactnumber:contactnumber,uploadimage:uploadimage,uploadpdf:uploadpdf,iagreee:iagreee},
            success:function(data){
                 swal("Success", "Data Saved Successfully", "success");
             },

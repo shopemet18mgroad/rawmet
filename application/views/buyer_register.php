@@ -44,7 +44,7 @@
 								  
 								  
                                  <div class="form-group">
-                                             <input type="text" id="bcontactperson" name="bcontactperson" class="form-control" placeholder="Contact Person*" value="" />
+                                             <input type="text" id="bcontactperson" name="bcontactperson" class="form-control" placeholder="Contact Person*"  value="" />
                                  </div>
                            
 
@@ -127,50 +127,6 @@
 
 							</div>
 
-						
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-
-        
-
-
-
-
-
-
 			<div class="form-group">
                                         <input type="text" id="bpincode" name="bpincode"  class="form-control " placeholder="Pin Code *" value="" />
              </div>
@@ -184,19 +140,12 @@
               </div>
             <div class="col-md-6">
             <div class="form-group">
-			<select id="bcompanytype" name="bcompanytype" class="form-control">
-			
-			
-			
-			
-			
-			
-			
-                                                <option class="hidden"  selected disabled>Company Type</option>
-                                                <option value="Govt Regd Company">Govt Regd Company</option>
-                                                <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
-                                                <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
-                                                <option value="Other">Other</option>
+<select id="bcompanytype" name="bcompanytype" class="form-control" onkeyup="validate_buyer_companyname()">
+			 <option class="hidden"  selected disabled>Company Type</option>
+             <option value="Govt Regd Company">Govt Regd Company</option>
+              <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
+              <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
+             <option value="Other">Other</option>
             </select>
                                               
            </div>
@@ -408,38 +357,7 @@
 								
 					 
 				  <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return   ()"  placeholder="PCB license">
-				   </div>			
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-						
-                  
-				 		
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-                            
-    
+				   </div>	
         <div class="form-group">
                 <input type="text" id="sellerid" value="S<?php echo(rand(1,1000000));?>" name="sellerid"  placeholder="Seller Id" Readonly class="form-control" placeholder="User Id*" value="" />
         </div>
@@ -483,56 +401,7 @@ function validateForm() {
       return false;
     } 
  }
-</script> 
-	
-	
- 
-	
-	
-	
-	
-	
-	
-	
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+</script> 	 
 		 
            <div class="form-group">
 		   
@@ -689,8 +558,8 @@ function validate_seller_password() {
           <select id="vcompanytype" name="vcompanytype" class="form-control">
              <option class="hidden"  selected disabled>Company Type</option>
                   <option value="Govt Regd Company">Govt Regd Company</option>
-                       <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
-                         <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
+                  <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
+                  <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
                       <option value="Other">Other</option>
                   </select>
               </div>
@@ -928,30 +797,7 @@ else
 									}
 								</script>
   
-	  
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-                                                                                
-                                     
-                                    </div>                              
+	 </div>                              
 
                                     </form>
                                 </div>
@@ -1132,26 +978,6 @@ function validateForm() {
   }
   </script>	  
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
 
 <script type="text/javascript">    
 $(document).ready(function(){     
@@ -1286,3 +1112,5 @@ var regex = /^([0-9]){2}([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}([0-9]){1}([a-zA-Z])
 		}
   }
   </script>
+
+
