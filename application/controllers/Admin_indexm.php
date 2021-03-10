@@ -49,13 +49,15 @@ class Admin_indexm extends CI_Controller {
 		 
 		 
 		$query['data5'] = $this->Admin_model->getdatafromtableliveneg();
+		$query['data6'] = $this->Admin_model->getdatafromtable_liveneg_postproduct();
+		//echo '<pre>'; print_r($query['data6']); die;
 		
 		$val['sql']=count($query['data1']);
 		$val['sql2']=count($query['data2']);
 		$val['sql3']=count($query['data3']);
 		$val['sql4']=count($query['data4']);
 		$val['sql5']=$query['data5'];
-		
+		$val['sql6']=$query['data6'];
 			}
 	
 		$this->load->view('admin/header',$sess);
@@ -74,6 +76,12 @@ class Admin_indexm extends CI_Controller {
 }
 	
 	
+	function getUserDatalive2(){
+	$this->load->model('Admin_model');
+	$strUID2   = $this->input->post('companyname');
+	$userData = $this->Admin_model->getUserDatalive2($strUID2);
+	echo json_encode($userData);exit;
+}	
 	
 	
 }

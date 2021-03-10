@@ -196,7 +196,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Live Requirment Negotiation </h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Live Requirement Negotiation </h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -221,10 +221,13 @@
     <thead class="bg-primary text-white">
       <tr>
  
-			<th>Product Id</th>
 			<th>Product Name</th>
 			<th>Buyer Name</th>
-			<th>company Name</th>
+			<th>Buyer ID</th>
+			<th>Buyer Company</th>
+			<th>Seller Name</th>
+			<th>Seller ID</th>
+			<th>Seller Company Name</th>
 			<th>Description</th>		
 			<th>Action</th>
       </tr>
@@ -238,10 +241,13 @@
                                              foreach($sql5 as $seller){                                             
                                              $strTable .= " 
                                           <tr>
-                                          <td>".$seller->productid."</td>
                                           <td>".$seller->productname."</td>
                                           <td>".$seller->bname."</td>
+										  <td>".$seller->buyerid."</td>
                                           <td>".$seller->bcompanyname."</td>
+										  <td>".$seller->vname."</td>
+										  <td>".$seller->sellerid."</td>
+										  <td>".$seller->vcompanyname."</td>
                                           <td>".$seller->description."</td>                                          
                                           <td> <a  href='javascript:showUserData(\"".$seller->bcompanyname."\")'> View</a></td>     
                                       </tr>
@@ -277,6 +283,113 @@
                                 <!-- Card Body -->
                                  
                             </div>
+							
+							
+							
+	
+
+
+<div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-12 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Live Post Product Negotiation </h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    
+									
+									  <div class="table-responsive">
+                                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
+    <thead class="bg-primary text-white">
+      <tr>
+ 
+			<th>Product Name</th>
+			<th>Buyer Name</th>
+			<th>Buyer ID</th>
+			<th>Buyer Company</th>
+			<th>Seller Name</th>
+			<th>Seller ID</th>
+			<th>Seller Company Name</th>
+			<th>Description</th>		
+			<th>Action</th>
+      </tr>
+    </thead>
+	
+	
+	 <tbody>
+                                 
+                                               <?php
+                                               $strTable = "";
+                                             foreach($sql6 as $seller){                                             
+                                             $strTable .= " 
+                                          <tr>
+                                          <td>".$seller->productname."</td>
+                                          <td>".$seller->bname."</td>
+                                          <td>".$seller->buyerid."</td>
+										  <td>".$seller->bcompanyname."</td>
+										  <td>".$seller->vname."</td>
+										  <td>".$seller->sellerid."</td>
+                                          <td>".$seller->vcompanyname."</td>
+                                          <td>".$seller->description."</td>                                          
+                                          <td> <a  href='javascript:showUserData_seller(\"".$seller->companyname."\")'> View</a></td>     
+                                      </tr>
+                                     
+                                      </tr>
+                                 ";
+                  }
+                  echo $strTable;
+                 ?>
+                </tbody>
+	
+	
+	
+	
+     
+	
+	
+	
+	
+	
+	
+	
+	
+  </table>
+                            </div>
+									
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                         
+                                <!-- Card Body -->
+                                 
+                            </div>
+
+
+
+
+
+	
                         </div>
                     </div>
     <!-- End of Content Wrapper -->
@@ -287,7 +400,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Live Requirment Negotiation
+          <h5 class="modal-title" id="exampleModalLabel">Live Negotiation
 </h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
@@ -309,8 +422,42 @@
         
         
         </div>
+		 </div>
+		  
+        </div>
+		 </div>
       
  
+<div class="modal fade" id="final_Negotiated2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Live Negotiation
+</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        
+         Live Post Product Negotiation
+
+
+        <div class="table-responsive">
+                  <span id="sellerResponse2">Please wait...</span>
+                
+  </div>
+
+        
+        
+
+        
+        
+        </div>
+		 </div>
+		  
+        </div>
+		 </div>
         
         
         <script type="text/javascript">
@@ -338,7 +485,7 @@ function showUserData(bcompanyname){
         success:function(msg){
             var tempmsg = JSON.parse(msg);
             $('#final_Negotiated1').modal('show');
-            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller name</td> <td>Seller's Send Offer</td><td>Buyer's 1st Negotiation Price</td><td>Seller's 2nd Negotiation Price</td><td>Buyer's Final Price</td><td>Quotation</td></tr>";
+            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Seller ID</td> <td>Seller's Send Offer</td><td>Buyer's 1st Negotiation Price</td><td>Seller's 2nd Negotiation Price</td><td>Buyer's Final Price</td><td>Quotation</td></tr>";
             for(var i=0; i<tempmsg.length; i++){
                 $sellerMBueryReqId = tempmsg[i]['bcompanyname'];								
                 tbleData = tbleData+"<tr><td>"+tempmsg[i]['vusername']+"</td><td>"+tempmsg[i]['sellerprice']+"</td><td>"+tempmsg[i]['buyer_nego_price']+"</td><td>"+tempmsg[i]['seller_renego_price']+"</td><td>"+tempmsg[i]['buyer_final_price']+"</td><td> <a href='Customer_seller_response_renego/index/"+tempmsg[i]['id']+ "';>Quotation</a></td></tr>";	
@@ -351,6 +498,25 @@ function showUserData(bcompanyname){
 
 
 
+     
+function showUserData_seller(companyname){
+    $.ajax({
+        type:'post',
+        url:$baseURL+'Admin_indexm/getUserDatalive2',
+        data:'companyname='+companyname,
+        success:function(msg){
+            var tempmsg = JSON.parse(msg);
+            $('#final_Negotiated2').modal('show');
+            var tbleData = "<table class='table table-striped table-bordered table-sm w-auto small' id='dataTable' width='100%' cellspacing='0'><tr><td>Buyer ID</td> <td>Buyer's Quote</td><td>Seller's 1st Negotiation Price</td><td>Buyer's 2nd Negotiation Price</td><td>Seller's 2nd Renegotiation Price</td><td>Buyer's Final Price</td></tr>";
+            for(var i=0; i<tempmsg.length; i++){
+                $sellerMBueryReqId = tempmsg[i]['companyname'];								
+                tbleData = tbleData+"<tr><td>"+tempmsg[i]['buyerid']+"</td><td>"+tempmsg[i]['bprice']+"</td><td>"+tempmsg[i]['selprice']+"</td><td>"+tempmsg[i]['brenegoprice']+"</td><td>"+tempmsg[i]['sellrenegoprice']+"</td><td> <a href='Customer_seller_response_renego/index/"+tempmsg[i]['id']+ "';>Quotation</a></td></tr>";	
+            }			  
+            tbleData = tbleData+"</table>";
+            $("#sellerResponse2").html(tbleData);
+        }
+    });
+}
 
 
 

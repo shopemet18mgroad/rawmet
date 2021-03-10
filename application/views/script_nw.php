@@ -48,7 +48,7 @@ alert(data2); die;
   function validate_buyer_companyname(){
 	  var val = document.getElementById("bcompanyname").value;
 		if(val != ''){
-			 $.get('<?php echo base_url() .'Home_buyer_register/validate_buyer_companyname/'; ?>'+val, function(data2){				 
+			 $.get('<?php echo base_url().'Home_buyer_register/validate_buyer_companyname/'; ?>'+val, function(data2){				 
 				 if($.trim(data2) == "BYE"){
 					swal("Alert!",  "Seller Company Name Already Exists", "error");
 					document.getElementById("bcompanyname").value = "";
