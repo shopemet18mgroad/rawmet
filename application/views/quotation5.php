@@ -129,7 +129,7 @@ table-border
     
 		<td><?php echo $sqldata1[0]->brenegoquantity.""; echo $sqldata1[0]->brenegoquantityunit;?></td>
 	<td><?php echo$sqldata1[0]->sellrenegoprice."/"; echo $sqldata1[0]->sellrenegounits;?></td>
-    <td><?php echo $a = $sqldata1[0]->brenegoquantity*$sqldata1[0]->sellrenegoprice;?></td>
+    <td><?php echo $a = $sqldata1[0]->brenegoquantity * $sqldata1[0]->sellrenegoprice;?></td>
   </tr>
   
 </table>
@@ -174,7 +174,7 @@ table-border
 	<div>
 		<center>
 			<p> If you have any questions about this quotation please contact</p>
-			<p>jhon doe,phone No. :123456789</p>
+			<p>John doe,phone No. :123456789</p>
 			<p><b> THANK YOU FOR YOUR BUSINESS!</b></p>
 		</center>
 	</div>

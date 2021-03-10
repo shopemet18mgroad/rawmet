@@ -130,7 +130,7 @@
  		
 		<td style="font-size:15px; width:150px;">Seller's 2nd Negotiate <br />		
 		
-		<small style="color:orange;"><b><?php echo  $sqldata4[0]->seller_renego_price. " / " .$sqldata4[0]->seller_renego_units;?></b></small>
+		<small style="color:orange;"><b><?php echo  $sqldata4[0]->seller_renego_price. " / " .$sqldata4[0]->units;?></b></small>
 		<br />
 		
 		<b><?php  if($reqres_appl[0]->buyer_approval == null) {echo '';}else if($reqres_appl[0]->buyer_approval == 0) {echo 'Pending';}else if($reqres_appl[0]->buyer_approval == 2) {echo 'Rejected';}else if($reqres_appl[0]->buyer_approval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation11/auc_no/'.$reqres_appl[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#exampleModal6' target='_blank'><i class='fa fa-upload'></i></a>";}else if($reqres_appl[0]->buyer_approval == 5) {echo 'Approved-check in final Approval!';}?></b>
@@ -139,7 +139,7 @@
 		
 		</td>
 			<td>
-			
+			 
 				 
 		
 		 
@@ -171,7 +171,7 @@
 			
  
 		
-			<small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price. " / " .$sqldata4[0]->buyer_final_units;?></b></small>
+			<small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price. " / " .$sqldata4[0]->units;?></b></small>
 		<br />
 		
 		<b><?php  if($reqres_appl[0]->sel_status == null) {echo '';}else if($reqres_appl[0]->sel_status == 0) {echo 'Pending';}else if($reqres_appl[0]->sel_status == 2) {echo 'Rejected';}else if($reqres_appl[0]->sel_status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation12/auc_no/'.$reqres_appl[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#exampleModal5' target='_blank'><i class='fa fa-upload'></i></a>";}else if($reqres_appl[0]->sel_status == 5) {echo 'Approved-check in final Approval!';}?></b>
@@ -360,7 +360,7 @@ swal("You have negotiated", {
 				?>
 
 	
-			<td><input  type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
+			<td><input  type="hidden" name="sellerid" value="<?php echo $uploadPo[0]->sellerid;?>">
 			<input  type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
 							<?php echo $row->sellerid;?></td>
 							 
@@ -496,46 +496,57 @@ swal("You have negotiated", {
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-		<th>Seller Name</th>
-		<th>Buyer Company Name</th>
-	    <th>Category</th>
-		<th>Buyer Product Name</th>
-		<th>Buyer Product Id</th>
-        <th>Quantity</th>
-		<th>Buyer Price</th>
-		<th style="color:orange">Seller Price</th>
-		<th>Buyer Negotiated Price</th>
-		<th>Seller's Re-Negotiated Price</th>
-		<th>View Quotation</th>
-		<th>Upload Purchase Order</th>
-		
-                    
-             
-		
-      </tr>
+			<th>Product Name</th>
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
+			<th>Company Name</th>
+			<th>Billing Address</th>
+			<th>Shipped To</th>
+			<th>GST Number</th>	
+			<th>Quantity</th>
+			<th>Seller's Re-Negotiated Price</th>
+			<th>View Quotation</th>
+			<th>Upload Purchase Order</th>
+	</tr>
     </thead>			
-				
-				<tbody>
+	<tbody>
 	<?php $k=0;?>
-	 <?php foreach($sqldata3 as $row){?>
+	 
       <tr>
-	  <?php $proid = str_ireplace('/','-',$row->productid);
-				?>
-				<?php $prodid = str_ireplace('/','-',$row->productid);?>
-			<td><input type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>"><?php echo $row->vusername;?><input type="hidden" name="buyerid" value="<?php echo $row->bname;?>">
-			<input type="hidden" name="seller_mbuyreq_id" value="<?php echo $row->seller_mbuyreq_id;?>"></td>
-			<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"><?php echo $row->bcompanyname;?></td>
-			<td><input type="hidden" name="category" value="<?php echo $row->category;?>"><?php echo $row->category;?></td>
-			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>"><?php echo $row->productname;?></td>
-			<td><input type="hidden" name="productid" value="<?php echo $row->productid;?>"><?php echo $row->productid;?></td>
-			<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>"><?php echo $row->quantity."/"; echo $row->units;?><input type="hidden" name="units" value="<?php echo $row->units;?>"></td>
-			<td><input type="hidden" name="price" value="<?php echo $row->price;?>"><?php echo $row->price.""; echo $row->priceperkg;?><input type="hidden" name="priceperkg" value="<?php echo $row->priceperkg;?>"></td>
-			<td><input type="hidden" name="sellerprice" value="<?php echo $row->sellerprice;?>"><?php echo $row->sellerprice."/"; echo $row->bsupplyability;?><input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>"></td>
-			<td><input type="hidden" name="buyer_nego_price" value="<?php echo $row->buyer_nego_price;?>"><?php echo $row->buyer_nego_price."/"; echo $row->buyer_nego_units;?><input type="hidden" name="buyer_nego_units" value="<?php echo $row->buyer_nego_units;?>"></td>
-			<td><input type="hidden" name="seller_renego_price" value="<?php echo $row->seller_renego_price;?>"><?php echo $row->seller_renego_price."/"; echo $row->seller_renego_units;?><input type="hidden" name="seller_renego_units" value="<?php echo $row->seller_renego_units;?>"></td>
+			<td><input type="hidden" name="productname" value="<?php echo $sqldata3[0]->productname;?>"><?php echo $sqldata3[0]->productname;?></td>
+				 
+			<td><input type="hidden" name="sellerid" value="<?php echo $sqldata3[0]->sellerid;?>">
+			<?php echo $sqldata3[0]->bname;?>
+			<input type="hidden" name="buyerid" value="<?php echo $sqldata3[0]->bname;?>">
+			<input type="hidden" name="seller_mbuyreq_id" value="<?php echo $sqldata3[0]->seller_mbuyreq_id;?>"></td>
 			
-			<td> 
-		<a href="<?php echo base_url().'Customer_quotation11/auc_no/'.$row->seller_mbuyreq_id;?>" target="_blank">
+			<td><input type="hidden" name="sellerid" value="<?php echo $sqldata3[0]->sellerid;?>">
+			<?php echo $sqldata3[0]->sellerid;?></td>
+			
+			
+			
+			<td><input type="hidden" name="bcompanyname" value="<?php echo $sqldata3[0]->bcompanyname;?>"><?php echo $sqldata3[0]->vcompanyname;?></td>
+			
+			
+			<td><?php echo $sqldata3[0]->vaddress;?></td>
+			<td><?php echo $sqldata3[0]->vaddress;?></td>
+			<td><?php echo $sqldata3[0]->vgst;?></td>
+			
+			<td><input type="hidden" name="category" value="<?php echo $sqldata3[0]->category;?>">
+			<input type="hidden" name="productid" value="<?php echo $sqldata3[0]->productid;?>">
+			<input type="hidden" name="quantity" value="<?php echo $sqldata3[0]->quantity;?>"><?php echo $sqldata3[0]->quantity."/"; echo $sqldata3[0]->units;?><input type="hidden" name="units" value="<?php echo $sqldata3[0]->units;?>">
+			<input type="hidden" name="price" value="<?php echo $sqldata3[0]->price;?>">
+			<input type="hidden" name="priceperkg" value="<?php echo $sqldata3[0]->priceperkg;?>">
+			<input type="hidden" name="sellerprice" value="<?php echo $sqldata3[0]->sellerprice;?>">
+			<input type="hidden" name="bsupplyability" value="<?php echo $sqldata3[0]->bsupplyability;?>">
+			
+			<input type="hidden" name="buyer_nego_price" value="<?php echo $sqldata3[0]->buyer_nego_price;?>">
+			<input type="hidden" name="buyer_nego_units" value="<?php echo $sqldata3[0]->buyer_nego_units;?>"></td>
+			
+			<td><input type="hidden" name="seller_renego_price" value="<?php echo $sqldata3[0]->seller_renego_price;?>"><?php echo $sqldata3[0]->seller_renego_price."/"; echo $sqldata3[0]->units;?><input type="hidden" name="seller_renego_units" value="<?php echo $sqldata3[0]->seller_renego_units;?>"></td>
+			
+		<td> 
+		<a href="<?php echo base_url().'Customer_quotation11/auc_no/'.$sqldata3[0]->seller_mbuyreq_id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			
@@ -545,7 +556,7 @@ swal("You have negotiated", {
 			</td>
 			
       </tr>      
-    <?php $k++;}?>	
+   
     </tbody>
 	</form>			
 				
@@ -591,7 +602,7 @@ swal("You have negotiated", {
  <!--Customer_buypurchase_order4-->
  
  <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"><b>Seller Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> </h5>
@@ -622,15 +633,16 @@ swal("You have negotiated", {
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-		<th>Seller ID</th>
+	  
+	  <th>Product Name</th>
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
+			<th>Company Name</th>
+			<th>Billing Address</th>
+			<th>Shipped To</th>
+			<th>GST Number</th>	
+			<th>Quantity</th>
 		
-	    <th>Category</th>
-		<th>Buyer Product Name</th>
-		<th>Buyer Product Id</th>
-        <th>Quantity</th>
-		<th style="color:orange">Seller Price</th>
-		<th>Buyer Negotiated Price</th>
-		<th>Seller's Re-Negotiated Price</th>
 		<th>Buyer's Re-Negotiated Price</th>
 		<th>View Quotation</th>
 		<th>Upload Purchase Order</th>
@@ -643,43 +655,50 @@ swal("You have negotiated", {
 				
 				<tbody>
 	<?php $k=0;?>
-	 <?php foreach($finalupldpo as $row){?>
+ 
       <tr>
-	  <?php $proid = str_ireplace('/','-',$row->productid);
-				?>
-				<?php $prodid = str_ireplace('/','-',$row->productid);?>
+		<td><input type="hidden" name="productname" value="<?php echo $finalupldpo[0]->productname;?>"><?php echo $finalupldpo[0]->productname;?></td>
+				 
 			
-			<td><input type="hidden" name="vusername" value="<?php echo $row->
-			vusername;?>"><?php echo $row->vusername;?>
-			<input type="hidden" name="bname" value="<?php echo $row->
+			<td><input type="hidden" name="vusername" value="<?php echo $finalupldpo[0]->
+			vusername;?>"><?php echo $finalupldpo[0]->bname;?>
+			<input type="hidden" name="bname" value="<?php echo $finalupldpo[0]->
 			bname;?>">
 			
-			<input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>">
+			<input type="hidden" name="bcompanyname" value="<?php echo $finalupldpo[0]->bcompanyname;?>">
 			
-			<input type="hidden" name="seller_mbuyreq_id" value="<?php echo $row->seller_mbuyreq_id;?>"></td>
+			<input type="hidden" name="seller_mbuyreq_id" value="<?php echo $finalupldpo[0]->seller_mbuyreq_id;?>">
+			
+			<input type="hidden" name="category" value="<?php echo $finalupldpo[0]->category;?>">
+			
+			<input type="hidden" name="productid" value="<?php echo $finalupldpo[0]->productid;?>">
+			</td>
 			
 		
+			<td><?php echo $finalupldpo[0]->sellerid;?></td>
 			
-			<td><input type="hidden" name="category" value="<?php echo $row->category;?>"><?php echo $row->category;?></td>
+			<td><?php echo $finalupldpo[0]->vcompanyname;?></td>
+			<td><?php echo $finalupldpo[0]->vaddress;?></td>
+			<td><?php echo $finalupldpo[0]->vaddress;?></td>
+			<td><?php echo $finalupldpo[0]->vgst;?></td>
 			
-			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>"><?php echo $row->productname;?></td>
+			<td><input type="hidden" name="quantity" value="<?php echo $finalupldpo[0]->quantity;?>"><?php echo $finalupldpo[0]->quantity."/"; echo $finalupldpo[0]->units;?>
+			<input type="hidden" name="units" value="<?php echo $finalupldpo[0]->units;?>">
 			
-			<td><input type="hidden" name="productid" value="<?php echo $row->productid;?>"><?php echo $row->productid;?></td>
+			<input type="hidden" name="price" value="<?php echo $finalupldpo[0]->price;?>"><input type="hidden" name="priceperkg" value="<?php echo $finalupldpo[0]->priceperkg;?>">
 			
-			<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>"><?php echo $row->quantity."/"; echo $row->units;?><input type="hidden" name="units" value="<?php echo $row->units;?>"></td>
+			<input type="hidden" name="sellerprice" value="<?php echo $finalupldpo[0]->sellerprice;?>"><input type="hidden" name="bsupplyability" value="<?php echo $finalupldpo[0]->bsupplyability;?>">
 			
-			<input type="hidden" name="price" value="<?php echo $row->price;?>"><input type="hidden" name="priceperkg" value="<?php echo $row->priceperkg;?>">
+			<input type="hidden" name="buyer_nego_price" value="<?php echo $finalupldpo[0]->buyer_nego_price;?>">
+			<input type="hidden" name="buyer_nego_units" value="<?php echo $finalupldpo[0]->buyer_nego_units;?>">
 			
-			<td><input type="hidden" name="sellerprice" value="<?php echo $row->sellerprice;?>"><?php echo $row->sellerprice."/"; echo $row->bsupplyability;?><input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>"></td>
+			<input type="hidden" name="seller_renego_price" value="<?php echo $finalupldpo[0]->seller_renego_price;?>">
+			<input type="hidden" name="seller_renego_units" value="<?php echo $finalupldpo[0]->seller_renego_units;?>"></td>
 			
-			<td><input type="hidden" name="buyer_nego_price" value="<?php echo $row->buyer_nego_price;?>"><?php echo $row->buyer_nego_price."/"; echo $row->buyer_nego_units;?><input type="hidden" name="buyer_nego_units" value="<?php echo $row->buyer_nego_units;?>"></td>
-			
-			<td><input type="hidden" name="seller_renego_price" value="<?php echo $row->seller_renego_price;?>"><?php echo $row->seller_renego_price."/"; echo $row->seller_renego_units;?><input type="hidden" name="seller_renego_units" value="<?php echo $row->seller_renego_units;?>"></td>
-			
-			<td><input type="hidden" name="buyer_final_price" value="<?php echo $row->buyer_final_price;?>"><?php echo $row->buyer_final_price."/"; echo $row->buyer_final_units;?><input type="hidden" name="buyer_final_units" value="<?php echo $row->buyer_final_units;?>"></td>
+			<td><input type="hidden" name="buyer_final_price" value="<?php echo $finalupldpo[0]->buyer_final_price;?>"><?php echo $finalupldpo[0]->buyer_final_price."/"; echo $finalupldpo[0]->units;?><input type="hidden" name="buyer_final_units" value="<?php echo $finalupldpo[0]->buyer_final_units;?>"></td>
 			
 	<td> 
-		<a href="<?php echo base_url().'Customer_quotation12/auc_no/'.$row->seller_mbuyreq_id;?>" target="_blank">.
+		<a href="<?php echo base_url().'Customer_quotation12/auc_no/'.$finalupldpo[0]->seller_mbuyreq_id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			
@@ -689,7 +708,7 @@ swal("You have negotiated", {
 			</td>
 			
       </tr>      
-    <?php $k++;}?>	
+    
     </tbody>
 	</form>			
 				
@@ -767,18 +786,17 @@ swal("You have negotiated", {
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Supplier Id</th>
 	  
-
-	   <th>Category</th>
-		<th>Product Name</th>
-		<th>Product Id</th>
-        <th>Description</th>
-		
-		<th>Stock</th>
+	  <th>Product Name</th>
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
+			<th>Company Name</th>
+			<th>Billing Address</th>
+			<th>Shipped To</th>
+			<th>GST Number</th>	
+	 
+		<th>Qunatity</th>
 	   
-		<th>Price</th>
-		<th>Seller Price</th>
 		<th>Buyer Negotiated Price</th>
 		<th>View Quotation</th>
 		<th>Upload Purchase Order</th>
@@ -791,37 +809,38 @@ swal("You have negotiated", {
 	
       
       <?php $k=0;?>
-	   <?php foreach($twouploadPo as $row){?>
+	  
       <tr>
 	  
-	 <?php $proid = str_ireplace('/','-',$row->productid);
-				?>
+	<td><input type="hidden" name="productname" value="<?php echo $twouploadPo[0]->productname;?>"><?php echo $twouploadPo[0]->productname?></td>
 		  		
-	  <td><input type="hidden" name="vusername" value="<?php echo $row->vusername;?>"><?php echo $row->vusername;?><input type="hidden" name="bname" value="<?php echo $row->bname;?>">
-	  <input type="hidden" name="sellerid" value="<?php echo $row->vusername;?>"><input type="hidden" name="buyerid" value="<?php echo $row->bname;?>">
-<input type="hidden" name="seller_mbuyreq_id" value="<?php echo $row->seller_mbuyreq_id;?>">
-	  <input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>"></td> 
-
+	  <td><input type="hidden" name="vusername" value="<?php echo $twouploadPo[0]->vusername;?>"><?php echo $twouploadPo[0]->bname;?><input type="hidden" name="bname" value="<?php echo $twouploadPo[0]->bname;?>">
+	  <input type="hidden" name="sellerid" value="<?php echo $twouploadPo[0]->vusername;?>"><input type="hidden" name="buyerid" value="<?php echo $twouploadPo[0]->bname;?>">
+	<input type="hidden" name="seller_mbuyreq_id" value="<?php echo $twouploadPo[0]->seller_mbuyreq_id;?>">
+	  <input type="hidden" name="bcompanyname" value="<?php echo $twouploadPo[0]->bcompanyname;?>">
+	  
+	  <input type="hidden" name="category" value="<?php echo $twouploadPo[0]->category;?>"></td>
+	  
+	  <td><?php  echo $twouploadPo[0]->sellerid;?>
+	  <td><?php echo $twouploadPo[0]->vcompanyname;?></td>
+	<td><?php echo $twouploadPo[0]->vaddress;?></td>
+	<td><?php echo $twouploadPo[0]->vaddress;?></td>
+	<td><?php echo $twouploadPo[0]->vgst;?></td>
+	  <input type="hidden" name="productid" value="<?php echo $twouploadPo[0]->productid;?>">
+	
+	<input type="hidden" name="description" value="<?php echo $twouploadPo[0]->description;?>"></td>
 		
-		<td><input type="hidden" name="category" value="<?php echo $row->category;?>"><?php  echo $row->category;?></td>
-		
-		<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>"><?php echo $row->productname?></td>
-		 
-		 <td><input type="hidden" name="productid" value="<?php echo $row->productid;?>"><?php echo $row->productid?></td>
-         
-		 <td><input type="hidden" name="description" value="<?php echo $row->description;?>"><?php echo $row->description?></td>
-		
-		<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>"><?php echo $row->quantity." ";echo $row->units;?>
-		<input type="hidden" name="units" value="<?php echo $row->units;?>"></td>
-		
-		<td><input type="hidden" name="price" value="<?php echo $row->price;?>"><?php echo $row->price."/";echo $row->priceperkg;?><input type="hidden" name="priceperkg" value="<?php echo $row->priceperkg;?>"></td>
-		
-		<td><input type="hidden" name="sellerprice" value="<?php echo $row->sellerprice;?>"><?php echo $row->sellerprice."/";echo $row->bsupplyability;?><input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>"></td>
+		<td><input type="hidden" name="quantity" value="<?php echo $twouploadPo[0]->quantity;?>"><?php echo $twouploadPo[0]->quantity." ";echo $twouploadPo[0]->units;?>
+		<input type="hidden" name="units" value="<?php echo $twouploadPo[0]->units;?>">
+		<input type="hidden" name="price" value="<?php echo $twouploadPo[0]->price;?>">
+		<input type="hidden" name="priceperkg" value="<?php echo $twouploadPo[0]->priceperkg;?>">
+		<input type="hidden" name="sellerprice" value="<?php echo $twouploadPo[0]->sellerprice;?>">
+		<input type="hidden" name="bsupplyability" value="<?php echo $twouploadPo[0]->bsupplyability;?>"></td>
 										
-		<td><input type="hidden" name="buyer_nego_price" value="<?php echo $row->buyer_nego_price;?>"><?php echo $row->buyer_nego_price."/";echo $row->buyer_nego_units;?><input type="hidden" name="buyer_nego_units" value="<?php echo $row->buyer_nego_units;?>"></td>
+		<td><input type="hidden" name="buyer_nego_price" value="<?php echo $twouploadPo[0]->buyer_nego_price;?>"><?php echo $twouploadPo[0]->buyer_nego_price."/";echo $twouploadPo[0]->buyer_nego_units;?><input type="hidden" name="buyer_nego_units" value="<?php echo $twouploadPo[0]->buyer_nego_units;?>"></td>
 									
 	<td> 
-		<a href="<?php echo base_url().'Customer_quotation10/auc_no/'.$row->seller_mbuyreq_id;?>" target="_blank">
+		<a href="<?php echo base_url().'Customer_quotation10/auc_no/'.$twouploadPo[0]->seller_mbuyreq_id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 			
 			<td>
@@ -834,7 +853,7 @@ swal("You have negotiated", {
 		
  
 </tr>   
-      <?php $k++;}?>
+      
     </tbody>
 	</tbody>
   </table>
@@ -915,20 +934,19 @@ swal("You have negotiated", {
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Supplier name</th>
-	  <th>Buyer Name</th>
 	  
-      <th>companyname</th>
-	   <th>Category</th>
-		<th>productname</th>
-		<th>product Id</th>
-		<th>Description</th>
-        <th>buyer Quantity</th>
-	    <th> Buyer Price</th>
-		<th>Seller Price</th>
+	    <th>Product Name</th>
+			<th>Buyer Id</th>
+			<th>Supplier Id</th>
+			<th>Company Name</th>
+			<th>Billing Address</th>
+			<th>Shipped To</th>
+			<th>GST Number</th>	
+			<th>Quantity</th>
+			<th>Seller Price</th>
 		<!--<th>Image</th>-->
-		<th>View Quotation</th>
-	<th>Upload Purchase Order</th>
+			<th>View Quotation</th>
+			<th>Upload Purchase Order</th>
       </tr>
     </thead>
     <tbody>
@@ -936,43 +954,41 @@ swal("You have negotiated", {
       
       	
 	<?php $k=0;?>
-	   <?php foreach($uploadPo as $row){?>
+	   
       <tr>
 	  
-	 <?php $proid = str_ireplace('/','-',$row->productid);
-				?>
+	 
 
-	
-			<td><input  type="hidden" name="sellerid" value="<?php echo $row->sellerid;?>">
-			<input  type="hidden" name="buyerid" value="<?php echo $row->buyerid;?>">
-							<?php echo $row->sellerid;?></td>
+		<td><input type="hidden" name="productname" value="<?php echo $uploadPo[0]->productname;?>">
+								<?php echo $uploadPo[0]->productname;?></td>
+								
+			<td><input  type="hidden" name="sellerid" value="<?php echo $uploadPo[0]->sellerid;?>">
+			<input  type="hidden" name="buyerid" value="<?php echo $uploadPo[0]->buyerid;?>">
+							<?php echo $uploadPo[0]->buyerid;?></td>
 							 
-			<td><input type="hidden" name="bname" value="<?php echo $row->bname;?>">
-							<?php echo $row->bname;?></td>
-			<td><input type="hidden" name="bcompanyname" value="<?php echo $row->bcompanyname;?>">
-							<?php echo $row->bcompanyname;?></td>
-			<td><input type="hidden" name="category" value="<?php echo $row->category;?>">
-								<?php echo $row->category;?></td>
-			<td><input type="hidden" name="productname" value="<?php echo $row->productname;?>">
-								<?php echo $row->productname;?></td>
-			<td><input type="hidden" name="productid" value="<?php echo $row->productid;?>">
-								<?php echo $row->productid;?></td>
-			<td><input type="hidden" name="description" value="<?php echo $row->description;?>">
-								<?php echo $row->description;?></td>
-		
-			<td><input type="hidden" name="quantity" value="<?php echo $row->quantity;?>">
-							<?php echo $row->quantity.""; echo $row->units;?>
-			<input type="hidden" name="units" value="<?php echo $row->units;?>">
-						</td>
-							
-							
-<td><input type="hidden" name="price" value="<?php echo $row->price;?>">
-		     <?php echo $row->price."/" ;echo $row->priceperkg;?>
-			 <input type="hidden" name="priceperkg" value="<?php echo $row->priceperkg;?>">
+			<td><input type="hidden" name="bname" value="<?php echo $uploadPo[0]->bname;?>">
+							<?php echo $uploadPo[0]->sellerid;?></td>
+			<td><input type="hidden" name="bcompanyname" value="<?php echo $uploadPo[0]->bcompanyname;?>"><?php echo $uploadPo[0]->vcompanyname;?></td>
+	<td><?php echo $uploadPo[0]->vaddress;?></td>
+	<td><?php echo $uploadPo[0]->vaddress;?></td>
+	<td><?php echo $uploadPo[0]->vgst;?></td></td>
+			
+			<td><input type="hidden" name="category" value="<?php echo $uploadPo[0]->category;?>">
+			
+			<input type="hidden" name="productid" value="<?php echo $uploadPo[0]->productid;?>">
+			<input type="hidden" name="description" value="<?php echo $uploadPo[0]->description;?>">
+			
+			<input type="hidden" name="quantity" value="<?php echo $uploadPo[0]->quantity;?>">
+			<?php echo $uploadPo[0]->quantity.""; echo $uploadPo[0]->units;?>
+			<input type="hidden" name="units" value="<?php echo $uploadPo[0]->units;?>">
+			
+			<input type="hidden" name="price" value="<?php echo $uploadPo[0]->price;?>">
+		    
+			 <input type="hidden" name="priceperkg" value="<?php echo $uploadPo[0]->priceperkg;?>">
 		</td>
-		<td><input type="hidden" name="sellerprice" value="<?php echo $row->sellerprice;?>">
-		     <?php echo $row->sellerprice."/" ;echo $row->bsupplyability;?>
-			 <input type="hidden" name="bsupplyability" value="<?php echo $row->bsupplyability;?>">
+		<td><input type="hidden" name="sellerprice" value="<?php echo $uploadPo[0]->sellerprice;?>">
+		     <?php echo $uploadPo[0]->sellerprice."/" ;echo $uploadPo[0]->bsupplyability;?>
+			 <input type="hidden" name="bsupplyability" value="<?php echo $uploadPo[0]->bsupplyability;?>">
 		</td>
 		
 	<!--	
@@ -984,7 +1000,7 @@ swal("You have negotiated", {
 					
 					</div>	--> 
 			 
-		<td> <a href="<?php echo base_url().'customer_quotation2/auc_no/'.$row->id;?>" target="_blank">
+		<td> <a href="<?php echo base_url().'customer_quotation2/auc_no/'.$uploadPo[0]->id;?>" target="_blank">
 				<i class="fa fa-download" aria-hidden="true"></i></a></td>
 					
 			
@@ -1003,7 +1019,7 @@ swal("You have negotiated", {
         
 
 </tr>   
-      <?php $k++;}?>
+       
     </tbody>
 	</form>
   </table>

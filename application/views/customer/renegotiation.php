@@ -229,7 +229,7 @@
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoprice. " / " .$sqld[0]->brenegounit;?></b></small><br/>
 		
 		
-<b><?php  if($approve_buyer2[0]->selapprove == 0) {echo 'Pending';}else if($approve_buyer2[0]->selapprove == 2) {echo 'Rejected';}else if($approve_buyer2[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_renegovaluequotation/auc_no/'.$approve_buyer2[0]->id.'/'.$approve_buyer2[0]->sellerid.'/'.$approve_buyer2[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>/ / <a href='' data-toggle='modal' data-target='#thrd' target='_blank'><i class='fa fa-upload'></i></a>  ";}else if($approve_buyer2[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
+<b><?php  if($approve_buyer2[0]->selapprove == 0) {echo 'Pending';}else if($approve_buyer2[0]->selapprove == 2) {echo 'Rejected';}else if($approve_buyer2[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_renegovaluequotation/auc_no/'.$approve_buyer2[0]->id.'/'.$approve_buyer2[0]->sellerid.'/'.$approve_buyer2[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#thrd' target='_blank'><i class='fa fa-upload'></i></a>  ";}else if($approve_buyer2[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
 		
 		</td>
  

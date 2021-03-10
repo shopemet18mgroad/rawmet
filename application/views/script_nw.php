@@ -271,7 +271,9 @@ function validate_password() {
   function validate_bcompany11(){
 	  var val = document.getElementById("bcompanyname").value;
 		if(val != ''){
-			 $.get('<?php echo base_url() .'Home_buyer_register/validate_bcompanyname/'; ?>'+val, function(data2){
+
+			 $.get('<?php echo base_url().'Home_buyer_register/validate_buyer_companyname/'; ?>'+val, function(data2){				 
+
 				 if($.trim(data2) == "BYE"){
 					swal("Alert!",  "Buyer Company Already Exists", "error");
 					document.getElementById("bcompanyname").value = "";
