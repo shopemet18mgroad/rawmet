@@ -69,10 +69,49 @@ class Home_seller_register extends CI_Controller {
 		
 		$this->load->view('header',$sess);
 		$this->load->view('seller_register');
-	}
-	   function validate_username(){
+		
+		
+		
+		
+		
+ public function validate_seller11(){
+	 
+	 
 		$dat = urldecode($this->uri->segment(3));
-		$check_db = array('vusername' => $dat);
+		$check_db = array('vcompanyname' => $dat);
+		$this->load->model('Admin_model');
+			  if($this->Admin_model->check('vendor_register', $check_db)){
+				  echo "BYE";
+			  }else{
+				  echo "HI";
+			  }
+		
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	 public function validate_sellerid11(){
+		$dat = urldecode($this->uri->segment(3));
+		$check_db = array('sellerid' => $dat);
 		$this->load->model('Admin_model');
 			  if($this->Admin_model->check('vendor_register', $check_db)){
 				  echo "BYE";
