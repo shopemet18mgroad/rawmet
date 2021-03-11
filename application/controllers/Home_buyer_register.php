@@ -85,6 +85,40 @@ class Home_buyer_register extends CI_Controller {
 		
 	}
 	 
+	  
+	  
+	  
+	 public function validate_sellgst(){
+		$dat = urldecode($this->uri->segment(3));
+		$check_db = array('vgst' => $dat);
+		$this->load->model('Admin_model');
+			  if($this->Admin_model->check('vendor_register', $check_db)){
+				  echo "BYE";
+			  }else{
+				  echo "HI";
+			  }
+		
+	}  
+	  public function validate_buygst(){
+		$dat = urldecode($this->uri->segment(3));
+		$check_db = array('bgst' => $dat);
+		$this->load->model('Admin_model');
+			  if($this->Admin_model->check('buyer_register', $check_db)){
+				  echo "BYE";
+			  }else{
+				  echo "HI";
+			  }
+		
+	}
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 
 	  
 	  

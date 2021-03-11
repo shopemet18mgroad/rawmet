@@ -113,34 +113,7 @@ function validate_password1() {
  }
 </script>
 	
-  <script>
-function validate_password() {
-    //collect form data in JavaScript variables
-    var pw11 = document.getElementById("bpassword").value;
-    var pw22 = document.getElementById("brepeatpassword").value;
-   
-  
-    //check empty password field
 
-    //minimum password length validation
-    if(pw11.length < 8) {
-      document.getElementById("message11").innerHTML = "**Password length must be atleast 8 characters";
-      return false;
-    }
-
-    //maximum length of password validation
-    if(pw11.length > 15) {
-      document.getElementById("message11").innerHTML = "**Password length must not exceed 15 characters";
-      return false;
-    }
-  
-    if(pw11 != pw2) {
-      document.getElementById("message22").innerHTML = "**Passwords are not same";
-      return false;
-    } 
- }
-</script>	
-	
 	
 	
 	
@@ -191,7 +164,7 @@ function validate_password() {
 			 $.get('<?php echo base_url() .'Home_buyer_register/validate_selid11/'; ?>'+val, function(data2){				 
 				 if($.trim(data2) == "BYE"){
 					swal("Alert!",  "Seller Id Already Exists", "error");
-					document.getElementById("buyerid").value = "";
+					document.getElementById("sellerid").value = "";
 					return false;
 				}else{
 					return true;
@@ -238,14 +211,7 @@ function validate_password() {
 
 	
 	
-<script>
- function validate_bname(){
-	  var cat2 = document.getElementById('busername').value;
-	 if(cat2){
-		  document.getElementById('bname').value = cat2 ;
-	 }
- }
-</script>
+
 
 
 
@@ -266,13 +232,21 @@ function validate_password() {
  }
 </script>
 
+	<script>
+ function validate_bname(){
+	  var cat2 = document.getElementById('busername').value;
+	 if(cat2){
+		  document.getElementById('bname').value = cat2 ;
+	 }
+ }
+</script>
 
 <script>
   function validate_bcompany11(){
 	  var val = document.getElementById("bcompanyname").value;
 		if(val != ''){
 
-			 $.get('<?php echo base_url().'Home_buyer_register/validate_buyer_companyname/'; ?>'+val, function(data2){				 
+			 $.get('<?php echo base_url().'Home_buyer_register/validate_bcompanyname/'; ?>'+val, function(data2){				 
 
 				 if($.trim(data2) == "BYE"){
 					swal("Alert!",  "Buyer Company Already Exists", "error");
@@ -293,6 +267,13 @@ function validate_password() {
 	   
 	   
 	   
+	  
+	   
+	   
+	   
+	   
+	   
+  
 	   
 	   
 	   <script>
@@ -349,7 +330,97 @@ function validate_password() {
 		}
   }
 
-   </script>	   
+   </script>	
+	   
+	   
+	<script>
+  function validate_sellergst(){
+	  var val1 = document.getElementById("vgst").value;
+		if(val1 != ''){
+			 $.get('<?php echo base_url() .'Home_buyer_register/validate_sellgst/'; ?>'+val1, function(data2){
+				 if($.trim(data2) == "BYE"){
+					swal("Alert!",  "GST Already Exists", "error");
+					document.getElementById("vgst").value = "";
+					return false;
+				}else{
+					return true;
+				}
+			 });
+			
+		}else{
+			swal("Alert!",  "Please Enter GST!", "error");
+			return false;
+		}
+  }
+
+   </script>   
+	   
+	   
+	  
+	   
+	   
+	   	<script>
+  function validate_buyergst(){
+	  var val1 = document.getElementById("bgst").value;
+		if(val1 != ''){
+			 $.get('<?php echo base_url() .'Home_buyer_register/validate_buygst/'; ?>'+val1, function(data2){
+				 if($.trim(data2) == "BYE"){
+					swal("Alert!",  "GST Already Exists", "error");
+					document.getElementById("bgst").value = "";
+					return false;
+				}else{
+					return true;
+				}
+			 });
+			
+		}else{
+			swal("Alert!",  "Please Enter GST!", "error");
+			return false;
+		}
+  }
+
+   </script> 
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+		  <script>
+function validateForm() {
+    //collect form data in JavaScript variables
+    var pw11 = document.getElementById("vpassword").value;
+    var pw22 = document.getElementById("vrepeatpassword").value;
+   
+  
+    //check empty password field
+
+    //minimum password length validation
+    if(pw11.length < 8) {
+      document.getElementById("message11").innerHTML = "**Password length must be atleast 8 characters";
+      return false;
+    }
+
+    //maximum length of password validation
+    if(pw11.length > 15) {
+      document.getElementById("message11").innerHTML = "**Password length must not exceed 15 characters";
+      return false;
+    }
+  
+    if(pw11 != pw22) {
+      document.getElementById("message22").innerHTML = "**Passwords are not same";
+      return false;
+    } 
+ }
+</script>   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 	   
 	   
 	   
@@ -437,6 +508,82 @@ var inputvalues = $(this).val();
 </script>   
 	
 	
+<script type="text/javascript">    
+$(document).ready(function(){     
+        
+$(".semail").change(function () {      
+var inputvalues = $(this).val();      
+  var regex =/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;    
+  if(!regex.test(inputvalues)){      
+  $(".semail").val("");    
+  swal("Alert!","Invalid E-Mail no", "error");    
+  return regex.test(inputvalues);    
+  }    
+});      
+    
+});    
+</script>	
+	
+		
+<script type="text/javascript">    
+$(document).ready(function(){     
+        
+$(".bemail").change(function () {      
+var inputvalues = $(this).val();      
+  var regex =/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;    
+  if(!regex.test(inputvalues)){      
+  $(".bemail").val("");    
+  swal("Alert!","Invalid E-Mail no", "error");    
+  return regex.test(inputvalues);    
+  }    
+});      
+    
+});    
+</script>
+	
+	
+	<script type="text/javascript">    
+$(document).ready(function(){     
+        
+$(".bphn").change(function () {      
+var inputvalues = $(this).val();      
+  var regex =/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;    
+  if(!regex.test(inputvalues)){      
+  $(".bphn").val("");    
+  swal("Alert!","Invalid Buyer Phone-Number no", "error");    
+  return regex.test(inputvalues);    
+  }    
+});      
+    
+});    
+</script>
+	
+	
+<script type="text/javascript">    
+$(document).ready(function(){     
+        
+$(".sphn").change(function () {      
+var inputvalues = $(this).val();      
+  var regex =/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;    
+  if(!regex.test(inputvalues)){      
+  $(".sphn").val("");    
+  swal("Alert!","Invalid Seller Phone-Number no", "error");    
+  return regex.test(inputvalues);    
+  }    
+});      
+    
+});    
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -491,6 +638,11 @@ swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact 
 	
 }
   </script>
+	  
+	 
+	  
+	  
+	
 	   
 	   
 

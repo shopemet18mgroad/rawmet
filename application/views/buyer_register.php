@@ -73,9 +73,9 @@
  
 <div class="form-group">
 
+<!-- -->
 
-
- <input type="email" onkeyup="return validate_password1()" class="form-control" id="bemail" name="bemail" placeholder="Email">
+ <input type="email" class="form-control form-control-user semail" onkeyup="return validate_password1()" id="bemail" name="bemail" placeholder="Email">
  
  
  
@@ -141,7 +141,7 @@
 							</div>
 
 			<div class="form-group">
-                                        <input type="text" id="bpincode" name="bpincode"  class="form-control " placeholder="Pin Code *" value="" />
+                                        <input type="text" id="bpincode" name="bpincode"  class="form-control " placeholder="Pin Code *" onkeyup=" return validate_buyergst()" value="" />
              </div>
 
                                
@@ -173,7 +173,7 @@
 		   
 		   
               <div class="form-group">
-                                            <input type="text" id="bcontactnumber" name="bcontactnumber" class="form-control" placeholder="Phone*" value="" />
+                                            <input type="text" id="bcontactnumber" name="bcontactnumber"    onkeyup="validate_buyerid()" class="form-control form-control-user bphn"  placeholder="Phone*" value="" />
          </div>
 
 		 
@@ -181,11 +181,9 @@
 		 
 		 
   <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_buyerid()"  placeholder="Name">
-											
-											
-											
-											 <input hidden type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="" readonly>
+      <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_bname()"  placeholder="Name">
+                    
+                    <input hidden type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="" readonly>
   </div>
 
   
@@ -321,9 +319,9 @@
 								<label class="form-check-label" for="exampleCheck1">
 								I agree to the <a href="">Terms & Conditions</a></label>
                                         </div>
-
+<!-- -->
                                                                                 
-                       <input type="submit" name="submit" id="btn1"  onclick="return validatebuyer()" value="Register" class="btn btn-primary">
+                       <input type="submit" name="submit" id="btn1" onclick="return validatebuyer()"   value="Register" class="btn btn-primary">
                                     </div>                              
 
                                     </form>
@@ -349,7 +347,7 @@
 								
 	
 			
-<form action="<?php echo base_url();?>home_buyer_register/home_sellerregister"  method="POST">
+<form action="<?php echo base_url();?>home_seller_register"  method="POST">
 
 	
 
@@ -389,8 +387,14 @@
                                        
         <div class="form-group">
 		
+		<input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password"><span id = "message11" style="color:red"> </span>
+
 		
-             <input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password" onkeyup="validate_username()"><span id = "message11" style="color:red"> </span>
+		
+		
+		
+		
+            <!-- <input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password" onkeyup="validate_username()"><span id = "message11" style="color:red"> </span>-->
 			
 			
          </div>
@@ -453,7 +457,7 @@
            <div class="form-group">
 		   
 		   
-		   <input type="email" class="form-control" onkeyup = "return validate_password()" id="vemail" name="vemail" placeholder="Email">
+		   <input type="email" class="form-control form-control-user bemail" onkeyup="return validateForm()" id="vemail"  name="vemail" placeholder="Email">
 		   
 		   
 		
@@ -464,13 +468,13 @@
 		   
 		   
 	
+ 
+		   
+		   
+		   
+		   
+		   
 	
-		   
-		   
-		   
-		   
-		   
-		   
 		   
 		   
 		   
@@ -491,6 +495,20 @@
           <div class="form-group">
               <input type="text" id="vpan"  name="vpan"  class="form-control form-control-user span"   placeholder="PAN"  class="form-control Pan" placeholder="Pan No *" value="" />
           </div>
+		  
+		  
+		  
+			   <div class="form-group">
+     <input type="text" class="form-control form-control-user"   id="vaddress"  name="vaddress"   placeholder="Address">
+       </div>  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
 		  
 		  
 		<div class="form-group">
@@ -551,7 +569,7 @@
 		  
 		
 <div class="form-group">
-              <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value="" />
+              <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value=""  onkeyup="validate_sellergst()" />
        </div>   
 		  
 		  
@@ -638,17 +656,42 @@
 		<div class="form-group">
        		   
 			  
-                   <input hidden type="text" class="form-control " id="vname" name="vname"  readonly>
-				   
-				    <input type="text" class="form-control form-control-user" id="vusername" name="vusername" onkeyup="validate_selid()"  placeholder="Name">
+               
+					
+					
+					
+					 <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
+                   <input hidden type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
                                         </div>
+										
+										
+										
+										
+										
+										
 		
 		
 		
 		    <div class="form-group">
+			
+		       
+                    <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><span id = "message22" style="color:red"> </span>	
+			
+			
 	 
 	 
-	 <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><span id = "message22" style="color:red"> </span>
+	<!-- <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><span id = "message22" style="color:red"> </span>-->
                                             
                                                                                     </div>
 		
@@ -674,7 +717,7 @@
 		 
 		 
 		 
-       <input type="text" id="vcontactnumber"  onkeyup="validate_name()"  name="vcontactnumber" class="form-control" placeholder="Phone*" value="" />
+       <input type="text" id="vcontactnumber" onkeyup="validate_selid()"  class="form-control form-control-user sphn"  name="vcontactnumber" placeholder="Phone*" value="" />
 	   
 	
 	   
@@ -707,9 +750,7 @@
        </div>
 
 
-       <div class="form-group">
-     <input type="text" class="form-control form-control-user"   id="vaddress"  name="vaddress"   placeholder="Address">
-       </div>
+       
 	   
 	   
 	   
@@ -750,9 +791,9 @@
 								I agree to the <a href="">Terms & Conditions</a></label>
                                         </div>
 										
+				<!-- -->						
 										
-										
-                       <input type="submit" name="submit" id="btn1"  onclick="return validate_seller()" value="Register" class="btn btn-primary">
+                       <input type="submit" name="submit" id="btn1" onclick="return validate_seller()" value="Register" class="btn btn-primary">
 					   
 					   
 
