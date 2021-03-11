@@ -72,7 +72,7 @@
 						   
 						  
 					 </div>
-					 <div class="row ml-3">
+					 <div class="row ml-4">
 						<div class="form-group pl-3">
 						  <div class="custom-control custom-checkbox small ">
 							<input type="checkbox" class="custom-control-input" id="customCheck2" name="optradio"  value="Buyer">
@@ -80,11 +80,20 @@
 						 
 						  </div>
 						</div>
+					
 						<div class="form-group pl-3">
 						  <div class="custom-control custom-checkbox small">
 							<input type="checkbox" class="custom-control-input" id="customCheck" name="optradio" value="Seller">
 							<label class="custom-control-label" for="customCheck">Seller</label>
-							 
+							 </div>
+						</div>
+							<div class="form-group pl-3">
+						  <div class="custom-control custom-checkbox small ">
+							<input type="checkbox" class="custom-control-input" id="customCheck3" name="optradio"  value="Admin">
+							<label class="custom-control-label" for="customCheck3">Admin</label>
+						 
+						  </div>
+						</div>
 							<a class="pl-3" href="<?php echo base_url();?>email_send""><b><u>Forgot Password?</u></b></a>
 						  </div>
 						</div>
