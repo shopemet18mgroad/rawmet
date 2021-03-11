@@ -349,7 +349,7 @@
 								
 	
 			
-<form action="<?php echo base_url();?>home_seller_register"  method="POST">
+<form action="<?php echo base_url();?>home_buyer_register/home_sellerregister"  method="POST">
 
 	
 
