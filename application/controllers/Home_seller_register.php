@@ -70,7 +70,7 @@ class Home_seller_register extends CI_Controller {
 		$this->load->view('header',$sess);
 		$this->load->view('seller_register');
 	}
-	 public function validate_username(){
+	   function validate_username(){
 		$dat = urldecode($this->uri->segment(3));
 		$check_db = array('vusername' => $dat);
 		$this->load->model('Admin_model');
@@ -82,7 +82,7 @@ class Home_seller_register extends CI_Controller {
 		
 	}
 	
-	public function validate_vgst(){
+	  function validate_vgst(){
 		$dat = urldecode($this->uri->segment(3));
 		
 		$check_db = array('vgst' => $dat);
