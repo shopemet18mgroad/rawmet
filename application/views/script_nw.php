@@ -191,7 +191,7 @@ function validate_password() {
 			 $.get('<?php echo base_url() .'Home_buyer_register/validate_selid11/'; ?>'+val, function(data2){				 
 				 if($.trim(data2) == "BYE"){
 					swal("Alert!",  "Seller Id Already Exists", "error");
-					document.getElementById("buyerid").value = "";
+					document.getElementById("sellerid").value = "";
 					return false;
 				}else{
 					return true;
@@ -272,7 +272,7 @@ function validate_password() {
 	  var val = document.getElementById("bcompanyname").value;
 		if(val != ''){
 
-			 $.get('<?php echo base_url().'Home_buyer_register/validate_buyer_companyname/'; ?>'+val, function(data2){				 
+			 $.get('<?php echo base_url().'Home_buyer_register/validate_bcompanyname/'; ?>'+val, function(data2){				 
 
 				 if($.trim(data2) == "BYE"){
 					swal("Alert!",  "Buyer Company Already Exists", "error");

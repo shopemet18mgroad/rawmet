@@ -72,6 +72,8 @@ class Home_seller_register extends CI_Controller {
 		
 		
 		
+	}	
+		
 		
 		
  public function validate_seller11(){
@@ -105,9 +107,7 @@ class Home_seller_register extends CI_Controller {
 		
 		
 		
-		
-		
-	}
+	
 
 	 public function validate_sellerid11(){
 		$dat = urldecode($this->uri->segment(3));
