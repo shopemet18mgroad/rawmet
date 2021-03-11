@@ -54,7 +54,7 @@
 						
 						
  		
-		<td style="font-size:15px; width:150px;">Seller's Offer <br /><small style="color:orange;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></small><br/>
+		<td style="font-size:15px; width:150px;"><b>Seller's Offer</b> <br /><small style="color:orange;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></small><br/>
 	
 	  <b><?php  if($sqldata[0]->status == 0) {echo 'Pending';}else if($sqldata[0]->status == 2) {echo 'Rejected';}else if($sqldata[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/customer_quotation2/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#exampleModal' target='_blank'><i class='fa fa-upload'></i></a>";}else if($sqldata[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 	
@@ -72,27 +72,31 @@
 		
 			
 		<td>
-			<input required style="width:80px;" type="text" class="form-control" id="buyer_nego_price" name="buyer_nego_price">	
+			<input required style="width:80px;" type="text" class="form-control mt-4" id="buyer_nego_price" name="buyer_nego_price">	
 		</td>
 		
 		
 		
 		<td>
  
-		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm"  name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></a></button>	
+		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm mt-4"  name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></a></button>	
 		
 		  
 			</form>
 			 </td>
+			 </tbody>
+		</table>	 
+			 
+			 
+	<table style="align:center; float:right" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
+			   
 			 <td>
+			 <label><b>Buyer's Negotiated Price</b></label><br/>
 <b style="color:orange;"><?php echo  $sqldata4[0]->buyer_nego_price. " / " .$sqldata4[0]->buyer_nego_units;?></b> <br />
 
 <b><?php  if($sqldata4[0]->status == null) {echo '';} elseif($sqldata4[0]->status == 0) {echo 'Pending';}else if($sqldata4[0]->status == 2) {echo 'Rejected';}else if($sqldata4[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation10/auc_no/'.$sqldata4[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#exampleModal4' target='_blank'><i class='fa fa-upload'></i></a>";}else if($sqldata4[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 
-
-
-			 	 
-			</td>
+</td>
 			 
 	</tr>
 </tbody>
@@ -111,7 +115,7 @@
 
 
   
-   <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
+   <table style="align:center;" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
 		   
     <thead class="bg-primary text-white">
     	<form action="<?php echo base_url();?>Customer_add_finalReq_buyer_selResponse" method="POST" enctype="multipart/form-data">
@@ -167,10 +171,15 @@
 			</form>
 			
 			</td>
+			</tbody>
+			</table>
+			 <table style="align:center;float:right" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
+			 <tr>
+			
 			<td>
 			
  
-		
+		<label><b>Buyer's Re-Negotiated Price</b></label><br />
 			<small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price. " / " .$sqldata4[0]->units;?></b></small>
 		<br />
 		
