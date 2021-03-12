@@ -26,16 +26,48 @@
    <script src=" https://github.com/superRaytin/paginationjs"></script>
    <script src=" http://pagination.js.org"></script>
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
    <script>
    div.dataTables_wrapper {
         margin-bottom: 3em;
     }
 </script>
+
+<Style>
+.ml6 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.3em;
+}
+
+.ml6 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml6 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+</style>
+
 </head>
 	<body class="" data-spy="scroll" data-target="#myScrollspy">
 	<div class="container-fluid top-header">
 		<div class="row">
 				<div class="col-md-12 contact-header">
+				<div class="social pull-left">
+						<ul>
+						<li><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<span id='ct6' style=""></span></li>
+							<li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp Helpline No: +91 9945454505</li>
+					 
+						</ul>
+					</div>
+
 					<div class="social pull-right">
 						<ul>
 							<li><a href="<?php echo base_url()."login"?>"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp Dashboard Login</a></li>
@@ -51,15 +83,13 @@
 	</div>
 		<div class="container">
 			<div class="row branding">
-				<div class="col-md-6 col-sm-12 pt-4">
+				<div class="col-md-6">
 					<a href="./home" title="Aucjunction Logo">
-				<!--	<img style="width:250px" class="img-fluid" alt="Aucjunction"  src="<?php echo base_url()."web_files2/";?>images/rawmet.png">-->
+			 
+				</a>
 				
-				 <div class="form-group p-1">
-						   <a href="<?php echo base_url();?>home_buyer_register">
-								<button type="button" class="btn btn-warning">Register Here</button> 
-						</div>	
-					</a>
+			 	
+					
 				</div>
 				<div class="col-md-6 col-sm-12 p-2">
 					<div class="input-feild">
@@ -74,11 +104,15 @@
 						  <div class="form-group p-1">
 							<button name="submit" type="submit" onclick="return userid4()" class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>	
 						  </div>
+						  <div class="form-group p-1">
+						  <a href="<?php echo base_url();?>home_buyer_register"><button type="button" class="btn btn-warning">Register Here</button></a>
+
+						  </div>
 						
 						
 					 </div>
 					 <div class="row ml-4">
-						<div class="form-group pl-3">
+						<div class="form-group">
 						  <div class="custom-control custom-checkbox small ">
 							<input type="checkbox" class="custom-control-input" id="customCheck2" name="optradio"  value="Buyer">
 							<label class="custom-control-label" for="customCheck2">Buyer</label>
@@ -86,13 +120,13 @@
 						  </div>
 						</div>
 					
-						<div class="form-group pl-3">
+						<div class="form-group">
 						  <div class="custom-control custom-checkbox small">
 							<input type="checkbox" class="custom-control-input" id="customCheck" name="optradio" value="Seller">
 							<label class="custom-control-label" for="customCheck">Seller</label>
 							 </div>
 						</div>
-							<div class="form-group pl-3">
+							<div class="form-group">
 						  <div class="custom-control custom-checkbox small ">
 							<input type="checkbox" class="custom-control-input" id="customCheck3" name="optradio"  value="Admin">
 							<label class="custom-control-label" for="customCheck3">Admin</label>
@@ -107,72 +141,23 @@
 				
 				</div>
 			
-		 <div class="mynav">
-			 <nav class="navbar navbar-expand-lg navbar-dark navbarclr" id="myScrollspy">
-				  
-				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				  </button>
-
-				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-					  <li class="nav-item active">
-						<a class="nav-link" href="<?php echo base_url();?>home">Home <span class="sr-only">(current)</span></a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url();?>contact_us">Contact Us</a>
-					  </li>
-					 <li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  Registration
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						  <a class="dropdown-item" href="<?php echo base_url();?>sellers_registeration">Seller's Registration</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>buyers_registeration">Buyer's Registration</a>
-						</div>
-					  </li>
-					   <li class="nav-item">
-						<a class="nav-link" href="#">Press Release</a>
-					  </li>
-					  <li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  Popular Categories
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Ferrous">Ferrous</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Non_ferrous">Non Ferrous</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Machinery_and_Equipments">Machinery &amp; Equipments</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Hazardous">Hazardous</a>
-						   <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Electronic_Items">Electronic Items</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Packaging_Items">Packaging Items</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Uncleared_Cargo">Uncleared Cargo</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Spares">Spares</a>
-						   <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Vehicles">Vehicles</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/PCB">PCB</a>
-						  <a class="dropdown-item" href="<?php echo base_url();?>categories/type/RA">RA</a>
-						   <a class="dropdown-item" href="<?php echo base_url();?>categories/type/Others">Others</a>
-						</div>
-					  </li>
-					 
-					</ul>
-					<!--<div class="srmfldnav">
-						<form method="post" action="<?php echo base_url();?>Search" class="form-inline my-2 my-lg-0">
-						  <input class="form-control mr-sm-2" type="search" placeholder="Search For the product here" name="search" aria-label="Search For the product here" size="50" required>
-						  <button href="#" class="btn btn-outline-light my-2 my-sm-0" name="submit" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
-						  				   	
-						 
-						</form>
-					</div>-->
- 				
-				  </div>
-				</nav>
-		</div>
+		  
 
 
-
+		
 
  <main class="main-section p-5">
-        <img src="<?php echo base_url()."web_files/";?>img/rawmet logo.png">
+ 
+ <!--<h2 class="ml6">
+  <span class="text-wrapper">
+    <span style="color:warning" class="letters"></span>
+  </span>
+</h2>-->
+
+<img style="" alt="Rawmet"  src="<?php echo base_url()."web_files/";?>img/rawmet logo.png">
+
+
+
         <form class="form-custom" autocomplete="off" class="form-control" method="POST"  action="<?php echo base_url()."home/search";?>">
 		
 		
@@ -181,10 +166,7 @@
 		  
 				<div id="select" class="select"> <ul  id="dp"></ul></div>	  
             </div>
-				
-			
-
-			
+				  
 			
             <div class="form-group input2">
                 <select class="form-control rounded-0" name="category" id="category">
@@ -261,7 +243,27 @@
 	 return;
  }
 }
-</script> 
+</script>
+
+<script>function display_ct6() {
+var x = new Date()
+var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+hours = x.getHours( ) % 12;
+hours = hours ? hours : 12;
+var x1=x.getMonth() + 1+ "-" + x.getDate() + "-" + x.getFullYear(); 
+x1 = x1 + " - " +  hours + ":" +  x.getMinutes() + ":" +  x.getSeconds() + ":" + ampm;
+document.getElementById('ct6').innerHTML = x1;
+display_c6();
+ }
+ function display_c6(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct6()',refresh)
+}
+display_c6()
+</script>
+ 
+ 
+
  <script>
  function getPaging(v){
 var s = v.split("|");
@@ -274,6 +276,27 @@ function getPagingnr(){
 }
  </script>        
   
-       
+       <script>
+
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  }).add({
+    targets: '.ml6',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+	   </script>
 	   
 	

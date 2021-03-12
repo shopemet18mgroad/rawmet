@@ -45,4 +45,12 @@
 		 <a href="<?php echo base_url();?>home_buyer_register">
          <button type="button" class="btn btn-warning">Register Here</button></a>
 </nav>
+
+<script>
+window.onload = displayClock();
+function displayClock(){
+  var display = new Date().toLocaleTimeString();
+  document.body.innerHTML = display;
+  setTimeout(displayClock, 1000); 
+}</script> 
    -->
