@@ -36,14 +36,13 @@
 </head>
 <body>
 
- 
+<!-- 
 <nav class="navbar-header">
 
-	     <a href="<?php echo base_url();?>home_login">
+	   <!--  <a href="<?php echo base_url();?>home_login">
          <button type="button" class="btn btn-info">Login</button></a>
 		
 		 <a href="<?php echo base_url();?>home_buyer_register">
          <button type="button" class="btn btn-warning">Register Here</button></a>
-
 </nav>
-   
+   -->
