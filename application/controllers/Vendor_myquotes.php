@@ -33,7 +33,15 @@ class Vendor_myquotes extends CI_Controller {
 		$reqapproval = array('sellerid'=>$sess['sessi'],'sellapproval'=>true);
 		
 		
+	
+		
+		
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
+		$query['sql_sort'] = $this->Admin_model->getdatafromtable_sort_seller();
+		//echo '<pre>'; print_r($query['sql_sort']); die;
+		
+		
+		
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 			}

@@ -50,11 +50,14 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 		 <td><?php echo $count;?></td>  
+		 <td><?php echo $row->id;?></td>
 			<td><?php echo $row->sellerid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->category;?></td>
-		  <td><?php echo $row->quantity.""; echo $row->units;?></td>
+			
+			
+		    <td><?php echo $row->quantity.""; echo $row->units;?></td>
 			<td><?php echo $row->price."/"; echo $row->punits;?></td>
 			
 			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
@@ -80,7 +83,33 @@
 
 	 <?php }?>	
 </a>
-</td>			
+</td>	
+
+
+
+<!--<td>
+
+
+   <a class="dropdown-item" href="<?php echo base_url(); ?>#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+
+
+</td>-->
+
+<td> <a href="<?php echo base_url().$row->id."/". $row->sellerid ; ?>" target="_blank" data-target="#logoutModal"  data-toggle="modal" >sort</a>
+														</td>
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
 	   
 
 				
@@ -115,7 +144,112 @@
     <!-- End of Content Wrapper -->
 
   </div>
+  
   <!-- End of Page Wrapper -->
+ 
+  	
+  
+  
+  
+  
+  
+  
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+ 
+
+
+ <h5 class="modal-title" id="exampleModalLabel">
+
+<u>Details:</u><br>
+Buyerid:<?php echo $sql_sort[0]->buyerid;?></br>
+Buyer Company Name:<?php echo $sql_sort[0]->bcompanyname;?><br/>
+Sellerid:<?php echo $sql_sort[0]->sellerid;?></br>
+Seller Company Name:<?php echo $sql_sort[0]->vcompanyname;?>
+		  
+		  
+		  </h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+		
+        <div class="modal-body">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<table class="table table-sm table-borderless table-secondary">
+  <thead>
+    <tr>
+     
+      <td style="color: blue;">Supplier Base Quantity: <?php echo $sql_sort[0]->quantity.""; echo $sql_sort[0]->units;?><br/>
+	  Supplier Base Price:<?php echo $sql_sort[0]->price."/"; echo $sql_sort[0]->punits;?></td>
+    
+	
+    </tr>
+  </thead>
+  <tbody>
+  </table>
+  <table class="table table-sm table-borderless table-light">
+    
+	 <tr>
+     
+      <td style="float:right; color: orange;">Buyer Quantity: <?php echo $sql_sort[0]->bquantity.""; echo $sql_sort[0]->bunits;?><br/>
+	  Buyer Price:<?php echo $sql_sort[0]->bprice."/"; echo $sql_sort[0]->bunits;?></td>
+    
+	
+    </tr>
+	
+	</table>
+	<table class="table table-sm table-borderless table-secondary">
+    <tr class="float:right;">
+      <td style="color: blue;">Supplier Price: <?php if($sql_sort[0]->selprice == null){echo " - ";}
+			else{echo $sql_sort[0]->selprice."/"; echo $sql_sort[0]->sunits;}?></td>
+      
+    </tr>
+	</table>
+	
+	<table class="table table-sm table-borderless table-light">
+  
+    <tr>
+     
+      <td style="float:right; color: orange;">Buyer Re-negotiated Quantity: <?php if($sql_sort[0]->brenegoquantity == null){echo " - ";}
+			else{echo $sql_sort[0]->brenegoquantity.""; echo $sql_sort[0]->brenegoquantityunit;}?><br/>
+	  Buyer Re-negotiated Price:<?php if($sql_sort[0]->brenegoprice == null){echo " - ";}
+			else{echo $sql_sort[0]->brenegoprice."/"; echo $sql_sort[0]->brenegounit;}?></td>
+    
+	
+    </tr>
+</table>
+	<table class="table table-sm table-borderless table-secondary">
+ <tr>
+
+      <td style="color: blue;">Supplier Re-negotiated Price:<?php if($sql_sort[0]->sellrenegoprice == null){echo " - ";}
+			else{echo $sql_sort[0]->sellrenegoprice."/"; echo $sql_sort[0]->sellrenegounits;}?></td>
+     
+    </tr>
+	
+	
+	
+  </tbody>
+</table>
+	
+	</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
   
   
 
