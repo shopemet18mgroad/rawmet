@@ -165,6 +165,7 @@
 
 
 <td style="width:290px"> 
+
 <div class="form-row m-2"> 
 			
 	<input type="text" class="form-control col-sm-4 mr-2" name="brenegoquantity" placeholder="Quantity" id="brenegoquantity" [(ngModel)]="person.name" />
