@@ -1,7 +1,3 @@
-
-
-
-------
   <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -19,83 +15,62 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	    <th>Sl.No.</th>
+	  <th>Sl.no.</th>
+	  <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Category</th>
+      <th>Image</th>
+	  
 
-			   	<th>Supplier Id</th>
-			<th>Product Name</th>
-			<th>Product Id</th>
-			<th>Category</th>
-			
-			  <th style ="color:orange";>Supplier Base Quantity</th>
-			<th style ="color:orange";>Supplier Base Price</th>
-			
-		    <th style ="color:pink";>Buyer Quantity</th>
-			<th style ="color:pink";>Buyer Price</th>
-			
-			<th style ="color:orange";>Supplier Price</th>
-			
-			<th style ="color:pink";>Buyer Re-negotiated Quantity</th>
-			<th style ="color:pink";>Buyer Re-negotiated Price</th>
-			<th style ="color:orange";>Supplier Re-negotiated Price</th>
-			<th>View Purchase Order</th>
-	
+		<th>Status</th>
+		 <th>Update the Quantity and Price</th>
+		<th>options</th>
+	</tr>
+    </thead>
+    <tbody>
 	
       
 
-     
+      <?php  $count = 1;?>
+	  
 
-
-</tr>
-    </thead>
-    <tbody>
-	      <?php  $count = 1;?>
-       	 <?php foreach($sqldata as $row){?>
+	   <?php foreach($sqldata as $row){?>
       <tr>
-	  <?php $proid = str_ireplace('/','-',$row->productid);
+	 
+	 <?php $proid =urldecode( str_ireplace('/','-',$row->productid));
 				?>
-		 <td><?php echo $count;?></td>  
-			<td><?php echo $row->sellerid;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->category;?></td>
-		    <td><?php echo $row->quantity.""; echo $row->units;?></td>
-			<td><?php echo $row->price."/"; echo $row->punits;?></td>
-			
-			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
-			<td><?php echo $row->bprice."/"; echo $row->bunits;?></td>
-			
+	<td><?php echo $count;?></td> 
+	  <td><?php echo $row->productid;?></td> 
+		<td><?php echo $row->productname;?></td> 
+		<td><?php  echo $row->category;?></td>
+        
+	
+	
 		
-			<td style="text-align:center;"><?php if($row->selprice == null){echo " - ";}
-			else{echo $row->selprice."/"; echo $row->sunits;}?></td>
-			<td style="text-align:center;"><?php if($row->brenegoquantity == null){echo " - ";}
-			else{echo $row->brenegoquantity."/"; echo $row->brenegoquantityunit;}?></td>
-			
-				<td style="text-align:center;"><?php if($row->brenegoprice == null){echo " - ";}
-			else{echo $row->brenegoprice."/"; echo $row->brenegounit;}?></td>
-			
-				<td style="text-align:center;"><?php if($row->sellrenegoprice == null){echo " - ";}
-			else{echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;}?></td>
-			
-  <td>
-      <?php $aucfl = unserialize($row->uploadporder);?>
-    <?php if(isset($aucfl[0])){	?>
-    <a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
-    <?php echo '<i class="fa fa-download"></i>' ; ?>
 
-	 <?php }?>	
-</a>
-</td>	
+		<td><?php $img = unserialize($row->uploadproductimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="55px"></td>
+	
+
+		<td style="color:green;"><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
+
+
 <td> <a href="<?php echo base_url() .'Vendor_uploadedproduct/price_update/'.$proid."/". urldecode($row->sellerid) ; ?>" target="_blank" data-target="#new_userlogin-<?php echo $count; ?>"  data-toggle="modal" >update</a>
 														</td>
 
 
 
+		
 
+		<td style="display:inline-flex;">
+		
+		
+		<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."vendor_uploadedview/index/".$proid;?>"><i class="fa fa-eye"></i></a>
+		
+	
+			<a style="margin:2px" class="btn btn-danger btn-sm text-white" href="<?php echo base_url()."vendor_uploadedproduct/delete_seller/".$proid;?>"><i class="fa fa-trash"></i></a></td>
 
-
-
-
-		<div class="modal fade" id="new_userlogin-<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade" id="new_userlogin-<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -110,79 +85,82 @@
 		
 			  	<div class="col-sm-8">
 		
-			
-					<label for="Pname">	Supplier Base Quantity 
-		||Supplier Base Price</th> </label>
-			
-			
-       <?php echo $row->quantity.""; echo $row->units;?>||
-		<?php echo $row->price."/"; echo $row->punits;?>
-			
-		
-		<label for="Pname">	Buyer Quantity 
-		||Buyer Price</th> </label>
-		
-		
-		
-		
-		
-		
-			<?php echo $row->bquantity.""; echo $row->bunits;?>
-		<?php echo $row->bprice."/"; echo $row->bunits;?>
+			<label for="Pname"> Product Id:</label>
+				<input type="text" class="form-control" id="productid" name="productid"  
+					value="<?php echo $row->productid;?>" placeholder="" readonly>
+					<input type="hidden" class="form-control" id="productid" name="productid"  
+					value="<?php echo $row->productid;?>" placeholder="">
        </div>
-	   <th>Sl.No.</th>
-
-			   	<th>Supplier Id</th>
-			<th>Product Name</th>
-			<th>Product Id</th>
-			<th>Category</th>
-			
-			  <th style ="color:orange";>Supplier Base Quantity</th>
-			<th style ="color:orange";>Supplier Base Price</th>
-			
-		    <th style ="color:pink";>Buyer Quantity</th>
-			<th style ="color:pink";>Buyer Price</th>
-			
-			<th style ="color:orange";>Supplier Price</th>
-			
-			<th style ="color:pink";>Buyer Re-negotiated Quantity</th>
-			<th style ="color:pink";>Buyer Re-negotiated Price</th>
-			<th style ="color:orange";>Supplier Re-negotiated Price</th>
-			<th>View Purchase Order</th>
+	   
 	   
 	   
 	   
 	   
 	   	 <div class="form-inline">
 				<div class="col-sm-4  mr-3">
-				<label for="price">Supplier Price:</label>
-					 <td style="text-align:center;"><?php if($row->selprice == null){echo " - ";}
-			else{echo $row->selprice."/"; echo $row->sunits;}?></td>
+				<label for="price">Live Stock:</label>
+					 <input type="text" class="form-control" id="supplyability" name="supplyability"  placeholder="" value="<?php echo $row->supplyability;?>">
                     
                 </div>
 				<div class="col-sm-4  offset-sm-3">	
-					<label for="quantity">Buyer Re-negotiated Quantity||:</label>
+					<label for="quantity">Units:</label>
 				
-			   <td style="text-align:center;"><?php if($row->brenegoquantity == null){echo " - ";}
-			else{echo $row->brenegoquantity."/"; echo $row->brenegoquantityunit;}?></td>
+			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" value="<?php echo $row->supplyunits;?>" >
+				
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+					
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+				    </select>
 			</div>
 	</div>
 	
 	   
 	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+				
+
+		
+ 
 	
 	 <div class="form-inline">
 				<div class="col-sm-4  mr-3">
-					 <label for="price">Buyer Re-negotiated Price:</label>
-                    <td style="text-align:center;"><?php if($row->brenegoprice == null){echo " - ";}
-			else{echo $row->brenegoprice."/"; echo $row->brenegounit;}?></td>
+					 <label for="price">Price:</label>
+                    <input type="text" class="form-control" id="price" name="price" placeholder="0" value="<?php echo $row->price;?>">
                     
                 </div>
 				<div class="col-sm-4  offset-sm-3">	
 				
-			   	<label for="quantity">>Supplier Re-negotiated Price:</label>/
-			   	<td style="text-align:center;"><?php if($row->sellrenegoprice == null){echo " - ";}
-			else{echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;}?></td>
+			   	<label for="quantity">Units:</label>/
+			   	<select class="form-control col-sm-0" id="punits" name="punits" value="<?php echo $row->punits;?>" >
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+				    </select>
 			</div>
 	</div>
 	
@@ -191,7 +169,25 @@
 	
 	
 	
-
+ <div class="form-inline">
+				<div class="col-sm-4  mr-3">
+					<label for="quantity">Supply Ability:</label>
+                  <input type="text" class="form-control" id="quantity" name="quantity" placeholder value="<?php echo $row->quantity;?>" >
+                    
+                </div>
+				<div class="col-sm-4  offset-sm-3">	
+				<label for="quantity">Units:</label>
+			   	<select class="form-control col-sm-0" id="units" name="units" value="<?php echo $row->units;?>" >
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+						<option value="Litre">Litre</option>
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+				    </select>
+			</div>
+	</div>
 	<br>
 	
 	
@@ -213,54 +209,19 @@
 		  </div>
         </div>
       </div>
-	  </div>
-	   </div>
+    </div>
 
+ 
 				
- <?php $count++;?>
-<?php }?>
+				
+				
+				
+<?php $count++;?>
 
 
-
-      </tr>  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---
+        
+<?php }?>	
+</tr>   
       
     </tbody>
   </table>
@@ -287,4 +248,3 @@
 </div>
 
 
----

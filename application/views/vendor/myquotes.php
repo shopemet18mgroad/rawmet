@@ -45,7 +45,7 @@
     </thead>
     <tbody>
 	      <?php  $count = 1;?>
-       	 <?php foreach($sqldata as $row){?>
+       	 <?php foreach($sql_data as $row){?>
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
@@ -98,19 +98,19 @@
 
 </td>-->
 
-<td> <a href="<?php echo base_url().$row->id."/". $row->sellerid ; ?>" target="_blank" data-target="#logoutModal"  data-toggle="modal" >sort</a>
+<td> <a href="<?php echo base_url().$row->id."/".$row->sellerid."/".$row->buyerid; ?>" target="_blank" data-target="#logoutModal "  data-toggle="modal" >sort</a>
 														</td>
 														
+														<!--separate division for view-->													
+	  
+													
 														
 														
 														
 														
 														
 														
-														
-														
-														
-	   
+	<!---ending of this division-->   
 
 				
  <?php $count++;?>
@@ -149,12 +149,9 @@
  
   	
   
-  
-  
-  
-  
-  
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -164,10 +161,10 @@
  <h5 class="modal-title" id="exampleModalLabel">
 
 <u>Details:</u><br>
-Buyerid:<?php echo $sql_sort[0]->buyerid;?></br>
-Buyer Company Name:<?php echo $sql_sort[0]->bcompanyname;?><br/>
-Sellerid:<?php echo $sql_sort[0]->sellerid;?></br>
-Seller Company Name:<?php echo $sql_sort[0]->vcompanyname;?>
+Buyerid:<?php echo $row->buyerid;?></br>
+Buyer Company Name:<?php echo $row->bcompanyname;?><br/>
+Sellerid:<?php echo $row->sellerid;?></br>
+Seller Company Name:<?php echo $row->vcompanyname;?>
 		  
 		  
 		  </h5>
@@ -191,7 +188,7 @@ Seller Company Name:<?php echo $sql_sort[0]->vcompanyname;?>
     <tr>
      
       <td style="color: blue;">Supplier Base Quantity: <?php echo $sql_sort[0]->quantity.""; echo $sql_sort[0]->units;?><br/>
-	  Supplier Base Price:<?php echo $sql_sort[0]->price."/"; echo $sql_sort[0]->punits;?></td>
+	  Supplier Base Price:<?php echo $row->price."/"; echo $sql_sort[0]->punits;?></td>
     
 	
     </tr>
@@ -203,7 +200,7 @@ Seller Company Name:<?php echo $sql_sort[0]->vcompanyname;?>
 	 <tr>
      
       <td style="float:right; color: orange;">Buyer Quantity: <?php echo $sql_sort[0]->bquantity.""; echo $sql_sort[0]->bunits;?><br/>
-	  Buyer Price:<?php echo $sql_sort[0]->bprice."/"; echo $sql_sort[0]->bunits;?></td>
+	  Buyer Price:<?php echo $row->bprice."/"; echo $sql_sort[0]->bunits;?></td>
     
 	
     </tr>
@@ -212,7 +209,7 @@ Seller Company Name:<?php echo $sql_sort[0]->vcompanyname;?>
 	<table class="table table-sm table-borderless table-secondary">
     <tr class="float:right;">
       <td style="color: blue;">Supplier Price: <?php if($sql_sort[0]->selprice == null){echo " - ";}
-			else{echo $sql_sort[0]->selprice."/"; echo $sql_sort[0]->sunits;}?></td>
+			else{echo $row->selprice."/"; echo $sql_sort[0]->sunits;}?></td>
       
     </tr>
 	</table>
@@ -222,9 +219,9 @@ Seller Company Name:<?php echo $sql_sort[0]->vcompanyname;?>
     <tr>
      
       <td style="float:right; color: orange;">Buyer Re-negotiated Quantity: <?php if($sql_sort[0]->brenegoquantity == null){echo " - ";}
-			else{echo $sql_sort[0]->brenegoquantity.""; echo $sql_sort[0]->brenegoquantityunit;}?><br/>
+			else{echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;}?><br/>
 	  Buyer Re-negotiated Price:<?php if($sql_sort[0]->brenegoprice == null){echo " - ";}
-			else{echo $sql_sort[0]->brenegoprice."/"; echo $sql_sort[0]->brenegounit;}?></td>
+			else{echo $row->brenegoprice."/"; echo $row->brenegounit;}?></td>
     
 	
     </tr>
@@ -250,6 +247,8 @@ Seller Company Name:<?php echo $sql_sort[0]->vcompanyname;?>
       </div>
     </div>
   </div>
+   
+  
   
   
 

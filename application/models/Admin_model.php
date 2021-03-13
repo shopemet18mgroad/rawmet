@@ -24,15 +24,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 
 		 
 		 
-		 
-		public function getdatafromtable_sort_seller() {
-			//$id = $this->session->userdata('username');
+			
+			
+			
+			public function getdatafromtable_sort_seller1($id,$buyerid) {
+			$id = $this->session->userdata('username');
 			$this->db->select('
 					a.*,
 					b.*,
 					c.*');
 					$this->db->where('a.sellapproval', true);	
-					//$this->db->where('b.buyerid', $id);
+					$this->db->where('a.id', $id);
+					//$this->db->where('a.sellerid', $sellerid);
+					$this->db->where('a.buyerid', $buyerid);		
+					$this->db->join('vendor_register c', 'a.sellerid=c.sellerid',
+					'left outer');	
+					$this->db->join('buyer_register b', 'a.buyerid=b.buyerid',
+					'left outer');		     			
+					$query = $this->db->get("purchaseoder a");
+					return $query->result();
+		}
+		 
+		 
+		 
+		 	 public function getdatafromtable_sort_seller() {
+			$id = $this->session->userdata('username');
+			$this->db->select('
+					a.*,
+					b.*,
+					c.*');
+					$this->db->where('a.sellapproval', true);	
+					//$this->db->where('a.id', $id);
+					//$this->db->where('a.sellerid', $sellerid);
 							
 					$this->db->join('vendor_register c', 'a.sellerid=c.sellerid',
 					'left outer');	
@@ -40,8 +63,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'left outer');		     			
 					$query = $this->db->get("purchaseoder a");
 					return $query->result();
-		} 
-		
+		}
+		 
+		 
+		 
+		 
+		 
+		 
+	
 		 
 		 
 		 
