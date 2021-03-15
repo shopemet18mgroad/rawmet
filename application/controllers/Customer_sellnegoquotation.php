@@ -24,8 +24,8 @@ class Customer_sellnegoquotation extends CI_Controller {
 	   $id = urldecode($this->uri->segment(3));
 	   $buyerid = urldecode($this->uri->segment(4));
 	   
-		 $active = array('sellerid'=>$sellerid,'id'=>$id);
-		  $active1 = array('buyerid'=>$buyerid);
+		 $active = array('sellerid'=>$sellerid);
+		  $active1 = array('buyerid'=>$buyerid,'id'=>$id);
 	
 	
       $query = $this->Admin_model->getdatafromtable('quotes', $active);

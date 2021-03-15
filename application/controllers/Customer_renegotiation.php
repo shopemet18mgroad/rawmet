@@ -35,7 +35,7 @@ class Customer_renegotiation extends CI_Controller {
 			$active1 = array('buyerid'=>$sess['sessi']);
 			
 		
-		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$id = urldecode($this->uri->segment(3));
 		$buyerid = $this->uri->segment(4);
 		$active = array('id'=>$id);
 		

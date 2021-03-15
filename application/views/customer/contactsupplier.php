@@ -61,7 +61,8 @@
 							
 							<p><b>Product Id:</b><?php echo  $sqldata[0]->productid;?></p>
 							<input type="hidden" class="form-control" id="productid" name="productid"  value="<?php echo  $sqldata[0]->productid;?>">
-								<p><b>Id:</b><?php echo  $sqldata[0]->id;?></p>
+							
+								<!--<p><b>Id:</b><?php // echo  $sqldata[0]->id;?></p>-->
 							<input type="hidden" class="form-control" id="id" name="id"  value="<?php echo  $sqldata[0]->id;?>">
 							
 							<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
@@ -78,7 +79,7 @@
 							<input type="hidden" class="form-control" id="punits" name="punits"  value="<?php echo  $sqldata[0]->punits;?>">
 							
 							
-							<h6 style="color:green;"><b>Supply Ability: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></b></h6>
+							<h6 style="color:green;"><b>Total Quantity: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></b></h6>
 							<input type="hidden" class="form-control" id="quantity" name="quantity"  value="<?php echo  $sqldata[0]->quantity;?>">
 							<input type="hidden" class="form-control" id="units" name="units"  value="<?php echo  $sqldata[0]->units;?>">
 							
@@ -123,7 +124,7 @@
   
 					
 							<div class="form-row mt-2">
-								<label class="col-sm-6 col-form-label"  for="name"><b>Quantity</b></label>
+								<label class="col-sm-6 col-form-label"  for="name"><b> Required Quantity</b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" />
 							<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
@@ -138,7 +139,7 @@
 								
 							</div>
 							<div class="form-row mt-2">
-								<label class="col-sm-6 col-form-label"  for="name"><b>Your Price </b></label>
+								<label class="col-sm-6 col-form-label"  for="name"><b>As For Your Price </b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name"/>/
 								<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="bunits" name="bunits">

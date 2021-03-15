@@ -86,7 +86,7 @@ class Customer_spurchase_order extends CI_Controller {
 		   
 		   
 			//$this->load->model('Admin_model');
-			$data = array('sellerpostproduct_id'=>$sellerpostproduct_id,'q_id'=>$q_id,'sellerid' => $sellerid,'buyerid'=>$buyerid, 
+			$data = array('q_id'=>$sellerpostproduct_id,'sellerid' => $sellerid,'buyerid'=>$buyerid, 
 			'productname' => $productname,'productid' => $productid, 'category' => $category,
 			
 			'pcities' => $pcities,'bquantity' => $bquantity, 'bunits'=> $bunits,
