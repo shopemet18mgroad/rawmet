@@ -84,7 +84,8 @@ $data2 .='</div>';
 			
 		
 	
-			
+			$data2 .='<h6><b>Supply Ability:</b>
+			'.$dat['quantity'].'  '.$dat['units'].'</h6>';
 			$data2 .= '<h6><b>last Modified Stock & Price: </b>'.$dat['datetime'].'</b></h6>';
 			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
 			$data2 .= '';
@@ -114,8 +115,6 @@ $data2 .='</div>';
 			$data2 .= '<div class="col-sm-4 p-2">';
 			$data2 .= '<div class="row p-2">';
 			$data2 .= '<div class="col-sm-10">';
-			$data2 .='<h6 style="color:orange;"><b>Total Quantity:</b>
-			'.$dat['quantity'].'  '.$dat['units'].'</h6>';
 			$data2 .= '<h6 style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
 				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['punits'].'</h6>';
    
@@ -211,19 +210,19 @@ $data2 .='</div>';
 			$productid= $this->uri->segment(3);
 			  if($this->Admin_model->check($table, $check_db)){
 				  if($table == "buyer_register"){
-					  $newdata = array('username'=>$user,'auth'=>'Buyerid','logged_in' => TRUE);
+					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE);
 						$this->session->set_userdata($newdata);
 					  header('location: '.base_url().'home/buyerlogin');
 					  die;
 				  }else if($table == "buyer_register"){
 					  $this->load->model('Admin_model');
 					$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
-					  $newdata = array('username'=>$user,'auth'=>'Buyerid','logged_in' => TRUE,'productid'=>$productid);
+					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE,'productid'=>$productid);
 						$this->session->set_userdata($newdata);
 					  header('location: '.base_url().'home_contactsupplier/index/');
 					  die;
 				  }else if($table == "vendor_register"){
-					  $newdata = array('username'=>$user,'auth'=>'Sellerid','logged_in' => TRUE);
+					  $newdata = array('username'=>$user,'auth'=>'SELLER','logged_in' => TRUE);
 						$this->session->set_userdata($newdata);
 					  header('location: '.base_url().'vendor_indexm');
 					  die;
@@ -320,6 +319,8 @@ $data2 .='</div>';
 			
 		
 	
+			$data2 .='<h6><b>Supply Ability:</b>
+			'.$dat['quantity'].'  '.$dat['units'].'</h6>';
 			$data2 .= '<h6><b>last Modified Stock & Price: </b>'.$dat['datetime'].'</b></h6>';
 			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
 			$data2 .= '';
@@ -349,8 +350,6 @@ $data2 .='</div>';
 			$data2 .= '<div class="col-sm-4 p-2">';
 			$data2 .= '<div class="row p-2">';
 			$data2 .= '<div class="col-sm-10">';
-	    $data2 .='<h6 style="color:orange;"><b>Total Quantity:</b>
-			'.$dat['quantity'].'  '.$dat['units'].'</h6>';
 			$data2 .= '<h6 style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
 				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['punits'].'</h6>';
    
