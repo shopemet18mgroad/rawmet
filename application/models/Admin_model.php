@@ -212,12 +212,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 return $query->result();
 		}
 		  
-		public function getdatafromtablefrstsendoffer() {
-			 $id = $this->session->userdata('username');
+		public function getdatafromtablefrstsendoffer($buyerid,$id) {
+			 $buyerid = $this->session->userdata('username');
 			$this->db->select('
 					a.*,
 					b.*');
-					$this->db->where('a.buyerid', $id);						
+					$this->db->where('a.buyerid', $buyerid);
+					$this->db->where('a.id', $id);
+					//$this->db->where('a.sellerid', $sellerid);						
 					$this->db->join('vendor_register b', 'a.sellerid=b.sellerid',
 					'left outer');		     			
 					$query = $this->db->get("seller_mbuyreq a");

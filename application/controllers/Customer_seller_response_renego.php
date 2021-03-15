@@ -36,15 +36,16 @@ class Customer_seller_response_renego extends CI_Controller {
 		
 		$id = $this->uri->segment(3);
 		
-		$buyerid = urldecode(($this->uri->segment(4)));
-		
+		$buyerid = $this->uri->segment(4);
+	
 		$active = array('id'=>$id ,'buyerid'=>$sess['sessi']);
-		
+	 
 		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active);
 		$data['sqldata']= $query;
 		
 		$data['buyer2'] = $this->Admin_model->getdatafromtable_buyer2();
-		$data['uploadPo'] = $this->Admin_model->getdatafromtablefrstsendoffer($active);	
+		$data['uploadPo'] = $this->Admin_model->getdatafromtablefrstsendoffer($buyerid,$id);
+		//echo '<pre>';  print_r($data['uploadPo']); die;	
 		$data['sqldata4'] = $this->Admin_model->getdatafrombuyer_req_response2($id);
 		$data['sqldata15'] = $this->Admin_model->getdatafrombuyer_req_response15($id);
 		$data['twouploadPo'] = $this->Admin_model->getdatafromtable_buyer10();

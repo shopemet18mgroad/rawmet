@@ -63,7 +63,7 @@
 			
 		<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
 	<hr >
-	  <b><?php  if($sqldata[0]->status == 0) {echo 'Pending';}else if($sqldata[0]->status == 2) {echo 'Rejected';}else if($sqldata[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/customer_quotation2/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#exampleModal' target='_blank'><i class='fa fa-upload'></i></a>";}else if($sqldata[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
+	  <b><?php  if($sqldata[0]->status == 0) {echo 'Pending';}else if($sqldata[0]->status == 2) {echo 'Rejected';}else if($sqldata[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'customer_quotation2/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id. " data-toggle='modal' data-target='#exampleModal' target='_blank'><i class='fa fa-upload'></i></a>";}else if($sqldata[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 	
 		
 		
@@ -117,8 +117,8 @@
 
 
 
-<!-------------------------------------->
-
+<!--- - -- ----  ---  - -  - - -- --    ---  -- --  -- --   ----->
+ 
 
 
 
@@ -978,7 +978,10 @@ swal("You have negotiated", {
 								
 			<td><input  type="hidden" name="sellerid" value="<?php echo $uploadPo[0]->sellerid;?>">
 			<input  type="hidden" name="buyerid" value="<?php echo $uploadPo[0]->buyerid;?>">
-							<?php echo $uploadPo[0]->buyerid;?></td>
+							<?php echo $uploadPo[0]->buyerid;?>
+              <input  type="hidden" name="id" value="<?php echo $sqldata[0]->id;?>">
+							
+              </td>
 							 
 			<td><input type="hidden" name="bname" value="<?php echo $uploadPo[0]->bname;?>">
 							<?php echo $uploadPo[0]->sellerid;?></td>
