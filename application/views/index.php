@@ -114,6 +114,7 @@
 					 <div class="row ml-4">
 						<div class="form-group">
 						  <div class="custom-control custom-checkbox small ">
+							
 							<input type="checkbox" class="custom-control-input" id="customCheck2" name="optradio"  value="Buyer">
 							<label class="custom-control-label" for="customCheck2">Buyer</label>
 						 

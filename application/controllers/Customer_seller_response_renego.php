@@ -40,7 +40,6 @@ class Customer_seller_response_renego extends CI_Controller {
 		
 		$active = array('id'=>$id ,'buyerid'=>$sess['sessi']);
 		
-		
 		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active);
 		$data['sqldata']= $query;
 		
@@ -55,6 +54,12 @@ class Customer_seller_response_renego extends CI_Controller {
 		//echo '<pre>';  print_r($data['finalupldpo']); die;
 		$data['final_reg'] = $this->Admin_model->getdatafrombuyer_req_response30();
 		$data['lastupload'] = $this->Admin_model->getdatafrombuyer_req_selfetchlast();
+		
+		
+		
+		
+		$data['buyer_req_response'] = $this->Admin_model->getbuyer_req_response($id, $sess['sessi']);
+		$data['buyer_final_req'] = $this->Admin_model->getbuyer_req_response2($id, $sess['sessi']);
 		//$data['sqldata4'] = $this->Admin_model->getdatafrombuyer_req_response2($id);
 		
 		//echo '<pre>';  print_r($data['buyer2']); die;
