@@ -24,6 +24,61 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 
 		 
 		 
+		 	public function getdatafromtable_sort_seller2($id,$buyerid) {
+			$id = $this->session->userdata('username');
+			$this->db->select('
+					a.*,
+					b.*,
+					c.*');
+					$this->db->where('a.sellapproval', true);	
+					$this->db->where('a.id', $id);
+					//$this->db->where('a.sellerid', $sellerid);
+					$this->db->where('a.buyerid', $buyerid);		
+					$this->db->join('vendor_register c', 'a.sellerid=c.sellerid',
+					'left outer');	
+					$this->db->join('buyer_register b', 'a.buyerid=b.buyerid',
+					'left outer');		     			
+					$query = $this->db->get("purchaseoder a");
+					return $query->result();
+		}
+		 
+		 
+		 
+		 
+		 
+		 	 public function getdatafromtable_sort_seller12() {
+			$id = $this->session->userdata('username');
+			$this->db->select('
+					a.*,
+					b.*,
+					c.*');
+					$this->db->where('a.sellapproval', true);	
+					//$this->db->where('a.id', $id);
+					//$this->db->where('a.sellerid', $sellerid);
+							
+					$this->db->join('vendor_register c', 'a.sellerid=c.sellerid',
+					'left outer');	
+					$this->db->join('buyer_register b', 'a.buyerid=b.buyerid',
+					'left outer');		     			
+					$query = $this->db->get("purchaseoder a");
+					return $query->result();
+		}
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 			
 			
 			
@@ -156,7 +211,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
-		 
+		  
 		public function getdatafromtablefrstsendoffer() {
 			 $id = $this->session->userdata('username');
 			$this->db->select('
@@ -2446,6 +2501,17 @@ function getdatafromselquotenegotate() {
 				$this->db->where('seller_mbuyreq_id',$id);
 				$this->db->where('bname',$bname);
 				$query = $this->db->get('buyer_final_req');
+				$result = $query->result();	
+				return $result;
+			}
+		    
+			
+			
+			function getseller_req_response2($id, $vusername) {
+				$this->db->select('*');
+				$this->db->where('seller_mbuyreq_id',$id);
+				$this->db->where('vusername',$vusername);
+				$query = $this->db->get('seller_req_response');
 				$result = $query->result();	
 				return $result;
 			}

@@ -56,15 +56,16 @@
  		
 		
 			
-			<td>Seller's Offer<br /><small style="color:orange;"><b><?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?></b></small>
+			<td>Seller's Offer<br /><small style="color:orange; font-size:15px;"><b><?php echo  $sqldata1[0]->sellerprice.' / '.$sqldata1[0]->bsupplyability;?></b></small>
+			
+			
+			<hr>
 			<br/>
-			
-			
 		<b><?php  if($first_approve[0]->status == 0) {echo 'Pending';}else if($first_approve[0]->status == 2) {echo 'Rejected';}else if($first_approve[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation_seller/auc_no/'.$first_approve[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($first_approve[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 			</td>
 		
 		
-			<td>Buyer Negotiated Price:<br /><small style="color:orange;"><b>
+			<td>Buyer Negotiated Price:<br /><small style="color:orange; font-size:15px;"><b>
 			<?php echo  $sqldata1[0]->buyer_nego_price.' / '.$sqldata1[0]->buyer_nego_units;?></br>
 			
 			
@@ -79,41 +80,48 @@
 			<button type="button" class="btn btn-outline-danger btn-sm">
 			<?php echo "<a href='javascript:rejectProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
 			</button>
-			
-			<br/>
+			<hr>
 			
 				<b><?php  if($sqldata1[0]->status == 0) {echo 'Pending';}else if($sqldata1[0]->status == 2) {echo 'Rejected';}else if($sqldata1[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation10/auc_no/'.$sqldata1[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata1[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 			
 			</td>
 			
-			<td style="150px">Seller Re_Negotiation Price: <br />
-			 <b style="color:orange;"><?php echo  $sqldata4[0]->seller_renego_price.' / '.$sqldata4[0]->bsupplyability;?></b> 
-			 <br/>
-			 <b><?php  if($sqldata4[0]->buyer_approval == 0) {echo 'Pending';}else if($sqldata4[0]->buyer_approval == 2) {echo 'Rejected';}else if($sqldata4[0]->buyer_approval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation11/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->buyer_approval == 5) {echo 'Approved-check in final Approval!';}?></b>
-		</td>
+			
 			 
 		</tr>
 	
 	
-	   <tr style="text-align:center;">
+	   <tr style="text-align:center;  background-color:grey;">
 	   		
  		
-		<td style="font-size:15px; width:290px;">Seller Re Negotiation Price<br /></td>
+		<td style="font-size:15px; width:290px; color:white;">Seller Re Negotiation Price<br />
+		
+		<?php 
+			$strDisable = "";
+			$SellerReNegotiation = "";
+			if($seller_req_response){
+				$SellerReNegotiation = $seller_req_response[0]->seller_renego_price; 
+				if($SellerReNegotiation !=""){
+					$strDisable = "disabled";
+				}				
+			}
 			
-		<td><center><input required style="width:160px;" type="text" class="form-control" id="seller_renego_price" name="seller_renego_price"></center></td>
+		?>
+		
+		<center><input required style="width:160px;" type="text" class="form-control" id="seller_renego_price" name="seller_renego_price"value='<?php echo $SellerReNegotiation;?>' <?php echo $strDisable; ?>></center>
 		
 		
-		<td colspan="2"><button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm" style="font-size:13px" name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></button>
+		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm mt-2" style="font-size:13px" name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></button>
 		
 		
-		<button type="button" class="btn btn-outline-warning btn-sm" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiated</button>
+		<button type="button" class="btn btn-outline-warning btn-sm mt-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiated</button>
 		  
 		
 		<div class="modal fade" id="final_Negotiated" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">This is your final Re_Negotiation?</h5>
+						<h5 style="color:black;" class="modal-title" id="exampleModalLabel">This is your final Re_Negotiation?</h5>
 							<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">×</span>
 							</button>
@@ -126,12 +134,23 @@
 				</div>
 			</div>
 		</div>
+		</td>
+			
+		<td style="150px; color:white;">Seller Re_Negotiation Price: <br />
+			 <b style="color:orange;"><?php echo  $sqldata4[0]->seller_renego_price.' / '.$sqldata4[0]->bsupplyability;?></b> 
+			 <br/>
+			 <hr>
+			 <b><?php  if($sqldata4[0]->buyer_approval == 0) {echo 'Pending';}else if($sqldata4[0]->buyer_approval == 2) {echo 'Rejected';}else if($sqldata4[0]->buyer_approval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation11/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->buyer_approval == 5) {echo 'Approved-check in final Approval!';}?></b>
+		</td>
+		
+		
+		
 		  
 		  
 	</form>
 	
 	
-	</td>
+	
 			 
 	</tr>
 	
@@ -139,7 +158,7 @@
 		   <tr  style="text-align:center;">
 	   		
  		
-			<td colspan="3">Buyer's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price.' / '.$sqldata4[0]->bsupplyability;?></b></small></td>
+			<td>Buyer's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price.' / '.$sqldata4[0]->bsupplyability;?></b></small></td>
 		
 		
 		 <br/>

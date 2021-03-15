@@ -85,13 +85,7 @@
 	</button> 
 			
 			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
-	
-	 
-	
-		
-			
-							
-								</td>
+	</td>
 		
 		
 	
@@ -105,7 +99,7 @@
 	<form action="<?php echo base_url();?>Customer_add_renegotiate" method="POST" enctype="multipart/form-data">
        <tbody>
 	   
-	    <tr  style="text-align:center;">
+	    <tr  style="text-align:center;  background-color:grey;">
 		
 		
 		
@@ -113,8 +107,6 @@
 				</div>
 				
 				
-				 
-	
 	
 	<input type="hidden" class="form-control" id="productname" name="productname"  value="<?php echo  $sqldata2[0]->productname;?>">					
 			
@@ -164,8 +156,8 @@
 
 
 
-<td style="width:290px"> 
-
+<td style="width:290px; color: white;"> 
+Re-Negotiate Here
 <div class="form-row m-2"> 
 			
 	<input type="text" class="form-control col-sm-4 mr-2" name="brenegoquantity" placeholder="Quantity" id="brenegoquantity" [(ngModel)]="person.name" />
@@ -210,14 +202,14 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">finel?</h5>
+          <h5 style="color: black;" class="modal-title" id="exampleModalLabel">Is this your final Negotiation?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Final</div>
+       
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancel</button>
 		  <button type="submit" href="<?php echo base_url();?>"class="btn btn-info btn-sm mt-2 offset-sm-2"  name="btnsubmit_final" id= "btnsubmit_final" role="submit"  onclick= "return validate_selnego()">Final-Negotiated</a></button>
         </div>
       </div>
@@ -226,7 +218,7 @@
 </td>
 		
 		
-		<td style="font-size:15px; width:150px;">Buyers Quantity <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoquantity. " / " .$sqld[0]->brenegoquantityunit;?></b></small><br/>
+		<td style="font-size:15px; width:150px; color: white;">Buyers Quantity <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoquantity. " / " .$sqld[0]->brenegoquantityunit;?></b></small><br/>
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoprice. " / " .$sqld[0]->brenegounit;?></b></small><br/>
 		
 		
