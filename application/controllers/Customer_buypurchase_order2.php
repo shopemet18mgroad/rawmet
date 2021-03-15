@@ -67,13 +67,11 @@ class Customer_buypurchase_order2 extends CI_Controller {
 		   }
 		   
 		   
-		   /* $s= $vname = $this->input->post('vname');
-		   print_r($s); die;
-		   $f =array('vname'=>$s);
-		   $query = $this->Admin_model->getdatafromtable('sellerpostproduct',$f); */
-		   
-		   
-			//$this->load->model('Admin_model');
+		   	/* $s= $vname = $this->input->post('vname');
+		   	print_r($s); die;
+		   	$f =array('vname'=>$s);
+		   	$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$f); */
+		   	//$this->load->model('Admin_model');
 			$data = array('seller_mbuyreq_id'=>$seller_mbuyreq_id,'sellerid' => $vusername,'buyerid'=>$bname,
 			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
@@ -81,14 +79,14 @@ class Customer_buypurchase_order2 extends CI_Controller {
 			'priceperkg' => $priceperkg,'sellerprice'=>$sellerprice,'bsupplyability'=>$bsupplyability,'buyer_nego_price'=>$buyer_nego_price,'buyer_nego_units'=>$buyer_nego_units,'uploadporder'=>$pic_array1);
 			//print_r($data);die;
 			$status = $this->Admin_model->insert('reqpurchaseorder',$data);
-			
-			 //$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
+			//$transfer = array('category'=> $scategory, 'auctionid'=>$sauctionid,'sname' => $sname,'date'=>$date);
 			   if($status){
 				  header('location: ./Customer_seller_response_renego/index/'.$seller_mbuyreq_id);
-				  }
+				}
 			
 	}
-	}
+}
+
 
 
 private function upload_files($nameid)

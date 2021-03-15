@@ -1283,8 +1283,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			
 			
-			function getdatafromtable_buyer10() {
-			$id = $this->session->userdata('username'); 				
+			function getdatafromtable_buyer10($buyerid,$id) {
+			$buyerid = $this->session->userdata('username'); 				
 			$this->db->select('
 					
 					a.buyer_nego_price,
@@ -1309,7 +1309,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					c.*');
 					
 					$this->db->where('a.status', 1);	
-					$this->db->where('b.buyerid', $id);
+					$this->db->where('b.buyerid', $buyerid);
+					$this->db->where('b.id', $id);
 					$this->db->join('seller_mbuyreq b', 'a.seller_mbuyreq_id=b.id',
 					'left outer');
 					$this->db->join('vendor_register c', 'c.sellerid=b.sellerid',
@@ -1874,8 +1875,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     } 
 	 
-	function getsellerrenego_datafetch() {
-			$id = $this->session->userdata('username'); 
+	function getsellerrenego_datafetch($buyerid,$id) {
+			$buyerid = $this->session->userdata('username'); 
 			$this->db->select('
 			b.buyer_nego_price,
 			b.buyer_nego_units,
@@ -1900,7 +1901,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			a.bsupplyability,a.sellerid');	
 			
 			$this->db->where('c.buyer_approval',1 );
-			$this->db->where('a.buyerid', $id);
+			$this->db->where('a.buyerid', $buyerid);
+			$this->db->where('a.id', $id);
             $this->db->join('seller_mbuyreq a', 'a.id=b.seller_mbuyreq_id','left outer');	
 			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
 			$this->db->join('vendor_register d', 'd.sellerid=c.vusername','left outer');			
@@ -2071,8 +2073,8 @@ function getsellerrenego_admin_datafetch() {
 		
 			}  
 			
-			function getdatafrombuyer_req_selfetch() {	
-				$id = $this->session->userdata('username'); 
+			function getdatafrombuyer_req_selfetch($buyerid,$id) {	
+				$buyerid = $this->session->userdata('username'); 
 			$this->db->select('		
 					b.buyer_req_response_id ,						
 					b.bname,
@@ -2103,7 +2105,8 @@ function getsellerrenego_admin_datafetch() {
 					d.bname,
 					e.*');	
 					$this->db->where('d.sel_status', 1); 					
-					$this->db->where('a.buyerid', $id);
+					$this->db->where('a.buyerid', $buyerid);
+					$this->db->where('a.id', $id);
 					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
 					'left outer');
 					
