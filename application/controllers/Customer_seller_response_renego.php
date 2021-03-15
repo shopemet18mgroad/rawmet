@@ -37,6 +37,7 @@ class Customer_seller_response_renego extends CI_Controller {
 		$id = $this->uri->segment(3);
 		
 		$buyerid = $this->uri->segment(4);
+		 
 	
 		$active = array('id'=>$id ,'buyerid'=>$sess['sessi']);
 	 
@@ -48,15 +49,16 @@ class Customer_seller_response_renego extends CI_Controller {
 		//echo '<pre>';  print_r($data['uploadPo']); die;	
 		$data['sqldata4'] = $this->Admin_model->getdatafrombuyer_req_response2($id);
 		$data['sqldata15'] = $this->Admin_model->getdatafrombuyer_req_response15($id);
-		$data['twouploadPo'] = $this->Admin_model->getdatafromtable_buyer10();
+		$data['twouploadPo'] = $this->Admin_model->getdatafromtable_buyer10($buyerid,$id);
+		 
 		$data['reqres_appl'] = $this->Admin_model->req_approval($id);
 		$data['finalapprovalstatus'] = $this->Admin_model->getdatafrombuyer_req_response5(); 
-		$data['finalupldpo'] = $this->Admin_model->getdatafrombuyer_req_selfetch();
+		$data['finalupldpo'] = $this->Admin_model->getdatafrombuyer_req_selfetch($buyerid,$id);
 		//echo '<pre>';  print_r($data['finalupldpo']); die;
 		$data['final_reg'] = $this->Admin_model->getdatafrombuyer_req_response30();
 		$data['lastupload'] = $this->Admin_model->getdatafrombuyer_req_selfetchlast();
 		
-		
+		 
 		
 		
 		$data['buyer_req_response'] = $this->Admin_model->getbuyer_req_response($id, $sess['sessi']);
@@ -66,7 +68,7 @@ class Customer_seller_response_renego extends CI_Controller {
 		//echo '<pre>';  print_r($data['buyer2']); die;
 		  
 		 
-		$data['sqldata3'] = $this->Admin_model->getsellerrenego_datafetch();
+		$data['sqldata3'] = $this->Admin_model->getsellerrenego_datafetch($buyerid,$id);
 		
 		//echo '<pre>';  print_r($data['sqldata3']); die;
 		//$query = $this->Admin_model->getdatafromtable_neg();
