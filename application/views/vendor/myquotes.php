@@ -41,6 +41,7 @@
 			<th style ="color:pink";>Buyer Re-negotiated Price</th>
 			<th style ="color:orange";>Supplier Re-negotiated Price</th>
 			<th>View Purchase Order</th>
+			<th>Sort</th>
       </tr>
     </thead>
     <tbody>
@@ -50,7 +51,7 @@
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 		 <td><?php echo $count;?></td>  
-		 <td><?php echo $row->id;?></td>
+	
 			<td><?php echo $row->sellerid;?></td>
 			<td><?php echo $row->productname;?></td>
 			<td><?php echo $row->productid;?></td>
@@ -98,16 +99,150 @@
 
 </td>-->
 
-<td> <a href="<?php echo base_url().$row->id."/".$row->sellerid."/".$row->buyerid; ?>" target="_blank" data-target="#logoutModal "  data-toggle="modal" >sort</a>
-														</td>
+
+<?php $proid = urldecode( str_ireplace('/','-',$row->productid));?>
+
+
+
+<!-- <a href="<?php// echo base_url().'Vendor_myquotes'.$proid."/".$row->sellerid."/".$row->buyerid; ?>" target="_blank" data-target="#logoutModal "  data-toggle="modal" >sort</a>-->
+											
 														
-														<!--separate division for view-->													
+														<!--separate division for view-->											<td>		
 	  
-													
+		<a href="<?php echo base_url() .'Vendor_myquotes/'.$proid."/". urldecode($row->sellerid) ; ?>" target="_blank" data-target="#logoutModal-<?php echo $count?>"  data-toggle="modal" ><i class="fa fa-sort"></i></a>											
+						
+		
+	<div class="modal fade" id="logoutModal-<?php echo $count?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+ 
+
+
+ <h5 class="modal-title" id="exampleModalLabel">
+
+<u>Details:</u><br>
+Buyerid:<?php echo $row->buyerid;?></br>
+Buyer Company Name:<?php echo $row->bcompanyname;?><br/>
+Sellerid:<?php echo $row->sellerid;?></br>
+Product Id:<?php echo $row->productid;?></br>
+Seller Company Name:<?php echo $row->vcompanyname;?>
+		  
+		  
+		  </h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+		
+        <div class="modal-body">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<table class="table table-sm table-borderless table-secondary">
+  <thead>
+    <tr>
+     
+      <td style="color: blue;">Supplier Base Quantity: <?php echo $row->quantity.""; echo $row->units;?><br/>
+	  Supplier Base Price:<?php echo $row->price."/"; echo $row->punits;?></td>
+    
+	
+    </tr>
+  </thead>
+  <tbody>
+  </table>
+  
+  <table class="table table-sm table-borderless table-light">
+    <?php if($row->bprice != null && $row->bunits != null){?>
+	 <tr>
+     
+      <td style="float:right; color: orange;">Buyer Quantity: <?php echo $row->bquantity.""; echo $row->bunits;?><br/>
+	  Buyer Price:<?php echo $row->bprice."/"; echo $row->bunits;?></td>
+	  
+	
+	
+    </tr>
+	
+	
+	
+	<?php }?>
+	</table>
+	
+	<table class="table table-sm table-borderless table-secondary">
+	<?php if($row->selprice != null && $row->sunits != null){?>
+    <tr class="float:right;">
+      <td style="color: blue;">Supplier Price: <?php if($row->selprice == null){echo " - ";}
+			else{echo $row->selprice."/"; echo $row->sunits;}?></td>
+      
+    </tr>
+		<?php }?>
+	</table>
+	
+	<table class="table table-sm table-borderless table-light">
+  
+   
+	
+	<?php if($row->brenegoquantity != null && $row->brenegoquantityunit != null){?>
+	 <tr>
+     
+      <td style="float:right; color: orange;">Buyer Re-negotiated Quantity: <?php if($row->brenegoquantity == null){echo " - ";}
+			else{echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;}?><br/>
+	  Buyer Re-negotiated Price:<?php if($row->brenegoprice == null){echo " - ";}
+			else{echo $row->brenegoprice."/"; echo $row->brenegounit;}?></td>
+    
+				
+				   </tr>
+	<?php }?>
+ 
+</table>
+	<table class="table table-sm table-borderless table-secondary">
+	
+	
+	<?php if($row->sellrenegoprice != null && $row->sellrenegounits != null){?>
+ <tr>
+
+      <td style="color: blue;">Supplier Re-negotiated Price:<?php if($row->sellrenegoprice == null){echo " - ";}
+			else{echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;}?></td>
+     
+    </tr>
+	<?php }?>
+	
+	
+	
+  </tbody>
+</table>
+	
+	</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  
+  	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 														
 														
-														
-														
+					</td>									
 														
 														
 	<!---ending of this division-->   
@@ -151,104 +286,6 @@
   
 
     
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
- 
-
-
- <h5 class="modal-title" id="exampleModalLabel">
-
-<u>Details:</u><br>
-Buyerid:<?php echo $row->buyerid;?></br>
-Buyer Company Name:<?php echo $row->bcompanyname;?><br/>
-Sellerid:<?php echo $row->sellerid;?></br>
-Seller Company Name:<?php echo $row->vcompanyname;?>
-		  
-		  
-		  </h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-		
-        <div class="modal-body">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<table class="table table-sm table-borderless table-secondary">
-  <thead>
-    <tr>
-     
-      <td style="color: blue;">Supplier Base Quantity: <?php echo $sql_sort[0]->quantity.""; echo $sql_sort[0]->units;?><br/>
-	  Supplier Base Price:<?php echo $row->price."/"; echo $sql_sort[0]->punits;?></td>
-    
-	
-    </tr>
-  </thead>
-  <tbody>
-  </table>
-  <table class="table table-sm table-borderless table-light">
-    
-	 <tr>
-     
-      <td style="float:right; color: orange;">Buyer Quantity: <?php echo $sql_sort[0]->bquantity.""; echo $sql_sort[0]->bunits;?><br/>
-	  Buyer Price:<?php echo $row->bprice."/"; echo $sql_sort[0]->bunits;?></td>
-    
-	
-    </tr>
-	
-	</table>
-	<table class="table table-sm table-borderless table-secondary">
-    <tr class="float:right;">
-      <td style="color: blue;">Supplier Price: <?php if($sql_sort[0]->selprice == null){echo " - ";}
-			else{echo $row->selprice."/"; echo $sql_sort[0]->sunits;}?></td>
-      
-    </tr>
-	</table>
-	
-	<table class="table table-sm table-borderless table-light">
-  
-    <tr>
-     
-      <td style="float:right; color: orange;">Buyer Re-negotiated Quantity: <?php if($sql_sort[0]->brenegoquantity == null){echo " - ";}
-			else{echo $row->brenegoquantity.""; echo $row->brenegoquantityunit;}?><br/>
-	  Buyer Re-negotiated Price:<?php if($sql_sort[0]->brenegoprice == null){echo " - ";}
-			else{echo $row->brenegoprice."/"; echo $row->brenegounit;}?></td>
-    
-	
-    </tr>
-</table>
-	<table class="table table-sm table-borderless table-secondary">
- <tr>
-
-      <td style="color: blue;">Supplier Re-negotiated Price:<?php if($sql_sort[0]->sellrenegoprice == null){echo " - ";}
-			else{echo $sql_sort[0]->sellrenegoprice."/"; echo $sql_sort[0]->sellrenegounits;}?></td>
-     
-    </tr>
-	
-	
-	
-  </tbody>
-</table>
-	
-	</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  
   
   
 

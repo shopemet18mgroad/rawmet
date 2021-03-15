@@ -40,11 +40,11 @@ class Vendor_myquotes extends CI_Controller {
 	
 		//$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
 		$query['sql_sort'] = $this->Admin_model->getdatafromtable_sort_seller1($id,$buyerid);
-		//echo '<pre>'; print_r($query['sql_sort']); die;
+	
 		$query['sql_data'] = $this->Admin_model->getdatafromtable_sort_seller();
 		
-		//
-		//print_r($query['sql_data1']);die;
+	//echo '<pre>'; print_r($query['sql_data']); die;
+		//print_r($query['sql_data']);die;
 		
 		
 		
