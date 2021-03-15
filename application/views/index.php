@@ -26,35 +26,11 @@
    <script src=" https://github.com/superRaytin/paginationjs"></script>
    <script src=" http://pagination.js.org"></script>
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
    <script>
    div.dataTables_wrapper {
         margin-bottom: 3em;
     }
 </script>
-
-<Style>
-.ml6 {
-  position: relative;
-  font-weight: 900;
-  font-size: 3.3em;
-}
-
-.ml6 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-
-.ml6 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
 </head>
 	<body class="" data-spy="scroll" data-target="#myScrollspy">
 	<div class="container-fluid top-header">
@@ -111,32 +87,24 @@
 						
 						
 					 </div>
-					 <div class="row ml-4">
-						<div class="form-group">
-						  <div class="custom-control custom-checkbox small ">
-							
-							<input type="checkbox" class="custom-control-input" id="customCheck2" name="optradio"  value="Buyer">
-							<label class="custom-control-label" for="customCheck2">Buyer</label>
-						 
-						  </div>
-						</div>
-					
-						<div class="form-group">
-						  <div class="custom-control custom-checkbox small">
-							<input type="checkbox" class="custom-control-input" id="customCheck" name="optradio" value="Seller">
-							<label class="custom-control-label" for="customCheck">Seller</label>
-							 </div>
-						</div>
-							<div class="form-group">
-						  <div class="custom-control custom-checkbox small ">
-							<input type="checkbox" class="custom-control-input" id="customCheck3" name="optradio"  value="Admin">
-							<label class="custom-control-label" for="customCheck3">Admin</label>
-						 
-						  </div>
-						</div>
-							<a class="pl-3" href="<?php echo base_url();?>email_send"><b><u>Forgot Password?</u></b></a>
-						  </div>
-						</div>
+					 
+					 
+
+
+						<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="optradio" id="customCheck2" value="Buyer">
+  <label class="form-check-label" for="customCheck2">Buyer</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="optradio" id="customCheck" value="Seller">
+  <label class="form-check-label" for="customCheck">Seller</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="optradio" id="customCheck3" value="Admin">
+  <label class="form-check-label" for="customCheck3">Admin</label>
+</div>
+
+
 						  </form>  
 					</div>
 				
