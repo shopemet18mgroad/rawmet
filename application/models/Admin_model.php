@@ -2429,8 +2429,26 @@ function getdatafromselquotenegotate() {
 					return $result;
 		
 			}
+			
+			
+			function getbuyer_req_response($id, $bname) {
+				$this->db->select('*');
+				$this->db->where('seller_mbuyreq_id',$id);
+				$this->db->where('bname',$bname);
+				$query = $this->db->get('buyer_req_response');
+				$result = $query->result();	
+				return $result;
+			}
 
 	 	
+		function getbuyer_req_response2($id, $bname) {
+				$this->db->select('*');
+				$this->db->where('seller_mbuyreq_id',$id);
+				$this->db->where('bname',$bname);
+				$query = $this->db->get('buyer_final_req');
+				$result = $query->result();	
+				return $result;
+			}
 		    
    }
    
