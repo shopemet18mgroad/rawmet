@@ -177,7 +177,7 @@ document.addEventListener('click',clickEffect);
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment3" aria-expanded="true" aria-controls="collapseUtilities">
           <i class='fas fa-envelope-open-text'></i>
-          <span>Quote Here</span></a>
+          <span>Quotation</span></a>
 		  <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?php echo base_url();?>customer_sellernegotiatedquote">Negotiate Here</a>

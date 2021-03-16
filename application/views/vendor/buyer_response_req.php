@@ -2,7 +2,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Buyer's Negotiated Price</h1>
+            <h1 class="h3 mb-0 text-gray-800"></h1>
            
           </div>
 
@@ -21,7 +21,7 @@
   
   
   
-  <table class="table table-striped table-bordered table-sm w-auto small" id="dataTable" width="100%" cellspacing="0">
+  <table class="table table-striped table-bordered w-auto small" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
 	  <th>Id</th>
@@ -86,6 +86,8 @@
      
       <!-- End of Footer -->
 </div>
+
+
 
 <script type="text/javascript">
 

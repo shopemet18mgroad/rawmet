@@ -71,7 +71,7 @@
 					<div class="input-feild">
 					
 							<div class="form-group p-1">
-				 <form class="user" action="<?php echo base_url()."home_login";?>" method="post">
+				 <form class="user" action="<?php echo base_url()."Home_login";?>" method="post">
 								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User Name" size="25">
 							</div>
 						  <div class="form-group p-1">
