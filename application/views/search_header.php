@@ -56,4 +56,36 @@
     <a class="dropdown-item"  href="<?php echo base_url();?>home_seller_register">Vendor</a>
     
 </nav>
+
+<style>
+div.gallery {
+  margin: 15px;
+  border: 1px solid #e0dddd;
+  float: left;
+  width: 280px;
+}
+
+div.gallery:hover {
+  border: 1px solid #373435;
+}
+
+div.gallery img {
+  width: 250px;
+  height:200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+div.gallery img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  
+ 
+div.desc {
+  padding: 15px;
+  
+  text-align: center;
+}
+</style>
    

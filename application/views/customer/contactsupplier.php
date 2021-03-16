@@ -122,12 +122,51 @@
 								Negotiate Here</b></h4></center>
 							</div>
   
-					
+							<?php 
+			$strDisable = "";
+			$buyerquantity = "";
+			if($quotes){
+				$buyerquantity = $quotes[0]->bquantity; 
+				if($buyerquantity !=""){
+					$strDisable = "disabled";
+				}				
+			}
+
+
+			$strDisable2 = "";
+			$buyerquantityunit = "";
+			if($quotes){
+				$buyerquantityunit = $quotes[0]->bsupplyability; 
+				if($buyerquantityunit !=""){
+					$strDisable2= "disabled";
+				}				
+			}
+
+			$strDisable3 = "";
+			$buyerprice = "";
+			if($quotes){
+				$buyerprice = $quotes[0]->bprice; 
+				if($buyerprice !=""){
+					$strDisable3= "disabled";
+				}				
+			}
+
+			$strDisable4 = "";
+			$buyerpriceunit = "";
+			if($quotes){
+				$buyerpriceunit = $quotes[0]->bunits; 
+				if($buyerpriceunit !=""){
+					$strDisable4= "disabled";
+				}				
+			}
+		
+			
+		?>
 							<div class="form-row mt-2">
 								<label class="col-sm-6 col-form-label"  for="name"><b> Required Quantity</b></label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" />
+								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" value='<?php echo $buyerquantity;?>' <?php echo $strDisable; ?>/>
 							<div class="col-sm-3">  
-						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
+						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability" value='<?php echo $buyerquantityunit;?>' <?php echo $strDisable2; ?>>
 								<option value="KG">KG</option>
 								<option value="Metric Ton">Metric Ton</option>
 								<option value="Litre">Litre</option>
@@ -140,9 +179,9 @@
 							</div>
 							<div class="form-row mt-2">
 								<label class="col-sm-6 col-form-label"  for="name"><b>As For Your Price </b></label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name"/>/
+								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name" value='<?php echo $buyerprice;?>' <?php echo $strDisable3; ?>/>/
 								<div class="col-sm-3">  
-						<select class="form-control col-sm-0" id="bunits" name="bunits">
+						<select class="form-control col-sm-0" id="bunits" name="bunits" value='<?php echo $buyerpriceunit;?>' <?php echo $strDisable4; ?>>
 						<option value="KG">KG</option>
 								<option value="Metric Ton">Metric Ton</option>
 								<option value="Litre">Litre</option>
@@ -156,7 +195,7 @@
 					
 						
 							
-							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" >
+							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" >
 							
 							
 							

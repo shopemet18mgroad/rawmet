@@ -4,7 +4,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Seller Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Negotiate Here</h1>
          
           </div>
 
@@ -113,9 +113,19 @@
 
 
 							
-           
+<?php
+$strDisable = "";
+			$sellerprice = "";
+			if($selquotenegotate){
+				$sellerprice = $selquotenegotate[0]->selprice; 
+				if($sellerprice !=""){
+					$strDisable= "disabled";
+				}				
+			}
+			
+		?>
               <center>
-                <input type="text" class="form-control col-sm-8 mt-4" name="selprice" placeholder="price" id="selprice" /> 
+                <input type="text" class="form-control col-sm-8 mt-4" name="selprice" placeholder="price" id="selprice" value='<?php echo $sellerprice;?>' <?php echo $strDisable; ?>/> 
 			</center>
 			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiated</a>
 		
@@ -126,7 +136,7 @@
 
 </td>	
 		
-		<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata30[0]->selprice. " / " .$sqldata30[0]->sunits;?></b></small><br/>
+		<td style="font-size:15px; width:150px;">Seller's Price<br /><small style="color:orange;"><b><?php echo  $sqldata30[0]->selprice. " / " .$sqldata30[0]->bunits;?></b></small><br/>
 		
  
 		<b><?php  if($sqldata3[0]->buyerapprove == 0) {echo 'Pending';}else if($sqldata3[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotationpur/auc_no/'.$sqldata3[0]->id.'/'.$sqldata3[0]->sellerid.'/'.$sqldata3[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata3[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
@@ -141,17 +151,17 @@
 	
 	   <tr style="text-align:center;">
 	   		
-<td style="font-size:15px; width:150px;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoquantity. " / " .$sqldata4[0]->brenegoquantityunit;?></b></small><br/>
-		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoprice. " / " .$sqldata4[0]->brenegounit;?></b></small><br/>	
+<td style="font-size:15px; width:150px;">Buyer's Re-Negotiated Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoquantity. " / " .$sqldata4[0]->brenegoquantityunit;?></b></small><br/>
+		Buyer's Re-Negotiated price <br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->brenegoprice. " / " .$sqldata4[0]->brenegounit;?></b></small><br/>	
 	
 
 <b><?php  if($approve_buyer[0]->selapprove == 0) {echo 'Pending';}else if($approve_buyer[0]->selapprove == 2) {echo 'Rejected';}else if($approve_buyer[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_renegovaluequotation/auc_no/'.$approve_buyer[0]->id.'/'.$approve_buyer[0]->sellerid.'/'.$approve_buyer[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($approve_buyer[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 
-
+<br/>
 	<button type="button" class="btn btn-outline-primary  btn-sm">
 			
 	<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_renegoquotes/".$sqldata4[0]->sellerpostproduct_id."/".$sqldata4[0]->buyerid;?>"><i class='fas fa-check'></i></a>
-	</button><br />
+	</button>
 			
 			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>		
 	</td>
@@ -195,8 +205,19 @@
 <input type="hidden" class="form-control" id="brenegoprice" name="brenegoprice"  value="<?php echo $sqldata4[0]->brenegoprice;?>">
 <input type="hidden" class="form-control" id="brenegounit" name="brenegounit"  value="<?php echo $sqldata4[0]->brenegounit;?>">
 
+<?php
+$strDisable2 = "";
+			$sellerneprice = "";
+			if($vend_renego){
+				$sellerneprice = $vend_renego[0]->sellrenegoprice; 
+				if($sellerneprice !=""){
+					$strDisable2= "disabled";
+				}				
+			}
+			
+		?>
 			<center>
-                <input type="text" class="form-control col-sm-8 mt-4" name="sellrenegoprice" placeholder="price" id="sellrenegoprice" /> 
+                <input type="text" class="form-control col-sm-8 mt-4" name="sellrenegoprice" placeholder="price" id="sellrenegoprice" value='<?php echo $sellerneprice;?>' <?php echo $strDisable2; ?>/> 
 			</center>
 			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiated</a>
 		
@@ -206,7 +227,7 @@
 </form>	
 
 </td>
-<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->sellrenegounits;?></b></small><br/>
+<td style="font-size:15px; width:150px;">Seller Re_Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->bunits;?></b></small><br/>
 
 	<b><?php  if($final_quote[0]->custapprove == 0) {echo 'Pending';}else if($final_quote[0]->custapprove == 2) {echo 'Rejected';}else if($final_quote[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation5/auc_no/'.$final_quote[0]->id.'/'.$final_quote[0]->buyerid.'/'.$final_quote[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($final_quote[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	

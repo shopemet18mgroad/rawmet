@@ -38,6 +38,8 @@ class Customer_contactsupplier extends CI_Controller {
 		$active = array('productid'=>$productid);
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		$data['sqldata']= $query;
+
+		$data['quotes'] = $this->Admin_model->getbuyer_post_response2($productid, $sess['sessi']); 
 			
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/contactsupplier',$data);

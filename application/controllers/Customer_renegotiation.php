@@ -23,8 +23,12 @@ class Customer_renegotiation extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Admin_model');
-		$productname= $this->uri->segment(3);	
-		$id= $this->uri->segment(4);	
+		$sellerpostproduct_id= $this->uri->segment(3);
+		//print_r($sellerpostproduct_id); die;	
+	 			 
+	 
+
+
 		//$category= urldecode($this->uri->segment(5));
 		if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "BUYER"){
 			$datainserr = "Invalid Login Session";
@@ -37,36 +41,33 @@ class Customer_renegotiation extends CI_Controller {
 		
 		$id = urldecode($this->uri->segment(3));
 		$buyerid = $this->uri->segment(4);
+	 //print_r($buyerid); die;
 		$active = array('id'=>$id);
 		
 		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		$data['sqldata']= $query;
 		$data['approve_buyer'] = $this->Admin_model->getdatafromtable_approve_buyer2($id,$buyerid);
-		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id,$buyerid);
-		
+		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id,$buyerid);		
 		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3($id,$buyerid);
-		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id,$buyerid);
-		
+		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id,$buyerid);		
 		$data['sqld'] = $this->Admin_model->getdatafromtable_buy_sel($id,$buyerid);
 		$data['sqldata5'] = $this->Admin_model->getdatafromtable_forth_renego($id,$buyerid);
-		$data['forth_renego2'] = $this->Admin_model->getdatafromtable_forth_renego2($id,$buyerid);
-		
-		$data['final_quotebyr'] = $this->Admin_model->getdatafromtable_final_quotebyr($id,$buyerid);
-		
+		$data['forth_renego2'] = $this->Admin_model->getdatafromtable_forth_renego2($id,$buyerid);		
+		$data['final_quotebyr'] = $this->Admin_model->getdatafromtable_final_quotebyr($id,$buyerid);		
 		$data['buy_quot'] = $this->Admin_model->getdatafromtable_buy_quot($id,$buyerid);
-		$data['approve_buyer2'] = $this->Admin_model->getdatafromtable_approve_buyer2($id,$buyerid);
-		
-		$data['frst_qut'] = $this->Admin_model->getdatafromtable_frst_qut();
-		$data['sce_qut'] = $this->Admin_model->getdatafromtable_sce_qut();
-		$data['thrd_qut']= $this->Admin_model->getdatafromtable_thrd_qut();	
-		$data['forth_qut'] = $this->Admin_model->getdatafromtable_forth_qut();
+		$data['approve_buyer2'] = $this->Admin_model->getdatafromtable_approve_buyer2($id,$buyerid);		
+		$data['frst_qut'] = $this->Admin_model->getdatafromtable_frst_qut($sellerpostproduct_id,$buyerid);
+		$data['sce_qut'] = $this->Admin_model->getdatafromtable_sce_qut($sellerpostproduct_id,$buyerid);
+		$data['thrd_qut']= $this->Admin_model->getdatafromtable_thrd_qut($sellerpostproduct_id,$buyerid);
+		//echo '<pre>';  print_r($data['thrd_qut']); die;	
+		$data['forth_qut'] = $this->Admin_model->getdatafromtable_forth_qut($sellerpostproduct_id,$buyerid);
 		
 		 
 	
 		//print_r($query); die;
 		
-		 
+		$data['cust_renego'] = $this->Admin_model->getbuyer_post_response($id, $sess['sessi']); 
 		
 		$adac['sqldata']= $query;
 		

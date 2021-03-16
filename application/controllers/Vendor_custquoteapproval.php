@@ -36,6 +36,7 @@ class Vendor_custquoteapproval extends CI_Controller {
 		$this->load->model('Admin_model');
 		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		$buyerid = $this->uri->segment(4);
+		
 		$active = array('id'=>$id);
 		
 		
@@ -51,6 +52,10 @@ class Vendor_custquoteapproval extends CI_Controller {
 		$data['sqldata4'] = $this->Admin_model->getdatafromtable_third_neg($id,$buyerid);
 		$data['sqldata5'] = $this->Admin_model->getdatafromtable_fifth_neg($id,$buyerid);
 		$data['final_quote'] = $this->Admin_model->getdatafromtable_final_quote($id,$buyerid);
+
+
+		$data['selquotenegotate'] = $this->Admin_model->getseller_post_response($id, $sess['sessi']); 
+		$data['vend_renego'] = $this->Admin_model->getseller_post_response2($id, $sess['sessi']);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('vendor/header',$sess);

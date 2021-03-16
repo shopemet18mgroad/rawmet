@@ -161,7 +161,7 @@
 <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>vendor_sellrenegovalue">
           <i class="fas fa-fw fa-upload"></i>
-          <span>Quote Here</span></a>
+          <span>Quotation</span></a>
       </li>
 
 		   <!--<li class="nav-item">
