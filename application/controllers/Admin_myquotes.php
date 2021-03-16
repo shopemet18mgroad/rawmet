@@ -25,7 +25,39 @@ class Admin_myquotes extends CI_Controller {
 		$this->load->model('Admin_model');
 		
 		$reqapproval = array('sellapproval'=>false);
-		$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
+		
+		
+			
+		//$reqapproval = array('sellerid'=>$sess['sessi'],'sellapproval'=>true);
+		
+	     $id = urldecode($this->uri->segment(3));
+		//print_r($id);die;
+	   $sellerid = urldecode($this->uri->segment(4));
+		
+	     $buyerid = urldecode($this->uri->segment(5));
+	
+		//$query['sqldata'] = $this->Admin_model->getdatafromtable('purchaseoder',$reqapproval);
+		$query['sql_sort'] = $this->Admin_model->getdatafromtable_sort_admin2($id,$buyerid);
+	
+		$query['sql_data'] = $this->Admin_model->getdatafromtable_sort_admin12();
+		
+	//echo '<pre>'; print_r($query['sql_data']); die;
+		//print_r($query['sql_data']);die;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 	
