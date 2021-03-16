@@ -67,7 +67,7 @@ class Customer_renegotiation extends CI_Controller {
 	
 		//print_r($query); die;
 		
-		 
+		$data['cust_renego'] = $this->Admin_model->getbuyer_post_response($id, $sess['sessi']); 
 		
 		$adac['sqldata']= $query;
 		

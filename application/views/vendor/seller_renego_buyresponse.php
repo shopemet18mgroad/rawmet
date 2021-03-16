@@ -4,7 +4,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Seller Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Negotiate Here</h1>
          
           </div>
 
@@ -46,7 +46,7 @@
 	<form action="<?php echo base_url();?>Vendor_add_seller_renego_buyresponse" method="POST" enctype="multipart/form-data">
        <tbody>
 	   
-	    <tr  style="text-align:center;">
+	    <tr  style="text-align:center; background-color:white;">
 			
 			<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $sqldata1[0]->buyerid;?>" readonly>
 						
@@ -91,7 +91,7 @@
 		</tr>
 	
 	
-	   <tr style="text-align:center;  background-color:grey;">
+	   <tr style="text-align:center;  background-color:rgb(200, 200, 200);">
 	   		
  		
 		<td style="font-size:15px; width:290px; color:white;">Seller Re Negotiation Price<br />
@@ -155,7 +155,7 @@
 	</tr>
 	
 	
-		   <tr  style="text-align:center;">
+		   <tr  style="text-align:center; background-color:white;">
 	   		
  		
 			<td>Buyer's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price.' / '.$sqldata4[0]->bsupplyability;?></b></small></td>

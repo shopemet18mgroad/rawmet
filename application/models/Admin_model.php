@@ -2583,6 +2583,44 @@ function getdatafromselquotenegotate() {
 				$result = $query->result();	
 				return $result;
 			}
+
+			function getbuyer_post_response($id, $buyerid) {
+				$this->db->select('*');
+				$this->db->where('sellerpostproduct_id',$id);
+				$this->db->where('buyerid',$buyerid);
+				$query = $this->db->get('cust_renego');
+				$result = $query->result();	
+				return $result;
+			}
+
+			function getbuyer_post_response2($id, $buyerid) {
+				$this->db->select('*');
+				$this->db->where('productid',$id);
+				$this->db->where('buyerid',$buyerid);
+				$query = $this->db->get('quotes');
+				$result = $query->result();	
+				return $result;
+			}
+
+			
+
+			function getseller_post_response($id, $sellerid) {
+				$this->db->select('*');
+				$this->db->where('sellerpostproduct_id',$id);
+				$this->db->where('sellerid',$sellerid);
+				$query = $this->db->get('selquotenegotate');
+				$result = $query->result();	
+				return $result;
+			}
+
+			function getseller_post_response2($id, $sellerid) {
+				$this->db->select('*');
+				$this->db->where('sellerpostproduct_id',$id);
+				$this->db->where('sellerid',$sellerid);
+				$query = $this->db->get('vend_renego');
+				$result = $query->result();	
+				return $result;
+			}	
 		    
    }
    
