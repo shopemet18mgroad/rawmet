@@ -56,7 +56,7 @@
 					<td style="font-size:15px; width:150px;">Buyer's Quantity:<small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. " / " .$sqldata2[0]->bsupplyability;?></b></small><br/>
 		Buyer's price:<small style="color:orange;"><b><?php echo  $sqldata2[0]->bprice. " / " .$sqldata2[0]->bunits;?></b></small><br/>
 
-	<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_sellnegoquotation/auc_no/'.$sqldata2[0]->id.'/'.$sqldata2[0]->buyerid.'/'.$sqldata2[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#frist' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>
+	<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_sellnegoquotation/auc_no/'.$sqldata2[0]->id.'/'.$sqldata2[0]->buyerid.'/'.$sqldata2[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#frist' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>
 	
 	
 	
@@ -74,7 +74,7 @@
 		<small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->sunits;?></b></small><br/>
 		
 		
-		<b><?php  if($buy_quot[0]->buyerapprove == 0) {echo 'Pending';}else if($buy_quot[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotationpur/auc_no/'.$buy_quot[0]->id.'/'.$buy_quot[0]->buyerid.'/'.$buy_quot[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#scend' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($buy_quot[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
+		<b><?php  if($buy_quot[0]->buyerapprove == 0) {echo 'Pending';}else if($buy_quot[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotationpur/auc_no/'.$buy_quot[0]->id.'/'.$buy_quot[0]->buyerid.'/'.$buy_quot[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#scend' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($buy_quot[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
 		
 		
 		<br/>
@@ -222,7 +222,7 @@ Re-Negotiate Here
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoprice. " / " .$sqld[0]->brenegounit;?></b></small><br/>
 		
 		
-<b><?php  if($approve_buyer2[0]->selapprove == 0) {echo 'Pending';}else if($approve_buyer2[0]->selapprove == 2) {echo 'Rejected';}else if($approve_buyer2[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_renegovaluequotation/auc_no/'.$approve_buyer2[0]->id.'/'.$approve_buyer2[0]->sellerid.'/'.$approve_buyer2[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a> / <a href='' data-toggle='modal' data-target='#thrd' target='_blank'><i class='fa fa-upload'></i></a>  ";}else if($approve_buyer2[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
+<b><?php  if($approve_buyer2[0]->selapprove == 0) {echo 'Pending';}else if($approve_buyer2[0]->selapprove == 2) {echo 'Rejected';}else if($approve_buyer2[0]->selapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_renegovaluequotation/auc_no/'.$approve_buyer2[0]->id.'/'.$approve_buyer2[0]->sellerid.'/'.$approve_buyer2[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#thrd' target='_blank'><i class='fa fa-upload'></i></a>  ";}else if($approve_buyer2[0]->selapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
 		
 		</td>
  
@@ -237,7 +237,7 @@ Re-Negotiate Here
 			
 		<td style="font-size:15px; width:150px;">Seller Re Negotiation Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / " .$sqldata5[0]->sellrenegounits;?></b></small><br/>
 		
-	<b><?php  if($final_quotebyr[0]->custapprove == 0) {echo 'Pending';}else if($final_quotebyr[0]->custapprove == 2) {echo 'Rejected';}else if($final_quotebyr[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation5/auc_no/'.$final_quotebyr[0]->id.'/'.$final_quotebyr[0]->sellerid.'/'.$final_quotebyr[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>/<a href='' data-toggle='modal' data-target='#forth' target='_blank'><i class='fa fa-upload'></i></a>";}else if($final_quotebyr[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
+	<b><?php  if($final_quotebyr[0]->custapprove == 0) {echo 'Pending';}else if($final_quotebyr[0]->custapprove == 2) {echo 'Rejected';}else if($final_quotebyr[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation5/auc_no/'.$final_quotebyr[0]->id.'/'.$final_quotebyr[0]->sellerid.'/'.$final_quotebyr[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>/<a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#forth' target='_blank'><i class='fa fa-upload'></i></a>";}else if($final_quotebyr[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	<br/>
 				
 	<button type="button" class="btn btn-outline-primary  btn-sm">

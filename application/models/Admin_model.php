@@ -137,27 +137,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 	 
 	 
-	 public function getdatafromtable_frst_qut() {
-			$id = $this->session->userdata('username');
+	 public function getdatafromtable_frst_qut($sellerpostproduct_id,$buyerid) {
+			$buyerid = $this->session->userdata('username');
 			$this->db->select('
 					a.*,
 					b.*');
 					$this->db->where('b.sellapproval', true);	
-					$this->db->where('b.buyerid', $id);						
+					$this->db->where('b.buyerid', $buyerid);
+					$this->db->where('b.sellerpostproduct_id', $sellerpostproduct_id);						
 					$this->db->join('quotes b', 'a.sellerid=b.sellerid',
 					'left outer');		     			
 					$query = $this->db->get("vendor_register a");
 					return $query->result();
 		}
 		 
-		 public function getdatafromtable_sce_qut() {
-			$id = $this->session->userdata('username');
+		 public function getdatafromtable_sce_qut($sellerpostproduct_id,$buyerid) {
+			$buyerid = $this->session->userdata('username');
 			$this->db->select('
 					a.*,
 					b.*,
 					c.*');
 					$this->db->where('c.buyerapprove', true);	
-					$this->db->where('b.buyerid', $id);						
+					$this->db->where('c.buyerid', $buyerid);
+					$this->db->where('c.sellerpostproduct_id', $sellerpostproduct_id);					
 					$this->db->join('selquotenegotate c', 'a.sellerid=c.sellerid',
 					'left outer');	
 					$this->db->join('quotes b', 'a.sellerid=b.sellerid',
@@ -166,15 +168,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					return $query->result();
 		}
 		
-		public function getdatafromtable_thrd_qut() {
-			$id = $this->session->userdata('username');
+		public function getdatafromtable_thrd_qut($sellerpostproduct_id,$buyerid) {
+			$buyerid = $this->session->userdata('username');
 			$this->db->select('
 					a.*,
 					b.*,
 					c.*,
 					d.*');
 					$this->db->where('d.selapprove', true);	
-					$this->db->where('b.buyerid', $id);
+					$this->db->where('d.sellerpostproduct_id', $sellerpostproduct_id);
+					$this->db->where('d.buyerid', $buyerid);
+				
+					
+				
+					
 					$this->db->join('cust_renego d', 'a.sellerid=d.sellerid',
 					'left outer');						
 					$this->db->join('selquotenegotate c', 'a.sellerid=c.sellerid',
@@ -185,8 +192,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					return $query->result();
 		}
 		
-		public function getdatafromtable_forth_qut() {
-			$id = $this->session->userdata('username');
+		public function getdatafromtable_forth_qut($sellerpostproduct_id,$buyerid) {
+			$buyerid = $this->session->userdata('username');
 			$this->db->select('
 					a.*,
 					b.*,
@@ -194,7 +201,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					d.*,
 					e.*');
 					$this->db->where('d.selapprove', true);	
-					$this->db->where('b.buyerid', $id);
+					$this->db->where('e.buyerid', $buyerid);
+					$this->db->where('e.sellerpostproduct_id', $sellerpostproduct_id);	
+					 
 					$this->db->join('vend_renego e', 'a.sellerid=e.sellerid',
 					'left outer');	
 					$this->db->join('cust_renego d', 'a.sellerid=d.sellerid',
