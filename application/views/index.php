@@ -214,7 +214,8 @@
 }
 </script>
 
-<script>function display_ct6() {
+<script>
+function display_ct6() {
 var x = new Date()
 var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
 hours = x.getHours( ) % 12;

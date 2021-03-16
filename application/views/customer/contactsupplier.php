@@ -160,16 +160,7 @@
 							
 							
 							
-							<!--<a type="submit" href="<?php //echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($sqldata[0]->vname);?>" onsubmit="return validate_neg()  role="submit">-->
 							
-
-						
-								
-							 <!--<a type="submit" href="<?php// echo base_url()."Customer_add_contactsupplier/Addtosubmit/".$proid."/".urlencode($row->vname);?>"  role="submit"><button name="submit"  class="btn btn-info btn-sm mt-2 offset-sm-5">Submit</button></a>-->
-								
-
-			<!--<button><a type="submit" name="submit" href="<?php// echo base_url(). $proid.'|'.urlencode($row->vname)?>" onclick="return validate_prodid()"> Submit</a></button>-->
-					<!--<input type="submit" id="" class="btn btn-primary " name="submit" value="submit">-->
 					
 							
 							</div>
