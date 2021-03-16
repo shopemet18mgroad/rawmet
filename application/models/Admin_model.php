@@ -265,13 +265,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$query = $this->db->get_where($table, $data); 
 			 return $query->result();
 		}
-		 
-		public function getdatafromtablefrstsendoffer() {
-			 $id = $this->session->userdata('username');
+		  
+		public function getdatafromtablefrstsendoffer($buyerid,$id) {
+			 $buyerid = $this->session->userdata('username');
 			$this->db->select('
 					a.*,
 					b.*');
-					$this->db->where('a.buyerid', $id);						
+					$this->db->where('a.buyerid', $buyerid);
+					$this->db->where('a.id', $id);
+					//$this->db->where('a.sellerid', $sellerid);						
 					$this->db->join('vendor_register b', 'a.sellerid=b.sellerid',
 					'left outer');		     			
 					$query = $this->db->get("seller_mbuyreq a");
@@ -1335,8 +1337,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			
 			
-			function getdatafromtable_buyer10() {
-			$id = $this->session->userdata('username'); 				
+			function getdatafromtable_buyer10($buyerid,$id) {
+			$buyerid = $this->session->userdata('username'); 				
 			$this->db->select('
 					
 					a.buyer_nego_price,
@@ -1361,7 +1363,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					c.*');
 					
 					$this->db->where('a.status', 1);	
-					$this->db->where('b.buyerid', $id);
+					$this->db->where('b.buyerid', $buyerid);
+					$this->db->where('b.id', $id);
 					$this->db->join('seller_mbuyreq b', 'a.seller_mbuyreq_id=b.id',
 					'left outer');
 					$this->db->join('vendor_register c', 'c.sellerid=b.sellerid',
@@ -1926,8 +1929,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     } 
 	 
-	function getsellerrenego_datafetch() {
-			$id = $this->session->userdata('username'); 
+	function getsellerrenego_datafetch($buyerid,$id) {
+			$buyerid = $this->session->userdata('username'); 
 			$this->db->select('
 			b.buyer_nego_price,
 			b.buyer_nego_units,
@@ -1952,7 +1955,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			a.bsupplyability,a.sellerid');	
 			
 			$this->db->where('c.buyer_approval',1 );
-			$this->db->where('a.buyerid', $id);
+			$this->db->where('a.buyerid', $buyerid);
+			$this->db->where('a.id', $id);
             $this->db->join('seller_mbuyreq a', 'a.id=b.seller_mbuyreq_id','left outer');	
 			$this->db->join('seller_req_response c', 'b.seller_mbuyreq_id=c.seller_mbuyreq_id','left outer');
 			$this->db->join('vendor_register d', 'd.sellerid=c.vusername','left outer');			
@@ -2123,8 +2127,8 @@ function getsellerrenego_admin_datafetch() {
 		
 			}  
 			
-			function getdatafrombuyer_req_selfetch() {	
-				$id = $this->session->userdata('username'); 
+			function getdatafrombuyer_req_selfetch($buyerid,$id) {	
+				$buyerid = $this->session->userdata('username'); 
 			$this->db->select('		
 					b.buyer_req_response_id ,						
 					b.bname,
@@ -2155,7 +2159,8 @@ function getsellerrenego_admin_datafetch() {
 					d.bname,
 					e.*');	
 					$this->db->where('d.sel_status', 1); 					
-					$this->db->where('a.buyerid', $id);
+					$this->db->where('a.buyerid', $buyerid);
+					$this->db->where('a.id', $id);
 					$this->db->join('buyer_req_response b','a.id=b.seller_mbuyreq_id',
 					'left outer');
 					
@@ -2555,6 +2560,17 @@ function getdatafromselquotenegotate() {
 				$this->db->where('seller_mbuyreq_id',$id);
 				$this->db->where('bname',$bname);
 				$query = $this->db->get('buyer_final_req');
+				$result = $query->result();	
+				return $result;
+			}
+		    
+			
+			
+			function getseller_req_response2($id, $vusername) {
+				$this->db->select('*');
+				$this->db->where('seller_mbuyreq_id',$id);
+				$this->db->where('vusername',$vusername);
+				$query = $this->db->get('seller_req_response');
 				$result = $query->result();	
 				return $result;
 			}

@@ -37,11 +37,13 @@
       </tr>
     </thead>
        <tbody>
-                                 
+                             
         <?php $strTable = "";
+		$count = 1; 
            foreach($sqldata as $seller){     $strTable .= " 
                <tr>
-					 <td>".$seller->id."</td>
+			    
+					 <td>".$count++."</td>
                      <td>".$seller->bname."</td>                      
                      <td>".$seller->category."</td>
                      <td>".$seller->productname."</td>
@@ -51,12 +53,17 @@
 					 <td>".$seller->sellerprice."/".$seller->bsupplyability."</td> 
 					<td>".$seller->buyer_nego_price."/".$seller->buyer_nego_units."</td> 
                      <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>|| <a href='javascript:rejectProduct(\"".$seller->seller_mbuyreq_id."\")'>Reject</a>
-				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Renegotiate</a></td>     
+				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Renegotiate</a></td>
+				
             </tr>
+			
              ";
                   }
+				 
                   echo $strTable;
+				   
                  ?>
+				
                 </tbody>
   
    
