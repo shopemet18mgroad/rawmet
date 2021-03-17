@@ -54,7 +54,8 @@ class Customer_renegotiation extends CI_Controller {
 		$data['sqld'] = $this->Admin_model->getdatafromtable_buy_sel($id,$buyerid);
 		$data['sqldata5'] = $this->Admin_model->getdatafromtable_forth_renego($id,$buyerid);
 		$data['forth_renego2'] = $this->Admin_model->getdatafromtable_forth_renego2($id,$buyerid);		
-		$data['final_quotebyr'] = $this->Admin_model->getdatafromtable_final_quotebyr($id,$buyerid);		
+		$data['final_quotebyr'] = $this->Admin_model->getdatafromtable_final_quotebyr($id,$buyerid);
+		//echo '<pre>';  print_r($data['final_quotebyr']); die;		
 		$data['buy_quot'] = $this->Admin_model->getdatafromtable_buy_quot($id,$buyerid);
 		$data['approve_buyer2'] = $this->Admin_model->getdatafromtable_approve_buyer2($id,$buyerid);		
 		$data['frst_qut'] = $this->Admin_model->getdatafromtable_frst_qut($sellerpostproduct_id,$buyerid);

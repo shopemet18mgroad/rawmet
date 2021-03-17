@@ -286,6 +286,34 @@ $data2 .='</div>';
 		if(count($data)){
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
+
+
+
+			
+
+
+
+			echo '<div class="container">';
+			echo '<h1>Hello World!</h1>';
+			echo '<div class="row">';
+			echo '<div class="col-sm-2" style="background-color:#eaeaea;">';
+			echo '<div style="background-color:white; margin:2px"> udj jkdiu</div>';
+		 
+		 
+			echo '</div>';
+			echo '<div class="col-sm-10" style="background-color:#eaeaea;">';
+			echo '<div style="background-color:white; margin:2px"> udj jkdiu</div>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+
+			
+   
+  
+   
+
+
+
 			
 echo '<div class="thumbnail mt-1">';
 
@@ -339,7 +367,7 @@ echo '<input type="hidden" class="form-control" id="supplyunits" name="supplyuni
 echo '';
 echo '';
 echo '';
-echo '';
+ 
 
 
 echo '<input type="submit" name="submit" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" >';
@@ -385,8 +413,10 @@ echo '</form>';
 	
 			
 		}
+
+
 		$datapass['sr'] = $data2;
-	
+			
 	    $this->load->view('header1',$sess);
 	   $this->load->view('search',$datapass);
 		$this->load->view('footer1');

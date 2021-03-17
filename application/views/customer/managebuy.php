@@ -54,13 +54,7 @@
                     
               
 					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
-						<label for="">Companyname</label>
-						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $sqldata[0]->bcompanyname;?>" readonly>
-                    </div>
-				</div>
-				
-				<div class="col-sm-4 mb-3 mb-sm-1">
-				<label for="">Category</label>
+					<label for="">Category</label>
 					
 					<select class="form-control" id="category" name="category" readonly>
 					       <option value="<?php echo  $sqldata[0]->category;?>"><?php echo  $sqldata[0]->category;?></option>
@@ -70,8 +64,10 @@
 				        <option value="Scrap" >Scrap</option>
 						<option value="Metal" >Metal</option>
 				    </select> 
-                    
-                </div>
+                    </div>
+				</div>
+				
+				<br />
 							
 				<div class="form-inline">
 				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
@@ -86,6 +82,7 @@
 					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id" value="<?php echo  $sqldata[0]->productid;?>" readonly>
                     
                 </div>
+				<br />
 				</div>
 					<h6 class="mt-2"><b>&nbsp;&nbsp;Describe your Buying requirement</b></h6>
 					<div class="col-sm-5 col-md-12">

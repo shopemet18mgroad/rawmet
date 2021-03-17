@@ -34,15 +34,7 @@ class home_buyerrequriment2 extends CI_Controller {
 		$adac['sqldata']= $query;
 		
 		
-		
-		
-		
-		
-	
-		
-		
-		
-	
+			
 		
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
