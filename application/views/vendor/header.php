@@ -88,7 +88,7 @@
           <span>Requirements<br> Negotiation</span></a>
 		 <div id="payment3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Negotiate Here</a>
+            <a class="collapse-item" href="<?php echo base_url();?>vendor_managebuyreq">Negotiate Here / </br> Send Offer</a>
          <!--   <a class="collapse-item" href="<?php echo base_url();?>vendor_negotiated">Approved Requriement</a>-->
 			<a class="collapse-item" href="<?php echo base_url();?>vendor_buyerResponse_req">Ongoing Re-Negotiation</a>
 			<!--<a class="collapse-item" href="<?php echo base_url();?>vendor_req_renego_status">Approved Re-Negotiation</a>

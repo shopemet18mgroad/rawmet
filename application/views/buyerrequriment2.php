@@ -28,7 +28,7 @@
 			<th>Product Name</th>
 			<th>Description</th>
 		<th>Location</th>
-		<th>Price||Quantity</th>
+		<th>Quantity</th>
 		<th>Action</th>
 		
 		
@@ -47,8 +47,7 @@
 		
 			<td><?php echo $row->description;?></td>
 			<td><?php echo $row->bcity;?></td>
-			<td><?php echo $row->price.'/'.$row->priceperkg;?>||
-		<?php echo $row->quantity.' '.$row->units;?></td>	
+			<td><?php echo $row->quantity.' '.$row->units;?></td>	
 			
 			<td>
 			<a href="<?php  echo base_url()."home_login/index/"?>"><button style="font-size: 10px;" type="button" class="btn btn-info ">Send Offer</button></a>

@@ -254,9 +254,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					c.*,
 					d.*,
 					e.*');
-					$this->db->where('d.selapprove', true);	
-					$this->db->where('e.buyerid', $buyerid);
-					$this->db->where('e.sellerpostproduct_id', $sellerpostproduct_id);	
+					//$this->db->where('d.selapprove', true);	
+					$this->db->where('c.buyerid', $buyerid);
+					$this->db->where('c.sellerpostproduct_id', $sellerpostproduct_id);	
 					 
 					$this->db->join('vend_renego e', 'a.sellerid=e.sellerid',
 					'left outer');	
@@ -582,8 +582,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					a.email,
 					a.buyerid,a.*, count(b.productid) as cnt');				
 					$this->db->group_by('a.id');
-					//$this->db->where('b.status', 0);
-					$this->db->where('a.buyerid', $id);					
+					
+					$this->db->where('a.buyerid', $id);	
+					//$this->db->where('b.status', 0);				
 					 
 					
 					$this->db->join('seller_mbuyreq b', 'a.id=b.buyerrequriement_id',
@@ -799,15 +800,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					 
 					');
 					$this->db->where('a.id', $id);	
-					$this->db->where('b.buyerid', $buyerid);						
+					$this->db->where('b.buyerid', $buyerid);	
+
 					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
 					'left outer');
 					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
 					'left outer');
 				$this->db->join('vend_renego d', 'a.id=d.sellerpostproduct_id',
 					'left outer');
-					$query = $this->db->get("sellerpostproduct a");
-					 
+					$query = $this->db->get("sellerpostproduct a");					 
 					$result = $query->result();	
 					//echo $this->db->last_query();exit;			
 					return $result;
@@ -1692,7 +1693,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			 
 			function getUserData($strUID1){
 				$this->db->where("productid",$strUID1);
-				 //$this->db->where('status',0);
+				 //$this->db->where('status', 0);
 				$query = $this->db->get("seller_mbuyreq");
 				$result = $query->result();
 				return $result;
