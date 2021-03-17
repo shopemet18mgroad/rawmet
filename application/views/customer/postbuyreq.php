@@ -252,19 +252,19 @@ function validatepostreq(){
 	//var lastdate = document.getElementById("lastdate").value;
 	var email = document.getElementById("email").value;
 	var contactnumber = document.getElementById("contactnumber").value;
-	var uploadimage = document.getElementById("uploadimage").value;
-	var uploadpdf = document.getElementById("uploadpdf").value;
+	//var uploadimage = document.getElementById("uploadimage").value;
+	//var uploadpdf = document.getElementById("uploadpdf").value;
 	var iagreee = document.getElementById("iagreee").value;
 	
 
-if(category == '' || productname == '' || description == '' || quantity == ''  || units == '' || email == '' || contactnumber == '' || uploadimage == ''|| uploadpdf == '' || iagreee == ''){
-swal("Alert!","Category, Product Name, Description, Quantity, Units , Email, Contact Number, Image, PDF, Terms and condition cannot leave any field blank!","error");
+if(category == '' || productname == '' || description == '' || quantity == ''  || units == '' || email == '' || contactnumber == '' || iagreee == ''){
+swal("Alert!","Category, Product Name, Description, Quantity, Units , Email, Contact Number, Terms and condition cannot leave any field blank!","error");
 		return false;
 	}
 	else{
         $.ajax({
             type:'submit',
-            data: {category:category,productname:productname,description:description,quantity:quantity,units:units,email:email,contactnumber:contactnumber,uploadimage:uploadimage,uploadpdf:uploadpdf,iagreee:iagreee},
+            data: {category:category,productname:productname,description:description,quantity:quantity,units:units,email:email,contactnumber:contactnumber,iagreee:iagreee},
            success:function(data){
                 swal("Success", "Data Saved Successfully", "success");
             },

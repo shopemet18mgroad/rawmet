@@ -48,6 +48,9 @@
 	   
            	<input hidden  type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
           
+		  <input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $sqldata[0]->buyerid;?>" readonly>
+		  <input hidden type="text" class="form-control" id="sellerid" name="sellerid"  value="<?php echo  $sqldata[0]->sellerid;?>" readonly>
+		  
 			<input type="hidden" class="form-control" id="vusername" name="vusername"  value="<?php echo $sessi;?>">
 			<input type="hidden" value="<?php echo  $sqldata[0]->id;?> "  class="form-control" id="seller_mbuyreq_id" name="seller_mbuyreq_id" >
 			<input type="hidden" value="<?php echo  $sqldata[0]->bsupplyability;?> "  class="form-control" id="buyer_nego_units" name="buyer_nego_units" >
@@ -141,7 +144,7 @@
  		
 		<td style="font-size:15px; width:150px;"><b>Seller's 2nd Negotiate </b><br />		
 		
-		<p style="color:blue;"><b><?php echo  $sqldata4[0]->seller_renego_price. " / " .$sqldata4[0]->units;?></b></p>
+		<p style="color:blue;"><b><?php echo  $sqldata4[0]->seller_renego_price. " / " .$sqldata4[0]->bsupplyability;?></b></p>
 		<br />
 		<button type="button" class="btn btn-outline-primary  btn-sm">
 			<?php  echo "   <a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'> <i class='fas fa-check'></i></a> ";
@@ -182,7 +185,7 @@
 			
  
 		<label><b>Buyer's Re-Negotiated Price</b></label><br />
-			<small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price. " / " .$sqldata4[0]->units;?></b></small>
+			<small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price. " / " .$sqldata4[0]->bsupplyability;?></b></small>
 		<hr>
 		
 		<b><?php  if($reqres_appl[0]->sel_status == null) {echo '';}else if($reqres_appl[0]->sel_status == 0) {echo 'Pending';}else if($reqres_appl[0]->sel_status == 2) {echo 'Rejected';}else if($reqres_appl[0]->sel_status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation12/auc_no/'.$reqres_appl[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id." data-toggle='modal' data-target='#exampleModal5' target='_blank'><i class='fa fa-upload'></i></a>";}else if($reqres_appl[0]->sel_status == 5) {echo 'Approved-check in final Approval!';}?></b>
@@ -631,7 +634,7 @@ swal("You have negotiated", {
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Upload your Purchdfdase Order</h1>
+            <h1 class="h3 mb-0 text-gray-800">Upload your Purchase Order</h1>
            
           </div>
 
@@ -688,14 +691,15 @@ swal("You have negotiated", {
 			</td>
 			
 		
-			<td><?php echo $finalupldpo[0]->sellerid;?></td>
+			<td><input type="hidden" name="sellerid" value="<?php echo $finalupldpo[0]->
+			sellerid;?>"><?php echo $finalupldpo[0]->sellerid;?></td>
 			
 			<td><?php echo $finalupldpo[0]->vcompanyname;?></td>
 			<td><?php echo $finalupldpo[0]->vaddress;?></td>
 			<td><?php echo $finalupldpo[0]->vaddress;?></td>
 			<td><?php echo $finalupldpo[0]->vgst;?></td>
 			
-			<td><input type="hidden" name="quantity" value="<?php echo $finalupldpo[0]->quantity;?>"><?php echo $finalupldpo[0]->quantity."/"; echo $finalupldpo[0]->units;?>
+			<td><input type="hidden" name="quantity" value="<?php echo $finalupldpo[0]->quantity;?>"><?php echo $finalupldpo[0]->quantity."/"; echo $finalupldpo[0]->bsupplyability;?>
 			<input type="hidden" name="units" value="<?php echo $finalupldpo[0]->units;?>">
 			
 			<input type="hidden" name="price" value="<?php echo $finalupldpo[0]->price;?>"><input type="hidden" name="priceperkg" value="<?php echo $finalupldpo[0]->priceperkg;?>">
@@ -708,7 +712,9 @@ swal("You have negotiated", {
 			<input type="hidden" name="seller_renego_price" value="<?php echo $finalupldpo[0]->seller_renego_price;?>">
 			<input type="hidden" name="seller_renego_units" value="<?php echo $finalupldpo[0]->seller_renego_units;?>"></td>
 			
-			<td><input type="hidden" name="buyer_final_price" value="<?php echo $finalupldpo[0]->buyer_final_price;?>"><?php echo $finalupldpo[0]->buyer_final_price."/"; echo $finalupldpo[0]->units;?><input type="hidden" name="buyer_final_units" value="<?php echo $finalupldpo[0]->buyer_final_units;?>"></td>
+			<td><input type="hidden" name="buyer_final_price" value="<?php echo $finalupldpo[0]->buyer_final_price;?>">
+			<?php echo $finalupldpo[0]->buyer_final_price."/"; echo $finalupldpo[0]->bsupplyability;?>
+			<input type="hidden" name="buyer_final_units" value="<?php echo $finalupldpo[0]->buyer_final_units;?>"></td>
 			
 	<td> 
 		<a href="<?php echo base_url().'Customer_quotation12/auc_no/'.$finalupldpo[0]->seller_mbuyreq_id;?>" target="_blank">
@@ -827,8 +833,11 @@ swal("You have negotiated", {
 	  
 	<td><input type="hidden" name="productname" value="<?php echo $twouploadPo[0]->productname;?>"><?php echo $twouploadPo[0]->productname?></td>
 		  		
-	  <td><input type="hidden" name="vusername" value="<?php echo $twouploadPo[0]->vusername;?>"><?php echo $twouploadPo[0]->bname;?><input type="hidden" name="bname" value="<?php echo $twouploadPo[0]->bname;?>">
-	  <input type="hidden" name="sellerid" value="<?php echo $twouploadPo[0]->vusername;?>"><input type="hidden" name="buyerid" value="<?php echo $twouploadPo[0]->bname;?>">
+	  <td><input type="hidden" name="vusername" value="<?php echo $twouploadPo[0]->vusername;?>">
+	  <?php echo $twouploadPo[0]->bname;?>
+	  <input type="hidden" name="bname" value="<?php echo $twouploadPo[0]->bname;?>">
+	  <input type="hidden" name="sellerid" value="<?php echo $twouploadPo[0]->sellerid;?>">
+	  <input type="hidden" name="buyerid" value="<?php echo $twouploadPo[0]->bname;?>">
 	<input type="hidden" name="seller_mbuyreq_id" value="<?php echo $twouploadPo[0]->seller_mbuyreq_id;?>">
 	  <input type="hidden" name="bcompanyname" value="<?php echo $twouploadPo[0]->bcompanyname;?>">
 	  

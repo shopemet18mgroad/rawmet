@@ -21,7 +21,7 @@
   
   
   
-  <table class="table table-striped table-bordered w-auto small" id="dataTable" width="100%" cellspacing="0">
+  <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
 	  <th>Id</th>
@@ -52,8 +52,7 @@
                      <td>".$seller->sellername."</td>
 					 <td>".$seller->sellerprice."/".$seller->bsupplyability."</td> 
 					<td>".$seller->buyer_nego_price."/".$seller->buyer_nego_units."</td> 
-                     <td> <a href='javascript:approveProduct(\"".$seller->seller_mbuyreq_id."\")'>Approve</a>|| <a href='javascript:rejectProduct(\"".$seller->seller_mbuyreq_id."\")'>Reject</a>
-				|| <a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Renegotiate</a></td>
+                     <td><a href='Vendor_seller_renego_buyresponse/index/".$seller->id."'>Renegotiate</a></td>
 				
             </tr>
 			

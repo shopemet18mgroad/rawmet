@@ -49,133 +49,50 @@ class Home extends CI_Controller {
 		if(count($data)){
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
-			$data2 .= '<form class="user">';
-			$data2 .='<div class="row  bg-light">';
-			$data2 .='<div class="col-sm-3 text-center">';
-			$data2 .='<center><h4 style="color:purple;"><b><div>'.$dat['productname'].'</div></b></h4></center>';
-			$data2 .='<div class="col-sm-4">';
-			$data2 .='<div class="mt-5 ml-5">';
-
-			$img = unserialize($dat['uploadproductimage']);
+			
+			
+			
+			  
+	
+	$data2 .='<div class="shadow gallery">';
+	
+	$data2 .= '<form class="user">';
+	$data2 .='<br />';
+				 
+		
+$img = unserialize($dat['uploadproductimage']);
 			if($img){
 				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="100px" height="100px">';
 			}else{
 				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/emptyproductimg.png" alt="Chania" width="100px" height="100px">';
 			}
-			
+	    $data2 .= ' <br />';
 		
-
-$data2 .='</div>';
-		
-			$data2 .='</div>';
-			$data2 .='<b>Description:</b><div>'.$dat['description'].'</div></p>';	
-			$data2 .='</div>';
-			
-			$data2 .='';
-			$data2 .='';
-			$data2 .='<div class="col-sm-3 p-2">';
-			$data2 .='<div class="row p-2">';
-		$data2 .='<div class="col-sm-12">';
-			$data2 .= '';
-			
-			$data2 .='<p><b>Product Id:</b>'.$dat['productid'].'</p>';
-			$data2 .='<p><b>Category:</b>'.$dat['category'].'</p>';
-			
-			
-		
+			$data2 .='<div class="gallery2">';
+		$data2 .= '<h6 class="badge text-wrap" style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
+				$data2 .= '<p class="badge text-wrap" style="color:orange;"><b>Supplier price : </b>' .$dat['price'].'/  '.$dat['punits'].'</p>';
+				$data2 .='<p class="badge text-wrap"><b>Place of Stock:</b> '.$dat['pcities'].' | '.$dat['pstates'].' </p>';
+				
+	$data2 .='<b class="badge text-wrap">Category:</b>'.$dat['category'].'';
+	$data2 .='<div class="desc text-wrap"><b>Live Stock :</b>'.$dat['description'].'</div>';
+	$data2 .='<h6 class="badge text-wrap"><b>Supply Ability:</b>
 	
-			$data2 .='<h6><b>Supply Ability:</b>
 			'.$dat['quantity'].'  '.$dat['units'].'</h6>';
-			$data2 .= '<h6><b>last Modified Stock & Price: </b>'.$dat['datetime'].'</b></h6>';
-			$data2 .= '<h6><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
-			$data2 .= '';
-			$data2 .= '';
-
-
-			$data2 .= '</div>';
-			$data2 .='</div>';
-			$data2 .='</div>';
-			$data2 .='';
-			$data2 .='';
-			$data2 .='<div class="col-sm-2 p-2">';
-			$data2 .='<div class="row p-2">';
-			$data2 .='<div class="col-sm-12">';
+		 
 			
-			$data2 .='';
-			$data2 .='<p class="w-auto small">';
-		
-			$data2 .= '';
-			$data2 .= '<h6><b>Validity Till: </b>'.$dat['productvalidityto'].'</b></h6>';
-			$data2 .='<p><b>Place of Stock:</b><div>'.$dat['pcities'].' | '.$dat['pstates'].'</div></p>';
-			$data2 .='</div>';
-			$data2 .= '</div>';
-			$data2 .='</div>';
-			$data2 .= '';
-			$data2 .= '';
-			$data2 .= '<div class="col-sm-4 p-2">';
-			$data2 .= '<div class="row p-2">';
-			$data2 .= '<div class="col-sm-10">';
-			$data2 .= '<h6 style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
-				$data2 .= '<h6 style="color:orange;"><b>Supplier price:</b>'.$dat['price'].'/  '.$dat['punits'].'</h6>';
-   
-
-			$data2 .='<form class="col-12">';
-			$data2 .= '<div class="form-row">';
-			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Quantity</label>';
-			$data2 .= '<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="Quantity" id="name" [(ngModel)]="person.name" />';
-			$data2 .='<div class="col-sm-3">';
-			$data2 .='<select class="form-control col-sm-0" id="type">';
-			$data2 .='<option>KG</option>';
-			$data2 .= '<option>Metric Ton</option>';
-			
-			$data2 .= '<option>lot</option>';
-			$data2 .='<option>litre</option>';
-			$data2 .='<option>Number</option>';
-			$data2 .= '<option>Meter</option>';
-			$data2 .= '';
-			$data2 .= '</select>';
-			$data2 .='</div>';
-			$data2 .='';
-			$data2 .='</div>';
-			$data2 .='<div class="form-row mt-2">';
-			$data2 .= '<label class="col-sm-6 col-form-label"  for="name">Your Price</label>';
-			$data2 .='<input type="text" class="form-control col-sm-2 mr-2" name="name" placeholder="price" id="name" [(ngModel)]="person.name" />'.'/';
-			$data2 .='<div class="col-sm-3">';
-			$data2 .= '<select class="form-control col-sm-0" id="type">';
-			$data2 .= '<option>KG</option>';
-			$data2 .='<option>Metric ton</option>';
-			$data2 .= '<option>Litre</option>';
-			$data2 .='<option>lot</option>';
-		
-			$data2 .= '<option>Number</option>';
-			$data2 .= '<option>Meter</option>';
-			$data2 .='';
-			$data2 .='</select>';
-			$data2 .= '</div>';
-
-			$data2 .= '<button style="width:100%" type="button" class="btn btn-primary btn-sm mt-2 offset-sm-5" 
-			href="<?php $data2 .=  base_url();?>#" data-toggle="modal" data-target="#new_userlogin">Login</button>';
-
-			
-	
-							
+			$data2 .= '<h6 class="badge text-wrap"><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
 			$data2 .=  '</div>';
 			$data2 .=  '</form>';
-			$data2 .= '';
-			$data2 .= '</div>';
-			$data2 .=  '</div>';
-			$data2 .= '</div>';
-			$data2 .=  '';
-			$data2 .=  '</div>';
-			$data2 .=  '</form>';
-			$data2 .=  '<hr />';
+		 
+	 $data2 .= ' </div>';
+		 	 
 						}
 			
 		}
 		$datapass['sr'] = $data2;
 		$this->load->view('search_header');
 		$this->load->view('search',$datapass);
-		$this->load->view('footer');
+		//$this->load->view('footer');
 		
 	}
 	

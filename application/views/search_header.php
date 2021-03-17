@@ -36,7 +36,7 @@
 </head>
 <body>
 
- <div class="container border">
+ <div style="" class="container border">
 
 <img style=" float: left"  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img-fluid mt-5" alt="" width="10%;">
 </div>
@@ -63,6 +63,17 @@ div.gallery {
   border: 1px solid #e0dddd;
   float: left;
   width: 280px;
+  background-color:white;
+
+}
+
+div.gallery2 {
+  margin: 15px;
+  border: 1px solid #e0dddd;
+   
+  width: 250px;
+  background-color:white;
+
 }
 
 div.gallery:hover {
@@ -87,5 +98,7 @@ div.desc {
   
   text-align: center;
 }
+
+
 </style>
    

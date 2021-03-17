@@ -35,13 +35,13 @@ class Customer_buypurchase_order2 extends CI_Controller {
 	 
 	public function index()
 	{
-	if($this->input->post('vusername')){
+	if($this->input->post('sellerid')){
 			$date =  Date('Y-m-d'); 
 			$this->load->library('fileupload');
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			$seller_mbuyreq_id = $this->input->post('seller_mbuyreq_id');
-			$vusername = $this->input->post('vusername');
+			$sellerid = $this->input->post('sellerid');
 			$bname = $this->input->post('bname');
 			$bcompanyname = $this->input->post('bcompanyname');
 			$category = $this->input->post('category');
@@ -72,7 +72,7 @@ class Customer_buypurchase_order2 extends CI_Controller {
 		   	$f =array('vname'=>$s);
 		   	$query = $this->Admin_model->getdatafromtable('sellerpostproduct',$f); */
 		   	//$this->load->model('Admin_model');
-			$data = array('seller_mbuyreq_id'=>$seller_mbuyreq_id,'sellerid' => $vusername,'buyerid'=>$bname,
+			$data = array('seller_mbuyreq_id'=>$seller_mbuyreq_id,'sellerid' => $sellerid,'buyerid'=>$bname,
 			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
 			'quantity' => $quantity,'units' => $units, 'price'=> $price,

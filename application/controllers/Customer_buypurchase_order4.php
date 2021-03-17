@@ -81,7 +81,7 @@ class Customer_buypurchase_order4 extends CI_Controller {
 		   
 			//$this->load->model('Admin_model');
  
-			$data = array('seller_mbuyreq_id'=>$seller_mbuyreq_id, 'sellerid' => $vusername,'buyerid'=>$bname, 
+			$data = array('seller_mbuyreq_id'=>$seller_mbuyreq_id, 'sellerid' => $sellerid,'buyerid'=>$bname, 
 			'bcompanyname' => $bcompanyname,'category' => $category, 'productname' => $productname,
 			'productid' => $productid, 'description' => $description,
 			'quantity' => $quantity,'units' => $units, 'price'=> $price,

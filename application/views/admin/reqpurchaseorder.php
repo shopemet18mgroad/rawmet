@@ -31,6 +31,8 @@
 			<th style="color:pink;">Buyer Quantity</th>
 			<th style="color:pink;">Buyer Price</th>
 			<th style="color:orange;">Suplier Price</th>
+			<th style="color:pink;">Buyer Re-Negotiated Price</th>
+			<th style="color:orange;">Suplier Re-Negotiated Price</th>
 			<th> View Purchase Order</th>
 			<th>Action</th>
       </tr>
@@ -59,10 +61,16 @@
 			echo $row->sellerprice."/"; echo $row->bsupplyability;}
 			?>
 			</td>
-			
-	
-			
-			
+			<td><?php if($row->buyer_nego_price == null){ echo '-';}
+			else{
+				
+			echo $row->buyer_nego_price."/"; echo $row->buyer_nego_units;}
+			?></td>
+			<td><?php if($row->seller_renego_price == null){ echo '-';}
+			else{
+				
+			echo $row->seller_renego_price."/"; echo $row->buyer_nego_units;}
+			?></td>
 		<td>
  <?php $aucfl = unserialize($row->uploadporder);?>
  <?php if(isset($aucfl[0])){	?>

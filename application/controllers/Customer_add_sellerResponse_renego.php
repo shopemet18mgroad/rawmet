@@ -28,13 +28,15 @@ class customer_add_sellerResponse_renego extends CI_Controller {
 			
 			
 			$bname = $this->input->post('bname');
+			$buyerid = $this->input->post('buyerid');
+			$sellerid = $this->input->post('sellerid');
 			$buyer_nego_price = $this->input->post('buyer_nego_price');
 			$buyer_nego_units = $this->input->post('buyer_nego_units');
 			$seller_mbuyreq_id = $this->input->post('seller_mbuyreq_id');
 			
 			
 			
-			$data = array('bname' => $bname,'buyer_nego_price'=> $buyer_nego_price,'buyer_nego_units'=>$buyer_nego_units,'seller_mbuyreq_id'=>$seller_mbuyreq_id);
+			$data = array('sellerid'=>$sellerid, 'buyerid'=>$buyerid,'bname' => $bname,'buyer_nego_price'=> $buyer_nego_price,'buyer_nego_units'=>$buyer_nego_units,'seller_mbuyreq_id'=>$seller_mbuyreq_id);
 			
 
 			$datainserr = "Data Inserted Successfully";
