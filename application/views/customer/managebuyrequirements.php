@@ -20,19 +20,15 @@
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>
- <th>Sl.No.</th>
- <th>Images</th>
-			<th>Product Id</th>
-			<th>Product Name</th>
-			
-			<th>company Name</th>
-			<th>Description</th>
-		
-	
-			
-			<th>Action</th>
-      </tr>
+    <tr>
+	<th>Sl.No.</th>
+	<th>Images</th>
+	<th>Product Id</th>
+	<th>Product Name</th>
+	<th>company Name</th>
+	<th>Description</th>
+	<th>Action</th>
+    </tr>
     </thead>
     <tbody>
 	     <?php  $count = 1;?>
@@ -45,17 +41,19 @@
 		<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
 			<td><?php echo $row->productid;?></td>
 			<td><?php echo $row->productname;?></td>
-			
 			<td><?php echo $row->bcompanyname;?></td>
-		
-			<td><?php echo $row->description;?></td>
+		<td><?php echo $row->description;?></td>
 			
 			
 				
 			<td>
 			<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."customer_buyreqview/index/".$proid."/".urldecode($row->buyerid);?>"><i class="fa fa-eye"></i></a>
 			
-			<!--<button type="submit" name="submit" id="<?php // echo urldecode($row->bname).'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-success btn-sm">Approve</button></td>-->
+			<!--<button type="submit" name="submit" id="<?php // echo urldecode($row->bname).'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-success btn-sm">Approve</button>-->
+			
+			<a href="<?php echo base_url()."customer_buyreqview/product_reject/".$proid."/".$row->buyerid;?>"  class="btn btn-danger btn-sm text-white delete-confirm">Reject</a>
+			
+			</td>
 			<?php $count++;?>
 		
       </tr>      

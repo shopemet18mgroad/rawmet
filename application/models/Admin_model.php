@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
      
    class Admin_model extends CI_Model {	
-  
+   
 		  function __construct() { 
 			 parent::__construct(); 
 			$this->load->database(); 
@@ -45,12 +45,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		 
 		 
 		 	 public function getdatafromtable_sort_admin12() {
-			$id = $this->session->userdata('username');
+			//$id = $this->session->userdata('username');
 			$this->db->select('
 					a.*,
 					b.*,
 					c.*');
-					$this->db->where('a.sellapproval', FALSE);	
+					$this->db->where('a.sellapproval', false);	
 					//$this->db->where('a.id', $id);
 					//$this->db->where('a.sellerid', $sellerid);
 							
@@ -164,7 +164,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					c.*');
 					$this->db->where('a.sellapproval', true);	
 					//$this->db->where('a.id', $id);
-					//$this->db->where('a.sellerid', $sellerid);
+					$this->db->where('a.sellerid', $id);
 							
 					$this->db->join('vendor_register c', 'a.sellerid=c.sellerid',
 					'left outer');	
@@ -510,7 +510,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$q = $this->db->get();
 			return $q->result_array();
 		  }
-		  public function get_lookalike_search2($table,$col,$col2,$query,$cat,$loc){
+		 
+		 public function get_lookalike_search2($table,$col,$col2,$query,$cat,$loc){
 			$this->db->from($table);
 			$this->db->like($col,$query);
 			$this->db->or_like($col2,$query);
@@ -520,6 +521,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$q = $this->db->get();
 			return $q->result_array();
 		}
+		
 			function fetch_all()
 			 {
 			  $query = $this->db->get("auction");
@@ -1254,6 +1256,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		a.quantity,
 		a.units,
 		a.sellerid,
+		a.buyerid,
 		 
 		 b.buyer_nego_price,
 		 b.buyer_nego_units,
@@ -1287,6 +1290,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		a.quantity,
 		a.units,
 		a.sellerid,
+		a.buyerid,
 		
 		 b.buyer_nego_price,
 		 b.buyer_nego_units,
@@ -1330,6 +1334,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		a.quantity,
 		a.units,
 		a.sellerid,
+		b.buyerid,
 		 
 		 b.buyer_nego_price,
 		 b.buyer_nego_units'

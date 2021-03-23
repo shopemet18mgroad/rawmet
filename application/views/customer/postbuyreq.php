@@ -49,13 +49,13 @@
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
 						<input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
                     </div>
-					<div class="col-sm-6 mb-12 pl-5 mb-sm-0">
+					<div class="col-sm-5 mb-12 pl-5 mb-sm-0">
 						<label for="">Company Name</label>
 						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
                     </div>
 				</div>
 				<div class="form-inline">
-							<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+							<div class="col-sm-6 pr-5  mb-sm-0">
 								<label>Email:</label>
 								<input type="email" class="form-control" id="email" name="email" value="<?php echo  $scomp[0]->bemail;?>" readonly>
 							</div>
@@ -86,7 +86,7 @@
 				<div class="form-inline">
 				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label>Product Name:</label>
-						<input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name.." onkeyup="product_id()">
+						<input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name.." onkeyup="product_id()" ></span>
 						</div>
 				
 							
@@ -307,3 +307,17 @@ document.addEventListener('click',clickEffect);
 
 
 </script>
+
+
+<script>
+  function validate_bcompany11(){
+	  var val = document.getElementById("category").value;
+		if(val != ''){
+
+			swal("Alert!",  "Please Enter Buyer Company Name!", "error");
+			return false;
+		}
+		
+  }
+
+   </script>

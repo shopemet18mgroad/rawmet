@@ -32,7 +32,7 @@ class Customer_buyreqview extends CI_Controller {
 		
 	$productid = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		
-		$active = array('productid'=>$productid);
+		$active = array('productid'=>$productid,'selapprove'=>false);
 		
 	
 		$query = $this->Admin_model->getdatafromtable('buyerrequriement', $active);
@@ -50,7 +50,18 @@ class Customer_buyreqview extends CI_Controller {
 			
 			
 	}
+	public function product_reject(){
+		
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$buyerid = $this->uri->segment(4);
+		$retriveval = array('productid'=>$retrivevaltmp,'buyerid'=>$buyerid);
+	//print_r($retriveval); die;
+		$this->load->model('Admin_model');
+		$app= array('selapprove'=>2);
+		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Customer_managebuyrequirements/index/'.$retrivevaltmp,$buyerid);
 	
+	}
 		
 	}
 	

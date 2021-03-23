@@ -257,7 +257,7 @@ Re-Negotiate Here
 </td>
 		
 		
-		<td style="font-size:15px; width:150px; color: white;">Buyers Quantity <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoquantity. " / " .$sqld[0]->brenegoquantityunit;?></b></small><br/>
+		<td style="font-size:15px; width:150px; color: white;">Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoquantity. " / " .$sqld[0]->brenegoquantityunit;?></b></small><br/>
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqld[0]->brenegoprice. " / " .$sqld[0]->brenegounit;?></b></small><br/>
 		
 		

@@ -196,8 +196,8 @@ $strDisable = "";
 <input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="<?php echo $sqldata2[0]->buyerid;?>">
 <input type="hidden" class="form-control" id="bprice" name="bprice"  value="<?php echo $sqldata2[0]->bprice;?>">
 <input type="hidden" class="form-control" id="bunits" name="bunits"  value="<?php echo $sqldata2[0]->bunits;?>">
-
-							
+<input type="hidden" class="form-control" id="selprice" name="selprice"  value="<?php echo $sqldata4[0]->selprice;?>">
+<input type="hidden" class="form-control" id="sunits" name="sunits"  value="<?php echo $sqldata4[0]->sunits;?>">						
 <input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
 <input type="hidden" class="form-control" id="brenegoquantity" name="brenegoquantity"  value="<?php echo $sqldata4[0]->brenegoquantity;?>">
 <input type="hidden" class="form-control" id="brenegoquantityunit" name="brenegoquantityunit"  value="<?php echo $sqldata4[0]->brenegoquantityunit;?>">
@@ -375,7 +375,7 @@ $strDisable2 = "";
 		
 			
 									
-								
+<p><b>Buyer Id:</b></br><?php echo  $sqldata2[0]->buyerid;?></p>								
 <p><b>Product Id:</b></br><?php echo  $sqldata[0]->productid;?></p>
 								
 								

@@ -54,11 +54,12 @@
 				
 		
 
-		<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->buyerid);?>"  class="btn btn-secondary text-white delete-confirm">Send Offer</a>
+		<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->buyerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Send Offer</a>
+
 
 		
 		
-		<a href="<?php echo base_url()."vendor_managebuyreq/delete_buyingrequ/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm"><i class="fa fa-trash fa-sm"></i></a></td>	
+		<a href="<?php echo base_url()."vendor_managebuyreq/product_reject/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm">Reject</a></td>	
 			
 		
 				

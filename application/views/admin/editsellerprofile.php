@@ -38,7 +38,7 @@
       
 							<tr>
 							<form action = "<?php echo base_url();?>admin_seller_basicinfo_update" method="POST" enctype="multipart/form-data">
-							<td>   Name</td>
+							<td>Name</td>
 								<td><input class="form-control w-50" type="text" id="vname" name="vname" value="<?php echo $sqldata[0]->vname; ?>"></td>
 							</tr> 
 							<td>Seller Id </td>
@@ -46,7 +46,7 @@
 							</tr> 
 							<tr>
 								<td>Company Name</td>
-								<td><input class="form-control w-50" type="text" id="vcompanyname" name="vcompanyname" value="<?php echo$sqldata[0]->vcompanyname; ?>"></td>
+								<td><input class="form-control w-50" type="text" id="vcompanyname" name="vcompanyname" value="<?php echo$sqldata[0]->vcompanyname; ?>" readonly></td>
 							</tr> 
 							<tr>
 								<td>Company Type</td>
@@ -78,8 +78,12 @@
 							</tr> 
 							<tr>
 								<td>Reference Name</td>
-								<td><input class="form-control w-50" type="text" id="vrefer" name="vrefer" value="<?php echo $sqldata[0]->vrefer; ?>"></td>
-								<td>
+								<td><input class="form-control w-50" type="text" id="vrefer" name="vrefer" value="<?php echo $sqldata[0]->vrefer; ?>">
+								
+								<input class="form-control w-50" type="hidden" id="vpassword" name="vpassword" value="<?php echo $sqldata[0]->vpassword; ?>">
+								
+								<input class="form-control w-50" type="hidden" id="vrepeatpassword" name="vrepeatpassword" value="<?php echo $sqldata[0]->vrepeatpassword; ?>"></td>
+								
 			
 							</tr> 
 

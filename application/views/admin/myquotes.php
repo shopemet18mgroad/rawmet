@@ -66,7 +66,7 @@
 			
 		
 			<td style="text-align:center;"><?php if($row->selprice == null){echo " - ";}
-			else{echo $row->selprice."/"; echo $row->sunits;}?></td>
+			else{echo $row->selprice."/"; echo $row->bunits;}?></td>
 			<td style="text-align:center;"><?php if($row->brenegoquantity == null){echo " - ";}
 			else{echo $row->brenegoquantity."/"; echo $row->brenegoquantityunit;}?></td>
 			
@@ -74,7 +74,7 @@
 			else{echo $row->brenegoprice."/"; echo $row->brenegounit;}?></td>
 			
 				<td style="text-align:center;"><?php if($row->sellrenegoprice == null){echo " - ";}
-			else{echo $row->sellrenegoprice."/"; echo $row->sellrenegounits;}?></td>
+			else{echo $row->sellrenegoprice."/"; echo $row->bunits;}?></td>
 			
   <td>
       <?php $aucfl = unserialize($row->uploadporder);?>
@@ -175,10 +175,10 @@ Seller Company Name:<?php echo $row->vcompanyname;?>
 	</table>
 	
 	<table class="table table-sm table-borderless table-secondary">
-	<?php if($row->selprice != null && $row->sunits != null){?>
+	<?php if($row->selprice != null && $row->bunits != null){?>
     <tr class="float:right;">
       <td style="color: blue;">Supplier Price: <?php if($row->selprice == null){echo " - ";}
-			else{echo $row->selprice."/"; echo $row->sunits;}?></td>
+			else{echo $row->selprice."/"; echo $row->bunits;}?></td>
       
     </tr>
 		<?php }?>

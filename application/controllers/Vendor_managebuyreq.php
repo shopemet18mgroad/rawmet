@@ -34,7 +34,7 @@ class Vendor_managebuyreq extends CI_Controller {
 	}
 	
 	
-	public function delete_buyingrequ(){
+	/* public function delete_buyingrequ(){
 		
 		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		$retriveval = array('productid'=>$retrivevaltmp);
@@ -50,6 +50,17 @@ class Vendor_managebuyreq extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		header('location: '.base_url().'vendor_managebuyreq/index/'.$retrivevaltmp);
 		
+	} */
+	public function product_reject(){
+		
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+		$retriveval = array('productid'=>$retrivevaltmp);
+	
+		$this->load->model('Admin_model');
+		$app= array('selapprove'=>2);
+		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'vendor_managebuyreq/index/'.$retrivevaltmp);
+	
 	}
 	
 		public function approve_requirement(){

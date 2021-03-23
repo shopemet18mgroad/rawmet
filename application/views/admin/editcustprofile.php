@@ -24,7 +24,7 @@
 							</tr> 
 							<tr>
 								<td>Company Name</td>
-								<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" value="<?php echo$sqldata[0]->bcompanyname; ?>"></td>
+								<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" value="<?php echo$sqldata[0]->bcompanyname; ?>" readonly></td>
 								
 							</tr> 
 								<tr>
@@ -45,7 +45,7 @@
 								<td><input class="form-control w-50" type="text" id="bcontactperson" name="bcontactperson" value="<?php echo $sqldata[0]->bcontactperson; ?>"></td>
 							</tr> 
 							<tr>
-								<td>contact number</td>
+								<td>Contact number</td>
 								<td><input class="form-control w-50" type="text" id="bcontactnumber" name="bcontactnumber" value="<?php echo $sqldata[0]->bcontactnumber; ?>"></td>
 								<td>
 			
@@ -63,6 +63,10 @@
 							<tr>
 								<td>Reference Name</td>
 								<td><input class="form-control w-50" type="text" id="brefer" name="brefer" value="<?php echo $sqldata[0]->brefer; ?>"></td>
+								
+								<input class="form-control w-50" type="hidden" id="bpassword" name="bpassword" value="<?php echo $sqldata[0]->bpassword; ?>" readonly>
+								
+								<input class="form-control w-50" type="hidden" id="brepeatpassword" name="brepeatpassword" value="<?php echo $sqldata[0]->brepeatpassword; ?>" readonly>
 								<td>
 			
 							</tr>

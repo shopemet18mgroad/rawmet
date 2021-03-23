@@ -38,10 +38,10 @@
 				<div class="caption col-7 p-2 ml-5 bg-light">
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
-						<label for="">Buyer Name</label>
+						<label for="">Buyer ID</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
 					
-					
+					<input type="hidden" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $sqldata[0]->bcompanyname;?>" readonly>
 					
 					
 						<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo  $sessi;?>" readonly>

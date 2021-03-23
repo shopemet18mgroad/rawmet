@@ -22,12 +22,13 @@
     <thead class="bg-primary text-white">
 	      <tr>
 		  <th>Sl.No.</th>
-        <th>Vendor Name</th>
-        <th>Company Type</th>
-        <th>Contact Person</th>
-		<th>Location</th>
-		<th>City</th>
-		<th>Option</th>
+		  <th>Vendor Name</th>
+		  <th>Company Name</th>
+          <th>Company Type</th>
+          <th>Contact Person</th>
+		  <th>Location</th>
+		  <th>City</th>
+		  <th>Option</th>
       </tr>
     </thead>
     <tbody>
@@ -37,7 +38,8 @@
 	   <?php foreach($data as $row){?>
       <tr>
 	        <td><?php echo $count;?></td>
-	                  <td><?php echo $row->vname;?></td>
+	                <td><?php echo $row->vname;?></td>
+					<td><?php echo $row->vcompanyname;?></td>
 					<td><?php  echo $row->vcompanytype; ?></td>
 					<td><?php  echo $row->vcontactperson; ?></td>
 					<td><?php echo $row->vaddress; ?></td>

@@ -37,9 +37,28 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 		
 	}
+	
+	
 	public function search()
 	{
-		$this->load->helper(array('url','html','date'));
+			 $this->load->model('Admin_model');
+			 	$this->load->helper(array('url','html','date'));
+				
+		$this->load->library('session');
+		$sess = array('sessi'=>$this->session->userdata('username'));
+				
+  if($this->session->userdata('username') && $this->session->userdata('auth') == "BUYER")
+			{
+			
+		$sess = array('sessi'=>$this->session->userdata('username'));
+		$active1 = array('buyerid'=>$sess['sessi']);
+		 
+			}else{
+				$sess['sessi'] = "";
+			}
+			
+ 
+	
 		$productname = $this->input->post('productname');
 		$category = $this->input->post('category');
 		$myCountry = $this->input->post('myCountry');
@@ -51,50 +70,213 @@ class Home extends CI_Controller {
 		if(count($data)){
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
+
+
+
+			
+
+ $data2 .='<div class="">';
+ $data2 .='<div class="row shadow">';
+ $data2 .=' <div style="border:1px solid lightgray" class="col-2"><p>
+			<b>'.$dat['category'].' </b></p>
+				
+				
+				<hr />
+					<li style="list-style-type: none;"><a href="">Iron</a></li>
+					<li style="list-style-type: none;"><a href="list-style-type: none;">Copper</a></li>
+					<li style="list-style-type: none;"><a href="list-style-type: none;">Aluminum</a></li>
 			
 			
+				';
+				$data2 .=' </div>';
+				
 			
-			  
-	
-	$data2 .='<div class="shadow gallery">';
-	
-	$data2 .= '<form class="user">';
-	$data2 .='<br />';
-				 
+				$data2 .= ' <div style="border:1px solid lightgray ;padding:15px;" class="col-10">';
+ 
+			
+				
+		 
+	$data2 .= '  <div class="row">';
+	$data2 .= '   <div style="" class="col-3">';
 		
-$img = unserialize($dat['uploadproductimage']);
-			if($img){
-				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="100px" height="100px">';
-			}else{
+    $img = unserialize($dat['uploadproductimage']);
+		if($img){
+				$data2 .='<img class="img-thumbnail" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="200px" height="100px">';
+			    }else{
 				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/emptyproductimg.png" alt="Chania" width="100px" height="100px">';
 			}
-	    $data2 .= ' <br />';
-		
-			$data2 .='<div class="gallery2">';
-		$data2 .= '<h6 class="badge text-wrap" style="color:orange;"><b>Live Stock:</b>'.$dat['supplyability'].'  '.$dat['supplyunits'].'</h6>';
-				$data2 .= '<p class="badge text-wrap" style="color:orange;"><b>Supplier price : </b>' .$dat['price'].'/  '.$dat['punits'].'</p>';
-				$data2 .='<p class="badge text-wrap"><b>Place of Stock:</b> '.$dat['pcities'].' | '.$dat['pstates'].' </p>';
-				
-	$data2 .='<b class="badge text-wrap">Category:</b>'.$dat['category'].'';
-	$data2 .='<div class="desc text-wrap"><b>Live Stock :</b>'.$dat['description'].'</div>';
-	$data2 .='<h6 class="badge text-wrap"><b>Supply Ability:</b>
-	
-			'.$dat['quantity'].'  '.$dat['units'].'</h6>';
-		 
 			
-			$data2 .= '<h6 class="badge text-wrap"><b>Estimated Delivery: </b>'.$dat['estdeltime'].'</b></h6>';
-			$data2 .=  '</div>';
-			$data2 .=  '</form>';
-		 
-	 $data2 .= ' </div>';
-		 	 
+	$data2 .= ' <h6>'.$dat['pcities'].' | '.$dat['pstates'].'</h6></div>';		
+	$data2 .= '  <div style="" class="col-6">
+	
+	
+	<h3>'.$dat['productname'].'</h3><small> <b>Last Modified:</b> '.$dat['datetime'].' | <b>Validity :</b> '.$dat['productvalidityto'].' <br/>Estimated Delivery : <b>'.$dat['estdeltime'].'</b></small><br>
+	
+		<span style="background:green; color:white;border-radius:5px;" class="heading">4.1</span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<br/><div style="margin:8px">
+
+					<li style="list-style-type: none;">Live Stock : '.$dat['supplyability'].'  '.$dat['supplyunits'].'</li>
+					<li style="list-style-type: none;">Supplier price : '.$dat['price'].'/  '.$dat['punits'].'</li>
+					<li style="list-style-type: none;" >Total Quantity : '.$dat['quantity'].'/  '.$dat['units'].'</li>
+					
+					<i style="" class="fa fa-certificate" aria-hidden="true"></i> 
+					<i class="fa fa-shield" aria-hidden="true"></i>
+					
+ 
+ </div>
+	</div>';
+	
+	$data2 .= ' <div style="padding-top:20px" class="col-3">
+	 
+	 
+	<img style="float:right" class="img" src="'.base_url().'web_files/uploads/virifed.png'.'" alt="Chania" width="60px" height="20px">;
+	 
+	<form class="user" action="'. base_url().'Customer_add_contactsupplier/index/'.'" method="POST" enctype="multipart/form-data">
+	
+	<input type="hidden" class="form-control" id="sellerpostproduct_id" name="sellerpostproduct_id"  value="'.$dat['id'].'">
+	
+	<input type="hidden" class="form-control" id="productname" name="productname"  value="'.$dat['productname'].'">
+	
+	<input type="hidden" class="form-control" id="description" name="description"  value="'.  $dat['description'].'">
+
+	<input type="hidden" class="form-control" id="productid" name="productid"  value="'.  $dat['productid'].'">
+
+	<input type="hidden" class="form-control" id="id" name="id"  value="'.  $dat['id'].'">
+	
+	<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="'.  $dat['sellerid'].'">
+	
+	
+	
+	<input type="hidden" class="form-control" id="category" name="category"  value="'.  $dat['category'].'">
+ 
+	<input type="hidden" class="form-control" id="companyname" name="companyname"  value=
+	"'.  $dat['companyname'].'">
+	
+	<input type="hidden" class="form-control" id="price" name="price"  value="'.  $dat['price'].'">
+	
+	<input type="hidden" class="form-control" id="punits" name="punits"  value="'.  $dat['punits'].'">
+	
+	<input type="hidden" class="form-control" id="quantity" name="quantity"  value="'.  $dat['quantity'].'">
+	
+	<input type="hidden" class="form-control" id="units" name="units"  value="'.  $dat['units'].'">
+	
+	<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="'.  $dat['supplyability'].'">
+	
+	<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="'.  $dat['supplyunits'].'">
+	
+	<input type="hidden" class="form-control" id="pcities" name="pcities"  value="'.  $dat['pcities'].'">
+	
+	<input type="hidden" class="form-control" id="pstates" name="pstates"  value="'.  $dat['pstates'].'">
+
+	<input type="hidden" class="form-control" id="datetime" name="datetime"  value="'.  $dat['datetime'].'">
+	
+	<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="'.  $dat['estdeltime'].'">
+	
+	<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="'.  $dat['productvalidityto'].'">
+	
+	<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="'.  $dat['supplyunits'].'">
+	
+	
+  <div class="row" style="margin-top:30px;">
+    <div class="col">
+       <input type="text" class="form-control" id="bquantity" name="bquantity" placeholder="Quantity:">
+    </div>
+    <div class="col">
+      <select class="form-control col-sm-0" id="bunits" name="bunits">
+	   <option>KG</option> 
+			 <option>Metric ton</option> 
+			 <option>Litre</option> 
+			 <option>lot</option> 
+		
+			 <option>Number</option> 
+			 <option>Meter</option> 
+	  
+	  </select>
+	  
+    </div>
+  </div>
+  <br/>
+    <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" id="bprice" placeholder="Price" name="bprice">
+    </div>
+    <div class="col">
+       <select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
+	   <option>KG</option> 
+			 <option>Metric ton</option> 
+			 <option>Litre</option> 
+			 <option>lot</option> 
+		
+			 <option>Number</option> 
+			 <option>Meter</option> 
+	  
+	  </select>
+    </div>
+	
+	</div><br/>
+	<input type="submit" name="submit" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" />
+	
+	
+</form>
+	  
+	
+	 
+<br/><div style="margin:8px">
+
+				 
+					
+ </div>
+ 
+	</div>';
+	
+	
+			 					
+		$data2 .= ' </div>';		
+		$data2 .= ' <hr>  
+				Description 
+				 '.$dat['description'].'
+				
+				</div>';
+				
+				 
+			
+			$data2 .= '  </div>';
+			
+			$data2 .= '<hr>  </div>';
+			 
+  
 						}
 			
-		}
+	
+			
+		
+
+
 		$datapass['sr'] = $data2;
-		$this->load->view('search_header');
-		$this->load->view('search',$datapass);
-		//$this->load->view('footer');
+			$datapass['sessi'] = $sess;
+	    $this->load->view('header1',$sess);
+	   $this->load->view('search',$datapass);
+		$this->load->view('footer1');
+		$this->load->helper('url');
+	
+		
+	}
+	
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+			
 		
 	}
 	
@@ -189,6 +371,7 @@ $img = unserialize($dat['uploadproductimage']);
 			}else{
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active1 = array('buyerid'=>$sess['sessi']);
+		 
 			{
 
 		$this->load->helper(array('url','html','date'));
@@ -208,123 +391,179 @@ $img = unserialize($dat['uploadproductimage']);
 
 			
 
-
-
-			echo '<div class="container">';
-			echo '<h1>Hello World!</h1>';
-			echo '<div class="row">';
-			echo '<div class="col-sm-2" style="background-color:#eaeaea;">';
-			echo '<div style="background-color:white; margin:2px"> udj jkdiu</div>';
-		 
-		 
-			echo '</div>';
-			echo '<div class="col-sm-10" style="background-color:#eaeaea;">';
-			echo '<div style="background-color:white; margin:2px"> udj jkdiu</div>';
-			echo '</div>';
-			echo '</div>';
-			echo '</div>';
-
+ $data2 .='<div class="">';
+ $data2 .='<div class="row shadow">';
+ $data2 .=' <div style="border:1px solid lightgray" class="col-2"><p>
+			<b>'.$dat['category'].' </b></p>
+				
+				
+				<hr />
+					<li style="list-style-type: none;"><a href="">Iron</a></li>
+					<li style="list-style-type: none;"><a href="list-style-type: none;">Copper</a></li>
+					<li style="list-style-type: none;"><a href="list-style-type: none;">Aluminum</a></li>
 			
-   
-  
-   
-
-
-
 			
-echo '<div class="thumbnail mt-1">';
+				';
+				$data2 .=' </div>';
+				
+			
+				$data2 .= ' <div style="border:1px solid lightgray ;padding:15px;" class="col-10">';
+ 
+			
+				
+		 
+	$data2 .= '  <div class="row">';
+	$data2 .= '   <div style="" class="col-3">';
+		
+    $img = unserialize($dat['uploadproductimage']);
+		if($img){
+				$data2 .='<img class="img-thumbnail" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="200px" height="100px">';
+			    }else{
+				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/emptyproductimg.png" alt="Chania" width="100px" height="100px">';
+			}
+			
+	$data2 .= ' <h6>'.$dat['pcities'].' | '.$dat['pstates'].'</h6></div>';		
+	$data2 .= '  <div style="" class="col-6">
+	
+	
+	<h3>'.$dat['productname'].'</h3><small> <b>Last Modified:</b> '.$dat['datetime'].' | <b>Validity :</b> '.$dat['productvalidityto'].' <br/>Estimated Delivery : <b>'.$dat['estdeltime'].'</b></small><br>
+	
+		<span style="background:green; color:white;border-radius:5px;" class="heading">4.1</span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<br/><div style="margin:8px">
 
+					<li style="list-style-type: none;">Live Stock : '.$dat['supplyability'].'  '.$dat['supplyunits'].'</li>
+					<li style="list-style-type: none;">Supplier price : '.$dat['price'].'/  '.$dat['punits'].'</li>
+					<li style="list-style-type: none;" >Total Quantity : '.$dat['quantity'].'/  '.$dat['units'].'</li>
+					
+					<i style="" class="fa fa-certificate" aria-hidden="true"></i> 
+					<i class="fa fa-shield" aria-hidden="true"></i>
+					
+ 
+ </div>
+	</div>';
+	
+	$data2 .= ' <div style="padding-top:20px" class="col-3">
+	 
+	 
+	<img style="float:right" class="img" src="'.base_url().'web_files/uploads/virifed.png'.'" alt="Chania" width="60px" height="20px">;
+	 
+	<form class="user" action="'. base_url().'Customer_add_contactsupplier/index/'.'" method="POST" enctype="multipart/form-data">
+	
+	<input type="hidden" class="form-control" id="sellerpostproduct_id" name="sellerpostproduct_id"  value="'.$dat['id'].'">
+	
+	<input type="hidden" class="form-control" id="productname" name="productname"  value="'.$dat['productname'].'">
+	
+	<input type="hidden" class="form-control" id="description" name="description"  value="'.  $dat['description'].'">
+
+	<input type="hidden" class="form-control" id="productid" name="productid"  value="'.  $dat['productid'].'">
+
+	<input type="hidden" class="form-control" id="id" name="id"  value="'.  $dat['id'].'">
+	
+	<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="'.  $dat['sellerid'].'">
 	
 
-
-	$img = unserialize($dat['uploadproductimage']);
-			
-			echo	$data2 .='<img class="img" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="100px" height="100px">';
-			echo '</div>';	
-				
-
-echo '<form class="user" action="'.base_url().'Home_add_contactsupplier2'.'" method="POST" enctype="multipart/form-data">';
-echo '';
-echo '';
-echo '<input type="text" class="form-control" id="productname" name="productname"  value="'.$dat['productname'].'">';
-echo '';
-echo '<input type="text" class="form-control" id="description" name="description"  value="'.  $dat['description'].'">';
-echo '';
-echo '<input type="text" class="form-control" id="productid" name="productid"  value="'.$dat['productid'].'"">';
-echo '';
-echo '<input type="hidden" class="form-control" id="id" name="id"  value="'.  $dat['description'].'">';
-echo '<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="'.  $dat['description'].'">';
-echo '';
-//echo '<input type="text" class="form-control" id="buyerid" name="buyerid"  value="'.  $dat['sessi'].'">';    ;
-echo '';
-echo '<input type="hidden" class="form-control" id="category" name="category"  value="'.  $dat['category'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="companyname" name="companyname"  value="'.  $dat['companyname'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="price" name="price"  value="'.  $dat['price'].'">';
-echo '<input type="hidden" class="form-control" id="punits" name="punits"  value="'.  $dat['punits'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="quantity" name="quantity"  value="'.  $dat['quantity'].'">';
-echo '<input type="hidden" class="form-control" id="units" name="units"  value="'.  $dat['units'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="'.  $dat['supplyability'].'">';
-echo '';
-
-echo '<input type="hidden" class="form-control" id="pcities" name="pcities"  value="'.  $dat['pcities'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="pstates" name="pstates"  value="'.  $dat['pstates'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="datetime" name="datetime"  value="'.  $dat['datetime'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="'.  $dat['estdeltime'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="'.  $dat['productvalidityto'].'">';
-echo '';
-echo '<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="'.  $dat['supplyunits'].'">';
-echo '';
-echo '';
-echo '';
+	<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="'.  $dat['buyerid'].'"> 
+	
+	<input type="hidden" class="form-control" id="category" name="category"  value="'.  $dat['category'].'">
  
+	<input type="hidden" class="form-control" id="companyname" name="companyname"  value=
+	"'.  $dat['companyname'].'">
+	
+	<input type="hidden" class="form-control" id="price" name="price"  value="'.  $dat['price'].'">
+	
+	<input type="hidden" class="form-control" id="punits" name="punits"  value="'.  $dat['punits'].'">
+	
+	<input type="hidden" class="form-control" id="quantity" name="quantity"  value="'.  $dat['quantity'].'">
+	
+	<input type="hidden" class="form-control" id="units" name="units"  value="'.  $dat['units'].'">
+	
+	<input type="hidden" class="form-control" id="supplyability" name="supplyability"  value="'.  $dat['supplyability'].'">
+	
+	<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="'.  $dat['supplyunits'].'">
+	
+	<input type="hidden" class="form-control" id="pcities" name="pcities"  value="'.  $dat['pcities'].'">
+	
+	<input type="hidden" class="form-control" id="pstates" name="pstates"  value="'.  $dat['pstates'].'">
 
-
-echo '<input type="submit" name="submit" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" >';
-
-
-
-
-
-
-
-
-
-echo '';
-echo '</form>';
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+	<input type="hidden" class="form-control" id="datetime" name="datetime"  value="'.  $dat['datetime'].'">
+	
+	<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="'.  $dat['estdeltime'].'">
+	
+	<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="'.  $dat['productvalidityto'].'">
+	
+	<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="'.  $dat['supplyunits'].'">
+	
+	
+  <div class="row" style="margin-top:30px;">
+    <div class="col">
+       <input type="text" class="form-control" id="bquantity" name="bquantity" placeholder="Quantity:">
+    </div>
+    <div class="col">
+      <select class="form-control col-sm-0" id="bunits" name="bunits">
+	   <option>KG</option> 
+			 <option>Metric ton</option> 
+			 <option>Litre</option> 
+			 <option>lot</option> 
 		
+			 <option>Number</option> 
+			 <option>Meter</option> 
+	  
+	  </select>
+	  
+    </div>
+  </div>
+  <br/>
+    <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" id="bprice" placeholder="Price" name="bprice">
+    </div>
+    <div class="col">
+       <select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
+	   <option>KG</option> 
+			 <option>Metric ton</option> 
+			 <option>Litre</option> 
+			 <option>lot</option> 
+		
+			 <option>Number</option> 
+			 <option>Meter</option> 
+	  
+	  </select>
+    </div>
+	
+	</div><br/>
+	<input type="submit" name="submit" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" >
+</form>
+	  
+	
+	 
+<br/><div style="margin:8px">
+
+				 
+					
+ </div>
+ 
+	</div>';
+	
+	
+			 					
+		$data2 .= ' </div>';		
+		$data2 .= ' <hr>  
+				Description 
+				 '.$dat['description'].'
+				
+				</div>';
+				
+				 
+			
+			$data2 .= '  </div>';
+			
+			$data2 .= '<hr>  </div>';
+			 
+  
 						}
 			
 	

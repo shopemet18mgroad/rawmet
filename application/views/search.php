@@ -25,7 +25,7 @@
 
 
 <br />
-<div class="container border">
+<div class="container">
 <?php echo $sr;?>
 
 </div>

@@ -83,12 +83,12 @@ table-border
 
 <table style="padding-left:70% ">
   <tr>
-    <th>Seller ID</th>
+    <th>Buyer ID</th>
     <td><?php echo $sqldata1[0]->buyerid; ?></td> 
     
   </tr>
  <tr>
-    <th>Buyer ID</th>
+    <th>Seller ID</th>
     <td><?php echo $sqldata1[0]->sellerid; ?></td> 
     
   </tr>
@@ -121,7 +121,7 @@ table-border
     
 	<th>QUANTITY</th>
 	<th>UNIT PRICE</th>
-	<th>AMOUNT</th>
+	<th>TOTAL AMOUNT</th>
   </tr>
  
   <tr>
@@ -138,11 +138,10 @@ table-border
 <div style="position: relative;">
         <div style="width: 50%;">
             <p> <b> TERMS AND CONDITIONS</b></p>
-            <p>1.Customers will be billed after indicating acceptance of this quote. </p>
-            <p>2.Payment will be due prior to delivery of service ang goods.</p>
-            <p> <b>To accept the quotation ,Please sign here and return:____</b></p>
+              <p>1.The Quotation Prepared is only on basic price, taxes as applicable will be mentioned in Purchase Order by the buyer/seller. </p>
+            <p>2.This Quotation is followed by Purchase Order.</p>
         </div>
-        <div class="table-border" style="width:50%;position:absolute;right:0;top:0">
+      <!--  <div class="table-border" style="width:50%;position:absolute;right:0;top:0">
             <table id="custom mt-5" style="width: 100%">
                 <tr>
                     <th>SUB TOTAL</th>
@@ -167,14 +166,14 @@ table-border
                 </tr>
 
             </table>
-        </div>
+        </div>-->
     </div>
 <br>
 <br>	
 	<div>
 		<center>
 			<p> If you have any questions about this quotation please contact</p>
-			<p>jhon doe,phone No. :123456789</p>
+			<p>RAWMET24,phone No. :9945454505</p>
 			<p><b> THANK YOU FOR YOUR BUSINESS!</b></p>
 		</center>
 	</div>

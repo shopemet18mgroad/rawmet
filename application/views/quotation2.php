@@ -119,7 +119,7 @@ table-border
     
 	<th>QUANTITY</th>
 	<th>UNIT PRICE</th>
-	<th>AMOUNT</th>
+	<th>TOTAL AMOUNT</th>
   </tr>
  
   <tr>

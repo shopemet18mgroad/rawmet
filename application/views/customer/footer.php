@@ -104,7 +104,7 @@ function validate_password(){
 		 swal("Alert!", "Please Select Categoery First", "error");
 		 return false;
 	 }
-	 if(cat2.length<6){
+	 if(cat2.length<21){
 		  document.getElementById('productid').value = "RAW/"+cat2+"/"+cat+"/"+m+"/"+n+"/"+s;
 	 }
  }
@@ -194,7 +194,17 @@ if(bprice == '' || bunits == ''){
 }
   </script>
   
-
+<script>
+function validate()
+{
+   if(document.getElementById("category").value == "")
+   {
+      alert("Please select value"); // prompt user
+      document.getElementById("category").focus(); //set focus back to control
+      return false;
+   }
+}
+  </script>
   
 
  
