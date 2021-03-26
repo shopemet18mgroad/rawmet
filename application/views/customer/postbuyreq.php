@@ -35,7 +35,7 @@
 					<div class="col p-3 m-5">
 						<i class="fas fa-file-image fa-3x mt-5"></i>Submit RFQ</p>
 						<p><i class="fas fa-sort fa-3x mt-5"></i>Compare Quote</p>
-						<p><i class="fas fa-handshake fa-3x mt-5" aria-hidden="true"></i>	Contact </p>
+						<p><i class="fas fa-handshake fa-3x mt-5" aria-hidden="true"></i>Contact </p>
 
 					</div>
 				</div>	
@@ -45,7 +45,7 @@
 				<div class="caption col-7 p-2 ml-5 bg-light">
 				<div class="form-inline">
 					<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
-						<label for="">Customer Name</label>
+						<label for="">Customer ID</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
 						<input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
                     </div>
@@ -59,7 +59,7 @@
 								<label>Email:</label>
 								<input type="email" class="form-control" id="email" name="email" value="<?php echo  $scomp[0]->bemail;?>" readonly>
 							</div>
-							<div class="col-sm-6 mb-3 pl-5 mb-sm-0">
+							<div class="col-sm-5 mb-3 pl-5 mb-sm-0">
 							<label>Contact Number</label>
 							<div class="input-group">
 							<div class="input-group-prepend">
@@ -72,44 +72,48 @@
 				<div class="col-sm-11 mb-3 mb-sm-1">
 					<label for="">Category</label>
 					<select class="form-control" id="category" name="category">
-					       <option value="Category">--Category--</option>
-						<option value="Non Metal">Non Metal</option>
+					    <option value="Category">--Category--</option>
 						<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
-				        <option value="Scrap" >Scrap</option>
-						<option value="Metal" >Metal</option>
+						<option value="Minor Metal">Minor Metal</option>
+				        <option value="Papers" >Papers</option>
+						<option value="Plastic" >Plastic</option>
+						<option value="Machineries">Machineries</option>
+				        <option value="Construction Raw Material" >Construction Raw Material</option>
+						<option value="Scraps" >Scraps</option>
+						<option value="Chemicals" >Chemicals</option>
 						<option value="Others" >Others</option>
 				    </select> 
                     
                 </div>
 							
 				<div class="form-inline">
-				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+				<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
 						<label>Product Name:</label>
 						<input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name.." onkeyup="product_id()" ></span>
 						</div>
 				
 							
-				<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
+				<div class="col-sm-5 mb-3 pl-5 mb-sm-0">
 					<label for="">Product Id</label>
 					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id">
                     
                 </div>
 				</div>
 					<h6 class="mt-2"><b>&nbsp;&nbsp;Describe your Buying requirement</b></h6>
-					<div class="col-sm-5 col-md-12">
+					<div class="col-sm-5 col-md-11">
                       <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."></textarea>
 					</div>
 					
 						<div class="form-inline">
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+					<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
 						<label>Expected Price:</label>
 						<input type="text" class="form-control" id="price" name="price">
 					</div>
 					
 			
 					
-			<div class="col-sm-4 mb-3 pl-5 mb-sm-0">	
+			<div class="col-sm-5 mb-3 pl-5 mb-sm-0">	
 								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								<script type="text/javascript">
 									var citiesByState = {
@@ -162,13 +166,13 @@
 
 
 							</div>
-							<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+							<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
 						<label>Quantity:</label>
 						<input type="text" class="form-control" id="quantity" name="quantity">
 					</div>
 					<div class="form-inline">
 
-	                 <div class="col-sm-10 mb-3 pl-5 mb-sm-0">
+	                 <div class="col-sm-5 mb-3 pl-5 mb-sm-0">
 						<label>Units</label>
 								<select class="form-control" id="units" name="units" size="1">
 									<option value="" disabled selected>Choose Units</option>
@@ -178,11 +182,11 @@
 							</div>
 			
 					<div class="form-inline">
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+					<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
 						<label>Required Date</label>
 					<input style="width:250px" class="form-control" type="datetime-local" id="requireddate" name="requireddate">
 					</div>
-					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">			
+					<div class="col-sm-5 mb-3 pl-5 mb-sm-0">			
 						<label>Last Date</label>
 					<input style="width:250px" class="form-control" type="datetime-local" id="lastdate" name="lastdate">
 					</div>
@@ -196,7 +200,7 @@
 								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage[]" multiple>
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
 							</div>
-					<div class="col-sm-6 mb-3 pl-5 mb-sm-0 mt-1">	
+					<div class="col-sm-5 mb-3 pl-5 mb-sm-0 mt-1">	
 								<label for="exampleInputFile">Upload PDF Files</label>
 								<input type="file" class="form-control-file" id="uploadpdf"  name="uploadpdf[]">
 								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->

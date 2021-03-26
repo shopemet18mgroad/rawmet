@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Customer Dashboard</title>
+  <title>Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url()."web_files/";?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -57,7 +57,7 @@
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url()."home/";?>">
         <div class="sidebar-brand-img rotate-n-20 ">
          <img src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img-fluid" alt="" width="60%;">
         </div>
@@ -157,10 +157,7 @@
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                  		 <a class="dropdown-item" href="<?php echo base_url();?>customer_index">
-						 <i class="fas fa-tachometer-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-					
-       
-         Dashboard</a>  
+						 <i class="fas fa-tachometer-alt fa-sm fa-fw mr-2 text-gray-400"></i>Dashboard</a>  
 				   
 				   
 				   

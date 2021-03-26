@@ -32,11 +32,11 @@
     }
 </script>
 </head>
-	<body class="" data-spy="scroll" data-target="#myScrollspy">
+	<body  class="scrollbar" data-spy="scroll" data-target="#myScrollspy">
 	<div class="container-fluid top-header">
 		<div class="row">
 				<div class="col-md-12 contact-header">
-				<div class="social pull-left">
+				<div class="social pull-right">
 						<ul>
 						<li><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<span id='ct6' style=""></span></li>
 							<li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp Helpline No: +91 9945454505</li>
@@ -44,7 +44,7 @@
 						</ul>
 					</div>
 
-					<div class="social pull-right">
+					<!--<div class="social pull-right">
 						<ul>
 							<li><a href="<?php echo base_url()."login"?>"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp Dashboard Login</a></li>
 							<li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp Helpline No: +91 9945454505</li>
@@ -52,7 +52,7 @@
 							<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 							<li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 						</ul>
-					</div>		
+					</div>-->		
 				</div>
 						
 		</div>	
@@ -115,7 +115,7 @@
 
 		
 
- <main class="main-section p-5">
+ <main class="main-section p-5 ">
  
  <!--<h2 class="ml6">
   <span class="text-wrapper">
@@ -123,14 +123,14 @@
   </span>
 </h2>-->
 
-<img style="" alt="Rawmet"  src="<?php echo base_url()."web_files/";?>img/rawmet logo.png">
+<img alt="Rawmet"  src="<?php echo base_url()."web_files/";?>img/rawmet logo.png">
 
 
 
         <form class="form-custom" autocomplete="off" class="form-control" method="POST"  action="<?php echo base_url()."home/search";?>">
 		
 		
-            <div class="form-group input1">
+            <div class="form-group input1 ">
                 <input type="text" class="form-control" name="productname" id="productname" onkeyup="search_product()" placeholder="Enter your raw material">
 		  
 				<div id="select" class="select"> <ul  id="dp"></ul></div>	  
@@ -170,31 +170,29 @@
 			
 </form>
 
-<div class="links mt2">
-
-<a href="<?php echo base_url();?>home_buyerrequriment2">Live Procurement</a>
-
-
-              
-				<a href="http://rawmet24.in/procurementtenders2.php">Tenders</a>			
-				<a href="https://www.aucjunction.com/">Upcoming Disposals</a>
-				<a href="<?php echo base_url();?>home_feedback">feedback</a>
-				
-        </div>
-
-	
-
+ 
 		
         
 
-	<!--<div class="ajaxrslt mt-5" style="width:100%; height:300px;overflow-y:scroll;" id="ajaxrslt_search">-->
-	
-    
-			<!----Insert Ajax Table Here------>
-			
-			<!---- ------>
+	 
 		</div>
+<div style="background-color: #f2f2f2" class="" >
 
+ 
+
+<ul style="padding:10px; color:#808080">
+India
+<hr>
+  <li style="display: inline;  padding: 8px;color:#808080">  <a href="#" style="color:#808080">About Us</a></li>
+  <li style="display: inline;  padding: 8px;color:#808080"><a style="color:#808080" href="#news">Terms of Use</a></li>
+  <li style="display: inline; float:right ; padding: 8px;color:#808080"><a style="color:#808080" href="#contact">Privacy Policy</a></li>
+  <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" href="#about">Payments Policy</a></li>
+   <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" href="#about">Seller Terms and Conditions</a></li>
+    <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" href="#about">Contact Us</a></li>
+</ul> 
+ 
+
+</div>
     </main>
 		
    <script>

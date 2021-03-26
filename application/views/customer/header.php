@@ -318,7 +318,7 @@ document.addEventListener('click',clickEffect);
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="Customer_index">
         <div class="sidebar-brand-img rotate-n-20 ">
          <img src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img-fluid" alt="" width="60%;">
         </div>

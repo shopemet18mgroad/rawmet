@@ -1,5 +1,9 @@
-
-        .navbar-header {
+.scrollbar::-webkit-scrollbar {
+    display: none;
+}
+	   
+	   
+	   .navbar-header {
             display: flex;
             justify-content: flex-end;
             padding: 50px 30px 0 30px;
@@ -13,8 +17,9 @@
             height: 100vh;
             align-items: center;
             justify-content: center;
-            margin-top: -88px;
-            margin-bottom: -24px;
+            margin-top: -150px;
+            margin-bottom: -98px;
+			overflow: hidden;
         }
         .main-section img {
             width: 35%;
@@ -108,14 +113,10 @@
                 width: 100%;
             }
             .main-section {
-                margin-top: -146px;
+                margin-top: -136px;
             }
         }
-    .footer,
-.push {
-  height: 50px;
-}
-
+     
 
 .autocomplete {
   /*the container must be positioned relative:*/

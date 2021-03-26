@@ -1,32 +1,3 @@
-<section id="footer" style="height:180px;">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
-				
-					<ul class="list-unstyled list-inline social text-center">
-						<li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
-						<li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
-						<li class="list-inline-item"><a href=""><i class="fa fa-instagram"></i></a></li>
-						<li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
-						<li class="list-inline-item"><a href="" target="_blank"><i class="fa fa-envelope"></i></a></li>
-						
-					</ul>
-						
-				</div>
-				<hr>
-			</div>	
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 text-center text-white">
-					<p class="clf">Shopemet Networks Private Limited CIN NO :- U74999KA2018PTC116853</p>
-					<p class="h6">Rawmet24 © All right Reversed.</p>
-				</div>
-				<hr>
-			</div>	
-		</div>
-	</section>
-
-
 <script src="<?php echo base_url()."web_files/";?>js/jquery.min.js"></script> 
 <script src="<?php echo base_url()."web_files/";?>js/popper.min.js"></script>
  <script src="<?php echo base_url()."web_files/";?>js/jquery.easy-ticker.js"></script> 

@@ -41,21 +41,18 @@ class Home extends CI_Controller {
 	
 	public function search()
 	{
-			 $this->load->model('Admin_model');
-			 	$this->load->helper(array('url','html','date'));
-				
+		$this->load->model('Admin_model');
+		$this->load->helper(array('url','html','date'));
 		$this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
 				
-  if($this->session->userdata('username') && $this->session->userdata('auth') == "BUYER")
-			{
-			
-		$sess = array('sessi'=>$this->session->userdata('username'));
-		$active1 = array('buyerid'=>$sess['sessi']);
-		 
-			}else{
-				$sess['sessi'] = "";
-			}
+		if($this->session->userdata('username') && $this->session->userdata('auth') == "BUYER")
+		{
+			$sess = array('sessi'=>$this->session->userdata('username'));
+			$active1 = array('buyerid'=>$sess['sessi']);
+		 }else{
+			$sess['sessi'] = "";
+		}
 			
  
 	
@@ -77,36 +74,28 @@ class Home extends CI_Controller {
 
  $data2 .='<div class="">';
  $data2 .='<div class="row shadow">';
- $data2 .=' <div style="border:1px solid lightgray" class="col-2"><p>
-			<b>'.$dat['category'].' </b></p>
-				
-				
-				<hr />
-					<li style="list-style-type: none;"><a href="">Iron</a></li>
-					<li style="list-style-type: none;"><a href="list-style-type: none;">Copper</a></li>
-					<li style="list-style-type: none;"><a href="list-style-type: none;">Aluminum</a></li>
-			
-			
-				';
-				$data2 .=' </div>';
-				
-			
-				$data2 .= ' <div style="border:1px solid lightgray ;padding:15px;" class="col-10">';
+ $data2 .=' <div style="border:1px solid lightgray" class="col-2">
+	<p>Seller ID:<b>'.$dat['sellerid'].' </b></p>
+	<hr />
+	<p>Category:<b>'.$dat['category'].' </b></p>
+	<p><b>'.$dat['pcities'].'  '.$dat['pstates'].' </b></p>';
+	
+	$data2 .=' </div>';
+	$data2 .= ' <div style="border:1px solid lightgray ;padding:15px;" class="col-10">';
  
-			
-				
-		 
 	$data2 .= '  <div class="row">';
 	$data2 .= '   <div style="" class="col-3">';
 		
-    $img = unserialize($dat['uploadproductimage']);
+    
+	
+	$img = unserialize($dat['uploadproductimage']);
 		if($img){
 				$data2 .='<img class="img-thumbnail" src="'.base_url().'web_files/uploads/'.$img[0].'" alt="Chania" width="200px" height="100px">';
 			    }else{
 				$data2 .='<img class="img" src="'.base_url().'web_files/uploads/emptyproductimg.png" alt="Chania" width="100px" height="100px">';
 			}
 			
-	$data2 .= ' <h6>'.$dat['pcities'].' | '.$dat['pstates'].'</h6></div>';		
+	$data2 .= ' </div>';		
 	$data2 .= '  <div style="" class="col-6">
 	
 	
@@ -120,8 +109,8 @@ class Home extends CI_Controller {
 		<br/><div style="margin:8px">
 
 					<li style="list-style-type: none;">Live Stock : '.$dat['supplyability'].'  '.$dat['supplyunits'].'</li>
-					<li style="list-style-type: none;">Supplier price : '.$dat['price'].'/  '.$dat['punits'].'</li>
-					<li style="list-style-type: none;" >Total Quantity : '.$dat['quantity'].'/  '.$dat['units'].'</li>
+					<li style="list-style-type: none;">Supplier Expected price : '.$dat['price'].'/  '.$dat['punits'].'</li>
+					<li style="list-style-type: none;" >Supply Ability : '.$dat['quantity'].'  '.$dat['units'].'</li>
 					
 					<i style="" class="fa fa-certificate" aria-hidden="true"></i> 
 					<i class="fa fa-shield" aria-hidden="true"></i>
@@ -133,13 +122,19 @@ class Home extends CI_Controller {
 	$data2 .= ' <div style="padding-top:20px" class="col-3">
 	 
 	 
-	<img style="float:right" class="img" src="'.base_url().'web_files/uploads/virifed.png'.'" alt="Chania" width="60px" height="20px">;
+	<img style="float:right" class="img" src="'.base_url().'web_files/uploads/virifed.png'.'" alt="Chania" width="60px" height="20px">
 	 
 	<form class="user" action="'. base_url().'Customer_add_contactsupplier/index/'.'" method="POST" enctype="multipart/form-data">
 	
-	<input type="hidden" class="form-control" id="sellerpostproduct_id" name="sellerpostproduct_id"  value="'.$dat['id'].'">
+	<input type="hidden" class="form-control" id="sellerpostproduct_id" name="sellerpostproduct_id"  value="'.$dat['id'].'">';
 	
-	<input type="hidden" class="form-control" id="productname" name="productname"  value="'.$dat['productname'].'">
+	  
+	
+	$data2 .= '<input type="hidden" class="form-control" id="productname" name="productname"  value="'.$dat['productname'].'"> 
+	
+	
+	 
+	 <input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="'.$img[0].'">
 	
 	<input type="hidden" class="form-control" id="description" name="description"  value="'.  $dat['description'].'">
 
@@ -147,11 +142,20 @@ class Home extends CI_Controller {
 
 	<input type="hidden" class="form-control" id="id" name="id"  value="'.  $dat['id'].'">
 	
-	<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="'.  $dat['sellerid'].'">
+	<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="'.  $dat['sellerid'].'">';
+	
+	 if(isset($sess["sessi"])){
+		$data2 .= '<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="'.$sess["sessi"].'">';
+	}else{
+		$data2 .= '<input type="hidden" class="form-control" id="buyerid" name="buyerid"  value="">';
+	};
 	
 	
 	
-	<input type="hidden" class="form-control" id="category" name="category"  value="'.  $dat['category'].'">
+
+	
+	$data2 .= ' <input type="hidden" class="form-control" id="category" name="category"  value="'.  $dat['category'].'">
+	
  
 	<input type="hidden" class="form-control" id="companyname" name="companyname"  value=
 	"'.  $dat['companyname'].'">
@@ -176,14 +180,14 @@ class Home extends CI_Controller {
 	
 	<input type="hidden" class="form-control" id="estdeltime" name="estdeltime"  value="'.  $dat['estdeltime'].'">
 	
-	<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="'.  $dat['productvalidityto'].'">
+	<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="'. $dat['productvalidityto'].'">
 	
 	<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="'.  $dat['supplyunits'].'">
 	
 	
   <div class="row" style="margin-top:30px;">
     <div class="col">
-       <input type="text" class="form-control" id="bquantity" name="bquantity" placeholder="Quantity:">
+       <input type="text" class="form-control" id="bquantity" name="bquantity" placeholder="Required Quantity:">
     </div>
     <div class="col">
       <select class="form-control col-sm-0" id="bunits" name="bunits">
@@ -200,9 +204,9 @@ class Home extends CI_Controller {
     </div>
   </div>
   <br/>
-    <div class="row">
-    <div class="col">
-      <input type="text" class="form-control" id="bprice" placeholder="Price" name="bprice">
+    <div style="float:left" class="row">
+    <div style="float:left" class="col">
+      <input type="text" class="form-control" id="bprice" placeholder="Ask for Your Price" name="bprice">
     </div>
     <div class="col">
        <select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
@@ -218,16 +222,26 @@ class Home extends CI_Controller {
     </div>
 	
 	</div><br/>
-	<input type="submit" name="submit" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" />
+	';
+	
+
+
+if($sess['sessi'] != ""){
+		$data2 .= '<input type="submit" name="submit" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" />';
+	}else{
+		$data2 .= '<button style="font-size:16px" type="button" class="btn btn-warning btn-sm mt-2 offset-sm-5" data-toggle="modal" data-target="#new_userlogin">Login</button>';
+	}
 	
 	
-</form>
+	
+
+$data2 .= '</form>
 	  
 	
 	 
-<br/><div style="margin:8px">
+<br/><div style="margin:8px;">
 
-				 
+			 
 					
  </div>
  
@@ -237,14 +251,14 @@ class Home extends CI_Controller {
 			 					
 		$data2 .= ' </div>';		
 		$data2 .= ' <hr>  
-				Description 
+				Description:
 				 '.$dat['description'].'
 				
 				</div>';
 				
 				 
 			
-			$data2 .= '  </div>';
+			$data2 .= ' </div>';
 			
 			$data2 .= '<hr>  </div>';
 			 
@@ -313,7 +327,7 @@ class Home extends CI_Controller {
 				  if($table == "buyer_register"){
 					  $newdata = array('username'=>$user,'auth'=>'BUYER','logged_in' => TRUE);
 						$this->session->set_userdata($newdata);
-					  header('location: '.base_url().'home/buyerlogin');
+					  header('location: '.base_url().'home/search');
 					  die;
 				  }else if($table == "buyer_register"){
 					  $this->load->model('Admin_model');
@@ -335,7 +349,7 @@ class Home extends CI_Controller {
 				  }
 			  }else{
 				  $datainserr = "Invalid Password";
-				  header('location: '.base_url().'Home/index_error/'.$datainserr);
+				  header('location: '.base_url().'home/search/'.$datainserr);
 				  die;
 			  }
 			  die;

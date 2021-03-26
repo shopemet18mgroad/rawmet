@@ -54,11 +54,16 @@
 								<label for="">Category</label>
 								<select class="form-control" id="category" name="category" >
 								<option default>Select Your Category</option>
-									<option value="Non Metal">Non Metal</option>
 									<option value="Ferrous">Ferrous</option>
-									<option value="Non Ferrous">Non Ferrous</option>
-									
-									<option value="Metal">Metal</option>
+						<option value="Non Ferrous">Non Ferrous</option>
+						<option value="Minor Metal">Minor Metal</option>
+				        <option value="Papers" >Papers</option>
+						<option value="Plastic" >Plastic</option>
+						<option value="Machineries">Machineries</option>
+				        <option value="Construction Raw Material" >Construction Raw Material</option>
+						<option value="Scraps" >Scraps</option>
+						<option value="Chemicals" >Chemicals</option>
+						<option value="Others" >Others</option>
 								</select>
 
 							</div>

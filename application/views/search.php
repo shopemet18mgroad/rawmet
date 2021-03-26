@@ -26,7 +26,18 @@
 
 <br />
 <div class="container">
-<?php echo $sr;?>
+
+<?php 
+echo $sr;
+if($sessi == ""){
+	echo "No session";
+	
+	die;
+}else{
+	
+}
+
+?>
 
 </div>
 
