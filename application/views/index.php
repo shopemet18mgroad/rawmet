@@ -170,7 +170,17 @@
 			
 </form>
 
- 
+<div class="links mt2">
+
+<a href="<?php echo base_url();?>Home_buyerrequriment2">Live Procurement</a>
+
+
+              
+				<a href="http://rawmet24.in/procurementtenders2.php">Tenders</a>			
+				<a href="https://www.aucjunction.com/">Upcoming Disposals</a>
+				<a href="<?php echo base_url();?>home_feedback">feedback</a>
+				
+        </div>
 		
         
 
