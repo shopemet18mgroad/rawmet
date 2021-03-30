@@ -12,7 +12,7 @@
 						Ask For Quote, Negotiate Price and Send PO.<br/>*
 						Materials will be Dispatched as per TAT.</b></p>
 						
-  <a href="<?php echo base_url();?>home_login">
+  <a href="<?php echo base_url()."home/";?>">
          <button style="width:150px" type="button" class="btn btn-light">Login</button></a>                       
 					  
                     </div>
