@@ -72,7 +72,7 @@
 					
 							<div class="form-group p-1">
 				 <form class="user" action="<?php echo base_url()."Home_login";?>" method="post">
-								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User Name" size="25">
+								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User ID" size="25">
 							</div>
 						  <div class="form-group p-1">
 							<input type="password" class="form-control" id="exampleInputPassword" name="pass" placeholder="Password" size="25">
@@ -87,21 +87,22 @@
 						
 						
 					 </div>
-					 
+					
 					 
 
 
-						<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" name="optradio" id="customCheck2" value="Buyer">
+<div class="form-check form-check-inline">
+  <input type="checkbox" class="form-check-input" id="customCheck2" name="optradio" value="Buyer">
   <label class="form-check-label" for="customCheck2">Buyer</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" name="optradio" id="customCheck" value="Seller">
+  <input type="checkbox" class="form-check-input" id="customCheck" name="optradio" value="Seller">
   <label class="form-check-label" for="customCheck">Seller</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" name="optradio" id="customCheck3" value="Admin">
+  <input type="checkbox" class="form-check-input" id="customCheck3"name="optradio" value="Admin">
   <label class="form-check-label" for="customCheck3">Admin</label>
+  <a class="pl-3" href="<?php echo base_url()."email_send";?>"><b><u>Forgot Password?</u></b></a>
 </div>
 
 
@@ -277,4 +278,22 @@ anime.timeline({loop: true})
 
 	   </script>
 	   
+<script>
+function userid4(){
+var exampleInputEmail = document.getElementById("exampleInputEmail").value;	
+var exampleInputPassword = document.getElementById("exampleInputPassword").value;	
+ 
+if( $('input[name="optradio"]:checked').length == 0 )
+		   
+			{
+				swal("Alert!",  "Please select at least one option Buyer Or Seller", "error");
+				return false;
+			}
+
+if(exampleInputEmail == ''  || exampleInputPassword == '' ){
+		swal("Alert!",  "ID and Password cannot be blank!", "error");
+		return false;
+	}
 	
+			
+} </script>

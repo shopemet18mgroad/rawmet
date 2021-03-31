@@ -124,7 +124,7 @@ class Home extends CI_Controller {
 	 
 	<img style="float:right" class="img" src="'.base_url().'web_files/uploads/virifed.png'.'" alt="Chania" width="60px" height="20px">
 	 
-	<form class="user" action="'. base_url().'Customer_add_contactsupplier/index/'.'" method="POST" enctype="multipart/form-data">
+	<form class="user" action="'. base_url().'Home_add_contactsupplier/'.'" method="POST" enctype="multipart/form-data">
 	
 	<input type="hidden" class="form-control" id="sellerpostproduct_id" name="sellerpostproduct_id"  value="'.$dat['id'].'">';
 	

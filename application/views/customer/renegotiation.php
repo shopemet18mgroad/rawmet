@@ -99,7 +99,7 @@
 	<form action="<?php echo base_url();?>Customer_add_renegotiate" method="POST" enctype="multipart/form-data">
        <tbody>
 	   
-	    <tr  style="text-align:center;  background-color:rgb(200, 200, 200);">
+	    <tr  style="text-align:center;  background-color:lightgrey;">
 		
 		
 		

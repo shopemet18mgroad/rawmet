@@ -221,10 +221,10 @@
 <div class="col-md-5">
 	<p><b>Supper Id :</b><?php echo  $sqldata1[0]->buyerid;?> </p> 
 	<p><b>Category :</b> <?php echo  $sqldata1[0]->category;?></p>
-	<p><b>Stock :</b> <?php echo  $sqldata1[0]->quantity. " / " .$sqldata1[0]->units;?>"</p> 
+	<p><b>Stock :</b> <?php echo  $sqldata1[0]->quantity. " / " .$sqldata1[0]->buyer_nego_units;?></p> 
 </div>
-<input style="width:10px" class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
- <a href="#" class="btn btn-primary">Upload!</a>
+<!-- <input style="width:10px" class="form-group w-auto"  multiple="multiple"  type="file" name="upload_dd[]">
+ <a href="#" class="btn btn-primary">Upload!</a> -->
 </div>
 
                                 </div>

@@ -290,7 +290,9 @@
 							</div>
 						</div>
 				 <center>
-				<input type="submit" name="submit"  role="submit" onclick="return validatepostreq()" value="Update Buying Requirement" class="btn btn-info mt-4" style="font-size:13px">
+				 <?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
+				?>
+				<input type="submit" name="submit"  role="submit" onclick="return validatepostreq()" href="<?php echo base_url()."Customer_buyingrequirement_update/approve_product/".$proid;?>" value="Update Buying Requirement" class="btn btn-info mt-4" style="font-size:13px">
 				</center>
 					
 					</form>

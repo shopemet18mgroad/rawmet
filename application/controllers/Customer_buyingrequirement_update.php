@@ -40,7 +40,7 @@ class Customer_buyingrequirement_update extends CI_Controller {
 			//$types = $this->input->post('types');
 			$productname = $this->input->post('productname');
 			$productid = $this->input->post('productid');
-
+			$adapproval = $this->input->post('adapproval');
 			
 			$description = $this->input->post('description');
 			$price = $this->input->post('price');
@@ -95,13 +95,13 @@ class Customer_buyingrequirement_update extends CI_Controller {
 		
 		
 		//==================================================================
-		$data = array('category'=> $category,'description' => $description,'price'=>$price,'priceperkg'=>$priceperkg,'quantity'=>$quantity,'units'=>$units,'requireddate'=>$requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=> $contactnumber ,'uploadimage' => $pic_array,'productname'=>$productname);
+		$data = array('category'=> $category,'description' => $description,'price'=>$price,'priceperkg'=>$priceperkg,'quantity'=>$quantity,'units'=>$units,'requireddate'=>$requireddate,'lastdate'=>$lastdate,'email'=>$email,'contactnumber'=> $contactnumber ,'uploadimage' => $pic_array,'productname'=>$productname,'adapproval'=>false);
 		
 	
 		$datainserr = "Data Inserted Successfully";
 		$updatech = array('buyerid'=> $buyerid,'bcompanyname'=>$bcompanyname,'productid'=>$productid);
 		
-		$app= array('poptions'=>false);
+		$app= array('adapproval'=>false);
 		$status = $this->Admin_model->update_custom('buyerrequriement',$data,$updatech,$updatech);
 		
 	
@@ -147,6 +147,23 @@ class Customer_buyingrequirement_update extends CI_Controller {
       }
 	 return $datar;
     }
+	
+	public function approve_product(){
+		
+		$retrivevaltmp = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
+
+		$retriveval = array('productid'=>$retrivevaltmp);
+		
+		
+		$this->load->model('Admin_model');
+		$app= array('adapproval'=>false);
+		$query = $this->Admin_model->update_custom('buyerrequriement', $app, $retriveval, $retriveval);
+		if($retriveval){
+			echo "HI";
+		}else{
+			echo "BYE";
+		}
+		}
 	
 }
 	

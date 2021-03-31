@@ -178,7 +178,7 @@
 								
 							</div>
 							<div class="form-row mt-2">
-								<label class="col-sm-6 col-form-label"  for="name"><b>As For Your Price </b></label>
+								<label class="col-sm-6 col-form-label"  for="name"><b>Ask For Your Price </b></label>
 								<input type="text" class="form-control col-sm-2 mr-2" name="bprice" placeholder="price" id="bprice" [(ngModel)]="person.name" value='<?php echo $buyerprice;?>' <?php echo $strDisable3; ?>/>/
 								<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="bunits" name="bunits" value='<?php echo $buyerpriceunit;?>' <?php echo $strDisable4; ?>>

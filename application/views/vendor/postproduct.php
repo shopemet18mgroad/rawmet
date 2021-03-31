@@ -332,7 +332,7 @@
 								
 								
 								<div class="input_fields_wrap">
-								<label for="">Upload File</label>
+								<label for="">Upload Image</label>
 								<input  type="file" id="uploadproductimage" name="uploadproductimage">
 								</div>
 								

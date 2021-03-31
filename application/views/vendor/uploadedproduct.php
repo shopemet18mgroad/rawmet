@@ -15,15 +15,13 @@
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
-	  <th>Sl.no.</th>
-	  <th>Product Id</th>
+		<th>Sl.no.</th>
+		<th>Product Id</th>
         <th>Product Name</th>
         <th>Category</th>
-      <th>Image</th>
-	  
-
+		<th>Image</th>
 		<th>Status</th>
-		 <th>Update the Quantity and Price</th>
+		<th>Update the Quantity and Price</th>
 		<th>options</th>
 	</tr>
     </thead>
@@ -118,32 +116,7 @@
 			</div>
 	</div>
 	
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-				
-
-		
- 
-	
-	 <div class="form-inline">
+	  <div class="form-inline">
 				<div class="col-sm-4  mr-3">
 					 <label for="price">Price:</label>
                     <input type="text" class="form-control" id="price" name="price" placeholder="0" value="<?php echo $row->price;?>">
@@ -193,7 +166,8 @@
 	
 	<div class="modal-footer">
         <button type="submit" name "update" class="btn btn-success">Submit</button>
-		  </div>
+ <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>		 
+		 </div>
 	
 	
 
@@ -203,10 +177,6 @@
         </div>
 
 
-
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-		  </div>
         </div>
       </div>
     </div>

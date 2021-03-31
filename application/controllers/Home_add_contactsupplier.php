@@ -23,9 +23,9 @@ class Home_add_contactsupplier extends CI_Controller {
 		$this->load->model('Admin_model');
 		$this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
-				$active1 = array('busername'=>$sess['sessi']);
+				$active1 = array('buyerid'=>$sess['sessi']);
 				$data2 = $this->Admin_model->getbusernamedatafromtable('buyer_register', $active1);
-				$busername= $data2[0]->busername;
+				$buyerid= $data2[0]->buyerid;
 				
 		
 	if($this->input->post('bquantity')){
@@ -34,16 +34,17 @@ class Home_add_contactsupplier extends CI_Controller {
 			$this->load->helper(array('url','form','file','html'));
 			$this->load->model('Admin_model');
 			
-			
+			$id = $this->input->post('id');
 			$productid = $this->input->post('productid');
 			$productname = $this->input->post('productname');
-			$vname = $this->input->post('vname');
-			$busername = $this->input->post('busername');
+			$sellerid = $this->input->post('sellerid');
+			$buyerid = $this->input->post('buyerid');
 			$category = $this->input->post('category');
 			$description = $this->input->post('description');
 			$price = $this->input->post('price');
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
+			$punits = $this->input->post('punits');
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');
 			$pstates= $this->input->post('pstates');
@@ -62,7 +63,7 @@ class Home_add_contactsupplier extends CI_Controller {
 	
 	
 	      // $data1 = array('vname'=>$vname );
-			$data2 = array('productname' => $productname,'vname'=>$vname,'busername'=>$busername,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage );
+			$data2 = array('sellerpostproduct_id'=>$id,'productname' => $productname,'sellerid'=>$sellerid,'buyerid'=>$buyerid,'category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'pstates'=>$pstates,'pcities'=> $pcities,'productid'=>$productid ,'companyname'=>$companyname, 'negotiate' => $negotiate, 'bquantity'=> $bquantity, 'bprice'=>$bprice, 'bsupplyability' => $bsupplyability, 'bunits'=> $bunits,'datetime'=>$datetime,'estdeltime'=>$estdeltime,'productvalidityto'=>$productvalidityto,'uploadproductimage'=>$uploadproductimage,'punits'=>$punits);
 			//print_r($data2);die;
 		/* 	$this->load->model('Admin_model');
 			  if($this->Admin_model->check('quotes', $data1)){
@@ -74,7 +75,7 @@ class Home_add_contactsupplier extends CI_Controller {
 			  
 				$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('quotes',$data2);
-			header('location: ./customer_sellernegotiatedquote/index/'.$datainserr);
+			header('location: '.base_url().'/home/search/');
 			//}
 
 			
@@ -93,9 +94,9 @@ class Home_add_contactsupplier extends CI_Controller {
 	
 				
 				
-		$this->load->view('customer/header',$sess);
-		$this->load->view('customer/sellernegotiatedquote');
-		$this->load->view('customer/footer');
+		  $this->load->view('header1');
+	   $this->load->view('search');
+		$this->load->view('footer1');
 			 
 	 
 //}
@@ -199,5 +200,3 @@ private function upload_files($nameid){
 	 return $datar;
     }
 	}
-	
-}

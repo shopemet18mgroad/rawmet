@@ -97,7 +97,7 @@
           <center><h5 class="modal-title" id="exampleModalLabel">Login</h5></center>
 		</div>
                     <div class="form-group">
-                      <input type="text" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." required>
+                      <input type="text" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter ID..." required>
                     </div>
                     <div class="form-group">
                       <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required>
@@ -108,7 +108,7 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <button name="submit" type="submit"  class="btn btn-primary btn-user btn-block">
+                    <button name="submit" type="submit"  class="btn btn-primary btn-user btn-block" onclick="return userid()">
                       Login
                     </button>
                     <!-- <hr>
@@ -170,3 +170,18 @@
  
  </body>
  </html>
+ 
+ <script>
+function userid(){
+var exampleInputEmail = document.getElementById("exampleInputEmail").value;	
+var exampleInputPassword = document.getElementById("exampleInputPassword").value;	
+ 
+
+
+if(exampleInputEmail == ''  || exampleInputPassword == '' ){
+		swal("Alert!",  "ID and Password cannot be blank!", "error");
+		return false;
+	}
+	
+			
+} </script>

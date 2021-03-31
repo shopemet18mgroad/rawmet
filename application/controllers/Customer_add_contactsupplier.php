@@ -75,7 +75,7 @@ class Customer_add_contactsupplier extends CI_Controller {
 			  
 				$datainserr = "Data Inserted Successfully";
 			$status = $this->Admin_model->insert('quotes',$data2);
-			header('location: '.base_url().'/home/search/');
+			header('location: '.base_url().'Customer_productnegotation/index/'.$datainserr);
 			//}
 
 			
