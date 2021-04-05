@@ -1,4 +1,7 @@
+<head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 
+ </head>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -22,13 +25,12 @@
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr> 
-         	  <th>Sl.No.</th>
+         	<th>Sl.No.</th>
 	        <th>Image</th>
 			<th>Supplier Id</th>
 			<th>Buyer Id</th>
 			<th>Product Name</th>
 			<th>Category</th>
-			
 			<th style="color:orange">Supplier Base Price</th>
 			<th style="color:orange">Supplier Quantity Price</th>
 			<th>Location</th>
@@ -49,16 +51,16 @@
 								<td><?php echo $count;?></td>
 				<td><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
-			<td><?php echo $row->sellerid;?></td>
-			<td><?php echo $row->buyerid;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->category;?></td>
+			<td data-label="Supplier Id"><?php echo $row->sellerid;?></td>
+			<td data-label="Buyer Id"><?php echo $row->buyerid;?></td>
+			<td data-label="Product Name"><?php echo $row->productname;?></td>
+			<td data-label="Category"><?php echo $row->category;?></td>
 		
-			<td><?php echo $row->price."/"; echo $row->punits;?></td>
-			<td><?php echo $row->quantity.""; echo $row->units;?></td>
-			<td><?php echo $row->pcities;?></td>
-			<td><?php echo $row->bquantity.""; echo $row->bunits;?></td>
-			<td><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
+			<td data-label="Supplier Base Price"><?php echo $row->price."/"; echo $row->punits;?></td>
+			<td data-label="Supplier Quantity Price"><?php echo $row->quantity.""; echo $row->units;?></td>
+			<td data-label="Location"><?php echo $row->pcities;?></td>
+			<td data-label="Buyer Quantity"><?php echo $row->bquantity.""; echo $row->bunits;?></td>
+			<td data-label="Buyer Price"><?php echo $row->bprice."/"; echo $row->bsupplyability;?></td>
 		
 			<td>
 			

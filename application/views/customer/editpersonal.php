@@ -1,3 +1,4 @@
+
 <?php 
 	//include('./header.php');
 ?>
@@ -29,7 +30,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-					 <table class="table table-sm table-borderless">
+					 <table class="table table-sm table-borderless table-responsive">
 					 <thead><th width="45%">Profile</th>
 					 
 					 

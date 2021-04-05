@@ -29,7 +29,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-					 <table class="table table-sm table-borderless" id="section1">
+					 <table class="table table-sm table-borderless table-responsive w-auto small" id="section1">
 					 <thead><th width="45%">Profile</th>
 					 <th style="text-align:right"><a href="<?php echo base_url();?>customer_editpersonal"><u>Edit Personal Info</u></a></th>
 					 
