@@ -2,6 +2,7 @@
  <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 
  </head>
+
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -25,7 +26,7 @@
     <thead class="bg-primary text-white">
       <tr>   
 	  
-	        <th>Sl.No.</th>
+	        <th >Sl.No.</th>
 			<th>Supplier Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
@@ -35,8 +36,8 @@
 			<th style ="color:pink";>Buyer Quantity</th>
 			<th style ="color:pink";>Buyer Price</th>
 			<th style ="color:orange";>Supplier Price</th>
-			<th style ="color:pink";>Buyer Re-negotiated Quantity</th>
-			<th style ="color:pink";>Buyer Re-negotiated Price</th>
+			<th  >Buyer Re-negotiated Quantity</th>
+			<th style ="">Buyer Re-negotiated Price</th>
 			<th style ="color:orange";>Supplier Re-negotiated Price</th>
 			<th>View Purchase Order</th>
 			<th>Sort</th>

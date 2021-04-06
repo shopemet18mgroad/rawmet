@@ -46,7 +46,7 @@
 				?>
 			<td data-label="Sl.No."><?php echo $count;?></td>  
 			<td data-label="Image"><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="55px"></td>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="auto" height="55px"></td>
 			<td data-label="Buyer Id"><?php echo $row->buyerid;?></td>
 			<td data-label="Product Name"><?php echo $row->productname;?></td>
 			<td data-label="Product Id"><?php echo $row->productid;?></td>

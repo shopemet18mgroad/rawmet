@@ -1,4 +1,4 @@
-  <head>
+ <head>
  <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 
  </head>
@@ -48,7 +48,7 @@
 			<td data-label="Required Date"><?php echo $row->requireddate;?></td>
 			<td data-label="Last Date"><?php echo $row->lastdate;?></td>
 			<td data-label="Images"><?php $img = unserialize($row->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="85px"></td>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="55px"></td>
 			<td data-label="Action"><!--<a href="<?php // echo base_url()."Vendor_managebuyreq/approve_requirement/".$proid."/".urldecode($row->bname);?>"><button type="button" class="btn btn-success">Approve</button></a>-->
 				
 			<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->buyerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Send Offer</a>
