@@ -1,21 +1,12 @@
+ <head>
+ <link href="<?php echo base_url()."web_files/";?>css/responsive.css" rel="stylesheet" type="text/css">
+
+ </head>
 <?php 
 	//include('./header.php');
 ?>
-        <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
         <div class="container-fluid">
-
-          <!-- Page Heading -->
-    <!--       <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Vendor Profile</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div> -->
-
-          <!-- Content Row -->
-
-
-          <!-- Content Row -->
 
           <div class="row">
 
@@ -29,7 +20,8 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-					 <table class="table table-sm table-borderless">
+				<div class="container">
+					 <table class="table table-sm table-borderless table-responsive">
 					 <thead><th width="45%">Profile</th>
 					 
 					
@@ -40,22 +32,22 @@
 							
 							<form action = "<?php echo base_url();?>vendor_basicinfo_update" method="POST" enctype="multipart/form-data">
 							<td>Supplier Id</td>
-								<td><input class="form-control w-50" type="text" id="sellerid" name="sellerid" value="<?php echo $sqldata[0]->sellerid; ?>" readonly></td>
+								<td><input class="form-control w-auto" type="text" id="sellerid" name="sellerid" value="<?php echo $sqldata[0]->sellerid; ?>" readonly></td>
 							</tr> 
 							<tr>
 								<td>Company Name</td>
-								<td><input class="form-control w-50" type="text" id="vcompanyname" name="vcompanyname" value="<?php echo $sqldata[0]->vcompanyname; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="vcompanyname" name="vcompanyname" value="<?php echo $sqldata[0]->vcompanyname; ?>"></td>
 							</tr> 
 								<tr>
 								<td>Supplier Name</td>
-								<td><input class="form-control w-50" type="text" id="vname" name="vname" value="<?php echo $sqldata[0]->vname; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="vname" name="vname" value="<?php echo $sqldata[0]->vname; ?>"></td>
 							</tr> 
 							
 							
 													<tr>
 					
 							<td class="btxt">Company Type:</td>
-						<td> <select class="form-control w-50" id="vcompanytype" name="vcompanytype">
+						<td> <select class="form-control w-auto" id="vcompanytype" name="vcompanytype">
 								<option default>PVT Ltd.</option>
 					 
 						<option value="OPC PVT Ltd.">OPC PVT Ltd.</option>
@@ -73,7 +65,7 @@
 						
 					<tr>
 							<td class="btxt">Type of Dealer:</td>
-							<td>  <select class="form-control w-50" id="dealer_type" name="dealer_type">
+							<td>  <select class="form-control w-auto" id="dealer_type" name="dealer_type">
 							<option default>Manufacturer</option>
 					      
 						<option value="Wholesaler">Wholesaler</option>
@@ -87,55 +79,55 @@
 						 	
 							<tr>
 								<td>Contact Person</td>
-								<td><input class="form-control w-50" type="text" id="vcontactperson" name="vcontactperson" value="<?php echo $sqldata[0]->vcontactperson; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="vcontactperson" name="vcontactperson" value="<?php echo $sqldata[0]->vcontactperson; ?>"></td>
 							</tr> 
 							<tr>
 								<td>contact number</td>
-								<td><input class="form-control w-50" type="text" id="vcontactnumber" name="vcontactnumber" value="<?php echo $sqldata[0]->vcontactnumber; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="vcontactnumber" name="vcontactnumber" value="<?php echo $sqldata[0]->vcontactnumber; ?>"></td>
 								<td>
 			
 							</tr>
                           <tr>
 								<td>Pan</td>
-								<td><input class="form-control w-50" type="text" id="vpan" name="vpan" value="<?php echo $sqldata[0]->vpan; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="vpan" name="vpan" value="<?php echo $sqldata[0]->vpan; ?>"></td>
 								<td>
 			
 							</tr> 
 							<tr>
 								<td>GST</td>
-								<td><input class="form-control w-50" type="text" id="vgst" name="vgst" value="<?php echo $sqldata[0]->vgst; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="vgst" name="vgst" value="<?php echo $sqldata[0]->vgst; ?>" ></td>
 							</tr> 
 							<tr>
 								<td>Pcb</td>
-								<td><input class="form-control w-50" type="text" id="vpcb" name="vpcb" value="<?php echo $sqldata[0]->vpcb; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="vpcb" name="vpcb" value="<?php echo $sqldata[0]->vpcb; ?>" ></td>
 							</tr>							
 							<tr>
 								<td>Email</td>
-								<td><input class="form-control w-50" type="text" id="vemail" name="vemail" value="<?php echo $sqldata[0]->vemail; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="vemail" name="vemail" value="<?php echo $sqldata[0]->vemail; ?>" ></td>
 								
 							</tr> 
 							<tr>
 								<td>Username</td>
-								<td><input class="form-control w-50" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="vusername" name="vusername" value="<?php echo $sqldata[0]->vusername; ?>" ></td>
 							</tr>
 						
 							 	
 							<tr>
 								<td>Postal Address</td>
-								<td><textarea class="form-control w-50" type="text" id="vaddress" name="vaddress" value="<?php echo $sqldata[0]->vaddress; ?>"><?php echo $sqldata[0]->vaddress; ?></textarea></td>
+								<td><textarea class="form-control w-auto" type="text" id="vaddress" name="vaddress" value="<?php echo $sqldata[0]->vaddress; ?>"><?php echo $sqldata[0]->vaddress; ?></textarea></td>
 							</tr> 
 							<tr>
 								<td>City</td>
-								<td><input class="form-control w-50" type="text" id="vcity" name="vcity" value="<?php echo $sqldata[0]->vcity; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="vcity" name="vcity" value="<?php echo $sqldata[0]->vcity; ?>"></td>
 							</tr>
 							<tr>
 							<td>State</td>
-								<td><input class="form-control w-50" type="text" id="vselectstate" name="vselectstate" value="<?php echo $sqldata[0]->vselectstate; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="vselectstate" name="vselectstate" value="<?php echo $sqldata[0]->vselectstate; ?>" ></td>
 								
 							</tr>
 							<tr>
 								<td>Pincode</td>
-								<td><input class="form-control w-50" type="text" id="vpincode" name="vpincode" value="<?php echo $sqldata[0]->vpincode; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="vpincode" name="vpincode" value="<?php echo $sqldata[0]->vpincode; ?>" ></td>
 							</tr>
 
 							
@@ -150,7 +142,7 @@
 				</form>							
 				<a href="buyer_dashboard"><button type="button" class="btn btn-primary offset-sm-1 mt-2">Cancel</button></a>
 				
-				
+				</div>
 													
               </div>
             </div>

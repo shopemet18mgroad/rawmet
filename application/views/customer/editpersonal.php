@@ -33,9 +33,8 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-				<div class="container"> 
-					 
-					 <table class="table table-sm table-borderless">
+				<div class="container">
+					 <table class="table table-sm table-borderless table-responsive">
 					 <thead><th width="45%">Profile</th>
 					 
 					 
