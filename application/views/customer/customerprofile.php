@@ -28,116 +28,142 @@
                
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
-					 <table class="table table-sm table-borderless table-responsive w-auto small" id="section1">
-					 <thead><th width="45%">Profile</th>
-					 <th style="text-align:right"><a href="<?php echo base_url();?>customer_editpersonal"><u>Edit Personal Info</u></a></th>
-					 
-					 </thead>
-						<tbody>
-						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
-						
-						 <form action = "<?php echo base_url();?> " method="POST" enctype="multipart/form-data">
-						 <tr>
-								
-								<td>Name</td>
-								<td><?php echo $sqldata[0]->bname; ?></td>
-							</tr> 
-							<tr>
-								<td>Companyname</td>
-								<td><?php echo $sqldata[0]->bcompanyname;?></td>
-							</tr> 
-							<tr>
-								<td>Companytype</td>
-								<td><?php echo $sqldata[0]->bcompanytype;?></td>
-							</tr> 	
-							<tr>
-								<td>Contact Person</td>
-								<td><?php echo $sqldata[0]->bcontactperson;?></td>
-							</tr> 
-							<tr>
-								<td>Contact Number</td>
-								<td><?php echo $sqldata[0]->bcontactnumber;?></td>
-							</tr> 
-							<tr>
-								<td>Email</td>
-								<td><?php echo $sqldata[0]->bemail;?></td>
-							</tr>
-<tr>
-								<td>Pan</td>
-								<td><?php echo $sqldata[0]->bpan;?></td>
-							</tr> 
-							<tr>
-								<td>GST</td>
-								<td><?php echo $sqldata[0]->bgst;?></td>
-							</tr> 							
-							<tr>
-								<td>Username</td>
-								<td><?php echo $sqldata[0]->busername;?></td>
-							</tr> 
-							<tr>
-								<td>Address</td>
-								<td><?php echo $sqldata[0]->baddress;?></td>
-							</tr> 
-							<tr>
-								<td>City</td>
-								<td><?php echo $sqldata[0]->bcity;?></td>
-							</tr>	
-							<tr>
-								<td>Selectstate</td>
-								<td><?php echo $sqldata[0]->bselectstate;?></td>
-							</tr>
-							<tr>
-								<td>pincode</td>
-								<td><?php echo $sqldata[0]->bpincode;?></td>
-							</tr>
-                            
-
-						 
-							
-													
-						</tbody>
-					</table>			
-
-					
-
-				<table class="table table-sm table-borderless" id="section3">
-					 <thead><th width="45%">Password</th>
-					 <th style="text-align:right"><a href="<?php echo base_url();?>customer_editpassword"><u>Edit Password</u></a></th>
-					 </thead>
-						<tbody>
-							<tr>
-								<td>Old Password</td>
-								<td>******</td>
-							</tr> 
-							<tr>
-								<td>New Password</td>
-								<td>******</td>
-							</tr> 
-							<tr>
-								<td>Confirm Password</td>
-								<td>******</td>
-							</tr>
-							
-											
-						</tbody>
-					</table>
-
-				
-
-
+            <div class="card-body">
+			<th><a style="float:right" href="<?php echo base_url();?>customer_editpersonal"><u>Edit Personal Info</u></a></th>
+			<div class="container">  
+			<div class="row">
+	
+    <div class="col-sm-6" style="">
+		<td><b>Name</b></td>
+	</div>
+    <div class="col-sm-6" style=" ">
+		<?php echo $sqldata[0]->bname; ?> 
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Company Name</b></td>	  
+	</div>
+     <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bcompanyname;?></td> 
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Company Type</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bcompanyname;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Contact Person</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bcontactperson;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Contact Number</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bcontactperson;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Contact Person</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bcontactnumber;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Email</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bemail;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Pan</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bpan;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>GST</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bgst;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Username</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->busername;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Address</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->baddress;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>City</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bcity;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Select State</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bselectstate;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Pin Code</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->bpincode;?></td>
+	</div>
+	
+	
+  </div>
+ </div>
+			  <br/>
+			  
+			<th><a style="float:right" href="<?php echo base_url();?>customer_editpassword"><u>Edit Password</u></a></th>  
 			
-					 </thead>
-					
-						
-
-													
-							</form>					
-					
-					</table>					
-              
-              </div>
-            </div>
+			  
+		   
+		 
+	
+    <div class="col-sm-6" style="">
+		<td><b>Old Password</b></td>
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td>******</td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>New Password</b></td>	  
+	</div>
+     <div class="col-sm-6" style=" ">
+		<td>******</td> 
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Confirm Password</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td>******</td>
+	</div>
+		  
+</div>
 
             <!-- Pie Chart -->
 
@@ -145,7 +171,7 @@
         <!-- /.container-fluid -->
 
       </div>
-	  
+	  </div>
 	  
       <!-- End of Main Content -->
 
@@ -162,7 +188,6 @@
     </div>
     <!-- End of Content Wrapper -->
 
-  </div>
  
 </body>
 

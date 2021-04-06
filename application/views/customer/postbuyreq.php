@@ -1,7 +1,4 @@
- <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-        <!-- Begin Page Content -->
+<!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -25,54 +22,57 @@
                
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">		
-				<form action="<?php echo base_url();?>customer_postbuyreq" method="POST" enctype="multipart/form-data">
+            <div class="card-body">		
+			 
 				
-				<div class="row ml-4">
+				<div class="row">
 				<div class="col-sm-4 bg-warning">
-				<div class="thumbnail mt-2 p-2">
-				<h3 class="m-0 font-weight-bold text-primary">How to get Quotation Quickly?</h3>
+        <div class="thumbnail">
+        <div class="container">
+				<h3 style="text-align:center; padding:15px" class="m-0 font-weight-bold text-primary">How to get Quotation Quickly?</h3>
 				
 					<div class="col p-3 m-5">
-						<i class="fas fa-file-image fa-3x mt-5"></i>Submit RFQ</p>
-						<p><i class="fas fa-sort fa-3x mt-5"></i>Compare Quote</p>
-						<p><i class="fas fa-handshake fa-3x mt-5" aria-hidden="true"></i>Contact </p>
+						<i class="fas fa-file-image fa-3x mt-5"></i> Submit RFQ</p>
+						<p><i class="fas fa-sort fa-3x mt-5"></i> Compare Quote</p>
+						<p><i class="fas fa-handshake fa-3x mt-5" aria-hidden="true"></i> Contact </p>
 
 					</div>
-				</div>	
+				</div>
+        </div>
+
+
+
+
 				</div>
 
-			<form action="<?php echo base_url();?>customer_postbuyreq" method="POST" enctype="multipart/form-data">
-				<div class="caption col-7 p-2 ml-5 bg-light">
-				<div class="form-inline">
-					<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
-						<label for="">Customer ID</label>
-						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
-						<input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
-                    </div>
-					<div class="col-sm-5 mb-12 pl-5 mb-sm-0">
-						<label for="">Company Name</label>
-						<input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
-                    </div>
-				</div>
-				<div class="form-inline">
-							<div class="col-sm-6 pr-5  mb-sm-0">
-								<label>Email:</label>
-								<input type="email" class="form-control" id="email" name="email" value="<?php echo  $scomp[0]->bemail;?>" readonly>
-							</div>
-							<div class="col-sm-5 mb-3 pl-5 mb-sm-0">
-							<label>Contact Number</label>
-							<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="inputGroup-sizing-sm">+91</span>
-							</div>
-								<input type="text" class="form-control" aria-label="Small" id="contactnumber" name="contactnumber" aria-describedby="inputGroup-sizing-sm" value="<?php echo  $scomp[0]->bcontactnumber;?>" readonly>
-							</div>
-						</div>
-						</div>
-				<div class="col-sm-11 mb-3 mb-sm-1">
-					<label for="">Category</label>
-					<select class="form-control" id="category" name="category">
+				<div style="padding:15px" class="col-sm-8">
+			 	
+        <form  action="<?php echo base_url();?>customer_postbuyreq" method="POST" enctype="multipart/form-data">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Customer ID</label>
+      <input type="text"   class="form-control" id="bname" name="bname"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
+      <input hidden type="text" class="form-control" id="buyerid" name="buyerid"  value="<?php echo  $scomp[0]->buyerid;?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Company Name</label>
+      <input type="text" class="form-control" id="bcompanyname" name="bcompanyname"  value="<?php echo  $scomp[0]->bcompanyname;?>" readonly>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control"  id="email" name="email" value="<?php echo  $scomp[0]->bemail;?>" readonly>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Contact Number</label>
+      <input type="number" class="form-control"  id="contactnumber" name="contactnumber" aria-describedby="inputGroup-sizing-sm" value="<?php echo  $scomp[0]->bcontactnumber;?>" readonly>
+    </div>
+  </div>
+ 
+  <div class="form-group">
+    <label for="inputAddress2">Category</label>
+    <select class="form-control" id="category" name="category">
 					    <option value="Category">--Category--</option>
 						<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
@@ -85,37 +85,33 @@
 						<option value="Chemicals" >Chemicals</option>
 						<option value="Others" >Others</option>
 				    </select> 
-                    
-                </div>
-							
-				<div class="form-inline">
-				<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
-						<label>Product Name:</label>
-						<input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name.." onkeyup="product_id()" ></span>
-						</div>
-				
-							
-				<div class="col-sm-5 mb-3 pl-5 mb-sm-0">
-					<label for="">Product Id</label>
-					<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id">
-                    
-                </div>
-				</div>
-					<h6 class="mt-2"><b>&nbsp;&nbsp;Describe your Buying requirement</b></h6>
-					<div class="col-sm-5 col-md-11">
-                      <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."></textarea>
-					</div>
-					
-						<div class="form-inline">
-					<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
-						<label>Expected Price:</label>
-						<input type="text" class="form-control" id="price" name="price">
-					</div>
-					
-			
-					
-			<div class="col-sm-5 mb-3 pl-5 mb-sm-0">	
-								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Product Name</label>
+      <input type="text" class="form-control" id="productname" name="productname" placeholder="Enter product name.." onkeyup="product_id()" ></span>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Product Id</label>
+      <input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id">
+    </div>
+  </div>
+  <h6 class="mt-2"><b>&nbsp;&nbsp;Describe your Buying requirement</b></h6>
+
+    <div class="form-group">     
+     <textarea class="form-control" rows="4" class="form-control" id="description" name="description" placeholder="Describe your buying requirement.."></textarea>
+    </div>
+
+      
+
+    <div class="form-row">
+    <div class="form-group col-md-6">
+    <label>Expected Price:</label>
+      <input type="text" class="form-control" id="price" name="price">
+      
+    </div>
+    <div class="form-group col-md-6">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								<script type="text/javascript">
 									var citiesByState = {
 										KG: ["KG"],
@@ -149,10 +145,8 @@
 										document.getElementById("units").selectedIndex = 0;
 									}
 								</script>
-	
-								<label>Units</label>
-
-								<body onload="resetSelection()">
+      <label for="inputZip">Units</label>
+      <body onload="resetSelection()">
 									<select class="form-control" id="priceperkg" name="priceperkg" size="1" onchange="makeSubmenu(this.value)">
 										<option value="" disabled selected>Choose Units</option>
 										<option>KG</option>
@@ -163,71 +157,66 @@
 									<option>lot</option>
 										
 									</select>
-									
+    </div>
+  </div>
 
-
-							</div>
-							<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
-						<label>Quantity:</label>
-						<input type="text" class="form-control" id="quantity" name="quantity">
-					</div>
-					<div class="form-inline">
-
-	                 <div class="col-sm-5 mb-3 pl-5 mb-sm-0">
-						<label>Units</label>
-								<select class="form-control" id="units" name="units" size="1">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <label>Quantity:</label>
+      <input type="text" class="form-control" id="quantity" name="quantity">
+      
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Units</label>
+      <select class="form-control" id="units" name="units" size="1">
 									<option value="" disabled selected>Choose Units</option>
 									<option></option>
 								</select>
-							</div>
-							</div>
-			
-					<div class="form-inline">
-					<div class="col-sm-6 pr-5 mb-3 mb-sm-0">
-						<label>Required Date</label>
-					<input style="width:250px" class="form-control" type="datetime-local" id="requireddate" name="requireddate">
-					</div>
-					<div class="col-sm-5 mb-3 pl-5 mb-sm-0">			
-						<label>Last Date</label>
-					<input style="width:250px" class="form-control" type="datetime-local" id="lastdate" name="lastdate">
-					</div>
-					</div>
-					 
+    </div>
+  </div>
 
-						<div class="form-inline">
-						<div class="col-sm-6 pr-5 mb-3 mb-sm-0 mt-1">
-						
-								<label for="exampleInputFile">Upload Image</label>
-								<input type="file" class="form-control-file" id="uploadimage" name="uploadimage[]" multiple>
-								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
-							</div>
-					<div class="col-sm-5 mb-3 pl-5 mb-sm-0 mt-1">	
-								<label for="exampleInputFile">Upload PDF Files</label>
-								<input type="file" class="form-control-file" id="uploadpdf"  name="uploadpdf[]">
-								<!-- <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small> -->
-							</div>
-						</div>
-					
-						<div class="col-sm-12 col-md-7 mt-2">
-							<div class="form-check">
-								<input type="checkbox" class="form-check-input" id="iagreee" name="iagreee">
-								<label class="form-check-label" for="exampleCheck1">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <label>Required Date:</label>
+      <input  class="form-control" type="datetime-local" id="requireddate" name="requireddate">
+      
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Last Date</label>
+      <input  class="form-control" type="datetime-local" id="lastdate" name="lastdate">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <label>Upload Images:</label>
+    <input type="file" class="form-control-file" id="uploadimage" name="uploadimage[]" multiple>
+      
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Upload PDF</label>
+      <input type="file" class="form-control-file" id="uploadpdf"  name="uploadpdf[]">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="iagreee" name="iagreee">
+      <label class="form-check-label" for="exampleCheck1">
 								I agree to the <a href="">Terms & Conditions</a></label>
-							</div>
-						</div>
-				 <center>
-				<input type="submit" name="submit"  role="submit" onclick="return validatepostreq()" value="Post Buying Requirement" class="btn btn-info mt-4" style="font-size:13px">
-				</center>
-					
-					</form>
-					</div>
+    </div>
+  </div>
+  
+  <input type="submit" name="submit"  role="submit" onclick="return validatepostreq()" value="Post Buying Requirement" class="btn btn-info mt-4" style="font-size:13px">
+</form>
+
+
+
+
+				</div>
+
+			 
 			
-				  </div>
-                </div>
-                </form>	
-					
-			
-              </div>
+              	</div>
             </div>
 
             <!-- Pie Chart -->

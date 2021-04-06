@@ -1,4 +1,7 @@
+ <head>
+ <link href="<?php echo base_url()."web_files/";?>css/responsive.css" rel="stylesheet" type="text/css">
 
+ </head>
 <?php 
 	//include('./header.php');
 ?>
@@ -30,7 +33,9 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-					 <table class="table table-sm table-borderless table-responsive">
+				<div class="container"> 
+					 
+					 <table class="table table-sm table-borderless">
 					 <thead><th width="45%">Profile</th>
 					 
 					 
@@ -42,18 +47,18 @@
 							<form action = "<?php echo base_url();?>customer_basicinfo_update" method="POST" enctype="multipart/form-data">
 							<tr>
 								<td>Buyer Id</td>
-								<td><input class="form-control w-50" type="text" id="buyerid" name="buyerid" value="<?php echo$sqldata[0]->buyerid; ?>"readonly></td>
+								<td><input class="form-control w-auto" type="text" id="buyerid" name="buyerid" value="<?php echo$sqldata[0]->buyerid; ?>"readonly></td>
 							</tr> 
 							<tr><td>Name</td>
-								<td><input class="form-control w-50" type="text" id="bname" name="bname" value="<?php echo $sqldata[0]->bname; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="bname" name="bname" value="<?php echo $sqldata[0]->bname; ?>"></td>
 							</tr> 
 							<tr>
 								<td>Company Name</td>
-								<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" value="<?php echo$sqldata[0]->bcompanyname; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="bcompanyname" name="bcompanyname" value="<?php echo$sqldata[0]->bcompanyname; ?>"></td>
 							</tr> 
 							<tr>
-										<td class="btxt">Company Type:</td>
-						<td> <select class="form-control w-50" id="bcompanytype" name="bcompanytype">
+						<td class="btxt">Company Type:</td>
+						<td> <select class="form-control w-auto" id="bcompanytype" name="bcompanytype">
 								<option default>PVT Ltd.</option>
 					 
 						<option value="OPC PVT Ltd.">OPC PVT Ltd.</option>
@@ -66,50 +71,50 @@
 							</tr> 	
 							<tr>
 								<td>Contact Person</td>
-								<td><input class="form-control w-50" type="text" id="vcontactperson" name="bcontactperson" value="<?php echo $sqldata[0]->bcontactperson; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="vcontactperson" name="bcontactperson" value="<?php echo $sqldata[0]->bcontactperson; ?>"></td>
 							</tr> 
 							<tr>
 								<td>contact number</td>
-								<td><input class="form-control w-50" type="text" id="vcontactnumber" name="bcontactnumber" value="<?php echo $sqldata[0]->bcontactnumber; ?>"></td>
+								<td><input class="form-control w-auto" type="text" id="vcontactnumber" name="bcontactnumber" value="<?php echo $sqldata[0]->bcontactnumber; ?>"></td>
 								<td>
 			
 							</tr> 
 							<tr>
 							<td>Email</td>
-							<td><input class="form-control w-50" type="text" id="bemail" name="bemail" value="<?php echo $sqldata[0]->bemail; ?>"></td>
+							<td><input class="form-control w-auto" type="text" id="bemail" name="bemail" value="<?php echo $sqldata[0]->bemail; ?>"></td>
 								<td>
 								
 							</tr>
 							<tr>
 								<td>Pan</td>
-								<td><input class="form-control w-50" type="text" id="bpan" name="bpan" value="<?php echo $sqldata[0]->bpan; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="bpan" name="bpan" value="<?php echo $sqldata[0]->bpan; ?>" ></td>
 							</tr>
 							<tr>
 								<td>GST</td>
-								<td><input class="form-control w-50" type="text" id="bgst" name="bgst" value="<?php echo $sqldata[0]->bgst; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="bgst" name="bgst" value="<?php echo $sqldata[0]->bgst; ?>" ></td>
 							</tr>
 							<tr>
 								<td>Username</td>
-								<td><input class="form-control w-50" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername; ?>"  ></td>
+								<td><input class="form-control w-auto" type="text" id="busername" name="busername" value="<?php echo $sqldata[0]->busername; ?>"  ></td>
 							</tr>
 						
 							 	
 							<tr>
 								<td>Address</td>
-								<td><textarea class="form-control w-50" type="text" id="baddress" name="baddress" value="<?php echo $sqldata[0]->baddress; ?>"><?php echo $sqldata[0]->baddress; ?></textarea></td>
+								<td><textarea class="form-control w-auto" type="text" id="baddress" name="baddress" value=""><?php echo $sqldata[0]->baddress; ?></textarea></td>
 							</tr>
 							<tr>
 								<td>City</td>
-								<td><input class="form-control w-50" type="text" id="bcity" name="bcity" value="<?php echo $sqldata[0]->bcity; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="bcity" name="bcity" value="<?php echo $sqldata[0]->bcity; ?>" ></td>
 							</tr>
 							
 							<tr>
 								<td>Pincode</td>
-								<td><input class="form-control w-50" type="text" id="bpincode" name="bpincode" value="<?php echo $sqldata[0]->bpincode; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="bpincode" name="bpincode" value="<?php echo $sqldata[0]->bpincode; ?>" ></td>
 							</tr>
 							<tr>
 								<td>State</td>
-								<td><input class="form-control w-50" type="text" id="bselectstate" name="bselectstate" value="<?php echo $sqldata[0]->bselectstate; ?>" ></td>
+								<td><input class="form-control w-auto" type="text" id="bselectstate" name="bselectstate" value="<?php echo $sqldata[0]->bselectstate; ?>" ></td>
 								
 							</tr>
 
@@ -128,7 +133,7 @@
 				
 				  <a href="customer_customerprofile"><button type="button" class="btn btn-primary offset-sm-1 mt-2">Cancel</button></a>
 				
-				
+				</div>
 													
               </div>
             </div>
