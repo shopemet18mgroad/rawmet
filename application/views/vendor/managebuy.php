@@ -28,24 +28,24 @@
 				<div class="container">
  
   <div class="row">
-    <div class="col-sm-3 col-md-6" style="">
+    <div class="col-sm-4 col-md-6" style="">
 	<p><?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="150" height="150"></td>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="100px"></td>
 					<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $img[0];?>"></p>
     </div>
-    <div class="col-sm-9 col-md-6" style="background-color:pink;">
+    <div class="col-sm-8 col-md-6" style="background-color:#F9F8F6;">
 	<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
 				
 			 
-			
+		
 			
 			
 				
 
 			<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
 			
-				<div class="form-inline">
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+					<div class="form-row">
+					<div class="form-group col-md-6">
 						<label for="">Buyer ID</label>
 						<input type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
 					
@@ -64,7 +64,7 @@
 
                     
               
-					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
+					<div class="form-group col-md-6">
 					<label for="">Category</label>
 					
 					<select class="form-control" id="category" name="category" readonly>
@@ -80,34 +80,35 @@
 				<br />
 	 
 							
-				<div class="form-inline">
-				<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+				<div class="form-row">
+				<div class="form-group col-md-6">
 						<label> Buyer Productname:</label>
 						 <input type="text" class="form-control" id="productname" name="productname"placeholder="Enter product name.." onkeyup="product_id()" value="<?php echo  $sqldata[0]->productname;?>" readonly>
 						
-						</div>
+				</div>
 				
 					
-				<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
-					<label for="">Buyer Productid</label>
+				<div class="form-group col-md-6">
+					<label for="">Product Id</label>
 	<input type="text" class="form-control" id="productid" name="productid"  placeholder="Product Id" value="<?php echo  $sqldata[0]->productid;?>" readonly>
                     
                 </div>
 				</div>
 				<br />
+				<div class="form-group">
 					<h6 class="mt-2"><b>&nbsp;&nbsp;Describe your Buying requirement</b></h6>
-					<div class="col-sm-5 col-md-12">
-                      <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."value="<?php echo  $sqldata[0]->description;?>"readonly><?php echo  $sqldata[0]->description;?></textarea>
-					</div>
 					
+                      <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your buying requirement.."value="<?php echo  $sqldata[0]->description;?>"readonly><?php echo  $sqldata[0]->description;?></textarea>
+				
+				</div>	
 					
 					 
-					<div class="form-inline">
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+					<div class="form-row">
+					<div class="form-group col-md-6">
 						<label> Quantity:</label>
 						<input type="text" class="form-control" id="quantity" name="quantity"value="<?php echo  $sqldata[0]->quantity;?>" readonly>
 					</div>
-					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">			
+					<div class="form-group col-md-6">			
 					<label>Units:</label>
 						<select class="form-control col-sm-0" id="units" name="units" readonly>
 						<option value="<?php echo  $sqldata[0]->units;?>" readonly><?php echo  $sqldata[0]->units;?> </option>
@@ -122,12 +123,12 @@
 					</div>
 					</div>
 					
-					<div hidden class="form-inline">
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+					<div class="form-row">
+					<div class="form-group col-md-6">	
 						<label> Buyer Price:</label>
 						<input type="text" class="form-control" id="price" name="price"value="<?php echo  $sqldata[0]->price;?> " readonly>
-					</div>/
-					<div class="col-sm-4 mb-3 pl-5 mb-sm-0">
+					</div>
+					<div class="form-group col-md-6">		
 					<label>Units:</label>
 					
 						
@@ -144,6 +145,8 @@
 					</div>
 					</div>
 					<hr class="sidebar-divider">
+					
+					
 					<center><b>Seller Negotiate</b>	</center>
 					
 					<?php 
@@ -167,12 +170,12 @@
 			}
 		?>
 					
-				<div class="form-inline">
-					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
+				<div class="form-row">
+					 <div class="form-group col-md-6">
 						<label>Seller Price:</label>
 						<input type="text" class="form-control" id="sellerprice" name="sellerprice" value='<?php echo $Sellerfirstprice;?>' <?php echo $strDisable; ?>>
-					</div>/
-					<div class="col-sm-5 mb-3 pl-5 mb-sm-0">  
+					</div>
+					 <div class="form-group col-md-6">
 					<label>Units:</label>
 						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability" value='<?php echo $Sellerfirstqty;?>' <?php echo $strDisable2; ?>>
 								<option value="KG">KG</option>
