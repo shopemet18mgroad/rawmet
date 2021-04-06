@@ -10,6 +10,10 @@
   <meta name="title" content=">Aucjunction | Junction For Every auction">
   <meta name="description" content="Junction For Every Auction">
   <meta name="keyword" content="Auction, metal scrapes, Ferrous, Non Ferrous and Minor Metals">
+  @media only screen and (min-width: 1440px) {
+    /* styles for MacBook Pro-sized screens and larger */
+}
+
   <meta name="author" content="">
   <title>Rawmet24</title>
   <!-- Custom fonts for this template-->
@@ -31,6 +35,15 @@
         margin-bottom: 3em;
     }
 </script>
+ 
+<style>
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+
+
 </head>
 	<body  class="scrollbar" data-spy="scroll" data-target="#myScrollspy">
 	<div class="container-fluid top-header">
@@ -90,7 +103,7 @@
 					
 					 
 
-
+<center>
 <div class="form-check form-check-inline">
   <input type="checkbox" class="form-check-input" id="customCheck2" name="optradio" value="Buyer">
   <label class="form-check-label" for="customCheck2">Buyer</label>
@@ -104,7 +117,7 @@
   <label class="form-check-label" for="customCheck3">Admin</label>
   <a class="pl-3" href="<?php echo base_url()."email_send";?>"><b><u>Forgot Password?</u></b></a>
 </div>
-
+</center>
 
 						  </form>  
 					</div>
@@ -124,7 +137,7 @@
   </span>
 </h2>-->
 
-<img alt="Rawmet"  src="<?php echo base_url()."web_files/";?>img/rawmet logo.png">
+<img class="responsive" src="<?php echo base_url()."web_files/";?>img/rawmet logo.png" >
 
 
 
