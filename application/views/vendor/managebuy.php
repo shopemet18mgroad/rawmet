@@ -23,19 +23,27 @@
                
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">		
-				<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
+                <div class="card-body">	
+					
+				<div class="container">
+ 
+  <div class="row">
+    <div class="col-sm-3 col-md-6" style="">
+	<p><?php $img = unserialize($sqldata[0]->uploadimage)?>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="150" height="150"></td>
+					<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $img[0];?>"></p>
+    </div>
+    <div class="col-sm-9 col-md-6" style="background-color:pink;">
+	<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
 				
-				<div class="row ml-4">
+			 
 			
 			
-			<?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="180px" height="250"></td>
-					<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $img[0];?>">
+			
 				
 
 			<form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
-				<div class="caption col-7 p-2 ml-5 bg-light">
+			
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label for="">Buyer ID</label>
@@ -197,22 +205,26 @@
                 </div>
 				
                 </form>	
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
 					
 			
-              </div>
-            </div>
-
-            <!-- Pie Chart -->
-
-          </div>
-
-          <!-- Content Row -->
-
-
-        </div>
-        <!-- /.container-fluid -->
-
-      
-      <!-- End of Main Content -->
+             
 
       
