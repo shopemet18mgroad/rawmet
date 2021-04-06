@@ -29,7 +29,7 @@
                 </div>
                 <!-- Card Body -->
             <div class="card-body">
-			<th><a style="float:right" href="<?php echo base_url();?>customer_editpersonal"><u>Edit Personal Info</u></a></th>
+		 
 			<div class="container">  
 			<div class="row">
 	
@@ -37,7 +37,8 @@
 		<td><b>Name</b></td>
 	</div>
     <div class="col-sm-6" style=" ">
-		<?php echo $sqldata[0]->bname; ?> 
+		<td><?php echo $sqldata[0]->bname; ?> </td>
+		<a style="float:right" href="<?php echo base_url();?>customer_editpersonal"><i class="fa fa-edit">Edit</i></a>
 	</div>
 	
 	<div class="col-sm-6" style=" ">
@@ -51,7 +52,7 @@
 	 <td><b>Company Type</b></td>	  
 	</div>
     <div class="col-sm-6" style=" ">
-		<td><?php echo $sqldata[0]->bcompanyname;?></td>
+		<td><?php echo $sqldata[0]->bcompanytype;?></td>
 	</div>
 	
 	<div class="col-sm-6" style=" ">
@@ -65,15 +66,9 @@
 	 <td><b>Contact Number</b></td>	  
 	</div>
     <div class="col-sm-6" style=" ">
-		<td><?php echo $sqldata[0]->bcontactperson;?></td>
-	</div>
-	
-	<div class="col-sm-6" style=" ">
-	 <td><b>Contact Person</b></td>	  
-	</div>
-    <div class="col-sm-6" style=" ">
 		<td><?php echo $sqldata[0]->bcontactnumber;?></td>
 	</div>
+	
 	
 	<div class="col-sm-6" style=" ">
 	 <td><b>Email</b></td>	  
@@ -135,17 +130,17 @@
   </div>
  </div>
 			  <br/>
-			  
-			<th><a style="float:right" href="<?php echo base_url();?>customer_editpassword"><u>Edit Password</u></a></th>  
-			
-			  
-		   
+		
+		
 		 
-	
+		   <br />
+		 
+	<div class="row">
     <div class="col-sm-6" style="">
 		<td><b>Old Password</b></td>
 	</div>
     <div class="col-sm-6" style=" ">
+	<a style="float:right" href="<?php echo base_url();?>Customer_editpassword"><i class="fa fa-edit">Edit</i></a>
 		<td>******</td>
 	</div>
 	
@@ -162,7 +157,7 @@
     <div class="col-sm-6" style=" ">
 		<td>******</td>
 	</div>
-		  
+		  </div>
 </div>
 
             <!-- Pie Chart -->

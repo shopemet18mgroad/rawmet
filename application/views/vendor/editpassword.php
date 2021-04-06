@@ -1,3 +1,7 @@
+ <head>
+ <link href="<?php echo base_url()."web_files/";?>css/responsive.css" rel="stylesheet" type="text/css">
+
+ </head>
 <?php 
 	//include('./header.php');
 ?>
@@ -5,17 +9,6 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-          <!-- Page Heading -->
-    <!--       <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Vendor Profile</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div> -->
-
-          <!-- Content Row -->
-
-
-          <!-- Content Row -->
 
           <div class="row">
 
@@ -29,9 +22,9 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-			
+			<div class="container">
 
-				<table class="table table-sm table-borderless">
+				<table class="table table-sm table-borderless table-responsive">
 					 <thead><th width="45%">Password</th>
 					
 					 </thead>
@@ -40,15 +33,15 @@
 						<div class="error-msg"></div>
 							<tr>
 								<td>Old Password</td>
-								<td><input class="form-control w-50" type="password" id="vpassword"  name="boldpassword"placeholder="******" ></td>
+								<td><input class="form-control w-auto" type="password" id="vpassword"  name="boldpassword"placeholder="******" ></td>
 							</tr> 
 							<tr>
 								<td>New Password</td>
-								<td><input class="form-control w-50" type="password" id="vnewpassword" name="vnewpassword"  placeholder="******" onkeyup="validate_password()"></td>
+								<td><input class="form-control w-auto" type="password" id="vnewpassword" name="vnewpassword"  placeholder="******" onkeyup="validate_password()"></td>
 							</tr> 
 							<tr>
 								<td>Confirm Password</td>
-								<td><input class="form-control w-50" type="password" id="vrepeatpassword" name="vrepeatpassword" placeholder="******"></td>
+								<td><input class="form-control w-auto" type="password" id="vrepeatpassword" name="vrepeatpassword" placeholder="******"></td>
 							</tr> 	
 											
 						</tbody>
@@ -60,7 +53,7 @@
 					</form>							
 				<a href="buyer_dashboard"><button type="button" class="btn btn-primary offset-sm-1 mt-2">Cancel</button></a>
 				
-								
+				</div>				
               </div>
             </div>
 

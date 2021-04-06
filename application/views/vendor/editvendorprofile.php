@@ -29,130 +29,156 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-					 <table class="table table-sm table-borderless" id="section1">
-					 <thead><th width="45%"><b>Profile</b></th>
-					 <th style="text-align:right"><a href="<?php echo base_url();?>vendor_editpersonal"><u>Edit Personal Info</u></a></th>
-					 
-					 </thead>
-						<tbody>
-						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
-						
-						 <form action = "<?php echo base_url();?>" method="POST" enctype="multipart/form-data">
-						 <tr>
-								
-								<td>Supplier Id</td>
-								<td><?php echo $sqldata[0]->sellerid; ?></td>
-							</tr> 
-							<tr>
-								
-								<td>Supplier Name</td>
-								<td><?php echo $sqldata[0]->vname; ?></td>
-							</tr>
-							<tr>
-								<td>Companyname</td>
-								<td><?php echo $sqldata[0]->vcompanyname;?></td>
-							</tr> 
-							<tr>
-								<td>Companytype</td>
-								<td><?php echo $sqldata[0]->vcompanytype;?></td>
-							</tr> 	
-							<tr>
-								<td>Contact Person</td>
-								<td><?php echo $sqldata[0]->vcontactperson;?></td>
-							</tr> 
-							<tr>
-								<td>Contact Number</td>
-								<td><?php echo $sqldata[0]->vcontactnumber;?></td>
-							</tr> 
-							<tr>
-								<td>Pan</td>
-								<td><?php echo $sqldata[0]->vpan;?></td>
-							</tr>
-                           <tr>
-								<td>Type of Dealer</td>
-								<td><?php echo $sqldata[0]->dealer_type;?></td>
-							</tr> 							
-							<tr>
-								<td>GST</td>
-								<td><?php echo $sqldata[0]->vgst;?></td>
-							</tr> 
-							<tr>
-								<td>Pcb</td>
-								<td><?php echo $sqldata[0]->vpcb;?></td>
-							</tr>
-							<tr>
-								<td>Email</td>
-								<td><?php echo $sqldata[0]->vemail;?></td>
-							</tr> 
-							<tr>
-								<td>Username</td>
-								<td><?php echo $sqldata[0]->vusername;?></td>
-							</tr> 
-							<thead><th width="45%"><b>Location</b></th>
-							<tr>
-								<td>Address</td>
-								<td><?php echo $sqldata[0]->vaddress;?></td>
-							</tr> 
-							<tr>
-								<td>City</td>
-								<td><?php echo $sqldata[0]->vcity;?></td>
-							</tr>	
-							<tr>
-								<td>Selectstate</td>
-								<td><?php echo $sqldata[0]->vselectstate;?></td>
-							</tr>
-							<tr>
-								<td>pincode</td>
-								<td><?php echo $sqldata[0]->vpincode;?></td>
-							</tr>
-                             			
-							
+				<div class="container">  
+			<div class="row">
+	
+    <div class="col-sm-6" style="">
+		<td><b>Supplier Id</b></td>
+	</div>
+    <div class="col-sm-6" style=" ">
+		<a style="float:right" href="<?php echo base_url();?>vendor_editpersonal"><i class="fa fa-edit">Edit</i></a>
+		<td><?php echo $sqldata[0]->sellerid; ?> </td>
+	</div>
+	
+	 <div class="col-sm-6" style="">
+		<td><b>Supplier Name</b></td>
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vname; ?> </td>
+		
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Company Name</b></td>	  
+	</div>
+     <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vcompanyname;?></td> 
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Company Type</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vcompanytype;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Contact Person</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vcontactperson;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Contact Number</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vcontactnumber;?></td>
+	</div>
+	
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Email</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vemail;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Type of Dealer</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->dealer_type;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Pan</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vpan;?></td>
+	</div>
+		
+	<div class="col-sm-6" style=" ">
+	 <td><b>GST</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vgst;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Pcb</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vpcb;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Username</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vusername;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Address</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vaddress;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>City</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vcity;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Select State</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vselectstate;?></td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Pin Code</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vpincode;?></td>
+	</div>
+	
+	
+  </div>
+ </div>	
 
-						 
-							
-													
-						</tbody>
-					</table>			
-
-					
-
-				<table class="table table-sm table-borderless" id="section3">
-					 <thead><th width="45%"><b>Password</b></th>
-					 <th style="text-align:right"><a href="<?php echo base_url();?>vendor_editpassword"><u>Edit Password</u></a></th>
-					 </thead>
-						<tbody>
-							<tr>
-								<td>Old Password</td>
-								<td>******</td>
-							</tr> 
-							<tr>
-								<td>New Password</td>
-								<td>******</td>
-							</tr> 
-							<tr>
-								<td>Confirm Password</td>
-								<td>******</td>
-							</tr>
-							
-											
-						</tbody>
-					</table>
-
-				
-
-
-			
-					 </thead>
-					
-						
-
-													
-							</form>					
-					
-					</table>					
-              
-              </div>
-            </div>
+	<br/>
+	<br />			
+	
+<div class="row">
+    <div class="col-sm-6" style="">
+		<td><b>Old Password</b></td>
+	</div>
+    <div class="col-sm-6" style=" ">
+	<a style="float:right" href="<?php echo base_url();?>vendor_editpassword"><i class="fa fa-edit">Edit</i></a>
+		<td>******</td>
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>New Password</b></td>	  
+	</div>
+     <div class="col-sm-6" style=" ">
+		<td>******</td> 
+	</div>
+	
+	<div class="col-sm-6" style=" ">
+	 <td><b>Confirm Password</b></td>	  
+	</div>
+    <div class="col-sm-6" style=" ">
+		<td>******</td>
+	</div>
+</div>
+</div>
+</div>
 
             <!-- Pie Chart -->
 
