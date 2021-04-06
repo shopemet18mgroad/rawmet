@@ -33,7 +33,7 @@
 			 	<div class="form-group row">
 				
 				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="200px">
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="200px"> <br />
 				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
 				
 				<h6 class="m-0 font-weight-bold text-primary"><b><u>Seller Id</u></b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->sellerid;?></h6></br>
