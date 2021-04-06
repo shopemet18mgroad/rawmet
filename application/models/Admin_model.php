@@ -2589,6 +2589,16 @@ function getdatafromselquotenegotate() {
 				$result = $query->result();	
 				return $result;
 			}
+			
+			function getseller($id, $sellerid) {
+				$this->db->select('*');
+				$this->db->where('productid',$id);
+				$this->db->where('sellerid',$sellerid);
+				$query = $this->db->get('seller_mbuyreq');
+				$result = $query->result();	
+				return $result;
+			}
+
 
 			function getbuyer_post_response($id, $buyerid) {
 				$this->db->select('*');

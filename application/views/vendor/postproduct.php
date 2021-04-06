@@ -25,7 +25,7 @@
 				</div>
 				<!-- Card Body -->
 				<div class="card-body">
-
+<div class="container">
 
 
 					<!-- <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
@@ -405,7 +405,7 @@
 										
 
 
-
+</div>
 
 				</div>
 			</div>
@@ -469,4 +469,4 @@ var inputvalues = $(this).val();
 			return false;
 		}
 	}
-</script> -->
+</script> 

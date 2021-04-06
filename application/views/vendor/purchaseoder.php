@@ -1,4 +1,8 @@
-  <div class="container-fluid">
+ <head>
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
+
+ </head>
+ <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -16,42 +20,34 @@
     <thead class="bg-primary text-white">
       <tr>
 	    <th>Sl.No.</th>
-	  <th>Supplier Id</th>
-	  <th>Product Id</th>
+		<th>Supplier Id</th>
+		<th>Product Id</th>
         <th>Product Name</th>
         <th>Category</th>
         <th>Commission to Rawmet</th>
 		<th>Image</th>
 		<th>Status</th>
 		<th>Pay Now</th>
-		
-		
       </tr>
     </thead>
     <tbody>
 	
       
     <?php  $count = 1;?>
-	   <?php foreach($sqldata as $row){?>
-      <tr>
-	  
-	 <?php $proid = str_ireplace('/','-',$row->productid);
-				?>
-				 <td><?php echo $count;?></td>  
-					<td><?php echo $row->sellerid;?></td>
-	  <td><?php echo $row->productid;?></td> 
-		<td><?php echo $row->productname;?></td> 
-		<td><?php  echo $row->category;?></td>
-         <td><?php echo $row->payable."%";?></td>
-
-		
-		
-
-		<td><?php $img = unserialize($row->uploadproductimage)?>
+	<?php foreach($sqldata as $row){?>
+    <tr>
+	 <?php $proid = str_ireplace('/','-',$row->productid);?>
+		<td data-label="Sl.No."><?php echo $count;?></td>  
+		<td data-label="Supplier Id"><?php echo $row->sellerid;?></td>
+		<td data-label="Product Id"><?php echo $row->productid;?></td> 
+		<td data-label="Product Name"><?php echo $row->productname;?></td> 
+		<td data-label="Category"><?php  echo $row->category;?></td>
+        <td data-label="Commission to Rawmet"><?php echo $row->payable."%";?></td>
+		<td data-label="Image"><?php $img = unserialize($row->uploadproductimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	
-		<td style="color:orange";><b><?php  if($row->pooptions == 1) {echo 'Paid';}else if($row->pooptions == 2) {echo 'UnPaid';}else if($row->pooptions == 0) {echo 'Pending';}?></b></td>
-		<td><button type="button" class="btn btn-primary btn-sm"><?php  if($row->pooptions == 2) {echo 'Pay now';}?></button></td>
+		<td data-label="Status" style="color:orange";><b><?php  if($row->pooptions == 1) {echo 'Paid';}else if($row->pooptions == 2) {echo 'UnPaid';}else if($row->pooptions == 0) {echo 'Pending';}?></b></td>
+		<td data-label="Pay Now"><button type="button" class="btn btn-primary btn-sm"><?php  if($row->pooptions == 2) {echo 'Pay now';}?></button></td>
 		
 
 <?php $count++;?>

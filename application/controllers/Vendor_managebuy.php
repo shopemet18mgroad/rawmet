@@ -34,6 +34,8 @@ class Vendor_managebuy extends CI_Controller {
 		//print_r($query);die;
 		$data['sqldata']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
+		
+		$data['seller_mbuyreq'] = $this->Admin_model->getseller($productid, $sess['sessi']);
 			//print_r($query); die;
 			/* if(!$this->session->has_userdata('username')|| $this->session->userdata('auth') != "SELLER"){
 			$datainserr = "Invalid Login Session";

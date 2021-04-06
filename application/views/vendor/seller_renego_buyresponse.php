@@ -111,7 +111,7 @@
 			
 		?>
 		
-		<center><input required style="width:160px;" type="text" class="form-control" id="seller_renego_price" name="seller_renego_price"value='<?php echo $SellerReNegotiation;?>' <?php echo $strDisable; ?>></center>
+		<center><input required style="width:160px;" type="text" class="form-control" id="seller_renego_price" name="seller_renego_price" value='<?php echo $SellerReNegotiation;?>' <?php echo $strDisable; ?>></center>
 		
 		
 		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm mt-2" style="font-size:13px" name="submit" role="submit" onclick="return validate()"><b>Negotiate</b></button>

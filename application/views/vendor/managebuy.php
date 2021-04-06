@@ -137,14 +137,36 @@
 					</div>
 					<hr class="sidebar-divider">
 					<center><b>Seller Negotiate</b>	</center>
+					
+					<?php 
+			$strDisable = "";
+			$Sellerfirstprice = "";
+			if($seller_mbuyreq){
+				$Sellerfirstprice = $seller_mbuyreq[0]->sellerprice; 
+				if($Sellerfirstprice !=""){
+					$strDisable = "disabled";
+				}				
+			}
+			
+		
+		$strDisable2 = "";
+			$Sellerfirstqty = "";
+			if($seller_mbuyreq){
+				$Sellerfirstqty = $seller_mbuyreq[0]->bsupplyability; 
+				if($Sellerfirstqty !=""){
+					$strDisable2= "disabled";
+				}				
+			}
+		?>
+					
 				<div class="form-inline">
 					<div class="col-sm-5 pr-5 mb-3 mb-sm-0">
 						<label>Seller Price:</label>
-						<input type="text" class="form-control" id="sellerprice" name="sellerprice">
+						<input type="text" class="form-control" id="sellerprice" name="sellerprice" value='<?php echo $Sellerfirstprice;?>' <?php echo $strDisable; ?>>
 					</div>/
 					<div class="col-sm-5 mb-3 pl-5 mb-sm-0">  
 					<label>Units:</label>
-						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
+						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability" value='<?php echo $Sellerfirstqty;?>' <?php echo $strDisable2; ?>>
 								<option value="KG">KG</option>
 								<option value="Metric Ton">Metric Ton</option>
 								<option value="Litre">Litre</option>
@@ -164,7 +186,7 @@
 						
 						
 				
-					<button type="submit" href="<?php echo base_url();?>" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" name="submit" role="submit"><b>Submit</b></a>
+					<button type="submit" href="<?php echo base_url();?>" class="btn btn-info mt-4 offset-sm-5" style="font-size:13px" name="submit" role="submit" <?php echo $strDisable2; ?>><b>Submit</b></a>
 					</form>
 					
 					</div>
