@@ -44,17 +44,7 @@
            
 		   
 		   <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
-		   
-
-	
-	 
-	
-	
-		   
-		   
-		   
-
-       <tbody>
+		 <tbody>
 	   
 	    <tr  style="text-align:center;">
 		
@@ -328,10 +318,7 @@ $strDisable2 = "";
 	
 											
 	
-		 
 
-  <div class="form-inline">
-		
 
     <div class="col-md-6">
 
@@ -344,9 +331,10 @@ $strDisable2 = "";
 					
 					
 <p class="w-auto small"><h6><b>Description:</b> <?php echo  $sqldata[0]->description;?></h6></p>					
-					
+  </div>
+	</div>				
 			
-
+ <div class="col-md-6">
 
 <h6 style="color:green;"><b>Supply Ability: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></b></h6>
 
@@ -354,7 +342,7 @@ $strDisable2 = "";
 
 <h6 style="color:orange;"><b>Live Stock: <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
 								
-								
+	 </div>							
 						
 								
 								
@@ -363,11 +351,10 @@ $strDisable2 = "";
 								
 								
 								
-			  </div>
-
+			
 			  <br />
 
-			</div>
+			
 			<!--Grid column-->
 
 			<!--Grid column-->
@@ -396,34 +383,11 @@ $strDisable2 = "";
 							
 								
 <h6 style="color:purple;"><b>Validity Till:</b><br> <?php echo  $sqldata[0]->productvalidityto;?></h6>
-								
-			
-			
-			
-			
-					 
-			 
-			  
+</div>
+		
+		
 
-			</div>
-		
-		
-							
-								
-			</div>
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-                                </div>
+ </div>
                             </div>
                         </div>
                     </div>
