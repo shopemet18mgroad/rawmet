@@ -10,9 +10,7 @@
   <meta name="title" content=">Aucjunction | Junction For Every auction">
   <meta name="description" content="Junction For Every Auction">
   <meta name="keyword" content="Auction, metal scrapes, Ferrous, Non Ferrous and Minor Metals">
-  @media only screen and (min-width: 1440px) {
-    /* styles for MacBook Pro-sized screens and larger */
-}
+  
 
   <meta name="author" content="">
   <title>Rawmet24</title>
