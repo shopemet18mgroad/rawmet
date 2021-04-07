@@ -40,7 +40,7 @@
 				
 				<div class="thumbnail mt-1">
 					<td><?php $img = unserialize( $sqldata[0]->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="200px" height="100%"></td>
+				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="100px"></td>
 				<input type="hidden" class="form-control" id="uploadproductimage" name="uploadproductimage" value="<?php echo $img[0];?>">
 				
 					
@@ -164,7 +164,8 @@
 		?>
 							<div class="form-row mt-2">
 								<label class="col-sm-6 col-form-label"  for="name"><b> Required Quantity</b></label>
-								<input type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" value='<?php echo $buyerquantity;?>' <?php echo $strDisable; ?>/>
+								<input style="margin-bottom:5px;" type="text" class="form-control col-sm-2 mr-2" name="bquantity" placeholder="Quantity" id="bquantity" [(ngModel)]="person.name" value='<?php echo $buyerquantity;?>' <?php echo $strDisable; ?>/>
+						
 							<div class="col-sm-3">  
 						<select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability" value='<?php echo $buyerquantityunit;?>' <?php echo $strDisable2; ?>>
 								<option value="KG">KG</option>
