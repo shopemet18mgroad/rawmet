@@ -79,25 +79,29 @@
 					
 				</div>
 				<div class="col-md-6 col-sm-12 p-2">
-					<div class="input-feild">
 					
-							<div class="form-group p-1">
+					<div class="form-row">
+							 <div class="form-group col-md-6">
 				 <form class="user" action="<?php echo base_url()."Home_login";?>" method="post">
 								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User ID" size="25">
 							</div>
-						  <div class="form-group p-1">
+						 <div class="form-group col-md-6">
 							<input type="password" class="form-control" id="exampleInputPassword" name="pass" placeholder="Password" size="25">
 						  </div>
-						  <div class="form-group p-1">
-							<button name="submit" type="submit" onclick="return userid4()" class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>	
 						  </div>
-						  <div class="form-group p-1">
-						  <a href="<?php echo base_url();?>home_buyer_register"><button type="button" class="btn btn-warning">Register Here</button></a>
+						
+						  <div class="form-row mx-auto" style="width: 200px;">
+						  <div class="form-group pl-2">
+							<button name="submit" type="submit" onclick="return userid4()" class="btn btn-primary btn-sm"><i class="fa fa-sign-in"></i> Login</button>	
+						  </div>
+						  <div class="form-group pl-2">
+						  <a href="<?php echo base_url();?>home_buyer_register"><button type="button" class="btn btn-warning btn-sm">Register Here</button></a>
 
 						  </div>
+						</div>
 						
 						
-					 </div>
+						
 					
 					 
 
@@ -110,11 +114,7 @@
   <input type="checkbox" class="form-check-input" id="customCheck" name="optradio" value="Seller">
   <label class="form-check-label" for="customCheck">Seller</label>
 </div>
-<div class="form-check form-check-inline">
-  <input type="checkbox" class="form-check-input" id="customCheck3"name="optradio" value="Admin">
-  <label class="form-check-label" for="customCheck3">Admin</label>
-  <a class="pl-3" href="<?php echo base_url()."email_send";?>"><b><u>Forgot Password?</u></b></a>
-</div>
+
 </center>
 
 						  </form>  
@@ -856,11 +856,11 @@ Refund shall be subject to Buyer complying with Policies.<br/><br/>
 2.	Rawmet24 reserves the right to refuse to process Transactions by Buyers with a prior history of questionable charges including without limitation breach of any agreements by Buyer with Rawmet24 or breach/violation of any law or any charges imposed by Issuing Bank or breach of any policy.<br/>
 3.	Rawmet24 may do such checks as it deems fit before approving the receipt of/Buyers commitment to pay (for Cash On Delivery transactions) Transaction Price from the Buyer for security or other reasons at the discretion of Rawmet24. As a result of such check if Rawmet24 is not satisfied with the creditability of the Buyer or genuineness of the Transaction or other reasons at its sole discretion, Rawmet24 shall have the right to reject the receipt of / Buyers commitment to pay Transaction Price. For avoidance of doubt, it is hereby clarified that the ‘Cash on Delivery’ feature for payment, may be disabled for certain account users, at the sole discretion of Rawmet24.<br/>
 4.	Rawmet24 may delay notifying the payment confirmation i.e. informing Seller to Dispatch, if Rawmet24 deems suspicious or for Buyers conducting high transaction volumes to ensure safety of the Transaction and Transaction Price. In addition, Rawmet24 may hold Transaction Price and Rawmet24 may not inform Seller to Dispatch or remit Transaction Price to law enforcement officials (instead of refunding the same to Buyer) at the request of law enforcement officials or in the event the Buyer is engaged in any form of illegal activity.<br/>
-5.	The Buyer and Seller acknowledge that Rawmet24 will not be liable for any damages, interests or claims etc. resulting from not processing a Transaction/Transaction Price or any delay in processing a Transaction/Transaction Price which is beyond control of Rawmet24.<br/>
+5.	The Buyer and Seller acknowledge that Rawmet24 will not be liable for any damages, interests or claims etc. resulting from not processing a Transaction/Transaction Price or any delay in processing a Transaction/Transaction Price which is beyond control of Rawmet24.
 <h6>Compliance with Laws:</h6>
 1.	As required by applicable law, if the Customer makes a purchase of an amount equal to or above INR 2 00 000.00, the Customer will be required to upload a scanned copy of his/her PAN card on the Platform, within 4 days of making the purchase order, failing which, the purchase made by the Customer will be cancelled. The requirement to submit the PAN card arises only once and if it has been submitted once by the Customer, it need not be submitted again. The order of the Customer shall stand cancelled if there is a discrepancy between the name of the Customer and the name on the PAN Card.<br/>
 
-2.	Buyer and Seller shall comply with all the applicable laws (including without limitation Foreign Exchange Management Act, 1999 and the rules made and notifications issued there under and the Exchange Control Manual as may be issued by Reserve Bank of India from time to time, Customs Act, Information and Technology Act, 2000 as amended by the Information Technology (Amendment) Act 2008, Prevention of Money Laundering Act, 2002 and the rules made there under, Foreign Contribution Regulation Act, 1976 and the rules made there under, Income Tax Act, 1961 and the rules made there under, Export Import Policy of government of India) applicable to them respectively for using Payment Facility and Rawmet24 Website.<br/>
+2.	Buyer and Seller shall comply with all the applicable laws (including without limitation Foreign Exchange Management Act, 1999 and the rules made and notifications issued there under and the Exchange Control Manual as may be issued by Reserve Bank of India from time to time, Customs Act, Information and Technology Act, 2000 as amended by the Information Technology (Amendment) Act 2008, Prevention of Money Laundering Act, 2002 and the rules made there under, Foreign Contribution Regulation Act, 1976 and the rules made there under, Income Tax Act, 1961 and the rules made there under, Export Import Policy of government of India) applicable to them respectively for using Payment Facility and Rawmet24 Website.
 <h6>Buyer's arrangement with Issuing Bank:</h6>
 
 1.	All Valid Credit / Debit/ Cash Card/ and other payment instruments are processed using a Credit Card payment gateway or appropriate payment system infrastructure and the same will also be governed by the terms and conditions agreed to between the Buyer and the respective Issuing Bank and payment instrument issuing company.<br/>
@@ -874,62 +874,6 @@ Refund shall be subject to Buyer complying with Policies.<br/><br/>
     </div>
   </div>
   
-  
-  
-   <div class="card">
-    <div class="" id="headingten">
-      <h5 class="mb-0">
-        <button class="btn btn-outline-info" data-toggle="collapse" data-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
-          Rawmet24's Replacement Guarantee*
-        </button>
-      </h5>
-    </div>
-    <div id="collapseten" class="collapse" aria-labelledby="headingten" data-parent="#accordion">
-      <div class="card-body">
-    Rawmet24's Replacement Guarantee seeks to assist Buyers who have been defrauded by qualified sellers on the Website. The return policy period (Rawmet24's Replacement Guarantee) depends on the product category and the seller. Kindly click here to know the return policy period applicable for different categories. If at the time of delivery and/or within the applicable return policy period, if any defect is found, then the buyer of the product/s can ask for replacement of the product/s from the seller subject to the following terms and conditions:<br/><br/>
-	1.	Notify seller of any defects in the product/s at the time of delivery of the product/s and/or within the applicable return policy period and the same product/s will be replaced in return of the defective product/s.<br/>
-2.	Replacement can be for the entire product/s or part/s of the product subject to availability of the same with the seller<br/><br/>
-Following products shall not be eligible for return or replacement:<br/><br/>
-a. Damages due to misuse of product/raw materials;<br/>
-b. Incidental damage due to malfunctioning of product;<br/>
-c. Any consumable item which has been used/installed;<br/>
-d. Products with tampered or missing serial/UPC numbers;<br/>
-f. Any damage/defect which are not covered under the manufacturer's warranty<br/>
-g. Any product that is returned without all original packaging and accessories, including the box, manufacturer's packaging if any, and all other items originally included with the product/s delivered;<br/><br/>
-
-If Rawmet24 has any suspicion or knowledge that any of its buyers and sellers are involved in any activity that is intended to provide claims or information that is false or not genuine, Rawmet24 may also, while reserving its rights to initiate civil and/or criminal proceedings against such member buyers and sellers, at its sole discretion, suspend, block, restrict, cancel the Display Name of such buyers and sellers and/or disqualify that user and any related users from availing protection through this program. Customers who have been blocked for any suspicious or fraudulent activity on Rawmet24 will not be allowed to return their products.<br/><br/>
-Rawmet24 reserves its right to initiate civil and/or criminal proceedings against a user who, files a invalid and/or false claims or provides false, incomplete, or misleading information. In addition to the legal proceedings as aforesaid, Rawmet24 may at its sole discretion suspend, block, restrict, cancel the Display Name [and its related Display Names] of such user and/or disqualify that user and any related users from availing protection through this program. Any person who, knowingly and with intent to injure, defraud or deceive, files a Fraudulent Complaint containing false, incomplete, or misleading information may be guilty of a criminal offence and will be prosecuted to the fullest extent of the law.<br/><br/>
-You agree to indemnity and keep indemnifying Rawmet24.com and any future buyer of the device against all or any third party claims, demand, cost, expenses including attorney fees which may be suffered, incurred, undergone and / or sustained by Rawmet24.com, its affiliates or any future buyer due to usage of the device by you till date and you undertake to make good the same.<br/><br/>
-I confirm that all the data in the said device will be erased before handing it over under buy back program. I also confirm that in spite of erasing the data manually/electronically, if any data still accessible due any technical reason, Rawmet24.com, Seller or the Manufacturer shall not be responsible for the same and I will not approach Rawmet24.com for any retrieval of the data.<br/><br/>
-I hereby give my consent that my personal information that I have provided in connection with this buyback program might be processed, transferred and retained by the retailer and other entities involved in managing the program for the purposes of validating the information that I provided herein and for the administration of the program.<br/><br/>
-I agree to indemnity and keep indemnifying the Rawmet24.com and any future buyer of the old device against all or any third party claims, demand, cost, expenses including attorney fees which may be suffered, incurred, undergone and / or sustained by Rawmet24.com, its affiliates or any future buyer due to usage of the device by me till date and I undertake to make good the same.<br/><br/>
-I understand once a device is sent by me to Rawmet24, in no scenario can this device be returned back to me.<br/><br/>
-I understand that the new device delivery and the old device pickup will happen simultaneously (hand in hand) and I shall keep the old device ready to be given for exchange.<br/><br/>
-Products distributed as gifts from state sponsored or NGO funded distribution programs are not accepted for exchange under exchange offers.<br/>
-<h6>Indemnity</h6>
-You shall indemnify and hold harmless Rawmet24, its owner, licensee, affiliates, subsidiaries, group companies (as applicable) and their respective officers, directors, agents, and employees, from any claim or demand, or actions including reasonable attorneys' fees, made by any third party or penalty imposed due to or arising out of Your breach of this Terms of Use, privacy Policy and other Policies, or Your violation of any law, rules or regulations or the rights (including infringement of intellectual property rights) of a third party.<br/>
-<h6>Applicable Law</h6>
-Terms of Use shall be governed by and interpreted and construed in accordance with the laws of India. The place of jurisdiction shall be exclusively in Bangalore.<br/>
-<h6>Jurisdictional Issues/Sale in India Only</h6>
-Unless otherwise specified, the material on the Website is presented solely for the purpose of sale in India. Rawmet24 make no representation that materials in the Website are appropriate or available for use in other locations/Countries other than India. Those who choose to access this site from other locations/Countries other than India do so on their own initiative and Rawmet24 is not responsible for supply of products/refund for the products ordered from other locations/Countries other than India, compliance with local laws, if and to the extent local laws are applicable.<br/>
-<h6>Trademark, Copyright and Restriction</h6>
-This site is controlled and operated by Shopemet Networks Pvt Ltd and products are sold by respective Sellers. All material on this site, including images, illustrations, audio clips, and video clips, are protected by copyrights, trademarks, and other intellectual property rights. Material on Website is solely for Your personal, non-commercial, commercial, industrial use. You must not copy, reproduce, republish, upload, post, transmit or distribute such material in any way, including by email or other electronic means and whether directly or indirectly and You must not assist any other person to do so. Without the prior written consent of the owner, modification of the materials, use of the materials on any other website or networked computer environment or use of the materials for any purpose other than personal, non-commercial use is a violation of the copyrights, trademarks and other proprietary rights, and is prohibited. Any use for which You receive any remuneration, whether in money or otherwise, is a commercial use for the purposes of this clause.
-Trademark complaint
-<br/><br/>
-Rawmet24 respects the intellectual property of others. In case You feel that Your Trademark has been infringed, You can write to Rawmet24 at admin@rawmet24.com<br/>
-<h6>Product Description</h6>
-Rawmet24 we do not warrant that Product description or other content of this Website is accurate, <br/>
-<h6>Limitation of Liability</h6>
-IN NO EVENT SHALL RAWMET24 BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND IN CONNECTION WITH THESE TERMS OF USE, EVEN IF USER HAS BEEN INFORMED IN ADVANCE OF THE POSSIBILITY OF SUCH DAMAGES.
-
-
-
-	 
-      </div>
-    </div>
-	
-	
-  </div>
 </div></div>
                
 		
