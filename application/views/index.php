@@ -930,6 +930,222 @@ IN NO EVENT SHALL RAWMET24 BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT OR CO
 	
 	
   </div>
+  
+  
+  
+   <div class="card">
+    <div class="" id="headingeleven">
+      <h5 class="mb-0">
+        <button class="btn btn-outline-info" data-toggle="collapse" data-target="#collapseeleven" aria-expanded="false" aria-controls="collapseeleven">
+         POLICIES(Profanity Policy)
+        </button>
+      </h5>
+    </div>
+    <div id="collapseeleven" class="collapse" aria-labelledby="headingeleven" data-parent="#accordion">
+      <div class="card-body">
+    Rawmet24 prohibits the use of language that is racist, hateful, sexual or obscene in nature in a public area.<br/><br/>
+	This policy extends to text within listings, on Seller pages and all other areas of the site that another User may view. If the profane words are part of a title for the item being sold, we allow Sellers to 'blur' out the bulk of the offending word with asterisks (i.e., s*** or f***).<br/><br/>
+Please report any violations of this policy to the correct area for review:<br/>
+•	Report offensive Display Names<br/>
+•	Report offensive language in a listing or otherwise<br/>
+<br/>
+	If a feedback comment; or any communication made between Users on the Website; or email communication between Users in relation to transactions conducted on Website contain profanity, please review Our feedback removal policy and submit a request for action/removal.<br/>
+	Disciplinary action may result in the indefinite suspension of a User's account, temporary suspension, or a formal warning.</br>
+	Rawmet24 will consider the circumstances of an alleged policy violation and the user's trading records before taking action.</br>
+	Violations of this policy may result in a range of actions, including:<br/>
+1.	Limits placed on account privileges;<br/>
+2.	Loss of special status;<br/>
+3.	Account suspension.
+<br/><h6>Replacement Guarantee*</h6>
+	The Replacement Guarantee seeks to assist Buyers who have been defrauded by qualified sellers on the Website. If at the time of delivery and/or within specified days from the date of delivery of the product/s, if any defect is found, then the buyer of the product/s can ask for replacement of the product/s from the seller.<br/>
+	If Rawmet24 has suspicion or knowledge, that any of its buyers and sellers are involved in any activity that is intended to provide claims or information that is false, misleading or not genuine, then Rawmet24 may while reserving its rights to initiate civil and/or criminal proceedings against User may also at its sole discretion suspend, block, restrict, cancel the Display Name of such buyer and seller and /or disqualify that User and any related Users from availing protection through this program.<br/>
+	Rawmet24 reserves its right to initiate civil and/or criminal proceedings against a User who, files a invalid and/or false claims or provides false, incomplete, or misleading information. In addition to the legal proceedings as aforesaid, Rawmet24 may at its sole discretion suspend, block, restrict, cancel the Display Name [and its related Display Names] of such User and/or disqualify that User and any related Users from availing protection through this program. Any person who, knowingly and with intent to injure, defraud or deceive, files a Fraudulent Complaint containing false, incomplete, or misleading information may be guilty of a criminal offence and will be prosecuted to the fullest extent of the law.<br/>
+	For more details related to Replacement Policy, refer to s/help/cancellation-returns<br/>
+<h6>Returns Policy</h6>
+
+	Definition: 'Return' is defined as the action of giving back the item purchased by the Buyer to the Seller on the Rawmet24 website. Following situations may arise:<br/>
+1.	Item / raw material was defective<br/>
+2.	Item / raw material was damaged during the Shipping<br/>
+3.	Products was / were missing<br/>
+4.	Wrong item was sent by the Seller<br/>
+5.	Return could also result in refund of money in most of the cases.
+<br/>
+<h6>Points to be noted:</h6>
+	1.	Seller can always accept the return irrespective of the policy.<br/>
+2.	If Seller disagrees a return request, Buyer can file a dispute under the rawmet24 customer protect
+<br/>
+	We encourage the Buyer to review the listing before making the purchase decision. In case Buyer orders a wrong item, Buyer shall not be entitled to any return/refund.<br/><br/>
+Buyer needs to raise the return request within the return period applicable to the respective product.Once Buyer has raised a return request by contacting Us on Our Toll Free Number, Seller while closing the return ticket can select one of the following:
+<br/>
+	1.	Replace after shipment collection - Seller has agreed to wait for the logistics team to collect the shipment from the buyer before replacing it)<br/>
+2.	Refund after shipment collection - Seller has agreed to wait for the logistics team to collect the shipment from the buyer before refunding)<br/>
+3.	Refund without shipment collection - Seller has agreed to refund the buyer without expecting the original shipment back)<br/>
+4.	Replace without shipment collection - Seller has agreed to replace the order without expecting the original shipment back)<br/>
+5. In the event the Seller accepts the return request raised by the Buyer, Buyer will have to return the product and then the refund shall be credited to the Buyers account.<br/><br/>
+	In case the Seller doesn't close the ticket in 3 days from the date of intimation to the Seller about the refund request, the refund request shall be settled in favor of the Buyer.<br/>
+Further for returns being made by Buyer to the Seller of the product, the following parameters needs to be ensured by the Buyer:<br/>
+
+
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Condition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Metals (New)</td>
+      <td>Should be New Un Used And return as recieved</td>
+      
+    </tr>
+    <tr>
+      <td>Metals (Secondary)</td>
+      <td>Should be Un Used and return as recieved</td>
+     </tr>
+    <tr>
+      <td>Ferrous, Non Ferrous, Minor Metals</td>
+      <td>Should be Un Used and return as recieved</td>
+    </tr>
+	 <tr>
+      <td>Parts, Accessories, Machineries</td>
+      <td>Should be Un Installed and return as recieved</td>
+    </tr>
+	 <tr>
+      <td>Raw Materials (Others)</td>
+      <td>Should be Un Used and return as recieved</td>
+    </tr> 
+	<tr>
+      <td>Industrial Supplies</td>
+      <td>Should be Un Used, Un installed and return as recieved</td>
+    </tr>
+	<tr>
+      <td>RConstructions</td>
+      <td>Should be returned as received</td>
+    </tr> 
+  </tbody>
+</table>
+If the product being returned is not in accordance with the above parameters, then Buyer shall not be entitled to any refund.
+Shipping / Delivery cost for returning the product shall be borne and incurred by the Seller.<br/>
+<h6>Replacement</h6>
+Definition: Replacement is the action or process of replacing something in place of another. A Buyer can request for replacement whenever he is not happy with the item/materials, reason being Damaged in shipping, Defective item, Item(s) missing, wrong item shipped and the like.<br/><br/>
+Points to be noted:<br/>
+1.	Seller can always accept the return irrespective of the policy.<br/>
+2.	If Seller disagrees for a return request, Buyer can file a dispute under Rawmet24 Buyer/Customer Support<br/><br/>
+Buyer needs to raise the replacement request within the specified return period applicable to the respective product. Once Buyer has raised a replacement request by contacting Us on the contact provided on the Website. Once the replacement request has been raised, the following steps shall be followed:<br/>
+1.	Buyer is asked for "Reason for Return". Among others, the following are the leading reasons:<br/>
+2.	Shipping was damaged<br/>
+3.	Item was defective<br/>
+4.	Item Dead / expired on Arrival<br/>
+5.	Item(s) were missing<br/>
+6.	Wrong item sent<br/>
+7.	An intimation shall be provided to Seller seeking either "approval" or "rejection" of the replacement request.<br/>
+8.	In case the Seller accepts the replacement request, Buyer shall be required to return the product to the Seller and only after return of the product, Seller shall be obliged to provide the replacement product to the Buyer.<br/>
+9.	Incase Seller rejects the replacement request, Buyer can choose to raise a dispute by writing to admin@rawmet24.com<br/>
+
+In case the Seller doesn't have the product at all, Seller can provide the refund to the Buyer and Buyer shall be obligated to accept the refund in lieu of replacement. All the product parameters shall be required to be complied with in cases of replacement.<br/>
+If the Seller doesn't respond to the Buyer's replacement request, within specified period of days from the date of replacement request placed by the Buyer, refund shall be processed in favour of Buyer if it is available with rawmet24 and Seller shall be liable to refund amount paid to the Seller.<br/>
+All shipping and other replacement charges shall be borne and incurred by the Seller.<br/>
+<h6>Overview</h6>
+
+Generally, transactions are conducted smoothly on Rawmet24. However there may be some cases where both the Buyers and Sellers may face issues. At Rawmet24, we have a Dispute Resolution process in order to resolve disputes between Buyers and Sellers.<br/>
+
+<h6>What is a 'dispute'?</h6>
+A 'Dispute' can be defined as a disagreement between a Buyer and a Seller in connection with a transaction on the Website.<br/><br/>
+
+How does a 'dispute' occur in the rawmet24 search engine Marketplace?
+Disputes are filed as a result of a disagreement between the Buyer and the Seller. Disputes arise out of an issue that is raised by either party not being completely satisfied with the resolution of their complaint/issue.<br/>
+It is important that before a Buyer/Seller raises a dispute, they should attempt to solve the issue. Please note that whenever a Buyer raises a dispute, the Seller's payment for that order/material is put on hold immediately until the issue is resolved.<br/>
+
+<h6>How is a 'dispute' created?</h6>
+Whenever there is a disagreement, the Buyer can write to admin@rawmet24.com, while the Seller can also write to admin@rawmet24.com, in order to raise a dispute. Disputes can be raised at a particular transaction level.<br/>
+
+What are the various types of 'disputes'?<br/>
+Following are the indicative examples of potential disputes:<br/>
+1.	Wrong item received<br/>
+2.	Item Not as described, specified, quality<br/>
+3.	Damaged or Seal broken on Product<br/>
+4.	Part/Accessory missing<br/>
+5.	Item not Compatible<br/>
+6.	Seller Description/Specification Wrong<br/>
+7.	Defective (Functional issues)<br/>
+8.	Product not working and Manufacturer claims invalid Invoice<br/>
+<br/>
+In case the Seller rejects the return request of the Buyer, and Buyer raises a dispute, then Rawmet24 will try to mediate and resolve the dispute between both the parties. If the dispute is resolved in favour of the Buyer, a refund is provided once the product is returned to the Seller. If the dispute is settled in favour of the Seller, Buyer is not entitled to any refund.<br/>
+
+<h6>Rawmet24 customer/Buyer protect support</h6>
+In case of a dispute where the Seller is unable to provide a refund or a replacement, Rawmet24 will actively work towards reaching a resolution.
+The Buyer Protection Support covers Buyers who are unable to successfully resolve their dispute with the Seller or are not satisfied the resolution provided by the Seller.<br/>
+The Buyer can write to admin@rawmet24.com if the issue with the Seller is not resolved. Rawmet24's Support team will look into the case to check for possible fraud and if the Buyer has been blacklisted/blocked from making purchases on the Website. Only after verifying these facts, a dispute can be registered.<br/>
+In due course of resolution, Rawmet24's Support Team will facilitate a conference call including the Seller and the Buyer.<br/>
+When a dispute has been raised, Rawmet24 may provide both the parties access to each others Display Names, contact details including email addresses and other details pertaining to the dispute. Buyers and Sellers are subject to final consent from Rawmet24 for settling the dispute.<br/>
+<h6>Buyer Eligibility and Restrictions</h6>
+Only the Buyers who have purchased the product on Rawmet24 are eligible for the Buyer Protection Program.<br/>
+Buyers can file a dispute within 10 days from the date of delivery of the product
+Any damage or loss to the product after delivery will not be covered under this program and will completely be the Buyer's responsibility. Buyers should refuse to accept delivery if the item is damaged.<br/>
+To be able to take advantage of the Buyer Protection Program, Buyers should first contact the Seller and attempt to resolve the issue. If the Buyer doesn't hear from the Seller or is unable to resolve the issue with the Seller even after contact, a dispute can be raised with rawmet24 by writing an email to admin@rawmet24.com<br/>
+Fraudulent charges and claims are not covered under Rawmet24 customer protect / support
+Blacklisted and Blocked Buyers are not covered by the Buyer Protection Program.<br/>
+Rawmet24 does not provide any guarantee/warranty to Buyers for products sold on Rawmet24 against analytical/specification/technical/manufacturing defects.<br/>
+Raising disputes against Sellers does not automatically entitle the Buyer to a refund or replacement for the product purchased. Rawmet24 shall verify the disputes so raised and may process only such claims that are valid and genuine.<br/>
+Rawmet24 shall at no point be responsible for any direct or indirect losses, expenses, costs of any nature whatsoever that may be incurred by any Buyer/Seller.<br/>
+Claims of the nature of 'Buyer remorse' (i.e. instances where products are bought by the Buyer by mistake or where the Buyer chooses to change his/her mind with regard to the product purchased by him) will not be entertained through this program.<br/>
+Rawmet24 reserves its right to initiate civil and/or criminal proceedings against a User who, files an invalid and/or false claims or provides false, incomplete, or misleading information. In addition to the legal proceedings as aforesaid, Rawmet24 may at its sole discretion suspend, block, restrict, cancel the Display Name [and its related Display Names] of such User and/or disqualify that user and any related users from availing protection through this program.<br/>
+Decisions made by Rawmet24 under the Rawmet24 Customer Protect shall be final and binding on its Users.<br/>
+Rawmet24 / Shopemet Networks Pvt Ltd reserves the right to modify / discontinue Rawmet24 customer protect / support without any prior notice period to its Users.<br/>
+Through this support program, Rawmet24 shall not entertain claims of Buyers who have incurred loss due to delayed shipment or delivery of the item by the Seller.<br/>
+Rawmet24 Customer Support Team may seek additional information / clarification from Buyer to facilitate resolution of the dispute. In the event Buyer does not respond with information / clarification sought within 10 days of such request, the dispute shall be auto-closed in favour of the Seller.<br/>
+Whenever a chargeback comes from a payment gateway/bank, following situations may arise:<br/>
+1.	Item not received - Buyer hasn't received the item. Refund will be created in accordance with the applicable policies<br/>
+2.	Unauthorized - Buyer hasn't made this particular transaction. Refund will be created in accordance with the applicable policies.<br/>
+Seller expressly agrees that issuing the correct and complete invoice is the sole and primary responsibility of the Seller. Furthermore, Seller shall ensure that invoices state "Powered by Rawmet24" and failing to do so Seller will be liable for charge backs (as applicable).<br/>
+1.	Item not as described - meaning item is not what Buyer expected. Dispute will be decided in accordance with the applicable policies.<br/>
+
+<h6>Email Abuse & Threat Policy</h6>
+Private communication, including email correspondence, is not regulated by Rawmet24. Rawmet24, encourages its Users to be professional, courteous and respectful when communicating by email.<br/>
+However, Rawmet24 will investigate and can take action on certain types of unwanted emails that violate Rawmet24 policies.<br/>
+Such instances:<br/>
+Threats of Bodily Harm - Rawmet24 does not permit Users to send explicit threats of bodily harm.<br/>
+Misuse of Rawmet24 System - Rawmet24 allows Users to facilitate transactions through the Rawmet24 system, but will investigate any misuse of this service.<br/>
+Spoof (Fake) email - Rawmet24 will never ask you to provide sensitive information through email. In case you receive any spoof (fake) email, you are requested to report the same to Us through 'Contact Us' tab.<br/>
+Spam (Unsolicited Commercial email) - Rawmet24's spam policy applies only to unsolicited commercial messages sent by Rawmet24 Users. Rawmet24 Users are not allowed to send spam messages to other Users.<br/>
+Offers to Buy or Sell Outside of Rawmet24 – Rawmet24 prohibits email offers to buy or sell listed products outside of the Rawmet24 Website. Offers of this nature are a potential fraud risk for both Buyers and Sellers.<br/>
+Rawmet24 policy prohibits user-to-user threats of physical harm via any method including, phone, email and on Our public message boards.<br/>
+Violations of this policy may result in a range of actions, including:<br/>
+•	Limits on account privileges<br/>
+•	Account suspension<br/>
+•	Cancellation of listings<br/>
+•	Loss of special status<br/>
+•	Inactivation of buyer/seller<br/>
+•	Inactivation of listed products<br/>
+<h6>Other Businesses</h6>
+Rawmet24 does not take responsibility or liability for the actions, products, content and services on the Website, which are linked to Affiliates and / or third party websites using Website's APIs or otherwise. In addition, the Website may provide links to the third party websites of Our affiliated companies and certain other businesses for which, Rawmet24 assumes no responsibility for examining or evaluating the products and services offered by them. Rawmet24 do not warrant the offerings of, any of these businesses or individuals or the content of such third party website(s). Rawmet24 does not endorse, in any way, any third party website(s) or content thereof.<br/>
+
+Rawmet24 Infringement Verification (RIV) - Reporting Listing Violations<br/>
+Rawmet24 has put in place Rawmet24 Infringement Verification process so that intellectual property owners could easily report listings that infringe their rights. It is in Rawmet24's interest to ensure that infringing products are removed from the site, as they erode Buyer and good Seller trust.<br/>
+•	If you are a Verified Rights Owner and want to report a listing issue, see Rawmet24's RIV. Note: Only the intellectual property rights owner can report potentially infringing products or listings through RIV. If you are not the intellectual property rights owner, you can still help by getting in touch with the rights owner and encouraging them to Contact Us.<br/>
+•	If your listing was removed through RIV, and you believe that your listing was removed in error, please Contact Us 
+Rawmet24 does not and cannot verify that Sellers have the right or ability to sell or distribute their listed products. However, Rawmet24 is committed to removing infringing or unlicensed products once an authorized representative of the rights owner properly reports them to Rawmet24.<br/>
+RIV works to ensure that item listings do not infringe upon the copyright, trademark or other intellectual property rights of third parties. RIV participants have the ability to identify and request removal of allegedly infringing products and materials.<br/>
+Any person or company who holds intellectual property rights (such as a copyright, trademark or patent) which may be infringed upon by products listed on Rawmet24 is encouraged to become a RIV member.<br/><br/>
+Program membership entitles you (Verified Rights Owner) to the following benefits:<br/>
+•	Rapid response by Rawmet24 in ending listings reported by you (as the Verified Rights Owner) as allegedly infringing<br/>
+•	Dedicated priority email queues for reporting alleged infringements<br/>
+•	The ability to obtain identifying information about Rawmet24's users'<br/>
+
+<h6>How to Become a RIV Member</h6>
+To join the RIV, we require only that you fully complete and email Us a Notice of Infringement application form specifying the allegedly infringing listings and the infringed work, complete with an original authorized signature. The information requested by the Notice of Infringement is designed to ensure that parties reporting products are authorized by the rights owners, and to enable Rawmet24 to easily identify the material or listing to be ended.<br/><br/>
+In the interest of keeping the process easy and simple, after we receive your first Notice of Infringement in hard copy, future notices can be sent to Us by email at admin@rawmet24.com.<br/><br/>
+Note: In your notice of infringement, you shall be required to identify the individual listing which is infringing your intellectual property. General notices shall not be accepted.<br/>
+We are happy to receive such information, but must advise that we may be limited in Our ability to respond to your request absent formal notice from an authorized rights owner.
+Notice of Infringement
+
+
+      </div>
+    </div>
+  </div>
+  
+  
 </div></div>
                
 		
