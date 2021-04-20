@@ -84,7 +84,7 @@ class Customer_seller_response_renego extends CI_Controller {
 		//print_r($data['sqldata5']); die;	
 		
 		
-		 $data['seller_mbuyreq'] = $this->Admin_model->getbuyer_req_approval($id, $sess['sessi']);
+		
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/seller_response_renego',$data);
 		$this->load->view('customer/footer');
@@ -103,6 +103,25 @@ class Customer_seller_response_renego extends CI_Controller {
 		$this->load->view('customer/seller_response_renego');
 		$this->load->view('customer/footer');
 			
+	}
+	
+	
+	 function rejectProduct2(){
+		$this->load->model('Admin_model');
+		$id = $this->uri->segment(3);
+		$id = $this->input->post('id');		
+		//$active = array('seller_mbuyreq_id'=> $seller_mbuyreq_id1);
+		//$this->db->where('buyer_req_response',$active);
+		//$data['status'] = 1;
+		
+		$data = array('status'=>2);
+		$comp = array('id'=>$id);
+		$comp2 = array('id'=>$id);
+		$this->Admin_model->update_custom('seller_mbuyreq',$data,$comp,$comp);
+	
+		exit;
+		
+		 
 	}
 	
 }

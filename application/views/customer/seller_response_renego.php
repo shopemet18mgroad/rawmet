@@ -49,26 +49,14 @@
  		
 		<td style="font-size:15px; width:150px;"><b style="text-decoration: underline;">Seller's Offer</b> <br /><p style="color:blue;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></p> 
 		
-		
-	<?php 
-			$strDisable = "";
-			$buyerappoval = "";
-			if($seller_mbuyreq){
-				$buyerappoval = $seller_mbuyreq[0]->status; 
-				if($buyerappoval !=""){
-					$strDisable = "disabled";
-				}				
-			}
-			
-		?>
-		
-		
 		<button type="button" class="btn btn-outline-primary  btn-sm">
 			
 			<?php echo "<a href='javascript:approveProduct(\"".$sqldata4[0]->id."\")'> <i class='fas fa-check'></i></a> "; 
-                 ?> </button>	 
+                 ?></button>	 
 			
-		<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
+		<button type="button" class="btn btn-outline-danger btn-sm">
+		<?php echo "<a href='javascript:rejectProduct2(\"".$sqldata4[0]->id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
+		</button>
 	<hr >
 	  <b><?php  if($sqldata[0]->status == 0) {echo 'Pending';}else if($sqldata[0]->status == 2) {echo 'Rejected';}else if($sqldata[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'customer_quotation2/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id. " data-toggle='modal' data-target='#exampleModal' target='_blank'><i class='fa fa-upload'></i></a>";}else if($sqldata[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 	
@@ -245,7 +233,7 @@
 
         <!--Grid column-->
         <div class="col-md-6">
-		  <p><b style="color:orange">Seller Offers :</b> <a href="<?php echo  $sqldata[0]->sellerid;?>">6.View</a> </p>		
+		 
           <p><b>Supper Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> 
 		  <p><b>Category :</b> <?php echo  $sqldata[0]->category;?></p>
 		  <p><b>Stock :</b> <?php echo  $sqldata[0]->quantity. " / " .$sqldata[0]->units;?>"</p> 
@@ -1356,5 +1344,43 @@ function rejectproduct(id)
 
 
 }
+</script>
+<script>
+function rejectProduct2(id)
+{
+  alert(id);
+  swal({
+  title: "Are you sure?",
+  //content: "<input type='text' />",
+  text: "hththt",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'Customer_seller_response_renego/rejectProduct2',
+                         data:'id='+id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+ 
 </script>
       

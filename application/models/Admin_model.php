@@ -2564,6 +2564,7 @@ function getdatafromselquotenegotate() {
 				$this->db->select('*');
 				$this->db->where('seller_mbuyreq_id',$id);
 				$this->db->where('bname',$bname);
+				$this->db->where('status',1);
 				$query = $this->db->get('buyer_req_response');
 				$result = $query->result();	
 				return $result;
@@ -2638,15 +2639,7 @@ function getdatafromselquotenegotate() {
 				return $result;
 			}	
 			
-			 function getbuyer_req_approval($id, $bname) {
-				$this->db->select('*');
-				$this->db->where('status',1);
-				$this->db->where('id',$id);
-				$this->db->where('bname',$bname);
-				$query = $this->db->get('seller_mbuyreq');
-				$result = $query->result();	
-				return $result;
-			} 
+			
 		    
    }
    

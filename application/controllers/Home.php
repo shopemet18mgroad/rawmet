@@ -152,6 +152,7 @@ class Home extends CI_Controller {
 	
 	
 	
+	
 
 	
 	$data2 .= ' <input type="hidden" class="form-control" id="category" name="category"  value="'.  $dat['category'].'">
@@ -183,6 +184,11 @@ class Home extends CI_Controller {
 	<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="'. $dat['productvalidityto'].'">
 	
 	<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="'.  $dat['supplyunits'].'">
+	
+	
+	
+			
+	
 	
 	
   <div class="row" style="margin-top:30px;">
@@ -518,7 +524,7 @@ $data2 .= '</form>
 	
   <div class="row" style="margin-top:30px;">
     <div class="col">
-       <input type="text" class="form-control" id="bquantity" name="bquantity" placeholder="Quantity:">
+       <input type="text" class="form-control" id="bquantity" name="bquantity" placeholder="Quantity:" >
     </div>
     <div class="col">
       <select class="form-control col-sm-0" id="bunits" name="bunits">
@@ -729,4 +735,6 @@ private function upload_files($nameid){
 	 return $datar;
     }
 	}
+	
+			
 	
