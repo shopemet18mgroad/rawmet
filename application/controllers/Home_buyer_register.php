@@ -50,9 +50,8 @@ class Home_buyer_register extends CI_Controller {
 
 		$status = $this->Admin_model->insert('buyer_register', $data2);
 		header('location: '.base_url().'home/index/');
+		}
 
-		  
-        }
         $this->load->library('session');
 		$sess = array('sessi'=>$this->session->userdata('username'));
        
