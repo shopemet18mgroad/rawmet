@@ -50,12 +50,23 @@
 		<td style="font-size:15px; width:150px;"><b style="text-decoration: underline;">Seller's Offer</b> <br /><p style="color:blue;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></p> 
 		
 		
+	<?php 
+			$strDisable = "";
+			$buyerappoval = "";
+			if($seller_mbuyreq){
+				$buyerappoval = $seller_mbuyreq[0]->status; 
+				if($buyerappoval !=""){
+					$strDisable = "disabled";
+				}				
+			}
+			
+		?>
 		
 		
 		<button type="button" class="btn btn-outline-primary  btn-sm">
 			
 			<?php echo "<a href='javascript:approveProduct(\"".$sqldata4[0]->id."\")'> <i class='fas fa-check'></i></a> "; 
-                 ?></button>	 
+                 ?> </button>	 
 			
 		<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
 	<hr >

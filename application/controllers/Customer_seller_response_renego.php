@@ -82,6 +82,9 @@ class Customer_seller_response_renego extends CI_Controller {
 		
 		$data['sqldata5'] = $this->Admin_model->getdatafrombuyer_req_response5();		
 		//print_r($data['sqldata5']); die;	
+		
+		
+		 $data['seller_mbuyreq'] = $this->Admin_model->getbuyer_req_approval($id, $sess['sessi']);
 		$this->load->view('customer/header',$sess);
 		$this->load->view('customer/seller_response_renego',$data);
 		$this->load->view('customer/footer');
