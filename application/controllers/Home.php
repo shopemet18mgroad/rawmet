@@ -186,8 +186,10 @@ class Home extends CI_Controller {
 	
 	
   <div class="row" style="margin-top:30px;">
-    <div class="col">
-       <input type="text" class="form-control" id="bquantity" name="bquantity" placeholder="Required Quantity:">
+    <p>Required </br>Quantity</p>
+	<div class="col">
+	
+       <input type="text" class="form-control" id="bquantity" name="bquantity">
     </div>
     <div class="col">
       <select class="form-control col-sm-0" id="bunits" name="bunits">
@@ -205,8 +207,10 @@ class Home extends CI_Controller {
   </div>
   <br/>
     <div style="float:left" class="row">
-    <div style="float:left" class="col">
-      <input type="text" class="form-control" id="bprice" placeholder="Ask for Your Price" name="bprice">
+<p>Ask for </br> Your Price</p>   
+   <div style="float:left" class="col">
+	
+      <input type="text" class="form-control" id="bprice" name="bprice">
     </div>
     <div class="col">
        <select class="form-control col-sm-0" id="bsupplyability" name="bsupplyability">
