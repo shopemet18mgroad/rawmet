@@ -156,7 +156,13 @@
 		
 		<td><button type="button" class="btn btn-outline-primary  btn-sm">
 <?php echo "<a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?>		
-			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
+			
+			
+			<button type="button" class="btn btn-outline-danger btn-sm">
+			<?php echo "<a href='javascript:rejectProduct4(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
+			</button>
+			
+			
 			<br/>
 			
 			 <b><?php  if($sqldata4[0]->sel_status == 0) {echo 'Pending';}else if($sqldata4[0]->sel_status == 2) {echo 'Rejected';}else if($sqldata4[0]->sel_status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation12/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->sel_status == 5) {echo 'Approved-check in final Approval!';}?></b>
@@ -226,9 +232,9 @@ function finalapproveProduct(seller_mbuyreq_id)
 {
   alert(seller_mbuyreq_id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   //content: "<input type='text' />",
-  text: "hththt",
+  text: "Approve",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -262,9 +268,9 @@ function buyerfinalrejectProduct(seller_mbuyreq_id)
 {
   alert(seller_mbuyreq_id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   //content: "<input type='text' />",
-  text: "hththt",
+  text: "Reject",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -305,9 +311,9 @@ function approveProduct(seller_mbuyreq_id)
 {
   alert(seller_mbuyreq_id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   //content: "<input type='text' />",
-  text: "hththt",
+  text: "Approve",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -343,9 +349,9 @@ function rejectProduct(seller_mbuyreq_id)
 {
   alert(seller_mbuyreq_id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   //content: "<input type='text' />",
-  text: "hththt",
+  text: "Reject",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -355,6 +361,44 @@ function rejectProduct(seller_mbuyreq_id)
                      $.ajax({
                          type:'post',
                          url:$baseURL+'vendor_buyerResponse_req/rejectProduct',
+                         data:'seller_mbuyreq_id='+seller_mbuyreq_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+ 
+</script>
+<script>
+function rejectProduct4(seller_mbuyreq_id)
+{
+  alert(seller_mbuyreq_id);
+  swal({
+  title: "Are you sure want to?",
+  //content: "<input type='text' />",
+  text: "Reject",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'vendor_buyerResponse_req/rejectProduct4',
                          data:'seller_mbuyreq_id='+seller_mbuyreq_id,
                          success:function(msg){
                              if(msg){

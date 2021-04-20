@@ -94,7 +94,33 @@ class vendor_buyerResponse_req extends CI_Controller {
 		 
 	}
 	 
-	
+		function rejectProduct4(){
+		$this->load->model('Admin_model');
+		$id = $this->uri->segment(3);
+		$id = $this->input->post('seller_mbuyreq_id');	
+		//$id = $this->input->post('seller_mbuyreq_id');			
+		//$active = array('seller_mbuyreq_id'=> $seller_mbuyreq_id1);
+		//$this->db->where('buyer_req_response',$active);
+		//$data['status'] = 1;
+		$data = array('buyer_approval'=>5);
+		$data2 = array('status'=>5);
+		$data3 = array('status'=>5);
+		$data4 = array('sel_status'=>2);
+		
+		$comp = array('id'=>$id);
+		$comp2 = array('seller_mbuyreq_id'=>$id);
+		$comp3 = array('seller_mbuyreq_id'=>$id);
+		$comp4 = array('seller_mbuyreq_id'=>$id);
+		
+		$this->Admin_model->update_custom('seller_req_response',$data,$comp2,$comp2,$comp2,$comp2);
+		$this->Admin_model->update_custom('seller_mbuyreq',$data2,$comp,$comp,$comp,$comp);
+		$this->Admin_model->update_custom('buyer_req_response',$data3,$comp3,$comp3,$comp3,$comp3);
+		
+		$this->Admin_model->update_custom('buyer_final_req',$data4,$comp4,$comp4,$comp4,$comp4);
+		
+
+		exit;
+	}
 	 
 	
 		

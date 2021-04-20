@@ -142,7 +142,11 @@
 			<?php  echo "   <a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'> <i class='fas fa-check'></i></a> ";
                  ?></button>	 
 			
-			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>
+			
+			
+			<button type="button" class="btn btn-outline-danger btn-sm">
+		<?php echo "<a href='javascript:rejectProduct3(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
+		</button>
 			
 		<br />
 		<hr>
@@ -220,7 +224,7 @@
 
           <div class="view overlay z-depth-1-half">
             <?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="100%" height="100%">
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="100%">
             <div class="mask rgba-white-light"></div>
 			 <br />
 			 <hr>
@@ -1075,9 +1079,9 @@ function finalapproveProduct(seller_mbuyreq_id)
 {
   alert(seller_mbuyreq_id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   //content: "<input type='text' />",
-  text: "hththt",
+  text: "Approve",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -1112,9 +1116,9 @@ function finalrejectProduct(seller_mbuyreq_id)
 {
   alert(seller_mbuyreq_id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   //content: "<input type='text' />",
-  text: "hththt",
+  text: "Reject",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -1151,9 +1155,9 @@ function approveProduct(id)
 {
   alert(id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   content: "<input type='text' />",
-  text: "hththt",
+  text: "Approve",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -1189,9 +1193,9 @@ function rejectproduct(id)
 {
   alert(id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   content: "<input type='text' />",
-  text: "hththt",
+  text: "Reject",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -1275,9 +1279,9 @@ function approveProduct(id)
 {
   alert(id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   content: "<input type='text' />",
-  text: "hththt",
+  text: "Approve",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -1313,9 +1317,9 @@ function rejectproduct(id)
 {
   alert(id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   content: "<input type='text' />",
-  text: "hththt",
+  text: "Reject",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -1350,9 +1354,9 @@ function rejectProduct2(id)
 {
   alert(id);
   swal({
-  title: "Are you sure?",
+  title: "Are you sure want to?",
   //content: "<input type='text' />",
-  text: "hththt",
+  text: "Reject",
   icon: "warning",
   buttons: true,
   dangerMode: true,
@@ -1384,3 +1388,42 @@ function rejectProduct2(id)
  
 </script>
       
+	  
+	  <script>
+function rejectProduct3(seller_mbuyreq_id)
+{
+  alert(seller_mbuyreq_id);
+  swal({
+  title: "Are you sure want to?",
+  //content: "<input type='text' />",
+  text: "Reject",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+ .then((willDelete) => {
+  if (willDelete) {   
+                     $.ajax({
+                         type:'post',
+                         url:$baseURL+'Customer_seller_response_renego/rejectProduct3',
+                         data:'seller_mbuyreq_id='+seller_mbuyreq_id,
+                         success:function(msg){
+                             if(msg){
+                                swal("Information updated success.");
+                             }else{
+                                swal("Information not updated.");
+                             }
+                             location.reload();
+                         }
+                     });
+
+
+  }else {
+    swal("Approved!");
+  }  
+});
+
+
+}
+ 
+</script>
