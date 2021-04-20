@@ -209,10 +209,10 @@
 India
 <hr>
   <li style="display: inline;  padding: 8px;color:#808080">  <a href="#"  data-toggle="modal" data-target="#aboutus" style="color:#808080">About Us</a></li>
-  <li style="display: inline;  padding: 8px;color:#808080"><a style="color:#808080"  href="#">Terms of Use</a></li>
+  <li style="display: inline;  padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#termsandcondition"  href="#">Terms of Use</a></li>
   <li style="display: inline; float:right ; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#privacypolicy" href="#">Privacy Policy</a></li>
   <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#paymentpolicy" href="#">Payments Policy</a></li>
-   <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#termsandcondition"  href="#">Seller Terms and Conditions</a></li>
+   <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080"  href="#">Seller Terms and Conditions</a></li>
     <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#contactus" href="#">Contact Us</a></li>
 </ul> 
  
