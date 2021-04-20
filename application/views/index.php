@@ -29,17 +29,20 @@
    <script src=" http://pagination.js.org"></script>
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    <script>
-   div.dataTables_wrapper {
-        margin-bottom: 3em;
+   div.dataTables_wrapper 
+    {
+      margin-bottom: 3em;
     }
 </script>
  
 <style>
-      img {
-        max-width: 100%;
+      img 
+	  {
+        width: 100%;
         height: auto;
       }
-    </style>
+
+</style>
 
 
 </head>
@@ -71,9 +74,7 @@
 		<div class="container">
 			<div class="row branding">
 				<div class="col-md-6">
-					<a href="./home" title="Rawmet Logo">
-			 
-				</a>
+					<a href="./home" title="Rawmet Logo"></a>
 				
 			 	
 					
@@ -92,7 +93,9 @@
 							<button name="submit" type="submit" onclick="return userid4()" class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>	
 						  </div>
 						  <div class="form-group p-1">
-						  <a href="<?php echo base_url();?>home_buyer_register"><button type="button" class="btn btn-warning">Register Here</button></a>
+						  
+						  <a href="<?php echo base_url();?>home_buyer_register">
+						  <button type="button" class="btn btn-warning"> Register Here </button></a>
 
 						  </div>
 						

@@ -5,7 +5,6 @@ class Admin_approvebuyer extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
-	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
 	 *	- or -
@@ -13,7 +12,6 @@ class Admin_approvebuyer extends CI_Controller {
 	 *	- or -
 	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
-	 *
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.php
@@ -45,19 +43,21 @@ class Admin_approvebuyer extends CI_Controller {
 			}
 	}
 	
-	public function approve_buyer(){
+	public function approve_buyer()
+	{
 		
-		$buyerid= $this->uri->segment(3);
-		
+		 $buyerid= $this->uri->segment(3);
 		$buyerid = urldecode($buyerid);
 		//print_r($bcompanytype);die;
 		$this->load->model('Admin_model');
 		$app= array('boptions'=>true);
 		$adaction2 = array('buyerid'=>$buyerid);
 		$query = $this->Admin_model->update_custom('buyer_register', $app, $adaction2, $adaction2);
-		if($buyerid){
+		if($buyerid)
+		{
 			echo "HI";
-		}else{
+		}else
+		{
 			echo "BYE";
 		}
 	

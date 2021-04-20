@@ -56,7 +56,6 @@ class Customer_postbuyreq  extends CI_Controller {
 			$email = $this->input->post('email');
 			$contactnumber = $this->input->post('contactnumber');
 			$iagreee = $this->input->post('iagreee');
-			
 			$_FILES['uploadimage']['name'];
 			$pic_array = self::upload_files('uploadimage');
 			

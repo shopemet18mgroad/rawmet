@@ -74,7 +74,7 @@ class Home extends CI_Controller {
 
  $data2 .='<div class="">';
  $data2 .='<div class="row shadow">';
- $data2 .=' <div style="border:1px solid lightgray" class="col-2">
+ $data2 .=' <div style="border:1px solid lightgray" class="col-sm">
 	<p>Seller ID:<b>'.$dat['sellerid'].' </b></p>
 	<hr />
 	<p>Category:<b>'.$dat['category'].' </b></p>
@@ -84,7 +84,7 @@ class Home extends CI_Controller {
 	$data2 .= ' <div style="border:1px solid lightgray ;padding:15px;" class="col-10">';
  
 	$data2 .= '  <div class="row">';
-	$data2 .= '   <div style="" class="col-3">';
+	$data2 .= '   <div style="" class="col-sm">';
 		
     
 	
@@ -96,7 +96,7 @@ class Home extends CI_Controller {
 			}
 			
 	$data2 .= ' </div>';		
-	$data2 .= '  <div style="" class="col-6">
+	$data2 .= '  <div style="" class="col-sm">
 	
 	
 	<h3>'.$dat['productname'].'</h3><small> <b>Last Modified:</b> '.$dat['datetime'].' | <b>Validity :</b> '.$dat['productvalidityto'].' <br/>Estimated Delivery : <b>'.$dat['estdeltime'].'</b></small><br>
@@ -119,7 +119,7 @@ class Home extends CI_Controller {
  </div>
 	</div>';
 	
-	$data2 .= ' <div style="padding-top:20px" class="col-3">
+	$data2 .= ' <div style="padding-top:40px 80px" class="col-sm">
 	 
 	 
 	<img style="float:right" class="img" src="'.base_url().'web_files/uploads/virifed.png'.'" alt="Chania" width="60px" height="20px">
@@ -444,7 +444,7 @@ $data2 .= '</form>
 	$data2 .= '  <div style="" class="col-6">
 	
 	
-	<h3>'.$dat['productname'].'</h3><small> <b>Last Modified:</b> '.$dat['datetime'].' | <b>Validity :</b> '.$dat['productvalidityto'].' <br/>Estimated Delivery : <b>'.$dat['estdeltime'].'</b></small><br>
+	<h3>'.$dat['productname'].'</h3><small> <b>Last Modified:</b> '.$dat['datetime'].' | <br /> <b>Validity :</b> '.$dat['productvalidityto'].' <br/>Estimated Delivery : <b>'.$dat['estdeltime'].'</b></small><br>
 	
 		<span style="background:green; color:white;border-radius:5px;" class="heading">4.1</span>
 		<span class="fa fa-star checked"></span>
