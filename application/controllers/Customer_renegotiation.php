@@ -126,8 +126,43 @@ class Customer_renegotiation extends CI_Controller {
 	}
 	
 	
+	/* public function reject_requotes(){
+			
+		$this->load->model('Admin_model');
+		//$sellerpostproduct_id =$this->uri->segment(3);
+		$buyerid = $this->uri->segment(4);
+		$sellerpostproduct_id = $this->uri->segment(3);
+		$retriveval = array('buyerid'=>$buyerid,'sellerpostproduct_id'=>$sellerpostproduct_id);
+
+		//
+		
+		$this->load->model('Admin_model');
+		$app= array('buyerapprove'=>2);
+		$query = $this->Admin_model->update_custom('selquotenegotate', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Customer_renegotiation/index/'.$sellerpostproduct_id."/".$buyerid);
+		
+		die;
 	
+	} */
 		 
 	
+	/* public function reject_requotes_seller(){
+			
+		$this->load->model('Admin_model');
+		//$sellerpostproduct_id =$this->uri->segment(3);
+		$buyerid = $this->uri->segment(4);
+		$sellerpostproduct_id = $this->uri->segment(3);
+		$retriveval = array('buyerid'=>$buyerid,'sellerpostproduct_id'=>$sellerpostproduct_id);
+
+		//
+		
+		$this->load->model('Admin_model');
+		$app= array('custapprove'=>2);
+		$query = $this->Admin_model->update_custom('vend_renego', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Customer_renegotiation/index/'.$sellerpostproduct_id."/".$buyerid);
+		
+		die;
+	
+	} */
 	
 }

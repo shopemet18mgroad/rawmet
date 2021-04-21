@@ -52,7 +52,7 @@
 	<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
 	</button>
 			
-			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>	
+			<button type="button" class="btn btn-outline-danger btn-sm"><!--<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject_quotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>">--><i class="fa fa-times" aria-hidden="true"></i><!--</a>--></button>	
 		
 </td>	
 
