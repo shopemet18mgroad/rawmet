@@ -45,8 +45,9 @@
 			<td data-label="Product Name"><?php echo $row->productname;?></td>
 			<td data-label="Description"><?php echo $row->description;?></td>
 			<td data-label="Quantity"><?php echo $row->quantity."";echo $row->units;?></td>
-			<td data-label="Required Date"><?php echo $row->requireddate;?></td>
-			<td data-label="Last Date"><?php echo $row->lastdate;?></td>
+			<td data-label="Required Date"><?php echo date('d-m-Y H:i',strtotime($row->requireddate));?></td>
+			<td data-label="Last Date"><?php echo date('d-m-Y H:i',strtotime($row->lastdate));?></td>
+			
 			<td data-label="Images"><?php $img = unserialize($row->uploadimage)?>
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="55px"></td>
 			<td data-label="Action"><!--<a href="<?php // echo base_url()."Vendor_managebuyreq/approve_requirement/".$proid."/".urldecode($row->bname);?>"><button type="button" class="btn btn-success">Approve</button></a>-->

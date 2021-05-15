@@ -93,7 +93,7 @@
 							<input type="hidden" class="form-control" id="pstates" name="pstates"  value="<?php echo  $sqldata[0]->pstates;?>">
 							
 							
-								<h6><b>Posted Date: <?php echo  $sqldata[0]->datetime;?></b></h6>
+								<h6><b>Posted Date: <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->datetime));?></b></h6>
 							<input type="hidden" class="form-control" id="datetime" name="datetime"  value="<?php echo  $sqldata[0]->datetime;?>">
 							
 								<h6><b>Estimated Delivery: <?php echo  $sqldata[0]->estdeltime;?></b></h6>
@@ -111,15 +111,15 @@
 				  <div class="col-sm-5 p-2">
 					<div class="row p-2">
 					<div class="col-sm-10">
-							<h6 style="color:purple;"><b>Validity Till: <?php echo  $sqldata[0]->productvalidityto;?></b></h6>
+							<h6 style="color:purple;"><b>Validity Till: <?php echo  date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityto));?></b></h6>
 							<input type="hidden" class="form-control" id="productvalidityto" name="productvalidityto"  value="<?php echo  $sqldata[0]->productvalidityto;?>">
 								
 							<input type="hidden" class="form-control" id="supplyunits" name="supplyunits"  value="<?php echo  $sqldata[0]->supplyunits;?>">
 							
 							<div class="form-check mt-3 text-left">
 								
-							<center><h4 style="color:blue;"><b>
-								Negotiate Here</b></h4></center>
+						<h4 style="color:blue;"><b>
+								Negotiate Here</b></h4>
 							</div>
   
 							<?php 
@@ -196,7 +196,7 @@
 					
 						
 							
-							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" >
+							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" <?php echo $strDisable; ?>>
 							
 							
 							

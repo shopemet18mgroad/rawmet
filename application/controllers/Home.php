@@ -99,7 +99,7 @@ class Home extends CI_Controller {
 	$data2 .= '  <div style="" class="col-sm">
 	
 	
-	<h3>'.$dat['productname'].'</h3><small> <b>Last Modified:</b> '.$dat['datetime'].' | <b>Validity :</b> '.$dat['productvalidityto'].' <br/>Estimated Delivery : <b>'.$dat['estdeltime'].'</b></small><br>
+	<h3>'.$dat['productname'].'</h3><small> <b>Last Modified:</b> '  .date('d-m-Y H:i',strtotime($dat['datetime']))	.' <br/><b>Validity :</b> '.date('d-m-Y H:i',strtotime($dat['productvalidityto'])).' <br/>Estimated Delivery : <b>'.$dat['estdeltime'].'</b></small><br>
 	
 		<span style="background:green; color:white;border-radius:5px;" class="heading">4.1</span>
 		<span class="fa fa-star checked"></span>

@@ -296,12 +296,12 @@ $strDisable2 = "";
 								
 
 								
-<h6><b>Posted Date:</b></br> <?php echo  $sqldata[0]->datetime;?></h6>
+<h6><b>Posted Date:</b></br> <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->datetime)) ;?></h6>
 								
 <h6><b>Estimated Delivery: </b><br> <?php echo  $sqldata[0]->estdeltime;?></h6>
 							
 								
-<h6 style="color:purple;"><b>Validity Till:</b><br> <?php echo  $sqldata[0]->productvalidityto;?></h6>
+<h6 style="color:purple;"><b>Validity Till:</b><br> <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityto)) ;?></h6>
 </div>
 		
 		

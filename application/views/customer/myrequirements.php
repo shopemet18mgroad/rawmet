@@ -31,8 +31,7 @@
 			<th>Description</th>
 			<th>Quantity</th>
 			<th>Required Date</th>
-			<th>Last Date</th>
-			<th>Email</th>		 
+			<th>Last Date</th>		 
 			<th>Response</th>			 
       </tr>
     </thead>
@@ -47,9 +46,8 @@
                <td data-label='Product Name'>".$seller->productname."</td>
                <td data-label='Description'>".$seller->description."</td>
                <td data-label='Quantity'>".$seller->seller_qua." ".$seller->units."</td>
-               <td data-label='Required Date'>".$seller->requireddate."</td> 
-               <td data-label='Last Date'>".$seller->lastdate."</td> 
-               <td data-label='Email'>".$seller->lastdate."</td> 
+               <td data-label='Required Date'>".date('d-m-Y H:i',strtotime($seller->requireddate))."</td> 
+               <td data-label='Last Date'>".date('d-m-Y H:i',strtotime($seller->lastdate))."</td> 
                <td data-label='Response'> <a  href='javascript:showUserData(\"".$seller->productid."\")'>".$seller->cnt." Res</a></td>     
            </tr>
 			";

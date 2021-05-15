@@ -59,7 +59,7 @@
 								
 							</tr>
 							
-								<td><b>Requried Rate:</b><?php echo$sqldata[0]->requireddate."</br>"." <b> Last Date</b> ".$sqldata[0]->lastdate;?></td>
+								<td><b>Requried Rate:</b><?php echo date('d-m-Y H:i',strtotime($sqldata[0]->requireddate))."</br>"." <b> Last Date</b> ".date('d-m-Y H:i',strtotime($sqldata[0]->lastdate));?></td>
 							</tr>
 							
 <td><b>Customer Uploaded PDF:</b>

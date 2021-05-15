@@ -86,10 +86,12 @@
 								<td><b>Estimated Delivery Time:</b>&nbsp;&nbsp;<?php echo $sqldata[0]->estdeltime;?></td>
 							</tr> 
 							<tr>
-								<td><b>Posted On:&nbsp;&nbsp;</b><?php echo $sqldata[0]->productvalidityfrom;?></td>
+								<td><b>Posted On:&nbsp;&nbsp;</b><?php echo  date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityfrom))
+								;?></td>
 							</tr>
 							<tr>
-								<td><b>Validity Till:</b>&nbsp;&nbsp;<?php echo $sqldata[0]->productvalidityto;?></td>
+								<td><b>Validity Till:</b>&nbsp;&nbsp;<?php echo date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityto)) 
+								;?></td>
 							</tr>
 							<tr>
 								<td><b>City:&nbsp;&nbsp;</b><?php echo $sqldata[0]->pcities;?></td>
