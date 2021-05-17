@@ -2,22 +2,25 @@
 
 	$sellerOfferStatus  = $sqldata[0]->status;
 	$strSellerDisable   = "";
-	if($sellerOfferStatus === "1"){
+	if($sellerOfferStatus === "1" || $sellerOfferStatus === "2"){
 		$strSellerDisable = "disabled";
 	}
 
 	$buyerReqStatus     = $reqres_appl[0]->buyer_approval;
 	$strBuyerReqDisable = "";
-	if($buyerReqStatus === "1"){
+	if($buyerReqStatus === "1" || $buyerReqStatus === "2"){
 		$strBuyerReqDisable = "disabled";
 	}
 	 
 	
 	$selleraprlReqStatus     = $sqldata4[0]->status;
 	$SellerapprvlDisable = "";
-	if($selleraprlReqStatus === "1"){
+	if($selleraprlReqStatus === "1" || $selleraprlReqStatus === "2"){
 		$SellerapprvlDisable = "disabled";
 	}
+	
+
+
 
 ?>
 <head>

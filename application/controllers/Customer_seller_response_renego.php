@@ -135,8 +135,8 @@ class Customer_seller_response_renego extends CI_Controller {
 		//$this->db->where('buyer_req_response',$active);
 		//$data['status'] = 1;
 		$data = array('buyer_approval'=>2);
-		$data2 = array('status'=>5);
-		$data3 = array('status'=>5);
+		$data2 = array('status'=>6);
+		$data3 = array('status'=>6);
 		
 		$comp = array('id'=>$id);
 		$comp2 = array('seller_mbuyreq_id'=>$id);

@@ -2,13 +2,14 @@
 
 	$sellerOfferStatus  = $sqldata1[0]->status;
 	$strSellerDisable   = "";
-	if($sellerOfferStatus === "1"){
+	if($sellerOfferStatus === "1" || $sellerOfferStatus === "2" ){
 		$strSellerDisable = "disabled";
-	}
+	}	
+	 
 	
 	$buyeraprlReqStatus     = $first_approve[0]->status;
 	$byerapprvlDisable = "";
-	if($buyeraprlReqStatus === "1"){
+	if($buyeraprlReqStatus === "1" || $buyeraprlReqStatus === "2"){
 		$byerapprvlDisable = "disabled";
 	}
 	
@@ -93,7 +94,7 @@
 			
 		?>
 		
-			<td style="font-size:15px;"><b style="text-decoration: underline;">Buyer Negotiated Price</b> <br />
+			<td style="font-size:15px;"><b style="text-decoration: underline;">Buyer's Negotiated Price</b> <br />
 			<p style="color:blue; font-size:15px;"><b>
 			<?php echo  $sqldata1[0]->buyer_nego_price.' / '.$sqldata1[0]->buyer_nego_units;?></b>	 
 			<br/>
@@ -101,7 +102,7 @@
 			
 			<button type="button" class="btn btn-outline-primary  btn-sm <?php echo $strDisable; ?>">
 			
-			<?php echo "<a href='javascript:approveProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?> 	
+			<?php echo "<a href='javascript:approveProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?> </button>	
 			
 			<button type="button" class="btn btn-outline-danger btn-sm <?php echo $strDisable; ?>">
 			<?php echo "<a href='javascript:rejectProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
