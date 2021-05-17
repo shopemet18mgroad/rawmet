@@ -1,3 +1,25 @@
+<?php
+
+	$sellerOfferStatus  = $sqldata[0]->status;
+	$strSellerDisable   = "";
+	if($sellerOfferStatus === "1"){
+		$strSellerDisable = "disabled";
+	}
+
+	$buyerReqStatus     = $reqres_appl[0]->buyer_approval;
+	$strBuyerReqDisable = "";
+	if($buyerReqStatus === "1"){
+		$strBuyerReqDisable = "disabled";
+	}
+	 
+	
+	$selleraprlReqStatus     = $sqldata4[0]->status;
+	$SellerapprvlDisable = "";
+	if($selleraprlReqStatus === "1"){
+		$SellerapprvlDisable = "disabled";
+	}
+
+?>
 <head>
  <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 
@@ -27,6 +49,20 @@
                                 <!-- Card Body -->
 
          <div class="card-body">
+		<?php 
+			$strDisable = "";
+			$buyerNegoPrice = "";
+
+			if($buyer_req_response && $strSellerDisable ==""){
+				$buyerNegoPrice = $buyer_req_response[0]->buyer_nego_price; 
+				if($buyerNegoPrice !=""){
+					$strDisable = "disabled";
+				}				
+			}else{
+				$strDisable = $strSellerDisable;
+			}
+			
+		?>		 
            <table style="align:center" class="table table-striped table-bordered " width="100%" cellspacing="0">
 		   
     <thead class="bg-primary text-white">
@@ -34,7 +70,7 @@
     </thead>
 	
        <tbody>
-	   <tr  style="text-align:center;">
+	   <tr  style="text-align:center; width="auto">
 	   
            	<input hidden  type="text" class="form-control" id="bname" name="bname"  value="<?php echo  $sqldata[0]->bname;?>" readonly>
           
@@ -47,16 +83,26 @@
 						
 						
  		
-		<td style="font-size:15px; width:150px;"><b style="text-decoration: underline;">Seller's Offer</b> <br /><p style="color:blue;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></p> 
+		<td style="font-size:15px;"><b style="text-decoration: underline;">Seller's Offer</b>
+		<br /><p style="color:blue;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></p> 
 		
-		<button type="button" class="btn btn-outline-primary  btn-sm">
+		
+		
+		
+		<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $strDisable; ?>>
 			
-			<?php echo "<a href='javascript:approveProduct(\"".$sqldata4[0]->id."\")'> <i class='fas fa-check'></i></a> "; 
-                 ?></button>	 
+			<?php echo  "<a href='javascript:approveProduct(\"".$sqldata4[0]->id."\")'  > Approval</a> "; 
+                 ?>
+			 
+				 
+				 </button>	
+
+ 				 
 			
-		<button type="button" class="btn btn-outline-danger btn-sm">
-		<?php echo "<a href='javascript:rejectProduct2(\"".$sqldata4[0]->id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
+		<button type="button" class="btn btn-outline-danger btn-sm" <?php echo $strDisable; ?>>
+		<?php echo "<a href='javascript:rejectProduct2(\"".$sqldata4[0]->id."\")'><i class='fa fa-times '  aria-hidden='true'></i></a>";?>
 		</button>
+		
 	<hr >
 	  <b><?php  if($sqldata[0]->status == 0) {echo 'Pending';}else if($sqldata[0]->status == 2) {echo 'Rejected';}else if($sqldata[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'customer_quotation2/auc_no/'.$sqldata[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id. " data-toggle='modal' data-target='#exampleModal' target='_blank'><i class='fa fa-upload'></i></a>";}else if($sqldata[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 	
@@ -66,20 +112,10 @@
 	 
 		
 			
-		<td>
-		<?php 
-			$strDisable = "";
-			$buyerNegoPrice = "";
-			if($buyer_req_response){
-				$buyerNegoPrice = $buyer_req_response[0]->buyer_nego_price; 
-				if($buyerNegoPrice !=""){
-					$strDisable = "disabled";
-				}				
-			}
-			
-		?>
-		Negotiate Here
-			<input required style="width:80px;" type="text" class="form-control mt-4" id="buyer_nego_price" name="buyer_nego_price" value='<?php echo $buyerNegoPrice;?>' <?php echo $strDisable; ?>>
+		<td style="font-size:15px;">
+
+		<b style="text-decoration: underline;">Buyer Negotiate Here</b>
+			<input required style="width:auto; align:center" type="text" class="form-control mt-4" id="buyer_nego_price" name="buyer_nego_price" value='<?php echo $buyerNegoPrice;?>' <?php echo $strDisable; ?>>
 			<hr>
 	<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm"  name="submit" role="submit" onclick="return validate()" <?php echo $strDisable; ?>><b>Negotiate</b></a></button>	
 		
@@ -89,12 +125,12 @@
 		
 		
 		 
-			 <td>
+			 <td style="font-size:15px;">
 					 	 
-			<label><b>Buyer's Negotiated Price</b></label><br/>
-<b style="color:orange;"><?php echo  $sqldata4[0]->buyer_nego_price. " / " .$sqldata4[0]->buyer_nego_units;?></b> <br />
+			<label><b style="text-decoration: underline;">Buyer's Negotiated Price</b> </label><br/>
+<b style="color:blue;"><?php echo  $sqldata4[0]->buyer_nego_price. " / " .$sqldata4[0]->buyer_nego_units;?></b> <br /><br />
 <hr>
-<b><?php  if($sqldata4[0]->status == null) {echo '';} elseif($sqldata4[0]->status == 0) {echo 'Pending';}else if($sqldata4[0]->status == 2) {echo 'Rejected';}else if($sqldata4[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation10/auc_no/'.$sqldata4[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id. " data-toggle='modal' data-target='#exampleModal4' target='_blank'><i class='fa fa-upload'></i></a>";}else if($sqldata4[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
+<b ><?php  if($sqldata4[0]->status == null) {echo '';} elseif($sqldata4[0]->status == 0) {echo 'Pending';}else if($sqldata4[0]->status == 2) {echo 'Rejected';}else if($sqldata4[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation10/auc_no/'.$sqldata4[0]->id." target='_blank'><i class='fa fa-download'>Download </i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id. " data-toggle='modal' data-target='#exampleModal4' target='_blank'><i class='fa fa-upload'>Upload PO</i></a>";}else if($sqldata4[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
 
   </td>
 			 
@@ -114,7 +150,27 @@
 <!--- - -- ----  ---  - -  - - -- --    ---  -- --  -- --   ----->
  
 
-
+		<?php 
+			$strDisable = "";
+			$buyerFinalPrice = "";
+			if($buyer_final_req && $strBuyerReqDisable == "" && $strSellerDisable == ""&& $SellerapprvlDisable == ""){ 
+				$buyerFinalPrice = $buyer_final_req[0]->buyer_final_price; 
+				if($buyerFinalPrice !=""){
+					$strDisable = "disabled";
+				}				
+			}else{
+				if($strSellerDisable !=""){
+					$strDisable = $strSellerDisable;
+				}
+				if($strBuyerReqDisable !=""){
+					$strDisable = $strBuyerReqDisable;
+				}
+				if($SellerapprvlDisable !=""){
+					$strDisable = $SellerapprvlDisable;
+				}
+			}
+			
+		?>
 
   
    <table style="align:center;" class="table table-striped table-bordered" width="100%" cellspacing="0">
@@ -134,23 +190,24 @@
 						
 						
  		
-		<td style="font-size:15px; width:150px;"><b>Seller's 2nd Negotiate </b><br />		
+		<td style="font-size:15px; width:auto;"> <b style="text-decoration: underline;">Seller's 2nd Negotiate</b><br />		
 		
 		<p style="color:blue;"><b><?php echo  $sqldata4[0]->seller_renego_price. " / " .$sqldata4[0]->bsupplyability;?></b></p>
 		<br />
-		<button type="button" class="btn btn-outline-primary  btn-sm">
-			<?php  echo "   <a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'> <i class='fas fa-check'></i></a> ";
-                 ?></button>	 
+		<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $strDisable; ?>>
+			<?php  echo "   <a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'>Approval </a> ";
+                 ?>
+				  </button>	 
 			
 			
 			
-			<button type="button" class="btn btn-outline-danger btn-sm">
+			<button type="button" class="btn btn-outline-danger btn-sm" <?php echo $strDisable; ?>>
 		<?php echo "<a href='javascript:rejectProduct3(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
 		</button>
 			
 		<br />
 		<hr>
-		<b><?php  if($reqres_appl[0]->buyer_approval == null) {echo '';}else if($reqres_appl[0]->buyer_approval == 0) {echo 'Pending';}else if($reqres_appl[0]->buyer_approval == 2) {echo 'Rejected';}else if($reqres_appl[0]->buyer_approval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation11/auc_no/'.$reqres_appl[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id. " data-toggle='modal' data-target='#exampleModal6' target='_blank'><i class='fa fa-upload'></i></a>";}else if($reqres_appl[0]->buyer_approval == 5) {echo 'Approved-check in final Approval!';}?></b>
+		<b><?php  if($reqres_appl[0]->buyer_approval == null) {echo '';}else if($reqres_appl[0]->buyer_approval == 0) {echo 'Pending';}else if($reqres_appl[0]->buyer_approval == 2) {echo 'Rejected';} else if($reqres_appl[0]->buyer_approval == 3) {echo 'Seller as given Final Price';}else if($reqres_appl[0]->buyer_approval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation11/auc_no/'.$reqres_appl[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id. " data-toggle='modal' data-target='#exampleModal6' target='_blank'><i class='fa fa-upload'></i></a>";}else if($reqres_appl[0]->buyer_approval == 5) {echo 'Approved-check in final Approval!';}?></b>
 		
 		
 		
@@ -158,30 +215,17 @@
 			 
 			
 			
-		<td>
-		<?php 
-			$strDisable = "";
-			$buyerFinalPrice = "";
-			if($buyer_final_req){
-				$buyerFinalPrice = $buyer_final_req[0]->buyer_final_price; 
-				if($buyerFinalPrice !=""){
-					$strDisable = "disabled";
-				}				
-			}
-			
-		?>
-		Re-Negotiate Here
-			<input required style="width:80px;" type="text" class="form-control mt-4" id="buyer_final_price" name="buyer_final_price" value='<?php echo $buyerFinalPrice;?>' <?php echo $strDisable; ?>>	
+		<td style="font-size:15px; width:auto;"> <b style="text-decoration: underline;">Re-Negotiate Here</b>
+
+		
+			<input required style="width:auto;" type="text" class="form-control mt-4" id="buyer_final_price" name="buyer_final_price" value='<?php echo $buyerFinalPrice;?>' <?php echo $strDisable; ?>>	
 		<hr>
-		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm"  name="submit" role="submit" onclick="return validate()"><b>Final<br/> Negotiate</b></a></button>	
+		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm"  name="submit" role="submit" onclick="return validate()" <?php echo $strDisable; ?> ><b>Final<br/> Negotiate</b></a></button>	
 		</td>
 		
 		
-		<td>
-			
- 
-		<label><b>Buyer's Final Price</b></label><br />
-			<small style="color:orange;"><b><?php echo  $sqldata4[0]->buyer_final_price. " / " .$sqldata4[0]->bsupplyability;?></b></small>
+		<td style="font-size:15px; width:auto;"> <b style="text-decoration: underline;">Buyer's Final Price</b> <br />
+			<p style="color:blue;"><b><?php echo  $sqldata4[0]->buyer_final_price. " / " .$sqldata4[0]->bsupplyability;?></b></p>
 		<hr>
 		
 		<b><?php  if($reqres_appl[0]->sel_status == null) {echo '';}else if($reqres_appl[0]->sel_status == 0) {echo 'Pending';}else if($reqres_appl[0]->sel_status == 2) {echo 'Rejected';}else if($reqres_appl[0]->sel_status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation12/auc_no/'.$reqres_appl[0]->id." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'Customer_seller_response_renego/index/'.$sqldata[0]->buyerid.'/'.$sqldata[0]->id." data-toggle='modal' data-target='#exampleModal5' target='_blank'><i class='fa fa-upload'></i></a>";}else if($reqres_appl[0]->sel_status == 5) {echo 'Approved-check in final Approval!';}?></b>
@@ -1153,7 +1197,7 @@ function finalrejectProduct(seller_mbuyreq_id)
 
 function approveProduct(id)
 {
-  alert(id);
+  //alert(id);
   swal({
   title: "Are you sure want to?",
   content: "<input type='text' />",
