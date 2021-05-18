@@ -766,7 +766,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					 
 					');
 					$this->db->where('a.sellerpostproduct_id', $id);	
-					$this->db->where('b.buyerid', $buyerid);						
+					$this->db->where('a.buyerid', $buyerid);						
 					$this->db->join('selquotenegotate b', 'a.buyerid=b.buyerid',
 					'left outer');
 					$this->db->join('vend_renego c', 'a.buyerid=c.buyerid and a.sellerpostproduct_id=c.sellerpostproduct_id',
@@ -1179,7 +1179,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					 
 					');
 					$this->db->where('a.sellerpostproduct_id', $id);
-					$this->db->where('b.buyerid', $buyerid);						
+					$this->db->where('a.buyerid', $buyerid);						
 				 
 					$this->db->join('cust_renego c', 'a.buyerid=c.buyerid and a.sellerpostproduct_id=c.sellerpostproduct_id',
 					'left outer');	
@@ -1202,16 +1202,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->db->select('
 					
 				a.*,
-				b.*,c.* 
+				b.* 
 					');
 					$this->db->where('a.sellerpostproduct_id', $id);
-					$this->db->where('b.buyerid', $buyerid);	
+					$this->db->where('a.buyerid', $buyerid);	
 					 			
-					$this->db->join('cust_renego c', 'a.buyerid=c.buyerid and a.sellerpostproduct_id=c.sellerpostproduct_id',
+					$this->db->join('cust_renego b', 'a.buyerid=b.buyerid and a.sellerpostproduct_id=b.sellerpostproduct_id',
 					'left outer');	
-					
-					$this->db->join('selquotenegotate b', 'a.buyerid=b.buyerid',
-					'left outer');
+								
 					 				
 					$query = $this->db->get("quotes a");					 
 					$result = $query->result();	
