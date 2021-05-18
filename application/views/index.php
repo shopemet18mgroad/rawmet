@@ -73,34 +73,35 @@
 	</div>
 		<div class="container">
 			<div class="row branding">
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<a href="./home" title="Rawmet Logo"></a>
-				
-			 	
-					
 				</div>
-				<div class="col-md-6 col-sm-12 p-2">
-					<div class="input-feild">
+			
+			<div class="col-md-8 col-sm-10 p-2">
+					<div class="form-row">
 					
 							<div class="form-group p-1">
-				 <form class="user" action="<?php echo base_url()."Home_login";?>" method="post">
+							<form class="user" action="<?php echo base_url()."Home_login";?>" method="post">
 								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User ID" size="25">
 							</div>
 						  <div class="form-group p-1">
 							<input type="password" class="form-control" id="exampleInputPassword" name="pass" placeholder="Password" size="25">
 						  </div>
+						  <div class="form-row">
+						  
 						  <div class="form-group p-1">
 							<button name="submit" type="submit" onclick="return userid4()" class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>	
 						  </div>
+						 
 						  <div class="form-group p-1">
 						  
 						  <a href="<?php echo base_url();?>home_buyer_register">
 						  <button type="button" class="btn btn-warning"> Register Here </button></a>
-
+							</div>
 						  </div>
+						 </div>
 						
-						
-					 </div>
+					 
 					
 					 
 
