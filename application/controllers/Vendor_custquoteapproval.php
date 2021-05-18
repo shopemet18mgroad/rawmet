@@ -88,16 +88,12 @@ public function approve_quotes(){
 	
 	}
 	
-	/* public function reject_quotes(){
+	public function reject_quotes(){
 			
 		$this->load->model('Admin_model');
-		//$sellerpostproduct_id =$this->uri->segment(3);
+		$sellerpostproduct_id =$this->uri->segment(3);
 		$buyerid = $this->uri->segment(4);
-		$sellerpostproduct_id = $this->uri->segment(3);
 		$retriveval = array('buyerid'=>$buyerid,'sellerpostproduct_id'=>$sellerpostproduct_id);
-
-		//
-		
 		$this->load->model('Admin_model');
 		$app= array('sellapproval'=>2);
 		$query = $this->Admin_model->update_custom('quotes', $app, $retriveval, $retriveval);
@@ -106,7 +102,7 @@ public function approve_quotes(){
 		die;
 	
 	}
-	 */
+	
 	public function approve_renegoquotes(){
 			
 		$this->load->model('Admin_model');
@@ -119,6 +115,21 @@ public function approve_quotes(){
 		
 		$this->load->model('Admin_model');
 		$app= array('selapprove'=>true);
+		$query = $this->Admin_model->update_custom('cust_renego', $app, $retriveval, $retriveval);
+		header('location: '.base_url().'Vendor_custquoteapproval/index/'.$sellerpostproduct_id."/".$buyerid);
+		
+		die;
+	
+	}
+	
+	public function reject_renegoquotes2(){
+			
+		$this->load->model('Admin_model');
+		$buyerid = $this->uri->segment(4);
+		$sellerpostproduct_id = $this->uri->segment(3);
+		$retriveval = array('buyerid'=>$buyerid,'sellerpostproduct_id'=>$sellerpostproduct_id);
+		$this->load->model('Admin_model');
+		$app= array('selapprove'=>2);
 		$query = $this->Admin_model->update_custom('cust_renego', $app, $retriveval, $retriveval);
 		header('location: '.base_url().'Vendor_custquoteapproval/index/'.$sellerpostproduct_id."/".$buyerid);
 		

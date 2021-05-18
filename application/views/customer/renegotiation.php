@@ -71,7 +71,8 @@
 	<a href="<?php  echo base_url()."Customer_renegotiation/approve_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
 	</button> 
 			
-			<button type="button" class="btn btn-outline-danger btn-sm"><!--<a href="<?php  echo base_url()."Customer_renegotiation/reject_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>">--><i class="fa fa-times" aria-hidden="true"></i><!--</a>--></button>
+			<button type="button" class="btn btn-outline-danger btn-sm"><a href="<?php  echo base_url()."Customer_renegotiation/reject_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+			</button>
 	</td>
 		
 		
@@ -270,7 +271,7 @@ Re-Negotiate Here
 			
 	<a href="<?php  echo base_url()."Customer_renegotiation/approve_requotes_seller/".$forth_renego2[0]->sellerpostproduct_id."/".$forth_renego2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
 	</button>
-			<button type="button" class="btn btn-outline-danger btn-sm"><!--<a href="<?php  echo base_url()."Customer_renegotiation/reject_requotes_seller/".$forth_renego2[0]->sellerpostproduct_id."/".$forth_renego2[0]->buyerid;?>">--><i class="fa fa-times" aria-hidden="true"></i><!--</a>--></button>
+			<button type="button" class="btn btn-outline-danger btn-sm"><a href="<?php  echo base_url()."Customer_renegotiation/reject_requotes_seller/".$forth_renego2[0]->sellerpostproduct_id."/".$forth_renego2[0]->buyerid;?>"><i class="fa fa-times" aria-hidden="true"></i></a></button>
 	
 	 
 		

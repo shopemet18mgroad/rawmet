@@ -52,7 +52,9 @@
 	<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_quotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
 	</button>
 			
-			<button type="button" class="btn btn-outline-danger btn-sm"><!--<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject_quotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>">--><i class="fa fa-times" aria-hidden="true"></i><!--</a>--></button>	
+			<button type="button" class="btn btn-outline-danger btn-sm">
+			<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject_quotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+			</button>	
 		
 </td>	
 
@@ -143,7 +145,9 @@ $strDisable = "";
 	<a href="<?php  echo base_url()."Vendor_custquoteapproval/approve_renegoquotes/".$sqldata4[0]->sellerpostproduct_id."/".$sqldata4[0]->buyerid;?>"><i class='fas fa-check'></i></a>
 	</button>
 			
-			<button type="button" class="btn btn-outline-danger btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button>		
+			<button type="button" class="btn btn-outline-danger btn-sm">
+			<a href="<?php  echo base_url()."Vendor_custquoteapproval/reject_renegoquotes2/".$sqldata4[0]->sellerpostproduct_id."/".$sqldata4[0]->buyerid;?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+			</button>		
 	</td>
 		
 		
@@ -207,7 +211,7 @@ $strDisable2 = "";
 </form>	
 
 </td>
-<td style="font-size:15px; width:150px;">Seller Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->bunits;?></b></small><br/>
+<td style="font-size:15px; width:150px;">Seller's Final Price<br /><small style="color:orange;"><b><?php echo  $sqldata5[0]->sellrenegoprice. " / ".$sqldata5[0]->bunits;?></b></small><br/>
 
 	<b><?php  if($final_quote[0]->custapprove == 0) {echo 'Pending';}else if($final_quote[0]->custapprove == 2) {echo 'Rejected';}else if($final_quote[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation5/auc_no/'.$final_quote[0]->id.'/'.$final_quote[0]->sellerid.'/'.$final_quote[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($final_quote[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	
@@ -231,6 +235,14 @@ $strDisable2 = "";
  </div>
  </div>
 						
+
+             
+
+ 
+
+
+
+						
 <div class="col-xl-5 col-lg-7">
 	<div class="card shadow mb-4">
     <!-- Card Header - Dropdown -->
@@ -240,79 +252,77 @@ $strDisable2 = "";
         </div>
  <!-- Card Body -->
 <div class="card-body">
-
-<div class="form-row align-items-center">
-	
-											
-	
-
-
-    <div class="col-md-6">
-
-
-    <div class="view overlay z-depth-1-half">
-
-<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
-
-<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="120" height="100">
-					
-					
-<p class="w-auto small"><h6><b>Description:</b> <?php echo  $sqldata[0]->description;?></h6></p>					
-  </div>
-	</div>				
-			
- <div class="col-md-6">
-
-<h6 style="color:green;"><b>Supply Ability: <?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></b></h6>
-
-<p><b>Supplier Price:</b><?php echo  $sqldata[0]->price."/"; echo $sqldata[0]->punits;?></p>
-
-<h6 style="color:orange;"><b>Live Stock: <?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></b></h6>
-								
-	 </div>							
-						
+	<div class="form-row align-items-center">
+	<div class="form-inline">
+		 <div class="col-md-8">
+<p style="font-size:12px;font-weight-bold">Buyer Id: <?php echo  $sqldata2[0]->buyerid;?></p>
+ <p style="font-size:12px;font-weight-bold">Category: <?php echo  $sqldata[0]->category;?></p> <p style="font-size:12px;font-weight-bold"> Posted Date:  <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->datetime)) ;?> </p>				
+ <p style="font-size:12px;font-weight-bold"> Estimated Delivery:  <?php echo  $sqldata[0]->estdeltime;?></p>	 
+ <p style="font-size:12px;font-weight-bold"> Validity Till: <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityto)) ;?> </p>	
 <br />
-
-			
-			<!--Grid column-->
-
-			<!--Grid column-->
-			<div class="col-md-6">
-			
-			
-			
-		
-			
-									
-<p><b>Buyer Id:</b></br><?php echo  $sqldata2[0]->buyerid;?></p>								
-<p><b>Product Id:</b></br><?php echo  $sqldata[0]->productid;?></p>
-								
-								
-							
-								
-<p><b>Category:</b></br><?php echo  $sqldata[0]->category;?></p>
-								
-								
-								
-
-								
-<h6><b>Posted Date:</b></br> <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->datetime)) ;?></h6>
-								
-<h6><b>Estimated Delivery: </b><br> <?php echo  $sqldata[0]->estdeltime;?></h6>
-							
-								
-<h6 style="color:purple;"><b>Validity Till:</b><br> <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityto)) ;?></h6>
 </div>
-		
-		
+			<!--Grid column-->
 
- </div>
+			<!--Grid column-->
+			<div class="col-md-4"> 						
+								
+		 
+	<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
+					<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="450px" height="350px">	 
+			  
+
+			</div>
+		
+		
+						
+								
+			</div>
+			    </div>
+				<div style="border-color red 1px solid">
+						
+
+<table style="width:100%">
+  <tr>
+    <th>Supply Ability</th>
+    <th>Supplier Price</th> 
+    <th>Live Stock</th>
+  </tr>
+  <tr>
+    <td><?php echo  $sqldata[0]->quantity." "; echo  $sqldata[0]->units;?></td>
+    <td><?php echo  $sqldata[0]->price."/"; echo $sqldata[0]->punits;?></td>
+    <td><?php echo  $sqldata[0]->supplyability." "; echo  $sqldata[0]->supplyunits;?></td>
+  </tr>
+  
+</table>
+						
+						
+						</div>	
+						<hr>
+						<div style="border-color red 1px solid">
+						
+
+  <p class="w-auto small"><h6 style="float:right;color:blue"><b>Description:</b> <br /> </h6>
+  <?php echo  $sqldata[0]->description;?></p>	
+						
+						
+						</div>	
+				
                             </div>
                         </div>
                     </div>
-             
 
-           
+
+
+
+
+
+
+
+
+
+
+
+ 
 
         
          

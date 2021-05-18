@@ -95,7 +95,7 @@ class Customer_renegotiation extends CI_Controller {
 		$sellerpostproduct_id = $this->uri->segment(3);
 		$retriveval = array('buyerid'=>$buyerid,'sellerpostproduct_id'=>$sellerpostproduct_id);
 
-		//
+		
 		
 		$this->load->model('Admin_model');
 		$app= array('buyerapprove'=>true);
@@ -126,7 +126,7 @@ class Customer_renegotiation extends CI_Controller {
 	}
 	
 	
-	/* public function reject_requotes(){
+	 public function reject_requotes(){
 			
 		$this->load->model('Admin_model');
 		//$sellerpostproduct_id =$this->uri->segment(3);
@@ -134,8 +134,6 @@ class Customer_renegotiation extends CI_Controller {
 		$sellerpostproduct_id = $this->uri->segment(3);
 		$retriveval = array('buyerid'=>$buyerid,'sellerpostproduct_id'=>$sellerpostproduct_id);
 
-		//
-		
 		$this->load->model('Admin_model');
 		$app= array('buyerapprove'=>2);
 		$query = $this->Admin_model->update_custom('selquotenegotate', $app, $retriveval, $retriveval);
@@ -143,10 +141,10 @@ class Customer_renegotiation extends CI_Controller {
 		
 		die;
 	
-	} */
+	} 
 		 
 	
-	/* public function reject_requotes_seller(){
+ public function reject_requotes_seller(){
 			
 		$this->load->model('Admin_model');
 		//$sellerpostproduct_id =$this->uri->segment(3);
@@ -163,6 +161,6 @@ class Customer_renegotiation extends CI_Controller {
 		
 		die;
 	
-	} */
+	} 
 	
 }

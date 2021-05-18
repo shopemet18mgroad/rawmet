@@ -680,24 +680,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 			}
 			
+		
 			function getdatafromtable_final_quote($id,$buyerid) {
 			 //$id = $this->session->userdata('username');  
 			$this->db->select('
 					
 					a.*,					 			
-					b.*,
-					c.*,
-					d.*');
-					$this->db->where('a.id', $id);
-					$this->db->where('b.buyerid', $buyerid);
+					b.*');
+					$this->db->where('a.sellerpostproduct_id', $id);
+					$this->db->where('a.buyerid', $buyerid);
 					
-					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					$this->db->join('vend_renego b', 'a.buyerid=b.buyerid and a.sellerpostproduct_id= b.sellerpostproduct_id',
 					'left outer');
-					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
-					'left outer');
-				$this->db->join('vend_renego d', 'a.id=d.sellerpostproduct_id',
-					'left outer');
-					$query = $this->db->get("sellerpostproduct a");
+					$query = $this->db->get("quotes a");
 					 
 					$result = $query->result();	
 					//echo $this->db->last_query();exit;			
@@ -780,26 +775,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 			}
 			
+		
+			
 			function getdatafromtable_final_quotebyr($id,$buyerid) {
 			 //$id = $this->session->userdata('username');  
 			$this->db->select('
 					
 					a.*,					 			
-					b.*,
-					c.*,
-					d.*
+					b.*
 					 
 					');
-					$this->db->where('a.id', $id);	
-					$this->db->where('b.buyerid', $buyerid);	
+					$this->db->where('a.sellerpostproduct_id', $id);	
+					$this->db->where('a.buyerid', $buyerid);	
 
-					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					$this->db->join('vend_renego b', 'a.buyerid=b.buyerid and a.sellerpostproduct_id= b.sellerpostproduct_id',
 					'left outer');
-					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
-					'left outer');
-				$this->db->join('vend_renego d', 'a.id=d.sellerpostproduct_id',
-					'left outer');
-					$query = $this->db->get("sellerpostproduct a");					 
+			
+					$query = $this->db->get("quotes a");					 
 					$result = $query->result();	
 					//echo $this->db->last_query();exit;			
 					return $result;
@@ -867,18 +859,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->db->select('
 					
 					a.*,					 			
-					b.*,
-					c.*,
+					b.*
 					
 					 
 					');
-					$this->db->where('a.id', $id);
-					$this->db->where('b.buyerid',$buyerid);					
-					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					$this->db->where('a.sellerpostproduct_id', $id);
+					$this->db->where('a.buyerid',$buyerid);					
+					$this->db->join('selquotenegotate b', 'a.buyerid=b.buyerid and a.sellerpostproduct_id= b.sellerpostproduct_id' ,
 					'left outer');
-					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
-					'left outer');
-					$query = $this->db->get("sellerpostproduct a");
+					
+					$query = $this->db->get("quotes a");
 					 
 					$result = $query->result();	
 					//echo $this->db->last_query();exit;			
@@ -1009,22 +999,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 			} 
 			
+			
 			function getdatafromtable_approve_buyer($id,$buyerid) {
 			// $id = $this->session->userdata('username');  
 			$this->db->select('
 					
 					a.*,
-					b.*,
-					c.*');
-					$this->db->where('a.id', $id);
-					$this->db->where('b.buyerid', $buyerid);
+					b.*');
+					$this->db->where('a.sellerpostproduct_id', $id);
+					$this->db->where('a.buyerid', $buyerid);
 					//$this->db->where('b.sellerpostproduct_id', $sellerpostproduct_id);				 			
 			 
-					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					$this->db->join('cust_renego b', 'a.buyerid=b.buyerid and a.sellerpostproduct_id= b.sellerpostproduct_id' ,
 					'left outer');	
-					$this->db->join('cust_renego c', 'a.id=c.sellerpostproduct_id',
-					'left outer');
-					$query = $this->db->get("sellerpostproduct a");
+					
+					$query = $this->db->get("quotes a");
 					 
 					$result = $query->result();	
 					//echo $this->db->last_query();exit;			
@@ -1038,17 +1027,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->db->select('
 					
 					a.*,
-					b.*,
-					c.*');
-					$this->db->where('a.id', $id);
-					$this->db->where('b.buyerid', $buyerid);
+					b.*');
+					$this->db->where('a.sellerpostproduct_id', $id);
+					$this->db->where('a.buyerid', $buyerid);
 					//$this->db->where('b.sellerpostproduct_id', $sellerpostproduct_id);				 			
 			 
-					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					$this->db->join('cust_renego b', 'a.buyerid=b.buyerid and a.sellerpostproduct_id= b.sellerpostproduct_id',
 					'left outer');	
-					$this->db->join('cust_renego c', 'a.id=c.sellerpostproduct_id',
-					'left outer');
-					$query = $this->db->get("sellerpostproduct a");
+					
+					$query = $this->db->get("quotes a");
 					 
 					$result = $query->result();	
 					//echo $this->db->last_query();exit;			
