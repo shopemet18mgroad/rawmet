@@ -107,7 +107,7 @@ $strDisable = "";
               <center>
                 <input type="text" class="form-control col-sm-8 mt-4" name="selprice" placeholder="price" id="selprice" value='<?php echo $sellerprice;?>' <?php echo $strDisable; ?>/> 
 			</center>
-			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2 offset-sm-1" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego()">Negotiate</a>
+			  <button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm offset-sm-1 <?php echo $strDisable; ?>" name="submit" id= "submit" role="submit"  onclick= "return validate_selnego() ">Negotiate</a>
 		
 
  
