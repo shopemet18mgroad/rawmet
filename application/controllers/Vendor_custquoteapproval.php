@@ -36,27 +36,30 @@ class Vendor_custquoteapproval extends CI_Controller {
 		$this->load->model('Admin_model');
 		$id = urldecode(str_ireplace('-','/',$this->uri->segment(3)));
 		$buyerid = $this->uri->segment(4);
-		//print_r($id); die;
+		 
+		//print_r($sellerpostproduct_id); die;
 		$active = array('id'=>$id);
 		
 		
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		$data['sqldata']= $query;
 		
+		 
 		
-		$data['sqldata2'] = $this->Admin_model->getdatafromtable_buyerneg($id,$buyerid);
 		
 		$data['approve_buyer'] = $this->Admin_model->getdatafromtable_approve_buyer($id,$buyerid);
+		$data['sqldata2'] = $this->Admin_model->getdatafromtable_buyerneg($id,$buyerid);
 		$data['sqldata30'] = $this->Admin_model->getdatafromtable_selneg($id,$buyerid);
 //echo '<pre>'; print_r($data['sqldata30'] ); die;		
 		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3595($id,$buyerid);		
-		$data['sqldata4'] = $this->Admin_model->getdatafromtable_third_neg($id,$buyerid);
+		$data['sqldata4'] = $this->Admin_model->getdatafromtable_third_neg($id,$buyerid );
+		//echo '<pre>'; print_r($data['sqldata4'] ); die;
 		$data['sqldata5'] = $this->Admin_model->getdatafromtable_fifth_neg($id,$buyerid);
 		$data['final_quote'] = $this->Admin_model->getdatafromtable_final_quote($id,$buyerid);
 
 
-		$data['selquotenegotate'] = $this->Admin_model->getseller_post_response($id, $sess['sessi']); 
-		$data['vend_renego'] = $this->Admin_model->getseller_post_response2($id, $sess['sessi']);
+		$data['selquotenegotate'] = $this->Admin_model->getseller_post_response($id, $sess['sessi'], $buyerid); 
+		$data['vend_renego'] = $this->Admin_model->getseller_post_response2($id, $sess['sessi'], $buyerid);
 		
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$this->load->view('vendor/header',$sess);
