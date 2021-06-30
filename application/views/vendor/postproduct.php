@@ -53,7 +53,7 @@
 							<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="">Category</label>
 								<select class="form-control" id="category" name="category" >
-								<option default>Select Your Category</option>
+								<option value="Select" selected>Select</option>
 									<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
 						<option value="Minor Metal">Minor Metal</option>
@@ -71,7 +71,7 @@
 						
 								<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="">Product Name</label>
-								<input type="text" class="form-control" id="productname" name="productname"   placeholder="Product Name" onkeyup="product_id()">
+								<input type="text" class="form-control" id="productname" name="productname"   placeholder="Product Name" onkeyup="product_id()" >
 
 							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -85,7 +85,7 @@
 							<div class="col-sm-4">
 
 								<label for="category">Type:</label>
-								<select class="form-control" id="types" name="types">
+								<select class="form-control" id="types" name="types" >
 									<option default>Select Your Type</option>
 									<option value="Primary">Primary</option>
 									<option value="Secondary">Secondary</option>
@@ -212,7 +212,7 @@
 
 							<div class="col-sm-12">
 								<label for="description">Description:</label>
-								<textarea class="form-control" rows="5" name="description" id="description"></textarea>
+								<textarea class="form-control" rows="5" name="description" id="description" onkeyup="validate_category()"></textarea>
 							</div>
 								<div class="col-sm-3 mb-3 mb-sm-0">
 								<label for="Pname"> ISO Certificate Number:</label>
@@ -470,3 +470,4 @@ var inputvalues = $(this).val();
 		}
 	}
 </script> 
+

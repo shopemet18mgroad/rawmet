@@ -174,13 +174,14 @@ if(description == '' || productname == ''|| quantity == ''|| minoderquant == ''|
     var n = d.getMinutes();
     var s = d.getSeconds();
     if (cat == 'Select') {
-      swal("Alert!", "Please Select Categoery First", "error");
+      swal("Alert!", "Please Select Category First", "error");
       return false;
     }
     if (cat2.length < 6) {
       document.getElementById('productid').value = "RAW/" + cat2 + "/" + cat + "/" + m + "/" + n + "/" + s;
     }
-  }
+ 
+	 }
 </script>
 
 <script>

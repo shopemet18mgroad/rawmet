@@ -26,21 +26,17 @@
                                 </div>
                                 <!-- Card Body -->
 
-         <div class="card-body">
-           <table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
-		   
-  
-	
-       <tbody>
-	   
-	    <tr  style="text-align:center; background-color:white;">
+<div class="card-body">
+<table style="align:center" class="table table-striped table-bordered table-sm w-auto" width="100%" cellspacing="0">
+	<tbody>
+	  <tr style="text-align:center; background-color:white;">
 		
 		
 		
 
 
-				</div>
-					<td style="font-size:15px; width:150px;">Buyer's Quantity:<small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. " / " .$sqldata2[0]->bsupplyability;?></b></small><br/>
+</div>
+		<td style="font-size:15px; width:150px;">Buyer's Quantity:<small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. " / " .$sqldata2[0]->bsupplyability;?></b></small><br/>
 		Buyer's price:<small style="color:orange;"><b><?php echo  $sqldata2[0]->bprice. " / " .$sqldata2[0]->bunits;?></b></small><br/>
 
 	<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_sellnegoquotation/auc_no/'.$sqldata2[0]->id.'/'.$sqldata2[0]->buyerid.'/'.$sqldata2[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#frist' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>
@@ -58,21 +54,106 @@
 			
 			
 			Seller Price
-		<small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice. " / " .$sqldata3[0]->bunits;?></b></small><br/>
-		
-		
-		<b><?php  if($buy_quot[0]->buyerapprove == 0) {echo 'Pending';}else if($buy_quot[0]->buyerapprove == 2) {echo 'Rejected';}else if($sqldata3[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotationpur/auc_no/'.$buy_quot[0]->id.'/'.$buy_quot[0]->buyerid.'/'.$buy_quot[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#scend' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($buy_quot[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
+		<small style="color:orange;"><b><?php echo  $sqldata3[0]->selprice.  " / " .$sqldata3[0]->bunits; ?></b></small><br/>
+	
+		<b><?php  if($buy_quot[0]->buyerapprove == 0) {echo 'Pending';}else if($buy_quot[0]->buyerapprove == 2) {echo 'Rejected';}else if($buy_quot[0]->buyerapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotationpur/auc_no/'.$buy_quot[0]->id.'/'.$buy_quot[0]->buyerid.'/'.$buy_quot[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#scend' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($buy_quot[0]->buyerapprove == 0) {echo 'Approved-check in final Approval!';}?></b>
 		
 		
 		<br/>
+		<?php 
+			$strDisable = "";
+			$buyerquantity = "";
+			if($cust_renego){
+				$buyerquantity = $cust_renego[0]->brenegoquantity; 
+				if($buyerquantity !=""){
+					$strDisable = "disabled";
+				}				
+			}
+
+
+			$strDisable2 = "";
+			$buyerquantityunit = "";
+			if($cust_renego){
+				$buyerquantityunit = $cust_renego[0]->brenegoquantityunit; 
+				if($buyerquantityunit !=""){
+					$strDisable2= "disabled";
+				}				
+			}
+
+			$strDisable3 = "";
+			$buyerprice = "";
+			if($cust_renego){
+				$buyerprice = $cust_renego[0]->brenegoprice; 
+				if($buyerprice !=""){
+					$strDisable3= "disabled";
+				}				
+			}
+
+			$strDisable4 = "";
+			$buyerpriceunit = "";
+			if($cust_renego){
+				$buyerpriceunit = $cust_renego[0]->brenegounit; 
+				if($buyerpriceunit !=""){
+					$strDisable4= "disabled";
+				}				
+			}
+			
+			
 		
-		<button type="button" class="btn btn-outline-primary  btn-sm">
 			
-	<a href="<?php  echo base_url()."Customer_renegotiation/approve_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
-	</button> 
+		?>
+	
+		<?php if(!$sqldata3[0]->buyerapprove ){
+			$status = "";
+			$status2 = "";
+		}
+		else{
+			$status = "disabled";
+			$status2 = "readonly";
+		}
+		
+		?>
+		
+		<?php if(!$forth_renego2[0]->custapprove){
+			//$status = "";
+			$status2 = "";
+		}
+		else{
+			$status = "disabled";
+			$status2 = "";
+		}
+		?>
+		<?php if(!$sqldata2[0]->sellapproval ){
+			//$status = "";
+			$status2 = "";
+		}
+		else{
+			$status = "disabled";
+			$status2 = "";
+		}
+		
+		?>
+			<?php if(!$sqld[0]->selapprove ){
+			//$status = "";
+			$status2 = "";
+		}
+		else{
+			$status = "disabled";
+			$status2 = "";
+		}
+		
+		?>
+		
+	
+	
+		<button type="button" class="btn btn-outline-primary  btn-sm" id="rengo" <?php echo $status." ";?> <?php echo $strDisable;?>>
+		<a href="<?php  if($sqldata3[0]->buyerapprove || $forth_renego2[0]->custapprove ||isset($cust_renego[0]->brenegoquantity) && $cust_renego[0]->brenegoquantity || $sqldata2[0]->sellapproval || $sqld[0]->selapprove)  {echo "#";}else{ echo base_url()."Customer_renegotiation/approve_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;}?>"><i class='fas fa-check'></i></a>
+		</button> 
 			
-			<button type="button" class="btn btn-outline-danger btn-sm"><a href="<?php  echo base_url()."Customer_renegotiation/reject_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;?>"><i class="fa fa-times" aria-hidden="true"></i></a>
-			</button>
+		<button type="button" class="btn btn-outline-danger btn-sm"<?php echo $status." ";?><?php echo $strDisable;?>>
+		<a href="<?php if($sqldata3[0]->buyerapprove || $forth_renego2[0]->custapprove ||isset($cust_renego[0]->brenegoquantity) && $cust_renego[0]->brenegoquantity || $sqldata2[0]->sellapproval || $sqld[0]->selapprove){echo "#";}else{echo base_url()."Customer_renegotiation/reject_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;}?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+		</button>
+			
 	</td>
 		
 		
@@ -87,7 +168,7 @@
 	<form action="<?php echo base_url();?>Customer_add_renegotiate" method="POST" enctype="multipart/form-data">
        <tbody>
 	   
-	    <tr  style="text-align:center;  background-color:lightgrey;">
+	  <tr  style="text-align:center;  background-color:lightgrey;">
 		
 		
 		
@@ -145,51 +226,13 @@
 
 
 <td style="width:290px; color: white;"> 
-<?php 
-			$strDisable = "";
-			$buyerquantity = "";
-			if($cust_renego){
-				$buyerquantity = $cust_renego[0]->brenegoquantity; 
-				if($buyerquantity !=""){
-					$strDisable = "disabled";
-				}				
-			}
 
-
-			$strDisable2 = "";
-			$buyerquantityunit = "";
-			if($cust_renego){
-				$buyerquantityunit = $cust_renego[0]->brenegoquantityunit; 
-				if($buyerquantityunit !=""){
-					$strDisable2= "disabled";
-				}				
-			}
-
-			$strDisable3 = "";
-			$buyerprice = "";
-			if($cust_renego){
-				$buyerprice = $cust_renego[0]->brenegoprice; 
-				if($buyerprice !=""){
-					$strDisable3= "disabled";
-				}				
-			}
-
-			$strDisable4 = "";
-			$buyerpriceunit = "";
-			if($cust_renego){
-				$buyerpriceunit = $cust_renego[0]->brenegounit; 
-				if($buyerpriceunit !=""){
-					$strDisable4= "disabled";
-				}				
-			}
-			
-		?>
 Re-Negotiate Here
 <div class="form-row m-2"> 
 			
-	<input type="text" class="form-control col-sm-4 mr-2" name="brenegoquantity" placeholder="Quantity" id="brenegoquantity" [(ngModel)]="person.name" value='<?php echo $buyerquantity;?>' <?php echo $strDisable; ?>/>
+	<input type="text" class="form-control col-sm-4 mr-2" name="brenegoquantity" placeholder="Quantity" id="brenegoquantity" [(ngModel)]="person.name" value='<?php echo $buyerquantity;?>' <?php echo $status2." "; ?><?php echo $status." "; ?><?php echo $strDisable2;?>/>
 	<div class="col-sm-3">  
-	<select class="form-control" id="brenegoquantityunit" name="brenegoquantityunit" value='<?php echo $buyerquantityunit;?>' <?php echo $strDisable2; ?>>
+	<select class="form-control" id="brenegoquantityunit" name="brenegoquantityunit" value='<?php echo $buyerquantityunit;?>' <?php echo $status2." "; ?><?php echo $status." "; ?><?php echo $strDisable2;?>>
 										<option value="KG">KG</option>
 										<option value="Metric Ton">Metric Ton</option>
 										<option value="Litre">Litre</option>
@@ -202,9 +245,9 @@ Re-Negotiate Here
 								</div>
 							<div class="form-row m-2">
 									
-									<input type="text" class="form-control col-sm-4 mr-2" name="brenegoprice" placeholder="Price" id="bprice" [(ngModel)]="person.name"/ value='<?php echo $buyerprice;?>' <?php echo $strDisable3; ?>>/
+									<input type="text" class="form-control col-sm-4 mr-2" name="brenegoprice" placeholder="Price" id="bprice" [(ngModel)]="person.name"/ value='<?php echo $buyerprice;?>' <?php echo $status2." ";?><?php echo $status." "; ?><?php echo $strDisable4;?>>/
 							<div class="col-sm-3">  
-							<select class="form-control" id="brenegounit" name="brenegounit" value='<?php echo $buyerpriceunit;?>' <?php echo $strDisable4; ?>>
+							<select class="form-control" id="brenegounit" name="brenegounit" value='<?php echo $buyerpriceunit;?>' <?php echo $status2." "; ?><?php echo $status." "; ?><?php echo $strDisable4;?>>
 							<option value="KG">KG</option>
 									<option value="Metric Ton">Metric Ton</option>
 									<option value="Litre">Litre</option>
@@ -219,10 +262,10 @@ Re-Negotiate Here
 								</div>	
 								
 									<a href="#" class="neg"> </a>
-								<button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2" name="btnsubmit_rengo" id= "btnsubmit_rengo" role="submit"  onclick= "return validate_selnego()">Re-Negotiate</a></button>								
+								<button type="submit" href="<?php echo base_url();?>"class="btn btn-outline-info btn-sm mt-2" name="btnsubmit_rengo" id= "btnsubmit_rengo" role="submit"   <?php echo $status." "; ?><?php echo $strDisable2; ?>>Re-Negotiate</a></button>								
 							 
 								 
-								 <button type="button" class="btn btn-outline-warning btn-sm mt-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated">Final Negotiate</button>
+								 <button type="button" class="btn btn-outline-warning btn-sm mt-2" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated" <?php echo $status." "; ?><?php echo $strDisable4; ?>>Final Negotiate</button>
 								 
 								 
 				  <div class="modal fade" id="final_Negotiated" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -267,15 +310,16 @@ Re-Negotiate Here
 	<b><?php  if($final_quotebyr[0]->custapprove == 0) {echo 'Pending';}else if($final_quotebyr[0]->custapprove == 2) {echo 'Rejected';}else if($final_quotebyr[0]->custapprove == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_quotation5/auc_no/'.$final_quotebyr[0]->id.'/'.$final_quotebyr[0]->sellerid.'/'.$final_quotebyr[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>/<a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#forth' target='_blank'><i class='fa fa-upload'></i></a>";}else if($final_quotebyr[0]->custapprove == 0) {echo 'Approved-check in final Approval!';}?></b>	
 	<br/>
 				
-	<button type="button" class="btn btn-outline-primary  btn-sm">
+	<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $status; ?>>
 			
-	<a href="<?php  echo base_url()."Customer_renegotiation/approve_requotes_seller/".$forth_renego2[0]->sellerpostproduct_id."/".$forth_renego2[0]->buyerid;?>"><i class='fas fa-check'></i></a>
+	<a href="<?php if($sqldata3[0]->buyerapprove|| $forth_renego2[0]->custapprove|| $sqldata2[0]->sellapproval || $sqld[0]->selapprove){echo "#";}else{ echo base_url()."Customer_renegotiation/approve_requotes_seller/".$id."/".$buyerid; }?>"><i class='fas fa-check'></i></a>
 	</button>
-			<button type="button" class="btn btn-outline-danger btn-sm"><a href="<?php  echo base_url()."Customer_renegotiation/reject_requotes_seller/".$forth_renego2[0]->sellerpostproduct_id."/".$forth_renego2[0]->buyerid;?>"><i class="fa fa-times" aria-hidden="true"></i></a></button>
+			<button type="button" class="btn btn-outline-danger btn-sm" <?php echo $status; ?>><a href="<?php if($sqldata3[0]->buyerapprove|| $forth_renego2[0]->custapprove|| $sqldata2[0]->sellapproval || $sqld[0]->selapprove){echo "#";}else{ echo base_url()."Customer_renegotiation/reject_requotes_seller/".$id."/".$buyerid;}?>"><i class="fa fa-times" aria-hidden="true"></i></a></button>
 	
 	 
 		
 	</td>
+
 </form>
 
 			 

@@ -805,7 +805,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					a.*,					 			
 					b.*,
 					c.*,
-					d.*
+					d.*,
+					e.*
 					 
 					');
 					$this->db->where('a.id', $id);	
@@ -814,8 +815,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'left outer');
 					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
 					'left outer');
-				$this->db->join('vend_renego d', 'a.id=d.sellerpostproduct_id',
+					$this->db->join('cust_renego d', 'a.id=d.sellerpostproduct_id',
 					'left outer');
+					$this->db->join('vend_renego e', 'a.id=e.sellerpostproduct_id',
+					'left outer');
+					
 					$query = $this->db->get("sellerpostproduct a");
 					 
 					$result = $query->result();	
@@ -880,18 +884,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			function getdatafromtable_seller3595($id,$buyerid) {
 			 //$id = $this->session->userdata('username');  
-			$this->db->select('
-					
-					a.*,					 			
-					b.*,
-					c.*');
+			$this->db->select('*');
 					$this->db->where('a.id', $id);
 					$this->db->where('b.buyerid',$buyerid);					
-					$this->db->join('quotes b', 'a.id=b.sellerpostproduct_id',
+					$this->db->join('quotes b', 'b.buyerid=c.buyerid and b.sellerpostproduct_id = c.sellerpostproduct_id',
 					'left outer');
-					$this->db->join('selquotenegotate c', 'a.id=c.sellerpostproduct_id',
+					
+					$this->db->join('sellerpostproduct a', 'a.id=b.sellerpostproduct_id',
 					'left outer');
-					$query = $this->db->get("sellerpostproduct a");
+					$query = $this->db->get("selquotenegotate c");
 					 
 					$result = $query->result();	
 					//echo $this->db->last_query();exit;			
@@ -1214,7 +1215,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$this->db->where('a.sellerpostproduct_id', $id);					
 					$this->db->where('a.buyerid', $buyerid); 				 			
 			 
-					$this->db->join('selquotenegotate b', 'b.buyerid=a.buyerid and b.sellerpostproduct_id=a.sellerpostproduct_id','left');
+					$this->db->join('selquotenegotate b', 'b.buyerid=a.buyerid and b.sellerpostproduct_id=a.sellerpostproduct_id','left outer');
 					 
 					$query = $this->db->get("quotes a");					 
 					$result = $query->result();	

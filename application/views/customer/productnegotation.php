@@ -34,8 +34,8 @@
 			<th style="color:orange">Supplier Base Price</th>
 			<th style="color:orange">Supplier Quantity Price</th>
 			<th>Location</th>
-			<th style="color:green">Buyer Quantity</th>
-			<th style="color:green">Buyer Price</th>
+			<th style="color:pink">Buyer Quantity</th>
+			<th style="color:pink">Buyer Price</th>
 			
 			<th> Negotiate</th>
 		

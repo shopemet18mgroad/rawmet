@@ -65,7 +65,12 @@
 				$strDisable = $strSellerDisable;
 			}
 			
-		?>		 
+			
+		
+			
+		?>	
+
+	
            <table style="align:center" class="table table-striped table-bordered " width="100%" cellspacing="0">
 		   
     <thead class="bg-primary text-white">
@@ -89,10 +94,17 @@
 		<td style="font-size:15px;"><b style="text-decoration: underline;">Seller's Offer</b>
 		<br /><p style="color:blue;"><b><?php echo  $sqldata[0]->sellerprice. " / " .$sqldata[0]->bsupplyability;?></b></p> 
 		
+		<?php if(!$sqldata[0]->bsupplyability ){
+			$status = "";
+			$status2 = "";
+		}
+		else{
+			$status = "disabled";
+			$status2 = "readonly";
+		}?>	
 		
 		
-		
-		<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $strDisable; ?>>
+		<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $strDisable; ?><?php echo $status; ?>>
 			
 			<?php echo  "<a href='javascript:approveProduct(\"".$sqldata4[0]->id."\")'  > Approval</a> "; 
                  ?>
@@ -285,7 +297,7 @@
         <!--Grid column-->
         <div class="col-md-6">
 		 
-          <p><b>Supper Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> 
+          <p><b>Seller Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> 
 		  <p><b>Category :</b> <?php echo  $sqldata[0]->category;?></p>
 		  <p><b>Stock :</b> <?php echo  $sqldata[0]->quantity. " / " .$sqldata[0]->units;?>"</p> 
 		  

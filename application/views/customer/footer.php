@@ -101,7 +101,7 @@ function validate_password(){
 	   var n = d.getMinutes();
 	   var s = d.getSeconds();
 	 if(cat == 'Select'){
-		 swal("Alert!", "Please Select Categoery First", "error");
+		 swal("Alert!", "Please Select Category First", "error");
 		 return false;
 	 }
 	 if(cat2.length<21){

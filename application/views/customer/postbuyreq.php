@@ -73,7 +73,7 @@
   <div class="form-group">
     <label for="inputAddress2">Category</label>
     <select class="form-control" id="category" name="category">
-					    <option value="Category">--Category--</option>
+					    <option value="Select" selected>Select</option>
 						<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
 						<option value="Minor Metal">Minor Metal</option>

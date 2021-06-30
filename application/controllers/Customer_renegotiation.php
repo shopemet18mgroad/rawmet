@@ -48,12 +48,15 @@ class Customer_renegotiation extends CI_Controller {
 		$query = $this->Admin_model->getdatafromtable('sellerpostproduct', $active);
 		$data['sqldata']= $query;
 		$data['approve_buyer'] = $this->Admin_model->getdatafromtable_approve_buyer2($id,$buyerid);
-		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id,$buyerid);		
+		$data['sqldata2'] = $this->Admin_model->getdatafromtable_seller2($id,$buyerid);
+		$data['buyerid'] = $buyerid;
+		$data['id'] = $id;
 		$data['sqldata3'] = $this->Admin_model->getdatafromtable_seller3($id,$buyerid);
+		//echo '<pre>'; print_r($data['sqldata3'] ); die;
 		$data['sqldata4'] = $this->Admin_model->getdatafromtable_seller4($id,$buyerid);		
 		$data['sqld'] = $this->Admin_model->getdatafromtable_buy_sel($id,$buyerid);
 		$data['sqldata5'] = $this->Admin_model->getdatafromtable_forth_renego($id,$buyerid);
-		$data['forth_renego2'] = $this->Admin_model->getdatafromtable_forth_renego2($id,$buyerid);		
+		$data['forth_renego2'] = $this->Admin_model->getdatafromtable_forth_renego2($id,$buyerid);  	
 		$data['final_quotebyr'] = $this->Admin_model->getdatafromtable_final_quotebyr($id,$buyerid);
 		//echo '<pre>';  print_r($data['final_quotebyr']); die;		
 		$data['buy_quot'] = $this->Admin_model->getdatafromtable_buy_quot($id,$buyerid);

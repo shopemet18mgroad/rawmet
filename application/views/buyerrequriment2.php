@@ -50,7 +50,7 @@
 			<td><?php echo $row->quantity.' '.$row->units;?></td>	
 			
 			<td>
-			<a href="<?php  echo base_url()."home"?>"><button style="font-size: 10px;" type="button" class="btn btn-info ">Send Offer</button></a>
+			<a href="<?php  echo base_url()."home_login/index/"?>"><button style="font-size: 10px;" type="button" class="btn btn-info ">Send Offer</button></a>
 			</td>
 			
 			
