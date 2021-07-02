@@ -1485,7 +1485,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					a.units,
 					a.price,
 					a.priceperkg,
-					a.sellerprice,a.bsupplyability');
+					a.sellerprice,a.bsupplyability,
+					a.uploadimage');
 					
 					$this->db->where('a.sellerid', $id);
 					//$this->db->where('b.status', 0);

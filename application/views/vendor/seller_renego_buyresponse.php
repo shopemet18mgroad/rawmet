@@ -102,10 +102,10 @@
 			
 			<button type="button" class="btn btn-outline-primary  btn-sm <?php echo $strDisable; ?>">
 			
-			<?php echo "<a href='javascript:approveProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?> </button>	
+			<?php if($first_approve[0]->status || isset($seller_req_response[0]->seller_renego_price) && $seller_req_response[0]->seller_renego_price){echo  "<a href='#'><i class='fas fa-check'></i></a>";}else{  echo "<a href='javascript:approveProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";}?> </button>	
 			
 			<button type="button" class="btn btn-outline-danger btn-sm <?php echo $strDisable; ?>">
-			<?php echo "<a href='javascript:rejectProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
+			<?php if($first_approve[0]->status || isset($seller_req_response[0]->seller_renego_price) && $seller_req_response[0]->seller_renego_price){echo  "<a href='#'><i class='fa fa-times' aria-hidden='true'></i></a>";}else{  echo "<a href='javascript:rejectProduct(\"".$sqldata1[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";}?>
 			</button>
 			<hr>
 			
@@ -129,7 +129,7 @@
 		
 			 
 		
-		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm" style="font-size:13px" name="submit" role="submit" onclick="return validate()" <?php echo $strDisable; ?> ><b>Negotiate</b></button>
+		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success mt-2 " style="font-size:13px" name="submit" role="submit" onclick="return validate()" <?php echo $strDisable; ?> ><b>Negotiate</b></button>
 		
 		
 		<button type="button" class="btn btn-outline-warning btn-sm mt-2 <?php echo $strDisable; ?>" href="<?php echo base_url();?>#" data-toggle="modal" data-target="#final_Negotiated" <?php echo $strDisable; ?>>Final Negotiated</button>
@@ -153,6 +153,7 @@
 			</div>
 		</div>
 		</td>
+		
 			
 		<td style="150px; color:white;">Seller Re_Negotiation Price: <br />
 			 <b style="color:orange;"><?php echo  $sqldata4[0]->seller_renego_price.' / '.$sqldata4[0]->bsupplyability;?></b> 
@@ -185,11 +186,11 @@
 	
 		
 		<td><button type="button" class="btn btn-outline-primary  btn-sm <?php echo $strDisable; ?>">
-<?php echo "<a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";?>		
+		<?php if($sqldata4[0]->buyer_approval ){echo  "<a href='#'><i class='fas fa-check'></i></a>";}else{  echo "<a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";}?></button>
 			
 			
 			<button type="button" class="btn btn-outline-danger btn-sm <?php echo $strDisable; ?> ">
-			<?php echo "<a href='javascript:rejectProduct4(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
+			<?php  if($sqldata4[0]->buyer_approval ){echo  "<a href='#'><i class='fa fa-times' aria-hidden='true'></i></a>";}else{  echo "<a href='javascript:rejectProduct4(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";}?>
 			</button>
 			
 			
@@ -224,8 +225,8 @@
 	<div class="form-row align-items-center">
 		<div class="col-md-7">
 			<div class="view overlay z-depth-1-half">
-           <!-- <?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="60%" height="100%">-->
+           <?php $img = unserialize($sqldata[0]->uploadimage)?>
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="60%" height="100%">
             <div class="mask rgba-white-light"></div>
 			</div>
 		  <br />

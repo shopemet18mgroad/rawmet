@@ -102,13 +102,15 @@
          
 
              <div class="topbar-divider d-none d-sm-block"></div>
-
+	
+	<?php if($sessi =="") {echo ' ';} else{?>
+	
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                <a class="nav-link dropdown-toggle" href="<?php echo base_url();?>#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-				
-					<?php  if(isset($sessi)) {echo $sessi;} else{echo 'Login';} ?>
+				<?php echo $sessi;?>
+					<?php // if(isset($sessi)) {echo $sessi;} else{echo 'Login';} ?>
 				
 				
 				</span>
@@ -134,7 +136,7 @@
                 </a>
               </div>
 			  </li>
-
+	<?php } ?>
           </ul>
 
         </nav>

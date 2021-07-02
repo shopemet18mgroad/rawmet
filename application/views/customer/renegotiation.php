@@ -40,13 +40,7 @@
 		Buyer's price:<small style="color:orange;"><b><?php echo  $sqldata2[0]->bprice. " / " .$sqldata2[0]->bunits;?></b></small><br/>
 
 	<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Customer_sellnegoquotation/auc_no/'.$sqldata2[0]->id.'/'.$sqldata2[0]->buyerid.'/'.$sqldata2[0]->sellerid." target='_blank'><i class='fa fa-download'></i></a> / <a href=".base_url().'/Customer_renegotiation/index/'.$sqldata2[0]->sellerpostproduct_id.'/'.$sqldata2[0]->buyerid." data-toggle='modal' data-target='#frist' target='_blank'><i class='fa fa-upload'></i></a> ";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>
-	
-	
-	
-	
-		
-	
-	</td>
+</td>
 	
 		
 			

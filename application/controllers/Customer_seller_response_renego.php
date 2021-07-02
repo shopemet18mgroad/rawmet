@@ -43,7 +43,7 @@ class Customer_seller_response_renego extends CI_Controller {
 	 
 		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active);
 		$data['sqldata']= $query;
-		
+		//print_r($data['sqldata']); die;	
 		$data['buyer2'] = $this->Admin_model->getdatafromtable_buyer2();
 		$data['uploadPo'] = $this->Admin_model->getdatafromtablefrstsendoffer($buyerid,$id);
 		//echo '<pre>';  print_r($data['uploadPo']); die;	

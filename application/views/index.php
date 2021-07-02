@@ -28,6 +28,7 @@
    <script src=" https://github.com/superRaytin/paginationjs"></script>
    <script src=" http://pagination.js.org"></script>
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script>
    div.dataTables_wrapper 
     {
@@ -42,6 +43,9 @@
         height: auto;
       }
 
+@media only screen and (max-width: 462px) {
+  .example {padding-left:15%}
+}
 </style>
 
 
@@ -77,16 +81,19 @@
 					<a href="./home" title="Rawmet Logo"></a>
 				</div>
 			
-			<div class="col-md-8 col-sm-10 p-2">
-					<div class="form-row">
+			<div class="col-md-8 col-sm-12">
+
+					<div class="form-row example" >
 					
 							<div class="form-group p-1">
 							<form class="user" action="<?php echo base_url()."Home_login";?>" method="post">
 								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User ID" size="25">
 							</div>
+						  
 						  <div class="form-group p-1">
 							<input type="password" class="form-control" id="exampleInputPassword" name="pass" placeholder="Password" size="25">
 						  </div>
+						  
 						  <div class="form-row">
 						  
 						  <div class="form-group p-1">
@@ -94,8 +101,7 @@
 						  </div>
 						 
 						  <div class="form-group p-1">
-						  
-						  <a href="<?php echo base_url();?>home_buyer_register">
+						   <a href="<?php echo base_url();?>home_buyer_register">
 						  <button type="button" class="btn btn-warning"> Register Here </button></a>
 							</div>
 						  </div>
@@ -106,16 +112,16 @@
 					 
 
 <center>
-<div class="form-check form-check-inline">
-  <input type="checkbox" class="form-check-input" id="customCheck2" name="optradio" value="Buyer">
+<div class="form-check-inline">
+  <input type="radio" class="form-check-input" id="customCheck2" name="optradio" value="Buyer">
   <label class="form-check-label" for="customCheck2">Buyer</label>
 </div>
-<div class="form-check form-check-inline">
-  <input type="checkbox" class="form-check-input" id="customCheck" name="optradio" value="Seller">
+<div class="form-check-inline">
+  <input type="radio" class="form-check-input" id="customCheck" name="optradio" value="Seller">
   <label class="form-check-label" for="customCheck">Seller</label>
 </div>
-<div class="form-check form-check-inline">
-  <input type="checkbox" class="form-check-input" id="customCheck3"name="optradio" value="Admin">
+<div class="form-check-inline">
+  <input type="radio" class="form-check-input" id="customCheck3"name="optradio" value="Admin">
   <label class="form-check-label" for="customCheck3">Admin</label>
   <a class="pl-3" href="<?php echo base_url()."email_send";?>"><b><u>Forgot Password?</u></b></a>
 </div>

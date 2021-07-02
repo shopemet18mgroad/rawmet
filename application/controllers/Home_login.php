@@ -44,6 +44,7 @@ class Home_login extends CI_Controller {
 			$user = $this->input->post('user');
 			$pass = $this->input->post('pass');
 			$pass = base64_encode($pass);
+			
 			$check_db = array($colname => $user, $colname2 => $pass, $status=>true);
 			$this->load->model('Admin_model');
 			$productid= $this->uri->segment(3);
@@ -73,7 +74,7 @@ class Home_login extends CI_Controller {
 				  }
 			  }else{
 				  $datainserr = "Invalid Password";
-				  header('location: '.base_url().'Home');
+				  header('location: '.base_url().'Home/index_error/'. $datainserr);
 				  die;
 			  }
 			  die;

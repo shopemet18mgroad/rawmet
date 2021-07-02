@@ -79,12 +79,10 @@
       <div class="modal-content">
 	
         <div class="modal-header">
-		<div class="justify-content-center">
-		<center>
-
-         <img  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img-fluid" alt="" width="80%;" height="400px">
-		 </center>
-        </div>
+		
+		
+         <img  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img mx-auto d-block" alt="" width="auto" height="100px">
+	
 		
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
@@ -119,11 +117,11 @@
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a> -->
                  
-				  <hr>
+				  
 				  <div class="text-center">
 				  <div class="form-check-inline">
   <label class="form-check-label">
-    <input type="radio" class="form-check-input" value="Buyer" name="optradio" checked>Buyer
+    <input type="hidden" class="form-check-input" value="Buyer" name="optradio" checked>
   </label>
 </div>
 

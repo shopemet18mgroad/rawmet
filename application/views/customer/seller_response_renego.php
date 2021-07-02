@@ -11,7 +11,11 @@
 	if($buyerReqStatus === "1" || $buyerReqStatus === "2"){
 		$strBuyerReqDisable = "disabled";
 	}
-	 
+	
+
+	 if($buyerReqStatus === "3" ){
+		 $strBuyerReqDisable = "";
+	 }
 	
 	$selleraprlReqStatus     = $sqldata4[0]->status;
 	$SellerapprvlDisable = "";
@@ -56,7 +60,7 @@
 			$strDisable = "";
 			$buyerNegoPrice = "";
 
-			if($buyer_req_response && $strSellerDisable ==""){
+			if($buyer_req_response && $strSellerDisable =="" ){
 				$buyerNegoPrice = $buyer_req_response[0]->buyer_nego_price; 
 				if($buyerNegoPrice !=""){
 					$strDisable = "disabled";
@@ -104,18 +108,16 @@
 		}?>	
 		
 		
-		<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $strDisable; ?><?php echo $status; ?>>
+		<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $strDisable." "; ?><?php echo $status; ?>>
 			
-			<?php echo  "<a href='javascript:approveProduct(\"".$sqldata4[0]->id."\")'  > Approval</a> "; 
+		<?php if($sqldata[0]->status == 1 || isset($buyer_req_response[0]->buyer_nego_price) && $buyer_req_response[0]->buyer_nego_price){echo  "<a href='#'> <i class='fas fa-check'></i></a>";}else{ echo  "<a href='javascript:approveProduct(\"".$sqldata4[0]->id."\")'  > <i class='fas fa-check'></i></a> ";} 
                  ?>
-			 
-				 
-				 </button>	
+		</button>	
 
  				 
 			
-		<button type="button" class="btn btn-outline-danger btn-sm" <?php echo $strDisable; ?>>
-		<?php echo "<a href='javascript:rejectProduct2(\"".$sqldata4[0]->id."\")'><i class='fa fa-times '  aria-hidden='true'></i></a>";?>
+		<button type="button" class="btn btn-outline-danger btn-sm" <?php echo $strDisable." "; ?><?php echo $status; ?>>
+		<?php if($sqldata[0]->status == 1 || isset($buyer_req_response[0]->buyer_nego_price) && $buyer_req_response[0]->buyer_nego_price){echo  "<a href='#'> <i class='fa fa-times'></i></a>";}else{  echo "<a href='javascript:rejectProduct2(\"".$sqldata4[0]->id."\")'><i class='fa fa-times '  aria-hidden='true'></i></a>";}?>
 		</button>
 		
 	<hr >
@@ -130,7 +132,7 @@
 		<td style="font-size:15px;">
 
 		<b style="text-decoration: underline;">Buyer Negotiate Here</b>
-			<input required style="width:auto; align:center" type="text" class="form-control mt-4" id="buyer_nego_price" name="buyer_nego_price" value='<?php echo $buyerNegoPrice;?>' <?php echo $strDisable; ?>>
+			<input required style="width:auto; align:center" type="text" class="form-control mt-4" id="buyer_nego_price" name="buyer_nego_price" value='<?php echo $buyerNegoPrice." ";?>' <?php echo $strDisable; ?>>
 			<hr>
 	<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm"  name="submit" role="submit" onclick="return validate()" <?php echo $strDisable; ?>><b>Negotiate</b></a></button>	
 		
@@ -168,7 +170,7 @@
 		<?php 
 			$strDisable = "";
 			$buyerFinalPrice = "";
-			if($buyer_final_req && $strBuyerReqDisable == "" && $strSellerDisable == ""&& $SellerapprvlDisable == ""){ 
+			if($buyer_final_req && $strBuyerReqDisable == "" && $strSellerDisable == ""&& $SellerapprvlDisable == "" ){ 
 				$buyerFinalPrice = $buyer_final_req[0]->buyer_final_price; 
 				if($buyerFinalPrice !=""){
 					$strDisable = "disabled";
@@ -182,6 +184,9 @@
 				}
 				if($SellerapprvlDisable !=""){
 					$strDisable = $SellerapprvlDisable;
+				}
+				if($reqres_appl[0]->buyer_approval == 3){
+					$strDisable = "disabled";
 				}
 			}
 			
@@ -209,15 +214,16 @@
 		
 		<p style="color:blue;"><b><?php echo  $sqldata4[0]->seller_renego_price. " / " .$sqldata4[0]->bsupplyability;?></b></p>
 		<br />
-		<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $strDisable; ?>>
-			<?php  echo "   <a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'>Approval </a> ";
+		
+		<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $strDisable." "; ?>>
+			<?php if(isset($buyer_final_req[0]->buyer_final_price) && $buyer_final_req[0]->buyer_final_price || $reqres_appl[0]->buyer_approval == 1 || $reqres_appl[0]->buyer_approval == 2 || $sqldata[0]->status){echo  "<a href='#'><i class='fas fa-check'></i></a>";}else{  echo "   <a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i> </a> ";}
                  ?>
-				  </button>	 
+	 </button>	 
 			
 			
 			
 			<button type="button" class="btn btn-outline-danger btn-sm" <?php echo $strDisable; ?>>
-		<?php echo "<a href='javascript:rejectProduct3(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";?>
+		<?php if(isset($buyer_final_req[0]->buyer_final_price) && $buyer_final_req[0]->buyer_final_price || $reqres_appl[0]->buyer_approval == 1 || $reqres_appl[0]->buyer_approval == 2 || $sqldata[0]->status){echo  "<a href='#'> <i class='fa fa-times'></i></a>";}else{  echo "<a href='javascript:rejectProduct3(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";}?>
 		</button>
 			
 		<br />
@@ -228,12 +234,12 @@
 		
 		</td>
 			 
-			
+	
 			
 		<td style="font-size:15px; width:auto;"> <b style="text-decoration: underline;">Re-Negotiate Here</b>
 
 		
-			<input required style="width:auto;" type="text" class="form-control mt-4" id="buyer_final_price" name="buyer_final_price" value='<?php echo $buyerFinalPrice;?>' <?php echo $strDisable; ?>>	
+			<input required style="width:auto;" type="text" class="form-control mt-4" id="buyer_final_price" name="buyer_final_price" value='<?php echo $buyerFinalPrice;?>' <?php echo $strDisable; ?> >	
 		<hr>
 		<button type="submit" href="<?php echo base_url();?>" class="btn btn-outline-success btn-sm"  name="submit" role="submit" onclick="return validate()" <?php echo $strDisable; ?> ><b>Final<br/> Negotiate</b></a></button>	
 		</td>
@@ -280,10 +286,10 @@
      
 	 
 	 <div class="col-md-6">
-
+	
           <div class="view overlay z-depth-1-half">
-            <?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="100%">
+           <?php $img = unserialize($sqldata[0]->uploadimage)?>
+					<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="450px" height="350px">
             <div class="mask rgba-white-light"></div>
 			 <br />
 			 <hr>
@@ -299,7 +305,7 @@
 		 
           <p><b>Seller Id :</b><?php echo  $sqldata[0]->sellerid;?> </p> 
 		  <p><b>Category :</b> <?php echo  $sqldata[0]->category;?></p>
-		  <p><b>Stock :</b> <?php echo  $sqldata[0]->quantity. " / " .$sqldata[0]->units;?>"</p> 
+		  <p><b>Stock :</b> <?php echo  $sqldata[0]->quantity . "/" .$sqldata[0]->units;?>"</p> 
 		  
 		 
 		  
@@ -393,7 +399,7 @@ swal("You have negotiated", {
 	  <th>Supplier name</th>
 	  <th>Buyer Name</th>
 	  
-      <th>companyname</th>
+      <th>Company Name</th>
 	   <th>Category</th>
 		<th>productname</th>
 		<th>product Id</th>
