@@ -55,7 +55,7 @@ class Home extends CI_Controller {
 		}
 			
  
-	
+	$active2 = array('buyerid'=>$sess['sessi']);
 		$productname = $this->input->post('productname');
 		$category = $this->input->post('category');
 		$myCountry = $this->input->post('myCountry');
@@ -64,6 +64,8 @@ class Home extends CI_Controller {
 		$time =  Date('Y-m-d H:i:s');
 		$this->load->model('Admin_model');
 		$data = $this->Admin_model->get_lookalike_search2('sellerpostproduct','productname','description',$productname,$category, $myCountry);
+		
+		
 		if(count($data)){
 			foreach($data as $dat){
 			$proid = str_ireplace('/','-',$dat['productid']);
@@ -235,15 +237,25 @@ class Home extends CI_Controller {
 	';
 	
 
+$buyer_data = $this->Admin_model->getdatafromtable('buyer_register',$active2);
 
 if($sess['sessi'] != ""){
+	if($buyer_data[0]->subscription == 1){
 		$data2 .= '<input type="submit" name="submit" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" />';
+	}else{
+		$data2 .= '<button style="font-size:16px" type="button" class="btn btn-danger btn-sm mt-2 offset-sm-5" data-toggle="modal" data-target="#subscription">Subscribe</button>';
+	}
 	}else{
 		$data2 .= '<button style="font-size:16px" type="button" class="btn btn-warning btn-sm mt-2 offset-sm-5" data-toggle="modal" data-target="#new_userlogin">Login</button>';
 	}
 	
+	/* $buyer_data = $this->Admin_model->getdatafromtable('buyer_register',$active1);
 	
-	
+	foreach($buyer_data as $d){
+	if($d->subscription == 1){
+	$data2 .= '<button style="font-size:16px" type="button" class="btn btn-warning btn-sm mt-2 offset-sm-5" data-toggle="modal" data-target="#subscription">Subscribe</button>';
+	}
+	} */
 
 $data2 .= '</form>
 	  

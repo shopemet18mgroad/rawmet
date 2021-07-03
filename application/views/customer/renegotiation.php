@@ -137,8 +137,7 @@
 		}
 		
 		?>
-		
-	
+
 	
 		<button type="button" class="btn btn-outline-primary  btn-sm" id="rengo" <?php echo $status." ";?> <?php echo $strDisable;?>>
 		<a href="<?php  if($sqldata3[0]->buyerapprove || $forth_renego2[0]->custapprove ||isset($cust_renego[0]->brenegoquantity) && $cust_renego[0]->brenegoquantity || $sqldata2[0]->sellapproval || $sqld[0]->selapprove)  {echo "#";}else{ echo base_url()."Customer_renegotiation/approve_requotes/".$sqldata2[0]->sellerpostproduct_id."/".$sqldata2[0]->buyerid;}?>"><i class='fas fa-check'></i></a>
@@ -306,9 +305,9 @@ Re-Negotiate Here
 				
 	<button type="button" class="btn btn-outline-primary  btn-sm" <?php echo $status; ?>>
 			
-	<a href="<?php if($sqldata3[0]->buyerapprove|| $forth_renego2[0]->custapprove|| $sqldata2[0]->sellapproval || $sqld[0]->selapprove){echo "#";}else{ echo base_url()."Customer_renegotiation/approve_requotes_seller/".$id."/".$buyerid; }?>"><i class='fas fa-check'></i></a>
+	<a href="<?php if($sqldata3[0]->buyerapprove|| $forth_renego2[0]->custapprove|| $sqldata2[0]->sellapproval || $sqld[0]->selapprove || $approve_buyer2[0]->status == 1){echo "#";}else{ echo base_url()."Customer_renegotiation/approve_requotes_seller/".$id."/".$buyerid; }?>"><i class='fas fa-check'></i></a>
 	</button>
-			<button type="button" class="btn btn-outline-danger btn-sm" <?php echo $status; ?>><a href="<?php if($sqldata3[0]->buyerapprove|| $forth_renego2[0]->custapprove|| $sqldata2[0]->sellapproval || $sqld[0]->selapprove){echo "#";}else{ echo base_url()."Customer_renegotiation/reject_requotes_seller/".$id."/".$buyerid;}?>"><i class="fa fa-times" aria-hidden="true"></i></a></button>
+			<button type="button" class="btn btn-outline-danger btn-sm" <?php echo $status; ?>><a href="<?php if($sqldata3[0]->buyerapprove|| $forth_renego2[0]->custapprove|| $sqldata2[0]->sellapproval || $sqld[0]->selapprove || $approve_buyer2[0]->status == 1){echo "#";}else{ echo base_url()."Customer_renegotiation/reject_requotes_seller/".$id."/".$buyerid;}?>"><i class="fa fa-times" aria-hidden="true"></i></a></button>
 	
 	 
 		

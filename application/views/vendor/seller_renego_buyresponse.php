@@ -70,7 +70,7 @@
 			
 			<hr>
 			<br/>
-		<b><?php  if($first_approve[0]->status == 0) {echo 'Pending';}else if($first_approve[0]->status == 2) {echo 'Rejected';}else if($first_approve[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation_seller/auc_no/'.$first_approve[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($first_approve[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
+		<b><?php  if($first_approve[0]->status == 0) {echo 'Pending';}else if($first_approve[0]->status == 2) {echo 'Rejected';}else if($first_approve[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation_seller/auc_no/'.$first_approve[0]->id." target='_blank'><i class='fa fa-download'></i></a>";}else if($first_approve[0]->status == 5) {echo 'Approved-check in final Approval!';}else if($first_approve[0]->status == 6) {echo ' ';}?></b>
 			</td>
 			
 		<?php 
@@ -109,7 +109,7 @@
 			</button>
 			<hr>
 			
-				<b><?php  if($sqldata1[0]->status == 0) {echo 'Pending';}else if($sqldata1[0]->status == 2) {echo 'Rejected';}else if($sqldata1[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation10/auc_no/'.$sqldata1[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata1[0]->status == 5) {echo 'Approved-check in final Approval!';}?></b>
+				<b><?php  if($sqldata1[0]->status == 0) {echo 'Pending';}else if($sqldata1[0]->status == 2) {echo 'Rejected';}else if($sqldata1[0]->status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation10/auc_no/'.$sqldata1[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata1[0]->status == 5) {echo 'Approved-check in final Approval!';}else if($sqldata1[0]->status == 6) {echo ' ';}?></b>
 			
 			</td>
 			
@@ -159,7 +159,7 @@
 			 <b style="color:orange;"><?php echo  $sqldata4[0]->seller_renego_price.' / '.$sqldata4[0]->bsupplyability;?></b> 
 			 <br/>
 			 <hr>
-			 <b><?php  if($sqldata4[0]->buyer_approval == 0) {echo 'Pending';}else if($sqldata4[0]->buyer_approval == 2) {echo 'Rejected';}else if($sqldata4[0]->buyer_approval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation11/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->buyer_approval == 5) {echo 'Approved-check in final Approval!';}?></b>
+			 <b><?php  if($sqldata4[0]->buyer_approval == 0) {echo 'Pending';}else if($sqldata4[0]->buyer_approval == 2) {echo 'Rejected';}else if($sqldata4[0]->buyer_approval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation11/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->buyer_approval == 5) {echo 'Approved-check in final Approval!';}else if($sqldata4[0]->buyer_approval == 6) {echo ' ';}?></b>
 		</td>
 		
 		
@@ -186,17 +186,17 @@
 	
 		
 		<td><button type="button" class="btn btn-outline-primary  btn-sm <?php echo $strDisable; ?>">
-		<?php if($sqldata4[0]->buyer_approval ){echo  "<a href='#'><i class='fas fa-check'></i></a>";}else{  echo "<a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";}?></button>
+		<?php if($sqldata4[0]->buyer_approval || $first_approve[0]->status){echo  "<a href='#'><i class='fas fa-check'></i></a>";}else{  echo "<a href='javascript:finalapproveProduct(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fas fa-check'></i></a>";}?></button>
 			
 			
 			<button type="button" class="btn btn-outline-danger btn-sm <?php echo $strDisable; ?> ">
-			<?php  if($sqldata4[0]->buyer_approval ){echo  "<a href='#'><i class='fa fa-times' aria-hidden='true'></i></a>";}else{  echo "<a href='javascript:rejectProduct4(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";}?>
+			<?php  if($sqldata4[0]->buyer_approval || $first_approve[0]->status){echo  "<a href='#'><i class='fa fa-times' aria-hidden='true'></i></a>";}else{  echo "<a href='javascript:rejectProduct4(\"".$sqldata4[0]->seller_mbuyreq_id."\")'><i class='fa fa-times' aria-hidden='true'></i></a>";}?>
 			</button>
 			
 			
 			<br/>
 			
-			 <b><?php  if($sqldata4[0]->sel_status == 0) {echo 'Pending';}else if($sqldata4[0]->sel_status == 2) {echo 'Rejected';}else if($sqldata4[0]->sel_status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation12/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->sel_status == 5) {echo 'Approved-check in final Approval!';} ?></b>
+			 <b><?php  if($sqldata4[0]->sel_status == 0) {echo 'Pending';}else if($sqldata4[0]->sel_status == 2) {echo 'Rejected';}else if($sqldata4[0]->sel_status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation12/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->sel_status == 5) {echo 'Approved-check in final Approval!';}else if($sqldata4[0]->sel_status == 6) {echo ' ';} ?></b>
 			 
 		 
 			

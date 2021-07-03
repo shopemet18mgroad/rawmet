@@ -138,6 +138,93 @@
       </div>
     </div>
   </div>
+  
+  
+  
+  
+  
+  <div class="modal fade" id="subscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+	  
+      <div class="modal-content">
+	
+        <div class="modal-header">
+		
+		
+         <img  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img mx-auto d-block" alt="" width="auto" height="100px">
+	
+		
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+		
+        <div class="modal-body">
+     
+			  <form class="user" action="<?php echo base_url()."home/login";?>" method="post">
+			   
+                
+			<div class="form-group row">
+				<label for="buyerid" class="col-sm-4 col-form-label">Buyerid</label>
+				<div class="col-sm-4">
+					<input type="text" readonly class="form-control-plaintext" id="buyerid" value="6000">
+				</div>
+			</div>
+			
+			
+			
+			<div class="form-group row">
+				<label for="staticEmail" class="col-sm-4 col-form-label">Subscription Amount</label>
+				<div class="col-sm-4">
+					<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="6000">
+				</div>
+			</div>
+
+
+			<div class="form-group row">
+				<label for="staticEmail" class="col-sm-4 col-form-label">SGST</label>
+				<div class="col-sm-4">
+					<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="9%">
+				</div>
+			</div>
+                   
+            <div class="form-group row">
+				<label for="staticEmail" class="col-sm-4 col-form-label">CGST</label>
+				<div class="col-sm-4">
+					<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="9%">
+				</div>
+			</div>      
+             
+<hr>
+			<div class="form-group row">
+				<label for="staticEmail" class="col-sm-4 col-form-label">Total</label>
+				<div class="col-sm-4">
+					<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="8858">
+				</div>
+			</div>  
+<hr>			
+			<div class="form-group row">
+				
+				<div class="col-sm-10 ml-4">
+				 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+				<label class="form-check-label" for="flexCheckChecked">
+					Check here to indicate that you have read and agree to the terms of the Rawmet Agreement.
+				</label>	
+				</div>
+			</div>
+		 </form>
+        
+        
+        </div>
+        <div class="modal-footer">
+          <a href="<?php echo base_url();?>#"><button name="submit" type="submit" class="btn btn-success">Pay</button></a>
+		  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+		
+		 
+        </div>
+      </div>
+    </div>
+  </div>
  <!-- Bootstrap core JavaScript-->
  
   <script src="<?php echo base_url()."web_files/";?>vendor/jquery/jquery.min.js"></script>

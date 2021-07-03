@@ -102,9 +102,9 @@ class vendor_buyerResponse_req extends CI_Controller {
 		//$active = array('seller_mbuyreq_id'=> $seller_mbuyreq_id1);
 		//$this->db->where('buyer_req_response',$active);
 		//$data['status'] = 1;
-		$data = array('buyer_approval'=>5);
-		$data2 = array('status'=>5);
-		$data3 = array('status'=>5);
+		$data = array('buyer_approval'=>6);
+		$data2 = array('status'=>6);
+		$data3 = array('status'=>6);
 		$data4 = array('sel_status'=>2);
 		
 		$comp = array('id'=>$id);
