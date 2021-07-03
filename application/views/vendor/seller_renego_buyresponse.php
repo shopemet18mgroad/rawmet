@@ -198,7 +198,7 @@
 			
 			 <b><?php  if($sqldata4[0]->sel_status == 0) {echo 'Pending';}else if($sqldata4[0]->sel_status == 2) {echo 'Rejected';}else if($sqldata4[0]->sel_status == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_quotation12/auc_no/'.$sqldata4[0]->seller_mbuyreq_id." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata4[0]->sel_status == 5) {echo 'Approved-check in final Approval!';}else if($sqldata4[0]->sel_status == 6) {echo ' ';} ?></b>
 			 
-		 
+		 <!-- ABCD -->
 			
 			</td>
 
