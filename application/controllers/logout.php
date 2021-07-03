@@ -28,6 +28,7 @@ class Logout extends CI_Controller {
 		$this->session->sess_destroy();
 		  header('location: '.base_url().'Home');
 		 die;
+		 //xyz
 	}
 	
 }
