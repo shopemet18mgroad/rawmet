@@ -1,4 +1,19 @@
-
+<style>
+.button {
+  &:hover {
+    background-color: lighten(green, 5%);
+    cursor: pointer;
+    cursor: hand;
+  }
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  color: white;
+  text-align:center;
+  line-height:50px;
+  border-radius: 30px;
+}
+</style>
 
         <!-- End of Topbar -->
 
@@ -45,12 +60,23 @@
 		<td><?php echo $row->bcity;?></td>
         <td style="form-inline";>
 	
-				<a class="btn btn-primary btn-xl text-white" href="<?php echo base_url()."admin_vendorprofile/index/".$row->buyerid;?>"> <i class="fa fa-edit"></i>Edit</a>
+				<a class="btn btn-primary btn-xl text-white btn-sm" href="<?php echo base_url()."admin_vendorprofile/index/".$row->buyerid;?>"> <i class="fa fa-edit"></i>Edit</a>
 				
-				<a href="<?php  echo base_url()."admin_managebuyer/reject/".urldecode($row->buyerid);?>"><button type="button"  class="btn btn-danger btn-xl text-white">Inactive</button></a>
+				<a href="<?php  echo base_url()."admin_managebuyer/reject/".urldecode($row->buyerid);?>"><button type="button"  class="btn btn-danger btn-xl text-white btn-sm mt-1">Inactive</button></a>
+				
+				<?php if($row->subscription == 0 && $row->subscription_amount != NULL){
+				
+				echo '<button type="button"  class="btn btn-success btn-xl text-white btn-sm mt-1">paid</button>';
+				
+				
+				 }
+				else { ?>
+						<a href="<?php  echo base_url()."admin_managebuyer/subscribe/".urldecode($row->buyerid);?>"><button type="button"  class="btn btn-danger btn-xl text-white btn-sm mt-1">subscribe</button></a>
+					<?php }
+				 ?>
 				</td>
 				
-      </tr> 
+      </tr>  
 	  <?php $count++;?>
 <?php }?>	  
       
@@ -76,3 +102,16 @@
       <!-- End of Footer -->
 </div>
 </div>
+
+<script>
+
+var button = document.querySelector('.button');
+
+button.onclick = function () {
+ var red = Math.floor(Math.random() * 256);
+ var blue = Math.floor(Math.random() * 256);
+ var green = Math.floor(Math.random() * 256);
+
+ this.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+};
+</script>

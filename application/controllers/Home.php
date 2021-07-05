@@ -240,7 +240,7 @@ class Home extends CI_Controller {
 $buyer_data = $this->Admin_model->getdatafromtable('buyer_register',$active2);
 
 if($sess['sessi'] != ""){
-	if($buyer_data[0]->subscription == 1){
+	if($buyer_data[0]->subscription == 0){
 		$data2 .= '<input type="submit" name="submit" role="submit" value="Submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" />';
 	}else{
 		$data2 .= '<button style="font-size:16px" type="button" class="btn btn-danger btn-sm mt-2 offset-sm-5" data-toggle="modal" data-target="#subscription">Subscribe</button>';

@@ -20,8 +20,7 @@ class Admin_managebuyer extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		
+	{	
 		
 		$this->load->model('Admin_model');
 		$this->load->library('session');
@@ -38,7 +37,7 @@ class Admin_managebuyer extends CI_Controller {
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active = array('ausername'=>$sess['sessi']);
 			}
-			$this->load->view('admin/header',$sess);
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/managebuyer',$adac);
 		$this->load->view('admin/footer');
 	
@@ -46,22 +45,33 @@ class Admin_managebuyer extends CI_Controller {
 		public function reject(){
 		$this->load->helper('url');
 		$this->load->model('Admin_model');
-         $buyerid = urldecode($this->uri->segment(3));
-	
-
+         
+		$buyerid = urldecode($this->uri->segment(3));
 		$retriveval = array('buyerid'=>$buyerid);
 		
 		$data2 = array('boptions'=>2);
 
-		
-		
 		$status = $this->Admin_model->update_custom('buyer_register',$data2,$retriveval,$retriveval);
 		
 		header('location: '.base_url().'Admin_managebuyer/index/'.urlencode($retriveval));
-		
 		die;
 	}
 	
+	public function subscribe(){
+		$this->load->helper('url');
+		$this->load->model('Admin_model');
+        
+		$buyerid = urldecode($this->uri->segment(3));
+		$retriveval = array('buyerid'=>$buyerid);
+		
+		$subs = array('subscription'=>0,'subscription_amount'=>0);
+	
+		
+		$status = $this->Admin_model->update_custom('buyer_register',$subs,$retriveval,$retriveval);
+		
+		header('location: '.base_url().'Admin_managebuyer/index/'.urlencode($retriveval));
+		die;
+	}
 	
 	
 }
