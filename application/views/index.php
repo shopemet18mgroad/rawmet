@@ -216,7 +216,13 @@
 India
 <hr>
   <li style="display: inline;  padding: 8px;color:#808080">  <a href="#"  data-toggle="modal" data-target="#aboutus" style="color:#808080">About Us</a></li>
-  <li style="display: inline;  padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#termsandcondition"  href="#">Terms of Use</a></li>
+  <li style="display: inline;  padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#termsandcondition"  href="#">Terms of condition</a></li>
+  
+  
+  
+  <li style="display: inline;  padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#returnrefundpolicy"  href="#">Return and refund policy</a></li>
+  
+  
   <li style="display: inline; float:right ; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#privacypolicy" href="#">Privacy Policy</a></li>
   <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#paymentpolicy" href="#">Payments Policy</a></li>
    <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080"  href="#">Seller Terms and Conditions</a></li>
@@ -514,7 +520,71 @@ Get to know us better by connecting with us on our Facebook, Twitter, Google , Y
             </div>
         </div>
     </div>
+	----
+	<div class="modal fade" id="returnrefundpolicy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Return And Refund Policy</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-window-close"></i>
+                    </button>
+                </div>
+				<div class="modal-body">Thanks for subscribing to our services at RAWMET24.Com operated by
+SHOPEMET NETWORKS PRIVATE LIMITED.</div>
+<div class="modal-body">
+We don't offer refund on subscription amount for the service offered on our website
+</div>
+ 
+                <div class="modal-body"><h6>Please read the following statement about our information gathering and dissemination practices.</h6>
+				
+				<h6 style="color:blue">Note: Our Return and Refund policy is subject to change at any time without notice. To make sure you are aware of any changes, please review this policy periodically.</h6>By visiting this Website www.rawmet24.com you agree to be bound by the terms and conditions of this Privacy Policy. If you do not agree please do not use or access our Website.<br/>
+				 This Return and Refund policy is incorporated into and subject to the Terms of Use.</div>
+				 
+				
+				 
+				 
+				
+				
+
+				
+
+				
+
+			
+
+			
+
+				<div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Officer For Grievance</h5>
+                </div>
+				
+				<div class="modal-body">
+				In accordance with Information Technology Act 2000 and rules made there under, the name and contact details of the Grievance Officer are provided below:<br/>
+					WWW.RAWMET24.COM<br/>
+					Shopemet Networks Pvt Ltd.<br/><br/>
+					Corp Off – Plo No 23, 3rd Floor, Hari Prem Complex
+					Binnamangala, Indiranagar 1st Stage, Bangalore<br/>
+					Karnataka, India, 560 038.<br/>
+					Ph No:080-42332722 / +91-9945454505 <br/>
+					Email: admin@rawmet24.com / admin@shopemet.com<br/>
+					Time: Mon - Sat (10:00 - 18:00)
+				</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
 	
+	
+	
+	
+	
+	
+	
+	----
 	<div class="modal fade" id="paymentpolicy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
