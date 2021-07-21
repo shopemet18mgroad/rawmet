@@ -294,9 +294,10 @@ $data2 .= '</form>
 
 		$datapass['sr'] = $data2;
 			$datapass['sessi'] = $sess;
+			
 	    $this->load->view('header1',$sess);
 	   $this->load->view('search',$datapass);
-		$this->load->view('footer1');
+		$this->load->view('footer1',$datapass);
 		$this->load->helper('url');
 	
 		

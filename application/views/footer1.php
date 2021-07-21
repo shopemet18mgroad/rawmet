@@ -1,5 +1,6 @@
    <!-- Footer -->
       <!-- Footer -->
+	  
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -159,17 +160,18 @@
           </button>
         </div>
 		
-        <div class="modal-body">
+        <div class="modal-body" >
      
 			  <form class="user" action="<?php echo base_url()."home/login";?>" method="post">
 			   
-                
-			<div class="form-group row">
+			   <div class="form-group row">
 				<label for="buyerid" class="col-sm-4 col-form-label">Buyerid</label>
 				<div class="col-sm-4">
-					<input type="text" readonly class="form-control-plaintext" id="buyerid" value="6000">
+					<input type="text" readonly class="form-control-plaintext" value="<?php echo $sessi['sessi'];?>">
 				</div>
 			</div>
+                
+			
 			
 			
 			
