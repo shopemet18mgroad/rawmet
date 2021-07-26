@@ -160,7 +160,7 @@
           </button>
         </div>
 		
-        <div class="modal-body" >
+        <div class="modal-body">
      
 			  <form class="user" action="<?php echo base_url()."home/login";?>" method="post">
 			   
@@ -219,7 +219,7 @@
         
         </div>
         <div class="modal-footer">
-          <a href="<?php echo base_url();?>#"><button name="submit" type="submit" class="btn btn-success">Pay</button></a>
+          <a href="<?php echo base_url();?>"><button name="submit" type="submit" class="btn btn-success">Pay</button></a>
 		  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 		
 		 
