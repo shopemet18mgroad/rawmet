@@ -162,7 +162,7 @@
 		
         <div class="modal-body" >
      
-			  <form class="user" action="<?php echo base_url()."home/login";?>" method="post">
+			  <form class="user" action="<?php echo base_url()."home/ProcesSubscription";?>" onsubmit="return checkforcheckbox()" method="post">
 			   
 			   <div class="form-group row">
 				<label for="buyerid" class="col-sm-4 col-form-label">Buyerid</label>
@@ -214,19 +214,21 @@
 				</label>	
 				</div>
 			</div>
-		 </form>
+		
         
         
         </div>
         <div class="modal-footer">
-          <a href="<?php echo base_url();?>#"><button name="submit" type="submit" class="btn btn-success">Pay</button></a>
+          <button name="submitmodal" type="submitmodal" class="btn btn-success">Pay</button>
 		  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 		
 		 
         </div>
+		 
       </div>
     </div>
   </div>
+  </form>
  <!-- Bootstrap core JavaScript-->
  
   <script src="<?php echo base_url()."web_files/";?>vendor/jquery/jquery.min.js"></script>
@@ -269,6 +271,15 @@ if(exampleInputEmail == ''  || exampleInputPassword == '' ){
 		swal("Alert!",  "ID and Password cannot be blank!", "error");
 		return false;
 	}
-	
 			
-} </script>
+} 
+function checkforcheckbox(){
+	if($("#flexCheckChecked").is(':checked')){
+		return true;
+	}else{
+		swal("Alert!",  "Please Accept Terms and Conditions!", "error");
+		//alert("Please Accept Terms and Conditions");
+		return false;
+	}
+}
+</script>
