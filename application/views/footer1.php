@@ -167,7 +167,7 @@
 			   <div class="form-group row">
 				<label for="buyerid" class="col-sm-4 col-form-label">Buyerid</label>
 				<div class="col-sm-4">
-					<input type="text" readonly class="form-control-plaintext" value="<?php echo $sessi['sessi'];?>">
+					<input type="text" readonly class="form-control-plaintext" value="<?php echo $sessi['sessi'];?>" id ="buyerid" name="buyerid">
 				</div>
 			</div>
                 
@@ -176,32 +176,32 @@
 			
 			
 			<div class="form-group row">
-				<label for="staticEmail" class="col-sm-4 col-form-label">Subscription Amount</label>
+				<label for="" class="col-sm-4 col-form-label">Subscription Amount</label>
 				<div class="col-sm-4">
-					<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="6000">
+					<input type="text" readonly class="form-control-plaintext" id="subamount" name="subamount" value="6000">
 				</div>
 			</div>
 
 
 			<div class="form-group row">
-				<label for="staticEmail" class="col-sm-4 col-form-label">SGST</label>
+				<label for="" class="col-sm-4 col-form-label">SGST</label>
 				<div class="col-sm-4">
-					<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="9%">
+					<input type="text" readonly class="form-control-plaintext" id="subsgst" name="subsgst" value="9%">
 				</div>
 			</div>
                    
             <div class="form-group row">
-				<label for="staticEmail" class="col-sm-4 col-form-label">CGST</label>
+				<label for="" class="col-sm-4 col-form-label">CGST</label>
 				<div class="col-sm-4">
-					<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="9%">
+					<input type="text" readonly class="form-control-plaintext" id="subcgst" name="subcgst" value="9%">
 				</div>
 			</div>      
              
 <hr>
 			<div class="form-group row">
-				<label for="staticEmail" class="col-sm-4 col-form-label">Total</label>
+				<label for="" class="col-sm-4 col-form-label">Total</label>
 				<div class="col-sm-4">
-					<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="8858">
+					<input type="text" readonly class="form-control-plaintext" id="subtotal" name="subtotal" value="8858">
 				</div>
 			</div>  
 <hr>			

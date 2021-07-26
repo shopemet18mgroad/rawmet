@@ -747,7 +747,63 @@ private function upload_files($nameid){
       }
 	 return $datar;
     }
+    
+public function ProcesSubscription(){
+
+	
+		
+		$this->load->model('Admin_model');
+		$this->load->library('session');
+   $this->load->helper(array('url','form','file','html'));
+  
+				
+	echo  $fail= base_url().'payment/fail';
+	echo  $pass= base_url().'payment/success';
+			
+			 echo $buyerid = $this->input->post('buyerid'); 
+			 $active1 =array('buyerid'=>$buyerid);
+			  $data2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);
+	echo $email	=	$data2[0]->bemail;  
+	
+ echo $bcont = $data2[0]->bcontactnumber;
+ 
+			  echo $subamount = $this->input->post('subamount'); 
+			
+	
+		   echo $subtotal = $this->input->post('subtotal'); die;
+			
+	
+	      
+
+			
+				 
+			  
+
+		
+			
+		
+			
+	
+			
+			 
+	 
+
+			
+		
+		
+	
+	
+	
+	
+	
+	
+
+    
+
+
+
+
 	}
 	
 			
-	
+}
