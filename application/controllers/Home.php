@@ -757,8 +757,8 @@ public function ProcesSubscription(){
    $this->load->helper(array('url','form','file','html'));
   
 				
-	echo  $fail= base_url().'payment/fail';
-	echo  $pass= base_url().'payment/success';
+	echo  $response = base_url().'payment/response';
+	
 			
 			 echo $buyerid = $this->input->post('buyerid'); 
 			 $active1 =array('buyerid'=>$buyerid);
