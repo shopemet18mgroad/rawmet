@@ -83,7 +83,7 @@ class Email_send extends CI_Controller {
     $this->email->message($emailContent);
     $this->email->send();
 
-    $this->session->set_flashdata('msg',"Mail has been sent successfully");
+    $this->session->set_flashdata('msg',"Mail nnnn has been sent successfully");
     $this->session->set_flashdata('msg_class','alert-success');
     return redirect('email_send');
 	}

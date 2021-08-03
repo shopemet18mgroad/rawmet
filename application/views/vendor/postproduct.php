@@ -224,7 +224,7 @@
 
 							<div class="col-sm-2">
 								<label for="price">Price:</label>
-								<input type="text" class="form-control" id="price" name="price" placeholder="0">
+								<input type="text" class="form-control" onchange="change();" id="price" name="price" placeholder="0">
 							</div>/
 							<div class="col-sm-2 mb-3 mb-sm-0">
 								<label for="quantity">Units:</label>
@@ -257,6 +257,12 @@
 									<option value="Meter">Meter</option>
 
 								</select>
+								
+								
+								
+								
+								<script>
+
 								
 							</div>
 								<div class="col-sm-4 mb-3 mb-sm-0">
@@ -422,6 +428,28 @@
 
 </div>
 <!-- End of Main Content -->
+<script>
+	function change() {
+		if (document.getElementById('punits').value == 'KG')
+			document.getElementById("payable").value = 'KG';
+		    document.getElementById("supplyunits").value = 'KG';
+		else if (document.getElementById('punits').value == 'Metric Ton')
+			document.getElementById("payable").value = 'Metric Ton';
+		document.getElementById("supplyunits").value = 'Metric Ton';
+		else if (document.getElementById('punits').value == 'Lot')
+			document.getElementById("payable").value = 'Lot';
+		document.getElementById("supplyunits").value = 'Lot';
+		else if (document.getElementById('punits').value == 'Liter')
+			document.getElementById("payable").value = 'Liter';
+		document.getElementById("supplyunits").value = 'Liter';
+		else if (document.getElementById('punits').value == 'Number')
+			document.getElementById("payable").value = 'Number';
+		document.getElementById("supplyunits").value = 'Number';
+		else if (document.getElementById('punits').value == 'Meter')
+			document.getElementById("payable").value = 'Meter';
+		document.getElementById("supplyunits").value = 'Meter';
+	};
+</script>
 
 <script type="text/javascript">    
 $(document).ready(function(){     
