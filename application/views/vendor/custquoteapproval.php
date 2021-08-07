@@ -85,7 +85,7 @@
 	<tr  style="text-align:center;">
 		
 	<td style="font-size:15px; width:150px;">
-		Buyer's Quantity <br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. " " .$sqldata2[0]->bsupplyability;?></b></small><br/>
+		Buyer's Quantity<br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bquantity. "  " .$sqldata2[0]->bsupplyability;?></b></small><br/>
 		Buyer's price <br /><small style="color:orange;"><b><?php echo  $sqldata2[0]->bprice. " / " .$sqldata2[0]->bunits;?></b></small><br/>
 		
 		<b><?php  if($sqldata2[0]->sellapproval == 0) {echo 'Pending';}else if($sqldata2[0]->sellapproval == 2) {echo 'Rejected';}else if($sqldata2[0]->sellapproval == 1) {echo 'Approved!' ."</br> "."<a href=".base_url().'/Vendor_sellnegoquotation/auc_no/'.$sqldata2[0]->id.'/'.$sqldata2[0]->sellerid.'/'.$sqldata2[0]->buyerid." target='_blank'><i class='fa fa-download'></i></a>";}else if($sqldata2[0]->sellapproval == 0) {echo 'Approved-check in final Approval!';}?></b>	
@@ -249,10 +249,10 @@
 	<div class="form-row align-items-center">
 	<div class="form-inline">
 	<div class="col-md-8">
-		<p style="font-size:12px;font-weight-bold"><b>Buyer Id:</b> <?php echo  $sqldata2[0]->buyerid;?></p>
-		<p style="font-size:12px;font-weight-bold"><b>Category: </b><?php echo  $sqldata[0]->category;?></p> <p style="font-size:12px;font-weight-bold"> <b>Posted Date:</b><?php echo date('d-m-Y H:i',strtotime($sqldata[0]->datetime)) ;?> </p>				
-		<p style="font-size:12px;font-weight-bold"> <b>Estimated Delivery: </b> <?php echo  $sqldata[0]->estdeltime;?></p>	 
-		<p style="font-size:12px;font-weight-bold"> <b>Validity Till: </b><?php echo date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityto)) ;?> </p>	
+		<p style="font-size:12px;"><b>Buyer Id: </b><?php echo  $sqldata2[0]->buyerid;?></p>
+		<p style="font-size:12px;"><b>Category:</b> <?php echo  $sqldata[0]->category;?></p> <p style="font-size:12px;"><b>Posted Date:</b> <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->datetime)) ;?> </p>				
+		<p style="font-size:12px;"><b> Estimated Delivery:</b>  <?php echo  $sqldata[0]->estdeltime;?></p>	 
+		<p style="font-size:12px;"><b> Validity Till:</b> <?php echo date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityto)) ;?> </p>	
 	<br/>
 	</div>
 	<!--Grid column-->

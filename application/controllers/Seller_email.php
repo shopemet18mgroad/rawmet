@@ -25,10 +25,12 @@ class Seller_email extends CI_Controller {
 	
 	$check_db = array($colname =>$email);
 	
+	
 	$this->load->model('Admin_model');
 	 if($this->Admin_model->check($table, $check_db)){
-	if($table =="vendor_register"){
+	if($table == "vendor_register"){
 		$newdata = $this->Admin_model->getdatafromtable('vendor_register',$check_db);
+		//print_r($newdata);die;
 		$id = $newdata[0]->sellerid;
 		$vname= $newdata[0]->vname;
 		$vpassword = base64_decode($newdata[0]->vpassword);

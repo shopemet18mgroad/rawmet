@@ -115,7 +115,7 @@
 								 <input hidden type="radio" class="form-check-input" value="Seller_activate" name="optradio" checked>
 								
   <button type="submit" id="<?php echo urldecode($sqldata[0]->sellerid);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-primary">Activate</button></td>
-  .
+  
 							</tr>
                              				
 						</tbody>

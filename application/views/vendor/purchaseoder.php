@@ -27,7 +27,7 @@
         <th>Commission to Rawmet</th>
 		<th>Image</th>
 		<th>Status</th>
-		<th>Pay Now</th>
+		<!--<th>Pay Now</th>-->
       </tr>
     </thead>
     <tbody>
@@ -47,7 +47,7 @@
 				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	
 		<td data-label="Status" style="color:orange";><b><?php  if($row->pooptions == 1) {echo 'Paid';}else if($row->pooptions == 2) {echo 'UnPaid';}else if($row->pooptions == 0) {echo 'Pending';}?></b></td>
-		<td data-label="Pay Now"><button type="button" class="btn btn-primary btn-sm"><?php  if($row->pooptions == 2) {echo 'Pay now';}?></button></td>
+	<!--	<td data-label="Pay Now"><button type="button" class="btn btn-primary btn-sm"><?php  //if($row->pooptions == 2) {echo 'Pay now';}?></button></td>-->
 		
 
 <?php $count++;?>
