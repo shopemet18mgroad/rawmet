@@ -80,8 +80,6 @@ blink {
 font-size:1vw;
 
   }
-}
-@media only screen and (min-width: 992px) {
 .footer5{
 	   position: fixed;
   left: 0;
@@ -90,17 +88,22 @@ font-size:1vw;
   background-color:#808080;
   color:#808080;
   text-align: center;
-	  
+}
 
+}
+.footer5{
 	  
-  }
-
-  
-	  
-
+text-align: center;
 	  
   }
 
+
+@media (max-width:996px) and (min-width:212px) {
+
+	.responsive {
+	width:250px !important;
+}	
+	}
 
 </style>
 
@@ -110,15 +113,19 @@ font-size:1vw;
 	<div class="container-fluid top-header">
 		<div class="row">
 				<div class="col-md-12 contact-header">
+				
 				<div class="social pull-right">
 				
-						<ul>
+			<marquee width="100%" direction="left" height="100px">	
+
+		<ul>
 						
 						<li style="float:center"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<span id='ct6' style=""></span></li>
 							<li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp Helpline No: +91 9945454505</li>
 					 
-						</ul>
+						</ul></marquee>
 					</div>
+					
 
 					<!--<div class="social pull-right">
 						<ul>
@@ -254,7 +261,7 @@ font-size:1vw;
   </span>
 </h2>-->
 
-<img class="responsive" src="<?php echo base_url()."web_files/";?>img/rawmet logo.png" >
+<img class="responsive" src="<?php echo base_url()."web_files/";?>img/rawmet logo.png"  >
 
 
 
@@ -326,7 +333,7 @@ font-size:1vw;
     </main>
 
 
- <div class="links d-flex justify-content-around footer5" style="background-color: #f2f2f2; height:30px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" id ="change">
+ <div class="container-fluid links d-flex justify-content-around footer5 mr-5" style="background-color: #f2f2f2; height:auto;font-family: Futura,Trebuchet MS,Arial,sans-serif;" id ="change">
 
       <ul>
 

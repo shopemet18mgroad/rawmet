@@ -25,9 +25,16 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Personal Info</h6>
+				  <a style="float:right" href="<?php echo base_url();?>vendor_editpersonal"><i class="fa fa-edit">Edit</i></a>
+				   					                <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 				   
-				   
-		<a style="float:right" href="<?php echo base_url();?>vendor_editpersonal"><i class="fa fa-edit">Edit</i></a>
+		
 		
 
                

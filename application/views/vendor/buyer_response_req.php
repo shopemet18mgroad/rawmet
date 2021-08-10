@@ -7,7 +7,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800"></h1>
+            <h1 class="h3 mb-0 text-gray-800">Buyer Requriment Renegotiate</h1>
            
           </div>
 
@@ -19,6 +19,13 @@
               <div class="table-responsive">
               
   <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
     <thead class="bg-primary text-white">
       <tr>
 	  <th>Sl.No.</th>

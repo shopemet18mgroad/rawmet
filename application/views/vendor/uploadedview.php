@@ -21,7 +21,14 @@
                   <h6 class="m-0 font-weight-bold text-primary">Uploaded Product</h6>
 				  	<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
 				?>
-               <a style="float:right;" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
+               <a style="float:right;" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i> </a>
+			  <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:left"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">

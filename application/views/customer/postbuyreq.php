@@ -15,6 +15,13 @@
 
             <!-- Area Chart -->
             <div class="col-xl-12 col-lg-7">
+						   					                <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
               <div class="card shadow mb-4">
               <!--   Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">

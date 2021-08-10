@@ -24,6 +24,13 @@
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
+									                <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
     <thead class="bg-primary text-white">
     <th >Sl.No.</th>
 			<th>Supplier Id</th>

@@ -21,7 +21,13 @@
 				<!-- Card Header - Dropdown -->
 				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 					<h6 class="m-0 font-weight-bold text-primary">Add New Product</h6>
+                 <i class="fas fa-arrow-left text-primary"  onclick="goBack()"></i>
 
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 				</div>
 				<!-- Card Body -->
 				<div class="card-body">

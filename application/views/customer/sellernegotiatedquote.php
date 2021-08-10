@@ -23,6 +23,13 @@
             <div class="card-body">
               <div class="table-responsive">
    <form class="form-inline">
+   			   					                <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 					<div class="form-group mr-4 offset-sm-4">
 						<td colspan="5">
 						<!-- <form action="/action_page.php"> -->

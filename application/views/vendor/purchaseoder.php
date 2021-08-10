@@ -17,6 +17,13 @@
             <div class="card-body">
               <div class="table-responsive"><center>
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
+									                <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
     <thead class="bg-primary text-white">
       <tr>
 	    <th>Sl.No.</th>
