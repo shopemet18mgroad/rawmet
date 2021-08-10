@@ -21,6 +21,7 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
+			  <center>
                 <table class="table table-striped table-bordered table-sm w-auto small" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
@@ -49,16 +50,17 @@
 			<td data-label="Last Date"><?php echo date('d-m-Y H:i',strtotime($row->lastdate));?></td>
 			
 			<td data-label="Images"><?php $img = unserialize($row->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="55px"></td>
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="55px"></td>
 			<td data-label="Action"><!--<a href="<?php // echo base_url()."Vendor_managebuyreq/approve_requirement/".$proid."/".urldecode($row->bname);?>"><button type="button" class="btn btn-success">Approve</button></a>-->
 				
-			<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->buyerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Send Offer</a>
+			<a href="<?php echo base_url()."vendor_managebuy/index/".$proid."/".urldecode($row->buyerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm mt-2">Send Offer</a>
 
-			<a href="<?php echo base_url()."vendor_managebuyreq/product_reject/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm">Reject</a></td>	
+			<a href="<?php echo base_url()."vendor_managebuyreq/product_reject/".$proid;?>"  class="btn btn-danger btn-sm text-white delete-confirm mt-2">Reject</a></td>	
 		</tr>      
      <?php }?>	
     </tbody>
   </table>
+  </center>
 		</div>
 		</div>
 		</div>

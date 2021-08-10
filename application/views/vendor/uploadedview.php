@@ -19,50 +19,93 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Uploaded Product</h6>
-               
+				  	<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
+				?>
+               <a style="float:right;" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
 				<form action = "<?php echo base_url();?>" method="POST" enctype="multipart/form-data">
 					
 				<!--<form class="user" method="POST">-->
-				<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
-				?>
+			
 		
-			 <a style="float:right;" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_editpostproduct/editproduct/".$proid .'/'.urldecode($sqldata[0]->category);?>"><i class="fa fa-edit">Edit</i></a>
-			 	<div class="form-group row">
+			 
+			 
+			 	<div class="form-group row col-sm-12">
 				
 				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="80px"> <br />
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania"> <br />
 				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
 				
-				<h6 class="m-0 font-weight-bold text-primary"><b><u>Seller Id</u></b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->sellerid;?></h6></br>
 				
 				
-					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
+				
+				<table class="table bg-white table-sm col-sm-12 table-borderless mt-2">
+					<thead class="bg-primary text-white">
+						
+					</thead>
+						<tbody> 
+						<tr>
+					<td><h5 class="m-0 font-weight-bold text-primary"><b>PRODUCTNAME</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h5></td>
+					</tr>
+							<tr>
+								<td><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></td>
+							</tr>
+							
+							<tr>
+								<td><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></td>
+							</tr>
+							<tr>
+								<td><b>Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></td>
+							</tr> 
+							<tr>
+								<td><b>Seller Id</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->sellerid;?></td>
+							</tr>
+							<tr>
+								<td><b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6></td>
+							</tr>
+							<tr>
+							
+							
+								<td><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->punits;?></td>
+								</tr>
+								<tr>
+					<td><b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?></td>
+					</tr>
+					<tr>
+					<td><b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?></td>
+					<tr>
+					<tr>
+					<td><b style="color:green">Payable To Rawmet&nbsp;:</b>&nbsp;&nbsp;&nbsp;<?php echo $sqldata[0]->payable."%";?></td>
+					</tr>
+					<tr>
+					<td><b>ISO Certificate Number</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->uploadcertificate;?></td>
+							 
+						</tbody>	
+					</table>
+				
+				
+				
 					
 					
 					
 					
 					
-					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
-					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
-					<p><b>Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></p>
 					
 					
+					
+					<br>
+					
+					<br>
 					
 					
 					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
-					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
-					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->punits;?><br>
-					<b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?><br>
-					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?>
-					<br><b style="color:green">Payable To Rawmet&nbsp;:</b>&nbsp;&nbsp;&nbsp;<?php echo $sqldata[0]->payable."%";?>
 					
-					</p><b>ISO Certificate Number</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->uploadcertificate;?>
+				
 					</div>
 					
-					
+			
 					
 				
 				  

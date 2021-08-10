@@ -15,18 +15,17 @@
           </div>
 
           <!-- Content Row -->
-          <div class="row">
+          <center>
 
             <!-- Earnings (Monthly) Card Example -->
+			
 			<div class="col-xl-12 col-lg-7">
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr>   
-	  
-	        <th >Sl.No.</th>
+    <th >Sl.No.</th>
 			<th>Supplier Id</th>
 			<th>Product Name</th>
 			<th>Product Id</th>
@@ -41,7 +40,6 @@
 			<th style ="color:orange";>Supplier Re-negotiated Price</th>
 			<th>View Purchase Order</th>
 			<th>Sort</th>
-      </tr>
     </thead>
     <tbody>
 	     <?php  $count = 1;?>
@@ -108,20 +106,20 @@
  
 
 
- <h5 class="modal-title" id="exampleModalLabel">
+ <h6 class="modal-title" id="exampleModalLabel">
 
-<u>Details:</u><br>
-Buyerid:<?php echo $row->buyerid;?></br>
-Buyer Company Name:<?php echo $row->bcompanyname;?><br/>
-Sellerid:<?php echo $row->sellerid;?></br>
-Product Id:<?php echo $row->productid;?></br>
-Seller Company Name:<?php echo $row->vcompanyname;?>
-		  
-		  
-		  </h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+<b><u>Details:</u></b></br> <button class="close"  style="float:right" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
+<b>Buyerid:</b><?php echo $row->buyerid;?></br>
+<b>Buyer Company Name:</b><?php echo $row->bcompanyname;?></br>
+<b>Sellerid:</b><?php echo $row->sellerid;?></br>
+<b>Product Id:</b><?php echo $row->productid;?></br>
+<b>Seller Company Name:</b><?php echo $row->vcompanyname;?>
+		  
+		  
+		 
+         
         </div>
 		
         <div class="modal-body">
@@ -235,7 +233,7 @@ Seller Company Name:<?php echo $row->vcompanyname;?>
 		</div>
 		</div>
 		</div>
-		</div>
+	
           <!-- Content Row -->
 
           

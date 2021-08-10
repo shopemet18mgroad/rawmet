@@ -196,7 +196,7 @@
 					
 						
 							
-							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="submit" class="btn btn-info btn-sm mt-2 offset-sm-5" style="font-size:13px" <?php echo $strDisable; ?>>
+							<input type="submit" name="submit" onclick="return validatepost()" role="submit" value="submit" class="btn btn-info mt-2" style="font-size:13px" <?php echo $strDisable; ?>>
 							
 							
 							

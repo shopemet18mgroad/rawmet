@@ -46,6 +46,62 @@
 @media only screen and (max-width: 462px) {
   .example {padding-left:15%}
 }
+blink {
+  -webkit-animation: 0.5s linear infinite condemned_blink_effect; /* for Safari 4.0 - 8.0 */
+  animation: 1s linear infinite condemned_blink_effect;
+}
+
+/* for Safari 4.0 - 8.0 */
+@-webkit-keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@media only screen and (min-width: 992px) {
+#change{
+font-size:1vw;
+
+  }
+}
+@media only screen and (min-width: 992px) {
+.footer5{
+	   position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#808080;
+  color:#808080;
+  text-align: center;
+	  
+
+	  
+  }
+
+  
+	  
+
+	  
+  }
+
+
 </style>
 
 
@@ -55,8 +111,10 @@
 		<div class="row">
 				<div class="col-md-12 contact-header">
 				<div class="social pull-right">
+				
 						<ul>
-						<li><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<span id='ct6' style=""></span></li>
+						
+						<li style="float:center"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<span id='ct6' style=""></span></li>
 							<li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp Helpline No: +91 9945454505</li>
 					 
 						</ul>
@@ -83,9 +141,49 @@
 			
 			<div class="col-md-8 col-sm-12">
 
-					<div class="form-row example" >
+					<div class="form-row example" style="float:right" >
 					
-							<div class="form-group p-1">
+							
+						  
+						 
+						  <div class="form-group p-1">
+						   
+						  <button name="submit" type="submit" onclick="return userid4()"  data-toggle="modal" data-target="#basicModal"class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>
+<a href="<?php echo base_url();?>home_buyer_register">
+						  <button type="button" class="btn btn-warning"> Register Here </button></a>
+						
+								
+						  </div>
+							</div>
+						  </div>
+						 </div>
+						 
+						 
+						 
+						 
+						 
+						 
+						 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+
+ 
+		
+		
+         <img  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img mx-auto d-block" alt="" width="auto"  >
+	
+		
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        
+</div>
+<div class="modal-body">
+<center>
+
+
+<div class="form-group p-1">
 							<form class="user" action="<?php echo base_url()."Home_login";?>" method="post">
 								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User ID" size="25">
 							</div>
@@ -94,40 +192,51 @@
 							<input type="password" class="form-control" id="exampleInputPassword" name="pass" placeholder="Password" size="25">
 						  </div>
 						  
-						  <div class="form-row">
+ <div class="container d-flex justify-content-center">
+ 
+ 
+ 
+        
 						  
-						  <div class="form-group p-1">
-							<button name="submit" type="submit" onclick="return userid4()" class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>	
-						  </div>
-						 
-						  <div class="form-group p-1">
-						   <a href="<?php echo base_url();?>home_buyer_register">
-						  <button type="button" class="btn btn-warning"> Register Here </button></a>
-							</div>
-						  </div>
-						 </div>
+<div class="form-check-inline">
+  <input type="radio" class="form-check-input" id="customCheck2" name="optradio" value="Buyer">
+  <label class="form-check-label" for="customCheck2"><b>Buyer</b></label>
+</div>
+<div class="form-check-inline">
+  <input type="radio" class="form-check-input" id="customCheck" name="optradio" value="Seller">
+  <label class="form-check-label" for="customCheck"><b>Seller</b></label>
+</div>
+<div class="form-check-inline">
+  <input type="radio" class="form-check-input" id="customCheck3"name="optradio" value="Admin">
+  <label class="form-check-label" for="customCheck3"><b>Admin</b></label>
+  
+</div>
+</div>
+
+
+<button name="submit" type="submit" onclick="return userid4()" class="btn btn-info col-lg-12 mt-3"><i class="fa fa-sign-in"></i><b> Login</b></button>
+
+  </form> 
+</center>
+</div>
+<div class="modal-footer">
+<div>
+<a class="pl-3 mr-4" href="<?php echo base_url()."email_send";?>"><b><u>Forgot Password?</u></b></a>
+
+<button type="button" class="btn btn-dark" data-dismiss="modal"><b>Close</b></button>
+</div>
+</div>
+</div>
+</div>
+</div>
 						
 					 
 					
 					 
 
-<center>
-<div class="form-check-inline">
-  <input type="radio" class="form-check-input" id="customCheck2" name="optradio" value="Buyer">
-  <label class="form-check-label" for="customCheck2">Buyer</label>
-</div>
-<div class="form-check-inline">
-  <input type="radio" class="form-check-input" id="customCheck" name="optradio" value="Seller">
-  <label class="form-check-label" for="customCheck">Seller</label>
-</div>
-<div class="form-check-inline">
-  <input type="radio" class="form-check-input" id="customCheck3"name="optradio" value="Admin">
-  <label class="form-check-label" for="customCheck3">Admin</label>
-  <a class="pl-3" href="<?php echo base_url()."email_send";?>"><b><u>Forgot Password?</u></b></a>
-</div>
-</center>
 
-						  </form>  
+
+						 
 					</div>
 				
 				</div>
@@ -149,13 +258,13 @@
 
 
 
-        <form class="form-custom" autocomplete="off" class="form-control" method="POST"  action="<?php echo base_url()."home/search";?>">
+        <form class="form-custom" autocomplete="off" class="form-control"onsubmit="return megha()"method="POST"  action="<?php echo base_url()."home/search";?>">
 		
 		
             <div class="form-group input1 ">
                 <input type="text" class="form-control" name="productname" id="productname" onkeyup="search_product()" placeholder="Enter your raw material">
 		  
-				<div id="select" class="select"> <ul  id="dp"></ul></div>	  
+				<div id="select" class="select"><ul  id="dp"></ul></div>	  
             </div>
 				  
 			
@@ -172,9 +281,9 @@
 			<div class=""  class="form-control">
 			  
 			<!--Make sure the form has the autocomplete function switched off:-->
-
-						 <div class="autocomplete" style="width:200px;">
-						   <input id="myInput" type="text" name="myCountry" placeholder="&#xf041 All India" value="India" class="form-control">
+		<!--	&#xf041-->
+ <div class="autocomplete" style="width:200px;">
+ <input id="myInput" type="text" name="myCountry" value="All India"  class="form-control">
 					
 						</div>
 			  </div>
@@ -184,7 +293,7 @@
 			
 				<div class="form-group input4">
 					   <a href="<?php echo base_url();?>home_contactsupplier">
-						  <button type="submit" value="search" class="btn searchbtn input4"><i class="fa fa-search pr-1"></i>Search</button>
+						  <button type="submit" value="search"  class="btn searchbtn input4"><i class="fa fa-search pr-1"></i>Search</button>
 						 
 						</a>
 				</div>
@@ -192,15 +301,20 @@
 			
 </form>
 
-<div class="links mt2">
+<div class="links mt2 d-flex justify-content-around p-4" id="change" style="font-family: Futura,Trebuchet MS,Arial,sans-serif;">
 
-<a href="<?php echo base_url();?>Home_buyerrequriment2">Live Procurement</a>
+<blink>
+<a href="<?php echo base_url();?>Home_buyerrequriment2"  style="color:red"><b>Live Procurement</b></a></blink>|
 
+<a href="<?php echo base_url();?>Home_buyerrequriment2" style="color:grey"><b>Upcoming Procurement</b></a>|
+ 
+
+<a href="https://www.aucjunction.com/" style="color:grey"><b>Upcoming Disposals</b></a>
 
               
-				<a href="http://rawmet24.in/procurementtenders2.php">Tenders</a>			
-				<a href="https://www.aucjunction.com/">Upcoming Disposals</a>
-				<a href="<?php echo base_url();?>home_feedback">feedback</a>
+				<!--<a href="http://rawmet24.in/procurementtenders2.php" style="color:grey">Tenders</a>-->			
+				
+				
 				
         </div>
 		
@@ -208,35 +322,42 @@
 
 	 
 		</div>
-<div style="background-color: #f2f2f2" class="" >
 
- 
+    </main>
 
-<ul style="padding:10px; color:#808080">
-India
-<hr>
-  <li style="display: inline;  padding: 8px;color:#808080">  <a href="#"  data-toggle="modal" data-target="#aboutus" style="color:#808080">About Us</a></li>
-  <li style="display: inline;  padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#termsandcondition"  href="#">Terms of condition</a></li>
+
+ <div class="links d-flex justify-content-around footer5" style="background-color: #f2f2f2; height:30px;font-family: Futura,Trebuchet MS,Arial,sans-serif;" id ="change">
+
+      <ul>
+
+
+     <li style="display: inline;color:#808080"><a href="#"  data-toggle="modal" data-target="#aboutus" style="color:#808080">About Us</a></li>|
+          <li style="display:inline;color:#808080"><a style="color:#808080" data-toggle="modal" data-target=  "#termsandcondition"  href="#">Terms of condition</a></li>|
   
   
   
-  <li style="display: inline;  padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#returnrefundpolicy"  href="#">Return and refund policy</a></li>
+  <li style="display: inline;:#808080"><a style="color:#808080" data-toggle="modal" data-target="#returnrefundpolicy"  href="#">Return and refund policy</a></li>|
   
   
-  <li style="display: inline; float:right ; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#privacypolicy" href="#">Privacy Policy</a></li>
-  <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#paymentpolicy" href="#">Payments Policy</a></li>
-   <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080"  href="#">Seller Terms and Conditions</a></li>
-    <li style="display: inline; float:right; padding: 8px;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#contactus" href="#">Contact Us</a></li>
+  <li style="display: inline;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#privacypolicy" href="#">Privacy Policy</a></li>|
+  <li style="display: inline;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#paymentpolicy" href="#">Payments Policy</a></li>|
+   <li style="display: inline; color:#808080"><a style="color:#808080"  href="#">Seller Terms and Conditions</a></li>|
+    <li style="display: inline;color:#808080"><a style="color:#808080" data-toggle="modal" data-target="#contactus" href="#">Contact Us</a></li>|
+	<li style="display: inline; color:#808080"><a  style="color:#808080" href="<?php echo base_url();?>home_feedback">Feedback</a></li>
 </ul> 
  
 
 </div>
-    </main>
+
 		
    <script>
+   
+    
+   
+   
  function search_product(){
 	 $("#dp").hide();
- if(document.getElementById("productname").value.length =1){
+ if(document.getElementById("productname").value.length = 1){
 	 $("#dp").show();
 			var contents = $('#productname').val(); 
 			$.get('<?php echo base_url() .'home_contactsupplier/get_product_table/'; ?>'+contents, function(data){
@@ -244,11 +365,10 @@ India
 			});
 
 					
- }else{
-	 return;
- }
+			}
 }
 </script>
+
 
 <script>
 function display_ct6() {
@@ -281,6 +401,16 @@ function getPagingnr(){
 	$("#dp").hide();
 }
  </script>        
+	 <script>
+function megha(){
+	var x = $("#productname").val();
+	if(x.length == 0){
+		swal("Alert!",  "Search Feild Cannot be left blank", "error");
+		
+		return false;
+	}
+}
+	 </script>
   
        <script>
 

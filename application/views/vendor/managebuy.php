@@ -19,7 +19,7 @@
               <div class="card shadow mb-4">
               <!--   Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
-                  <h5 class="m-0 font-weight-bold text-primary">Negotiate Buyer Requirement</h5>
+               <center>   <h5 class="m-0 font-weight-bold text-primary">Negotiate Buyer Requirement</h5></center>
                
                 </div>
                 <!-- Card Body -->
@@ -29,8 +29,10 @@
  <form action="<?php echo base_url();?>vendor_add_buyerreq" method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="col-sm-4 col-md-6" style="">
+	
+	
 	<p><?php $img = unserialize($sqldata[0]->uploadimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="100px"></td>
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania"></td>
 					<input type="hidden" class="form-control" id="uploadimage" name="uploadimage" value="<?php echo $img[0];?>"></p>
     </div>
     <div class="col-sm-8 col-md-6" style="background-color:#F9F8F6;">

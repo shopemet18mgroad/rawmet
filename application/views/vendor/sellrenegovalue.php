@@ -46,7 +46,7 @@
 				?>
 			<td data-label="Sl.No."><?php echo $count;?></td>  
 			<td data-label="Image"><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="auto" height="55px"></td>
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img;?>" alt="Chania" width="auto" height="55px"></td>
 			<td data-label="Buyer Id"><?php echo $row->buyerid;?></td>
 			<td data-label="Product Name"><?php echo $row->productname;?></td>
 			<td data-label="Product Id"><?php echo $row->productid;?></td>
@@ -60,7 +60,7 @@
 	
 		<!--<a href="<?php // echo base_url()."Vendor_custquoteapproval/approve_quotes/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-success btn-sm" onclick="validate_selnego()">Approve </button></a>-->
 					
-		<center><a href="<?php echo base_url()."vendor_custquoteapproval/index/".urldecode($row->sellerpostproduct_id)."/".urldecode($row->buyerid);?>"  class="btn btn-secondary btn-sm text-white delete-confirm">Negotiate</a></center>
+		<a href="<?php echo base_url()."vendor_custquoteapproval/index/".urldecode($row->sellerpostproduct_id)."/".urldecode($row->buyerid);?>"  class="btn btn-secondary text-white delete-confirm">Negotiate</a>
 		
 		<!--<a href="<?php//  echo base_url()."Vendor_custquoteapproval/reject/".$proid."/".urldecode($row->buyerid);?>"><button type="button" class="btn btn-danger btn-sm">Reject</button></a></td>-->
       </tr> 

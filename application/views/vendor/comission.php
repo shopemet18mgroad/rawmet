@@ -15,6 +15,7 @@
 		  <div class="col-xl-12 col-lg-7">
 			<div class="card shadow mb-4">
             <div class="card-body">
+			<center>
               <div class="table-responsive">
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
@@ -43,14 +44,14 @@
 			<td data-label="Product Name"><?php echo $row->productname;?></td> 
 			<td data-label="Commission to Rawmet"><?php  echo $row->payable."%" ;?></td>
 			<td data-label="Image"><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 			<td style="color:green;" data-label="Payable Status"><b><?php  if($row->comapprove == 0) {echo 'Pending';}else if($row->comapprove == 2) {echo 'Rejected';}else if($row->comapprove == 1) {echo 'Approved';}?></b></td>
 		
-			<td data-label="Options"> <a href="<?php  echo base_url()."Vendor_comission/comission_approve/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-success btn-sm">Approve</button></a>
+			<td data-label="Options"> <a href="<?php  echo base_url()."Vendor_comission/comission_approve/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-success btn-sm mt-2">Approve</button></a>
 		
-			<a href="<?php  echo base_url()."Vendor_comission/comission_reject/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-info btn-sm">Reject</button></a>
+			<a href="<?php  echo base_url()."Vendor_comission/comission_reject/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-info btn-sm mt-2">Reject</button></a>
 		
-			<a href="<?php  echo base_url()."Vendor_comission/delete_comission/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger btn-sm">Delete</button></a></td>
+			<a href="<?php  echo base_url()."Vendor_comission/delete_comission/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger btn-sm mt-2">Delete</button></a></td>
 
 			<?php $count++;?>
 			<?php }?>	
@@ -60,6 +61,7 @@
   </table>
 
 		  </div>
+		  </center>
             </div>
           </div>
 		</div>

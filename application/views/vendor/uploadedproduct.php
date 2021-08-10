@@ -46,7 +46,7 @@
 		<td data-label="Product Name"><?php echo $row->productname;?></td> 
 		<td data-label="Category"><?php  echo $row->category;?></td>
         <td data-label="Image"><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="55px"> </td>
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="auto" height="55px"> </td>
 	
 		<td style="color:green;" data-label="Status"><b><?php  if($row->poptions == 0) {echo 'Pending';}else if($row->poptions == 2) {echo 'Rejected';}else if($row->poptions == 1) {echo 'Approved';}?></b></td>
 

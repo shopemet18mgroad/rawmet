@@ -261,7 +261,7 @@
 								
 								
 								
-								<script>
+						
 
 								
 							</div>
@@ -292,7 +292,7 @@
 
 
 
-							<!--<img class="img-fluid" src="<?php// echo base_url() . "web_files/"; ?>img/iron.jpg" alt="Chania" width="150" height="20">-->
+							
 							<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="Pname">Minimum Order Stock:</label>
 								<input type="text" class="form-control" id="minoderquant" name="minoderquant" placeholder="">
@@ -432,22 +432,22 @@
 	function change() {
 		if (document.getElementById('punits').value == 'KG')
 			document.getElementById("payable").value = 'KG';
-		    document.getElementById("supplyunits").value = 'KG';
+		    
 		else if (document.getElementById('punits').value == 'Metric Ton')
 			document.getElementById("payable").value = 'Metric Ton';
-		document.getElementById("supplyunits").value = 'Metric Ton';
+		
 		else if (document.getElementById('punits').value == 'Lot')
 			document.getElementById("payable").value = 'Lot';
-		document.getElementById("supplyunits").value = 'Lot';
+		
 		else if (document.getElementById('punits').value == 'Liter')
 			document.getElementById("payable").value = 'Liter';
-		document.getElementById("supplyunits").value = 'Liter';
+		
 		else if (document.getElementById('punits').value == 'Number')
 			document.getElementById("payable").value = 'Number';
-		document.getElementById("supplyunits").value = 'Number';
+		
 		else if (document.getElementById('punits').value == 'Meter')
 			document.getElementById("payable").value = 'Meter';
-		document.getElementById("supplyunits").value = 'Meter';
+		
 	};
 </script>
 

@@ -213,7 +213,7 @@
 							
 							<img src="<?php if(unserialize($sqldata[0]->uploadimage) != NULL){
 									$img = unserialize($sqldata[0]->uploadimage);
-									echo base_url()."/web_files/uploads/".$img[0];}else{echo base_url()."#";} ?>" width="40%" height="80px">
+									echo base_url()."/web_files/uploads/".$img[0];}else{echo base_url()."#";} ?>" width="60%" height="120px" class="img-thumbnail">
 									<?php 
 									if(unserialize($sqldata[0]->uploadimage) != NULL){?>
 								<input type="hidden" name="profileimage" id="profileimage" value="<?php echo $img[0];?>">
@@ -227,7 +227,7 @@
 						
 							</div>
 							
-									<label for=""><u>Update Image</u></label>
+									<!--<label for="">Update Image</label>-->
 								<div class="input_fields_wrap">
 								
 								<input  type="file" id="uploadimage" name="uploadimage">

@@ -15,7 +15,7 @@
 		  <div class="col-xl-12 col-lg-7">
 			<div class="card shadow mb-4">
             <div class="card-body">
-              <div class="table-responsive">
+              <div class="table-responsive"><center>
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
@@ -27,7 +27,7 @@
         <th>Commission to Rawmet</th>
 		<th>Image</th>
 		<th>Status</th>
-		<!--<th>Pay Now</th>-->
+
       </tr>
     </thead>
     <tbody>
@@ -42,12 +42,15 @@
 		<td data-label="Product Id"><?php echo $row->productid;?></td> 
 		<td data-label="Product Name"><?php echo $row->productname;?></td> 
 		<td data-label="Category"><?php  echo $row->category;?></td>
-        <td data-label="Commission to Rawmet"><?php echo $row->payable."%";?></td>
+        <td data-label="Commission to Rawmet" style="color:green"><?php echo $row->payable."%";?></td>
 		<td data-label="Image"><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	
 		<td data-label="Status" style="color:orange";><b><?php  if($row->pooptions == 1) {echo 'Paid';}else if($row->pooptions == 2) {echo 'UnPaid';}else if($row->pooptions == 0) {echo 'Pending';}?></b></td>
+
+
 	<!--	<td data-label="Pay Now"><button type="button" class="btn btn-primary btn-sm"><?php  //if($row->pooptions == 2) {echo 'Pay now';}?></button></td>-->
+
 		
 
 <?php $count++;?>
@@ -57,6 +60,7 @@
       
     </tbody>
   </table>
+  </center>
 
 		  </div>
             </div>

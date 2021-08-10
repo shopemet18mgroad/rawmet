@@ -49,7 +49,7 @@ class Email_send extends CI_Controller {
     $emailContent = '<!DOCTYPE><html><head></head><body><table width="600px" style="border:0px solid #cccccc;margin: auto;border-spacing:0;"><tr><td style="padding-left:0%"><img src="http://www.rawmet24.com/web_files/img/rawmet%20logo.png" width="25%" vspace=10 /></td></tr>';
 	$emailContent .='<tr style=""><td style="height:20px">Dear :'.$bname.'</td></tr>';
     $emailContent .='<tr style=""><td style="height:20px">Your Buyer Id is:'.$id.'</td></tr>';
-	$emailContent .='<tr style=""><td style="height:20px">Your is:'.$bpassword.'</td></tr>';
+	$emailContent .='<tr style=""><td style="height:20px">Your password is:'.$bpassword.'</td></tr>';
 
 
     $emailContent .= $this->input->post('message');  //   Post message available here
@@ -83,7 +83,7 @@ class Email_send extends CI_Controller {
     $this->email->message($emailContent);
     $this->email->send();
 
-    $this->session->set_flashdata('msg',"Mail nnnn has been sent successfully");
+    $this->session->set_flashdata('msg',"Mail has been sent successfully");
     $this->session->set_flashdata('msg_class','alert-success');
     return redirect('email_send');
 	}

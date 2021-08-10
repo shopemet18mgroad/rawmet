@@ -17,7 +17,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet'); ?>"/>
 	 <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet'); ?>"/>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
 <style>
 
 .register{
@@ -115,7 +114,48 @@
     margin-bottom: -15%;
     color: #495057;
 }
+ @media only screen and (max-width: 600px) ,(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+
+	/*  Force table to not be like tables anymore  */
+    table, thead, tbody, th, td, tr {  
+		 display: block!important;  
+		 width: 100%;
+	
+  } 
+
+ } 
+ blink {
+  -webkit-animation: 0.5s linear infinite condemned_blink_effect; /* for Safari 4.0 - 8.0 */
+  animation: 1s linear infinite condemned_blink_effect;
+}
+
+/* for Safari 4.0 - 8.0 */
+@-webkit-keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
 </style>
+
 
  
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css">
