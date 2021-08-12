@@ -218,6 +218,7 @@
 									
 									  <div class="table-responsive">
                                  <table class="table table-striped table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
+                                 <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
     <thead class="bg-primary text-white">
       <tr>
  
@@ -263,7 +264,7 @@
 	
 	
      
-	
+	<td data-label>
 	
 	
 	

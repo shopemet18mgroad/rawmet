@@ -1,18 +1,26 @@
- <div class="col-xl-10 col-lg-7 ml-5">
+ 
+  <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
+ 
+ 
+ 
+ 
+ <div class="col-md-12 col-sm-12 col-lg-12">
               <div class="card shadow mb-4 ml-5">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Edit Personal Details</h6>
-               
+                              				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-					 <table class="table table-sm table-borderless">
-					 <thead>
-					 <!--<a  href="<?php //echo base_url()."admin_editcustprofile/index/".urlencode($sqldata[0]->vname).'/'.urlencode($sqldata[0]->vcompanyname);//?>">edit personal</a></th>-->
-					 
-					
-					 </thead>
+					 <table class="table  table-borderless">
+				
 						<tbody style="width:5px;">
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
 				  
@@ -31,11 +39,7 @@
 								<td>Buyer Id</td>
 								<td><input class="form-control w-50" type="text" id="buyerid" name="buyerid" value="<?php echo $sqldata[0]->buyerid; ?>" readonly></td>
 							</tr>
-							
-							
-							
-							
-							
+					
 							<tr>
 								<td>Company Type</td>
 								<td><input class="form-control w-50" type="text" id="bcompanytype" name="bcompanytype" value="<?php echo$sqldata[0]->bcompanytype; ?>">

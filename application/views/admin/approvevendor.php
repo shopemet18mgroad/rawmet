@@ -1,14 +1,20 @@
 
 
         <!-- End of Topbar -->
-
+<link href="<?php echo base_url()."web_files2/";?>css/tablestyle.css" rel="stylesheet" type="text/css">
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Approve Vendor</h1>
-          
+          				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
           </div>
 
           <!-- Content Row -->
@@ -38,28 +44,28 @@
        
 <?php foreach($data as $row){?>
 				<tr>
-				    <td><?php echo $count;?></td>
-                    <td><?php echo $row->vname; ?></td>
-					<td><?php echo $row->vcompanytype; ?></td>
+				    <td data-label="Sl.No."><?php echo $count;?></td>
+                    <td data-label="Vendor Name"><?php echo $row->vname; ?></td>
+					<td data-label="Company Type"><?php echo $row->vcompanytype; ?></td>
 					
-					<td><?php echo $row->vcontactperson; ?></td>
+					<td data-label="Contact Person"><?php echo $row->vcontactperson; ?></td>
 					
-					<td><?php echo $row->vaddress;?></td>
-					<td><?php echo $row->vcity;?></td>
-					<td style="display:inline-flex;">
+					<td data-label="Location"><?php echo $row->vaddress;?></td>
+					<td data-label="City"><?php echo $row->vcity;?></td>
+					<td data-label="Option" style="display:inline-flex;">
 					
 					<a class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_vendordetail/index/".urldecode($row->sellerid);?>"><i class="fa fa-eye">View</i></a>
 		
-		
-					<!--<button type="submit" name="submit" id="<?php echo urldecode($row->sellerid);?>" onclick="admin_sellerapprove(this.id)" class="btn btn-info btn-sm">Activate</button>-->	
+		         </td>
+			
 					
-					</td>
+					
 					
 				
-	
-				</tr>
-					<?php $count++;?>
+		<?php $count++;?>
 				<?php }?>
+				</tr>
+				
 
 				</tbody>	  
     
@@ -85,4 +91,3 @@
       
 </div>
 
-</div>

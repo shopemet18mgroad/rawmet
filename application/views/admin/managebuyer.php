@@ -14,7 +14,7 @@
   border-radius: 30px;
 }
 </style>
-
+<link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -23,7 +23,13 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Manage Buyer</h1>
-           
+                      				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
           </div>
 
           <!-- Content Row -->
@@ -51,16 +57,16 @@
       
 	   <?php foreach($data as $row){?>
       <tr>
-	    <td><?php echo $count;?></td>
-		<td><?php echo $row->bname;?></td> 
-		<td><?php echo $row->bcompanyname;?></td> 
-		<td><?php  echo $row->bcompanytype;?></td>
-		<td><?php  echo $row->bcontactperson;?></td>
-        <td><?php echo $row->baddress; ?></td>
-		<td><?php echo $row->bcity;?></td>
-        <td style="form-inline";>
+	    <td data-label="Sl.No." ><?php echo $count;?></td>
+		<td data-label="Buyer Name" ><?php echo $row->bname;?></td> 
+		<td data-label="Company Name" ><?php echo $row->bcompanyname;?></td> 
+		<td data-label="Company Type" ><?php  echo $row->bcompanytype;?></td>
+		<td data-label="Contact Person" ><?php  echo $row->bcontactperson;?></td>
+        <td data-label="Location"><?php echo $row->baddress; ?></td>
+		<td data-label="City"><?php echo $row->bcity;?></td>
+        <td  data-label="Option" style="form-inline";>
 	
-				<a class="btn btn-primary btn-xl text-white btn-sm" href="<?php echo base_url()."admin_vendorprofile/index/".$row->buyerid;?>"> <i class="fa fa-edit"></i>Edit</a>
+				<a class="btn-primary btn-xl text-white btn-sm mt-1" href="<?php echo base_url()."admin_vendorprofile/index/".$row->buyerid;?>"> <i class="fa fa-edit"></i></a>
 				
 				<a href="<?php  echo base_url()."admin_managebuyer/reject/".urldecode($row->buyerid);?>"><button type="button"  class="btn btn-danger btn-xl text-white btn-sm mt-1">Inactive</button></a>
 				

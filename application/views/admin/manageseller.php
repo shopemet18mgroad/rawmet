@@ -1,13 +1,19 @@
 
         <!-- End of Topbar -->
-
+ <link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Manage Vendor</h1>
-         
+               				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
           </div>
 
           <!-- Content Row -->
@@ -18,7 +24,7 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-striped  table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
 	      <tr>
 		  <th>Sl.No.</th>
@@ -37,20 +43,20 @@
             <?php  $count = 1;?>
 	   <?php foreach($data as $row){?>
       <tr>
-	        <td><?php echo $count;?></td>
-	                <td><?php echo $row->vname;?></td>
-					<td><?php echo $row->vcompanyname;?></td>
-					<td><?php  echo $row->vcompanytype; ?></td>
-					<td><?php  echo $row->vcontactperson; ?></td>
-					<td><?php echo $row->vaddress; ?></td>
-					<td><?php echo $row->vcity;?></td>
+	        <td data-label="Sl.No."><?php echo $count;?></td>
+	                <td data-label="Vendor Name"><?php echo $row->vname;?></td>
+					<td data-label="Company Name"><?php echo $row->vcompanyname;?></td>
+				  <td data-label="Company Type"><?php  echo $row->vcompanytype; ?></td>
+					<td data-label="Contact Person"><?php  echo $row->vcontactperson; ?></td>
+					<td data-label="Location"><?php echo $row->vaddress; ?></td>
+					<td data-label="City"><?php echo $row->vcity;?></td>
 		
 
-     <td>
-	 <a class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->sellerid);?>"><i class="fa fa-edit"></i>Edit</a>
+     <td data-label="Option">
+	 <a class="btn btn-primary btn-sm text-white mt-2" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->sellerid);?>"><i class="fa fa-edit"></i></a>
 				
 		
-		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger">Inactive</button></a>
+		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger mt-2 btn-sm">Inactive</button></a>
 
 				
 </td>

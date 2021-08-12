@@ -1,4 +1,4 @@
-
+<link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -7,7 +7,12 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Manage Buying Requirements</h1>
-            
+                                                  <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>
+			   <script>
+function goBack() {
+  window.history.back();
+}
+</script> 
           </div>
 
           <!-- Content Row -->
@@ -37,19 +42,19 @@
 	  <?php  $count = 1;?>  
 	 <?php foreach($sqldata as $row){?>
       <tr>
-	  <td><?php echo $count;?></td> 
+	  <td data-label="Sl.No."><?php echo $count;?></td> 
 	
-	<td><?php $img = unserialize($row->uploadimage)?>
-		<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->buyerid;?></td>
-			<td><?php echo $row->bcompanyname;?></td>
+	<td data-label=""><?php $img = unserialize($row->uploadimage)?>
+		<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
+			<td data-label="Images"><?php echo $row->productid;?></td>
+			<td data-label="Product Id"><?php echo $row->productname;?></td>
+			<td data-label="Product Name"><?php echo $row->buyerid;?></td>
+			<td data-label="Buyer Name"><?php echo $row->bcompanyname;?></td>
 		
-			<td><?php echo $row->description;?></td>
-			<td><?php echo $row->bcity;?></td>
-			<td><?php echo $row->price.'/'.$row->priceperkg;?></td>
-			<td><?php echo $row->quantity.' '.$row->units;?></td>	
+			<td data-label="Description"><?php echo $row->description;?></td>
+			<td data-label="Location"><?php echo $row->bcity;?></td>
+			<td data-label="Price"><?php echo $row->price.'/'.$row->priceperkg;?></td>
+			<td data-label="Quantity"><?php echo $row->quantity.' '.$row->units;?></td>	
 				<?php $count++;?>
 			
 		

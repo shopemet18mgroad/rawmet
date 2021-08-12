@@ -14,57 +14,111 @@
           <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-7">
+            <div class="col-md-12 col-sm-12">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Uploaded Product</h6>
-               
+                  <h5 class="m-0 font-weight-bold text-primary">Uploaded<br>Product</h5>
+				  	<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
+				?>
+                 
+			
+				  
+				  <a  style="float:right;" href="<?php  echo base_url()."admin_adminvendorproducts/approve_product/".$proid."/".urldecode($sqldata[0]->sellerid);?>"><button type="button" class="btn btn-success btn-sm">Approve</button></a> 
+	<a style="float:right;"  href="<?php echo base_url()."admin_editpostproduct/editproduct/".$proid;?>"><button type="button" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></button></a>				  <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:left"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
 				<form action = "<?php echo base_url();?>" method="POST" enctype="multipart/form-data">
 					
 				<!--<form class="user" method="POST">-->
-				<?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
-				?>
+			
 		
-		
-			 	<div class="form-group row">
+			 
+			 
+			 	<div class="form-group row col-sm-12">
 				
 				<?php $img = unserialize($sqldata[0]->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="25%" height="200px">
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania"> <br />
 				<div class="col-sm-4 mb-3 mb-sm-0 ml-10">
 				
-				<h6 class="m-0 font-weight-bold text-primary"><b><u>Seller Id</u></b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->sellerid;?></h6></br>
 				
 				
-					<h6 class="m-0 font-weight-bold text-primary"><b>Productname</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h6>
-					<p><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></p>
-					<p><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></p>
-					<p><b>Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></p>
-					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
-					<b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6>
-					<p><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->punits;?><br>
-					<b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?><br>
-					<b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?>
-					<br><b style="color:green">Payable To Rawmet&nbsp;:</b>&nbsp;&nbsp;&nbsp;<?php echo $sqldata[0]->payable."%";?>
+				
+				<table class="table bg-white table-sm col-sm-12 table-borderless mt-2">
+					<thead class="bg-primary text-white">
+						
+					</thead>
+						<tbody> 
+						<tr>
+					<td><h5 class="m-0 font-weight-bold text-primary"><b>PRODUCTNAME</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->productname;?></h5></td>
+				
+					</tr>
+							<tr>
+								<td><b>Category</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->category;?></td>
+							</tr>
+							
+							<tr>
+								<td><b>Product Id</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->productid;?></td>
+							</tr>
+							<tr>
+								<td><b>Company Name</b>&nbsp;&nbsp;:&nbsp;<?php echo $sqldata[0]->companyname;?></td>
+							</tr> 
+							<tr>
+								<td><b>Seller Id</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->sellerid;?></td>
+							</tr>
+							<tr>
+								<td><b>Description&nbsp:&nbsp</b><?php echo $sqldata[0]->description;?></h6></td>
+							</tr>
+							<tr>
+							
+							
+								<td><b>Price:&nbsp;</b><?php echo $sqldata[0]->price."/";?>&nbsp;<?php echo$sqldata[0]->punits;?></td>
+								</tr>
+								<tr>
+					<td><b>Supply Ability:</b><?php echo $sqldata[0]->quantity;?>&nbsp;<?php echo $sqldata[0]->units;?></td>
+					</tr>
+					<tr>
+					<td><b>Live Stock:&nbsp;</b><?php echo $sqldata[0]->supplyability;?>&nbsp;<?php echo $sqldata[0]->supplyunits;?></td>
+					<tr>
+					<tr>
+					<td><b style="color:green">Payable To Rawmet&nbsp;:</b>&nbsp;&nbsp;&nbsp;<?php echo $sqldata[0]->payable."%";?></td>
+					</tr>
+					<tr>
+					<td><b>ISO Certificate Number</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->uploadcertificate;?></td>
+							 
+						</tbody>	
+					</table>
+				
+				
+				
 					
-					</p><b>ISO Certificate Number</b>&nbsp;:&nbsp&nbsp<?php echo $sqldata[0]->uploadcertificate;?>
+					
+					
+					
+					
+					
+					
+					
+					<br>
+					
+					<br>
+					
+					
+					<!--<h6><b> Material Name&nbsp;:&nbsp;</b>&nbsp;<?php// echo $sqldata[0]->materialname;?><br>-->
+					
+				
 					</div>
 					
-					   <?php $proid = str_ireplace('/','-',$sqldata[0]->productid);
-	 
-				?>
-				  <a   href="<?php echo base_url()."admin_editpostproduct/editproduct/".$proid;?>"><button type="button" class="btn btn-info"><i class="fa fa-edit">Edit</i></button></a>
-				  
-				  <a   href="<?php  echo base_url()."admin_adminvendorproducts/approve_product/".$proid."/".urldecode($sqldata[0]->sellerid);?>"><button type="button" class="btn btn-success">Approve</button></a>
+			
 					
-					
-					
-					
-					
-					
+				
 				  
           
 				<table class="table bg-white table-sm table-borderless">
@@ -74,6 +128,7 @@
 						</tr>
 					</thead>
 						<tbody> 
+					
 							<tr>
 								<td><b>Minimum Order Quantity:&nbsp;</b><?php echo $sqldata[0]->minoderquant;?></td>
 							</tr>
@@ -85,10 +140,12 @@
 								<td><b>Estimated Delivery Time:</b>&nbsp;&nbsp;<?php echo $sqldata[0]->estdeltime;?></td>
 							</tr> 
 							<tr>
-								<td><b>Posted On:&nbsp;&nbsp;</b><?php echo $sqldata[0]->productvalidityfrom;?></td>
+								<td><b>Posted On:&nbsp;&nbsp;</b><?php echo  date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityfrom))
+								;?></td>
 							</tr>
 							<tr>
-								<td><b>Validity Till:</b>&nbsp;&nbsp;<?php echo $sqldata[0]->productvalidityto;?></td>
+								<td><b>Validity Till:</b>&nbsp;&nbsp;<?php echo date('d-m-Y H:i',strtotime($sqldata[0]->productvalidityto)) 
+								;?></td>
 							</tr>
 							<tr>
 								<td><b>City:&nbsp;&nbsp;</b><?php echo $sqldata[0]->pcities;?></td>
@@ -119,4 +176,3 @@
       <!-- End of Main Content -->
 
   
-

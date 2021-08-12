@@ -1,9 +1,14 @@
   <div class="container-fluid">
-
+<link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Commission To Rawmet</h1>
-           
+                                                                                     <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>
+			   <script>
+function goBack() {
+  window.history.back();
+}
+</script> 
           </div>
 
           <!-- Content Row -->
@@ -38,21 +43,21 @@
 	 <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
 				
-				  <td><?php echo $count;?></td> 
-				<td><?php echo $row->sellerid;?></td>
-	  <td><?php echo $row->productid;?></td> 
-		<td><?php echo $row->productname;?></td> 
-		<td><?php  echo $row->category;?></td>
-         <td><?php echo $row->payable."%"?></td>
+				  <td data-label="Sl.No." ><?php echo $count;?></td> 
+				<td data-label="Supplier Id" ><?php echo $row->sellerid;?></td>
+	  <td data-label="Product Id" ><?php echo $row->productid;?></td> 
+		<td data-label="Product Name" ><?php echo $row->productname;?></td> 
+		<td data-label="Category" ><?php  echo $row->category;?></td>
+         <td data-label="Commission to Rawmet" ><?php echo $row->payable."%"?></td>
 		
 		
 		
 
-		<td><?php $img = unserialize($row->uploadproductimage)?>
-				<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
+		<td data-label="Image" ><?php $img = unserialize($row->uploadproductimage)?>
+				<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100%" height="55px"></td>
 	
 
-		<td><a href="<?php  echo base_url()."admin_purchaseoder/approve_paid/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-warning btn-sm">Paid</button></a>
+		<td data-label="Action" ><a href="<?php  echo base_url()."admin_purchaseoder/approve_paid/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-warning btn-sm mt-1">Paid</button></a>
 		
 		<a href="<?php  echo base_url()."admin_purchaseoder/reject_unpaid/".$proid."/".urldecode($row->sellerid);?>"><button type="button" class="btn btn-danger btn-sm mt-1">Unpaid</button></a>
 		

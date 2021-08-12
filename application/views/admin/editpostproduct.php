@@ -22,7 +22,12 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Edit Products</h6>
-               
+                          <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:left"></i>
+			   <script>
+function goBack() {
+  window.history.back();
+}
+</script>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -304,7 +309,7 @@ document.getElementById("pcities").selectedIndex = 0;
 		
 					<div class="col-sm-4 mt-4">
 					
-								<img src="<?php if(unserialize($sqldata[0]->uploadproductimage) != NULL){
+								<img class="img-thumbnail"src="<?php if(unserialize($sqldata[0]->uploadproductimage) != NULL){
 									$img = unserialize($sqldata[0]->uploadproductimage);
 									echo base_url()."/web_files/uploads/".$img[0];}else{echo base_url()."#";} ?>" width="100%" height="100px">
 									<?php 

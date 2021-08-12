@@ -21,6 +21,9 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
+<style>
+
+</style>
 
 <body id="page-top">
 

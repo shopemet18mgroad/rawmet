@@ -1,4 +1,8 @@
 
+
+<link href="<?php echo base_url()."web_files2/";?>css/mediaform.css" rel="stylesheet" type="text/css">
+
+
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -15,12 +19,18 @@
           <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-7">
-              <div class="card shadow mb-4">
+            <div class="col-md-12 col-sm-12">
+              <div class="card shadow">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Personal Info</h6>
-               
+               				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -33,27 +43,21 @@
 						
 						<tr>
 							<td class="btxt">Buyer Name:</td>
-							<td><input class="form-control w-50" type="text" id="bname" name="bname" ></td>
+							<td><input class="form-control w-100" type="text" id="bname" name="bname" ></td>
 	 							 </tr>
 						<tr>												
 							<td class="btxt">Company Name:</td>
-							<td><input class="form-control w-50" type="text" id="bcompanyname" name="bcompanyname" ></td>
+							<td><input class="form-control w-100" type="text" id="bcompanyname" name="bcompanyname" ></td>
 							</tr>
 						<tr>												
 							<td class="btxt">Buyer Id:</td>
-							<td><input class="form-control w-50" type="text" id="buyerid" value="B<?php echo(rand(1,1000000));?>" name="buyerid" Readonly ></td>
+							<td><input class="form-control w-100" type="text" id="buyerid" value="B<?php echo(rand(1,1000000));?>" name="buyerid" Readonly ></td>
 							</tr>
 
-
-					
-							
-							
-							
-							
 						<tr>
 					
 							<td class="btxt">Company Type:</td>
-						<td> <select class="form-control w-50" id="bcompanytype" name="bcompanytype">
+						<td> <select class="form-control w-100" id="bcompanytype" name="bcompanytype">
 								<option default>PVT Ltd.</option>
 					 
 						<option value="OPC PVT Ltd.">OPC PVT Ltd.</option>
@@ -66,37 +70,37 @@
 						</tr>   
 						<tr>
 							<td class="btxt">Contact Person:</td>
-							<td><input class="form-control w-50" type="text" id="bcontactperson" name="bcontactperson" ></td>
+							<td><input class="form-control w-100" type="text" id="bcontactperson" name="bcontactperson" ></td>
 						</tr>
 						<tr>
 							<td class="btxt">Contact number:</td>
-							<td><input class="form-control w-50" type="text" id="bcontactnumber" name="bcontactnumber" ></td>
+							<td><input class="form-control w-100" type="text" id="bcontactnumber" name="bcontactnumber" ></td>
 						</tr>
 						<tr>
 							<td class="btxt">Email:</td>
-							<td><input class="form-control w-50" type="text"  onkeyup ="return validateForm() id="bemail" name="bemail" ></td>
+							<td><input class="form-control w-100" type="text"  onkeyup ="return validateForm() id="bemail" name="bemail" ></td>
 						</tr>
 						<tr>
 							<td class="btxt">UserName:</td>
-							<td><input class="form-control w-50" type="text" id="busername" name="busername" ></td>
+							<td><input class="form-control w-100" type="text" id="busername" name="busername" ></td>
 						</tr>
 						
 						<tr>
 							<td class="btxt">Password</td>
-							<td><input class="form-control w-50" type="password" id="bpassword" name="bpassword"  onkeyup="validate_username()"><span id = "message1" style="color:red"> </span></td>
+							<td><input class="form-control w-100" type="password" id="bpassword" name="bpassword"  onkeyup="validate_username()"><span id = "message1" style="color:red"> </span></td>
 						</tr>
 					
 						<tr>
 							<td class="btxt">RepeatPassword</td>
-							<td><input class="form-control form-control-user w-50" type="password" id="brepeatpassword" name="brepeatpassword" > <span id = "message2" style="color:red"> </span></td>
+							<td><input class="form-control form-control-user w-100" type="password" id="brepeatpassword" name="brepeatpassword" > <span id = "message2" style="color:red"> </span></td>
 						</tr>
 						 <tr>
 							<td class="btxt">Pan</td>
-							<td><input class=" w-50 form-control form-control-user pan"  type="text" id="bpan" name="bpan" ></td>
+							<td><input class=" w-100 form-control form-control-user pan"  type="text" id="bpan" name="bpan" ></td>
 						</tr>
 						<tr>
 							<td class="btxt">GST</td>
-							<td><input class="w-50 form-control form-control-user gst"  type="text" id="bgst"  name="bgst"></td>
+							<td><input class="w-100 form-control form-control-user gst"  type="text" id="bgst"  name="bgst"></td>
 						</tr>
 
 						
@@ -113,24 +117,24 @@
 				
 						<tr>
 							<td class="btxt">Postal Address:</td>
-							<td><textarea class="form-control w-50" type="text" id="baddress" 	name="baddress" ></textarea></td>
+							<td><textarea class="form-control w-100" type="text" id="baddress" 	name="baddress" ></textarea></td>
 						</tr> 
 						<tr>
 							<td class="btxt">city</td>
-							<td><input class="form-control w-50" type="text" id="bcity" name="bcity" ></td>
+							<td><input class="form-control w-100" type="text" id="bcity" name="bcity" ></td>
 						</tr>
 						<td class="btxt">State /Union Ter.:</td>
-							<td><input class="form-control w-50" type="text" id="bselectstate" name="bselectstate" ></td>
+							<td><input class="form-control w-100" type="text" id="bselectstate" name="bselectstate" ></td>
 						</tr> 
 						 
 						<tr>
 							<td class="btxt">Pincode:</td>
-							<td><input class="form-control w-50" type="text" id="bpincode" name="bpincode" ></td>
+							<td><input class="form-control w-100" type="text" id="bpincode" name="bpincode" ></td>
 						</tr> 
 						
 						<tr>
 							<td class="btxt">Reference Name:</td>
-							<td><input class="form-control w-50" type="text" id="brefer" name="brefer" ></td>
+							<td><input class="form-control w-100" type="text" id="brefer" name="brefer" ></td>
 						</tr>
 						
 						

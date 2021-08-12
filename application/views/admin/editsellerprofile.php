@@ -1,13 +1,19 @@
 
         <!-- End of Topbar -->
-
+<link href="<?php echo base_url()."web_files2/";?>css/mediaform.css" rel="stylesheet" type="text/css">
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">User Profile</h1>
-			<a href="<?php echo base_url();?>admin_vendorprofile"><u>Back</u></a>
+		               				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
           </div>
 
           <!-- Content Row -->
@@ -15,23 +21,20 @@
 
           <!-- Content Row -->
 
-          <div class="row p-2 ml-5">
+          <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-10 col-lg-7 ml-5">
-              <div class="card shadow mb-4 ml-5">
+            <div class="col-md-12 col-sm-12">
+              <div class="card shadow ">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Edit Personal Details</h6>
+                  <h6 class="m-2 font-weight-bold text-primary">Edit Personal Details</h6>
                
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
 					 <table class="table table-sm table-borderless">
-					 <thead><th>Personal Info</th>
-					 
-					
-					 </thead>
+				
 						<tbody style="width:5px;">
 						<tr><td><img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/manimg.jpg" alt="Chania" width="40" height="35"></td></tr>
 				  

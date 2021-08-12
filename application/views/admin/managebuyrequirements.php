@@ -1,13 +1,18 @@
 
         <!-- End of Topbar -->
-
+<link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Manage Buying Requirements</h1>
-            
+                                      <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>
+			   <script>
+function goBack() {
+  window.history.back();
+}
+</script>
           </div>
 
           <!-- Content Row -->
@@ -40,19 +45,19 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-					<td><?php echo $count;?></td> 
-	<td><?php $img = unserialize($row->uploadimage)?>
-		<img class="img" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
-			<td><?php echo $row->productid;?></td>
-			<td><?php echo $row->productname;?></td>
-			<td><?php echo $row->buyerid;?></td>
-			<td><?php echo $row->bcompanyname;?></td>
+					<td data-label="SL.No."><?php echo $count;?></td> 
+	<td data-label="Images"><?php $img = unserialize($row->uploadimage)?>
+		<img class="img-thumbnail" src="<?php echo base_url()."web_files/uploads/".$img[0];?>" alt="Chania" width="100px" height="55px"></td>
+			<td data-label="Product Id"><?php echo $row->productid;?></td>
+			<td data-label="Product Name"><?php echo $row->productname;?></td>
+			<td data-label="Buyer ID"><?php echo $row->buyerid;?></td>
+			<td data-label="company Name"><?php echo $row->bcompanyname;?></td>
 		
-			<td><?php echo $row->description;?></td>
+			<td data-label="Description"><?php echo $row->description;?></td>
 			
 			
 				
-			<td>
+			<td data-label="Action">
 			<a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyreqview/index/".$proid."/".urldecode($row->buyerid);?>"><i class="fa fa-eye"></i></a>
 			
 			<button type="submit" name="submit" id="<?php  echo urldecode($row->buyerid).'|'.$proid;?>" onclick="admin_buyingreq(this.id)" class="btn btn-success btn-sm">Approve</button>

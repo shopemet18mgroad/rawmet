@@ -1,13 +1,19 @@
 <?php ?>
         <!-- End of Topbar -->
-
+<link href="<?php echo base_url()."web_files2/";?>css/mediaform.css" rel="stylesheet" type="text/css">
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Vendor Profile</h1>
-            
+            				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
           </div>
 
           <!-- Content Row -->
@@ -16,9 +22,8 @@
           <!-- Content Row -->
 
           <div class="row">
-
             <!-- Area Chart -->
-            <div class="col-md-10 col-lg-11 ml-5">
+            <div class="col-md-12 col-sm-12">
               <div class="card shadow mb-4 ">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -28,73 +33,65 @@
                 <!-- Card Body -->
                 <div class="card-body">
 					 <table class="table table-sm table-borderless">
-					 <thead  width="50%"><th>Personal Info</th>
-				 
-					 </thead>
+				
 						<tbody>
+						<tr>
+						<td><b><h4>Personal Info </h4></b></td>
+								
+							</tr> 
 						
 						<tr>
-						<td>Name</td>
+						<td><b>Name</b></td>
 								<td><?php echo $sqldata[0]->bname;?></td>
 							</tr> 
 						
-								<td>Company Name</td>
+								<td><b>Company Name</b></td>
 								<td><?php echo $sqldata[0]->bcompanyname;?></td>
 							</tr> 
 							<tr>
-								<td>Company Type</td>
+								<td><b>Company Type</b></td>
 								<td><?php echo $sqldata[0]->bcompanytype;?></td>
 							</tr> 	
 							<tr>
-								<td>Contact Person</td>
+								<td><b>Contact Person</b></td>
 								<td><?php echo $sqldata[0]->bcontactperson;?></td>
 							</tr> 
 							<tr>
-								<td>Contact Number</td>
+								<td><b>Contact Number</b></td>
 								<td><?php echo $sqldata[0]->bcontactnumber;?></td>
 							</tr> 
 							<tr>
-								<td>Pan</td>
+								<td><b>Pan</b></td>
 								<td><?php echo $sqldata[0]->bpan;?></td>
 							</tr> 	
 							<tr>
-								<td>GST</td>
+								<td><b>GST</b></td>
 								<td><?php echo $sqldata[0]->bgst;?></td>
 							</tr> 
-							
-
-						
-						</tbody>
-					</table>			
-
-				<table class="table table-sm table-borderless">
-					 <thead width="50%"><th >Contact Info</th>
 				
-					 </thead>
-						<tbody>
 						<tr>
-								<td width="43%">Email</td>
+								<td width="43%"><b>Email</b></td>
 								<td><?php echo $sqldata[0]->bemail;?></td>
 							</tr> 
 							<tr>
-								<td>Username</td>
+								<td><b>Username</b></td>
 								<td><?php echo $sqldata[0]->busername;?></td>
 							</tr> 
 							
 							<tr>
-								<td>Address</td>
+								<td><b>Address</b></td>
 								<td><?php echo $sqldata[0]->baddress;?></td>
 							</tr> 
 							<tr>
-								<td>City</td>
+								<td><b>City</b></td>
 								<td><?php echo $sqldata[0]->bcity;?></td>
 							</tr>	
 							<tr>
-								<td>Select State</td>
+								<td><b>Select State</b></td>
 								<td><?php echo $sqldata[0]->bselectstate;?></td>
 							</tr>
 							<tr>
-								<td>Pincode</td>
+								<td><b>Pincode</b></td>
 								<td><?php echo $sqldata[0]->bpincode;?></td>
 							</tr>
                              				

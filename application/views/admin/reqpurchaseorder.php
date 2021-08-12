@@ -1,13 +1,19 @@
 
         <!-- End of Topbar -->
-
+<link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Pending Quotes</h1>
-            
+                                                                          <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>
+			   <script>
+function goBack() {
+  window.history.back();
+}
+</script> 
+       
           </div>
 
           <!-- Content Row -->
@@ -43,35 +49,35 @@
       <tr>
 	  <?php $proid = str_ireplace('/','-',$row->productid);
 				?>
-				<td><?php echo $count;?></td> 
-			<td><?php echo $row->sellerid;?></td>
-			<td><?php echo $row->buyerid;?></td>
-			<td><?php echo $row->bcompanyname;?></td>
-			<td><?php echo $row->category;?></td>
-			<td><?php echo $row->productname;?></td>
+				<td data-label="Sl.No."><?php echo $count;?></td> 
+			<td data-label="Supplier Id"><?php echo $row->sellerid;?></td>
+			<td data-label="Buyer Id"><?php echo $row->buyerid;?></td>
+			<td data-label="Company Name"><?php echo $row->bcompanyname;?></td>
+			<td data-label="Category"><?php echo $row->category;?></td>
+			<td data-label="Product Name"><?php echo $row->productname;?></td>
 			
-			<td><?php echo $row->productid;?></td>
+			<td data-label="Product Id"><?php echo $row->productid;?></td>
 		
-			<td><?php echo $row->quantity.""; echo $row->units;?></td>
-			<td><?php echo $row->price."/"; echo $row->priceperkg;?></td>
+			<td data-label="Buyer Quantity"><?php echo $row->quantity.""; echo $row->units;?></td>
+			<td data-label="Buyer Price"><?php echo $row->price."/"; echo $row->priceperkg;?></td>
 		
-			<td><?php if($row->sellerprice == null){ echo '-';}
+			<td data-label="Suplier Price"><?php if($row->sellerprice == null){ echo '-';}
 			else{
 				
 			echo $row->sellerprice."/"; echo $row->bsupplyability;}
 			?>
 			</td>
-			<td><?php if($row->buyer_nego_price == null){ echo '-';}
+			<td data-label="Buyer Re-Negotiated Price"><?php if($row->buyer_nego_price == null){ echo '-';}
 			else{
 				
 			echo $row->buyer_nego_price."/"; echo $row->buyer_nego_units;}
 			?></td>
-			<td><?php if($row->seller_renego_price == null){ echo '-';}
+			<td data-label="Suplier Re-Negotiated Price"><?php if($row->seller_renego_price == null){ echo '-';}
 			else{
 				
 			echo $row->seller_renego_price."/"; echo $row->buyer_nego_units;}
 			?></td>
-		<td>
+		<td data-label=" View Purchase Order">
  <?php $aucfl = unserialize($row->uploadporder);?>
  <?php if(isset($aucfl[0])){	?>
 <a href="<?php echo base_url().'web_files/uploads/'. $aucfl[0];?>" target="_blank">
@@ -81,7 +87,7 @@
 </a></td>
 
  
-<td><a href="<?php  echo base_url()."Admin_reqpurchaseorder/approve_product/".$proid."/".$row->sellerid."/".$row->buyerid;?>"><button type="button" class="btn btn-success">Approve</button></a>
+<td data-label="Action"><a href="<?php  echo base_url()."Admin_reqpurchaseorder/approve_product/".$proid."/".$row->sellerid."/".$row->buyerid;?>"><button type="button" class="btn btn-success btn-sm">Approve</button></a>
 </td>
 <?php $count++;?>
 <?php }?>	

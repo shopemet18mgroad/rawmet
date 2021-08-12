@@ -32,10 +32,11 @@ class Admin_custapprovedreq extends CI_Controller {
 		$active1 = array('status'=>true);
 		
 		$query = $this->Admin_model->getdatafromtable('seller_mbuyreq',$active1);
-		
-		
-		$adac['sqldata']= $query;
-		
+        $adac['sqldata']= $query;
+		$query = $this->Admin_model->getdatafromtable_admin10();
+		$adac['sqldata2']= $query;
+		$adac['sqldata3'] = $this->Admin_model->getsellerrenego_admin_datafetch();
+		$adac['sqldata4'] = $this->Admin_model->getdatafrombuyer_admin_req();
 		
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/custapprovedreq',$adac);
