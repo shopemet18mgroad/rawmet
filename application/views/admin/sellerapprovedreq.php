@@ -15,7 +15,20 @@
 			  <form action="<?php echo base_url();?>Customer_buypurchase_order2" method="POST" id="upload-form" enctype="multipart/form-data">
                 <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
-      <tr><th>first approval data</th>
+      <tr><th>Sl. No.</th>
+	  <th>Supplier ID</th>
+	  <th>companyname</th>
+	   <th>Category</th>
+		<th>productname</th>
+		<th>product Id</th>
+        <th>Description</th>
+		
+		<th>Stock</th>
+	   
+		<th>Price</th>
+		<th>Seller Price</th>
+		<th>Buyer Negotiated Price</th>
+		<th>View Quotation</th>
                     
              
 		
@@ -63,7 +76,7 @@
 </tr>   
       <?php $k++;}?>
     </tbody>
-
+	</tbody>
   </table>
 </form>
 		  </div>

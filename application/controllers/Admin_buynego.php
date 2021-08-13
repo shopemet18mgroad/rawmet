@@ -33,7 +33,7 @@ class Admin_buynego extends CI_Controller {
 		//$reqapproval = array('sellapproval'=>false);
 		
 		
-		$query = $this->Admin_model->getdatafromtable('selquotenegotate',$active1);
+		$query = $this->Admin_model->getdatafromtable1('selquotenegotate',$active1);
 		//print_r($query); die;
 		
 		$adac['sqldata']= $query;

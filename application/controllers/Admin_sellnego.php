@@ -34,7 +34,11 @@ class Admin_sellnego extends CI_Controller {
 	
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
 		
-		$sess = array('sessi'=>$this->session->userdata('username'));
+	$query['sqldata1'] = $this->Admin_model->getdatafromtable1();
+		
+		
+		
+	                  
 		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/sellnego',$query);
 		$this->load->view('admin/footer');

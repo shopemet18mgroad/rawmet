@@ -22,6 +22,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 		 } 
 		 
+		 function getdatafromtable1() {				
+			$this->db->select('
+					
+					a.selprice,
+					a.sunits,		
+					a.sellerpostproduct_id,
+					a.buyerapprove,
+					
+					
+					b.*');
+					
+					$this->db->where('a.buyerapprove', 1);	
+					$this->db->join('quotes b', 'a.sellerpostproduct_id=b.id',
+					'left outer');			   
+					$query = $this->db->get("selquotenegotate a");
+					 
+					$result = $query->result();	
+					//echo $this->db->last_query();exit;			
+					return $result;
+		
+			}
+		 	 
+	
+		 
+		 
+		 
+		 
 		 	public function getdatafromtable_sort_admin2($id,$buyerid) {
 			$id = $this->session->userdata('username');
 			$this->db->select('

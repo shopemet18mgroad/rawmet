@@ -161,33 +161,34 @@
 	  
 	  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment14" aria-expanded="true" aria-controls="collapseUtilities">
-         <i class="fas fa-fw fa-shopping-cart"></i>
-          <span>Approved Requirements</span></a>
+          <i class='fas fa-check'></i>
+          <span> Negotiations </span></a>
 		  <div id="payment14" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url();?>Admin_custapprovedreq">Your 1st Approved <br>Requirements</a>
+            <a class="collapse-item" href="<?php echo base_url();?>Admin_custapprovedreq">Approved Requirements</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_sellnego">Approved Quotation</a>
             
-			<a class="collapse-item" href="<?php echo base_url();?>Admin_sellerapprovedreq">Seller's 1st Approved <br>Requirement</a>
-			<a class="collapse-item" href="<?php echo base_url();?>Admin_cust2ndApprovedReq">Your 2nd Approved <br> Requirements</a>
-			<a class="collapse-item" href="<?php echo base_url();?>Admin_sel2ndApprovedReq">Seller's 2nd Approved <br> Requirements</a>
+			<!--<a class="collapse-item" href="<?php //echo base_url();?>Admin_sellerapprovedreq">Seller's 1st Approved <br>Requirement</a>
+			<a class="collapse-item" href="<?php //echo base_url();?>Admin_cust2ndApprovedReq">Your 2nd Approved <br> Requirements</a>
+			<a class="collapse-item" href="<?php //echo base_url();?>Admin_sel2ndApprovedReq">Seller's 2nd Approved <br> Requirements</a>-->
           </div>
         </div>
       </li>
 	  
 	  
-	        <li class="nav-item">
+	       <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#payment10" aria-expanded="true" aria-controls="collapseUtilities">
           <i class='fas fa-check'></i>
           <span>Finalized Quotation and Orders</span></a>
         <div id="payment10" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_sellnego">Seller's 1st Approved<br> Negotiation</a>
-            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_buynego">Buyer's Approved<br> Negotiation</a> 
-            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_renegovalue">Seller's 2nd Approved<br> Re-Negotiation</a>
-            <a class="collapse-item" href="<?php echo base_url(); ?>Admin_finalrenegotiatedvalue">Buyer Final Approved<br> Re-Negotiation</a>
+            <a class="collapse-item" href="<?php// echo base_url(); ?>Admin_sellnego">Seller's 1st Approved<br> Negotiation</a>
+            <a class="collapse-item" href="<?php //echo base_url(); ?>Admin_buynego">Buyer's Approved<br> Negotiation</a> 
+            <a class="collapse-item" href="<?php //echo base_url(); ?>Admin_renegovalue">Seller's 2nd Approved<br> Re-Negotiation</a>
+            <a class="collapse-item" href="<?php //echo base_url(); ?>Admin_finalrenegotiatedvalue">Buyer Final Approved<br> Re-Negotiation</a>
           </div>
         </div>
-        </li>
+        </li>-->
 	  
 	   
 	  
