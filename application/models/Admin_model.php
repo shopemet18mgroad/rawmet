@@ -22,30 +22,54 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 		 } 
 		 
-		 function getdatafromtable1() {				
-			$this->db->select('
-					
-					a.selprice,
-					a.sunits,		
-					a.sellerpostproduct_id,
-					a.buyerapprove,
-					
-					
-					b.*');
-					
-					$this->db->where('a.buyerapprove', 1);	
-					$this->db->join('quotes b', 'a.sellerpostproduct_id=b.id',
-					'left outer');			   
-					$query = $this->db->get("selquotenegotate a");
-					 
-					$result = $query->result();	
-					//echo $this->db->last_query();exit;			
-					return $result;
-		
-			}
-		 	 
-	
+   
 		 
+		 	public function join_two_data() {
+				$this->db->select('
+					a.*,
+					b.*');
+					$this->db->where('a.buyerapprove',TRUE);	
+					$this->db->join('quotes b', 'a.sellerid=b.sellerid',
+					'left outer');	
+						     			
+					$query = $this->db->get("selquotenegotate a");
+					return $query->result();
+		     }	 
+		 
+		 public function join_three_data() {
+				$this->db->select('
+					a.*,
+					b.*,
+					c.*');
+					$this->db->where('c.selapprove',TRUE);	
+					
+					$this->db->join('cust_renego c', 'a.sellerid=c.sellerid',
+					'left outer');
+					$this->db->join('quotes b', 'a.sellerid=b.sellerid',
+					'left outer');	
+						     			
+					$query = $this->db->get("selquotenegotate a");
+					return $query->result();
+		     }
+		 
+		  public function join_four_data() {
+				$this->db->select('
+					a.*,
+					b.*,
+					c.*,
+					d.*');
+					$this->db->where('d.custapprove',TRUE);	
+					
+					$this->db->join('vend_renego d', 'a.sellerid=d.sellerid',
+					'left outer');
+					$this->db->join('cust_renego c', 'a.sellerid=c.sellerid',
+					'left outer');
+					$this->db->join('quotes b', 'a.sellerid=b.sellerid',
+					'left outer');	
+						     			
+					$query = $this->db->get("selquotenegotate a");
+					return $query->result();
+		     }
 		 
 		 
 		 

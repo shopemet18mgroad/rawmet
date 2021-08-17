@@ -6,7 +6,13 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Approved Requirements</h1>
-           
+           		               				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
           </div>
 
           <!-- Content Row -->

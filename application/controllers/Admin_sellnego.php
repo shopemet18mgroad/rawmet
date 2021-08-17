@@ -34,9 +34,11 @@ class Admin_sellnego extends CI_Controller {
 	
 		$query['sqldata'] = $this->Admin_model->getdatafromtable('quotes',$active1);
 		
-	$query['sqldata1'] = $this->Admin_model->getdatafromtable1();
+	   $query['sqldata2'] = $this->Admin_model->join_two_data();
 		
-		
+		$query['sqldata3'] = $this->Admin_model->join_three_data();
+		$query['sqldata4'] = $this->Admin_model->join_four_data();
+		///print_r($query['sqldata4']); die;
 		
 	                  
 		$this->load->view('admin/header',$sess);
