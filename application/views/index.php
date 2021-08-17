@@ -105,6 +105,7 @@ text-align: center;
 }	
 	}
 
+
 </style>
 
 
@@ -192,20 +193,20 @@ text-align: center;
 
 <div class="form-group p-1">
 							<form class="user" action="<?php echo base_url()."Home_login";?>" method="post">
-								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User ID" size="25">
+								<input type="text" class="form-control" id="exampleInputEmail" name="user" placeholder="User ID" size="25" >
+							
 							</div>
 						  
 						  <div class="form-group p-1">
 							<input type="password" class="form-control" id="exampleInputPassword" name="pass" placeholder="Password" size="25">
+							 <i class="bi bi-eye-slash errspan1" id="togglePassword1"></i>
+
+						
 						  </div>
 						  
  <div class="container d-flex justify-content-center">
- 
- 
- 
-        
-						  
-<div class="form-check-inline">
+
+ 						  <div class="form-check-inline">
   <input type="radio" class="form-check-input" id="customCheck2" name="optradio" value="Buyer">
   <label class="form-check-label" for="customCheck2"><b>Buyer</b></label>
 </div>
@@ -290,7 +291,7 @@ text-align: center;
 			<!--Make sure the form has the autocomplete function switched off:-->
 		<!--	&#xf041-->
  <div class="autocomplete" style="width:200px;">
- <input id="myInput" type="text" name="myCountry" value="All India"  class="form-control">
+ <input id="myInput" type="text" name="myCountry" placeholder="&#xf041; All India" style="font-family:Arial, FontAwesome" /  class="form-control">
 					
 						</div>
 			  </div>

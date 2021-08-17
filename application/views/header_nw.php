@@ -17,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet'); ?>"/>
 	 <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet'); ?>"/>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 <style>
 
 .register{
@@ -154,6 +155,16 @@
     visibility: visible;
   }
 }
+
+    .errspan {
+        float: right;
+        margin-right: 6px;
+        margin-top: -30px;
+        position: relative;
+        z-index: 2;
+        color: black;
+    }
+
 </style>
 
 

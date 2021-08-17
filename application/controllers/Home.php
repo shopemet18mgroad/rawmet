@@ -757,20 +757,20 @@ public function ProcesSubscription(){
    $this->load->helper(array('url','form','file','html'));
   
 				
-	echo  $response = base_url().'payment/response';
+	 $response = base_url().'payment/response'; 
 	
 			
-			 echo $buyerid = $this->input->post('buyerid'); 
+			 $buyerid = $this->input->post('buyerid'); 
 			 $active1 =array('buyerid'=>$buyerid);
 			  $data2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);
-	echo $email	=	$data2[0]->bemail;  
+	$email	= $data2[0]->bemail;  
 	
- echo $bcont = $data2[0]->bcontactnumber;
+      $bcont = $data2[0]->bcontactnumber;
  
-			  echo $subamount = $this->input->post('subamount'); 
+			 $subamount = $this->input->post('subamount'); 
 			
 	
-		   echo $subtotal = $this->input->post('subtotal'); die;
+		  $subtotal = $this->input->post('subtotal'); 
 			
 	
 	      

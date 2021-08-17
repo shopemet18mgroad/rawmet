@@ -30,12 +30,12 @@
                                 <h3 class="register-heading">Buyers Registration</h3>
 
                            	<form action="<?php echo base_url();?>home_buyer_register"  method="POST">
+					
+							
                                 <div class="row register-form">
  <div class="col-md-6">
-          <div class="form-group">
-		  
-	
-                                            <input type="text" id="bcompanyname" name="bcompanyname" class="form-control" placeholder="Company Name*" value="" />
+<div class="form-group">
+<input type="text" id="bcompanyname" name="bcompanyname" class="form-control" placeholder="Company Name*" value="" />
     </div>
 
 
@@ -62,11 +62,24 @@
  
  
  
-  <div class="form-group">
-                     
-                    <input type="password" class="form-control form-control-user"id="bpassword" name="bpassword" placeholder="Password"><span id = "message1" style="color:red"> </span>
-     </div>
-  
+  <div class="form-group fontpassword">
+<input type="password" class="form-control form-control-user" id="bpassword" name="bpassword"  placeholder="Password"><i class="bi bi-eye-slash errspan" id="togglePassword"></i><span id = "message1" style="color:red"> </span>
+              
+
+
+<script>
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#bpassword');
+togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
+</script>
+   </div>
+ 
  
  
  
@@ -194,7 +207,23 @@
   
   <div class="form-group">
   
-  <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"   placeholder="Confirm Password"><span id = "message2" style="color:red"> </span>
+  <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"   placeholder="Confirm Password"> <i class="bi bi-eye-slash errspan" id="togglePassword1"></i><span id = "message2" style="color:red"> </span>
+ 
+              
+
+
+<script>
+const togglePassword1 = document.querySelector('#togglePassword1');
+const password1 = document.querySelector('#brepeatpassword');
+togglePassword1.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+    password1.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
+</script>
+   
                                             
         </div>
 		
@@ -319,7 +348,7 @@
 								<label class="form-check-label" for="exampleCheck1">
 								I agree to the <a href="">Terms & Conditions</a></label>
                                         </div>
-<!-- -->
+
                                                                                 
                        <input type="submit" name="submit" id="btn1" onclick="return validatebuyer()"   value="Register" class="btn btn-primary">
                                     </div>                              
@@ -387,16 +416,21 @@
                                        
         <div class="form-group">
 		
-		<input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password"><span id = "message11" style="color:red"> </span>
+		<input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password"><i class="bi bi-eye-slash errspan" id="togglePassword3"></i><span id = "message11" style="color:red"> </span>
 
+<script>
+const togglePassword3 = document.querySelector('#togglePassword3');
+const password3 = document.querySelector('#vpassword');
+togglePassword3.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password3.getAttribute('type') === 'password' ? 'text' : 'password';
+    password3.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
+</script>
 		
-		
-		
-		
-		
-            <!-- <input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password" onkeyup="validate_username()"><span id = "message11" style="color:red"> </span>-->
-			
-			
+
          </div>
 		  
 		 
@@ -406,52 +440,7 @@
 		 
 		 
 		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-
-		 
- 
 	
-	
-	
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
 		   
 		 
            <div class="form-group">
@@ -686,17 +675,29 @@
 		    <div class="form-group">
 			
 		       
-                    <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><span id = "message22" style="color:red"> </span>	
+                    <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><i class="bi bi-eye-slash errspan" id="togglePassword4"></i><span id = "message22" style="color:red"> </span>	
 			
 			
 	 
-	 
-	<!-- <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><span id = "message22" style="color:red"> </span>-->
+	
                                             
-                                                                                    </div>
+         
+
+<script>
+const togglePassword4 = document.querySelector('#togglePassword4');
+const password4 = document.querySelector('#vrepeatpassword');
+togglePassword4.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password4.getAttribute('type') === 'password' ? 'text' : 'password';
+    password4.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
+</script>
 		
+
 		
-		
+		</div>
 		
 		
 		

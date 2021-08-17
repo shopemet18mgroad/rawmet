@@ -17,7 +17,18 @@
   <script src="<?php echo base_url()."web_files/";?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
  <script src="<?php echo base_url()."web_files/";?>js/demo/datatables-demo.js"></script>
  
-
+<script>
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+	togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});						
+							
+</script>
  <script>
   
 function validatebuyer(){
