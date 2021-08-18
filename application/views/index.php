@@ -199,24 +199,47 @@ text-align: center;
 						  
 						  <div class="form-group p-1">
 							<input type="password" class="form-control" id="exampleInputPassword" name="pass" placeholder="Password" size="25">
-							 <i class="bi bi-eye-slash errspan1" id="togglePassword1"></i>
+							 
+ 
+     <div style="float:left; font-size:12px" class="m-2">  
+      <input type="checkbox" onclick="Toggle()">
+   <i> Show Password </i>
 
+</div>
+ 
+   </div>
+ 
+  
+    <script>
+    // Change the type of input to password or text
+        function Toggle() {
+            var temp = document.getElementById("exampleInputPassword");
+            if (temp.type === "password") {
+                temp.type = "text";
+            }
+            else {
+                temp.type = "password";
+            }
+        }
+</script>
+
+  
 						
-						  </div>
+						
 						  
  <div class="container d-flex justify-content-center">
 
  						  <div class="form-check-inline">
   <input type="radio" class="form-check-input" id="customCheck2" name="optradio" value="Buyer">
-  <label class="form-check-label" for="customCheck2"><b>Buyer</b></label>
+  <label class="form-check-label" for="customCheck2"><b><i>Buyer</i></b></label>
 </div>
 <div class="form-check-inline">
   <input type="radio" class="form-check-input" id="customCheck" name="optradio" value="Seller">
-  <label class="form-check-label" for="customCheck"><b>Seller</b></label>
+  <label class="form-check-label" for="customCheck"><b><i>Seller</i></b></label>
 </div>
 <div class="form-check-inline">
   <input type="radio" class="form-check-input" id="customCheck3"name="optradio" value="Admin">
-  <label class="form-check-label" for="customCheck3"><b>Admin</b></label>
+  <label class="form-check-label" for="customCheck3"><b><i>Admin</i></b></label>
   
 </div>
 </div>
