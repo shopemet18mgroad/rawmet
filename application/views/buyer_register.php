@@ -400,7 +400,7 @@ togglePassword1.addEventListener('click', function (e) {
  
  <div class="form-group">
 
- <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return   ()"  placeholder="PCB license">
+ <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return   ()"  placeholder="PCB license No.">
 
 </div>	
   
