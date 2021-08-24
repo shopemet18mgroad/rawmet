@@ -105,6 +105,12 @@ text-align: center;
 }	
 	}
 
+	
+
+
+
+
+
 
 </style>
 
@@ -171,15 +177,22 @@ text-align: center;
 						 
 						 
 						 
-						 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+						 <div class="modal fade rounded-3" style="padding-top:80px" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
 
  
+  
+  <div class="shiny">    
+  <center>  <img  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img mx-auto d-block" style="padding-left:70px" alt="" width="auto"  ></center>
+
+  </div>
+  
+
 		
 		
-         <img  src="<?php echo base_url()."web_files/";?>img/Rawmet.png" class="img mx-auto d-block" alt="" width="auto"  >
+         
 	
 		
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
