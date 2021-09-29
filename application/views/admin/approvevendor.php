@@ -29,8 +29,9 @@ function goBack() {
     <thead class="bg-primary text-white">
       <tr>
 	  <th>Sl.No.</th>
-        <th>Vendor Name</th>
+       <!-- <th>Vendor Name</th>-->
         <th>Company Type</th>
+		<th>Company Name</th>
 		
         <th>Contact Person</th>
 		<th>Location</th>
@@ -45,8 +46,9 @@ function goBack() {
 <?php foreach($data as $row){?>
 				<tr>
 				    <td data-label="Sl.No."><?php echo $count;?></td>
-                    <td data-label="Vendor Name"><?php echo $row->vname; ?></td>
+                    <!--<td data-label="Vendor Name"><?php //echo $row->vname; ?></td>-->
 					<td data-label="Company Type"><?php echo $row->vcompanytype; ?></td>
+					<td data-label="Company Name"><?php echo $row->vcompanyname; ?></td>
 					
 					<td data-label="Contact Person"><?php echo $row->vcontactperson; ?></td>
 					

@@ -162,7 +162,7 @@ text-align: center;
 						 
 						  <div class="form-group p-1">
 						   
-						  <button name="submit" type="submit" onclick="return userid4()"  data-toggle="modal" data-target="#basicModal"class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>
+						  <button name="submit" type="submit" onsubmit="return userid4()"  data-toggle="modal" data-target="#basicModal"class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>
 <a href="<?php echo base_url();?>home_buyer_register">
 						  <button type="button" class="btn btn-warning"> Register Here </button></a>
 						
@@ -574,7 +574,10 @@ Get to know us better by connecting with us on our Facebook, Twitter, Google , Y
                     </button>
                 </div>
 				<div class="modal-body">RAWMET24 Brand/Subsidiary of Shopemet Networks Pvt Ltd. </div>
-                <div class="modal-body">Corp Off - Plot No 179, Second floor C.D Street, Opp. N T Pet, Mysore road cross, Bengaluru, Bengaluru District, Karnataka, India, 560 002.</div>
+                <div class="modal-body">Plot No 179, Second floor C.D Street, Opp. N T Pet, Mysore road cross, Bengaluru, Bengaluru District, Karnataka, India, 560 002.<br><br><br>
+				Corp Off – Plo No 23, 3rd Floor, Hari Prem Complex
+				Binnamangala, Indiranagar 1st Stage, Bangalore<br/>
+				Karnataka, India, 560 038.<br/></div>
 				
 				 <div class="modal-body">General Support
 				 <br/>Customer Support<br/>
