@@ -361,7 +361,10 @@ togglePassword1.addEventListener('click', function (e) {
 									<option value="" disabled selected>Choose City</option>
 									<option></option>
 								</select>
-							</div>					
+							</div>
+							<div class="form-group">
+                                            <input type="text" id="brefer" name="brefer" class="form-control" placeholder="Reference*" value="" />
+                             </div>
 										
 										
 										
@@ -803,6 +806,19 @@ togglePassword4.addEventListener('click', function (e) {
 	   
 	   
 </div>
+	
+		 <div class="form-group" >
+		 
+		 
+		
+		 
+		 
+	
+	<input type="text"  id="vrefer" name="vrefer" class="form-control" placeholder="Reference"    value="" />
+	
+	
+	
+ </div>
                                         
 
 

@@ -40,9 +40,10 @@ class Home_buyer_register extends CI_Controller {
 			$bselectstate = $this->input->post('bselectstate');
 			$bpincode = $this->input->post('bpincode');
 			$buyerid = $this->input->post('buyerid');
+			$brefer = $this->input->post('brefer');
             
               $this->load->model('Admin_model');
-			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword,  'brepeatpassword' => $brepeatpassword,'bpan'=>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode,'buyerid'=>$buyerid);
+			  $data2 = array('bname' => $bname, 'bcompanyname' => $bcompanyname, 'bcompanytype' => $bcompanytype, 'bcontactperson' => $bcontactperson, 'bcontactnumber' => $bcontactnumber, 'bemail' => $bemail, 'busername'=> $busername, 'bpassword' => $bpassword,  'brepeatpassword' => $brepeatpassword,'bpan'=>$bpan,'bgst'=>$bgst,'baddress' => $baddress,'bcity' => $bcity, 'bselectstate' => $bselectstate, 'bpincode' => $bpincode,'buyerid'=>$buyerid,'brefer'=>$brefer);
 		//$this->load->view('xya', $data);
 		
 		
@@ -173,6 +174,7 @@ class Home_buyer_register extends CI_Controller {
 		$vpincode  = $this->input->post('vpincode');
 		$sellerid = $this->input->post('sellerid');
 		$dealer_type = $this->input->post('dealer_type');
+		$vrefer = $this->input->post('vrefer');
 		$this->load->model('Admin_model');
 		
 		$data = array('vname' => $vname,'vcompanyname' => $vcompanyname, 
@@ -180,7 +182,7 @@ class Home_buyer_register extends CI_Controller {
 	'vcontactnumber'=>$vcontactnumber ,
 	'vemail'=> $vemail ,'vusername' => $vusername,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,
-	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode,'sellerid'=>$sellerid,'dealer_type'=>$dealer_type);
+	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode,'sellerid'=>$sellerid,'dealer_type'=>$dealer_type,'vrefer'=>$vrefer);
 
 
 
