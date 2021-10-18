@@ -32,7 +32,7 @@ function goBack() {
                
                 </div>
                 <!-- Card Body -->
-		<form action="<?php echo base_url(); ?>seller_email" method="post">
+		<form action="<?php echo base_url(); ?>Admin_vendordetail/reference" method="post">
                 <div class="card-body">
 				
 					 <table class="table table-sm table-borderless">
@@ -41,6 +41,7 @@ function goBack() {
 						<tr>
 						<td width="50%" ><b>Seller Id</b></td>
 								<td><?php echo $sqldata[0]->sellerid;?></td>
+								<input type="hidden" class="form-control" id="sellerid" name="sellerid"  value="<?php echo $sqldata[0]->sellerid;?>">
 							</tr> 
 						
 						<tr>
@@ -107,6 +108,12 @@ function goBack() {
 								<td><?php echo $sqldata[0]->vpincode;?></td>
 							</tr>
 							<tr>
+							<td><label>Reference</label></td>
+                             <td><input id="add" type="text" id="vrefer" name="vrefer"><br><br></td>
+                           </tr>
+						   
+					</form>	   
+							<tr>
 								<td><b>Seller</b></td>
 								<td>
 								 <input hidden type="radio" class="form-check-input" value="Seller_activate" name="optradio" checked>
@@ -144,5 +151,5 @@ function goBack() {
 
 	
 	
-</form>
+
       <!-- End of Main Content -->

@@ -66,9 +66,9 @@ function goBack() {
 		<td data-label="City"><?php echo $row->bcity;?></td>
         <td  data-label="Option" style="form-inline";>
 	
-				<a class="btn-primary btn-xl text-white btn-sm mt-1" href="<?php echo base_url()."admin_vendorprofile/index/".$row->buyerid;?>"> <i class="fa fa-edit"></i></a>
+				<a class="" href="<?php echo base_url()."admin_vendorprofile/index/".$row->buyerid;?>"> <i class="fa fa-edit"></i></a>
 				
-				<a href="<?php  echo base_url()."admin_managebuyer/reject/".urldecode($row->buyerid);?>"><button type="button"  class="btn btn-danger btn-xl text-white btn-sm mt-1">Inactive</button></a>
+				<a href="<?php  echo base_url()."admin_managebuyer/reject/".urldecode($row->buyerid);?>"><i class="fa fa-ban" style="font-size:18px;color:red"></i></a>
 				
 				<?php if($row->subscription == 0 && $row->subscription_amount != NULL){
 				

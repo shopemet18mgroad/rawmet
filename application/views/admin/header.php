@@ -19,9 +19,18 @@
   <link href="<?php echo base_url() . "web_files/"; ?>css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?php echo base_url() . "web_files/"; ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  <script src="script.js"></script>
 
 </head>
 <style>
+#add{
+      width: 50%;
+      height: 35px;
+ 
+      border: auto;
+      border-radius: 20px;
+    }
 
 </style>
 

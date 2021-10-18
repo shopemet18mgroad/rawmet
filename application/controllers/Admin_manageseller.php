@@ -34,12 +34,15 @@ class Admin_manageseller extends CI_Controller {
 		$query = $this->Admin_model->getdatafromtable('vendor_register',$voptions);
 		
 		$adac['data']= $query;
+		$query = $this->Admin_model->gettable('spoc');
+		
+		$adac['data1']= $query;
 		$sess = array('sessi'=>$this->session->userdata('username'));
 		$active = array('ausername'=>$sess['sessi']);
 			}
-			$this->load->view('admin/header',$sess);
+		$this->load->view('admin/header',$sess);
 		$this->load->view('admin/manageseller',$adac);
-		$this->load->view('admin/footer');
+	    $this->load->view('admin/footer');
 	
 	}
 		public function reject(){
@@ -60,6 +63,46 @@ class Admin_manageseller extends CI_Controller {
 		
 		die;
 	}
+		public function export_csvenquiry(){ 
+		// file name 
+		$vrefer = $this->uri->segment(3);
+		//print_r($vrefer);die;
+		$this->load->model('Admin_model');
+		$filename = 'users_'.date('Ymd').'.csv'; 
+		header("Content-Description: File Transfer"); 
+		header("Content-Disposition: attachment; filename=$filename"); 
+		header("Content-Type: application/csv; ");
+	   // get data 
+	   $usersData = $this->Admin_model->getenquirydataDetails($vrefer);
+	   $usersData1 = $this->Admin_model->getenquirydataDetails1();
+		//$usersData = $this->Admin_model->getSellerUserDetails();
+		//print_r($usersData); die;
+		// file creation 
+		if($vrefer){
+		$file = fopen('php://output','w');
+		
+		$header = array("VENDOR NAME","SELLER ID","DEALER TYPE","COMPANY NAME","COMPANY TYPE","CONTACT PERSON","CONTACT NUMBER","EMAIL","PAN","GST","ADDRESS","CITY","STATE","PIN CODE","REFERENCE"); 
+		   fputcsv($file,$header);
+		   foreach ($usersData as $line){ 
+			fputcsv($file,array($line->vname,$line->sellerid,$line->dealer_type,$line->vcompanyname,$line->vcompanytype,$line->vcontactperson,$line->vcontactnumber,$line->vemail,$line->vpan,$line->vgst,$line->vaddress,$line->vcity,$line->vselectstate,$line->vpincode,$line->vrefer)); 
+		}
+		
+		fclose($file); 
+		exit ;
+}	
+else {
+		$file = fopen('php://output','w');
+       $header = array("VENDOR NAME","SELLER ID","DEALER TYPE","COMPANY NAME","COMPANY TYPE","CONTACT PERSON","CONTACT NUMBER","EMAIL","PAN","GST","ADDRESS","CITY","STATE","PIN CODE","REFERENCE"); 
+		   fputcsv($file,$header);
+		   foreach ($usersData as $line){ 
+			fputcsv($file,array($line->vname,$line->sellerid,$line->dealer_type,$line->vcompanyname,$line->vcompanytype,$line->vcontactperson,$line->vcontactnumber,$line->vemail,$line->vpan,$line->vgst,$line->vaddress,$line->vcity,$line->vselectstate,$line->vpincode,$line->vrefer)); 
+		}
+		
+		fclose($file); 
+		exit ;
+}
+
+}
 	
 	
 	

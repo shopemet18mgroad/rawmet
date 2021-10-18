@@ -32,7 +32,7 @@ class Admin_vendordetail extends CI_Controller {
 		
 	
 		
-		$active = array('sellerid'=>$sellerid,);
+		$active = array('sellerid'=>$sellerid);
 	
 		$query = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		$data['sqldata']= $query;
@@ -48,7 +48,20 @@ class Admin_vendordetail extends CI_Controller {
 			
 			
 	}
+			public function reference(){
 	
+	        $this->load->model('Admin_model');
+		   $vrefer = $this->input->post('vrefer');
+		   $sellerid = $this->input->post('sellerid');
+		   
+		  $updatech = array('sellerid'=>$sellerid);
+		  $data2  = array('vrefer' => $vrefer);
+		  $status = $this->Admin_model->update_custom('vendor_register',$data2,$updatech,$updatech);
+		  header('location: '.base_url().'admin_approvevendor/index/');
+		  
+		  //header('location: '.base_url().'Admin_vendordetail/index/.urlencode($retriveval)'.$datainserr);
+				
+			}
 		
 	}
 	

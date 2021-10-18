@@ -91,6 +91,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					return $query->result();
 		}
 		 
+			
+		public function getenquirydataDetails($vrefer){
+		
+		$this->db->select('*');
+		$this->db->from('vendor_register');
+		$this->db->where('vrefer',$vrefer);
+		$query = $this->db->get();
+		return $query->result();
+
+	}
+		public function getenquirydataDetails1(){
+		
+		$this->db->select('*');
+		$this->db->from('vendor_register');
+		$query = $this->db->get();
+		return $query->result();
+	}
+			
+			
+			
+			
 		 
 		 
 		 
