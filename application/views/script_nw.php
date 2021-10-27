@@ -49,16 +49,17 @@ function validatebuyer(){
 	var bselectstate = document.getElementById("bselectstate").value;
 	var bpincode = document.getElementById("bpincode").value;
 	var iagreee = document.getElementById("iagreee").value;
+	var brefer = document.getElementById("brefer").value;
 	
 
-if(bname == '' || bcompanyname == '' || bcompanytype == '' || bcontactperson == '' || bcontactnumber == '' || bemail == '' || busername == '' || bpassword == '' || brepeatpassword == '' || bpan == '' || bgst == '' || baddress == '' || bcity == '' || bselectstate == '' || bpincode == '' || iagreee == ''){
-		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin, Accept Terms and condition cannot leave any field blank!", "error");
+if(bname == '' || bcompanyname == '' || bcompanytype == '' || bcontactperson == '' || bcontactnumber == '' || bemail == '' || busername == '' || bpassword == '' || brepeatpassword == '' || bpan == '' || bgst == '' || baddress == '' || bcity == '' || bselectstate == '' || bpincode == '' || iagreee == ''|| brefer == ''){
+		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin, Accept Terms and condition cannot leave any field blank!,Employee Id in reference column", "error");
 		return false;
 	}
 	else{
         $.ajax({
             type:'submit',
-            data: {bname:bname,bcompanyname:bcompanyname,bcompanytype:bcompanytype,bcontactperson:bcontactperson,bcontactnumber:bcontactnumber,bemail:bemail,busername:busername,bpassword:bpassword,brepeatpassword:brepeatpassword,bpan:bpan,bgst:bgst,baddress:baddress,bcity:bcity,bselectstate:bselectstate,bpincode:bpincode,iagreee:iagreee},
+            data: {bname:bname,bcompanyname:bcompanyname,bcompanytype:bcompanytype,bcontactperson:bcontactperson,bcontactnumber:bcontactnumber,bemail:bemail,busername:busername,bpassword:bpassword,brepeatpassword:brepeatpassword,bpan:bpan,bgst:bgst,baddress:baddress,bcity:bcity,bselectstate:bselectstate,bpincode:bpincode,iagreee:iagreee,brefer:brefer },
            success:function(data){
                 swal("Success", "Data Saved Successfully", "success");
             },
@@ -119,8 +120,11 @@ function validate_password1() {
   
     if(pw1 != pw2) {
       document.getElementById("message2").innerHTML = "**Passwords are not same";
-      return false;
-    } 
+  
+    }else{
+	 document.getElementById("message2").innerHTML = "";
+	} 
+
  }
 </script>
 	
@@ -421,8 +425,10 @@ function validateForm() {
   
     if(pw11 != pw22) {
       document.getElementById("message22").innerHTML = "**Passwords are not same";
-      return false;
-    } 
+     
+    } else{
+	 document.getElementById("message22").innerHTML = "";
+	}
  }
 </script>   
 	   
@@ -619,15 +625,16 @@ function validate_seller(){
 	var vcity = document.getElementById("vcity").value;
 	var vselectstate = document.getElementById("vselectstate").value;
 	var vpincode = document.getElementById("vpincode").value;
+	var vrefer = document.getElementById("vrefer").value;
 	
 
-if(vname == '' || vcompanyname == '' || vcompanytype == '' || vcontactperson == '' || vcontactnumber == '' || vemail == '' || vusername == '' || vpassword == '' || vrepeatpassword == '' || vpan == '' || vgst == '' || vaddress == '' || vcity == '' || vselectstate == '' || vpincode == ''){
-swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!","error");
+if(vname == '' || vcompanyname == '' || vcompanytype == '' || vcontactperson == '' || vcontactnumber == '' || vemail == '' || vusername == '' || vpassword == '' || vrepeatpassword == '' || vpan == '' || vgst == '' || vaddress == '' || vcity == '' || vselectstate == '' || vpincode == '' || vrefer == ''){
+swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!,Employee Id in reference column","error");
 		return false;
 	}else{
         $.ajax({
             type:'submit',
-            data: {vname:vname,vcompanyname:vcompanyname,vcompanytype:vcompanytype,vcontactperson:vcontactperson,vcontactnumber:vcontactnumber,vemail:vemail,vusername:vusername,vpassword:vpassword,vrepeatpassword:vrepeatpassword,vpan:vpan,vgst:vgst,vaddress:vaddress,vcity:vcity,vselectstate:vselectstate,vpincode:vpincode},
+            data: {vname:vname,vcompanyname:vcompanyname,vcompanytype:vcompanytype,vcontactperson:vcontactperson,vcontactnumber:vcontactnumber,vemail:vemail,vusername:vusername,vpassword:vpassword,vrepeatpassword:vrepeatpassword,vpan:vpan,vgst:vgst,vaddress:vaddress,vcity:vcity,vselectstate:vselectstate,vpincode:vpincode,vrefer:vrefer},
            success:function(data){
                 swal("Success", "Data Saved Successfully", "success");
             },

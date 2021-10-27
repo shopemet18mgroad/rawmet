@@ -33,36 +33,64 @@
 					
 							
                                 <div class="row register-form">
- <div class="col-md-6">
-<div class="form-group">
-<input type="text" id="bcompanyname" name="bcompanyname" class="form-control" placeholder="Company Name*" value="" />
+ <div class="col-md-12">
+ 
+  <div class="form-row">
+    <div class="col">
+	
+	
+	
+	
+     <input type="text" id="bcompanyname" name="bcompanyname" class="form-control" placeholder="Company Name*" value="" />
+	  
     </div>
-
-
-
-
-
-<div class="form-group">
-           <select id="bcompanytype" name="bcompanytype" class="form-control" onkeyup="validate_buyer_companyname()">
+    <div class="col">
+      <input type="text" onkeyup="validate_bcompany11()"  id="bcontactperson" name="bcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
+    </div>
+  </div>
+ 
+    <div class="form-row mt-3">
+    <div class="col">
+	
+	
+	
+	
+   <select id="bcompanytype" name="bcompanytype" class="form-control" onkeyup="validate_buyer_companyname()">
 			 <option class="hidden"  selected disabled>Company Type</option>
              <option value="Govt Regd Company">Govt Regd Company</option>
               <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
               <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
              <option value="Other">Other</option>
             </select>
-                                              
-  </div>	  
-								  
- <div class="form-group">
+	  
+    </div>
+    <div class="col">
+      <input type="text" id="bcontactnumber" name="bcontactnumber"    onkeyup="validate_buyerid()" class="form-control form-control-user bphn"  placeholder="Phone*" value="" />
+    </div>
+  </div>
+
+
+ <div class="form-row mt-3">
+    <div class="col">
+	
+	
+	
+	 <input type="text" id="buyerid"  value="B<?php echo(rand(1,1000000));?>" name="buyerid" class="form-control" placeholder="User Id*" readonly value="" />
+	  
+    </div>
+    <div class="col">
+       <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_bname()"  placeholder="Name">
+                    
+                    <input hidden type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="" readonly>
+    </div>
+  </div>
  
- 
-  <input type="text" id="buyerid"  value="B<?php echo(rand(1,1000000));?>" name="buyerid" class="form-control" placeholder="User Id*" readonly value="" />
- </div>
-         
- 
- 
- 
-  <div class="form-group fontpassword">
+   <div class="form-row mt-3">
+    <div class="col fontpassword">
+	
+	
+	
+	
 <input type="password" class="form-control form-control-user" id="bpassword" name="bpassword"  placeholder="Password"><i class="bi bi-eye-slash errspan" id="togglePassword"></i><span id = "message1" style="color:red"> </span>
               
 
@@ -78,38 +106,89 @@ togglePassword.addEventListener('click', function (e) {
     this.classList.toggle('bi-eye');
 });
 </script>
-   </div>
- 
- 
- 
- 
- 
-<div class="form-group">
 
-<!-- -->
+	  
+    </div>
+    <div class="col">
+	
+<input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"   placeholder="Confirm Password"> <i class="bi bi-eye-slash errspan" id="togglePassword1"></i><span id = "message2" style="color:red"></span>
+ 
+              
 
- <input type="email" class="form-control form-control-user semail" onkeyup="return validate_password1()" id="bemail" name="bemail" placeholder="Email">
- 
- 
- 
-</div>
-				   
-				   
-				   
-				   
-				   
-  <div class="form-group">
+
+<script>
+const togglePassword1 = document.querySelector('#togglePassword1');
+const password1 = document.querySelector('#brepeatpassword');
+togglePassword1.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+    password1.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
+</script>
+	  
+    </div>
+  </div>
   
-   <input type="text" class="form-control form-control-user pan" id="bpan" name="bpan"  placeholder="PAN">
+  
+  
+  
+  
+  
+  
+  
+
+    <div class="form-row mt-3">
+    <div class="col">
+	
+	
+	
+	
+     <input type="email" class="form-control form-control-user semail" onkeyup="return validate_password1()" id="bemail" name="bemail" placeholder="Email">
+	  
+    </div>
+    <div class="col">
+	
+	
+	
+       <input type="text" class="form-control form-control-user gst" id="bgst" name="bgst" placeholder="GST">
+    </div>
+  </div>
+  
+  
+  
+
+  <div class="form-row mt-3">
+    <div class="col">
+	
+	
+	
+	
+    <input type="text" class="form-control form-control-user pan" id="bpan" name="bpan"  placeholder="PAN">
+	  
+    </div>
+    <div class="col">
+      <input type="text" id="baddress" name="baddress" class="form-control" placeholder="Address*" value="" />
+    </div>
   </div>
 
 
-  <div class="form-group">
+
+
+<div class="form-row mt-3">
+    
+	
+	
+	
+	
+     
 
 
 
 
 <body onload="resetSelection1()">
+<div class="col">
 
 <select class="form-control" id="bselectstate" name="bselectstate" size="1" onchange="makeSubmenu1(this.value)">
 										<option value="" disabled selected>Choose State</option>
@@ -151,106 +230,15 @@ togglePassword.addEventListener('click', function (e) {
 									</select>
 
 
-							</div>
+							
+	  
+    </div>
 
-			<div class="form-group">
-                                        <input type="text" id="bpincode" name="bpincode"  class="form-control " placeholder="Pin Code *" onkeyup=" return validate_buyergst()" value="" />
-             </div>
-
-                               
-								 
-								 
-								 
-								 
-								 
-              </div>
-            <div class="col-md-6">
-			
-			                                 <div class="form-group">
-                                             <input type="text" onkeyup="validate_bcompany11()"  id="bcontactperson" name="bcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
-                                 </div>
-			
-					
-			
-		 
-			
-			
-			
-			
-			
-			
-    
-
-		   
-		   
-		   
-		   
-              <div class="form-group">
-                                            <input type="text" id="bcontactnumber" name="bcontactnumber"    onkeyup="validate_buyerid()" class="form-control form-control-user bphn"  placeholder="Phone*" value="" />
-         </div>
-
-		 
-		 
-		 
-		 
-  <div class="form-group">
-      <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_bname()"  placeholder="Name">
-                    
-                    <input hidden type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="" readonly>
-  </div>
-
-  
-  
-  
-  
-  
-  
-  <div class="form-group">
-  
-  <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"   placeholder="Confirm Password"> <i class="bi bi-eye-slash errspan" id="togglePassword1"></i><span id = "message2" style="color:red"> </span>
- 
-              
-
-
-<script>
-const togglePassword1 = document.querySelector('#togglePassword1');
-const password1 = document.querySelector('#brepeatpassword');
-togglePassword1.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
-    password1.setAttribute('type', type);
-    // toggle the eye / eye slash icon
-    this.classList.toggle('bi-eye');
-});
-</script>
-   
-                                            
-        </div>
-		
-		
-		
-		
-		
-
- <div class="form-group">
-                                           <input type="text" class="form-control form-control-user gst" id="bgst" name="bgst" placeholder="GST">
-  </div>
-
-                                        <div class="form-group">
-											
-                                           
-                                        </div>
-										
-									
-
-                                        
-                    <div class="form-group">
-                                            <input type="text" id="baddress" name="baddress" class="form-control" placeholder="Address*" value="" />
-                                        </div>
-										
-										
-										
-										
+	
+	
+	
+	
+	
 	
 								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								<script type="text/javascript">
@@ -260,7 +248,7 @@ togglePassword1.addEventListener('click', function (e) {
 										Kerala: ["kochi", "Kanpur"],
 										Karnataka: ["Bengaluru","Dakshina-Kannada", "Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
-										AndhraPradesh: ["Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
+										AndhraPradesh: ["Vijayawada","Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
 										Assam: ["Dispur"],
 										Bihar: ["Patna"],
                                         
@@ -355,34 +343,72 @@ togglePassword1.addEventListener('click', function (e) {
                                         
 
                           
-				<div class="form-group">
-							
+			
+							    <div class="col">
 								<select class="form-control" id="bcity" name="bcity" size="1">
 									<option value="" disabled selected>Choose City</option>
 									<option></option>
 								</select>
-							</div>
-							<div class="form-group">
-                                            <input type="text" id="brefer" name="brefer" class="form-control" placeholder="Reference*" value="" />
-                             </div>
+						
+	
+	
+	
+	
+	
+  </div>
+
+
+</div>
+
+
+
+  <div class="form-row mt-3">
+    <div class="col">
+	
+	
+	
+	
+    <input type="text" id="bpincode" name="bpincode"  class="form-control " placeholder="Pin Code *" onkeyup=" return validate_buyergst()" value="" />
 										
 										
 										
-										
-										
-										
-										
-										
-										
-									
-										  <div class="form-group">
-									     <input type="checkbox" class="form-check-input" id="iagreee" name="iagreee">
+	  
+    </div>
+    <div class="col">
+      <input type="text" id="brefer" name="brefer" class="form-control" placeholder="Reference*" value="" />
+    </div>
+  </div>
+   <div class="form-row mt-3">
+    <div class="col ml-5">
+	
+	
+	
+	
+    <input type="checkbox" class="form-check-input" id="iagreee" name="iagreee">
 								<label class="form-check-label" for="exampleCheck1">
 								I agree to the <a data-toggle="modal" data-target=  "#termsandcondition"  href="#" href=""> Terms & Conditions</a></label>
-                                        </div>
+										
+										
+										
+	  
+    </div>
+    <div class="col">
+	
+	
+        <input type="submit" name="submit" id="btn1" onclick="return validatebuyer()"   value="Register" class="btn btn-primary">
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+
+
 
                                                                                 
-                       <input type="submit" name="submit" id="btn1" onclick="return validatebuyer()"   value="Register" class="btn btn-primary">
+                     
                                     </div>                              
 
                                     </form>
@@ -415,40 +441,51 @@ togglePassword1.addEventListener('click', function (e) {
 
                  <div class="row register-form">
 				 
-                       <div class="col-md-6">
-					   
-					   	
-					   
-					   
-					   
-
- <div class="form-group">
- 
-    <input type="text" id="vcompanyname" name="vcompanyname" class="form-control" placeholder="Company Name*" value="" />
-
- </div>
-							   
- 
- 
- <div class="form-group">
-
- <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return   ()"  placeholder="PCB license No.">
-
-</div>	
-  
-  <div class="form-group">
- 
-
- <input type="text" id="sellerid" readonly  value="S<?php echo(rand(1,1000000));?>" name="sellerid" class="form-control" placeholder="User Id*" value="" />
-  
+                       <div class="col-md-12">
+ <div class="form-row mt-3">
+    <div class="col">
+	
+	
+	
+      <input type="text" id="vcompanyname" name="vcompanyname" class="form-control" placeholder="Company Name*" value="" />
+    </div>
+    <div class="col">
+	
+	
+      <input type="text" onkeyup="validate_bcompany1L1()"  id="vcontactperson" name="vcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
+    </div>
   </div>
-		
-		
-		
-                                       
-        <div class="form-group">
-		
-		<input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password"><i class="bi bi-eye-slash errspan" id="togglePassword3"></i><span id = "message11" style="color:red"> </span>
+
+   <div class="form-row mt-3">
+    <div class="col">
+     <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return   ()"  placeholder="PCB license No.">
+    </div>
+    <div class="col">
+      <select id="vcompanytype" name="vcompanytype" class="form-control">
+             <option class="hidden"  selected disabled>Company Type</option>
+                  <option value="Govt Regd Company">Govt Regd Company</option>
+                  <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
+                  <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
+                      <option value="Other">Other</option>
+                  </select>
+    </div>
+  </div>
+  
+  
+  
+   <div class="form-row mt-3">
+    <div class="col">
+      <input type="text" id="sellerid" readonly  value="S<?php echo(rand(1,1000000));?>" name="sellerid" class="form-control" placeholder="User Id*" value="" />
+    </div>
+    <div class="col">
+      					 <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
+                   <input hidden type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
+    </div>
+  </div>
+ 
+   <div class="form-row mt-3">
+    <div class="col">
+      	<input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password"><i class="bi bi-eye-slash errspan" id="togglePassword3"></i><span id = "message11" style="color:red"> </span>
 
 <script>
 const togglePassword3 = document.querySelector('#togglePassword3');
@@ -461,79 +498,69 @@ togglePassword3.addEventListener('click', function (e) {
     this.classList.toggle('bi-eye');
 });
 </script>
-		
+    </div>
+    <div class="col">
+                  <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><i class="bi bi-eye-slash errspan" id="togglePassword4"></i><span id = "message22" style="color:red"> </span>	
+			
+			
+	 
+	
+                                            
+         
 
-         </div>
-		  
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-	
-		   
-		 
-           <div class="form-group">
-		   
-		   
-		   <input type="email" class="form-control form-control-user bemail" onkeyup="return validateForm()" id="vemail"  name="vemail" placeholder="Email">
-		   
-		   
-		
-			  
-			   
-           </div>
-		   
-		   
-		   
-	
+<script>
+const togglePassword4 = document.querySelector('#togglePassword4');
+const password4 = document.querySelector('#vrepeatpassword');
+togglePassword4.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password4.getAttribute('type') === 'password' ? 'text' : 'password';
+    password4.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
+</script>
+    </div>
+  </div>
  
-		   
-		   
-		   
-		   
-		   
-	
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
+   <div class="form-row mt-3">
+    <div class="col">
+      <input type="email" class="form-control form-control-user bemail" onkeyup="return validateForm()" id="vemail"  name="vemail" placeholder="Email">
+    </div>
+    <div class="col">
+ <input type="text" id="vcontactnumber" onkeyup="validate_selid()"  class="form-control form-control-user sphn"  name="vcontactnumber" placeholder="Phone*" value="" />
+    </div>
+  </div>
+  
+   <div class="form-row mt-3">
+    <div class="col">
+         <input type="text" id="vpan"  name="vpan"  class="form-control form-control-user span"   placeholder="PAN"  class="form-control Pan" placeholder="Pan No *" value="" />
+    </div>
+    <div class="col">
+       <select class="form-control" id="dealer_type" name="dealer_type">
+				  <option default>--Type of Dealer--</option>
+					       <option value="Manufacturer">Manufacturer</option>
+						<option value="Wholesaler">Wholesaler</option>
+						<option value="Re-saler">Re-saler</option>
+						<option value="Dealer">Dealer</option>
+				        <option value="Distributor">Distributor</option>
+						<option value="Others">Others</option>
+						
+				    </select>
+    </div>
+  </div>
 
-          <div class="form-group">
-              <input type="text" id="vpan"  name="vpan"  class="form-control form-control-user span"   placeholder="PAN"  class="form-control Pan" placeholder="Pan No *" value="" />
-          </div>
-		  
-		  
-		  
-			   <div class="form-group">
-     <input type="text" class="form-control form-control-user"   id="vaddress"  name="vaddress"   placeholder="Address">
-       </div>  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		<div class="form-group">
-								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <div class="form-row mt-3">
+    <div class="col">
+       <input type="text" class="form-control form-control-user"   id="vaddress"  name="vaddress"   placeholder="Address">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-user sgst" id="vgst"  name="vgst"   placeholder="GST">
+    </div>
+  </div>
+ 
+   <div class="form-row mt-3">
+    <div class="col">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								
 						
 
@@ -579,267 +606,127 @@ togglePassword3.addEventListener('click', function (e) {
 
 
 					
-							
-							
-			 
-
-</div>  
-		  
-		  
-		  
-		  
-		
-<div class="form-group">
-              <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value=""  onkeyup="validate_sellergst()" />
-       </div>   
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		
-         
-	   
-	   
-	   
-	  				
-                 
-							
-			</div>	
-										
-		<div class="col-md-6">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		 <div class="form-group" >
-		 
-		 
-		
-		 
-		 
+    </div>
+    <div class="col">
 	
-	<input type="text" onkeyup="validate_bcompany1L1()"  id="vcontactperson" name="vcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
-	
-	
-	
- </div>
- 
- 
- 
- 
- 
- 
- 
- 
-  <div class="form-group">
-          <select id="vcompanytype" name="vcompanytype" class="form-control">
-             <option class="hidden"  selected disabled>Company Type</option>
-                  <option value="Govt Regd Company">Govt Regd Company</option>
-                  <option value="Ltd, Pvt Ltd, LLP, Corp">Ltd, Pvt Ltd, LLP, Corp</option>
-                  <option value="Partnership, Proprietorship, OPC" >Partnership, Proprietorship, OPC</option>
-                      <option value="Other">Other</option>
-                  </select>
-              </div>
-			  
-			  
-			  
-		
-		<div class="form-group">
-       		   
-			  
-               
-					
-					
-					
-					 <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
-                   <input hidden type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-                                        </div>
-										
-										
-										
-										
-										
-										
-		
-		
-		
-		    <div class="form-group">
-			
-		       
-                    <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><i class="bi bi-eye-slash errspan" id="togglePassword4"></i><span id = "message22" style="color:red"> </span>	
-			
-			
-	 
-	
-                                            
-         
-
-<script>
-const togglePassword4 = document.querySelector('#togglePassword4');
-const password4 = document.querySelector('#vrepeatpassword');
-togglePassword4.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password4.getAttribute('type') === 'password' ? 'text' : 'password';
-    password4.setAttribute('type', type);
-    // toggle the eye / eye slash icon
-    this.classList.toggle('bi-eye');
-});
-</script>
-		
-
-		
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-          
-
-         <div class="form-group">
-		 
-		 
-		 
-		 
-
-		 
-		 
-		 
-       <input type="text" id="vcontactnumber" onkeyup="validate_selid()"  class="form-control form-control-user sphn"  name="vcontactnumber" placeholder="Phone*" value="" />
-	   
-	
-	   
-	   
-  </div>
-
-     <div class="form-group">
-      <select class="form-control" id="dealer_type" name="dealer_type">
-				  <option default>--Type of Dealer--</option>
-					       <option value="Manufacturer">Manufacturer</option>
-						<option value="Wholesaler">Wholesaler</option>
-						<option value="Re-saler">Re-saler</option>
-						<option value="Dealer">Dealer</option>
-				        <option value="Distributor">Distributor</option>
-						<option value="Others">Others</option>
-						
-				    </select> 
-                  </div>
- 
-	 
-	 
-	 
-
-	 
-
- 
-
-     <div class="form-group">
-   	 <input type="text" class="form-control form-control-user sgst" id="vgst"  name="vgst"   placeholder="GST">
-       </div>
-
-
-       
-	   
-	   
-	   
-	   
-	   <div class="form-group">
-	   				<select class="form-control" id="vcity" name="vcity" size="1">
+      <select class="form-control" id="vcity" name="vcity" size="1">
 									<option class="form-control" value="" disabled selected>Choose City</option>
 									<option></option>
 								</select>
-						
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-</div>
-	
-		 <div class="form-group" >
-		 
-		 
-		
-		 
-		 
-	
-	<input type="text"  id="vrefer" name="vrefer" class="form-control" placeholder="Reference"    value="" />
-	
-	
-	
- </div>
-                                        
+    </div>
+  </div>
 
+   <div class="form-row mt-3">
+    <div class="col">
+      <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value=""  onkeyup="validate_sellergst()" />
+    </div>
+    <div class="col">
+     <input type="text"  id="vrefer" name="vrefer" class="form-control" placeholder="Reference"    value="" />
+    </div>
+  </div>
 
+ 	  
+	<script type="text/javascript">
+									var citiesByState = {
+										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
+										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
+										Kerala: ["kochi", "Kanpur"],
+										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
+										ArunachalPradesh: ["Itanagar"],
+										AndhraPradesh: ["Vijayawada","Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
+										Assam: ["Dispur"],
+										Bihar: ["Patna"],
+										Chhattisgarh: ["Naya Raipur"],
+										Goa: ["Panaji"],
+										Gujarat: ["Gandhinagar"],
+										Haryana: ["Chandigarh"],
+										HimchalaPradesh: ["Shimla"],
+										Jharkhand: ["Ranchi"],
+										Kerala: ["Thiruvananthapuram"],
+										MadhyaPradesh: ["Bhopal"],
+										Maharashtra: ["Mumbai"],
+										Manipur: ["Imphal"],
+										Meghalaya: ["Shillong"],
+										Mizoram: ["Aizawl"],
+										Nagaland: ["Kohima"],
+										Odisha: ["Bhubaneswar"],
+										Punjab: ["Chandigarh"],
+										Rajasthan: ["Jaipur"],
+										Sikkim: ["Gangtok"],
+															TamilNadu: ["Ariyalur","Chennai","Coimbatore","Chengalpattu",
+	"Cuddalore","Dharmapuri","Dindigul","Erode","Kallakurichi","Kanchipuram	","	Kanyakumari	","	Karur"," Krishnagiri","Madurai","Mayiladuthurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","	Ranipet	","Salem","Sivagangai","Tenkasi","Thanjavur	","	Theni","Thoothukudi	","Tiruchirappalli","Tirunelveli","	Tirupattur","Tiruppur ","Tiruvallur	","	Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"],
+										Telangana: ["Adilabad",
+"Bhadradri Kothagudem",
+"Hyderabad Jagtial",
+"Jangaon",
+"Jayashankar Bhoopalpally",
+"Jogulamba Gadwal",
+"Kamareddy",
+"Karimnagar",
+"Khammam",
+"Komaram Bheem Asifabad",
+"Mahabubabad",
+"Mahabubnagar",
+"Mancherial",
+"Medak",
+"Medchal",
+"Nagarkurnool",
+"Nalgonda",
+"Nirmal",
+"Nizamabad",
+"Peddapalli",
+"Rajanna Sircilla",
+"RangareddySangareddy",
+"Siddipet",
+"Suryapet",
+"Vikarabad",
+"Wanaparthy",
+"Warangal (Rural)",
+"Warangal (Urban)","Yadadri Bhuvanagiri"],
+										Tripura: ["Agartala"],
+										UttarPradesh: ["Lucknow"],
+										Uttarakhand: ["Dehradun"],
+										WestBengal: ["Kolkata"],
+									}
 
+									function makeSubmenu(value) {
+										if (value.length == 0) document.getElementById("vcity").innerHTML = "<option></option>";
+										else {
+											var citiesOptions = "";
+											for (cityId in citiesByState[value]) {
+												citiesOptions += "<option>" + citiesByState[value][cityId] + "</option>";
+											}
+											document.getElementById("vcity").innerHTML = citiesOptions;
+										}
+									}
 
+									function displaySelected() {
+										var country = document.getElementById("vselectstate").value;
+										var city = document.getElementById("vcity").value;
+										alert(country + "\n" + city);
+									}
 
+									function resetSelection() {
+										document.getElementById("vselectstate").selectedIndex = 0;
+										document.getElementById("vcity").selectedIndex = 0;
+									}
+								</script> 
+  
 
-
-	
-
-
-                                        
-										 <div class="form-group">
-									     <input type="checkbox" class="form-check-input" id="iagreee" name="iagreee">
+			
+										
+                       
+					   
+					     <div class="form-row mt-3">
+    <div class="col ml-5">
+     <input type="checkbox" class="form-check-input" id="iagreee" name="iagreee">
 								<label class="form-check-label" for="exampleCheck1">
 								I agree to the <a data-toggle="modal" data-target="" href="#">Terms & Conditions</a></label>
-                                        </div>
-										
-				<!-- -->						
-										
-                       <input type="submit" name="submit" id="btn1" onclick="return validate_seller()" value="Register" class="btn btn-primary">
+    </div>
+    <div class="col">
+      <input type="submit" name="submit" id="btn1" onclick="return validate_seller()" value="Register" class="btn btn-primary">
+    </div>
+  </div>
 					   
 					   
 
@@ -851,7 +738,7 @@ togglePassword4.addEventListener('click', function (e) {
 										Kerala: ["kochi", "Kanpur"],
 										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
-										AndhraPradesh: ["Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
+										AndhraPradesh: ["Vijayawada","Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
 										Assam: ["Dispur"],
 										Bihar: ["Patna"],
 										Chhattisgarh: ["Naya Raipur"],
