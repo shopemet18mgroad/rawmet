@@ -53,7 +53,7 @@ function validatebuyer(){
 	
 
 if(bname == '' || bcompanyname == '' || bcompanytype == '' || bcontactperson == '' || bcontactnumber == '' || bemail == '' || busername == '' || bpassword == '' || brepeatpassword == '' || bpan == '' || bgst == '' || baddress == '' || bcity == '' || bselectstate == '' || bpincode == '' || iagreee == ''|| brefer == ''){
-		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin, Accept Terms and condition cannot leave any field blank!,Employee Id in reference column", "error");
+		swal("Alert!",  "Buyer Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin, Accept Terms and condition cannot leave any field blank!,   Employee Id in reference column in case there is NO employee id they can be give NA(Not Applicable)", "error");
 		return false;
 	}
 	else{
@@ -629,7 +629,7 @@ function validate_seller(){
 	
 
 if(vname == '' || vcompanyname == '' || vcompanytype == '' || vcontactperson == '' || vcontactnumber == '' || vemail == '' || vusername == '' || vpassword == '' || vrepeatpassword == '' || vpan == '' || vgst == '' || vaddress == '' || vcity == '' || vselectstate == '' || vpincode == '' || vrefer == ''){
-swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!,Employee Id in reference column","error");
+swal("Alert!","Vendor Name, Company Name, Company Type, Contact Person, Contact Number, E-Mail, User Name, Password , Repeat Password, Pan, GST, Address, Street, City, State, Pin  cannot leave any field blank!,Employee Id in reference column in case there is NO employee id they can be give NA(Not Applicable).","error");
 		return false;
 	}else{
         $.ajax({

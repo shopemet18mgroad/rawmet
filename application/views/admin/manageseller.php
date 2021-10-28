@@ -3,10 +3,18 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+		<link href="<?php echo base_url()."web_files/";?>css/buyer_responsive.css" rel="stylesheet" type="text/css">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Manage Vendor</h1>
+			           		               				 <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:right"></i>                           
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
          
           </div>
 
@@ -15,13 +23,10 @@
 
             <!-- Earnings (Monthly) Card Example -->
 			<div class="col-xl-12 col-lg-7">
-          <div class="card shadow mb-4">
+			 <div class="card shadow mb-4">
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <thead class="bg-primary text-white">
-    	
-	<center> <div class="form-group">
+			<br><a id="mylink" style="float:right" href="" type="button" class="btn btn-info btn-sm mr-5 mylink display"><b>Download Excel</b></a><br><br>
+			<center> <div class="form-group">
       <label class="control-label col-sm-2">SPOC:</label>
 	  
       <div class="col-sm-4"> 
@@ -40,10 +45,18 @@
 
 
      </select>
-		<br><a id="mylink" href="" type="button" class="btn btn-info btn-sm ml-3 mylink display"><b>Download Excel</b></a><br><br>
+		
     </div>
     </div></center>
+         
+              <div class="table-responsive">
+                <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead class="bg-primary text-white">
+    	
+	
+	
 	      <tr>
+		  <th>Sl.No.</th>
         <th>Vendor Name</th>
         <th>Company Type</th>
         <th>Company Name</th>
@@ -57,16 +70,17 @@
   <tbody id = "myTable">
 	
       
-      
+      <?php  $count = 1;?>
 	   <?php foreach($data as $row){?>
       <tr>
-	                  <td><?php echo $row->vname;?></td>
-					<td><?php  echo $row->vcompanytype; ?></td>
-                    <td><?php  echo $row->vcompanyname; ?></td>
-					<td><?php  echo $row->vcontactperson; ?></td>
-					<td><?php echo $row->vaddress; ?></td>
-					<td><?php echo $row->vcity;?></td>
-                    <td><?php echo $row->vrefer;?></td>
+	           <td data-label="Sl.No." ><?php echo $count;?></td> 
+	                 <td data-label="Vendor Name"><?php echo $row->vname;?></td>
+					<td data-label="Company Type"><?php  echo $row->vcompanytype; ?></td>
+                    <td data-label="Company Name"><?php  echo $row->vcompanyname; ?></td>
+					<td data-label="Contact Person"><?php  echo $row->vcontactperson; ?></td>
+					<td data-label="Location"><?php echo $row->vaddress; ?></td>
+					<td data-label="Refer"><?php echo $row->vcity;?></td>
+                    <td data-label="Option"><?php echo $row->vrefer;?></td>
 		
 
      <td>
@@ -77,8 +91,9 @@
 				
 
     
-
+<?php $count++;?>
       </tr> 
+	  
 <?php }?>	  
       
     </tbody>
