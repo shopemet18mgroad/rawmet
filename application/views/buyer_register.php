@@ -1,5 +1,5 @@
 <?php $this->load->view('header_nw.php');?>
-
+   
 <form class="user" name="registerForm" id="registerForm" action="<?php echo base_url().'index.php/Buyer/register'?>" method="POST"></form>
 <div class="container register">
                 <div class="row">
@@ -36,7 +36,7 @@
  <div class="col-md-12">
  
   <div class="form-row">
-    <div class="col">
+    <div class="col-sm">
 	
 	
 	
@@ -44,13 +44,13 @@
      <input type="text" id="bcompanyname" name="bcompanyname" class="form-control" placeholder="Company Name*" value="" />
 	  
     </div>
-    <div class="col">
-      <input type="text" onkeyup="validate_bcompany11()"  id="bcontactperson" name="bcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
+    <div class="col-sm">
+      <input type="text" onkeyup="validate_bcompany11()"  id="bcontactperson" name="bcontac	`	tperson" class="form-control" placeholder="Contact Person*"    value="" />
     </div>
   </div>
  
-    <div class="form-row mt-3">
-    <div class="col">
+    <div class="form-row ">
+    <div class="col-sm">
 	
 	
 	
@@ -64,29 +64,29 @@
             </select>
 	  
     </div>
-    <div class="col">
+    <div class="col-sm">
       <input type="text" id="bcontactnumber" name="bcontactnumber"    onkeyup="validate_buyerid()" class="form-control form-control-user bphn"  placeholder="Phone*" value="" />
     </div>
   </div>
 
 
- <div class="form-row mt-3">
-    <div class="col">
+ <div class="form-row ">
+    <div class="col-sm">
 	
 	
 	
 	 <input type="text" id="buyerid"  value="B<?php echo(rand(1,1000000));?>" name="buyerid" class="form-control" placeholder="User Id*" readonly value="" />
 	  
     </div>
-    <div class="col">
+    <div class="col-sm">
        <input type="text" class="form-control form-control-user" id="busername" name="busername" onkeyup="validate_bname()"  placeholder="Name">
                     
                     <input hidden type="text" class="form-control form-control-user" id="bname" name="bname"  placeholder="" readonly>
     </div>
   </div>
  
-   <div class="form-row mt-3">
-    <div class="col fontpassword">
+   <div class="form-row ">
+    <div class="col-sm fontpassword">
 	
 	
 	
@@ -109,7 +109,7 @@ togglePassword.addEventListener('click', function (e) {
 
 	  
     </div>
-    <div class="col">
+    <div class="col-sm">
 	
 <input type="password" class="form-control form-control-user"id="brepeatpassword" name="brepeatpassword"   placeholder="Confirm Password"> <i class="bi bi-eye-slash errspan" id="togglePassword1"></i><span id = "message2" style="color:red"></span>
  
@@ -139,8 +139,8 @@ togglePassword1.addEventListener('click', function (e) {
   
   
 
-    <div class="form-row mt-3">
-    <div class="col">
+    <div class="form-row ">
+    <div class="col-sm">
 	
 	
 	
@@ -148,7 +148,7 @@ togglePassword1.addEventListener('click', function (e) {
      <input type="email" class="form-control form-control-user semail" onkeyup="return validate_password1()" id="bemail" name="bemail" placeholder="Email">
 	  
     </div>
-    <div class="col">
+    <div class="col-sm">
 	
 	
 	
@@ -159,8 +159,8 @@ togglePassword1.addEventListener('click', function (e) {
   
   
 
-  <div class="form-row mt-3">
-    <div class="col">
+  <div class="form-row ">
+    <div class="col-sm">
 	
 	
 	
@@ -168,7 +168,7 @@ togglePassword1.addEventListener('click', function (e) {
     <input type="text" class="form-control form-control-user pan" id="bpan" name="bpan"  placeholder="PAN">
 	  
     </div>
-    <div class="col">
+    <div class="col-sm">
       <input type="text" id="baddress" name="baddress" class="form-control" placeholder="Address*" value="" />
     </div>
   </div>
@@ -176,7 +176,7 @@ togglePassword1.addEventListener('click', function (e) {
 
 
 
-<div class="form-row mt-3">
+<div class="form-row ">
     
 	
 	
@@ -188,7 +188,7 @@ togglePassword1.addEventListener('click', function (e) {
 
 
 <body onload="resetSelection1()">
-<div class="col">
+<div class="col-sm">
 
 <select class="form-control" id="bselectstate" name="bselectstate" size="1" onchange="makeSubmenu1(this.value)">
 										<option value="" disabled selected>Choose State</option>
@@ -244,8 +244,9 @@ togglePassword1.addEventListener('click', function (e) {
 								<script type="text/javascript">
 									var citiesByState1 = {
 										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
-										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
-										Kerala: ["kochi", "Kanpur"],
+										Maharashtra: ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","HingolJalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri"],
+										Kerala: ["kochi", "Kanpur","Alappuzha
+,"Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
 										Karnataka: ["Bengaluru","Dakshina-Kannada", "Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
 										AndhraPradesh: ["Vijayawada","Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
@@ -344,7 +345,7 @@ togglePassword1.addEventListener('click', function (e) {
 
                           
 			
-							    <div class="col">
+							    <div class="col-sm">
 								<select class="form-control" id="bcity" name="bcity" size="1">
 									<option value="" disabled selected>Choose City</option>
 									<option></option>
@@ -362,8 +363,8 @@ togglePassword1.addEventListener('click', function (e) {
 
 
 
-  <div class="form-row mt-3">
-    <div class="col">
+  <div class="form-row">
+    <div class="col-sm">
 	
 	
 	
@@ -374,13 +375,13 @@ togglePassword1.addEventListener('click', function (e) {
 										
 	  
     </div>
-    <div class="col">
+    <div class="col-sm">
       <input type="text" id="brefer" name="brefer" class="form-control" placeholder="Reference" value="" />
 	<div style="font-size:10px"> *In case there is no Reference Id they can fill NA (NOT APPLICABLE).</div>
     </div>
   </div>
    <div class="form-row mt-2">
-    <div class="col ml-5" style="font-size:16px";>
+    <div class="col-sm ml-5" style="font-size:16px";>
 	
 	
 	
@@ -393,7 +394,7 @@ togglePassword1.addEventListener('click', function (e) {
 										
 	  
     </div>
-    <div class="col">
+    <div class="col-sm">
 	
 	
         <input type="submit" name="submit" id="btn1" onclick="return validatebuyer()"   value="Register" class="btn btn-primary">
@@ -431,7 +432,7 @@ togglePassword1.addEventListener('click', function (e) {
 							
 
  <div class="tab-pane fade show" id="Seller" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">Seller Registration</h3>
+                                <h3  class="ml-2 register-heading">Seller Registration</h3>
 								
 	
 			
@@ -443,25 +444,25 @@ togglePassword1.addEventListener('click', function (e) {
                  <div class="row register-form">
 				 
                        <div class="col-md-12">
- <div class="form-row mt-3">
-    <div class="col">
+ <div class="form-row ">
+    <div class="col-sm">
 	
 	
 	
       <input type="text" id="vcompanyname" name="vcompanyname" class="form-control" placeholder="Company Name*" value="" />
     </div>
-    <div class="col">
+    <div class="col-sm">
 	
 	
       <input type="text" onkeyup="validate_bcompany1L1()"  id="vcontactperson" name="vcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
     </div>
   </div>
 
-   <div class="form-row mt-3">
-    <div class="col">
+   <div class="form-row ">
+    <div class="col-sm">
      <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return   ()"  placeholder="PCB license No.">
     </div>
-    <div class="col">
+    <div class="col-sm">
       <select id="vcompanytype" name="vcompanytype" class="form-control">
              <option class="hidden"  selected disabled>Company Type</option>
                   <option value="Govt Regd Company">Govt Regd Company</option>
@@ -474,18 +475,18 @@ togglePassword1.addEventListener('click', function (e) {
   
   
   
-   <div class="form-row mt-3">
-    <div class="col">
+   <div class="form-row">
+    <div class="col-sm">
       <input type="text" id="sellerid" readonly  value="S<?php echo(rand(1,1000000));?>" name="sellerid" class="form-control" placeholder="User Id*" value="" />
     </div>
-    <div class="col">
+    <div class="col-sm">
       					 <input type="text" class="form-control form-control-user" id="vusername"  name="vusername" onkeyup="validate_name()"  placeholder="User Name" >
                    <input hidden type="text" class="form-control form-control-user" id="vname" name="vname"  readonly>
     </div>
   </div>
  
-   <div class="form-row mt-3">
-    <div class="col">
+   <div class="form-row">
+    <div class="col-sm">
       	<input type="password" class="form-control form-control-user"id="vpassword" name="vpassword"  placeholder="Password"><i class="bi bi-eye-slash errspan" id="togglePassword3"></i><span id = "message11" style="color:red"> </span>
 
 <script>
@@ -500,7 +501,7 @@ togglePassword3.addEventListener('click', function (e) {
 });
 </script>
     </div>
-    <div class="col">
+    <div class="col-sm">
                   <input type="password" class="form-control form-control-user"id="vrepeatpassword" name="vrepeatpassword"  placeholder="Confirm Password"><i class="bi bi-eye-slash errspan" id="togglePassword4"></i><span id = "message22" style="color:red"> </span>	
 			
 			
@@ -523,20 +524,20 @@ togglePassword4.addEventListener('click', function (e) {
     </div>
   </div>
  
-   <div class="form-row mt-3">
-    <div class="col">
+   <div class="form-row ">
+    <div class="col-sm">
       <input type="email" class="form-control form-control-user bemail" onkeyup="return validateForm()" id="vemail"  name="vemail" placeholder="Email">
     </div>
-    <div class="col">
+    <div class="col-sm">
  <input type="text" id="vcontactnumber" onkeyup="validate_selid()"  class="form-control form-control-user sphn"  name="vcontactnumber" placeholder="Phone*" value="" />
     </div>
   </div>
   
-   <div class="form-row mt-3">
-    <div class="col">
+   <div class="form-row">
+    <div class="col-sm">
          <input type="text" id="vpan"  name="vpan"  class="form-control form-control-user span"   placeholder="PAN"  class="form-control Pan" placeholder="Pan No *" value="" />
     </div>
-    <div class="col">
+    <div class="col-sm">
        <select class="form-control" id="dealer_type" name="dealer_type">
 				  <option default>--Type of Dealer--</option>
 					       <option value="Manufacturer">Manufacturer</option>
@@ -550,17 +551,17 @@ togglePassword4.addEventListener('click', function (e) {
     </div>
   </div>
 
-   <div class="form-row mt-3">
-    <div class="col">
+   <div class="form-row ">
+    <div class="col-sm">
        <input type="text" class="form-control form-control-user"   id="vaddress"  name="vaddress"   placeholder="Address">
     </div>
-    <div class="col">
+    <div class="col-sm">
       <input type="text" class="form-control form-control-user sgst" id="vgst"  name="vgst"   placeholder="GST">
     </div>
   </div>
  
-   <div class="form-row mt-3">
-    <div class="col">
+   <div class="form-row ">
+    <div class="col-sm">
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								
 						
@@ -608,7 +609,7 @@ togglePassword4.addEventListener('click', function (e) {
 
 					
     </div>
-    <div class="col">
+    <div class="col-sm">
 	
       <select class="form-control" id="vcity" name="vcity" size="1">
 									<option class="form-control" value="" disabled selected>Choose City</option>
@@ -617,11 +618,11 @@ togglePassword4.addEventListener('click', function (e) {
     </div>
   </div>
 
-   <div class="form-row mt-3">
-    <div class="col">
+   <div class="form-row ">
+    <div class="col-sm">
       <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value=""  onkeyup="validate_sellergst()" />
     </div>
-    <div class="col">
+    <div class="col-sm ">
      <input type="text"  id="vrefer" name="vrefer" class="form-control" placeholder="Reference"    value="" />
 	 <div style="font-size:10px"> *In case there is no Reference Id they can fill NA (NOT APPLICABLE).</div>
     </div>
@@ -631,8 +632,9 @@ togglePassword4.addEventListener('click', function (e) {
 	<script type="text/javascript">
 									var citiesByState = {
 										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
-										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
-										Kerala: ["kochi", "Kanpur"],
+										Maharashtra: ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","HingolJalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri"],
+										Kerala: ["kochi", "Kanpur","Alappuzha
+,"Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
 										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
 										AndhraPradesh: ["Vijayawada","Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
@@ -720,12 +722,12 @@ togglePassword4.addEventListener('click', function (e) {
                        
 					   
 					     <div class="form-row mt-2">
-    <div class="col ml-5">
+    <div class="col-sm ml-5">
      <input type="checkbox" class="form-check-input" id="iagreee" name="iagreee">
 								<label class="form-check-label" for="exampleCheck1">
 								I agree to the <a data-toggle="modal" data-target="" href="#termsandcondition2">Terms & Conditions</a></label>
     </div>
-    <div class="col">
+    <div class="col-sm">
       <input type="submit" name="submit" id="btn1" onclick="return validate_seller()" value="Register" class="btn btn-primary">
     </div>
   </div>

@@ -164,6 +164,18 @@
         z-index: 2;
         color: black;
     }
+    @media screen and (max-width: 800px) {
+  .col-sm{
+    margin-top: 8%;
+  }
+}
+ @media screen and (min-width: 780px) {
+.form-row{
+    margin-top:15px;
+    
+}
+}   
+
 
 </style>
 
