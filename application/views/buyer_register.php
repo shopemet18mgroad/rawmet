@@ -13,13 +13,13 @@
 						Materials will be Dispatched as per TAT.</b></p>
 						
   <a href="<?php echo base_url()."home/";?>">
-         <button style="width:150px" type="button" class="btn btn-light">Login</button></a>                       
+         <button style="width:150px" type="button" class="btn btn-light mb-3">Login</button></a>                       
 					  
                     </div>
                     <div class="col-md-9 register-right">
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">                                
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Buyers" role="tab" aria-controls="home" aria-selected="true">Buyers</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Buyers" role="tab" aria-controls="home" aria-selected="true">Buyer</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Seller" role="tab" aria-controls="profile" aria-selected="false">Seller</a>
@@ -27,7 +27,7 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="Buyers" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Buyers Registration</h3>
+                                <h3 class="register-heading ml-5">Buyer Registration</h3>
 
                            	<form action="<?php echo base_url();?>home_buyer_register"  method="POST">
 					
@@ -432,7 +432,7 @@ togglePassword1.addEventListener('click', function (e) {
 							
 
  <div class="tab-pane fade show" id="Seller" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="ml-2 register-heading">Seller Registration</h3>
+                                <h3  class="ml-5 register-heading">Seller Registration</h3>
 								
 	
 			
