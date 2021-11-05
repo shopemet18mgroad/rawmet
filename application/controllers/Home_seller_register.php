@@ -43,6 +43,8 @@ class Home_seller_register extends CI_Controller {
 		$vpincode  = $this->input->post('vpincode');
 		$sellerid = $this->input->post('sellerid');
 		$dealer_type = $this->input->post('dealer_type');
+		$vrefer = $this->input->post('vrefer');
+		$vproddescrip = $this->input->post('vproddescrip');
 		$this->load->model('Admin_model');
 		
 		$data = array('vname' => $vname,'vcompanyname' => $vcompanyname, 
@@ -50,7 +52,7 @@ class Home_seller_register extends CI_Controller {
 	'vcontactnumber'=>$vcontactnumber ,
 	'vemail'=> $vemail ,'vusername' => $vusername,
 	'vpassword'=> $vpassword,'vrepeatpassword' => $vrepeatpassword,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,
-	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode,'sellerid'=>$sellerid,'dealer_type'=>$dealer_type);
+	'vaddress' => $vaddress, 'vcity'=>$vcity,'vselectstate' => $vselectstate, 'vpincode' => $vpincode,'sellerid'=>$sellerid,'dealer_type'=>$dealer_type,'vrefer'=>$vrefer,'vproddescrip'=>$vproddescrip);
 
 
 

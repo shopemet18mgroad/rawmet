@@ -23,7 +23,7 @@ function goBack() {
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-striped  table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-striped  table-bordered"  style="font-size:13px;" id="dataTable" width="100%" cellspacing="0">
     <thead class="bg-primary text-white">
       <tr>
 	  <th>Sl.No.</th>
@@ -31,6 +31,7 @@ function goBack() {
         <th>Company Type</th>
         <th>Contact Person</th>
 	   <th>Location</th>
+	   <th>Product Description</th>
 		<th>City</th>
 		<th>Option</th>
       </tr>
@@ -45,6 +46,7 @@ function goBack() {
 					<td data-label="Contact Person"><?php echo $row->bcontactperson; ?></td>
 					
 					<td data-label="Location"><?php echo $row->baddress; ?></td>
+					<td data-label="Product Description"><?php echo $row->bproddescrip;?></td>
 					<td data-label="City"><?php echo $row->bcity;?></td>
 					
 					<td data-label="Option"><a style="margin:2px" class="btn btn-warning btn-sm text-white" href="<?php echo base_url()."admin_buyerdetail/index/".urldecode($row->buyerid);?>"><i class="fa fa-eye"></i>View</a>

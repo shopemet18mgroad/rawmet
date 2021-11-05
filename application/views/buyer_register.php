@@ -45,7 +45,7 @@
 	  
     </div>
     <div class="col-sm">
-      <input type="text" onkeyup="validate_bcompany11()"  id="bcontactperson" name="bcontac	`	tperson" class="form-control" placeholder="Contact Person*"    value="" />
+      <input type="text" onkeyup="validate_bcompany11()"  id="bcontactperson" name="bcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
     </div>
   </div>
  
@@ -65,7 +65,7 @@
 	  
     </div>
     <div class="col-sm">
-      <input type="text" id="bcontactnumber" name="bcontactnumber"    onkeyup="validate_buyerid()" class="form-control form-control-user bphn"  placeholder="Phone*" value="" />
+      <input type="text" id="bcontactnumber" name="bcontactnumber"    onkeyup="validate_buyerid()" class="form-control form-control-user bphn"  placeholder="Phone*"  />
     </div>
   </div>
 
@@ -159,7 +159,7 @@ togglePassword1.addEventListener('click', function (e) {
   
   
 
-  <div class="form-row ">
+  <div class="form-row">
     <div class="col-sm">
 	
 	
@@ -176,7 +176,7 @@ togglePassword1.addEventListener('click', function (e) {
 
 
 
-<div class="form-row ">
+<div class="form-row">
     
 	
 	
@@ -186,9 +186,8 @@ togglePassword1.addEventListener('click', function (e) {
 
 
 
-
-<body onload="resetSelection1()">
 <div class="col-sm">
+<body onload="resetSelection1()">
 
 <select class="form-control" id="bselectstate" name="bselectstate" size="1" onchange="makeSubmenu1(this.value)">
 										<option value="" disabled selected>Choose State</option>
@@ -205,7 +204,6 @@ togglePassword1.addEventListener('click', function (e) {
 										<option>HimchalaPradesh</option>
 										<option>Jharkhand</option>
 										<option>Karnataka</option>
-										<option>Kerala</option>
 										<option>MadhyaPradesh</option>
 										<option>Manipur</option>
 										<option>Meghalaya</option>
@@ -229,27 +227,18 @@ togglePassword1.addEventListener('click', function (e) {
 										<option>puduchery</option>
 									</select>
 
-
 							
 	  
     </div>
-
-	
-	
-	
-	
-	
-	
-								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								<script type="text/javascript">
 									var citiesByState1 = {
 										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
-										Maharashtra: ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","HingolJalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri"],
-										Kerala: ["kochi", "Kanpur","Alappuzha
-,"Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
+										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
+										Kerala: ["kochi", "Kanpur","Alappuzha","Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
 										Karnataka: ["Bengaluru","Dakshina-Kannada", "Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
-										AndhraPradesh: ["Vijayawada","Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
+										AndhraPradesh: ["Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
 										Assam: ["Dispur"],
 										Bihar: ["Patna"],
                                         
@@ -259,7 +248,7 @@ togglePassword1.addEventListener('click', function (e) {
 										Haryana: ["Chandigarh"],
 										HimchalaPradesh: ["Shimla"],
 										Jharkhand: ["Ranchi"],
-										Kerala: ["Thiruvananthapuram"],
+										
 										MadhyaPradesh: ["Bhopal"],
 										Maharashtra: ["Mumbai"],
 										Manipur: ["Imphal"],
@@ -328,24 +317,9 @@ togglePassword1.addEventListener('click', function (e) {
 										document.getElementById("bcity").selectedIndex = 0;
 									}
 								</script>
-								
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-                                        
-
-                          
 			
 							    <div class="col-sm">
+								
 								<select class="form-control" id="bcity" name="bcity" size="1">
 									<option value="" disabled selected>Choose City</option>
 									<option></option>
@@ -376,10 +350,17 @@ togglePassword1.addEventListener('click', function (e) {
 	  
     </div>
     <div class="col-sm">
-      <input type="text" id="brefer" name="brefer" class="form-control" placeholder="Reference" value="" />
+      <input type="text" id="brefer" name="brefer" class="form-control" placeholder="Reference" />
 	<div style="font-size:10px"> *In case there is no Reference Id they can fill NA (NOT APPLICABLE).</div>
     </div>
   </div>
+  
+  <div class="form-row">
+  <div class="col-sm">
+
+  <textarea class="form-control" placeholder="Product Description" id="bproddescrip" name="bproddescrip" rows="3" requried ></textarea>
+  </div>
+</div>
    <div class="form-row mt-2">
     <div class="col-sm ml-5" style="font-size:16px";>
 	
@@ -460,7 +441,7 @@ togglePassword1.addEventListener('click', function (e) {
 
    <div class="form-row ">
     <div class="col-sm">
-     <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return   ()"  placeholder="PCB license No.">
+     <input type="text" class="form-control" id="vpcb"  name="vpcb"   onkeyup = "return()"  placeholder="PCB license No.">
     </div>
     <div class="col-sm">
       <select id="vcompanytype" name="vcompanytype" class="form-control">
@@ -582,7 +563,6 @@ togglePassword4.addEventListener('click', function (e) {
 										<option>HimchalaPradesh</option>
 										<option>Jharkhand</option>
 										<option>Karnataka</option>
-										<option>Kerala</option>
 										<option>MadhyaPradesh</option>
 										<option>Manipur</option>
 										<option>Meghalaya</option>
@@ -623,7 +603,7 @@ togglePassword4.addEventListener('click', function (e) {
       <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value=""  onkeyup="validate_sellergst()" />
     </div>
     <div class="col-sm ">
-     <input type="text"  id="vrefer" name="vrefer" class="form-control" placeholder="Reference"    value="" />
+     <input type="text"  id="vrefer" name="vrefer" class="form-control" placeholder="Reference"  />
 	 <div style="font-size:10px"> *In case there is no Reference Id they can fill NA (NOT APPLICABLE).</div>
     </div>
   </div>
@@ -633,8 +613,7 @@ togglePassword4.addEventListener('click', function (e) {
 									var citiesByState = {
 										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
 										Maharashtra: ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","HingolJalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri"],
-										Kerala: ["kochi", "Kanpur","Alappuzha
-,"Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
+										Kerala: ["kochi", "Kanpur","Alappuzha","Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
 										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
 										AndhraPradesh: ["Vijayawada","Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
@@ -716,7 +695,10 @@ togglePassword4.addEventListener('click', function (e) {
 									}
 								</script> 
   
+ <div class="form-row">
 
+  <textarea class="form-control" placeholder="Product Description" id="vproddescrip" name="vproddescrip" rows="3"required></textarea>
+</div>
 			
 										
                        
@@ -738,8 +720,9 @@ togglePassword4.addEventListener('click', function (e) {
 	<script type="text/javascript">
 									var citiesByState = {
 										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
-										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
-										Kerala: ["kochi", "Kanpur"],
+										Maharashtra: ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","HingolJalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri"],
+										Kerala: ["kochi", "Kanpur","Alappuzha",
+,"Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
 										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
 										AndhraPradesh: ["Vijayawada","Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
@@ -751,7 +734,7 @@ togglePassword4.addEventListener('click', function (e) {
 										Haryana: ["Chandigarh"],
 										HimchalaPradesh: ["Shimla"],
 										Jharkhand: ["Ranchi"],
-										Kerala: ["Thiruvananthapuram"],
+									
 										MadhyaPradesh: ["Bhopal"],
 										Maharashtra: ["Mumbai"],
 										Manipur: ["Imphal"],

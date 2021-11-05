@@ -94,6 +94,14 @@ function goBack() {
 								<td><b>Pincode</b></td>
 								<td><?php echo $sqldata[0]->bpincode;?></td>
 							</tr>
+							<tr>
+								<td><b>Reference</b></td>
+								<td><?php echo $sqldata[0]->brefer;?></td>
+							</tr>
+							<tr>
+								<td><b>Product Description</b></td>
+								<td><?php echo $sqldata[0]->bproddescrip;?></td>
+							</tr>
                              				
 						</tbody>
 					</table>							

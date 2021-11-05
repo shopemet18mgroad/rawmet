@@ -46,12 +46,13 @@ class Vendor_basicinfo_update extends CI_Controller {
 		$vcity=$this->input->post('vcity');
 		$vselectstate=$this->input->post('vselectstate');
 		$vpincode=$this->input->post('vpincode');
+		$vproddescrip=$this->input->post('vproddescrip');
 		
 		
 	//=================================================================================================
 		//==================================================================
 		$this->load->model('Admin_model');
-		$data2 = array( 'sellerid'=>$sellerid,'vname' => $vname,'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 'vcontactnumber' =>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate'=>$vselectstate,'vpincode' => $vpincode,'dealer_type'=>$dealer_type);
+		$data2 = array( 'sellerid'=>$sellerid,'vname' => $vname,'vcompanyname' => $vcompanyname, 'vcompanytype' => $vcompanytype,'vcontactperson' => $vcontactperson, 'vcontactnumber' =>$vcontactnumber,'vpan'=>$vpan,'vgst'=>$vgst,'vpcb'=>$vpcb,'vaddress' => $vaddress,'vcity' => $vcity, 'vselectstate'=>$vselectstate,'vpincode' => $vpincode,'dealer_type'=>$dealer_type,'vproddescrip'=>$vproddescrip);
 		//print_r($data2);die;
 		//$this->load->view('xya', $data);
 		

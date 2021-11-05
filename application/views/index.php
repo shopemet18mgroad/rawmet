@@ -120,8 +120,13 @@ text-align: center;
 	<div class="container-fluid top-header">
 		<div class="row">
 				<div class="col-md-12 contact-header">
+			<a href="https://twitter.com/rawmet24?s=11"><i class="fa fa-twitter text-white" aria-hidden="true"></i></a>
+							<a href="https://www.facebook.com/Rawmet24-240316351234171/"><i class="fa fa-facebook mx-4 text-white" aria-hidden="true"></i></a>
+							<a href="https://www.linkedin.com/company/shopemet"><i class="fa fa-linkedin text-white" aria-hidden="true"></i></a>
+							<a href="https://instagram.com/rawmet_24?utm_medium=copy_link"><i class="fa fa-instagram mx-4 text-white" aria-hidden="true"></i></a>
 				
 				<div class="social pull-right">
+				
 				
 			<marquee width="100%" direction="left" height="100px">	
 

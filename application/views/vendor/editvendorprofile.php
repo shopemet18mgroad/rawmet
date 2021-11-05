@@ -160,6 +160,12 @@ function goBack() {
     <div class="col-sm-6" style=" ">
 		<td><?php echo $sqldata[0]->vpincode;?></td>
 	</div>
+	<div class="col-sm-6" style=" ">
+	 <td><b>Product Description</b></td>	  
+	</div>
+	  <div class="col-sm-6" style=" ">
+		<td><?php echo $sqldata[0]->vproddescrip;?></td>
+	</div>
 	
 	
   </div>

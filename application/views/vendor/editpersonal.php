@@ -27,8 +27,8 @@ function goBack() {
                 <!-- Card Body -->
                 <div class="card-body">
 				<div class="container">
-					 <table class="table table-sm table-borderless table-responsive">
-					 <thead><th width="45%">Profile</th>
+					 <table class="table table-sm table-borderless table-responsive col-md-8">
+					 <thead><th width="60%">Profile</th>
 					 
 					
 					 </thead>
@@ -134,6 +134,13 @@ function goBack() {
 							<tr>
 								<td>Pincode</td>
 								<td><input class="form-control w-auto" type="text" id="vpincode" name="vpincode" value="<?php echo $sqldata[0]->vpincode; ?>" ></td>
+							</tr>
+							<tr>
+								<td>Product Description</td>
+								
+      <td><textarea class="form-control" placeholder="Product Description" id="vproddescrip" name="vproddescrip" rows="3" requried value="<?php echo $sqldata[0]->vproddescrip; ?>" ></textarea></td>
+	
+ 
 							</tr>
 
 							

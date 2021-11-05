@@ -85,9 +85,9 @@ function goBack() {
 
      <td>
 		
-		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->vname);?>"><i class="fa fa-ban" style="font-size:18px;color:red"></i></a>
+		<a href="<?php  echo base_url()."Admin_manageseller/reject/".urldecode($row->sellerid);?>"><i class="fa fa-ban" style="font-size:18px;color:red"></i></a>
 
-				<a class="" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->vname).'/'.urldecode($row->vcompanyname);?>"><i class="fa fa-edit"></a></td>
+				<a class="" href="<?php echo base_url()."admin_sellerprofile/index/".urldecode($row->sellerid);?>"><i class="fa fa-edit"></a></td>
 				
 
     

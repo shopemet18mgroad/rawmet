@@ -107,11 +107,16 @@ function goBack() {
 								<td><b>Pincode</b></td>
 								<td><?php echo $sqldata[0]->vpincode;?></td>
 							</tr>
+							 <tr>
+							<td><label><b>Product Description</b></label></td>
+							<td><?php echo $sqldata[0]->vproddescrip;?></td>
+                            
+                           </tr>
 							<tr>
-							<td><label>Reference</label></td>
+							<td><label><b>Reference</b></label></td>
                              <td><input id="add" type="text" id="vrefer" name="vrefer"><br><br></td>
                            </tr>
-						   
+						  
 					</form>	   
 							<tr>
 								<td><b>Seller</b></td>
