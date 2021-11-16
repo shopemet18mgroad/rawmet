@@ -124,7 +124,8 @@ text-align: center;
 							<a href="https://www.facebook.com/Rawmet24-240316351234171/"><i class="fa fa-facebook mx-4 text-white" aria-hidden="true"></i></a>
 							<a href="https://www.linkedin.com/company/shopemet"><i class="fa fa-linkedin text-white" aria-hidden="true"></i></a>
 							<a href="https://instagram.com/rawmet_24?utm_medium=copy_link"><i class="fa fa-instagram mx-4 text-white" aria-hidden="true"></i></a>
-				
+					         <a href="https://api.whatsapp.com/send?phone=+919945454505"><i class="fa fa-whatsapp text-white" aria-hidden="true"></i></a>		
+
 				<div class="social pull-right">
 				
 				
@@ -138,16 +139,13 @@ text-align: center;
 						</ul></marquee>
 					</div>
 					
+					
+					
+					
 
-					<!--<div class="social pull-right">
-						<ul>
-							<li><a href="<?php echo base_url()."login"?>"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp Dashboard Login</a></li>
-							<li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp Helpline No: +91 9945454505</li>
-							<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>-->		
+					
+
+						
 				</div>
 						
 		</div>	
@@ -355,7 +353,7 @@ text-align: center;
 <blink>
 <a href="<?php echo base_url();?>Home_buyerrequriment2"  style="color:red"><b>Live Procurement</b></a></blink>|
 
-<a href="<?php echo base_url();?>Home_buyerrequriment2" style="color:grey"><b>Upcoming Procurement</b></a>|
+<a href="<?php echo base_url();?>Home_buyerrequriment2" style="color:grey"><b>Procurement Auction</b></a>|
  
 
 <a href="https://www.aucjunction.com/" style="color:grey"><b>Upcoming Disposals</b></a>
@@ -578,6 +576,17 @@ Get to know us better by connecting with us on our Facebook, Twitter, Google , Y
                         <i class="fa fa-window-close"></i>
                     </button>
                 </div>
+				
+				
+				<div id="map-container-google-1" class="z-depth-1-half map-container ml-2" style="height: 500px">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6455384739625!2d77.62078961430403!3d12.930488719278884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae156df8557c27%3A0xf2157df40ade4d79!2sShopemet%20Networks%20Private%20Limited!5e0!3m2!1sen!2sin!4v1636968487917!5m2!1sen!2sin" width="80%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+             </div>
+				
+				
+				
+				
+				
+				
 				<div class="modal-body">RAWMET24 Brand/Subsidiary of Shopemet Networks Pvt Ltd. </div>
                 <div class="modal-body">Plot No 179, Second floor C.D Street, Opp. N T Pet, Mysore road cross, Bengaluru, Bengaluru District, Karnataka, India, 560 002.<br><br><br>
 				Corp Off – Plo No 23, 3rd Floor, Hari Prem Complex

@@ -75,9 +75,7 @@ class Admin_manageseller extends CI_Controller {
 	   // get data 
 	   $usersData = $this->Admin_model->getenquirydataDetails($vrefer);
 	   $usersData1 = $this->Admin_model->getenquirydataDetails1();
-		//$usersData = $this->Admin_model->getSellerUserDetails();
-		//print_r($usersData); die;
-		// file creation 
+		 
 		if($vrefer){
 		$file = fopen('php://output','w');
 		
@@ -94,7 +92,7 @@ else {
 		$file = fopen('php://output','w');
        $header = array("VENDOR NAME","SELLER ID","DEALER TYPE","COMPANY NAME","COMPANY TYPE","CONTACT PERSON","CONTACT NUMBER","EMAIL","PAN","GST","ADDRESS","CITY","STATE","PIN CODE","REFERENCE"); 
 		   fputcsv($file,$header);
-		   foreach ($usersData as $line){ 
+		   foreach ($usersData1 as $line){ 
 			fputcsv($file,array($line->vname,$line->sellerid,$line->dealer_type,$line->vcompanyname,$line->vcompanytype,$line->vcontactperson,$line->vcontactnumber,$line->vemail,$line->vpan,$line->vgst,$line->vaddress,$line->vcity,$line->vselectstate,$line->vpincode,$line->vrefer)); 
 		}
 		
@@ -103,6 +101,43 @@ else {
 }
 
 }
+		
+		public function verify(){
+		$this->load->helper('url');
+		$this->load->model('Admin_model');
+         $sellerid = urldecode($this->uri->segment(3));
+	
+
+		$retriveval = array('sellerid'=>$sellerid);
+		
+		$data2 = array('vverify'=>true);
+
+		
+		
+		$status = $this->Admin_model->update_custom('vendor_register',$data2,$retriveval,$retriveval);
+		
+		header('location: '.base_url().'Admin_manageseller/index/'.urlencode($retriveval));
+		
+		die;
+	}
+		public function unverify(){
+		$this->load->helper('url');
+		$this->load->model('Admin_model');
+         $sellerid = urldecode($this->uri->segment(3));
+	
+
+		$retriveval = array('sellerid'=>$sellerid);
+		
+		$data2 = array('vverify'=>false);
+
+		
+		
+		$status = $this->Admin_model->update_custom('vendor_register',$data2,$retriveval,$retriveval);
+		
+		header('location: '.base_url().'Admin_manageseller/index/'.urlencode($retriveval));
+		
+		die;
+	}
 	
 	
 	

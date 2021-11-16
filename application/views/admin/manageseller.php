@@ -64,6 +64,7 @@ function goBack() {
 		<th>Location</th>
 		<th>City</th>
         <th>Refer</th>
+		<th>verify</th>
 		<th>Option</th>
       </tr>
     </thead>
@@ -81,6 +82,16 @@ function goBack() {
 					<td data-label="Location"><?php echo $row->vaddress; ?></td>
 					<td data-label="Refer"><?php echo $row->vcity;?></td>
                     <td data-label="Option"><?php echo $row->vrefer;?></td>
+					<!--<td data-label="Option"><?php echo $row->vverify;?></td>-->
+					<?php if($row->vverify == 0 )   { ?>
+					<td> <a href="<?php  echo base_url()."Admin_manageseller/verify/".urldecode($row->sellerid);?>"><i class="fa fa-check-circle" style="font-size:18px;color: red"></i></a></td>
+					
+<?php } else {?>
+<td> <a href="<?php  echo base_url()."Admin_manageseller/unverify/".urldecode($row->sellerid);?>"><i class="fa fa-check-circle" style="font-size:18px;color:green "></i></a></td>
+
+
+
+<?php } ?>
 		
 
      <td>
