@@ -102,7 +102,11 @@ function goBack() {
 				<div class="col-sm-4  offset-sm-3">	
 					<label for="quantity">Units:</label>
 				
-			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" value="<?php echo $row->supplyunits;?>" >
+			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" >
+				
+				<option value="<?php echo  $row->supplyunits;?>"><?php echo  $row->supplyunits;?></option>
+				
+				
 				
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
@@ -125,6 +129,10 @@ function goBack() {
 				
 			   	<label for="quantity">Units:</label>/
 			   	<select class="form-control col-sm-0" id="punits" name="punits" value="<?php echo $row->punits;?>" >
+				
+				<option value="<?php echo  $row->punits;?>"><?php echo  $row->punits;?></option>
+				
+				
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
 						<option value="Litre">Litre</option>
@@ -149,7 +157,11 @@ function goBack() {
                 </div>
 				<div class="col-sm-4  offset-sm-3">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="units" name="units" value="<?php echo $row->units;?>" >
+				
+				
+			   	<select class="form-control col-sm-0" id="units" name="units">
+				<option value="<?php echo  $row->units;?>"><?php echo  $row->units;?></option>
+				
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
 						<option value="Litre">Litre</option>
