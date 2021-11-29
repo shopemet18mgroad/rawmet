@@ -1,4 +1,4 @@
-	
+
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -22,7 +22,7 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Edit Products</h6>
-               <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:left"></i>
+                          <i class="fas fa-arrow-left text-primary"  onclick="goBack()" style="float:left"></i>
 			   <script>
 function goBack() {
   window.history.back();
@@ -33,7 +33,7 @@ function goBack() {
                 <div class="card-body">
 					
 			
-			<form action="<?php echo base_url();?>vendor_postproduct_update" onsubmit="return validate_Postproduct()" method="POST" enctype="multipart/form-data">
+			<form action="<?php echo base_url();?>admin_postproduct_update" onsubmit="return validate_Postproduct()" method="POST" enctype="multipart/form-data">
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
@@ -53,7 +53,6 @@ function goBack() {
 					
 					<select class="form-control" id="category" name="category">
 					       <option value="<?php echo  $sqldata[0]->category;?>"><?php echo  $sqldata[0]->category;?></option>
-						     	
 						<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
 						<option value="Minor Metal">Minor Metal</option>
@@ -91,7 +90,7 @@ function goBack() {
 			   	<label for="category">Type:</label>
 					<select class="form-control" id="types" name="types" value="">
 					<option value="<?php echo  $sqldata[0]->types;?>"><?php echo  $sqldata[0]->types;?></option>
-					   	
+					
 						<option value="Primary">Primary</option>
 						<option value="Secondary">Secondary</option>
 				        <option value="Scrap" >Scrap</option>
@@ -105,7 +104,7 @@ var citiesByState = {
 Odisha: ["Bhubaneswar","Puri","Cuttack"],
 Maharashtra: ["Mumbai","Pune","Nagpur"],
 Kerala: ["kochi","Kanpur"],
-Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad","Mysuru","Kalaburagi","Mangaluru","Dakshina Kannada","Belagavi","Davanagere","Ballari","Vijayapura","Shivamogga","Tumakuru","Raichur","Bidar","Hosapete","Vijayanagara","Gadag-Betageri","Gadag","Robertsonpete","Kolara","Hassan","Bhadravati","Gokak","Belagavi","Udupi","Mandya","Chikkamagaluru","Gangavati","Koppal","Bagalkote","Ranebennuru","Haveri"],
+Karnataka: ["Bengaluru","Hubli-Dharwad","Mysuru","Kalaburagi","Mangaluru","Dakshina Kannada","Belagavi","Davanagere","Ballari","Vijayapura","Shivamogga","Tumakuru","Raichur","Bidar","Hosapete","Vijayanagara","Gadag-Betageri","Gadag","Robertsonpete","Kolara","Hassan","Bhadravati","Gokak","Belagavi","Udupi","Mandya","Chikkamagaluru","Gangavati","Koppal","Bagalkote","Ranebennuru","Haveri"],
 ArunachalPradesh: ["Itanagar"],
 AndhraPradesh: ["Visakhapatnam"],
 Assam: ["Dispur"],
@@ -219,11 +218,12 @@ document.getElementById("pcities").selectedIndex = 0;
                   </div>
 				    <div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="punits" name="punits" value="<?php echo  $sqldata[0]->punits;?>">
-				
+			   	<select class="form-control col-sm-0" id="punits" name="punits" value="">
+				<option value="<?php echo  $sqldata[0]->punits;?>"><?php echo  $sqldata[0]->punits;?></option>
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
-				         <option value="lot">lot</option>
+					
+						<option value="lot">lot</option>
 						<option value="litre">litre</option>
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
@@ -238,13 +238,13 @@ document.getElementById("pcities").selectedIndex = 0;
 				  </div>
 				  <div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="units" name="units" value= "<?php echo  $sqldata[0]->punits;?>">
-				
+			   	<select class="form-control col-sm-0" id="units" name="units" value="">
+				<option value="<?php echo  $sqldata[0]->units;?>"><?php echo  $sqldata[0]->units;?></option>
 						<option  value="KG">KG</option>
 						<option value="Metric ton">Metric ton</option>
-						<option value="Litre">Litre</option>
+					
 						<option value="lot">lot</option>
-				
+						<option value="litre">litre</option>
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
 					
@@ -267,11 +267,11 @@ document.getElementById("pcities").selectedIndex = 0;
                 </div>
 				<div class="col-sm-2 mb-3 mb-sm-0">	
 				<label for="quantity">Units:</label>
-			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits" value="<?php echo  $sqldata[0]->supplyunits;?>">
-			
+			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits">
+				<option value="<?php echo  $sqldata[0]->supplyunits;?>"><?php echo  $sqldata[0]->supplyunits;?></option>
 						<option>KG</option>
 						<option>Metric ton</option>
-			
+				
 						<option>lot</option>
 						<option>litre</option>
 						<option>Number</option>
@@ -309,7 +309,7 @@ document.getElementById("pcities").selectedIndex = 0;
 		
 					<div class="col-sm-4 mt-4">
 					
-								<img src="<?php if(unserialize($sqldata[0]->uploadproductimage) != NULL){
+								<img class="img-thumbnail"src="<?php if(unserialize($sqldata[0]->uploadproductimage) != NULL){
 									$img = unserialize($sqldata[0]->uploadproductimage);
 									echo base_url()."/web_files/uploads/".$img[0];}else{echo base_url()."#";} ?>" width="100%" height="100px">
 									<?php 

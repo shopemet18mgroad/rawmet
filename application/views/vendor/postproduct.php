@@ -230,7 +230,7 @@ function goBack() {
 
 							<div class="col-sm-2">
 								<label for="price">Price:</label>
-								<input type="text" class="form-control" onchange="change();" id="price" name="price" placeholder="0">
+								<input type="text" class="form-control" onchange="" id="price" name="price" placeholder="0">
 							</div>/
 							<div class="col-sm-2 mb-3 mb-sm-0">
 								<label for="quantity">Units:</label>
