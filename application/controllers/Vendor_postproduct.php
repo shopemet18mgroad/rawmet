@@ -167,7 +167,7 @@ private function upload_files($nameid){
 
           // Set preference
            $config['upload_path'] = 'web_files/uploads/';
-			$config['allowed_types'] = 'doc|docx|pdf|xlsx|jpg|png|gif';
+			$config['allowed_types'] = 'doc|docx|pdf|xlsx|jpg|png|gif|jpeg';
           $config['max_size'] = '50000000'; // max_size in kb
           $config['file_name'] = $_FILES[$nameid]['name'][$i];
  

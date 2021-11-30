@@ -33,7 +33,7 @@ function goBack() {
                 <div class="card-body">
 					
 			
-			<form action="<?php echo base_url();?>admin_postproduct_update" onsubmit="return validate_Postproduct()" method="POST" enctype="multipart/form-data">
+			<form action="<?php echo base_url();?>vendor_postproduct_update" onsubmit="return validate_Postproduct()" method="POST" enctype="multipart/form-data">
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">

@@ -2,15 +2,7 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-	<!-- Page Heading -->
-	<!--       <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Vendor Profile</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div> -->
-
-	<!-- Content Row -->
-
-
+	
 	<!-- Content Row -->
 
 	<div class="row">
@@ -34,11 +26,7 @@ function goBack() {
 <div class="container">
 
 
-					<!-- <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-							Name: <input type="text" name="fname">
-							<input type="submit" value="Submit">
-							</form>
-							-->
+					
 
 
 					<form name="myForm" action="<?php echo base_url(); ?>vendor_postproduct"   enctype="multipart/form-data"  method="POST">
@@ -103,21 +91,22 @@ function goBack() {
 								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 								<script type="text/javascript">
 									var citiesByState = {
-										Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
+												Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
 										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
-										Kerala: ["kochi", "Kanpur"],
-										Karnataka: ["Bengaluru","Dakshina-Kannada","Hubli-Dharwad", "Mysuru","Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
+										Kerala: ["kochi", "Kanpur","Alappuzha","Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
+										Karnataka: ["Bengaluru","Dakshina-Kannada", "Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
-										AndhraPradesh: ["Visakhapatnam"],
+										AndhraPradesh: ["Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
 										Assam: ["Dispur"],
 										Bihar: ["Patna"],
+                                        
 										Chhattisgarh: ["Naya Raipur"],
 										Goa: ["Panaji"],
 										Gujarat: ["Gandhinagar"],
 										Haryana: ["Chandigarh"],
 										HimchalaPradesh: ["Shimla"],
 										Jharkhand: ["Ranchi"],
-										Kerala: ["Thiruvananthapuram"],
+										
 										MadhyaPradesh: ["Bhopal"],
 										Maharashtra: ["Mumbai"],
 										Manipur: ["Imphal"],
@@ -128,8 +117,36 @@ function goBack() {
 										Punjab: ["Chandigarh"],
 										Rajasthan: ["Jaipur"],
 										Sikkim: ["Gangtok"],
-										TamilNadu: ["Chennai"],
-										Telangana: ["Hyderabad"],
+										TamilNadu: ["Ariyalur","Chennai","Coimbatore","Chengalpattu",
+	"Cuddalore","Dharmapuri","Dindigul","Erode","Kallakurichi","Kanchipuram	","	Kanyakumari	","	Karur"," Krishnagiri","Madurai","Mayiladuthurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","	Ranipet	","Salem","Sivagangai","Tenkasi","Thanjavur	","	Theni","Thoothukudi	","Tiruchirappalli","Tirunelveli","	Tirupattur","Tiruppur ","Tiruvallur	","	Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"],
+										Telangana: ["Adilabad",
+"Bhadradri Kothagudem",
+"Hyderabad Jagtial",
+"Jangaon",
+"Jayashankar Bhoopalpally",
+"Jogulamba Gadwal",
+"Kamareddy",
+"Karimnagar",
+"Khammam",
+"Komaram Bheem Asifabad",
+"Mahabubabad",
+"Mahabubnagar",
+"Mancherial",
+"Medak",
+"Medchal",
+"Nagarkurnool",
+"Nalgonda",
+"Nirmal",
+"Nizamabad",
+"Peddapalli",
+"Rajanna Sircilla",
+"RangareddySangareddy",
+"Siddipet",
+"Suryapet",
+"Vikarabad",
+"Wanaparthy",
+"Warangal (Rural)",
+"Warangal (Urban)","Yadadri Bhuvanagiri"],
 										Tripura: ["Agartala"],
 										UttarPradesh: ["Lucknow"],
 										Uttarakhand: ["Dehradun"],
