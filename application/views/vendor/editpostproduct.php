@@ -101,37 +101,66 @@ function goBack() {
 <script type="text/javascript">
 
 var citiesByState = {
-Odisha: ["Bhubaneswar","Puri","Cuttack"],
-Maharashtra: ["Mumbai","Pune","Nagpur"],
-Kerala: ["kochi","Kanpur"],
-Karnataka: ["Bengaluru","Hubli-Dharwad","Mysuru","Kalaburagi","Mangaluru","Dakshina Kannada","Belagavi","Davanagere","Ballari","Vijayapura","Shivamogga","Tumakuru","Raichur","Bidar","Hosapete","Vijayanagara","Gadag-Betageri","Gadag","Robertsonpete","Kolara","Hassan","Bhadravati","Gokak","Belagavi","Udupi","Mandya","Chikkamagaluru","Gangavati","Koppal","Bagalkote","Ranebennuru","Haveri"],
-ArunachalPradesh: ["Itanagar"],
-AndhraPradesh: ["Visakhapatnam"],
-Assam: ["Dispur"],
-Bihar: ["Patna"],
-Chhattisgarh:["Naya Raipur"],
-Goa: ["Panaji"],
-Gujarat:	["Gandhinagar"],
-Haryana:	["Chandigarh"],
-HimchalaPradesh: ["Shimla"],
-Jharkhand: ["Ranchi"],	
-Kerala:	["Thiruvananthapuram"],		
-MadhyaPradesh: ["Bhopal"],		
-Maharashtra: ["Mumbai"],
-Manipur: ["Imphal"],	
-Meghalaya: ["Shillong"],	
-Mizoram: ["Aizawl"],	
-Nagaland:	["Kohima"],	
-Odisha: ["Bhubaneswar"],	
-Punjab:	["Chandigarh"],	
-Rajasthan:	["Jaipur"],	
-Sikkim: ["Gangtok"],
-TamilNadu:	["Chennai"],
-Telangana:	["Hyderabad"],	
-Tripura:	["Agartala"],	
-UttarPradesh: ["Lucknow"],	
-Uttarakhand:	["Dehradun"],	
-WestBengal: ["Kolkata"],
+									Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
+										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
+										Kerala: ["kochi", "Kanpur","Alappuzha","Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
+										Karnataka: ["Bengaluru","Dakshina-Kannada", "Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
+										ArunachalPradesh: ["Itanagar"],
+										AndhraPradesh: ["Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
+										Assam: ["Dispur"],
+										Bihar: ["Patna"],
+                                        
+										Chhattisgarh: ["Naya Raipur"],
+										Goa: ["Panaji"],
+										Gujarat: ["Gandhinagar"],
+										Haryana: ["Chandigarh"],
+										HimchalaPradesh: ["Shimla"],
+										Jharkhand: ["Ranchi"],
+										
+										MadhyaPradesh: ["Bhopal"],
+										Maharashtra: ["Mumbai"],
+										Manipur: ["Imphal"],
+										Meghalaya: ["Shillong"],
+										Mizoram: ["Aizawl"],
+										Nagaland: ["Kohima"],
+										Odisha: ["Bhubaneswar"],
+										Punjab: ["Chandigarh"],
+										Rajasthan: ["Jaipur"],
+										Sikkim: ["Gangtok"],
+										TamilNadu: ["Ariyalur","Chennai","Coimbatore","Chengalpattu",
+	"Cuddalore","Dharmapuri","Dindigul","Erode","Kallakurichi","Kanchipuram	","	Kanyakumari	","	Karur"," Krishnagiri","Madurai","Mayiladuthurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","	Ranipet	","Salem","Sivagangai","Tenkasi","Thanjavur	","	Theni","Thoothukudi	","Tiruchirappalli","Tirunelveli","	Tirupattur","Tiruppur ","Tiruvallur	","	Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"],
+										Telangana: ["Adilabad",
+"Bhadradri Kothagudem",
+"Hyderabad Jagtial",
+"Jangaon",
+"Jayashankar Bhoopalpally",
+"Jogulamba Gadwal",
+"Kamareddy",
+"Karimnagar",
+"Khammam",
+"Komaram Bheem Asifabad",
+"Mahabubabad",
+"Mahabubnagar",
+"Mancherial",
+"Medak",
+"Medchal",
+"Nagarkurnool",
+"Nalgonda",
+"Nirmal",
+"Nizamabad",
+"Peddapalli",
+"Rajanna Sircilla",
+"RangareddySangareddy",
+"Siddipet",
+"Suryapet",
+"Vikarabad",
+"Wanaparthy",
+"Warangal (Rural)",
+"Warangal (Urban)","Yadadri Bhuvanagiri"],
+										Tripura: ["Agartala"],
+										UttarPradesh: ["Lucknow"],
+										Uttarakhand: ["Dehradun"],
+										WestBengal: ["Kolkata"],
 }
 function makeSubmenu(value) {
 if(value.length==0) document.getElementById("pcities").innerHTML = "<option></option>";
@@ -220,13 +249,13 @@ document.getElementById("pcities").selectedIndex = 0;
 				<label for="quantity">Units:</label>
 			   	<select class="form-control col-sm-0" id="punits" name="punits" value="">
 				<option value="<?php echo  $sqldata[0]->punits;?>"><?php echo  $sqldata[0]->punits;?></option>
-						<option  value="KG">KG</option>
-						<option value="Metric ton">Metric ton</option>
-					
-						<option value="lot">lot</option>
-						<option value="litre">litre</option>
-						<option value="Number">Number</option>
-						<option value="Meter">Meter</option>
+						<option value="KG">KG</option>
+									<option value="Metric ton">Metric ton</option>
+									<option value="Litre">Litre</option>
+									<option value="lot">lot</option>
+								
+									<option value="Number">Number</option>
+									<option value="Meter">Meter</option>
 					
 				    </select> 
 			</div>
@@ -240,13 +269,13 @@ document.getElementById("pcities").selectedIndex = 0;
 				<label for="quantity">Units:</label>
 			   	<select class="form-control col-sm-0" id="units" name="units" value="">
 				<option value="<?php echo  $sqldata[0]->units;?>"><?php echo  $sqldata[0]->units;?></option>
-						<option  value="KG">KG</option>
-						<option value="Metric ton">Metric ton</option>
-					
-						<option value="lot">lot</option>
-						<option value="litre">litre</option>
-						<option value="Number">Number</option>
-						<option value="Meter">Meter</option>
+						<option value="KG">KG</option>
+									<option value="Metric ton">Metric ton</option>
+									<option value="Litre">Litre</option>
+									<option value="lot">lot</option>
+								
+									<option value="Number">Number</option>
+									<option value="Meter">Meter</option>
 					
 				    </select> 
 			</div>
@@ -269,13 +298,13 @@ document.getElementById("pcities").selectedIndex = 0;
 				<label for="quantity">Units:</label>
 			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits">
 				<option value="<?php echo  $sqldata[0]->supplyunits;?>"><?php echo  $sqldata[0]->supplyunits;?></option>
-						<option>KG</option>
-						<option>Metric ton</option>
-				
-						<option>lot</option>
-						<option>litre</option>
-						<option>Number</option>
-						<option>Meter</option>
+						<option value="KG">KG</option>
+									<option value="Metric ton">Metric ton</option>
+									<option value="Litre">Litre</option>
+									<option value="lot">lot</option>
+								
+									<option value="Number">Number</option>
+									<option value="Meter">Meter</option>
 					
 				    </select>
 			</div>

@@ -36,8 +36,6 @@ class vendor_postproduct_update extends CI_Controller {
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
 			$punits = $this->input->post('punits');
-			
-			//$pic_array = $this->input->post('uploadproductimage');
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');
@@ -99,7 +97,7 @@ class vendor_postproduct_update extends CI_Controller {
 		
 		
 		//==================================================================
-		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array,'poptions'=>false,'comapprove'=>false,'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom,'uploadcertificate'=>$uploadcertificate,'units'=>$punits);
+		$data = array('category'=> $category,'description' => $description,'price'=>$price,'quantity'=>$quantity,'units'=>$units,'minoderquant'=>$minoderquant,'supplyability'=>$supplyability,'supplyunits'=> $supplyunits,'quantpermonth'=>$quantpermonth,'estdeltime'=>$estdeltime,'pstates'=>$pstates,'types'=>$types,'pcities'=> $pcities,'payable'=> $payable ,'uploadproductimage' => $pic_array,'poptions'=>false,'comapprove'=>false,'productvalidityto'=>$productvalidityto,'productvalidityfrom'=>$productvalidityfrom,'uploadcertificate'=>$uploadcertificate,'punits'=>$punits);
 		
 		//print_r($data);die;
 		$datainserr = "Data Inserted Successfully";
