@@ -24,6 +24,7 @@ class Customer_quotation10 extends CI_Controller {
 	
 		
       $query = $this->Admin_model->getdatafrom_vregistration23($seller_mbuyreq_id);
+
 	 //print_r( $query);die;
        // $query1 = $this->Admin_model->getdatafromtable('vendor_register', $active);
 		//$query2 = $this->Admin_model->getdatafromtable('buyer_register', $active1);

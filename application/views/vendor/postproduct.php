@@ -29,7 +29,7 @@ function goBack() {
 					
 
 
-					<form name="myForm" action="<?php echo base_url(); ?>vendor_postproduct"   enctype="multipart/form-data"  method="POST">
+					<form action="<?php echo base_url(); ?>vendor_postproduct" enctype="multipart/form-data"  method="POST">
 
 						<div class="form-group row">
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -58,6 +58,7 @@ function goBack() {
 						<option value="Scraps" >Scraps</option>
 						<option value="Chemicals" >Chemicals</option>
 						<option value="Others" >Others</option>
+						<option value="Wood" >Wood</option>
 								</select>
 
 							</div>
@@ -92,11 +93,11 @@ function goBack() {
 								<script type="text/javascript">
 									var citiesByState = {
 												Odisha: ["Bhubaneswar", "Puri", "Cuttack"],
-										Maharashtra: ["Mumbai", "Pune", "Nagpur"],
-										Kerala: ["kochi", "Kanpur","Alappuzha","Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
+										Maharashtra: ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","Hingoli","	Jalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri"," Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim","Yavatmal"],
+									Kerala: ["kochi", "Kanpur","Alappuzha","Ernakulam","Idukki","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"],
 										Karnataka: ["Bengaluru","Dakshina-Kannada", "Hubli-Dharwad", "Mysuru", "Kalaburagi", "Mangaluru", "Dakshina Kannada", "Belagavi", "Davanagere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Raichur", "Bidar", "Hosapete", "Vijayanagara", "Gadag-Betageri", "Gadag", "Robertsonpete", "Kolara", "Hassan", "Bhadravati", "Gokak", "Belagavi", "Udupi", "Mandya", "Chikkamagaluru", "Gangavati", "Koppal", "Bagalkote", "Ranebennuru", "Haveri"],
 										ArunachalPradesh: ["Itanagar"],
-										AndhraPradesh: ["Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur"],
+										AndhraPradesh: ["Visakhapatnam","Vizanagaram","Srikakulam","East Godavari","West Godavari","krishna","Guntur","prakasam","Kurnool","Nellore","Kadapa","Chittoor","Anantapur","vijyawada"],
 										Assam: ["Dispur"],
 										Bihar: ["Patna"],
                                         
@@ -108,7 +109,7 @@ function goBack() {
 										Jharkhand: ["Ranchi"],
 										
 										MadhyaPradesh: ["Bhopal"],
-										Maharashtra: ["Mumbai"],
+										
 										Manipur: ["Imphal"],
 										Meghalaya: ["Shillong"],
 										Mizoram: ["Aizawl"],
@@ -259,6 +260,8 @@ function goBack() {
 								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
+									<option value="sqft">sqft </option>
+									<option value="Piece">Piece</option>
 
 								</select>
 							</div>
@@ -278,6 +281,8 @@ function goBack() {
 								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
+									<option value="sqft">sqft </option>
+									<option value="Piece">Piece</option>
 
 								</select>
 								
@@ -309,6 +314,8 @@ function goBack() {
 								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
+									<option value="sqft">sqft </option>
+									<option value="Piece">Piece</option>
 								</select>
 							</div>
 
@@ -343,27 +350,28 @@ function goBack() {
 								<label for="Pname"> [To:]</label>
 								<input type="datetime-local" class="form-control" id="productvalidityto" name="productvalidityto" placeholder="">
 							</div>
-
-
-
-
-
-
-							<div class="col-sm-4 mb-3 mb-sm-0">
+	<div class="col-sm-4 mb-3 mb-sm-0">
 								<label for="Pname">Estimated Delivery Time:</label>
-								<input type="text" class="form-control" id="estdeltime" name="estdeltime" placeholder="">
+								<input type="text"  class="form-control" id="estdeltime" name="estdeltime" placeholder="">
 
 							</div>
+
+
+
+
+
 							
-									<div class="col-sm-5 mt-4">
-							<!--	<label for="exampleInputFile">Upload Product Images:</label>
-								<input type="file" class="form-control-file" id="uploadproductimage" name="uploadproductimage">-->
-								
+							
+									<div class="col-sm-4 mb-3 mb-sm-0">
+							
 								
 								<div class="input_fields_wrap">
 								<label for="">Upload Image</label>
-								<input  type="file" id="uploadproductimage" name="uploadproductimage">
-								</div>
+								<input  type="file" id="uploadproductimage" name="uploadproductimage"  onchange="return fileValidation()" required>
+								
+								
+								
+					
 								
 								
 								
@@ -371,6 +379,8 @@ function goBack() {
 								
 								
 								
+							</div>
+						
 							</div>
 							
 							
@@ -382,40 +392,14 @@ function goBack() {
 							
 							
 							
-							
 						
 
-						
-
-							<!-- 		<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-										Name: <input type="text" name="fname">
-										<input type="submit" value="Submit">
-
-										var x = document.forms["myForm"]["fname"].value;
-										</form>
-										-->
-
-
-
-							<!--<div class="col-sm-4 mt-4">
-												<label for="fobprice">Is Fob Price?</label>
-												<label class="radio-inline"><input type="radio" name="fobprice" id="fobprice" checked> Yes</label>
-												<label class="radio-inline"><input type="radio" name="fobprice"  id="fobprice">No</label>
-											</div>
-											<div class="col-sm-4 mt-4">
-												<label class="checkbox-inline">
-												<input type="checkbox" value="aifeatured" id="aifeatured" name="aifeatured">Add into Featured</label>
-											</div>-->
-
-
-
-							<!--<input type="submit" name="submit" id="btn1"  value="Submit" class="btn btn-primary btn-sm">-->
 							<div class="col-md-12 text-center mt-4">
 
 
 
 
-								<input class="btn btn-primary btn-sm"  type="submit" name="submit" value="submit">
+								<input class="btn btn-primary btn-sm"  type="submit" name="submit"  onclick = "return postproduct()" value="submit">
 								
 
 								<button class="btn btn-primary btn-sm offset-sm-2 " type="reset" href="<?php echo base_url(); ?>vendor_postproduct" value="Clear" name="Clear" role="button">Clear</a>
@@ -451,28 +435,45 @@ function goBack() {
 
 </div>
 <!-- End of Main Content -->
-<script>
-	function change() {
-		if (document.getElementById('punits').value == 'KG')
-			document.getElementById("payable").value = 'KG';
-		    
-		else if (document.getElementById('punits').value == 'Metric Ton')
-			document.getElementById("payable").value = 'Metric Ton';
-		
-		else if (document.getElementById('punits').value == 'Lot')
-			document.getElementById("payable").value = 'Lot';
-		
-		else if (document.getElementById('punits').value == 'Liter')
-			document.getElementById("payable").value = 'Liter';
-		
-		else if (document.getElementById('punits').value == 'Number')
-			document.getElementById("payable").value = 'Number';
-		
-		else if (document.getElementById('punits').value == 'Meter')
-			document.getElementById("payable").value = 'Meter';
-		
-	};
-</script>
+
+   <script>
+        function fileValidation() {
+            var fileInput = 
+                document.getElementById('uploadproductimage');
+              
+            var filePath = fileInput.value;
+          
+            // Allowing file type
+            var allowedExtensions = 
+                    /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+              
+            if (!allowedExtensions.exec(filePath) || fileInput == '' ) {
+              swal("Alert!","Invalid File Type", "error"); 
+                fileInput.value = '';
+                return false;
+            } 
+            else 
+            {
+              
+                // Image preview
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById(
+                            'imagePreview').innerHTML = 
+                            '<img src="' + e.target.result
+                            + '"/>';
+                    };
+                      
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            }
+        }
+    </script>
+
+
+
+
 
 <script type="text/javascript">    
 $(document).ready(function(){     
@@ -490,35 +491,66 @@ var inputvalues = $(this).val();
 });    
 </script>
  <script type="text/javascript">
-	function validate_Postproduct() {
-		var category = document.getElementById("category").value;
-		var description = document.getElementById("description").value;
-		var productname = document.getElementById("productname").value;
-		var price = document.getElementById("price").value;
-		var quantity = document.getElementById("quantity").value;
-		var units = document.getElementById("units").value;
-		var materialname = document.getElementById("materialname").value;
-		
-		
-		var minoderquant = document.getElementById("minoderquant").value;
-		var supplyability = document.getElementById("supplyability").value;
-		var minoderquant = document.getElementById("minoderquant").value;
-		var supplyunits = document.getElementById("supplyunits").value;
-		var quantpermonth = document.getElementById("quantpermonth").value;
-		var productvalidityfrom = document.getElementById("productvalidityfrom").value;
-		var productvalidityto = document.getElementById("productvalidityto").value;
-		var estdeltime = document.getElementById("estdeltime").value;
-		var pstates = document.getElementById("pstates").value;
-		var types = document.getElementById("types").value;
-		var pcities = document.getElementById("pcities").value;
-		var payable = document.getElementById("payable").value;
-		var productid = document.getElementById("productid").value;
-		var companyname = document.getElementById("companyname").value;
-		var sellerid = document.getElementById("sellerid").value;
-		if (category == '' || description == '' || productname == '' || price == '' || quantity == '' || units == '' || materialname == '' ||  minoderquant == '' || supplyability == '' || minoderquant == '' || supplyunits == '' || quantpermonth == '' || productvalidityfrom == '' || productvalidityto == '' || estdeltime == '' || pstates == '' || types == '' || pcities == '' || payable == '' || productid == '' || companyname == '' || vusername == '') {
-			swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
-			return false;
-		}
-	}
-</script> 
+  function postproduct() {
+   
+    
+
+    var sellerid = document.getElementById("sellerid").value;
+    var companyname = document.getElementById("companyname").value;
+    var category = document.getElementById("category").value;
+    var productname = document.getElementById("productname").value;
+    var productid = document.getElementById("productid").value;
+    var types = document.getElementById("types").value;
+    var pstates = document.getElementById("pstates").value;
+    var pcities = document.getElementById("pcities").value;
+    var description = document.getElementById("description").value;
+   
+    var price = document.getElementById("price").value;
+	 var punits = document.getElementById("punits").value;
+	 var quantity = document.getElementById("quantity").value;
+    var units = document.getElementById("units").value;
+   // var pic_array1 = document.getElementsByName("pic_array1");
+    var uploadcertificate = document.getElementById("uploadcertificate").value;
+    var minoderquant = document.getElementById("minoderquant").value;
+    var supplyability = document.getElementById("supplyability").value;
+    var supplyunits = document.getElementById("supplyunits").value;
+    var payable = document.getElementById("payable").value;
+    var quantpermonth = document.getElementById("quantpermonth").value;
+    var productvalidityfrom = document.getElementById("productvalidityfrom").value;
+    var productvalidityto = document.getElementById("productvalidityto").value;
+    var estdeltime = document.getElementById("estdeltime").value;
+     var uploadproductimage = document.getElementById("uploadproductimage").required; 
+    
+ 
+    if (
+      sellerid == '' ||
+      companyname == '' ||
+      category == '' ||
+      productname == '' ||
+      productid == '' ||
+      types == '' ||
+      pstates == '' ||
+      pcities == '' ||
+      description == '' ||
+	   price == '' ||
+	    punits == '' ||
+      quantity == '' ||
+     
+      units == '' ||
+       minoderquant == '' ||
+      supplyability == '' ||
+      supplyunits == '' ||
+      payable == '' ||
+      quantpermonth == '' ||
+      productvalidityfrom == '' ||
+      productvalidityto == '' ||
+      estdeltime == '' ||
+       uploadproductimage == '' || 
+      uploadcertificate == ''){
+       swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability,Image, Stock Per month, cannot leave any field blank!", "error");
+        return false;
+      }
+    }
+</script>
+	
 

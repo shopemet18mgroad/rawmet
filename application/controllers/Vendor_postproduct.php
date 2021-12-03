@@ -61,7 +61,7 @@ class Vendor_postproduct  extends CI_Controller {
 			$quantity = $this->input->post('quantity');
 			$units = $this->input->post('units');
 			$sellerid = $this->input->post('sellerid');
-			//$vusername = $this->input->post('vusername');
+			
 			$minoderquant = $this->input->post('minoderquant');
 			$supplyability = $this->input->post('supplyability');
 			$supplyunits = $this->input->post('supplyunits');

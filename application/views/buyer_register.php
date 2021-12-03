@@ -38,14 +38,18 @@
   <div class="form-row">
     <div class="col-sm">
 	
+	<input type="text" class="form-control form-control-user gst" id="bgst" name="bgst"  placeholder="GST">
 	
 	
-	
-     <input type="text" id="bcompanyname" name="bcompanyname" class="form-control" placeholder="Company Name*" value="" />
+     
 	  
     </div>
     <div class="col-sm">
-      <input type="text" onkeyup="validate_bcompany11()"  id="bcontactperson" name="bcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
+	
+	<input type="text" id="bcompanyname" onclick ="return validate_buyergst()" name="bcompanyname" class="form-control" placeholder="Company Name*" value="" />
+	
+	
+      
     </div>
   </div>
  
@@ -151,9 +155,16 @@ togglePassword1.addEventListener('click', function (e) {
     <div class="col-sm">
 	
 	
+	<input type="text" id="bcontactperson" name="bcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
+       
+   
+
+
+   </div>
 	
-       <input type="text" class="form-control form-control-user gst" id="bgst" name="bgst" placeholder="GST">
-    </div>
+	
+	
+	
   </div>
   
   
@@ -189,7 +200,7 @@ togglePassword1.addEventListener('click', function (e) {
 <div class="col-sm">
 <body onload="resetSelection1()">
 
-<select class="form-control" id="bselectstate" name="bselectstate" size="1" onchange="makeSubmenu1(this.value)">
+<select class="form-control" id="bselectstate" name="bselectstate" size="1"  onchange="makeSubmenu1(this.value)">
 										<option value="" disabled selected>Choose State</option>
 										<option>Odisha</option>
 										<option>Maharashtra</option>
@@ -320,7 +331,7 @@ togglePassword1.addEventListener('click', function (e) {
 			
 							    <div class="col-sm">
 								
-								<select class="form-control" id="bcity" name="bcity" size="1">
+								<select class="form-control" id="bcity" name="bcity" size="1" >
 									<option value="" disabled selected>Choose City</option>
 									<option></option>
 								</select>
@@ -343,7 +354,7 @@ togglePassword1.addEventListener('click', function (e) {
 	
 	
 	
-    <input type="text" id="bpincode" name="bpincode"  class="form-control " placeholder="Pin Code *" onkeyup=" return validate_buyergst()" value="" />
+    <input type="text" id="bpincode" name="bpincode"  class="form-control " placeholder="Pin Code *"  value="" />
 										
 										
 										
@@ -428,14 +439,16 @@ togglePassword1.addEventListener('click', function (e) {
  <div class="form-row ">
     <div class="col-sm">
 	
+	<input type="text" class="form-control form-control-user sgst" id="vgst"  name="vgst"   placeholder="GST">
 	
-	
-      <input type="text" id="vcompanyname" name="vcompanyname" class="form-control" placeholder="Company Name*" value="" />
+     
     </div>
     <div class="col-sm">
 	
+	 <input type="text" id="vcompanyname" name="vcompanyname" class="form-control" onclick="validate_sellergst()" placeholder="Company Name*" value="" />
 	
-      <input type="text" onkeyup="validate_bcompany1L1()"  id="vcontactperson" name="vcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
+	
+      
     </div>
   </div>
 
@@ -537,7 +550,10 @@ togglePassword4.addEventListener('click', function (e) {
        <input type="text" class="form-control form-control-user"   id="vaddress"  name="vaddress"   placeholder="Address">
     </div>
     <div class="col-sm">
-      <input type="text" class="form-control form-control-user sgst" id="vgst"  name="vgst"   placeholder="GST">
+	
+	<input type="text" id="vcontactperson" name="vcontactperson" class="form-control" placeholder="Contact Person*"    value="" />
+	
+      
     </div>
   </div>
  
@@ -600,7 +616,7 @@ togglePassword4.addEventListener('click', function (e) {
 
    <div class="form-row ">
     <div class="col-sm">
-      <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value=""  onkeyup="validate_sellergst()" />
+      <input type="text" id="vpincode"  name="vpincode"  class="form-control" placeholder="Pin Code *" value="" />
     </div>
     <div class="col-sm ">
      <input type="text"  id="vrefer" name="vrefer" class="form-control" placeholder="Reference"  />

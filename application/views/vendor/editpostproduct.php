@@ -3,13 +3,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-    <!--       <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Vendor Profile</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div> -->
 
-          <!-- Content Row -->
 
 
           <!-- Content Row -->
@@ -56,8 +50,8 @@ function goBack() {
 						<option value="Ferrous">Ferrous</option>
 						<option value="Non Ferrous">Non Ferrous</option>
 						<option value="Minor Metal">Minor Metal</option>
-				        <option value="Papers" >Papers</option>
-						<option value="Plastic" >Plastic</option>
+				        <option value="Papers">Papers</option>
+						<option value="Plastic">Plastic</option>
 						<option value="Machineries">Machineries</option>
 				        <option value="Construction Raw Material" >Construction Raw Material</option>
 						<option value="Scraps" >Scraps</option>
@@ -256,6 +250,8 @@ document.getElementById("pcities").selectedIndex = 0;
 								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
+									<option value="sqft">sqft </option>
+									<option value="Piece">Piece</option>
 					
 				    </select> 
 			</div>
@@ -276,6 +272,8 @@ document.getElementById("pcities").selectedIndex = 0;
 								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
+									<option value="sqft">sqft </option>
+									<option value="Piece">Piece</option>
 					
 				    </select> 
 			</div>
@@ -283,7 +281,7 @@ document.getElementById("pcities").selectedIndex = 0;
 				
 				
 				
-				<!--<img class="img-fluid" src="<?php echo base_url()."web_files/";?>img/iron.jpg" alt="Chania" width="150" height="20">-->
+			
 				<div class="col-sm-4 mb-3 mb-sm-0">
 					<label for="Pname">Minimum Order Stock:</label>
 					<input type="text" class="form-control" id="minoderquant" name="minoderquant"  placeholder="" value="<?php echo  $sqldata[0]->minoderquant;?>" >
@@ -305,6 +303,8 @@ document.getElementById("pcities").selectedIndex = 0;
 								
 									<option value="Number">Number</option>
 									<option value="Meter">Meter</option>
+									<option value="sqft">sqft </option>
+									<option value="Piece">Piece</option>
 					
 				    </select>
 			</div>
@@ -368,7 +368,7 @@ document.getElementById("pcities").selectedIndex = 0;
 				?>
 						
 						<center>	
-			<!--	<input class="btn btn-primary btn-sm" onclick="return validate_Postproduct()" type="submit" value=" Submit">-->			
+				
                 <input type="submit" id="submitBtn" a style="margin:2px" class="btn btn-primary btn-sm text-white" href="<?php echo base_url()."vendor_postproduct_update/approve_product/".$proid;?>" class="btn btn-primary" name="submit" value="Update">	</center>
 					</div>	
 					

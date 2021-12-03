@@ -65,7 +65,7 @@
 
 <script type="text/javascript">
   function validate_Postproduct() {
-   //  swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
+   
     
 
     var sellerid = document.getElementById("sellerid").value;
@@ -93,7 +93,7 @@
     var productvalidityto = document.getElementById("productvalidityto").value;
     var estdeltime = document.getElementById("estdeltime").value;
     var uploadproductimage = document.getElementsByName("uploadproductimage");
-    var uploadcertificate = document.getElementById("uploadcertificate").value;
+    var uploadcertificate = document.getElementById("uploadcertificate").required;
  
     if (
       sellerid == '' ||
@@ -120,7 +120,7 @@
       estdeltime == '' ||
       uploadproductimage == '' ||
       uploadcertificate == ''){
-       swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability, Add into Featured,FOB Price, Stock Per month, cannot leave any field blank!", "error");
+       swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability,Image, Stock Per month, cannot leave any field blank!", "error");
         return false;
       }
     }
