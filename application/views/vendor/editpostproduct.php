@@ -354,7 +354,7 @@ document.getElementById("pcities").selectedIndex = 0;
 							<label for="">Update Image</label>
 								<div class="input_fields_wrap">
 								
-								<input  type="file" id="uploadproductimage" name="uploadproductimage">
+								<input  type="file" id="uploadproductimage" name="uploadproductimage" onchange="return fileValidation1()" required>
 								</div>
 							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -391,5 +391,39 @@ document.getElementById("pcities").selectedIndex = 0;
 
       </div>
       <!-- End of Main Content -->
+	     <script>
+        function fileValidation1() {
+            var fileInput = 
+                document.getElementById('uploadproductimage');
+              
+            var filePath = fileInput.value;
+          
+            // Allowing file type
+            var allowedExtensions = 
+                    /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+              
+            if (!allowedExtensions.exec(filePath) || fileInput == '' ) {
+              swal("Alert!","Invalid File Type", "error"); 
+                fileInput.value = '';
+                return false;
+            } 
+            else 
+            {
+              
+                // Image preview
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById(
+                            'imagePreview').innerHTML = 
+                            '<img src="' + e.target.result
+                            + '"/>';
+                    };
+                      
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            }
+        }
+    </script>
 
 
