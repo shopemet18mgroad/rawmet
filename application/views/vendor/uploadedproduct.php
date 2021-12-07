@@ -115,6 +115,8 @@ function goBack() {
 						<option value="litre">litre</option>
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
+						<option value="sqft">sqft </option>
+						<option value="Piece">Piece</option>
 				    </select>
 			</div>
 	</div>
@@ -137,9 +139,11 @@ function goBack() {
 						<option value="Metric ton">Metric ton</option>
 						<option value="Litre">Litre</option>
 						<option value="lot">lot</option>
-						<option value="litre">litre</option>
+					
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
+						<option value="sqft">sqft </option>
+					   <option value="Piece">Piece</option>
 				    </select>
 			</div>
 	</div>
@@ -166,7 +170,8 @@ function goBack() {
 						<option value="Metric ton">Metric ton</option>
 						<option value="Litre">Litre</option>
 						<option value="lot">lot</option>
-						<option value="litre">litre</option>
+						<option value="sqft">sqft </option>
+						<option value="Piece">Piece</option>
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
 				    </select>

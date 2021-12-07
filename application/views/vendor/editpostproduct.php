@@ -57,6 +57,7 @@ function goBack() {
 						<option value="Scraps" >Scraps</option>
 						<option value="Chemicals" >Chemicals</option>
 						<option value="Others" >Others</option>
+						<option value="Wood" >Wood</option>
 				    </select> 
                     
                 </div>
@@ -354,7 +355,7 @@ document.getElementById("pcities").selectedIndex = 0;
 							<label for="">Update Image</label>
 								<div class="input_fields_wrap">
 								
-								<input  type="file" id="uploadproductimage" name="uploadproductimage" onchange="return fileValidation1()" required>
+								<input  type="file" id="uploadproductimage" name="uploadproductimage" onchange="return fileValidation1()">
 								</div>
 							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">

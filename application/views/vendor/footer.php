@@ -92,8 +92,8 @@
     var productvalidityfrom = document.getElementById("productvalidityfrom").value;
     var productvalidityto = document.getElementById("productvalidityto").value;
     var estdeltime = document.getElementById("estdeltime").value;
-    var uploadproductimage = document.getElementsByName("uploadproductimage");
-    var uploadcertificate = document.getElementById("uploadcertificate").required;
+  
+    var uploadcertificate = document.getElementById("uploadcertificate").value;
  
     if (
       sellerid == '' ||
@@ -118,9 +118,9 @@
       productvalidityfrom == '' ||
       productvalidityto == '' ||
       estdeltime == '' ||
-      uploadproductimage == '' ||
+    
       uploadcertificate == ''){
-       swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability,Image, Stock Per month, cannot leave any field blank!", "error");
+       swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability,Images, Stock Per month, cannot leave any field blank!", "error");
         return false;
       }
     }

@@ -33,7 +33,7 @@ function goBack() {
                 <div class="card-body">
 					
 			
-			<form action="<?php echo base_url();?>admin_postproduct_update" onsubmit="return validate_Postproduct()" method="POST" enctype="multipart/form-data">
+			<form action="<?php echo base_url();?>admin_postproduct_update" onsubmit="return validate_Postprod2()" method="POST" enctype="multipart/form-data">
 			 	
                 <div class="form-group row">
 				<div class="col-sm-4 mb-3 mb-sm-0">
@@ -63,6 +63,7 @@ function goBack() {
 						<option value="Scraps" >Scraps</option>
 						<option value="Chemicals" >Chemicals</option>
 						<option value="Others" >Others</option>
+						<option value="Wood" >Wood</option>
 				    </select> 
                     
                 </div>
@@ -256,6 +257,8 @@ document.getElementById("pcities").selectedIndex = 0;
 						<option value="litre">litre</option>
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
+						<option value="sqft">sqft </option>
+						<option value="Piece">Piece</option>
 					
 				    </select> 
 			</div>
@@ -276,6 +279,8 @@ document.getElementById("pcities").selectedIndex = 0;
 						<option value="litre">litre</option>
 						<option value="Number">Number</option>
 						<option value="Meter">Meter</option>
+						<option value="sqft">sqft </option>
+						<option value="Piece">Piece</option>
 					
 				    </select> 
 			</div>
@@ -298,13 +303,15 @@ document.getElementById("pcities").selectedIndex = 0;
 				<label for="quantity">Units:</label>
 			   	<select class="form-control col-sm-0" id="supplyunits" name="supplyunits">
 				<option value="<?php echo  $sqldata[0]->supplyunits;?>"><?php echo  $sqldata[0]->supplyunits;?></option>
-						<option>KG</option>
-						<option>Metric ton</option>
-				
-						<option>lot</option>
-						<option>litre</option>
-						<option>Number</option>
-						<option>Meter</option>
+						<option  value="KG">KG</option>
+						<option value="Metric ton">Metric ton</option>
+					
+						<option value="lot">lot</option>
+						<option value="litre">litre</option>
+						<option value="Number">Number</option>
+						<option value="Meter">Meter</option>
+						<option value="sqft">sqft </option>
+						<option value="Piece">Piece</option>
 					
 				    </select>
 			</div>
@@ -354,7 +361,7 @@ document.getElementById("pcities").selectedIndex = 0;
 							<label for="">Update Image</label>
 								<div class="input_fields_wrap">
 								
-								<input  type="file" id="uploadproductimage" name="uploadproductimage" onchange="fileValidation2()" required>
+								<input  type="file" id="uploadproductimage" name="uploadproductimage" onchange="fileValidation2()">
 								</div>
 							</div>
 							<div class="col-sm-4 mb-3 mb-sm-0">
@@ -391,6 +398,68 @@ document.getElementById("pcities").selectedIndex = 0;
 
       </div>
       <!-- End of Main Content -->
+	  <script type="text/javascript">
+  function validate_Postprod2() {
+   
+    
+
+    var sellerid = document.getElementById("sellerid").value;
+    var companyname = document.getElementById("companyname").value;
+    var category = document.getElementById("category").value;
+    var productname = document.getElementById("productname").value;
+    var productid = document.getElementById("productid").value;
+    var types = document.getElementById("types").value;
+    var pstates = document.getElementById("pstates").value;
+    var pcities = document.getElementById("pcities").value;
+    var description = document.getElementById("description").value;
+   
+    var price = document.getElementById("price").value;
+	 var punits = document.getElementById("punits").value;
+	 var quantity = document.getElementById("quantity").value;
+    var units = document.getElementById("units").value;
+   // var pic_array1 = document.getElementsByName("pic_array1");
+    var uploadcertificate = document.getElementById("uploadcertificate").value;
+    var minoderquant = document.getElementById("minoderquant").value;
+    var supplyability = document.getElementById("supplyability").value;
+    var supplyunits = document.getElementById("supplyunits").value;
+    var payable = document.getElementById("payable").value;
+    var quantpermonth = document.getElementById("quantpermonth").value;
+    var productvalidityfrom = document.getElementById("productvalidityfrom").value;
+    var productvalidityto = document.getElementById("productvalidityto").value;
+    var estdeltime = document.getElementById("estdeltime").value;
+  
+    var uploadcertificate = document.getElementById("uploadcertificate").value;
+ 
+    if (
+      sellerid == '' ||
+      companyname == '' ||
+      category == '' ||
+      productname == '' ||
+      productid == '' ||
+      types == '' ||
+      pstates == '' ||
+      pcities == '' ||
+      description == '' ||
+	   price == '' ||
+	    punits == '' ||
+      quantity == '' ||
+     
+      units == '' ||
+       minoderquant == '' ||
+      supplyability == '' ||
+      supplyunits == '' ||
+      payable == '' ||
+      quantpermonth == '' ||
+      productvalidityfrom == '' ||
+      productvalidityto == '' ||
+      estdeltime == '' ||
+    
+      uploadcertificate == ''){
+       swal("Alert!", "Description, Productname, Stock , Minimum Order Stock,Supply Ability,Images, Stock Per month, cannot leave any field blank!", "error");
+        return false;
+      }
+    }
+</script>
 	  
 	  
 	  <script>
