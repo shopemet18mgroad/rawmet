@@ -114,7 +114,7 @@ function goBack() {
                            </tr>
 							<tr>
 							<td><label><b>Reference</b></label></td>
-                             <td><input id="add" type="text" id="vrefer" name="vrefer"> <?php echo $sqldata[0]->vrefer;?><br><br></td>
+                             <td><input id="add" type="text" id="vrefer" name="vrefer" value="<?php echo $sqldata[0]->vrefer;?>"> <br><br></td>
                            </tr>
 						  
 					</form>	   
