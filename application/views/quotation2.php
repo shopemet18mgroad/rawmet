@@ -87,11 +87,11 @@ table-border
     </tr>
 	<tr>
 	<th>Seller ID</th>
-   <td><?php echo  $sqldata1[0]->sellerid;?></td>
+   <td><?php echo  $sqldata1[0]->sellerid;?></td>  
    </tr>
   <tr>
     <th style="text-align:float-left;">DATE</th>
-    <td><?php echo date('Y-m-d'); ?></td> 
+     <td><?php echo  $sqldata1[0]->secondreqpo;?></td> 
     
   </tr>
   <tr>
